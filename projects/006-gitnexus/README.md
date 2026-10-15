@@ -70,3 +70,5 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 [直接打开三工具对照](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#compare)：三种使用重心、五维区别、相对优势、能力交集及四种任务切换。新增内容只作功能与实现取舍分析，不形成未验证的准确率排名。
 
 [桌面对照预览](assets/comparison-desktop.jpg) · [手机任务切换](assets/comparison-mobile.jpg) · [11项交互与响应式检查](assets/comparison-verification.json) · [完整对比](comparison.md)
+
+对比扩展内容提交 `43509b6` 已通过 [Pages任务38754225542](https://github.com/yydshly/1015_codex_project/actions/runs/38754225542) 发布；线上16项资源检查与四种任务切换通过，手机无页面溢出和脚本错误。[线上对比验证](assets/comparison-deployed-browser.json)。

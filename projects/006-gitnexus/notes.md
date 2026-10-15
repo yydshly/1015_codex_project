@@ -40,3 +40,5 @@ LadybugDB 平台二进制需要保留；不能通过 omit optional 仅跳过向�
 ## 同类对比扩展
 
 2026-10-15：对照区扩展为三种使用重心、关系/存储/更新/源码边界矩阵、GitNexus相对优势、能力交集及四种任务分工。Ix后端未跑、CodeFlow与GitNexus不同样本等证据边界明确呈现；任务切换为教学内容，不新增或伪造分析结果。复核官方README、Ix命令和后端说明，来源加入sources.json，完整说明见comparison.md。新增对照资源随既有assets构建，验证沿用原样本并检查任务切换、键盘、移动布局与发布资源。
+
+对比扩展发布：内容提交 `43509b6`，Pages任务 `38754225542` 成功。线上16项页面/资源/文档检查通过；HTML、对照脚本与样式在LF规范换行后与本地一致，原始实测JSON一致。四种任务线上切换通过，390px手机无页面溢出、无控制台错误。记录见 assets/deployed-verification.json 与 assets/comparison-deployed-browser.json；截图为更新后的线上页面。

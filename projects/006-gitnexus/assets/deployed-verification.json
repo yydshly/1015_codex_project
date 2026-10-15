@@ -1,13 +1,13 @@
 {
   "status": "passed",
-  "checkedAt": "2026-10-15T21:44:22.068920+08:00",
+  "checkedAt": "2026-10-15T22:51:06.502376+08:00",
   "url": "https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/",
   "responses": [
     {
       "path": "index.html",
       "status": 200,
-      "bytes": 19041,
-      "sha256": "e75a33f7be0d8e06f87faef4b986dd7aee6c49b37952ca49df44a24db48e1f8f"
+      "bytes": 26271,
+      "sha256": "8cdd327514d06148c539509da14f5b9876b09012a79c8e2c4de6673bd03bb0c1"
     },
     {
       "path": "styles.css",
@@ -30,8 +30,8 @@
     {
       "path": "notes.md",
       "status": 200,
-      "bytes": 3193,
-      "sha256": "74d25b3ca5bf8081e1c02eb8f2d0bf5b30d3bb578421b1cdc57fbb2e7c09f877"
+      "bytes": 4071,
+      "sha256": "08c4f4c9f5e761351c8294e79198908f3be0839a848ac9447ca6c2b073c03dd7"
     },
     {
       "path": "references/run-report.md",
@@ -42,8 +42,8 @@
     {
       "path": "references/sources.json",
       "status": 200,
-      "bytes": 2589,
-      "sha256": "8a0789c13d5ecc315b3c516e917e9dd32943229bac47df49db07364c2777a782"
+      "bytes": 3868,
+      "sha256": "66ac6a9bc7a921c56ea083b20e99d07a688edd3c007d3a5818991d6e0708e09d"
     },
     {
       "path": "references/context.json",
@@ -80,6 +80,24 @@
       "status": 200,
       "bytes": 4588,
       "sha256": "b3e617e5e5eea01b2e9153156c88706c14899e78b4a5d48b9fc14f4f10115c72"
+    },
+    {
+      "path": "assets/comparison.css",
+      "status": 200,
+      "bytes": 8849,
+      "sha256": "0634e82382fd0855b6f433fac74f4fc5d3feeec9047c40b99522605181ff6736"
+    },
+    {
+      "path": "assets/comparison.js",
+      "status": 200,
+      "bytes": 8501,
+      "sha256": "2578d03a943fd6bbd60b935f8406a6484b707dbbf063d8c912fad39ce4d2a567"
+    },
+    {
+      "path": "comparison.md",
+      "status": 200,
+      "bytes": 5101,
+      "sha256": "ae1a8906eb577c5c8e568c617afcdb94b56bddb66177ed61e82f65d32448c3a2"
     }
   ],
   "runtimeEvidenceMatches": true,
