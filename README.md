@@ -19,7 +19,7 @@
 | 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |
 | --- | --- | --- | --- | --- | --- |
 | 001 | [AetherViz Master 课件生成规范研究](projects/001-aetherviz-master/README.md) | [aetherviz-master](https://github.com/andyhuo520/aetherviz-master) | 通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可按知识顺序组织为系列课程。 | 已完成 | [研究](projects/001-aetherviz-master/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html) |
-| 002 | [image-blaster 图生三维工作流研究](projects/002-image-blaster/README.md) | [image-blaster](https://github.com/neilsonnn/image-blaster) | 将场景图拆成背景、独立物体与声音，借助外部模型生成并组装三维场景；价值在资产解耦、请求恢复和局部返工，可扩展自动布局与质量验收。 | 已完成 | [研究](projects/002-image-blaster/README.md) |
+| 002 | [image-blaster 图生三维工作流研究](projects/002-image-blaster/README.md) | [image-blaster](https://github.com/neilsonnn/image-blaster) | 将场景图拆成背景、独立物体与声音，借助外部模型生成并组装三维场景；价值在资产解耦、请求恢复和局部返工，可扩展自动布局与质量验收。 | 已完成 | [研究](projects/002-image-blaster/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/) |
 
 ### 项目预览
 
@@ -53,8 +53,7 @@
 
 源库：[image-blaster](https://github.com/neilsonnn/image-blaster)。它先理解和拆分场景图，再借助外部模型分别生成静态环境、独立物体与声音，最后组合并人工调整布局。
 
-Claude Code 按技能规范调度，脚本记录请求和本地资产；价值在资产解耦、请求恢复与局部返工。可扩展质量验收、辅助布局、成本面板与混合建模，这些方向尚未实现。上方使用我们生成的能力全景引导图，详细分析见[完整研究](projects/002-image-blaster/README.md)。
-
+Claude Code 按技能规范调度，脚本记录请求和本地资产；价值在资产解耦、请求恢复与局部返工。可扩展质量验收、辅助布局、成本面板与混合建模，这些方向尚未实现。上方使用我们生成的能力全景引导图，详细分析见[在线研究与演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/)及[完整研究](projects/002-image-blaster/README.md)。
 
 ## 新增一个研究项目
 

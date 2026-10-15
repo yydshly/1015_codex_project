@@ -14,7 +14,7 @@ image-blaster 把场景图中的背景与可操作物体分开，借助外部模
 | 上游许可证 | MIT，Copyright (c) 2026 Neilson Koerner-Safrata，见 [原文](references/upstream-LICENSE) |
 | 本轮范围 | 固定版本源码研究、既有项目对比、静态研究网页及浏览器验证 |
 | 验证边界 | 未提交 World Labs / FAL 生成请求，未测量生成质量、费用或成功率 |
-| 在线地址 | 未部署；`projects.json` 的 `demo_url` 保持为空 |
+| 在线地址 | [研究与交互演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/)，已部署并实际访问验证 |
 
 ## 查看研究网页
 
@@ -26,7 +26,7 @@ python scripts/build_web.py
 python -m http.server 8082 --bind 127.0.0.1 --directory _site
 ```
 
-打开 <http://127.0.0.1:8082/projects/002-image-blaster/>。这是本地研究网页地址，不是已发布的线上演示。
+打开 <http://127.0.0.1:8082/projects/002-image-blaster/> 进行本地预览；正式线上入口见上表。
 
 页面包含房间拆分与组合的四步交互演示、八步源码流程、模型分工、资产与任务状态、五个项目的比较、四组逐项对照、研究价值和源码证据。网页不需要依赖安装、API 密钥或模型服务。房间参考图与三维对象均为本地预制示意，不执行真实抠图或模型生成。
 

@@ -1,26 +1,30 @@
 # 多个 Web 的部署约定
 
-初始化阶段先约定目录与路径。当前没有 Web 应用、线上站点或 Pages 发布工作流；首个应用确定技术栈后再补充实际构建和部署配置。
+001 AetherViz Master 与 002 image-blaster 的研究网页已于 2026-10-15 部署并实际访问验证。使用 GitHub Pages Actions，只发布已提交项目的静态构建产物；其他本地未提交研究不纳入发布。
+
+## 构建与发布
+
+在仓库根目录执行 `python scripts/projects.py check`、`python scripts/build_web.py`，产物为 `_site/`；可用本地 HTTP 服务预览。`.github/workflows/pages.yml` 在 main 的项目、索引或构建变更时自动构建并发布，也支持手动触发。每个子项目使用自己的依赖，静态图片、文档与许可随构建复制。001 的总览入口及 002 的能力长图均保留原图下载。
 
 ## 一个 Pages 站点，多个应用入口
 
-GitHub Pages 每个仓库提供一个站点，可以将多个静态 Web 构建到不同子路径。该仓库的默认站点根地址将是：
+GitHub Pages 每个仓库提供一个站点，可以将多个静态 Web 构建到不同子路径。已部署的站点根地址为：
 
 ```text
 https://yydshly.github.io/1015_codex_project/
 ```
 
-地址在启用 Pages 并成功部署后才有效。各应用采用以下映射：
+总导航与以下两个项目均已上线并验证，采用以下映射：
 
 | 内容 | 仓库源目录 | 汇总构建目录 | 站点路径 |
 | --- | --- | --- | --- |
-| 总导航页 | 后续实现时确定 | `_site/index.html` | `/1015_codex_project/` |
-| 第一个应用（示例） | `projects/001-example-repo/web/` | `_site/projects/001-example-repo/` | `/1015_codex_project/projects/001-example-repo/` |
-| 第二个应用（示例） | `projects/002-another-repo/web/` | `_site/projects/002-another-repo/` | `/1015_codex_project/projects/002-another-repo/` |
+| 总导航页 | `scripts/build_web.py` 从 `projects.json` 生成 | `_site/index.html` | `/1015_codex_project/` |
+| 001 AetherViz | `projects/001-aetherviz-master/web/` | `_site/projects/001-aetherviz-master/` | `/1015_codex_project/projects/001-aetherviz-master/overview.html` |
+| 002 image-blaster | `projects/002-image-blaster/web/` | `_site/projects/002-image-blaster/` | `/1015_codex_project/projects/002-image-blaster/` |
 
-表中的子项目仅用于说明路径，不代表已收录或部署的项目。总导航页届时从 `projects.json` 读取展示信息，保持与仓库首页一致。
+总导航从 `projects.json` 读取展示信息，保持与仓库首页一致；真实演示地址只在部署并验证成功后登记。
 
-## 添加首个应用时
+## 接入与发布应用时
 
 1. 在对应的 `web/README.md` 中写清依赖、开发、构建命令和产物目录。
 2. 为该应用设置正确的资源基路径，例如 Vite 的 `base` 使用 `/1015_codex_project/projects/001-example-repo/`；具体配置以实际技术栈为准。
@@ -49,3 +53,9 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 `.github/workflows/pages.yml` 在 main 的项目、索引或构建变更时发布，也支持手动触发。只上传 `_site/`；其他项目按各自提交与验证进度接入。
 
 实际发布：2026-10-15，首次发布提交 `b7b8c15`，Pages 任务 `38721920976` 成功。[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html) · [互动课件](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/)。总导航、总览、三个案例及长图资源均已访问验证。
+
+## 002 · image-blaster 实际发布
+
+2026-10-15：内容提交 `6acb94b` 已推送并部署，[Pages 任务 38724012877](https://github.com/yydshly/1015_codex_project/actions/runs/38724012877) 成功。[研究与交互演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/) 已实际访问，总导航、长图、样式、脚本、三维依赖与扩展文档均返回 200，长图与本地原图一致。
+
+引导图使用本研究生成的能力全景图；页面说明库的能力、外部模型分工、工程价值与扩展建议。房间是预制机制演示，未运行付费生成 API。只接入 002，其他未提交项目保留在工作区。真实地址在部署成功后回填索引。

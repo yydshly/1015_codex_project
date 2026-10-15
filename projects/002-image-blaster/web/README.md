@@ -33,6 +33,6 @@ python -m http.server 8082 --bind 127.0.0.1 --directory _site
 
 ## 发布
 
-Pages 目标路径 `/1015_codex_project/projects/002-image-blaster/`，不是已经发布的 URL。按 [部署约定](../../../docs/deployment.md) 通过现有工作流发布；验证部署后才更新 `demo_url`。
+已于 2026-10-15 通过现有 Pages 工作流部署并访问验证：[线上研究与交互演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/)。路径为 `/1015_codex_project/projects/002-image-blaster/`；`demo_url` 已在验证成功后更新。后续按 [部署约定](../../../docs/deployment.md) 发布。
 
 构建保留能力、架构、比较文档、第三方说明和 references 来源。验证见 [notes.md](../notes.md)。

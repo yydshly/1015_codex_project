@@ -1,0 +1,81 @@
+{
+  "verified_at": "2026-10-15T11:00:12.588934+00:00",
+  "content_commit": "6acb94bc275a5d7e3fc70f7e88de59cf253d478f",
+  "pages_run": "https://github.com/yydshly/1015_codex_project/actions/runs/38724012877",
+  "catalog_run": "https://github.com/yydshly/1015_codex_project/actions/runs/38724012882",
+  "http": [
+    {
+      "url": "https://yydshly.github.io/1015_codex_project/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 2514
+    },
+    {
+      "url": "https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 37777
+    },
+    {
+      "url": "https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/styles.css",
+      "status": 200,
+      "type": "text/css",
+      "bytes": 30668
+    },
+    {
+      "url": "https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/app.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 12388
+    },
+    {
+      "url": "https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/models.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 18659
+    },
+    {
+      "url": "https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/vendor/three.min.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 615601
+    },
+    {
+      "url": "https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/vendor/OrbitControls.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 26583
+    },
+    {
+      "url": "https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/assets/image-blaster-overview-v1.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1986388
+    },
+    {
+      "url": "https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/extensions.md",
+      "status": 200,
+      "type": "text/markdown",
+      "bytes": 3301
+    },
+    {
+      "url": "https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 17551
+    }
+  ],
+  "guide_sha256": "d58dde138ea8358deb82f6114a37169c9aaba3bad711aaabe89da82a83f90b04",
+  "scope": "Static research site and prebuilt interactive mechanism demo; paid generation APIs not run.",
+  "browser": {
+    "guide_loaded": true,
+    "guide_width": 940,
+    "extension_cards": 6,
+    "room_reference_width": 1440,
+    "three_canvas_present": true,
+    "room_stage": "3",
+    "preset_layout": true,
+    "vase_version": "B",
+    "error_warn_logs": []
+  }
+}

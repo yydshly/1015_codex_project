@@ -80,3 +80,9 @@
 发布前检查：仓库索引同步通过；10 项目录工具单元测试通过；两个网页脚本语法检查通过。桌面 1280 px 的首屏长图已加载，六张扩展卡片完整；手机 390 px 的页面宽 375 px，无页面级横向溢出。房间组合演示可切换预设布局、独立移动绿椅至 +1.2 并更换花瓶版本 B；浏览器无 error / warn。截图见 [发布版首屏](assets/publish-local-desktop.png) 与 [手机扩展路线](assets/publish-local-mobile.png)。
 
 本轮提交仅纳入 002 与对应索引摘要，不提交 003、004 的本地未发布研究。线上部署与实际访问结果在成功后补充。
+
+### 实际发布结果
+
+内容提交 `6acb94b` 已推送至远端 main；[Pages 任务 38724012877](https://github.com/yydshly/1015_codex_project/actions/runs/38724012877) 和 [目录验证任务](https://github.com/yydshly/1015_codex_project/actions/runs/38724012882) 均成功。[正式研究网页](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/) 已访问验证，总导航、页面、样式、脚本、两项三维依赖、长图、扩展文档和已有 001 总览共十个目标均返回 200；线上长图 SHA-256 与本地原图一致。
+
+线上浏览器确认引导图宽 940 px、六项扩展内容、1440 px 房间参考图与三维画布均正常加载。组合阶段可摆入预设位置并切换花瓶版本 B，未捕获 error / warn。核验后登记真实演示地址并同步索引。截图见 [线上首屏](assets/deployed-overview.png)，详细响应与校验值见 [发布验证记录](assets/deployment-verification.json)。此处成功指静态研究页与预制演示，外部生成 API 仍未实测。
