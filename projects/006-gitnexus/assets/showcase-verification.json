@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-15T15:38:27.029Z",
+  "scope": "local browser UI; seven real output projections; 320px and390px",
+  "checks": [
+    {
+      "name": "模块分组",
+      "passed": true
+    },
+    {
+      "name": "流程四步真实展开",
+      "passed": true
+    },
+    {
+      "name": "上下文源码与调用者",
+      "passed": true
+    },
+    {
+      "name": "完整四项影响含验证入口",
+      "passed": true
+    },
+    {
+      "name": "真实18项搜索命中",
+      "passed": true
+    },
+    {
+      "name": "搜索空结果",
+      "passed": true
+    },
+    {
+      "name": "真实两跳路径",
+      "passed": true
+    },
+    {
+      "name": "diff函数和流程报告",
+      "passed": true
+    },
+    {
+      "name": "保存结果筛选",
+      "passed": true
+    },
+    {
+      "name": "proc_0_submitorder",
+      "passed": true
+    },
+    {
+      "name": "proc_1_submitorder",
+      "passed": true
+    },
+    {
+      "name": "proc_2_submitorder",
+      "passed": true
+    },
+    {
+      "name": "proc_3_submitorder",
+      "passed": true
+    },
+    {
+      "name": "效果页签键盘End",
+      "passed": true
+    },
+    {
+      "name": "效果页签键盘Home",
+      "passed": true
+    },
+    {
+      "name": "390px变更视图无溢出",
+      "passed": true
+    },
+    {
+      "name": "原始diff与报告展开",
+      "passed": true
+    },
+    {
+      "name": "320px-map",
+      "passed": true
+    },
+    {
+      "name": "320px-flow",
+      "passed": true
+    },
+    {
+      "name": "320px-context",
+      "passed": true
+    },
+    {
+      "name": "320px-impact",
+      "passed": true
+    },
+    {
+      "name": "320px-search",
+      "passed": true
+    },
+    {
+      "name": "320px-trace",
+      "passed": true
+    },
+    {
+      "name": "320px-change",
+      "passed": true
+    },
+    {
+      "name": "覆盖表横向滚动容器不撑开页面",
+      "passed": true
+    }
+  ],
+  "consoleErrors": []
+}

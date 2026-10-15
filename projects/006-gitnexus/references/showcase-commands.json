@@ -1,0 +1,77 @@
+[
+  {
+    "name": "showcase-communities",
+    "arguments": [
+      "cypher",
+      "MATCH (c:Community) RETURN c.id AS id, c.label AS label, c.heuristicLabel AS heuristicLabel, c.symbolCount AS symbolCount, c.cohesion AS cohesion ORDER BY c.id",
+      "--limit",
+      "200"
+    ],
+    "exitCode": 0,
+    "seconds": 1.073
+  },
+  {
+    "name": "showcase-memberships",
+    "arguments": [
+      "cypher",
+      "MATCH (n)-[r:CodeRelation]->(c:Community) WHERE r.type = 'MEMBER_OF' RETURN n.id AS id, n.name AS name, n.filePath AS filePath, c.id AS communityId ORDER BY c.id, n.id",
+      "--limit",
+      "200"
+    ],
+    "exitCode": 0,
+    "seconds": 1.157
+  },
+  {
+    "name": "showcase-processes",
+    "arguments": [
+      "cypher",
+      "MATCH (p:Process) RETURN p.id AS id, p.label AS label, p.heuristicLabel AS heuristicLabel, p.stepCount AS stepCount, p.processType AS processType ORDER BY p.id",
+      "--limit",
+      "200"
+    ],
+    "exitCode": 0,
+    "seconds": 1.104
+  },
+  {
+    "name": "showcase-steps",
+    "arguments": [
+      "cypher",
+      "MATCH (n)-[r:CodeRelation]->(p:Process) WHERE r.type = 'STEP_IN_PROCESS' RETURN n.id AS id, n.name AS name, n.filePath AS filePath, p.id AS processId, r.step AS step ORDER BY p.id, r.step",
+      "--limit",
+      "200"
+    ],
+    "exitCode": 0,
+    "seconds": 1.118
+  },
+  {
+    "name": "showcase-relation-types",
+    "arguments": [
+      "cypher",
+      "MATCH ()-[r:CodeRelation]->() RETURN r.type AS type, count(r) AS count ORDER BY count DESC",
+      "--limit",
+      "200"
+    ],
+    "exitCode": 0,
+    "seconds": 1.186
+  },
+  {
+    "name": "showcase-changes",
+    "arguments": [
+      "detect-changes",
+      "--scope",
+      "unstaged"
+    ],
+    "exitCode": 0,
+    "seconds": 1.623
+  },
+  {
+    "name": "showcase-check",
+    "arguments": [
+      "check",
+      "--cycles",
+      "--json"
+    ],
+    "exitCode": 0,
+    "seconds": 1.026
+  }
+]

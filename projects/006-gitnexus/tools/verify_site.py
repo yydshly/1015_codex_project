@@ -56,7 +56,23 @@ def verify():
     assert (SITE / "comparison.md").is_file()
     assert all(f"scenario-{i}" in parser.ids for i in range(4))
     assert (SITE / "assets/comparison.js").is_file() and (SITE / "assets/comparison.css").is_file()
-    result = {"status":"passed", "relativeLinks":len(local), "businessFunctions":len(ids), "callEdges":len(data["edges"]), "upstreamChecks":len(data["checks"]), "sourceSnapshotsMatch":True, "comparisonScenarios":4}
+    showcase = json.loads((SITE / "assets/showcase.json").read_text(encoding="utf-8"))
+    assert showcase["status"] == "verified"
+    assert sum(row["count"] for row in showcase["nodeTypes"]) == data["metrics"]["nodes"]
+    assert sum(row["count"] for row in showcase["relationTypes"]) == data["metrics"]["edges"]
+    assert len(showcase["communities"]) == data["metrics"]["clusters"] == 4
+    call_pairs = {(edge["source"], edge["target"]) for edge in data["edges"]}
+    for process in showcase["processes"]:
+        steps = process["steps"]
+        assert len(steps) == process["stepCount"]
+        assert [step["step"] for step in steps] == list(range(1, len(steps) + 1))
+        assert all((a["id"], b["id"]) in call_pairs for a, b in zip(steps, steps[1:]))
+    assert showcase["changes"]["changedSymbols"] == showcase["changes"]["affectedProcesses"] == 1
+    assert "subtotal >= 12000" in showcase["changes"]["diff"]
+    assert showcase["check"]["status"] == "clean" and showcase["check"]["enumeration"] == "complete"
+    assert all(f"effect-{key}" in parser.ids for key in ("map", "flow", "context", "impact", "search", "trace", "change"))
+    assert all((SITE / path).is_file() for path in showcase["raw"])
+    result = {"status":"passed", "relativeLinks":len(local), "businessFunctions":len(ids), "callEdges":len(data["edges"]), "upstreamChecks":len(data["checks"]), "sourceSnapshotsMatch":True, "comparisonScenarios":4, "showcaseViews":7, "communityCount":4, "processCount":len(showcase["processes"]), "processStepsMatchCallEdges":True, "diffSymbols":1}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return result
 

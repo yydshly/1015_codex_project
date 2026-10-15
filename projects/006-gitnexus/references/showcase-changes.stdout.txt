@@ -1,0 +1,9 @@
+Changes: 1 files, 1 symbols
+Affected processes: 1
+Risk level: medium
+
+Changed symbols:
+  Function calculateShipping → services/shipping.ts
+
+Affected execution flows:
+  • SubmitOrder → CalculateShipping (3 steps) — changed: calculateShipping

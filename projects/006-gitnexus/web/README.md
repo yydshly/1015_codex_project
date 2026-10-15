@@ -17,3 +17,5 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 `assets/comparison.css` 和 `assets/comparison.js` 分别实现对照区样式与教学任务切换，随既有 assets/ 汇总构建；无需修改根构建脚本。任务操作只显示预先整理的对照说明，没有执行 Ix / CodeFlow。原有实测数据不随选择改变。
 
 页面不运行上游引擎；点击图谱只在浏览器查询本次记录。更新数据需要重新采集，不能只手改关系或指标。本地 npm 依赖、数据库、解析缓存和凭据不进入发布产物。
+
+能力效果入口 `#showcase`：七个可键盘切换的页签，展示分组、流程、上下文、完整影响、搜索、路径和 diff。`assets/showcase.css / showcase.js / showcase.json` 随 assets/ 复制，无新依赖。数据来自补充 Cypher 查询与隔离实验，原始输出位于 references/showcase-*；流程步骤按数据库顺序显示。搜索框只是过滤固定查询的结果，不表示在线语义搜索。能力覆盖表说明扩展条件及未实跑项。

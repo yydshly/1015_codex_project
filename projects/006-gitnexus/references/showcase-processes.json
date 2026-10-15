@@ -1,0 +1,4 @@
+{
+  "markdown": "| id | label | heuristicLabel | stepCount | processType |\n| --- | --- | --- | --- | --- |\n| proc_0_submitorder | SubmitOrder → Validate | SubmitOrder → Validate | 4 | cross_community |\n| proc_1_submitorder | SubmitOrder → ApplyDiscount | SubmitOrder → ApplyDiscount | 3 | cross_community |\n| proc_2_submitorder | SubmitOrder → CalculateSubtotal | SubmitOrder → CalculateSubtotal | 3 | cross_community |\n| proc_3_submitorder | SubmitOrder → CalculateShipping | SubmitOrder → CalculateShipping | 3 | cross_community |",
+  "row_count": 4
+}

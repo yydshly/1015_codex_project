@@ -1,0 +1,427 @@
+{
+  "status": "verified",
+  "version": "1.6.12",
+  "sample": "checkout-lab",
+  "provenance": "Additional read-only Cypher queries and CLI checks on the existing isolated index. Layout and Chinese explanations belong to this exhibit.",
+  "nodeTypes": [
+    {
+      "label": "Property",
+      "count": 30
+    },
+    {
+      "label": "File",
+      "count": 12
+    },
+    {
+      "label": "Function",
+      "count": 10
+    },
+    {
+      "label": "Interface",
+      "count": 5
+    },
+    {
+      "label": "Process",
+      "count": 4
+    },
+    {
+      "label": "Community",
+      "count": 4
+    },
+    {
+      "label": "Folder",
+      "count": 3
+    },
+    {
+      "label": "Const",
+      "count": 3
+    }
+  ],
+  "relationTypes": [
+    {
+      "type": "DEFINES",
+      "count": 29
+    },
+    {
+      "type": "IMPORTS",
+      "count": 21
+    },
+    {
+      "type": "HAS_PROPERTY",
+      "count": 19
+    },
+    {
+      "type": "STEP_IN_PROCESS",
+      "count": 13
+    },
+    {
+      "type": "CALLS",
+      "count": 13
+    },
+    {
+      "type": "ACCESSES",
+      "count": 13
+    },
+    {
+      "type": "MEMBER_OF",
+      "count": 12
+    },
+    {
+      "type": "CONTAINS",
+      "count": 9
+    },
+    {
+      "type": "USES",
+      "count": 1
+    },
+    {
+      "type": "IMPLEMENTS",
+      "count": 1
+    }
+  ],
+  "communities": [
+    {
+      "id": "comm_0",
+      "label": "Routes",
+      "heuristicLabel": "Routes",
+      "symbolCount": 2,
+      "cohesion": 0.6666666666666666,
+      "members": [
+        {
+          "id": "Function:routes/order.ts:submitOrder",
+          "name": "submitOrder",
+          "filePath": "routes/order.ts",
+          "communityId": "comm_0"
+        },
+        {
+          "id": "Function:services/customer.ts:validate",
+          "name": "validate",
+          "filePath": "services/customer.ts",
+          "communityId": "comm_0"
+        }
+      ]
+    },
+    {
+      "id": "comm_1",
+      "label": "Services",
+      "heuristicLabel": "Services",
+      "symbolCount": 6,
+      "cohesion": 0.875,
+      "members": [
+        {
+          "id": "Function:services/checkout.ts:checkoutOrder",
+          "name": "checkoutOrder",
+          "filePath": "services/checkout.ts",
+          "communityId": "comm_1"
+        },
+        {
+          "id": "Function:services/discount.ts:applyDiscount",
+          "name": "applyDiscount",
+          "filePath": "services/discount.ts",
+          "communityId": "comm_1"
+        },
+        {
+          "id": "Function:services/estimate.ts:estimateOrder",
+          "name": "estimateOrder",
+          "filePath": "services/estimate.ts",
+          "communityId": "comm_1"
+        },
+        {
+          "id": "Function:services/pricing.ts:calculateSubtotal",
+          "name": "calculateSubtotal",
+          "filePath": "services/pricing.ts",
+          "communityId": "comm_1"
+        },
+        {
+          "id": "Function:services/shipping.ts:calculateShipping",
+          "name": "calculateShipping",
+          "filePath": "services/shipping.ts",
+          "communityId": "comm_1"
+        },
+        {
+          "id": "Function:storage/orders.ts:saveOrder",
+          "name": "saveOrder",
+          "filePath": "storage/orders.ts",
+          "communityId": "comm_1"
+        }
+      ]
+    },
+    {
+      "id": "comm_2",
+      "label": "Services",
+      "heuristicLabel": "Services",
+      "symbolCount": 2,
+      "cohesion": 0.6666666666666666,
+      "members": [
+        {
+          "id": "Function:services/inventory.ts:reserveStock",
+          "name": "reserveStock",
+          "filePath": "services/inventory.ts",
+          "communityId": "comm_2"
+        },
+        {
+          "id": "Function:services/inventory.ts:validate",
+          "name": "validate",
+          "filePath": "services/inventory.ts",
+          "communityId": "comm_2"
+        }
+      ]
+    },
+    {
+      "id": "comm_3",
+      "label": "Cluster_3",
+      "heuristicLabel": "Cluster_3",
+      "symbolCount": 2,
+      "cohesion": 1.0,
+      "members": [
+        {
+          "id": "Interface:types.ts:Quote",
+          "name": "Quote",
+          "filePath": "types.ts",
+          "communityId": "comm_3"
+        },
+        {
+          "id": "Interface:types.ts:SavedOrder",
+          "name": "SavedOrder",
+          "filePath": "types.ts",
+          "communityId": "comm_3"
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "id": "proc_0_submitorder",
+      "label": "SubmitOrder → Validate",
+      "heuristicLabel": "SubmitOrder → Validate",
+      "stepCount": 4,
+      "processType": "cross_community",
+      "steps": [
+        {
+          "id": "Function:routes/order.ts:submitOrder",
+          "name": "submitOrder",
+          "filePath": "routes/order.ts",
+          "processId": "proc_0_submitorder",
+          "step": 1
+        },
+        {
+          "id": "Function:services/checkout.ts:checkoutOrder",
+          "name": "checkoutOrder",
+          "filePath": "services/checkout.ts",
+          "processId": "proc_0_submitorder",
+          "step": 2
+        },
+        {
+          "id": "Function:services/inventory.ts:reserveStock",
+          "name": "reserveStock",
+          "filePath": "services/inventory.ts",
+          "processId": "proc_0_submitorder",
+          "step": 3
+        },
+        {
+          "id": "Function:services/inventory.ts:validate",
+          "name": "validate",
+          "filePath": "services/inventory.ts",
+          "processId": "proc_0_submitorder",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "id": "proc_1_submitorder",
+      "label": "SubmitOrder → ApplyDiscount",
+      "heuristicLabel": "SubmitOrder → ApplyDiscount",
+      "stepCount": 3,
+      "processType": "cross_community",
+      "steps": [
+        {
+          "id": "Function:routes/order.ts:submitOrder",
+          "name": "submitOrder",
+          "filePath": "routes/order.ts",
+          "processId": "proc_1_submitorder",
+          "step": 1
+        },
+        {
+          "id": "Function:services/checkout.ts:checkoutOrder",
+          "name": "checkoutOrder",
+          "filePath": "services/checkout.ts",
+          "processId": "proc_1_submitorder",
+          "step": 2
+        },
+        {
+          "id": "Function:services/discount.ts:applyDiscount",
+          "name": "applyDiscount",
+          "filePath": "services/discount.ts",
+          "processId": "proc_1_submitorder",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_2_submitorder",
+      "label": "SubmitOrder → CalculateSubtotal",
+      "heuristicLabel": "SubmitOrder → CalculateSubtotal",
+      "stepCount": 3,
+      "processType": "cross_community",
+      "steps": [
+        {
+          "id": "Function:routes/order.ts:submitOrder",
+          "name": "submitOrder",
+          "filePath": "routes/order.ts",
+          "processId": "proc_2_submitorder",
+          "step": 1
+        },
+        {
+          "id": "Function:services/checkout.ts:checkoutOrder",
+          "name": "checkoutOrder",
+          "filePath": "services/checkout.ts",
+          "processId": "proc_2_submitorder",
+          "step": 2
+        },
+        {
+          "id": "Function:services/pricing.ts:calculateSubtotal",
+          "name": "calculateSubtotal",
+          "filePath": "services/pricing.ts",
+          "processId": "proc_2_submitorder",
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "proc_3_submitorder",
+      "label": "SubmitOrder → CalculateShipping",
+      "heuristicLabel": "SubmitOrder → CalculateShipping",
+      "stepCount": 3,
+      "processType": "cross_community",
+      "steps": [
+        {
+          "id": "Function:routes/order.ts:submitOrder",
+          "name": "submitOrder",
+          "filePath": "routes/order.ts",
+          "processId": "proc_3_submitorder",
+          "step": 1
+        },
+        {
+          "id": "Function:services/checkout.ts:checkoutOrder",
+          "name": "checkoutOrder",
+          "filePath": "services/checkout.ts",
+          "processId": "proc_3_submitorder",
+          "step": 2
+        },
+        {
+          "id": "Function:services/shipping.ts:calculateShipping",
+          "name": "calculateShipping",
+          "filePath": "services/shipping.ts",
+          "processId": "proc_3_submitorder",
+          "step": 3
+        }
+      ]
+    }
+  ],
+  "changes": {
+    "changedFiles": 1,
+    "changedSymbols": 1,
+    "affectedProcesses": 1,
+    "risk": "medium",
+    "symbol": "calculateShipping",
+    "filePath": "services/shipping.ts",
+    "processId": "proc_3_submitorder",
+    "rawFormat": "cli-text",
+    "rawText": "Changes: 1 files, 1 symbols\nAffected processes: 1\nRisk level: medium\n\nChanged symbols:\n  Function calculateShipping → services/shipping.ts\n\nAffected execution flows:\n  • SubmitOrder → CalculateShipping (3 steps) — changed: calculateShipping\n",
+    "diff": "diff --git a/services/shipping.ts b/services/shipping.ts\nindex 28b417b..5e44e6e 100644\n--- a/services/shipping.ts\n+++ b/services/shipping.ts\n@@ -3,7 +3,7 @@ import type { CartItem, Customer } from \"../types.ts\";\n // All money values are integer cents. Free shipping starts at a 10,000-cent subtotal.\n export function calculateShipping(items: CartItem[], region: Customer[\"region\"]): number {\n   const subtotal = items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);\n-  if (subtotal >= 10000 && region === \"local\") return 0;\n+  if (subtotal >= 12000 && region === \"local\") return 0;\n   const weight = items.reduce((sum, item) => sum + item.weight * item.quantity, 0);\n   return (region === \"remote\" ? 1200 : 500) + Math.max(0, Math.ceil(weight) - 1) * 200;\n }\n",
+    "fixtureRestored": true
+  },
+  "check": {
+    "status": "clean",
+    "enumeration": "complete",
+    "cycleCount": 0,
+    "componentCount": 0,
+    "cycles": []
+  },
+  "commands": [
+    {
+      "name": "showcase-communities",
+      "arguments": [
+        "cypher",
+        "MATCH (c:Community) RETURN c.id AS id, c.label AS label, c.heuristicLabel AS heuristicLabel, c.symbolCount AS symbolCount, c.cohesion AS cohesion ORDER BY c.id",
+        "--limit",
+        "200"
+      ],
+      "exitCode": 0,
+      "seconds": 1.073
+    },
+    {
+      "name": "showcase-memberships",
+      "arguments": [
+        "cypher",
+        "MATCH (n)-[r:CodeRelation]->(c:Community) WHERE r.type = 'MEMBER_OF' RETURN n.id AS id, n.name AS name, n.filePath AS filePath, c.id AS communityId ORDER BY c.id, n.id",
+        "--limit",
+        "200"
+      ],
+      "exitCode": 0,
+      "seconds": 1.157
+    },
+    {
+      "name": "showcase-processes",
+      "arguments": [
+        "cypher",
+        "MATCH (p:Process) RETURN p.id AS id, p.label AS label, p.heuristicLabel AS heuristicLabel, p.stepCount AS stepCount, p.processType AS processType ORDER BY p.id",
+        "--limit",
+        "200"
+      ],
+      "exitCode": 0,
+      "seconds": 1.104
+    },
+    {
+      "name": "showcase-steps",
+      "arguments": [
+        "cypher",
+        "MATCH (n)-[r:CodeRelation]->(p:Process) WHERE r.type = 'STEP_IN_PROCESS' RETURN n.id AS id, n.name AS name, n.filePath AS filePath, p.id AS processId, r.step AS step ORDER BY p.id, r.step",
+        "--limit",
+        "200"
+      ],
+      "exitCode": 0,
+      "seconds": 1.118
+    },
+    {
+      "name": "showcase-relation-types",
+      "arguments": [
+        "cypher",
+        "MATCH ()-[r:CodeRelation]->() RETURN r.type AS type, count(r) AS count ORDER BY count DESC",
+        "--limit",
+        "200"
+      ],
+      "exitCode": 0,
+      "seconds": 1.186
+    },
+    {
+      "name": "showcase-changes",
+      "arguments": [
+        "detect-changes",
+        "--scope",
+        "unstaged"
+      ],
+      "exitCode": 0,
+      "seconds": 1.623
+    },
+    {
+      "name": "showcase-check",
+      "arguments": [
+        "check",
+        "--cycles",
+        "--json"
+      ],
+      "exitCode": 0,
+      "seconds": 1.026
+    }
+  ],
+  "raw": [
+    "references/showcase-communities.json",
+    "references/showcase-memberships.json",
+    "references/showcase-processes.json",
+    "references/showcase-steps.json",
+    "references/showcase-relation-types.json",
+    "references/showcase-changes.json",
+    "references/showcase-check.json"
+  ]
+}

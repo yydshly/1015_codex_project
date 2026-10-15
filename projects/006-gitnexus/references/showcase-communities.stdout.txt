@@ -1,0 +1,4 @@
+{
+  "markdown": "| id | label | heuristicLabel | symbolCount | cohesion |\n| --- | --- | --- | --- | --- |\n| comm_0 | Routes | Routes | 2 | 0.6666666666666666 |\n| comm_1 | Services | Services | 6 | 0.875 |\n| comm_2 | Services | Services | 2 | 0.6666666666666666 |\n| comm_3 | Cluster_3 | Cluster_3 | 2 | 1 |",
+  "row_count": 4
+}

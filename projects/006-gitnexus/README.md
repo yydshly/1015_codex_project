@@ -18,7 +18,8 @@ GitNexus 从源码提取符号和跨文件关系，建立可持久查询的代�
 
 ## 网页内容
 
-- **能力**：context、impact、trace、query、detect_changes、rename 的用途，后两项只说明能力，没有执行改写或 diff 实验。
+- **能力效果展厅**：模块分组、流程展开、符号上下文、影响层级、搜索结果、路径追踪、变更检查七种真实结果回放。可选择流程、筛选命中、展开全图类型及原始 diff。
+- **能力清单**：标明已实跑、待实测和扩展条件，覆盖 rename、API / 工具关联、PDG、多仓库及 Wiki / AI 问答。
 - **原理**：语法解析、跨文件绑定、LadybugDB 图谱、Leiden 分组与候选流程、混合搜索、MCP 输出六步切换。中间结构明确为教学示意。
 - **实际效果**：真实 Function / CALLS 业务子图，点击符号展开邻居、反向调用范围或入口路径，并打开对应源码。
 - **证据**：真实指标、检查项、查询 JSON、复现命令与失败边界。浏览器交互静态回放已提取关系，没有启动在线分析服务。
@@ -72,3 +73,23 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 [桌面对照预览](assets/comparison-desktop.jpg) · [手机任务切换](assets/comparison-mobile.jpg) · [11项交互与响应式检查](assets/comparison-verification.json) · [完整对比](comparison.md)
 
 对比扩展内容提交 `43509b6` 已通过 [Pages任务38754225542](https://github.com/yydshly/1015_codex_project/actions/runs/38754225542) 发布；线上16项资源检查与四种任务切换通过，手机无页面溢出和脚本错误。[线上对比验证](assets/comparison-deployed-browser.json)。
+
+## 能力效果展厅
+
+[直接打开七种效果](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#showcase)。以同一个真实结算样本展示：
+
+| 展示 | 数据与交互 |
+| --- | --- |
+| 模块分组 | 4 个真实 Community、12 个成员；展开 71 节点 / 131 关系的类型构成 |
+| 流程展开 | 在 4 条 Process 中切换，按真实 STEP_IN_PROCESS 展开 3 或 4 步 |
+| 符号上下文 | calculateShipping 的源码、2 个直接调用者和流程参与 |
+| 影响层级 | 完整回放 impact 的 4 个返回项，包含 verify.ts 文件 |
+| 搜索结果 | 4 流程 + 1 流程符号 + 13 定义；只过滤本次保存结果 |
+| 路径追踪 | submitOrder → checkoutOrder → saveOrder，2 跳 |
+| 变更检查 | 免邮门槛 100 → 120 元的真实 diff；1 文件、1 符号、1 流程，medium；附完整循环导入检查，结果 0 |
+
+新增采集使用既有隔离索引，没有重新 analyze；只在临时样本中改变一个阈值，在 finally 中恢复原字节。数据库保存基线，detect_changes 读取未提交差异。CLI 的变更报告原本是文本，按原格式保存；showcase.json 是展示投影，不伪装成上游 JSON。4 条流程的相邻步骤均与原业务 CALLS 边核对。
+
+复现及原始材料：[补充运行说明](references/showcase-report.md) · [展示数据](web/assets/showcase.json) · [采集脚本](src/collect-showcase.py) · [转换脚本](src/publish-showcase.py)。页面视图为原创呈现，公开站点静态回放；官方 Web UI 与本地 CLI / MCP 的入口另列于页面。
+
+本地 25 项交互 / 响应式检查通过，包含七种视图、四条流程、18 项真实搜索结果与筛选、原始 diff、键盘 Home / End，以及 390px / 320px 布局；没有控制台错误。[浏览器检查](assets/showcase-verification.json) · [效果预览](assets/showcase-desktop.jpg)。

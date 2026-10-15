@@ -1,0 +1,4 @@
+{
+  "markdown": "| type | count |\n| --- | --- |\n| DEFINES | 29 |\n| IMPORTS | 21 |\n| HAS_PROPERTY | 19 |\n| STEP_IN_PROCESS | 13 |\n| CALLS | 13 |\n| ACCESSES | 13 |\n| MEMBER_OF | 12 |\n| CONTAINS | 9 |\n| USES | 1 |\n| IMPLEMENTS | 1 |",
+  "row_count": 10
+}

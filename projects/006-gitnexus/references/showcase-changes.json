@@ -1,0 +1,4 @@
+{
+  "format": "cli-text",
+  "text": "Changes: 1 files, 1 symbols\nAffected processes: 1\nRisk level: medium\n\nChanged symbols:\n  Function calculateShipping → services/shipping.ts\n\nAffected execution flows:\n  • SubmitOrder → CalculateShipping (3 steps) — changed: calculateShipping\n"
+}
