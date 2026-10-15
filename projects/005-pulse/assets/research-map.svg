@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2530" viewBox="0 0 1800 2530">
+<title>Pulse：本地 Agent 用量统计与产品实现参考</title>
+<desc>完整列出54类用量来源、验证程度、采集方式、模型归因与计费机制，以及可参考的产品模块。</desc>
+<rect width="1800" height="2530" fill="#F5F7FB"/>
+<text x="72" y="59" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="55" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">Pulse 的价值：本地 Agent 用量统计</text>
+<text x="72" y="143" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">识别模型与用量  →  统一记账  →  为类似产品提供实现参考</text>
+<text x="72" y="193" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">qunqin24 / Pulse  ·  本图聚焦用量统计；原产品另有账号额度监控</text>
+<rect x="72" y="247" width="1656" height="103" rx="16" fill="#E7EEFC"/>
+<text x="98" y="270" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="700" fill="#245BBD" dominant-baseline="text-before-edge">核心能力</text>
+<text x="250" y="267" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">把多个 Agent 的分散记录，整理成逐模型的 Token 与估算费用账本</text>
+<text x="250" y="310" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">模型名与计数来自客户端记录；配置用于定位或鉴权，钩子与接口按来源补充。</text>
+<rect x="72" y="390" width="46" height="42" rx="10" fill="#245BBD"/>
+<text x="86" y="396" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" dominant-baseline="text-before-edge">01</text>
+<text x="134" y="389" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="34" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">支持哪些 Agent / 来源？</text>
+<text x="1038" y="400" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">54 类目录来源  =  7 个原有读取器 + 47 个新增适配</text>
+<rect x="72" y="454" width="1656" height="54" rx="10" fill="#E8EDF5"/>
+<text x="94" y="467" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#56657A" dominant-baseline="text-before-edge">目录分组 / 验证程度</text>
+<text x="387" y="467" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#56657A" dominant-baseline="text-before-edge">包含的 Agent / 来源（完整 54 类）</text>
+<text x="1270" y="467" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#56657A" dominant-baseline="text-before-edge">对应技术读取方式</text>
+<rect x="72" y="508" width="1656" height="106" rx="0" fill="#FFFFFF"/>
+<text x="94" y="531" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">原有读取器 · 7</text>
+<text x="94" y="569" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#127B69" dominant-baseline="text-before-edge">实机记录验证</text>
+<text x="387" y="530" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">Claude Code · Codex · OpenCode · Kilo CLI · Grok · Kimi CLI · Devin</text>
+<text x="1270" y="532" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">会话 JSONL / SQLite 数据库</text>
+<text x="1270" y="566" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">读取模型标识与真实 usage 计数</text>
+<path d="M72 614 L1728 614" fill="none" stroke="#DDE4EE" stroke-width="2"/>
+<rect x="72" y="614" width="1656" height="116" rx="0" fill="#F0F3F8"/>
+<text x="94" y="637" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">A · 会话日志 · 10</text>
+<text x="94" y="675" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">格式适配</text>
+<text x="387" y="636" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">Pi · omp · Senpi · Kimchi · Prime Agent · Gemini CLI · Qwen · Amp</text>
+<text x="387" y="671" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">Droid · OpenClaw</text>
+<text x="1270" y="638" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">会话 JSON / JSONL / 部分 SQLite</text>
+<text x="1270" y="672" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">解析 model、usage、tokens 等字段</text>
+<path d="M72 730 L1728 730" fill="none" stroke="#DDE4EE" stroke-width="2"/>
+<rect x="72" y="730" width="1656" height="116" rx="0" fill="#FFFFFF"/>
+<text x="94" y="753" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">B · 编辑器日志 · 9</text>
+<text x="94" y="791" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">格式适配</text>
+<text x="387" y="752" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">Roo Code · Kilo Code · Cline · CodeBuddy · WorkBuddy · Cherry Studio</text>
+<text x="387" y="787" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">Command Code · OpenCodeReview · ZCode</text>
+<text x="1270" y="754" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">任务日志 / 消息 JSON / 会话记录</text>
+<text x="1270" y="788" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">按消息或请求 ID 合并重复快照</text>
+<path d="M72 846 L1728 846" fill="none" stroke="#DDE4EE" stroke-width="2"/>
+<rect x="72" y="846" width="1656" height="116" rx="0" fill="#F0F3F8"/>
+<text x="94" y="869" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">C · 数据库 / 事件 · 10</text>
+<text x="94" y="907" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">格式适配</text>
+<text x="387" y="868" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">Hermes · Goose · Zed · Kiro · Crush* · Unsloth · Antigravity CLI</text>
+<text x="387" y="903" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">Antigravity IDE · Micode · Devin Desktop</text>
+<text x="1270" y="870" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">SQLite / JSON / NDJSON / 压缩记录</text>
+<text x="1270" y="904" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">按已知字段解码；部分仅会话汇总</text>
+<path d="M72 962 L1728 962" fill="none" stroke="#DDE4EE" stroke-width="2"/>
+<rect x="72" y="962" width="1656" height="116" rx="0" fill="#FFFFFF"/>
+<text x="94" y="985" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">D · 结构化记录 · 11</text>
+<text x="94" y="1023" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">格式适配</text>
+<text x="387" y="984" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">Mux · Codebuff · Freebuff* · Jcode · Augment · GJC · Junie · DSH · Fx</text>
+<text x="387" y="1019" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">LM Studio · Reasonix</text>
+<text x="1270" y="986" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">各产品自己的 usage 文件或日志</text>
+<text x="1270" y="1020" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">每种格式单独适配计数口径</text>
+<path d="M72 1078 L1728 1078" fill="none" stroke="#DDE4EE" stroke-width="2"/>
+<rect x="72" y="1078" width="1656" height="106" rx="0" fill="#F0F3F8"/>
+<text x="94" y="1101" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">E · 导出 / 捕获 · 6</text>
+<text x="94" y="1139" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">需预先导出或捕获</text>
+<text x="387" y="1100" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">Cursor · Antigravity（导出） · Trae · Warp* · Hindsight · Mcode</text>
+<text x="1270" y="1102" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">JSON / CSV / JSONL 缓存或导入文件</text>
+<text x="1270" y="1136" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">本统计通道本身不负责登录或抓取</text>
+<path d="M72 1184 L1728 1184" fill="none" stroke="#DDE4EE" stroke-width="2"/>
+<rect x="72" y="1184" width="1656" height="94" rx="0" fill="#FFFFFF"/>
+<text x="94" y="1207" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">F · Copilot · 1</text>
+<text x="94" y="1245" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">格式适配</text>
+<text x="387" y="1206" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#172338" dominant-baseline="text-before-edge">GitHub Copilot</text>
+<text x="1270" y="1208" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">OTEL → Desktop SQLite → VS Code</text>
+<text x="1270" y="1242" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">按来源优先级与事件身份排重</text>
+<path d="M72 1278 L1728 1278" fill="none" stroke="#DDE4EE" stroke-width="2"/>
+<text x="82" y="1298" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">* Crush、Warp：仅金额 / 请求，无 Token 统计；Freebuff：仅估算记录，不报告真实 Token。</text>
+<text x="82" y="1335" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">其余 47 类不具备与前 7 个相同的实机验证级别；部分计数不完整。目录识别 ≠ 每类都能完整统计。</text>
+<rect x="72" y="1396" width="46" height="42" rx="10" fill="#245BBD"/>
+<text x="86" y="1402" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" dominant-baseline="text-before-edge">02</text>
+<text x="134" y="1395" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="34" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">统计原理与关键技术</text>
+<rect x="72" y="1465" width="384" height="147" rx="16" fill="#FFFFFF" stroke="#DDE4EE"/>
+<text x="94" y="1486" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#245BBD" dominant-baseline="text-before-edge">读取与归因</text>
+<text x="94" y="1533" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">找到模型 ID + usage</text>
+<text x="94" y="1566" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">从原始日志 / 数据库取数</text>
+<path d="M463 1538 L478 1538" fill="none" stroke="#245BBD" stroke-width="3"/>
+<polygon points="477,1531 488,1538 477,1545" fill="#245BBD"/>
+<rect x="496" y="1465" width="384" height="147" rx="16" fill="#FFFFFF" stroke="#DDE4EE"/>
+<text x="518" y="1486" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#245BBD" dominant-baseline="text-before-edge">统一数据</text>
+<text x="518" y="1533" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">时间 · Agent · 模型 · 会话</text>
+<text x="518" y="1566" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">普通输入 / 输出 / 缓存读写</text>
+<path d="M887 1538 L902 1538" fill="none" stroke="#245BBD" stroke-width="3"/>
+<polygon points="901,1531 912,1538 901,1545" fill="#245BBD"/>
+<rect x="920" y="1465" width="384" height="147" rx="16" fill="#FFFFFF" stroke="#DDE4EE"/>
+<text x="942" y="1486" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#245BBD" dominant-baseline="text-before-edge">校正计数</text>
+<text x="942" y="1533" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">累计值差分 · 消息 ID 去重</text>
+<text x="942" y="1566" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">处理分叉复制与缓存重叠</text>
+<path d="M1311 1538 L1326 1538" fill="none" stroke="#245BBD" stroke-width="3"/>
+<polygon points="1325,1531 1336,1538 1325,1545" fill="#245BBD"/>
+<rect x="1344" y="1465" width="384" height="147" rx="16" fill="#FFFFFF" stroke="#DDE4EE"/>
+<text x="1366" y="1486" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#245BBD" dominant-baseline="text-before-edge">汇总与输出</text>
+<text x="1366" y="1533" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">按模型 / Agent / 项目 / 日期</text>
+<text x="1366" y="1566" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">生成 Token / 估算费用报表</text>
+<rect x="72" y="1646" width="536" height="168" rx="12" fill="#EAF0FA"/>
+<text x="95" y="1666" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">Claude Code</text>
+<text x="95" y="1712" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">message.model + message.usage</text>
+<text x="95" y="1743" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">同一 message.id 保留最终计数</text>
+<text x="95" y="1774" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">读取器：UsageLedger.swift</text>
+<rect x="632" y="1646" width="536" height="168" rx="12" fill="#EAF0FA"/>
+<text x="655" y="1666" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">Codex</text>
+<text x="655" y="1712" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">payload.model + total_token_usage</text>
+<text x="655" y="1743" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">相邻累计值做差；缓存从输入拆出</text>
+<text x="655" y="1774" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">读取器：UsageLedger.swift</text>
+<rect x="1192" y="1646" width="536" height="168" rx="12" fill="#EAF0FA"/>
+<text x="1215" y="1666" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">Cursor</text>
+<text x="1215" y="1712" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">导出事件的 model + Token 字段</text>
+<text x="1215" y="1743" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">需已有导出，按 JSON / CSV 计数</text>
+<text x="1215" y="1774" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">读取器：CapturedCursorReader.swift</text>
+<rect x="72" y="1844" width="1656" height="120" rx="16" fill="#E5F2ED"/>
+<text x="97" y="1866" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#127B69" dominant-baseline="text-before-edge">费用估算</text>
+<text x="270" y="1865" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">各类 Token × 对应模型单价 ÷ 1,000,000 → API 等价费用</text>
+<text x="270" y="1911" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">ModelPrices / models.dev：匹配模型与别名，区分缓存与部分阶梯价；未知价格保留为未定价。</text>
+<rect x="72" y="2012" width="46" height="42" rx="10" fill="#245BBD"/>
+<text x="86" y="2018" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" dominant-baseline="text-before-edge">03</text>
+<text x="134" y="2011" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="34" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">对我的价值：参考实现自己的本地用量统计产品</text>
+<rect x="72" y="2082" width="1656" height="213" rx="16" fill="#FFFFFF" stroke="#DDE4EE"/>
+<text x="99" y="2107" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700" fill="#245BBD" dominant-baseline="text-before-edge">值得复用的实现思路</text>
+<text x="99" y="2155" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">来源适配器 → 标准用量记录 → 差分与去重 → 模型价格匹配 → 聚合统计 / API</text>
+<text x="99" y="2212" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">先接入 Codex、Claude Code，把计数算准；再扩展 Agent、费用报表和 Windows / WSL 数据路径。</text>
+<text x="99" y="2254" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">可用于命令行、网页看板或自己的应用；可以独立于 Pulse 的桌面界面实现。</text>
+<path d="M72 2330 L1728 2330" fill="none" stroke="#DDE4EE" stroke-width="2"/>
+<text x="72" y="2357" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#172338" dominant-baseline="text-before-edge">统计边界</text>
+<text x="218" y="2357" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">只覆盖可读取的本地或导入记录；记录中的模型名不证明真实后端路由；估算费用不等于订阅扣费。</text>
+<text x="72" y="2405" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">依据：Docs/token-spend-sources.md · UsageLedger.swift · AgentUsageRecord.swift · ModelPrices.swift</text>
+<text x="72" y="2445" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#56657A" dominant-baseline="text-before-edge">来源：github.com/qunqin24/Pulse  ｜  2026-10-15 核对上游文档与源码</text>
+</svg>

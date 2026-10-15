@@ -30,6 +30,21 @@
       ],
       "cover": "assets/research-map.png",
       "demo_url": "https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/"
+    },
+    {
+      "id": 5,
+      "slug": "pulse",
+      "name": "Pulse 本地 Agent 用量统计研究",
+      "repository": "https://github.com/qunqin24/Pulse",
+      "summary": "读取多种 Agent 的本地日志、数据库与导出记录，校正累计值和重复消息，按模型归集 Token 与 API 等价费用；为自建用量统计模块提供采集、归因、计价和扩展参考。",
+      "status": "completed",
+      "tags": [
+        "Agent 用量",
+        "模型统计",
+        "产品参考"
+      ],
+      "cover": "assets/research-map.png",
+      "demo_url": ""
     }
   ]
 }

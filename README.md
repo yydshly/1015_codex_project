@@ -14,12 +14,13 @@
 
 <!-- PROJECTS:START -->
 
-已收录 **2** 个项目，按收录编号升序展示。
+已收录 **3** 个项目，按收录编号升序展示。
 
 | 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |
 | --- | --- | --- | --- | --- | --- |
 | 001 | [AetherViz Master 课件生成规范研究](projects/001-aetherviz-master/README.md) | [aetherviz-master](https://github.com/andyhuo520/aetherviz-master) | 通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可按知识顺序组织为系列课程。 | 已完成 | [研究](projects/001-aetherviz-master/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html) |
 | 002 | [image-blaster 图生三维工作流研究](projects/002-image-blaster/README.md) | [image-blaster](https://github.com/neilsonnn/image-blaster) | 将场景图拆成背景、独立物体与声音，借助外部模型生成并组装三维场景；价值在资产解耦、请求恢复和局部返工，可扩展自动布局与质量验收。 | 已完成 | [研究](projects/002-image-blaster/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/) |
+| 005 | [Pulse 本地 Agent 用量统计研究](projects/005-pulse/README.md) | [Pulse](https://github.com/qunqin24/Pulse) | 读取多种 Agent 的本地日志、数据库与导出记录，校正累计值和重复消息，按模型归集 Token 与 API 等价费用；为自建用量统计模块提供采集、归因、计价和扩展参考。 | 已完成 | [研究](projects/005-pulse/README.md) |
 
 ### 项目预览
 
@@ -39,6 +40,14 @@
 
 标签：图生3D · AI工作流 · 源码研究
 
+#### 005 · Pulse 本地 Agent 用量统计研究
+
+[![Pulse 本地 Agent 用量统计研究 项目预览](projects/005-pulse/assets/research-map.png)](projects/005-pulse/README.md)
+
+读取多种 Agent 的本地日志、数据库与导出记录，校正累计值和重复消息，按模型归集 Token 与 API 等价费用；为自建用量统计模块提供采集、归因、计价和扩展参考。
+
+标签：Agent 用量 · 模型统计 · 产品参考
+
 <!-- PROJECTS:END -->
 
 ## 001 · aetherviz-master：课件生成与系列课程
@@ -54,6 +63,12 @@
 源库：[image-blaster](https://github.com/neilsonnn/image-blaster)。它先理解和拆分场景图，再借助外部模型分别生成静态环境、独立物体与声音，最后组合并人工调整布局。
 
 Claude Code 按技能规范调度，脚本记录请求和本地资产；价值在资产解耦、请求恢复与局部返工。可扩展质量验收、辅助布局、成本面板与混合建模，这些方向尚未实现。上方使用我们生成的能力全景引导图，详细分析见[在线研究与演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/)及[完整研究](projects/002-image-blaster/README.md)。
+
+## 005 · Pulse：本地 Agent 用量统计与产品参考
+
+源库：[qunqin24/Pulse](https://github.com/qunqin24/Pulse)。读取 Agent 的本地日志、数据库或已有导出，提取模型与 Token 计数，处理累计差分、消息去重、会话分叉及缓存重叠，再按模型价格估算 API 等价费用。原应用另有账号额度监控。
+
+价值是为自建统计模块提供来源适配、标准记录、计数校正与聚合查询参考。可扩展 Windows / WSL、增量采集、账号归因与账单对照。采用本次生成的引导图，完整列出 54 类来源并标注验证与导出限制，详见[完整研究](projects/005-pulse/README.md)。
 
 ## 新增一个研究项目
 

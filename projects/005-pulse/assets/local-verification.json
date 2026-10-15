@@ -1,0 +1,14 @@
+{
+  "page": "http://127.0.0.1:8085/projects/005-pulse/overview.html",
+  "checks": {
+    "static_content_and_guide": "54 catalog rows; original 1800px image rendered",
+    "catalog_filters": "7 machine / 41 spec / 6 export / 3 no-token; search and empty state",
+    "synthetic_ledger": "repeat contributes zero; A=400/600/100, B=300/300/80 after model switch",
+    "guide_dialog": "opens, renders and closes with Escape",
+    "relative_links_and_image_hash": "13 relative resources/documents respond 200; guide hash matches original",
+    "mobile": "390px viewport: no body overflow; source filter and guide dialog work",
+    "narrow_320px": "no horizontal page overflow"
+  },
+  "errors": [],
+  "responses": []
+}

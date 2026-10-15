@@ -1,0 +1,79 @@
+{
+  "repository": "https://github.com/qunqin24/Pulse",
+  "commit": "b3bf083c539310d57d82cd4e808cb37b2ffbfcc4",
+  "commit_date": "2026-10-14T02:24:43Z",
+  "checked_on": "2026-10-15",
+  "license": "Apache-2.0",
+  "scope": "文档与源码研究；未在 macOS 运行 Pulse，未验证全部 Agent 的真实客户端记录。",
+  "sources": [
+    {
+      "title": "总览",
+      "path": "README.zh-CN.md",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/README.zh-CN.md"
+    },
+    {
+      "title": "支持目录",
+      "path": "Docs/token-spend-sources.md",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Docs/token-spend-sources.md"
+    },
+    {
+      "title": "统计规则",
+      "path": "Docs/token-spend.md",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Docs/token-spend.md"
+    },
+    {
+      "title": "刷新与缓存",
+      "path": "Docs/refresh-and-data.md",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Docs/refresh-and-data.md"
+    },
+    {
+      "title": "模型与计数解析",
+      "path": "Sources/Pulse/Usage/UsageLedger.swift",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Sources/Pulse/Usage/UsageLedger.swift"
+    },
+    {
+      "title": "标准记录",
+      "path": "Sources/Pulse/Usage/AgentUsageRecord.swift",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Sources/Pulse/Usage/AgentUsageRecord.swift"
+    },
+    {
+      "title": "模型价格",
+      "path": "Sources/Pulse/Usage/ModelPrices.swift",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Sources/Pulse/Usage/ModelPrices.swift"
+    },
+    {
+      "title": "模型价格查找",
+      "path": "Sources/Pulse/Usage/ModelPriceLookup.swift",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Sources/Pulse/Usage/ModelPriceLookup.swift"
+    },
+    {
+      "title": "模型统计汇总",
+      "path": "Sources/Pulse/Usage/ModelSpendSummary.swift",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Sources/Pulse/Usage/ModelSpendSummary.swift"
+    },
+    {
+      "title": "Cursor 导出解析",
+      "path": "Sources/Pulse/Usage/Readers/CapturedCursorReader.swift",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Sources/Pulse/Usage/Readers/CapturedCursorReader.swift"
+    },
+    {
+      "title": "OpenCode 数据库",
+      "path": "Sources/Pulse/Usage/OpenCodeStore.swift",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Sources/Pulse/Usage/OpenCodeStore.swift"
+    },
+    {
+      "title": "Agent 目录",
+      "path": "Sources/Pulse/Usage/SpendAgent.swift",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Sources/Pulse/Usage/SpendAgent.swift"
+    },
+    {
+      "title": "模型身份边界",
+      "path": "Docs/providers/codex.md",
+      "url": "https://github.com/qunqin24/Pulse/blob/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4/Docs/providers/codex.md"
+    }
+  ],
+  "guide": {
+    "origin": "本次对话生成的研究概览图，原样使用",
+    "sha256": "4527168a27d548897457b59abca3cd4dc125c032844e54fcb61f41bc78efe834"
+  }
+}
