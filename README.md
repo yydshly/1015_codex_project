@@ -14,9 +14,31 @@
 
 <!-- PROJECTS:START -->
 
-暂无已收录项目。首个研究项目将从 **001** 开始；使用下方命令创建后，这里会自动展示有序索引与预览图。
+已收录 **1** 个项目，按收录编号升序展示。
+
+| 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |
+| --- | --- | --- | --- | --- | --- |
+| 001 | [AetherViz Master 课件生成规范研究](projects/001-aetherviz-master/README.md) | [aetherviz-master](https://github.com/andyhuo520/aetherviz-master) | 通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可按知识顺序组织为系列课程。 | 已完成 | [研究](projects/001-aetherviz-master/README.md) |
+
+### 项目预览
+
+#### 001 · AetherViz Master 课件生成规范研究
+
+[![AetherViz Master 课件生成规范研究 项目预览](projects/001-aetherviz-master/assets/research-map.jpg)](projects/001-aetherviz-master/README.md)
+
+通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可按知识顺序组织为系列课程。
+
+标签：AI Skill · 教育可视化 · Three.js
 
 <!-- PROJECTS:END -->
+
+## 001 · aetherviz-master：课件生成与系列课程
+
+源库：[aetherviz-master](https://github.com/andyhuo520/aetherviz-master)。它通过提示词规范指导 AI 生成生物、物理、化学等学科的互动课件，把文字知识转为动画、参数操作、图表与解释。
+
+其原理是“教学主题 → 外部 AI 按 Skill 编写网页 → 浏览器运行课件”。规范整理了教学结构、渲染选型、视觉与交互要求；可以按知识顺序逐课生成、统一风格并组织成系列课程，课程编排、练习和科学审核需另行设计。
+
+上方引导图汇总了能力、原理、三个研究案例与扩展路线，并区分上游已有、本研究补充和未来设想。详见[研究总览](projects/001-aetherviz-master/web/overview.html)与[完整研究](projects/001-aetherviz-master/README.md)。
 
 ## 新增一个研究项目
 

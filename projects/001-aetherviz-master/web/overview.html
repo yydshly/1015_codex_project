@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一张图读懂 AetherViz Master：实际交付、生成与运行原理、研究案例、适用方向、系列课程扩展和证据边界。">
+  <title>AetherViz Master · 研究总览图</title>
+  <script>if(new URLSearchParams(location.search).has('poster'))document.documentElement.classList.add('poster');</script>
+  <link rel="stylesheet" href="overview.css">
+</head>
+<body>
+  <a class="skip" href="#research-map">跳到研究总览</a>
+  <header class="toolbar">
+    <a class="wordmark" href="index.html#molecule">A<span>✳</span> <strong>AetherViz</strong><small>研究项目 / 001</small></a>
+    <nav aria-label="总览操作"><a class="source-repo" href="https://github.com/andyhuo520/aetherviz-master" target="_blank" rel="noreferrer">源库：aetherviz-master ↗</a><a href="index.html#newton">进入演示 ↗</a><a href="assets/overview/research-map.jpg" download="AetherViz-研究总览.jpg" class="download">保存整张图 ↓</a><button id="print-map" type="button">打印 / PDF</button></nav>
+  </header>
+
+  <main class="research-map" id="research-map">
+    <section class="hero" aria-labelledby="map-title">
+      <div class="hero-top"><span>GITHUB RESEARCH LAB / 001</span><span>研究版本 v5.0 · a1c005f · 2026.10.15</span></div>
+      <div class="hero-body"><div><p class="kicker">从“让知识动起来”，到看清它真正提供什么</p><h1 id="map-title">一张图读懂<br><em>AetherViz Master</em></h1><p class="hero-summary">通过提示词规范指导 AI，将生物、物理、化学等知识转成互动课件，并可按知识顺序组织为系列课程。</p></div><div class="core-diagram" aria-label="知识经规范和外部 AI，形成互动课件"><div class="concept">知识文字<span>概念 · 关系 · 过程</span></div><div class="connector">↓</div><div class="core">生成规范 <b>＋</b> 外部 AI<span>提出要求　／　理解、建模、写代码</span></div><div class="connector">↓</div><div class="concept result">互动课件<span>动画 · 参数 · 图表 · 解释</span></div></div></div>
+      <div class="hero-verdict"><strong>我们的判断</strong><span>现有价值：可复用的课件生成规范。可在此基础上编排系列课程；课程体系与审校仍需另外建设，实际增益尚未验证。</span></div>
+    </section>
+
+    <div class="map-body">
+      <div class="legend" aria-label="贡献与证据图例"><span><i class="dot upstream"></i>上游已有：生成要求与片段</span><span><i class="dot study"></i>本研究补充：可运行案例</span><span><i class="dot future"></i>未来可扩展：尚未实现</span></div>
+
+      <section class="map-section" aria-labelledby="delivery-title">
+        <div class="section-heading"><span class="section-index">01</span><div><p class="eyebrow">WHAT IS ACTUALLY DELIVERED</p><h2 id="delivery-title">先分清：规范、生成能力和课件，分别由谁提供</h2></div></div>
+        <div class="ownership-grid">
+          <article class="ownership upstream-card"><span class="tag upstream-tag">上游已有</span><h3>一份结构化提示模板</h3><p>固定研究版本的文件树包含 README、SKILL.md、LICENSE。核心是生成规范，附样式与实现片段。</p><ul><li>教学目标、公式、原理、小测验</li><li>Three.js / SVG / 混合渲染选型</li><li>配色、布局、控件、输出格式</li></ul><div class="card-note">规范可以复用；实际执行依赖外部 AI。</div></article>
+          <article class="ownership external-card"><span class="tag neutral-tag">外部 AI 与浏览器</span><h3>理解、建模、编写、运行</h3><p>AI 根据主题与规范选择表示方式、编写代码；生成的 JavaScript 处理参数、模型和动画。</p><ul><li>AI 的知识与代码能力来自外部模型</li><li>浏览器与图形库承担绘制</li><li>学科方程和边界需逐题实现</li></ul><div class="card-note">规范中的“要求”需要落实成代码。</div></article>
+          <article class="ownership study-card"><span class="tag study-tag">本研究补充</span><h3>三个自行实现的原型</h3><p>力与碰撞、正弦函数、水分子，加入直接操作、参数联动、过程回看和模型检查。</p><ul><li>碰撞、摩擦、动量与能量核算</li><li>慢速分阶段讲解和回放</li><li>数值检查、截图与体验复查</li></ul><div class="card-note">这些功能不能直接归为上游自带能力。</div></article>
+        </div>
+      </section>
+
+      <section class="map-section" aria-labelledby="mechanism-title">
+        <div class="section-heading"><span class="section-index">02</span><div><p class="eyebrow">HOW GENERATION & RUNTIME WORK</p><h2 id="mechanism-title">实现原理：生成时读规范，运行时靠模型与代码</h2></div></div>
+        <div class="generation-flow" aria-label="生成阶段五个步骤">
+          <div class="flow-node"><span>输入</span><h3>教学主题</h3><p>学什么？面向谁？<br>需要说明什么关系？</p></div><b class="flow-arrow" aria-hidden="true">→</b>
+          <div class="flow-node upstream-node"><span>上游提供</span><h3>Skill 约束</h3><p>教学结构、技术选型<br>交互、视觉、输出要求</p></div><b class="flow-arrow" aria-hidden="true">→</b>
+          <div class="flow-node"><span>外部模型执行</span><h3>AI 理解与编写</h3><p>选概念、公式、几何<br>实现状态与事件逻辑</p></div><b class="flow-arrow" aria-hidden="true">→</b>
+          <div class="flow-node"><span>生成产物</span><h3>网页代码</h3><p>HTML / CSS / JS<br>原规范要求单 HTML</p></div><b class="flow-arrow" aria-hidden="true">→</b>
+          <div class="flow-node"><span>用户体验</span><h3>浏览器课件</h3><p>观察、调参、回看<br>结合解释理解知识</p></div>
+        </div>
+        <div class="runtime-strip"><strong>课件运行循环</strong><span>操作控件</span><b>→</b><span>更新参数 / 时间</span><b>→</b><span>模型计算</span><b>→</b><span>图形、读数、解释同步</span><b>↺</b><small>本研究页面运行时无 AI 请求</small></div>
+        <div class="mechanism-detail"><div><h3>“自动适配”如何实现？</h3><p>Skill 给出关键词判断示例：运动、分子等倾向 Three.js；函数、曲线等倾向 SVG；牛顿、能量等倾向混合模式。它是交给 AI 的规则与片段，具体选择逻辑仍需落实。</p></div><div><h3>不同技术各负责什么？</h3><p><strong>Three.js</strong> 画三维；<strong>SVG / 可选 D3</strong> 画二维图表；<strong>KaTeX</strong> 排公式；<strong>CSS / Tailwind</strong> 管布局；<strong>JavaScript</strong> 实现模型、控制与同步。绘制能力不等于科学求解能力。</p></div></div>
+        <p class="implementation-note">研究实现差异：上游规定 CDN 与单 HTML，本研究使用本地依赖与拆分文件；上游建议欧拉 / Verlet 积分，碰撞原型另行采用分段解析计算。</p>
+      </section>
+
+      <section class="map-section" aria-labelledby="value-title">
+        <div class="section-heading"><span class="section-index">03</span><div><p class="eyebrow">VALUE BEYOND A SIMPLE PROMPT</p><h2 id="value-title">相比直接写提示词，增量来自“整理与复用”</h2></div></div>
+        <div class="value-comparison"><div class="value-gains"><h3>相对一句“把知识生成动画”</h3><div class="gain-grid"><div><b>少遗漏</b><span>提前列出目标、解释、公式和测验</span></div><div><b>有默认方案</b><span>给出渲染、控件、布局和配色参考</span></div><div><b>易于复用</b><span>换主题时继续沿用同一制作清单</span></div><div><b>便于协作</b><span>让不同制作者依据共同要求交付</span></div></div></div><div class="value-limit"><h3>相对同等完整的自写提示词</h3><p>未提供额外的核心生成能力。能否省时、减少错误或提高质量，需要同模型、同主题的对照验证。</p><strong>已有价值是要求的整理；增益大小尚未测量。</strong><p class="small-note">“统一要求”是规范本身的属性，“稳定产出好课件”仍是待验证的结果。</p></div></div>
+      </section>
+
+      <section class="map-section" aria-labelledby="examples-title">
+        <div class="section-heading"><span class="section-index">04</span><div><p class="eyebrow">RUNNING EXAMPLES / BUILT IN THIS STUDY</p><h2 id="examples-title">三个真实案例：看得到、调得动，也要说清模型边界</h2></div><span class="tag study-tag section-tag">截图来自本研究运行页面</span></div>
+        <div class="example-grid">
+          <article class="example"><a class="example-image" href="index.html#newton" aria-label="打开力与碰撞演示"><img src="assets/overview/collision.jpg" alt="真实碰撞演示关键帧：两辆小车接触，紫色箭头表示方向相反的冲量" width="401" height="320"><span>进入演示 ↗</span></a><div class="example-body"><p class="example-mode">物理 / THREE.JS + SVG</p><h3>推力 → 碰撞 → 最终运动结果</h3><p>调质量、推力、摩擦、恢复系数；观察速度、动量、能量和停稳原因。</p><div class="example-boundary"><b>范围</b> 一维首次碰撞与简化摩擦；瞬时冲量模型不求接触形变或力峰值。</div></div></article>
+          <article class="example"><a class="example-image" href="index.html#sine" aria-label="打开正弦函数演示"><img src="assets/overview/sine.jpg" alt="真实正弦函数演示：旋转向量、投影、函数曲线和原始波形对照" width="401" height="365"><span>进入演示 ↗</span></a><div class="example-body"><p class="example-mode">数学 / SVG</p><h3>参数变化 → 曲线变化</h3><p>调整振幅、频率和相位；直接拖点，观察向量投影与曲线同步。</p><div class="example-boundary"><b>范围</b> 数学函数与扫描展示；播放不代表真实声波或机械振动。</div></div></article>
+          <article class="example"><a class="example-image" href="index.html#molecule" aria-label="打开水分子结构演示"><img src="assets/overview/molecule.jpg" alt="真实水分子结构演示：球棍模型、104.5 度参考键角和原子标签" width="401" height="365"><span>进入演示 ↗</span></a><div class="example-body"><p class="example-mode">化学 / THREE.JS</p><h3>平面文字 → 空间几何</h3><p>旋转、选择原子、拖动氢原子改变键角，与参考结构比较。</p><div class="example-boundary"><b>范围</b> 参考几何与假想构型；未计算化学反应、电子分布或分子能量。</div></div></article>
+        </div>
+        <p class="evidence-note"><strong>案例能说明：</strong>这些展示与交互方式可以实现。<strong>案例尚不能说明：</strong>Skill 的因果增益、任意主题成功率或教学有效性。当前演示的视觉表达与操作负担仍需改进。</p>
+      </section>
+
+      <section class="map-section" aria-labelledby="directions-title">
+        <div class="section-heading"><span class="section-index">05</span><div><p class="eyebrow">WHERE IT CAN BE APPLIED</p><h2 id="directions-title">方向覆盖科学与计算；是否适合，取决于能否清楚建模</h2></div></div>
+        <div class="subject-grid">
+          <div><span>01 / 物理</span><h3>因果与量的变化</h3><p>运动、受力、波动、电磁</p><small>本研究有力学案例</small></div>
+          <div><span>02 / 化学</span><h3>结构与过程示意</h3><p>分子构型、反应步骤</p><small>本研究有分子几何案例</small></div>
+          <div><span>03 / 生物</span><h3>组织与阶段变化</h3><p>细胞分裂、DNA 复制</p><small>上游声明方向，未做案例</small></div>
+          <div><span>04 / 数学</span><h3>关系与几何直觉</h3><p>函数、几何、概率分布</p><small>本研究有正弦函数案例</small></div>
+          <div><span>05 / 天文</span><h3>尺度与相对运动</h3><p>轨道、日月食、空间关系</p><small>上游声明方向，未做案例</small></div>
+          <div><span>06 / 编程</span><h3>状态与执行过程</h3><p>排序、数据结构、算法</p><small>上游声明方向，未做案例</small></div>
+        </div>
+        <div class="use-context"><strong>适用场景</strong><span>教师课堂讲解</span><span>学生自主探索</span><span>科普内容原型</span><span>培训中的流程示意</span><p>优先选择能明确对象、变量、关系和边界的主题；复杂化学反应、细胞机制和高精度仿真需领域模型与专业审校。</p></div>
+      </section>
+
+      <section class="map-section future-section" aria-labelledby="extension-title">
+        <div class="section-heading"><span class="section-index">06</span><div><p class="eyebrow">POTENTIAL VALUE / REQUIRES FURTHER WORK</p><h2 id="extension-title">从单份模板走向系列课程，价值可以怎样扩大？</h2></div><span class="tag future-tag section-tag">以下为扩展设想</span></div>
+        <div class="roadmap"><div><span>已有基础</span><h3>生成规范</h3><p>复用教学、视觉与交互要求</p></div><b aria-hidden="true">→</b><div><span>需要补齐</span><h3>验证过的组件</h3><p>模型、控件、单位、边界与回归检查</p></div><b aria-hidden="true">→</b><div><span>需要补齐</span><h3>课程编排</h3><p>知识顺序、前置要求、练习与难度</p></div><b aria-hidden="true">→</b><div><span>需要补齐</span><h3>质量闭环</h3><p>科学审校、体验验收与生成后修复</p></div><b aria-hidden="true">→</b><div><span>产品方向</span><h3>课程工具 / 平台</h3><p>教师编辑、版本管理、分发与学习记录</p></div></div>
+        <div class="course-example"><div><span class="tag future-tag">系列课程示例 · 尚未制作</span><h3>力与运动：从观察到解释</h3></div><ol><li>运动描述<span>位置与速度</span></li><li>力与加速度<span>F、m、a 关系</span></li><li>摩擦与做功<span>减速与能量</span></li><li>冲量与动量<span>碰前碰后</span></li><li>碰撞类型<span>反弹与粘连</span></li><li>综合探究<span>预测、验证、解释</span></li></ol><p>成体系的课程，还需每课目标、前置知识、统一符号、分层练习、可访问性与教师审核。</p></div>
+        <div class="extension-values"><div><h3>内容价值</h3><p>沉淀经过审核的主题、模型、解释与题目，形成可持续复用的课程资产。</p></div><div><h3>工程价值</h3><p>复用模型与交互组件，建立生成、运行、检查、修复的可追溯流程。</p></div><div><h3>产品价值</h3><p>让教师能编辑、组合和发布课件；学习记录与反馈需要另外建设。</p></div></div>
+      </section>
+
+      <section class="map-section boundary-section" aria-labelledby="boundary-title">
+        <div class="section-heading"><span class="section-index">07</span><div><p class="eyebrow">BOUNDARIES & WHAT TO VERIFY NEXT</p><h2 id="boundary-title">价值成立到哪里，证据就说到哪里</h2></div></div>
+        <div class="boundary-grid"><div><h3>现有交付没有覆盖</h3><ul><li>完整生成服务与自有 AI 模型</li><li>通用学科求解器与科学正确性保证</li><li>成套课程、内容审校和学习管理</li><li>生成后自动验收与修复流水线</li></ul></div><div><h3>尚未验证的结果</h3><ul><li>“任意主题”稳定生成与一次成功率</li><li>所有设备达到 60fps</li><li>比普通提示词更省时或质量更高</li><li>学习者理解程度和学习成效提升</li></ul></div><div class="evaluation"><h3>怎样验证实际增益？</h3><p>同一模型、同一主题，比较简短提示、完整自写提示、该 Skill 三组，保留多次运行记录。</p><p>观察科学错误、首轮可用性、修改次数、总耗时、操作难度与学习者理解。</p><small>这是后续评估方案，本研究尚未开展。</small></div></div>
+        <div class="final-judgment"><span>最终定位</span><p><strong>一份值得参考的科学互动课件生成规范。</strong><br>扩展价值来自正确模型、清楚表达、课程组织和验证流程的持续积累。</p></div>
+      </section>
+
+      <footer class="map-footer"><div><strong>依据与来源</strong><p>以上判断基于固定版本 a1c005f 的上游文件与本研究实现；不将宣传目标视为已验证能力。</p><div class="source-links"><a href="https://github.com/andyhuo520/aetherviz-master/tree/a1c005f86e9aca18e75917bd5eb38f454bd24a68" target="_blank" rel="noreferrer">aetherviz-master · 文件树 ↗</a><a href="https://github.com/andyhuo520/aetherviz-master/blob/a1c005f86e9aca18e75917bd5eb38f454bd24a68/SKILL.md" target="_blank" rel="noreferrer">SKILL.md ↗</a><a href="https://github.com/andyhuo520/aetherviz-master/blob/a1c005f86e9aca18e75917bd5eb38f454bd24a68/README.md" target="_blank" rel="noreferrer">README 声明 ↗</a><a href="../capabilities.md">完整能力分析</a><a href="../THIRD_PARTY.md">第三方来源</a></div></div><div class="footer-stamp">AETHERVIZ / RESEARCH MAP<small>中文研究整理 · 2026-10-15<br>上游 MIT © 2026 andyhu</small></div></footer>
+    </div>
+  </main>
+  <script src="overview.js"></script>
+</body>
+</html>

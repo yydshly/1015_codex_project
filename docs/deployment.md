@@ -39,3 +39,11 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 
 - [GitHub Pages 的站点类型与地址规则](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 - [使用 GitHub Actions 自定义 Pages 发布流程](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
+
+## 001 · aetherviz-master 发布
+
+源库：[aetherviz-master](https://github.com/andyhuo520/aetherviz-master)。通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可编排为系列课程。
+
+`python scripts/build_web.py` 生成 `_site/`。001 的研究入口为 `projects/001-aetherviz-master/overview.html`，互动课件入口为 `projects/001-aetherviz-master/`。总览、下载长图、本地依赖与来源说明一起发布。首次部署完成并验证后，再登记真实演示地址。
+
+`.github/workflows/pages.yml` 在 main 的项目、索引或构建变更时发布，也支持手动触发。只上传 `_site/`；其他项目按各自提交与验证进度接入。

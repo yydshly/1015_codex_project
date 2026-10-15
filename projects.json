@@ -1,4 +1,20 @@
 {
   "schema_version": 1,
-  "projects": []
+  "projects": [
+    {
+      "id": 1,
+      "slug": "aetherviz-master",
+      "name": "AetherViz Master 课件生成规范研究",
+      "repository": "https://github.com/andyhuo520/aetherviz-master",
+      "summary": "通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可按知识顺序组织为系列课程。",
+      "status": "completed",
+      "tags": [
+        "AI Skill",
+        "教育可视化",
+        "Three.js"
+      ],
+      "cover": "assets/research-map.jpg",
+      "demo_url": ""
+    }
+  ]
 }

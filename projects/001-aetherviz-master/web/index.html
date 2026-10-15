@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="通过牛顿第二定律、正弦函数和水分子结构，亲手探索 AetherViz Master 的互动教学能力。">
+  <title>AetherViz · 互动教学实验室</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2311252b'/%3E%3Cpath d='M15 45 32 14 49 45M23 34h18' fill='none' stroke='%2372e8bc' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/katex.min.css">
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script defer src="vendor/three.min.js"></script>
+  <script defer src="vendor/OrbitControls.js"></script>
+  <script defer src="vendor/katex.min.js"></script>
+  <script defer src="models.js?v=4"></script>
+  <script defer src="app.js?v=4"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到实验</a>
+  <aside class="sidebar">
+    <a class="brand" href="#newton"><span class="brand-mark">A<span>✳</span></span><span>AetherViz<small>交 互 教 学 实 验 室</small></span></a>
+    <div class="sidebar-section">EXPLORE / 探索实验</div>
+    <nav aria-label="实验选择">
+      <a href="#newton" data-lesson="newton"><span class="nav-icon">↗</span><span>力与运动<small>加速 · 碰撞 · 停稳</small></span><span class="nav-no">01</span></a>
+      <a href="#sine" data-lesson="sine"><span class="nav-icon">∿</span><span>波形的语言<small>正弦函数</small></span><span class="nav-no">02</span></a>
+      <a href="#molecule" data-lesson="molecule"><span class="nav-icon">⚬</span><span>微观的形状<small>水分子结构</small></span><span class="nav-no">03</span></a>
+    </nav>
+    <div class="sidebar-note"><span class="status-dot"></span> 三个可操作的真实实验<p>改变参数，观察反馈，<br>让抽象原理变得可见。</p></div>
+    <a class="research-overview-link" href="overview.html">一张图读懂这个库 <span>↗</span></a>
+    <button class="about-link" id="about-button">这个库的价值与局限 <span>↗</span></button>
+    <div class="sidebar-footer">GITHUB RESEARCH LAB<small>001 / AETHERVIZ MASTER</small></div>
+  </aside>
+  <main id="main">
+    <header class="topbar"><span>研究项目 <span class="slash">/</span> <strong>互动教育可视化</strong></span><div class="topbar-links"><a class="overview-inline" href="overview.html">研究总览图 ↗</a><button class="about-inline" id="about-inline" aria-label="这个库的价值与局限">库的价值</button><a href="https://github.com/andyhuo520/aetherviz-master" target="_blank" rel="noreferrer">aetherviz-master ↗</a></div></header>
+    <section class="intro"><div><div class="eyebrow">LEARN BY EXPLORING <span>·</span> 让知识动起来</div><h1 id="lesson-title">力，如何改变运动？</h1><p id="lesson-description">给小车一个推力，亲手发现力、质量与加速度的关系。</p></div><span class="mode-badge" id="mode-badge">3D + SVG · 混合渲染</span></section>
+    <div class="experience-tools" id="experience-tools" aria-label="实验玩法"></div>
+    <div class="collision-presets" id="collision-presets" hidden><span>试一组：</span><button data-preset="elastic">等质量弹开</button><button data-preset="sticky">碰后粘连</button><button data-preset="heavy">轻车撞重车</button><button data-preset="frictionless">无摩擦会停吗？</button><button data-preset="wall">撞墙后停下</button></div>
+    <div class="experiment-layout">
+      <section class="experiment" aria-label="互动实验">
+        <div class="stage-top"><span><span class="status-dot"></span> <span id="stage-label">理想水平轨道</span></span><span class="live-label" id="render-status">正在准备画布</span></div>
+        <div class="guide-toolbar" id="guide-toolbar" hidden><label><input id="guided-toggle" type="checkbox" checked> 分阶段慢速讲解</label><span id="guide-pace">接近碰撞时进一步放慢 · 关键帧留出阅读时间</span><button id="guide-restart">从头讲解</button></div>
+        <div class="phase-strip" id="phase-strip" hidden></div>
+        <div class="stage" id="stage" tabindex="0" aria-label="三维实验画布，可用鼠标拖动旋转和滚轮缩放">
+          <div class="scene" id="scene"></div>
+          <svg class="main-svg" id="main-svg" viewBox="0 0 900 440" role="img" aria-label="旋转向量与正弦函数图像" hidden></svg>
+          <div class="stage-hud" id="stage-hud"></div>
+          <div class="position-readout" id="position-readout" hidden></div>
+          <div class="object-label" id="object-label" hidden></div>
+          <div class="object-label secondary-label" id="secondary-label" hidden></div>
+          <div class="gesture-hint" id="gesture-hint"></div>
+          <button class="push-button" id="push-button" hidden>按住，给小车推力</button>
+          <div class="stage-instruction" id="stage-instruction">拖动旋转视角 · 滚轮缩放</div>
+          <button class="camera-button" id="camera-reset" aria-label="恢复默认视角">↺ 视角</button>
+          <div class="scene-error" id="scene-error" role="status" hidden></div>
+        </div>
+        <div class="timeline-panel" id="timeline-panel"><label for="timeline">拖动回放 <output id="timeline-value">0.00 s</output></label><input type="range" id="timeline" min="0" max="1000" step="1" value="0" aria-label="回放已记录的运动过程"><span id="timeline-note">运动开始后可拖动回看</span></div>
+        <div class="collision-events" id="collision-events" hidden><button data-jump="start">起点</button><button data-jump="release">撤力</button><button data-jump="before">碰前一刻</button><button data-jump="impulse">碰撞冲量</button><button data-jump="after">碰后一刻</button><button data-jump="stop">停稳</button></div>
+        <div class="chart-panel" id="chart-panel"><div class="chart-caption"><strong id="chart-title">速度随时间的变化</strong><span id="chart-caption">斜率 = 加速度</span></div><svg id="chart" viewBox="0 0 850 150" role="img" aria-label="速度时间图"></svg></div>
+        <div class="chart-panel force-chart-panel" id="force-chart-panel" hidden><div class="chart-caption"><strong>力与碰撞冲量</strong><span>黄：推力 · 红：A 摩擦 · 紫：B 摩擦</span></div><svg id="force-chart" viewBox="0 0 850 150" role="img" aria-label="推力与摩擦力随时间变化，碰撞以冲量标注"></svg><p>碰撞竖线标出冲量 J，单位 N·s。未给定接触时长，不能据此求碰撞力峰值。</p></div>
+        <div class="transport"><button class="play-button" id="play">▶ 开始实验</button><button class="icon-button" id="step">单步 +</button><button class="icon-button" id="reset">↺ 重置</button><label class="speed-label">速度 <select id="speed" aria-label="播放速度"><option value="0.1">0.1×</option><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><span id="time-display">t = 0.00 s</span></div>
+      </section>
+      <aside class="control-panel" aria-label="阶段讲解与实验参数">
+        <section class="guide-coach" id="guide-coach" aria-labelledby="guide-title" hidden><div class="guide-chapter-count" id="guide-count"></div><h2 id="guide-title"></h2><p class="guide-lead" id="guide-lead"></p><p class="guide-clock" id="guide-clock"></p><div class="guide-navigation"><button id="guide-prev">← 上一阶段</button><button id="guide-pause">暂停阅读</button><button id="guide-next">下一阶段 →</button></div><p class="guide-reading" id="guide-reading"></p><div class="guide-cards" id="guide-cards"></div><div class="guide-reason" id="guide-reason"></div><span class="sr-only" id="guide-announcement" role="status"></span></section>
+        <details class="parameter-settings" id="parameter-settings" open><summary>调整实验参数</summary><div class="panel-heading"><h2>实验参数</h2><span>PARAMETERS</span></div><p class="control-hint" id="control-hint">移动滑块，观察运动如何改变。</p><div id="controls"></div></details><div class="formula-card"><span>核心关系</span><div id="formula"></div><p id="formula-caption"></p></div><div class="result-card"><span id="result-label">当前加速度</span><div><strong id="result-value">4.00</strong><span id="result-unit">m/s²</span></div><p id="result-note"></p></div><button class="random-button" id="random">⇄ 换一组参数</button>
+      </aside>
+    </div>
+    <section class="collision-analysis" id="collision-analysis" aria-label="碰撞完整分析" hidden>
+      <article class="analysis-card"><div class="section-number">IMPACT / 碰撞瞬间的计算</div><h2 id="impact-title">碰前 → 碰后</h2><div id="impact-table"></div><p id="impact-equation"></p><p class="analysis-footnote">比较紧邻接触前后两瞬间；摩擦在有限滑行时间内仍会改变总动量。</p></article>
+      <article class="analysis-card"><div class="section-number">ENERGY / 当前能量去向</div><h2>推力做的功，去了哪里？</h2><div id="energy-ledger"></div><p id="energy-equation"></p><p class="analysis-footnote">轮子转动仅作视觉提示；计算只含平动动能。能量损失合并表示热、形变、声音等。</p></article>
+      <article class="analysis-card motion-verdict"><div class="section-number">WHY IT STOPS / 运动结果</div><h2 id="stop-title"></h2><p id="stop-explanation"></p><div id="stop-positions"></div><details><summary>查看计算关系与假设</summary><p>加速段：a = max(0, F/m − μg)。撤力后：a = −μg·sign(v)，到 v = 0 后保持静止；从速度 v 减到零的滑行距离为 d = v²/(2μg)。静止时用同一有效摩擦系数平衡较小推力。</p><p>两车：m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂；v₂ − v₁ = e(u₁ − u₂)。墙：v₁ = −eu₁，墙与地球接受反向冲量。e = 0 时两车同速滑行；模型不求接触形变或材料强度。</p><p>接触时若仍在施力，立即撤去推力。解析计算接触与停稳时刻，避免跨帧穿透。μ = 0 时只结束观察，速度保留。</p><a href="https://openstax.org/books/university-physics-volume-1/pages/9-4-types-of-collisions" target="_blank" rel="noreferrer">参考：OpenStax 碰撞类型 ↗</a> · <a href="https://openstax.org/books/university-physics-volume-1/pages/9-2-impulse-and-collisions" target="_blank" rel="noreferrer">冲量与动量 ↗</a></details></article>
+    </section>
+    <section class="learning-grid"><article class="learning-card"><div class="section-number">01 / LEARNING GOALS</div><h2>这次，你会发现</h2><div id="goals"></div></article><article class="learning-card explanation"><div class="section-number">02 / THE IDEA</div><h2 id="idea-title">推力和“难推动”的程度</h2><p id="idea-text"></p><div class="assumption" id="assumption"></div></article><article class="learning-card quiz-card"><details open><summary><span class="section-number">03 / QUICK CHECK</span><h2>理解了吗？试一题 <span>⌄</span></h2></summary><form id="quiz-form"><fieldset id="quiz-options"></fieldset><button class="quiz-submit" type="submit">检查答案 →</button><p id="quiz-feedback" aria-live="polite"></p></form></details></article></section>
+    <footer class="page-footer"><span>根据 AetherViz Master v5.0 规范制作的研究演示</span><span>改变一个条件，发现一个规律。</span></footer>
+  </main>
+  <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-heading"><span class="eyebrow">RESEARCH / 001</span><button id="close-about" aria-label="关闭项目说明">✕</button></div><h2 id="about-title">这个库实际提供什么？</h2><p>AetherViz Master 提供一份 AI 课件生成规范，约定教学结构、视觉风格、渲染选型和交互要求。本页是读取该规范后制作并验证的三个研究案例。</p><p><strong>价值判断：</strong>适合作为课件生成的需求模板与规范参考。上游未提供可直接运行的完整应用或学科仿真内核；尚未通过有／无 Skill 的同题对照证明稳定提质或省时。</p><div class="about-flow">教学主题 → AI 按 Skill 编写网页 → 浏览器运行课件</div><ul><li><strong>力与运动：</strong>真实三维小车、物体标签投影和 SVG 速度图联动。</li><li><strong>正弦函数：</strong>SVG 旋转向量、曲线和参数实时联动。</li><li><strong>水分子：</strong>基于参考几何的三维球棍模型、旋转、缩放和原子选择。</li></ul><p><strong>贡献边界：</strong>碰撞、摩擦、能量核算、过程回放和分阶段讲解由本研究额外编写。当前演示效果仍有不足，数值检查通过不能证明教学效果，也不能将这些功能直接归因于上游。</p><p>这些案例使用确定的公式与几何数据。页面不包含在线 AI 生成功能，也不代表上游对任意主题的成功率。为离线复现，依赖已保存在本地，页面使用原生 CSS，代码拆分便于研究。</p><p class="research-version">研究版本：a1c005f · 2026-10-15<br>完整能力分析、复现与来源见子项目 README、notes 和 references。</p><a class="dialog-source" href="https://github.com/andyhuo520/aetherviz-master/blob/a1c005f86e9aca18e75917bd5eb38f454bd24a68/SKILL.md" target="_blank" rel="noreferrer">阅读上游 Skill ↗</a></dialog>
+</body>
+</html>

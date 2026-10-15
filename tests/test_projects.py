@@ -51,6 +51,9 @@ class CatalogTests(unittest.TestCase):
         readme = (self.root / "README.md").read_text(encoding="utf-8")
         self.assertIn("projects/001-example/README.md", readme)
         self.assertIn("projects/001-example/assets/cover.svg", readme)
+        self.assertIn("| 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |", readme)
+        self.assertIn("[example](https://github.com/owner/example)", readme)
+        self.assertNotIn("[上游]", readme)
         self.assertTrue(readme.startswith("自定义导读\n"))
         self.assertTrue(readme.endswith("保留的正文\n"))
         for path in (self.root / "projects" / "001-example").rglob("*.md"):

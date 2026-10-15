@@ -1,0 +1,15 @@
+{
+  "name": "aetherviz-research-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AetherViz Master 三个可复现的教学能力演示",
+  "scripts": {
+    "vendor": "node scripts/vendor.cjs",
+    "test": "node --test tests/models.test.cjs",
+    "start": "python -m http.server 8080"
+  },
+  "dependencies": {
+    "katex": "0.16.11",
+    "three": "0.134.0"
+  }
+}

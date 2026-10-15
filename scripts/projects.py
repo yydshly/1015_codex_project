@@ -149,16 +149,18 @@ def render_index(catalog):
     rows = [
         f"已收录 **{len(projects)}** 个项目，按收录编号升序展示。",
         "",
-        "| 编号 | 项目 | 摘要 | 状态 | 入口 |",
-        "| --- | --- | --- | --- | --- |",
+        "| 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |",
+        "| --- | --- | --- | --- | --- | --- |",
     ]
     for project in projects:
         path = f"projects/{directory(project)}"
-        links = f"[研究]({path}/README.md) · [上游]({link_url(project['repository'])})"
+        source_name = project["repository"].rsplit("/", 1)[-1]
+        source_link = f"[{md(source_name)}]({link_url(project['repository'])})"
+        links = f"[研究]({path}/README.md)"
         if project["demo_url"]:
             links += f" · [演示]({link_url(project['demo_url'])})"
         rows.append(
-            f"| {project['id']:03d} | [{md(project['name'])}]({path}/README.md) | "
+            f"| {project['id']:03d} | [{md(project['name'])}]({path}/README.md) | {source_link} | "
             f"{md(project['summary'])} | {STATUSES[project['status']]} | {links} |"
         )
     rows.extend(["", "### 项目预览", ""])
