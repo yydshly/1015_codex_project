@@ -93,3 +93,5 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 复现及原始材料：[补充运行说明](references/showcase-report.md) · [展示数据](web/assets/showcase.json) · [采集脚本](src/collect-showcase.py) · [转换脚本](src/publish-showcase.py)。页面视图为原创呈现，公开站点静态回放；官方 Web UI 与本地 CLI / MCP 的入口另列于页面。
 
 本地 25 项交互 / 响应式检查通过，包含七种视图、四条流程、18 项真实搜索结果与筛选、原始 diff、键盘 Home / End，以及 390px / 320px 布局；没有控制台错误。[浏览器检查](assets/showcase-verification.json) · [效果预览](assets/showcase-desktop.jpg)。
+
+内容提交 `ea933ca` 已通过 [Pages 任务 38762226140](https://github.com/yydshly/1015_codex_project/actions/runs/38762226140) 发布。线上 24 项资源与数据核对通过，七种效果、流程选择、搜索与 390px 布局正常，没有控制台错误。[线上浏览器记录](assets/showcase-deployed-browser.json) · [手机效果](assets/showcase-mobile.jpg)。

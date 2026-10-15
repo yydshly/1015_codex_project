@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-15T15:42:06.123Z",
+  "url": "https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#effect-map",
+  "checks": [
+    {
+      "effect": "map",
+      "title": "从整仓图谱，看见功能分组。",
+      "visibleOutput": true
+    },
+    {
+      "effect": "flow",
+      "title": "把候选流程，展开成逐步路径。",
+      "visibleOutput": true
+    },
+    {
+      "effect": "context",
+      "title": "围绕一个函数，拿到具体上下文。",
+      "visibleOutput": true
+    },
+    {
+      "effect": "impact",
+      "title": "从改动点，按层展开潜在影响。",
+      "visibleOutput": true
+    },
+    {
+      "effect": "search",
+      "title": "搜索结果，按流程和定义组织。",
+      "visibleOutput": true
+    },
+    {
+      "effect": "trace",
+      "title": "把两个符号，连成跨文件路径。",
+      "visibleOutput": true
+    },
+    {
+      "effect": "change",
+      "title": "把真实 diff，映射到函数和流程。",
+      "visibleOutput": true
+    },
+    {
+      "effect": "flow-select",
+      "passed": true
+    },
+    {
+      "effect": "search-18",
+      "passed": true
+    },
+    {
+      "effect": "search-filter",
+      "passed": true
+    },
+    {
+      "effect": "390px-no-overflow",
+      "passed": true
+    }
+  ],
+  "consoleErrors": []
+}
