@@ -15,6 +15,21 @@
       ],
       "cover": "assets/research-map.jpg",
       "demo_url": "https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html"
+    },
+    {
+      "id": 2,
+      "slug": "image-blaster",
+      "name": "image-blaster 图生三维工作流研究",
+      "repository": "https://github.com/neilsonnn/image-blaster",
+      "summary": "将场景图拆成背景、独立物体与声音，借助外部模型生成并组装三维场景；价值在资产解耦、请求恢复和局部返工，可扩展自动布局与质量验收。",
+      "status": "completed",
+      "tags": [
+        "图生3D",
+        "AI工作流",
+        "源码研究"
+      ],
+      "cover": "assets/research-map.png",
+      "demo_url": ""
     }
   ]
 }

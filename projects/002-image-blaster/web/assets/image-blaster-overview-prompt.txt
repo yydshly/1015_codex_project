@@ -1,0 +1,86 @@
+Use case: infographic-diagram.
+Asset type: one finished, high-resolution Chinese research infographic for the image-blaster project, intended for reading, saving, and sharing.
+Create a single portrait information poster, target 2160×3840 pixels, approximately 9:16. Crisp Simplified Chinese typography, meticulous accurate labels. An editorial technology research diagram, NOT a screenshot of a webpage. Ivory paper background, deep forest-green typography, terracotta-orange highlights, sage green, fine rules and generous controlled whitespace. Match the refined warm palette of the three input images. Use a readable Chinese sans-serif, bold section titles, clear text hierarchy. No decorative nonsense, no invented charts or metrics.
+Input images 1/2/3 are supporting inserts from OUR LOCAL PREBUILT ROOM DEMO, NOT outputs from the upstream AI models. Crop/recompose their room illustrations to support the visual explanation: image1 whole room with wooden table, green chair, orange vase; image2 empty room plus three individual props; image3 assembled room with moved green chair and teal replacement vase. Preserve this same recognizable room and same three props throughout. You may redraw the illustrations to fit the infographic, but never portray them as verified AI reconstructions. Do not paste tiny webpage navigation or screenshot body text.
+Build a coherent top-to-bottom infographic with seven numbered sections and visible connecting arrows. Include ALL the following factual content, with exact model names and the important caveats legible. You may shorten connective wording but do not change claims. Avoid too-small print. Avoid repeated titles. The MAIN visual should be a branched workflow, not a linear claim that all models operate on the whole photo.
+
+Header:
+"image-blaster 能力全景"
+Subtitle: "把一张场景图，组织成「环境 + 独立物体 + 声音」"
+Large key takeaway: "先理解与拆分 → 分别生成 → 组合与编辑"
+Small premise: "核心生成来自外部模型；库的贡献是工作流与资产工程。"
+
+01 / 它交付什么
+Two compact comparison columns:
+"普通单物体图生 3D：一张物体图 → 一个三维模型"
+"image-blaster：一张场景图 → 静态环境 + 多个独立模型 + 声音 + 本地编辑器"
+Result badge: "独立移动 · 单独替换 · 局部重做"
+
+02 / 一张房间图，走三条路线
+This is the dominant visual, use the referenced room illustrations. Start with whole room, arrow to "Claude 理解画面 / 确认独立物体 / 编写描述与提示词".
+Then branch visibly:
+A background branch: "移除选定物体 → 干净背景图 clean plate → Marble 1.1 → 环境外观 .spz + 碰撞网格 .glb"
+Show empty room. Note: "图片和提示词都要去掉原物体，避免重复生成。"
+A prop branch: "桌 / 椅 / 花瓶 → 各自的干净参考图 → Hunyuan 3D / Meshy → 独立网格与材质"
+Show separate table, green chair, orange vase thumbnails and wireframe-style models.
+A sound branch: "环境与材质描述 → ElevenLabs SFX v2 → 环境循环 + 物体短音效".
+Merge these branches into assembled room diagram labelled "加载到同一场景 → 人工调整位置、旋转与比例 → 保存布局".
+Explicit close-by caveats: "拆分依赖生成式图片编辑，并非无损精确分割。" / "默认先网格摆放，不会自动准确恢复原图布局。"
+Caption directly under all room illustrations: "配图基于我们的本地预制房间演示，用于解释机制，非上游模型生成效果。"
+
+03 / 模型各做什么
+A compact, readable seven-row table with columns "模型" "作用" "配置":
+"Claude（运行时继承） | 看图、拆任务、写提示词、调度 | 未固定具体版本"
+"Nano Banana 2 | 清理背景、制作单物体参考图 | 默认图片编辑"
+"GPT Image 2 | 可替代图片编辑模型 | 可选"
+"Marble 1.1 / World Labs | 静态环境外观与碰撞资产 | 默认环境生成"
+"Hunyuan 3D v3 | 独立物体网格与 PBR 材质 | 默认物体生成"
+"Meshy v6 | 可替代物体生成模型 | 可选；默认无绑定动画"
+"ElevenLabs SFX v2 | 环境音与物体音效 | 默认声音生成"
+Footnote: "FAL 是调用平台，不是模型；Marble 通过 World Labs 单独调用。"
+
+04 / 原理：五层工程架构
+A concise stack or connected chain:
+"Claude Code：Rules / Skills / 后台 Agents"
+↓ "JavaScript 脚本：提交 → 记录请求 ID → 轮询 → 下载"
+↓ "外部服务：World Labs + FAL"
+↓ "本地文件与 JSON：保存资产、来源、请求状态和版本"
+↓ "编辑器：React / Three.js + Spark 外观 + Rapier 刚体 / 碰撞"
+Four small file labels:
+"image.json：图像理解"
+"object.json：物体身份"
+"请求 JSON：任务生命周期"
+"scene.json：物体实例与布局"
+Value note: "已有请求可继续查询；缺失文件可补下载；参考图与模型可分别重做。"
+Make clear control hierarchy is conceptual layers, not necessarily a sequential generation pipeline.
+
+05 / 价值在哪里
+Three strong cards:
+"资产解耦：背景与可操作物体分开，椅子可移动，花瓶可替换。"
+"减少返工：复用参考图，保留版本，失败任务与坏模型可单独处理。"
+"流程落地：把多个模型、文件和网页交互接成可继续工作的项目。"
+Assessment strip:
+"算法研究：有限，未提供自研三维模型或训练流程。"
+"工程参考：明确，适合学习多模型编排与本地资产管理。"
+"产品收益：待验证，尚无本轮真实生成的成本、质量和成功率数据。"
+
+06 / 与我们以前的研究对照
+Four short rows, compact:
+"Atlas / 月门水庭：本地实验看图写 Blender 代码，构建几何；本库由专用模型生成资产。"
+"AetherViz Master：Skill 指导 AI 写互动课件；共同点是任务规范，交付物不同。"
+"古人说唱 Battle：同为多模型制作流程，侧重时间轴、检查与选片。"
+"随机门：关注故事、随机、记忆与回访；本库关注前面的场景资产生产。"
+Small scope note: "以上区分上游能力与我们的本地实验，不代表未经实测的性能排名。"
+
+07 / 适合什么，边界在哪
+Two columns:
+"适合：概念场景原型 / 互动展陈与叙事素材 / 多模型工作流学习"
+"边界：隐藏内容靠补全；精确尺寸与布局不保证；高斯外观不等于完整可编辑网格；刚体不等于角色动画；完整自动质检尚缺。"
+Final judgment in bold:
+"它的价值，是把「调用模型」变成「可管理、可编辑、可局部返工的制作流程」。"
+
+Footer, legible:
+"源码研究版本 4acb43b · 2026-10-15 · GitHub: neilsonnn/image-blaster"
+"验证范围：源码与本地演示已核对；本轮未运行付费生成 API，未实测生成质量、费用或成功率。"
+
+Constraints: Make a finished single image, no surrounding device frame. All key text in Simplified Chinese, exact English model names. Do not claim automatic accurate reconstruction, physics simulation in our demo, model training, real segmentation, character rigging, verified paid output, or benchmark numbers. Clear arrows, no crossing tangles. Balance completeness with legibility, not a wall of tiny text.

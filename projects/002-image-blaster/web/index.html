@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="image-blaster 将场景图拆成背景、独立物体与声音，借助外部模型生成并组装三维场景。研究其模型分工、资产解耦与局部返工价值，以及自动布局、质量验收和混合建模的扩展方向。">
+  <meta property="og:title" content="image-blaster：从一张场景图到独立三维资产">
+  <meta property="og:description" content="先理解和拆分，再分别生成，最后组合与人工编辑。核心生成依赖外部模型，工程价值在资产管理、请求恢复与局部返工。">
+  <meta property="og:image" content="https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/assets/image-blaster-overview-v1.png">
+  <meta name="theme-color" content="#f7f5f0">
+  <title>image-blaster · 场景图拆分、三维资产生成与工程价值｜研究 002</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="vendor/three.min.js" defer></script>
+  <script src="vendor/OrbitControls.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="models.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到研究内容</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../"><span class="brand-icon" aria-hidden="true">↗</span><span>RESEARCH LAB<small>开源项目研究 / 002</small></span></a>
+    <nav aria-label="页面导航"><a href="#pipeline">实现流程</a><a href="#models">模型分工</a><a href="#value">研究价值</a><a href="#extensions">扩展方向</a></nav>
+    <a class="source-link" href="https://github.com/neilsonnn/image-blaster/tree/4acb43ba126a12358f71838d1b1a05e856b10eaf" target="_blank" rel="noreferrer">上游源码 <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="orange-dot"></span> IMAGE → WORLD / 源码研究</p>
+      <h1 id="hero-title">一张场景图，<br><em>拆成独立资产。</em></h1>
+      <p class="hero-summary"><strong>image-blaster</strong> 先理解和拆分画面，再借助外部模型分别生成静态环境、物体模型和声音，最后组合为可探索、可编辑的三维场景。</p>
+      <p class="hero-question">Claude 按 Rules / Skills 调度，脚本管理生成请求与本地资产。<br>价值在独立移动、替换和局部重做；布局仍需人工调整。</p>
+      <div class="hero-actions"><a class="button primary" href="#pipeline">拆开八步流程 <span aria-hidden="true">↓</span></a><a class="text-link" href="#overview-graphic">查看能力全景长图 ↗</a></div>
+      <div class="hero-meta"><span>研究 2026.10.15</span><span>提交 <code>4acb43b</code></span><span>MIT</span></div>
+    </div>
+    <figure class="hero-art hero-poster">
+      <a href="assets/image-blaster-overview-v1.png" target="_blank" rel="noopener" aria-label="打开完整的 image-blaster 能力全景引导图"><img src="assets/image-blaster-overview-v1.png" width="940" height="1672" fetchpriority="high" alt="image-blaster 能力全景引导图，包含能力、背景与物体拆分流程、模型分工、五层架构、工程价值和既有研究比较。"></a>
+      <figcaption><span>我们的研究引导图 · 点击查看完整长图</span><span>房间为流程示意</span></figcaption>
+    </figure>
+  </section>
+
+  <div class="evidence-strip"><div class="wrap"><span><i class="status-dot"></i> 固定版本源码已核对</span><span>生成 API 与效果未实测</span><span>4 项既有研究交叉比较</span><a href="#sources">查看证据范围 ↗</a></div></div>
+
+  <section class="section wrap" id="overview" aria-labelledby="overview-title">
+    <div class="section-heading"><p class="eyebrow">01 / POSITIONING</p><h2 id="overview-title">先认清它交付的是什么。</h2><p>底层模型提供生成能力。这个仓库，把分散的能力变成了一条可操作的制作流程。</p></div>
+    <div class="overview-grid"><article><span class="small-label">模型提供</span><h3>生成三维与声音</h3><p>Marble 生成静态环境，Hunyuan 或 Meshy 生成独立物体，图片与声音模型负责清理、提取和配音。</p><span class="type-tag">外部能力</span></article><article><span class="small-label">仓库实现</span><h3>拆任务，管资产，接场景</h3><p>Claude 按技能说明调度，脚本提交并续查请求，资产保存在本地，网页加载后交给用户调整。</p><span class="type-tag orange">工程贡献</span></article><article><span class="small-label">仍需验证</span><h3>真的省下多少工作？</h3><p>自动摆位、视觉与几何一致性、稳定验收仍有缺口。需要用真实任务记录成功率、修整时间与返工。</p><span class="type-tag">研究判断</span></article></div>
+    <div class="architecture-line" aria-label="五层架构"><span>Claude Code<small>理解与调度</small></span><b aria-hidden="true">→</b><span>JS 脚本<small>提交与轮询</small></span><b aria-hidden="true">→</b><span>外部模型<small>生成资产</small></span><b aria-hidden="true">→</b><span>本地文件<small>版本与状态</small></span><b aria-hidden="true">→</b><span>三维网页<small>浏览与编辑</small></span></div>
+    <aside class="overview-poster" id="overview-graphic" aria-labelledby="overview-graphic-title">
+      <a class="overview-poster-preview" href="assets/image-blaster-overview-v1.png" target="_blank" rel="noopener" aria-label="打开 image-blaster 能力全景完整长图"><img src="assets/image-blaster-overview-v1.png" width="940" height="1672" loading="lazy" decoding="async" alt="image-blaster 能力全景：房间图经理解和拆分，分为环境、独立物体与声音三条路线，再组合与人工编辑；下方汇总模型分工、架构、价值、既有研究和边界。"></a>
+      <div class="overview-poster-copy"><p class="eyebrow">ONE IMAGE / 保存这张研究地图</p><h3 id="overview-graphic-title">一图读懂 image-blaster。</h3><p>把能力、三条生成路线、七项模型分工、五层架构、工程价值、既有项目对照和适用边界，整理到同一张图里。</p><p class="overview-poster-note">房间配图基于我们的本地预制演示，非上游模型生成效果。源码研究版本为 <code>4acb43b</code>，本轮未运行付费生成 API。</p><div class="overview-poster-actions"><a class="button primary" href="assets/image-blaster-overview-v1.png" target="_blank" rel="noopener">查看完整长图 ↗</a><a class="button outline" href="assets/image-blaster-overview-v1.png" download="image-blaster-能力全景.png">下载 PNG ↓</a></div><small>940 × 1672 像素 · 可在原图页面放大查看 · 详细文字见下方各章节</small></div>
+    </aside>
+  </section>
+
+  <section class="pipeline-section" id="pipeline" aria-labelledby="pipeline-title"><div class="wrap">
+    <div class="section-heading"><p class="eyebrow">02 / UNDER THE HOOD</p><h2 id="pipeline-title">一张图，如何走到可交互的场景？</h2><p>点选步骤，追踪输入、执行者、输出和能力边界。这里讲解源码，不运行生成请求。</p></div>
+    <article class="room-demo" id="room-demo" aria-labelledby="room-demo-title" data-room-stage="0">
+      <div class="room-demo-heading"><div><span class="small-label">用同一间房间，看见完整过程</span><h3 id="room-demo-title">从一张房间图，到独立的三维资产。</h3></div><span class="room-demo-label">流程示意 · 预制素材</span></div>
+      <div class="room-tabs" role="tablist" aria-label="房间拆分演示步骤">
+        <button id="room-tab-0" role="tab" aria-selected="true" aria-controls="room-demo-panel" tabindex="0" data-room-step="0" class="active"><span>01</span>完整房间图</button>
+        <button id="room-tab-1" role="tab" aria-selected="false" aria-controls="room-demo-panel" tabindex="-1" data-room-step="1"><span>02</span>拆分背景与物体</button>
+        <button id="room-tab-2" role="tab" aria-selected="false" aria-controls="room-demo-panel" tabindex="-1" data-room-step="2"><span>03</span>分别生成</button>
+        <button id="room-tab-3" role="tab" aria-selected="false" aria-controls="room-demo-panel" tabindex="-1" data-room-step="3"><span>04</span>组合与调整</button>
+      </div>
+      <div class="room-demo-grid" id="room-demo-panel" role="tabpanel" aria-labelledby="room-tab-0" tabindex="0">
+        <div class="room-scene-column">
+          <div class="room-viewport" id="room-viewport" data-mode="image">
+            <svg class="room-fallback" id="room-fallback" viewBox="0 0 800 500" role="img" aria-label="有木桌、绿椅和橙色花瓶的房间示意"><rect width="800" height="500" fill="#ece9df"/><path d="M120 320V70H620V320Z" fill="#dedbd0"/><path d="M120 320 620 320 760 460H30Z" fill="#bda185"/><rect x="170" y="105" width="150" height="140" fill="#a5bfc1" stroke="#fff9e9" stroke-width="12"/><path d="M245 105v140m-75-70h150" stroke="#fff9e9" stroke-width="7"/><path d="M300 325h210v25H300Zm12 25v80m180-80v80" fill="#b27d51" stroke="#876143" stroke-width="10"/><path d="M550 300v-70h80v70m-80 0h80v22h-80Zm9 22v90m62-90v90" fill="#6e8566" stroke="#53684d" stroke-width="9"/><path d="M390 260h25l-3 25c25 25 20 44-11 44s-36-19-11-44Z" fill="#c76e43"/></svg>
+            <img id="room-reference" class="room-reference" alt="房间参考图：木桌、绿椅和橙色花瓶在同一张图片中" hidden>
+            <div class="room-view-badge" id="room-view-badge">二维房间参考图</div>
+            <span class="room-view-number" id="room-view-number">01 / 04</span>
+          </div>
+          <p class="room-view-hint" id="room-view-hint">先看原图：桌子、椅子和花瓶，还在同一张画面里。</p>
+        </div>
+        <div class="room-inspector">
+          <span class="small-label" id="room-step-actor">输入 / 同一张房间图</span>
+          <h4 id="room-step-title">图片里有物体，还没有独立资产。</h4>
+          <p id="room-step-description">原图展示了整个房间。此时椅子和花瓶都只是画面中的像素，不能作为独立物体移动或替换。</p>
+          <div class="room-assets" id="room-assets" hidden aria-label="分别处理的物体">
+            <figure><div><img id="room-thumb-table" alt="单独的木桌参考图" hidden><span class="room-asset-placeholder">桌子</span></div><figcaption><strong>木桌</strong><small class="room-asset-kind">参考图</small></figcaption></figure>
+            <figure><div><img id="room-thumb-chair" alt="单独的绿椅参考图" hidden><span class="room-asset-placeholder">椅子</span></div><figcaption><strong>绿椅</strong><small class="room-asset-kind">参考图</small></figcaption></figure>
+            <figure><div><img id="room-thumb-vase" alt="单独的花瓶参考图" hidden><span class="room-asset-placeholder">花瓶</span></div><figcaption><strong>花瓶</strong><small class="room-asset-kind">参考图</small></figcaption></figure>
+          </div>
+          <div class="room-result"><span id="room-result-label">这一阶段得到什么</span><p id="room-result-text">一张包含背景与物体的房间图，作为后续分析和图片编辑的输入。</p></div>
+          <p class="room-step-boundary" id="room-step-boundary">接下来先确认要独立生成的物体，再为背景和物体准备不同的输入。</p>
+        </div>
+      </div>
+      <div class="room-playback"><div><button class="button primary" id="room-play" aria-pressed="false">播放四步过程</button><button class="button outline" id="room-back" aria-label="房间演示上一步" disabled>←</button><button class="button outline" id="room-next" aria-label="房间演示下一步">下一步 →</button></div><button class="room-reset" id="room-reset">从头看 ↺</button></div>
+      <fieldset class="room-edit-controls" id="room-edit-controls" hidden disabled><legend>组合后，试着只改一个物体</legend><div class="room-edit-row"><button class="button outline" id="room-layout">摆入示意位置</button><label for="room-chair-position">只移动绿椅 <input id="room-chair-position" type="range" min="-1.2" max="1.2" step="0.1" value="0" disabled><output id="room-chair-value" for="room-chair-position">0.0</output></label><button class="button outline" id="room-vase-version">切换花瓶版本</button><button class="room-reset" id="room-camera-reset">重置视角</button></div><p id="room-edit-state" aria-live="polite">初始按网格排列；点击“摆入示意位置”后，再单独移动椅子。</p></fieldset>
+      <p class="room-demo-disclaimer">演示说明：房间图与三维对象由本网页预制绘制，步骤切换和花瓶版本用于讲解，不执行真实抠图或模型生成。环境用普通几何和点状外观示意，非 Marble 高斯泼溅输出；“摆入位置”使用预设布局，上游仍需人工调整。</p>
+      <noscript><p class="notice">开启 JavaScript 可播放四步过程、旋转三维视图并独立调整物体。静态房间图与下方文字仍可阅读。</p></noscript>
+    </article>
+    <aside class="workflow-explainer" aria-labelledby="workflow-understanding">
+      <span class="small-label">一句话理解它的工程价值</span>
+      <h3 id="workflow-understanding">先理解和拆分，再分别生成，最后组合成场景。</h3>
+      <p>例如，一张包含桌子、椅子和花瓶的房间照片，先由 Claude 理解画面、确认要独立生成的物体，再分成两条路线。</p>
+      <div class="workflow-branches">
+        <div><strong>背景路线</strong><p>移除选定物体的背景图 <span aria-hidden="true">→</span> 可探索环境</p><small>高斯泼溅呈现外观，另用网格处理碰撞。</small></div>
+        <div><strong>物体路线</strong><p>每个物体的独立参考图 <span aria-hidden="true">→</span> 各自的三维模型</p><small>桌子、椅子、花瓶分别生成，保留独立资产。</small></div>
+      </div>
+      <p class="workflow-combination"><strong>最后组合：</strong>把环境、独立物体和声音一起加载，再调整布局，形成可浏览、可操作的场景。</p>
+      <ul class="workflow-benefits" aria-label="拆分后独立生成的好处"><li>椅子可以单独移动</li><li>花瓶可以单独替换</li><li>某个模型不好，可以单独重做</li></ul>
+      <p class="workflow-limit"><strong>当前边界：</strong>拆分依赖图像理解与生成式编辑；组合仍需人工调整位置、比例等，尚未自动准确还原原图布局。三维生成能力仍来自外部模型。</p>
+    </aside>
+    <div class="pipeline-layout">
+      <div class="step-list" role="tablist" aria-label="制作流程步骤" aria-orientation="vertical">
+        <button class="step active" id="step-0" role="tab" aria-selected="true" aria-controls="stage-panel" tabindex="0" data-step="0"><span class="step-num">01</span><span><strong>建立项目</strong><small>让输入与状态有处可寻</small></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <button class="step" id="step-1" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-step="1"><span class="step-num">02</span><span><strong>理解与拆分</strong><small>Claude 看图，确认独立物体</small></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <button class="step" id="step-2" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-step="2"><span class="step-num">03</span><span><strong>清理背景</strong><small>移除前景，留下 clean plate</small></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <button class="step" id="step-3" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-step="3"><span class="step-num">04</span><span><strong>生成静态环境</strong><small>Marble 输出外观与碰撞资产</small></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <button class="step" id="step-4" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-step="4"><span class="step-num">05</span><span><strong>制作物体参考图</strong><small>一个物体，一张干净的图</small></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <button class="step" id="step-5" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-step="5"><span class="step-num">06</span><span><strong>生成独立模型</strong><small>Hunyuan 默认，Meshy 可选</small></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <button class="step" id="step-6" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-step="6"><span class="step-num">07</span><span><strong>生成声音</strong><small>环境循环与物体交互音效</small></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <button class="step" id="step-7" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-step="7"><span class="step-num">08</span><span><strong>组装与编辑</strong><small>加载资产，人工调整布局</small></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+      </div>
+      <article class="stage-panel" id="stage-panel" role="tabpanel" aria-labelledby="step-0" tabindex="0">
+        <div class="panel-top"><span id="stage-category">本地脚本</span><span id="stage-count">01 / 08</span></div>
+        <h3 id="stage-title">建立一个可以继续工作的项目</h3><p id="stage-description">脚本创建项目目录，把输入图片移入稳定的 source/，扫描已有资产，判断下一步需要做什么。</p>
+        <dl class="stage-facts"><div><dt>输入</dt><dd id="stage-input">input/ 中的图片、项目名称</dd></div><div><dt>执行者</dt><dd id="stage-actor">project-state.mjs</dd></div><div><dt>输出</dt><dd id="stage-output">project.json、source/ 与派生状态</dd></div></dl>
+        <div class="stage-boundary"><span>需要理解的边界</span><p id="stage-boundary">项目状态主要来自目录和 JSON 文件，不是独立数据库或常驻任务平台。</p></div>
+        <div class="panel-bottom"><a id="stage-source" href="https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/project/project-state.mjs" target="_blank" rel="noreferrer">核对这一步源码 ↗</a><div><button id="previous-stage" aria-label="上一步" disabled>←</button><button id="next-stage" aria-label="下一步">→</button></div></div>
+      </article>
+    </div>
+    <p class="section-note">流程依赖：先清理背景，再生成环境；每个物体各自执行“参考图 → 三维模型”。后台代理允许多项任务并行，图中编号用于讲解主流程。</p>
+    <noscript><p class="notice">当前浏览器未启用 JavaScript。八步概要仍可阅读，详细流程请查看 <a href="architecture.md">架构文档</a>。</p></noscript>
+  </div></section>
+
+  <section class="section wrap" id="models" aria-labelledby="models-title">
+    <div class="section-heading"><p class="eyebrow">03 / MODEL RESPONSIBILITIES</p><h2 id="models-title">每个模型，只负责一段。</h2><p>以下接口和参数来自固定研究提交。FAL 是调用平台，World Labs 则单独提供环境服务。</p></div>
+    <div class="table-scroll" tabindex="0" aria-label="模型职责表，可横向滚动"><table class="model-table"><thead><tr><th>模型</th><th>承担的工作</th><th>实际输入 → 输出</th><th>配置</th></tr></thead><tbody>
+      <tr><th>Claude<small>运行时继承</small></th><td>看图、写描述、拆任务和调度</td><td>图片 / 指令 → JSON / 提示词 / 脚本操作</td><td><span class="pill">主控</span><small>未固定具体版本</small></td></tr>
+      <tr><th>Nano Banana 2<small>FAL · 图片编辑</small></th><td>移除物体，制作单物体参考图</td><td>原图 + 提示 → 背景图 / 白底物体图</td><td><span class="pill orange">默认</span><small>参考图路径 1K / 1:1</small></td></tr>
+      <tr><th>GPT Image 2<small>FAL · 图片编辑</small></th><td>替代图片编辑提供商</td><td>图片 + 提示，可带蒙版 → 编辑图片</td><td><span class="pill">可选</span><small>medium / auto size</small></td></tr>
+      <tr><th>Marble 1.1<small>World Labs · 世界生成</small></th><td>生成可探索的静态环境</td><td>背景图 + 文字 → .spz / 碰撞 .glb / 全景</td><td><span class="pill orange">默认</span><small>marble-1.1</small></td></tr>
+      <tr><th>Hunyuan 3D<small>FAL · hunyuan3d-v3</small></th><td>生成独立物体网格与材质</td><td>单物体参考图 → 模型资产</td><td><span class="pill orange">默认</span><small>50,000 面 / PBR / Normal</small></td></tr>
+      <tr><th>Meshy v6<small>FAL · 物体生成</small></th><td>替代物体生成提供商</td><td>单物体参考图 → 模型资产</td><td><span class="pill">可选</span><small>30,000 面 / 默认无绑定动画</small></td></tr>
+      <tr><th>ElevenLabs SFX v2<small>FAL · 声音生成</small></th><td>生成环境音和物体短音效</td><td>文字描述 → 循环音频 / 交互音效</td><td><span class="pill orange">默认</span><small>非循环音频经 FFmpeg 处理</small></td></tr>
+    </tbody></table></div>
+    <p class="section-note">生成需要 WORLD_LABS_API_KEY 与 FAL_KEY。此研究网页不读取密钥、不调用接口；模型配置不代表当前服务可用性、价格或效果保证。<a href="architecture.md">查看精确接口名 ↗</a></p>
+  </section>
+
+  <section class="assets-section" aria-labelledby="assets-title"><div class="wrap assets-layout">
+    <div><p class="eyebrow">04 / ASSET ENGINEERING</p><h2 id="assets-title">真正写在仓库里的，<br>是这套资产逻辑。</h2><p class="muted">把“物体是谁”“请求到哪一步”“场景怎么摆”分开保存，才能局部重做、继续任务和追溯结果。</p><ul class="asset-points"><li><strong>背景与物体分离</strong><span>先从背景移除花瓶，再加入独立花瓶，避免视觉重复。</span></li><li><strong>参考图与模型分离</strong><span>提取正确就复用参考图；只有模型不好时，单独重做三维。</span></li><li><strong>任务与资产分离</strong><span>请求记录保留 ID 与远端结果，缺文件时优先补下载。</span></li></ul></div>
+    <div class="file-panel"><div class="file-title"><span class="file-dot"></span> worlds / room / <span>本地文件驱动</span></div><ul class="file-tree"><li><code>project.json</code><span>项目身份</span></li><li><code>image.json</code><span>图像分析</span></li><li class="highlight"><code>scene.json</code><span>用户布局</span></li><li class="folder"><code>source/</code><span>原图 / 清理背景</span></li><li class="folder"><code>output/world/</code><span>环境资产</span></li><li class="indent"><code>0-world-full_res.spz</code><span>外观</span></li><li class="indent"><code>0-world.glb</code><span>碰撞</span></li><li class="folder"><code>output/vase/</code><span>独立物体</span></li><li class="indent"><code>object.json</code><span>身份与意图</span></li><li class="indent"><code>0-vase.png / .glb</code><span>参考与模型</span></li><li class="indent"><code>.0-vase__model-request.json</code><span>请求状态</span></li><li class="folder"><code>output/sfx/</code><span>环境音</span></li></ul><p>示意结构 · 编号保存版本，JSON 保留来源。</p></div>
+  </div></section>
+
+  <section class="section wrap" id="comparison" aria-labelledby="comparison-title">
+    <div class="section-heading"><p class="eyebrow">05 / CONNECT THE RESEARCH</p><h2 id="comparison-title">放回我们研究过的项目里看。</h2><p>它们都使用 AI，却在不同的层次解决问题。比较的是方法与产物，不是未经实测的模型性能。</p></div>
+    <div class="compare-tabs" role="tablist" aria-label="选择对比项目"><button id="compare-tab-atlas" role="tab" aria-selected="true" aria-controls="compare-panel" tabindex="0" data-compare="atlas" class="active">Atlas / 月门水庭</button><button id="compare-tab-rap" role="tab" aria-selected="false" aria-controls="compare-panel" tabindex="-1" data-compare="rap">古人说唱 Battle</button><button id="compare-tab-aether" role="tab" aria-selected="false" aria-controls="compare-panel" tabindex="-1" data-compare="aether">AetherViz Master</button><button id="compare-tab-doors" role="tab" aria-selected="false" aria-controls="compare-panel" tabindex="-1" data-compare="doors">随机门</button></div>
+    <article class="compare-panel" id="compare-panel" role="tabpanel" aria-labelledby="compare-tab-atlas" tabindex="0"><div class="compare-heading"><span id="compare-kicker">最接近的三维路线</span><h3 id="compare-title">模型直接生成，还是用代码搭建？</h3></div><div class="compare-columns"><div><span class="small-label">IMAGE-BLASTER</span><h4 id="compare-left-title">生成资产，再组合</h4><p id="compare-left">专用模型生成静态背景与独立物体，视觉细节很大程度由模型决定。布局和尺度仍需要调整。</p></div><span class="versus" aria-hidden="true">VS</span><div><span class="small-label" id="compare-project">ATLAS / 月门水庭 · 1014 / 007</span><h4 id="compare-right-title">看图写脚本，构建几何</h4><p id="compare-right">我们的月门水庭实验由 AI 理解参考图并编写 Blender Python，输出可编辑工程与 GLB，未调用专用图生三维服务。</p></div></div><div class="compare-takeaway"><strong>从这组对比学什么</strong><p id="compare-takeaway">规整建筑和布局适合参数化代码，有机道具可探索生成模型。两条路线均会补全不可见内容，都不能直接视作精确重建。</p></div><p class="compare-scope" id="compare-scope">范围：Atlas 上游支持多条路线；这里只比较我们实际选用的脚本建模实验。该实验已有真实渲染与网页交互证据，image-blaster 本轮未实测生成。</p><a href="references/prior-research.md" class="text-link">查看既有研究记录 ↗</a></article>
+    <div class="matrix-heading"><h3>五个项目，各自交付什么？</h3><span>制作阶段 ≠ 运行阶段</span></div>
+    <div class="table-scroll" tabindex="0" aria-label="五项目对比表，可横向滚动"><table class="comparison-table"><thead><tr><th>项目</th><th>产物</th><th>核心机制</th><th>模型依赖</th><th>验证到哪一步</th></tr></thead><tbody>
+      <tr class="current-row"><th>image-blaster<small>本轮 / 002</small></th><td>环境 + 物体 + 声音</td><td>Skill 调度专用模型，落地资产</td><td>生成时调用多类模型</td><td>源码 / 网页已核对<br>生成效果待实测</td></tr>
+      <tr><th>Atlas / 月门水庭<small>1014 / 007</small></th><td>脚本、.blend、GLB</td><td>本地实验采用代码建模</td><td>AI 写脚本；本实验未用专用图生 3D</td><td>实际几何 / 渲染 / 网页交互</td></tr>
+      <tr><th>古人说唱 Battle<small>1014 / 011</small></th><td>逐句素材与成片</td><td>时间轴、生成、检查、选片与剪辑</td><td>外部音乐、制图与视频服务</td><td>源码 / 原作引用 / 网页<br>付费制作待实测</td></tr>
+      <tr><th><a href="../001-aetherviz-master/">AetherViz Master ↗</a><small>本仓库 / 001</small></th><td>互动课件代码</td><td>Skill 指导 AI 编写网页</td><td>制作时写代码，课件运行无需 AI</td><td>三个固定课件已运行</td></tr>
+      <tr><th>随机门<small>1014 / 006 · 原创体验研究</small></th><td>偶遇、互动、手记与回访</td><td>预制场景、规则和随机分配</td><td>原画制作时生成，原型运行不调模型</td><td>本地交互；留存与情绪效果待验证</td></tr>
+    </tbody></table></div>
+    <p class="section-note">依据：本仓库 001，以及以前研究仓库中 007、011、006 的本地记录。月门水庭和随机门包含原创实验，不把本地实现统一当成上游库能力。<a href="comparison.md">阅读完整比较 ↗</a></p>
+  </section>
+
+  <section class="value-section" id="value" aria-labelledby="value-title"><div class="wrap">
+    <div class="section-heading"><p class="eyebrow">06 / OUR ASSESSMENT</p><h2 id="value-title">价值有，但要放在正确的位置。</h2><p>“调用外部模型”不能单独决定价值。要看它是否稳定减少了人工、返工和失败损失。</p></div>
+    <div class="value-grid"><article><span>研究底层算法</span><h3>优先级较低</h3><p>没有提供自研图生三维模型、训练方法或权重。想掌握生成原理，应继续研究底层模型和表示。</p></article><article><span>学习资产工程</span><h3>值得拆解</h3><p>前景与背景分开、参考与模型分开、任务记录与资产分开，都是可迁移的工程做法。</p></article><article><span>制作场景原型</span><h3>有潜力，待实测</h3><p>需要验证生成结果、尺寸对齐、人工修整和加载性能，才能判断是否比手动调用更高效。</p></article></div>
+    <div class="verdict"><span class="verdict-mark" aria-hidden="true">↗</span><div><h3>作为应用集成案例收录，作为核心算法项目降级。</h3><p>下一步若投入实测，先做一个背景、一个物体、一组声音，记录人工时间、重做次数、恢复结果与最终验收；再决定是否扩展。</p></div></div>
+    <div class="boundary-grid"><article><h3>空间没有自动还原</h3><p>没有布局记录时，物体按网格排列；单图的隐藏部分、比例和三维位姿仍需补全与调整。</p></article><article><h3>可交互不等于精密仿真</h3><p>背景用碰撞网格，物体主要用盒形碰撞体；动态不等于自动绑定、动画或行为智能。</p></article><article><h3>质量闭环仍较弱</h3><p>主流程主要根据文件与请求状态判断完成，缺少完整的视觉、几何一致性自动验收。</p></article><article><h3>生成世界不会自动生成体验</h3><p>故事、谜题、回应、记忆和回访仍需要产品设计。随机门研究说明了这部分独立工作。</p></article></div>
+  </div></section>
+
+  <section class="section wrap extensions-section" id="extensions" aria-labelledby="extensions-title">
+    <div class="section-heading"><p class="eyebrow">07 / NEXT POSSIBILITIES</p><h2 id="extensions-title">接下来，值得往哪里扩展？</h2><p>以下是基于现有架构的研究建议，尚未实现或验证。先验证一个背景、一个物体的完整流程，再增加自动化。</p></div>
+    <div class="extensions-grid">
+      <article><span class="small-label">优先 01 / 先证明能省返工</span><h3>补上质量验收</h3><p>检查背景残留、物体重复、网格缺损与尺度冲突，展示多角度候选图，由人工确认后进入组装。</p><small>验收：记录首次通过率、修整时间和局部重做次数。</small></article>
+      <article><span class="small-label">优先 02 / 减少手动摆位</span><h3>辅助布局与对齐</h3><p>结合深度、物体尺寸和接触关系给出初始位置与比例，保留人工校正；单图隐藏内容仍需补全。</p><small>验收：对照原图，检查落地、穿插、尺度和相机一致性。</small></article>
+      <article><span class="small-label">优先 03 / 把任务管得更完整</span><h3>成本与任务面板</h3><p>在已有请求记录上增加费用、耗时、预算上限、失败原因和取消/重试控制，比较手动调用的总成本。</p><small>验收：中断恢复能否复用请求，是否避免重复付费生成。</small></article>
+      <article><span class="small-label">资产路线 / 结合月门水庭经验</span><h3>生成模型 + 代码建模</h3><p>建筑和规则布局用 Blender 脚本构建，有机道具交给生成模型，统一坐标、单位、材质与碰撞后组合。</p><small>验收：真实尺寸、编辑便利性和碰撞质量，而非只看一张效果图。</small></article>
+      <article><span class="small-label">体验路线 / 结合随机门经验</span><h3>把场景接入故事与互动</h3><p>围绕独立物体增加可操作规则、剧情触发、谜题、记忆与回访，让生成资产承载具体体验。</p><small>验收：用户能否理解目标、完成互动并愿意再次进入。</small></article>
+      <article><span class="small-label">产品路线 / 独立后端工作</span><h3>在线项目与协作编辑</h3><p>在本地文件工作流之外设计持久存储、服务端生成队列、访问控制与多人版本管理。</p><small>验收：刷新与跨设备可恢复；静态 Pages 本身不提供这些后端能力。</small></article>
+    </div>
+    <p class="section-note">这些方向会增加工程投入，不能预先当作仓库已有能力或生产收益。<a href="extensions.md">阅读完整扩展路线与验收方法 ↗</a></p>
+  </section>
+
+  <section class="section wrap sources-section" id="sources" aria-labelledby="sources-title">
+    <div class="section-heading sources-heading"><div><p class="eyebrow">08 / EVIDENCE & SCOPE</p><h2 id="sources-title">判断，要能回到证据。</h2><p>源码事实、既有实验和研究推断，保持各自的边界。</p></div><button class="button outline" id="toggle-evidence" aria-expanded="false">展开全部证据 <span aria-hidden="true">＋</span></button></div>
+    <div class="source-list">
+      <details><summary><span>01</span><strong>主控与分析：Rules、Skills、Agents</strong><small>固定版本源码</small></summary><div><p>总流程由 Claude 按操作说明推进；Agent 模型继承运行环境。图片分析保存可见描述和物体证据。</p><a data-source href="https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/rules/project.md" target="_blank" rel="noreferrer">project.md ↗</a><a data-source href="https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/skills/image-blast-uncover/SKILL.md" target="_blank" rel="noreferrer">图像分析技能 ↗</a></div></details>
+      <details><summary><span>02</span><strong>生成与恢复：模型适配器、请求状态</strong><small>固定版本源码</small></summary><div><p>物体先生成参考图，再调用三维模型；公共请求层提交、轮询、取回结果并记录请求 ID。</p><a data-source href="https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/generate-single-asset.mjs" target="_blank" rel="noreferrer">单物体流水线 ↗</a><a data-source href="https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/fal-queue.mjs" target="_blank" rel="noreferrer">FAL 请求层 ↗</a></div></details>
+      <details><summary><span>03</span><strong>交互与布局：碰撞、网格摆位、场景保存</strong><small>固定版本源码</small></summary><div><p>物体默认网格摆放；网页编辑器通过 Vite 本地接口保存 scene.json。运行时加载本地资产。</p><a data-source href="https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/app/src/modules/scene/placements.ts" target="_blank" rel="noreferrer">默认布局 ↗</a><a data-source href="https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/app/vite.config.ts" target="_blank" rel="noreferrer">资产与保存接口 ↗</a></div></details>
+      <details><summary><span>04</span><strong>既有研究：不同产物，不同验证范围</strong><small>本地研究记录</small></summary><div><p>AetherViz 已有三个课件；月门水庭已有真实三维工程；古人说唱付费生成待测；随机门已有本地交互。未做跨模型性能或成本评测。</p><a href="references/prior-research.md">来源路径与版本 ↗</a><a href="comparison.md">比较分析 ↗</a></div></details>
+      <details><summary><span>05</span><strong>本轮验证、来源与许可</strong><small>研究交付</small></summary><div><p>本轮交付源码整理、能力长图与网页；未提交 World Labs / FAL 请求。引导图基于我们的预制房间演示重新排版，房间图和可操作几何用于讲解流程。MIT 许可证原文已保留。</p><a href="references/sources.json">完整证据索引 ↗</a><a href="THIRD_PARTY.md">来源与许可 ↗</a><a href="capabilities.md">能力边界 ↗</a></div></details>
+    </div>
+    <div class="reading-links"><a href="architecture.md">架构详解 <span>↗</span></a><a href="comparison.md">比较与价值 <span>↗</span></a><a href="references/upstream-README.md">上游说明快照 <span>↗</span></a><a href="references/upstream-LICENSE">MIT 原文 <span>↗</span></a></div>
+  </section>
+</main>
+<footer class="site-footer wrap"><div><strong>RESEARCH LAB / 002</strong><p>从源码理解能力，从验证判断价值。</p></div><div>image-blaster · 2026.10.15<br><span>源码研究与机制演示 · 生成效果未实测</span></div><a href="#main">回到顶部 ↑</a></footer>
+</body>
+</html>

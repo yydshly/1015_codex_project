@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-15",
+  "image": {
+    "path": "projects/002-image-blaster/web/assets/image-blaster-overview-v1.png",
+    "width": 940,
+    "height": 1672,
+    "bytes": 1986388,
+    "sha256": "d58dde138ea8358deb82f6114a37169c9aaba3bad711aaabe89da82a83f90b04",
+    "mode": "built-in imagegen",
+    "references": [
+      "room-demo-source.jpg",
+      "room-demo-split.jpg",
+      "room-demo-combined.jpg"
+    ]
+  },
+  "checks": {
+    "local_targets": 41,
+    "missing_targets": [],
+    "build_copy_identical": true,
+    "http": [
+      {
+        "path": "/",
+        "status": 200,
+        "type": "text/html"
+      },
+      {
+        "path": "/projects/001-aetherviz-master/",
+        "status": 200,
+        "type": "text/html"
+      },
+      {
+        "path": "/projects/002-image-blaster/",
+        "status": 200,
+        "type": "text/html"
+      },
+      {
+        "path": "/projects/003-er-mario/",
+        "status": 200,
+        "type": "text/html"
+      },
+      {
+        "path": "/projects/002-image-blaster/assets/image-blaster-overview-v1.png",
+        "status": 200,
+        "type": "image/png"
+      },
+      {
+        "path": "/projects/002-image-blaster/assets/image-blaster-overview-prompt.txt",
+        "status": 200,
+        "type": "text/plain"
+      }
+    ],
+    "desktop": {
+      "viewport_width": 1280,
+      "page_width": 1265,
+      "image_loaded": true,
+      "download_filename": "image-blaster-能力全景.png"
+    },
+    "mobile": {
+      "viewport_width": 390,
+      "page_width": 375,
+      "poster_width": 334.6667,
+      "image_loaded": true,
+      "buttons_visible": true
+    },
+    "browser_error_warn_logs": []
+  },
+  "scope": "Source analysis and illustrative local room demo; upstream paid generation was not run."
+}

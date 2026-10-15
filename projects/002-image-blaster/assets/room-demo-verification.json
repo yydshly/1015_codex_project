@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-15",
+  "scope": "预制房间流程演示；未调用外部生成",
+  "stages": [
+    {
+      "step": 1,
+      "title": "图片里有物体，还没有独立资产。",
+      "mode": "image",
+      "selected": "true"
+    },
+    {
+      "step": 2,
+      "title": "背景清空了，物体也有了各自的参考图。",
+      "mode": "image",
+      "selected": "true"
+    },
+    {
+      "step": 3,
+      "title": "分别生成：一份环境，三个独立模型。",
+      "mode": "three",
+      "selected": "true"
+    },
+    {
+      "step": 4,
+      "title": "先放到一起，再调整到合适的位置。",
+      "mode": "three",
+      "selected": "true"
+    }
+  ],
+  "referenceImageWidth": 1440,
+  "cleanPlateDiffers": true,
+  "thumbnailWidths": [
+    300,
+    300,
+    300
+  ],
+  "layout": {
+    "sliderBefore": false,
+    "sliderAfter": true
+  },
+  "chairOffsetsChecked": [
+    1.2,
+    -1.2
+  ],
+  "vaseVersionChecked": "B",
+  "autoplay": {
+    "finalStep": "04 / 04",
+    "playing": false
+  },
+  "keyboard": [
+    "End",
+    "Home"
+  ],
+  "mobile": {
+    "viewport": 390,
+    "pageWidth": 375,
+    "canvasWidth": 333
+  },
+  "existingPipeline": "04 / 08",
+  "existingComparison": "让 AI 写代码，还是让 AI 生成媒体？",
+  "consoleErrors": []
+}

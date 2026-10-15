@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Project preview placeholder</title>
+  <desc id="desc">Replace this placeholder with a screenshot of the research project.</desc>
+  <rect width="960" height="540" rx="20" fill="#101b2e"/>
+  <rect x="48" y="48" width="864" height="444" rx="16" fill="#182a42" stroke="#34506e"/>
+  <path d="M393 210l-62 60 62 60m174-120 62 60-62 60m-57-150-60 180" stroke="#8ce4d1" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="480" y="407" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="25" fill="#e6edf7">PROJECT PREVIEW</text>
+  <text x="480" y="445" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" fill="#98adc7">Replace with a real screenshot after reproduction</text>
+</svg>

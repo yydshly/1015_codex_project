@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-15",
+  "url": "http://127.0.0.1:8082/projects/002-image-blaster/",
+  "desktop": {
+    "viewport": 1280,
+    "height": 720
+  },
+  "mobile": {
+    "pageWidth": 375,
+    "scrollTop": 0,
+    "viewport": 390
+  },
+  "stages": [
+    {
+      "step": 1,
+      "title": "建立一个可以继续工作的项目",
+      "selected": "true",
+      "source": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/project/project-state.mjs"
+    },
+    {
+      "step": 2,
+      "title": "先理解画面，再确定独立物体",
+      "selected": "true",
+      "source": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/skills/image-blast-uncover/SKILL.md"
+    },
+    {
+      "step": 3,
+      "title": "先从背景里拿走要移动的东西",
+      "selected": "true",
+      "source": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/skills/image-blast-plate/SKILL.md"
+    },
+    {
+      "step": 4,
+      "title": "生成环境外观，也取得碰撞几何",
+      "selected": "true",
+      "source": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/world/generate-world.mjs"
+    },
+    {
+      "step": 5,
+      "title": "给每个物体准备一张干净参考图",
+      "selected": "true",
+      "source": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/generate-single-asset.mjs"
+    },
+    {
+      "step": 6,
+      "title": "一张参考图，生成一个独立模型",
+      "selected": "true",
+      "source": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/hunyuan-3d.mjs"
+    },
+    {
+      "step": 7,
+      "title": "按场景和材质，预先生成声音",
+      "selected": "true",
+      "source": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/sfx/fal-elevenlabs-sfx.mjs"
+    },
+    {
+      "step": 8,
+      "title": "把资产放到一起，真正开始交互",
+      "selected": "true",
+      "source": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/app/src/components/WorldViewer.tsx"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "atlas",
+      "title": "模型直接生成，还是用代码搭建？",
+      "selected": "true"
+    },
+    {
+      "id": "rap",
+      "title": "编排的价值，来自可检查和可返工。",
+      "selected": "true"
+    },
+    {
+      "id": "aether",
+      "title": "让 AI 写代码，还是让 AI 生成媒体？",
+      "selected": "true"
+    },
+    {
+      "id": "doors",
+      "title": "生成了一个世界，然后呢？",
+      "selected": "true"
+    }
+  ],
+  "keyboard": {
+    "arrowDown": "02 / 08",
+    "home": "01 / 08"
+  },
+  "evidence": {
+    "expanded": 5,
+    "collapsed": 0
+  },
+  "consoleErrors": [],
+  "scope": "研究网页验证；未调用生成模型"
+}

@@ -1,0 +1,124 @@
+{
+  "repository": "https://github.com/neilsonnn/image-blaster",
+  "commit": "4acb43ba126a12358f71838d1b1a05e856b10eaf",
+  "reviewed_on": "2026-10-15",
+  "method": "固定提交源码阅读；本地研究网页验证；未执行外部生成",
+  "sources": [
+    {
+      "path": ".claude/rules/project.md",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/rules/project.md",
+      "git_blob_sha": "b309d3d36e23c274d9e40156515eae30dc99813a"
+    },
+    {
+      "path": ".claude/agents/image-blast-3d.md",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/agents/image-blast-3d.md",
+      "git_blob_sha": "daa58a2127ebbe7e46524fd3010e2acc714aa17f"
+    },
+    {
+      "path": ".claude/skills/image-blast-uncover/SKILL.md",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/skills/image-blast-uncover/SKILL.md",
+      "git_blob_sha": "cbc93843f1b03a0dc3b833b40e283f1c7aee8d2a"
+    },
+    {
+      "path": ".claude/skills/image-blast-uncover/IMAGE-BLAST.md",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/skills/image-blast-uncover/IMAGE-BLAST.md",
+      "git_blob_sha": "93c76269f1bfc4ca2654363af1103d907621988e"
+    },
+    {
+      "path": ".claude/skills/image-blast-plate/SKILL.md",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/skills/image-blast-plate/SKILL.md",
+      "git_blob_sha": "aa695f98fc666ea4cf440a308f32850949ee2ecd"
+    },
+    {
+      "path": ".claude/skills/image-blast-3d/SKILL.md",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/skills/image-blast-3d/SKILL.md",
+      "git_blob_sha": "d196c23737bc3f6c0c694a5f9cbc45a4c521db83"
+    },
+    {
+      "path": ".claude/skills/image-blast-sfx/SKILL.md",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/skills/image-blast-sfx/SKILL.md",
+      "git_blob_sha": "1cfbfe9cf42810617edd36df4b011753834b6250"
+    },
+    {
+      "path": ".claude/scripts/world/generate-world.mjs",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/world/generate-world.mjs",
+      "git_blob_sha": "d562ad0c823571d6b50d9ca9f9ae639bf74771be"
+    },
+    {
+      "path": ".claude/scripts/asset-pipeline/nano-banana-edit.mjs",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/nano-banana-edit.mjs",
+      "git_blob_sha": "ecfaf8cbb05e8e57a34387702a43ccdff2f1cc84"
+    },
+    {
+      "path": ".claude/scripts/asset-pipeline/gpt-image-2-edit.mjs",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/gpt-image-2-edit.mjs",
+      "git_blob_sha": "b7bbbcc2f41d00395bc8c356ecc4b91609314a9a"
+    },
+    {
+      "path": ".claude/scripts/asset-pipeline/hunyuan-3d.mjs",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/hunyuan-3d.mjs",
+      "git_blob_sha": "6cb652392417fdba77984f5b65590c56706938ea"
+    },
+    {
+      "path": ".claude/scripts/asset-pipeline/meshy-3d.mjs",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/meshy-3d.mjs",
+      "git_blob_sha": "5092fd61ea366e86a0ae4d0d1077be546b70092b"
+    },
+    {
+      "path": ".claude/scripts/asset-pipeline/generate-single-asset.mjs",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/generate-single-asset.mjs",
+      "git_blob_sha": "73d22084331a091b4d38e1597320a69a54fab27e"
+    },
+    {
+      "path": ".claude/scripts/asset-pipeline/fal-queue.mjs",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/fal-queue.mjs",
+      "git_blob_sha": "a687cc91c84cb43b48d6a9158d62e31019c41a3b"
+    },
+    {
+      "path": ".claude/scripts/asset-pipeline/request-metadata.mjs",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/asset-pipeline/request-metadata.mjs",
+      "git_blob_sha": "5a7cfb5c9e388719d2fa516ea10d72732005d859"
+    },
+    {
+      "path": ".claude/scripts/project/ensure-local-assets.mjs",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/project/ensure-local-assets.mjs",
+      "git_blob_sha": "32f298bb4d6805b5b8c5f1417c480c07d5df6bc7"
+    },
+    {
+      "path": ".claude/scripts/sfx/fal-elevenlabs-sfx.mjs",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/.claude/scripts/sfx/fal-elevenlabs-sfx.mjs",
+      "git_blob_sha": "832c77930263a90ae36daccc3d98b9f6c54bef4e"
+    },
+    {
+      "path": "app/src/components/WorldViewer.tsx",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/app/src/components/WorldViewer.tsx",
+      "git_blob_sha": "26b1b96200c9f95c60a062c2b9bd5704129812cc"
+    },
+    {
+      "path": "app/src/modules/scene/placements.ts",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/app/src/modules/scene/placements.ts",
+      "git_blob_sha": "bb48dcb7b422852688c6be9082364ec2481956e1"
+    },
+    {
+      "path": "app/src/modules/scene/SceneObject.tsx",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/app/src/modules/scene/SceneObject.tsx",
+      "git_blob_sha": "f728e9208f7316528b9770987df9b240c5234aaa"
+    },
+    {
+      "path": "app/src/modules/scene/useObjectGrab.ts",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/app/src/modules/scene/useObjectGrab.ts",
+      "git_blob_sha": "6a9650da85dece82d70fc1e9ff5605d1a796a402"
+    },
+    {
+      "path": "app/src/modules/scene/PlacementEditor.tsx",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/app/src/modules/scene/PlacementEditor.tsx",
+      "git_blob_sha": "3eeda8b529a5e34ed2a4c7101592bcca1b19022f"
+    },
+    {
+      "path": "app/vite.config.ts",
+      "url": "https://github.com/neilsonnn/image-blaster/blob/4acb43ba126a12358f71838d1b1a05e856b10eaf/app/vite.config.ts",
+      "git_blob_sha": "2d5168dca9ec276a6c7ff13597c09af330028627"
+    }
+  ],
+  "prior_research": "prior-research.md"
+}
