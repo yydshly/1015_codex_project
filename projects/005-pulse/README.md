@@ -5,7 +5,7 @@
 - 上游仓库：[qunqin24/Pulse](https://github.com/qunqin24/Pulse)
 - 研究版本：[`b3bf083`](https://github.com/qunqin24/Pulse/commit/b3bf083c539310d57d82cd4e808cb37b2ffbfcc4)，提交日期 2026-10-14；核对日期 2026-10-15。
 - 上游许可证：Apache-2.0，见 [保留的许可证](references/upstream-LICENSE) 与 [第三方说明](THIRD_PARTY.md)。
-- 网页入口：[本地研究页](web/overview.html)。真实部署地址在发布验证后登记。
+- 网页入口：[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html) · [本地页面](web/overview.html)。2026-10-15 已部署并验证。
 - 本轮产物：中文研究文档、完整来源目录、交互记账示例和静态研究网页。尚未实现真正扫描本地 Agent 的统计产品，也未移植原生 macOS 客户端。
 
 ![Pulse 用量统计研究引导图](assets/research-map.png)
@@ -43,3 +43,9 @@ Pulse 是 macOS 原生的账号额度监控与本地用量分析应用。本研�
 Crush、Warp 只有成本或请求信息，Freebuff 没有可报告的真实 Token 计数；Cursor 等导出来源没有导出就没有数据。部分来源只有会话级时间或不完整分类。API 等价金额不等于订阅实付，不同设备、账号或缺失记录也不会自动补齐。
 
 网页中的两模型记账示例使用明确标记的合成数据，只演示差分与去重；本页不扫描访问者的文件、不调用模型生成接口。
+
+## 实际发布与检查
+
+2026-10-15，内容提交 [`9a426fd`](https://github.com/yydshly/1015_codex_project/commit/9a426fd4c4f561e633ba9757d436ee6642fcfcba) 的 [Pages 发布任务](https://github.com/yydshly/1015_codex_project/actions/runs/38726572897) 成功；已实际访问正式站点。54 类目录、5 组筛选、搜索空结果、模型切换与重复快照校正、引导图查看正常。13 个相对资源 / 文档返回 200，引导图哈希与原文件一致；桌面、390px 手机及 320px 窄屏验证通过，无脚本错误或失败资源。
+
+证据：[线上检查报告](assets/deployed-verification.json) · [桌面截图](assets/deployed-desktop.png) · [手机截图](assets/deployed-mobile.png)。

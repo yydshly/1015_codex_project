@@ -20,7 +20,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 001 | [AetherViz Master 课件生成规范研究](projects/001-aetherviz-master/README.md) | [aetherviz-master](https://github.com/andyhuo520/aetherviz-master) | 通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可按知识顺序组织为系列课程。 | 已完成 | [研究](projects/001-aetherviz-master/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html) |
 | 002 | [image-blaster 图生三维工作流研究](projects/002-image-blaster/README.md) | [image-blaster](https://github.com/neilsonnn/image-blaster) | 将场景图拆成背景、独立物体与声音，借助外部模型生成并组装三维场景；价值在资产解耦、请求恢复和局部返工，可扩展自动布局与质量验收。 | 已完成 | [研究](projects/002-image-blaster/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/) |
-| 005 | [Pulse 本地 Agent 用量统计研究](projects/005-pulse/README.md) | [Pulse](https://github.com/qunqin24/Pulse) | 读取多种 Agent 的本地日志、数据库与导出记录，校正累计值和重复消息，按模型归集 Token 与 API 等价费用；为自建用量统计模块提供采集、归因、计价和扩展参考。 | 已完成 | [研究](projects/005-pulse/README.md) |
+| 005 | [Pulse 本地 Agent 用量统计研究](projects/005-pulse/README.md) | [Pulse](https://github.com/qunqin24/Pulse) | 读取多种 Agent 的本地日志、数据库与导出记录，校正累计值和重复消息，按模型归集 Token 与 API 等价费用；为自建用量统计模块提供采集、归因、计价和扩展参考。 | 已完成 | [研究](projects/005-pulse/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html) |
 
 ### 项目预览
 
@@ -68,7 +68,7 @@ Claude Code 按技能规范调度，脚本记录请求和本地资产；价值�
 
 源库：[qunqin24/Pulse](https://github.com/qunqin24/Pulse)。读取 Agent 的本地日志、数据库或已有导出，提取模型与 Token 计数，处理累计差分、消息去重、会话分叉及缓存重叠，再按模型价格估算 API 等价费用。原应用另有账号额度监控。
 
-价值是为自建统计模块提供来源适配、标准记录、计数校正与聚合查询参考。可扩展 Windows / WSL、增量采集、账号归因与账单对照。采用本次生成的引导图，完整列出 54 类来源并标注验证与导出限制，详见[完整研究](projects/005-pulse/README.md)。
+价值是为自建统计模块提供来源适配、标准记录、计数校正与聚合查询参考。可扩展 Windows / WSL、增量采集、账号归因与账单对照。采用本次生成的引导图，完整列出 54 类来源并标注验证与导出限制，详见[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html)与[完整研究](projects/005-pulse/README.md)。
 
 ## 新增一个研究项目
 

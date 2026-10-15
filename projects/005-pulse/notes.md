@@ -16,4 +16,10 @@
 
 本地已通过目录检查与静态构建。Edge 浏览器验证：54 行目录；实机 / 格式适配 / 导出 / 无真实 Token 筛选分别为 7 / 41 / 6 / 3；搜索与空结果正常。合成账本重复快照不增量，模型 A 计 400 / 600 / 100，切换后模型 B 计 300 / 300 / 80（普通输入 / 缓存读取 / 输出）。原图完整查看、Escape 关闭与下载地址正常；13 个相对资源 / 文档返回 200，PNG 哈希与原图相同。1440px 桌面、390px 手机和 320px 窄屏通过，无脚本错误或失败资源。
 
-证据：[本地检查报告](https://github.com/yydshly/1015_codex_project/blob/main/projects/005-pulse/assets/local-verification.json)、[桌面截图](https://github.com/yydshly/1015_codex_project/blob/main/projects/005-pulse/assets/local-desktop.png)、[手机截图](https://github.com/yydshly/1015_codex_project/blob/main/projects/005-pulse/assets/local-mobile.png)、[引导图截图](https://github.com/yydshly/1015_codex_project/blob/main/projects/005-pulse/assets/local-guide.png)。实际部署结果在发布后追加。
+证据：[本地检查报告](https://github.com/yydshly/1015_codex_project/blob/main/projects/005-pulse/assets/local-verification.json)、[桌面截图](https://github.com/yydshly/1015_codex_project/blob/main/projects/005-pulse/assets/local-desktop.png)、[手机截图](https://github.com/yydshly/1015_codex_project/blob/main/projects/005-pulse/assets/local-mobile.png)、[引导图截图](https://github.com/yydshly/1015_codex_project/blob/main/projects/005-pulse/assets/local-guide.png)。实际部署结果如下。
+
+### 实际部署
+
+2026-10-15：内容提交 `9a426fd4c4f561e633ba9757d436ee6642fcfcba`；[Pages 发布](https://github.com/yydshly/1015_codex_project/actions/runs/38726572897) 成功。正式地址：[研究总览](https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html)。
+
+线上重复验证全部 7 项检查：静态内容与原图、目录筛选 / 搜索、合成账本、图像对话框、13 个相对资源及 PNG 哈希、390px 手机与 320px 窄屏。无页面脚本错误或失败资源。实际报告见 [deployed-verification.json](https://github.com/yydshly/1015_codex_project/blob/main/projects/005-pulse/assets/deployed-verification.json)，并保存线上桌面、手机与完整图查看截图。

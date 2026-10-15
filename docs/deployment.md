@@ -1,6 +1,6 @@
 # 多个 Web 的部署约定
 
-001 AetherViz Master 与 002 image-blaster 的研究网页已于 2026-10-15 部署并实际访问验证。使用 GitHub Pages Actions，只发布已提交项目的静态构建产物；其他本地未提交研究不纳入发布。
+001 AetherViz Master、002 image-blaster 与 005 Pulse 的研究网页已于 2026-10-15 部署并实际访问验证。使用 GitHub Pages Actions，只发布已提交项目的静态构建产物；其他本地未提交研究不纳入发布。
 
 ## 构建与发布
 
@@ -14,13 +14,14 @@ GitHub Pages 每个仓库提供一个站点，可以将多个静态 Web 构建�
 https://yydshly.github.io/1015_codex_project/
 ```
 
-总导航与以下两个项目均已上线并验证，采用以下映射：
+总导航与以下三个项目均已上线并验证，采用以下映射：
 
 | 内容 | 仓库源目录 | 汇总构建目录 | 站点路径 |
 | --- | --- | --- | --- |
 | 总导航页 | `scripts/build_web.py` 从 `projects.json` 生成 | `_site/index.html` | `/1015_codex_project/` |
 | 001 AetherViz | `projects/001-aetherviz-master/web/` | `_site/projects/001-aetherviz-master/` | `/1015_codex_project/projects/001-aetherviz-master/overview.html` |
 | 002 image-blaster | `projects/002-image-blaster/web/` | `_site/projects/002-image-blaster/` | `/1015_codex_project/projects/002-image-blaster/` |
+| 005 Pulse | `projects/005-pulse/web/` | `_site/projects/005-pulse/` | `/1015_codex_project/projects/005-pulse/overview.html` |
 
 总导航从 `projects.json` 读取展示信息，保持与仓库首页一致；真实演示地址只在部署并验证成功后登记。
 
@@ -60,10 +61,12 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 
 引导图使用本研究生成的能力全景图；页面说明库的能力、外部模型分工、工程价值与扩展建议。房间是预制机制演示，未运行付费生成 API。只接入 002，其他未提交项目保留在工作区。真实地址在部署成功后回填索引。
 
-## 005 · Pulse 用量统计研究页接入
+## 005 · Pulse 用量统计研究页实际发布
 
 源目录 `projects/005-pulse/web/`，构建产物 `_site/projects/005-pulse/`，研究入口为 `overview.html`。沿用现有静态构建与 Pages Actions，不引入根目录应用依赖。引导图原样使用本次对话生成的 PNG / SVG，均支持下载。
 
 页面覆盖库的能力、日志 / 数据库 / 导出读取方式、54 类来源与验证边界、模型归因、累计差分、消息去重、缓存拆分、费用估算及产品扩展建议。来源筛选与合成记账示例在浏览器本地运行，不扫描访问者的文件。
 
-本地已验证目录筛选、搜索空结果、模型切换、重复快照不累加、引导图弹窗与原图哈希；1440px 桌面、390px 手机与 320px 窄屏无页面横向溢出。共 13 个相对资源和文档返回 200。部署完成后再登记真实 URL。
+本地已验证目录筛选、搜索空结果、模型切换、重复快照不累加、引导图弹窗与原图哈希；1440px 桌面、390px 手机与 320px 窄屏无页面横向溢出。共 13 个相对资源和文档返回 200。正式地址：[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html)。
+
+2026-10-15：内容提交 `9a426fd` 已推送至 main，[Pages 任务 38726572897](https://github.com/yydshly/1015_codex_project/actions/runs/38726572897) 成功。线上重复验证来源筛选、合成记账、原图查看与哈希，以及 13 个相对资源 / 文档；桌面和手机访问正常，无脚本错误或失败资源。真实 URL 已在发布后回填索引。仅发布 005 相关变更，其他本地未提交研究保留。证据见 `projects/005-pulse/assets/deployed-verification.json`。
