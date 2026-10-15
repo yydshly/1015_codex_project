@@ -1,0 +1,10 @@
+# Locally generated video examples; reproducible from the demo controls.
+exports/*.webm
+exports/*.mp4
+
+# Pinned upstream runtime files are source dependencies, rather than build output.
+!web/vendor/three/build/
+!web/vendor/three/build/*.js
+!web/vendor/mediabunny/dist/
+!web/vendor/mediabunny/dist/bundles/
+!web/vendor/mediabunny/dist/bundles/mediabunny.mjs

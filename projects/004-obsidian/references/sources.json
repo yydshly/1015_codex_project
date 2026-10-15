@@ -1,0 +1,74 @@
+{
+  "research_date": "2026-10-15",
+  "repository": "https://github.com/iamtechartist/obsidian",
+  "commit": "74510f112c0a7e4318f688b851523105ec4f79e4",
+  "upstream": [
+    {
+      "path": "references/upstream-index.html",
+      "sha256": "6fa65d5a2e78446a521728b09d6c23ed932d6361a64c854456014a62e533c9e9",
+      "bytes": 286350,
+      "source": "https://raw.githubusercontent.com/iamtechartist/obsidian/74510f112c0a7e4318f688b851523105ec4f79e4/index.html"
+    },
+    {
+      "path": "references/upstream-README.md",
+      "sha256": "2e2ed1751752fc50b81fae24c667948a0553aeb6661056d588f847a576b4b615",
+      "bytes": 252,
+      "source": "https://raw.githubusercontent.com/iamtechartist/obsidian/74510f112c0a7e4318f688b851523105ec4f79e4/README.md"
+    },
+    {
+      "path": "references/upstream-LICENSE",
+      "sha256": "b0e0e711c04aac69e316e9c79a3119b722dc7d65e129990cdbe7a35dea6fec8b",
+      "bytes": 1067,
+      "source": "https://raw.githubusercontent.com/iamtechartist/obsidian/74510f112c0a7e4318f688b851523105ec4f79e4/LICENSE"
+    }
+  ],
+  "three": {
+    "version": "0.186.1",
+    "tarball": "https://registry.npmjs.org/three/-/three-0.186.1.tgz",
+    "integrity": "sha512-blFeqb49wRCSGUGj7gtpfnSGHy2lwDk94RhUmS1c/hTby70kvChbWpkJ4Pm1390LqzzvTmzgXKHPEafJwCb8jA==",
+    "files": [
+      "LICENSE",
+      "build/three.core.js",
+      "build/three.module.js",
+      "examples/jsm/controls/OrbitControls.js",
+      "examples/jsm/math/MeshSurfaceSampler.js",
+      "examples/jsm/postprocessing/EffectComposer.js",
+      "examples/jsm/postprocessing/MaskPass.js",
+      "examples/jsm/postprocessing/OutputPass.js",
+      "examples/jsm/postprocessing/Pass.js",
+      "examples/jsm/postprocessing/RenderPass.js",
+      "examples/jsm/postprocessing/ShaderPass.js",
+      "examples/jsm/postprocessing/UnrealBloomPass.js",
+      "examples/jsm/shaders/CopyShader.js",
+      "examples/jsm/shaders/LuminosityHighPassShader.js",
+      "examples/jsm/shaders/OutputShader.js",
+      "examples/jsm/utils/BufferGeometryUtils.js"
+    ],
+    "sha256": {
+      "LICENSE": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "build/three.core.js": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+      "build/three.module.js": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+      "examples/jsm/controls/OrbitControls.js": "3d79d07ecb686b4e5d93232eedab255331c1beef711e13164eaa1f68655a5f2b",
+      "examples/jsm/math/MeshSurfaceSampler.js": "a70ab7a8f28b96cd51f09b7c4d5987167bdc23b91b2a26134766a180751aee43",
+      "examples/jsm/postprocessing/EffectComposer.js": "4e079a5886152d7e529a59aef644e968ab4d32c6a33ce016b36bf29b2eac26f7",
+      "examples/jsm/postprocessing/MaskPass.js": "7cd08eee9d5d6f5578beaddbdcbe9c384f6873810af27f22ab7db3ceeb127aa3",
+      "examples/jsm/postprocessing/OutputPass.js": "02e4a261af34de71338185e9e87f0cbe5cba9115608d984363e1269dec1d2272",
+      "examples/jsm/postprocessing/Pass.js": "444b409c235ead986893c472e720da1b779a56985c7d10b279c7944b52bd61c5",
+      "examples/jsm/postprocessing/RenderPass.js": "817f6c3cdcd0fd41515d112359ea0532568eefb5aabd3b33903957ebca1b8a6a",
+      "examples/jsm/postprocessing/ShaderPass.js": "e2500a5913b26bbf5148ceaae644c6edcff06a18b01494ee37bf856353d2ab9d",
+      "examples/jsm/postprocessing/UnrealBloomPass.js": "ba8f2fcadfa6588384c9473498f974d81d120f02f0e63a0e59c265202a006b5a",
+      "examples/jsm/shaders/CopyShader.js": "a33057d5ac91c43304c186ac0e8816e62bb2ed471d3a00ff3018dfd5c0389718",
+      "examples/jsm/shaders/LuminosityHighPassShader.js": "5044f780b6e6cf863947f64c36fe1587132f7fbe395ada863cd1e5f0388dcf1e",
+      "examples/jsm/shaders/OutputShader.js": "353479f77a8d7e2629d49ccac9fc2f5dbfdda5442e0adf867b00377a2fcb0cb2",
+      "examples/jsm/utils/BufferGeometryUtils.js": "9fb63427ce6641fa14fd0baff9cc4d1b5f9c3d85fd084bf2e90e803c44ec1797"
+    }
+  },
+  "local_changes": [
+    "Local Three.js import map and extension module import",
+    "Additional samplers and GPU state branch for four 3-D extension shapes",
+    "Frame, camera, focus, quality-switch and HUD integration hooks",
+    "Same-origin controls, parameters, state and error reporting bridge",
+    "Deterministic 48-second film, GPU dual-target morphs, camera paths and frame export",
+    "Offline-context and scheduled-clock hooks in the original audio synthesizer; shared audiovisual score and MP4 export"
+  ]
+}

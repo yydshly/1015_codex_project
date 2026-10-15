@@ -47,6 +47,21 @@
       "demo_url": "https://yydshly.github.io/1015_codex_project/projects/003-er-mario/overview.html"
     },
     {
+      "id": 4,
+      "slug": "obsidian",
+      "name": "Obsidian 程序化碎片变形研究",
+      "repository": "https://github.com/iamtechartist/obsidian",
+      "summary": "以表面碎裂、目标采样匹配和 GPU 时间函数驱动同一批三维碎片重组，适合片头、品牌与舞台视觉；研究页扩展四种形态、48 秒声画循环和 MP4 导出，并梳理模型、音乐、数据与交互的扩展条件。",
+      "status": "completed",
+      "tags": [
+        "Three.js",
+        "程序化动画",
+        "交互演示"
+      ],
+      "cover": "assets/obsidian-understanding.png",
+      "demo_url": ""
+    },
+    {
       "id": 5,
       "slug": "pulse",
       "name": "Pulse 本地 Agent 用量统计研究",

@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-15",
+  "upstream_commit": "74510f112c0a7e4318f688b851523105ec4f79e4",
+  "output": {
+    "path": "exports/obsidian-complete-48s-720p.webm",
+    "tracked": false,
+    "sha256": "447b4bbde17f5572ab5d10126075a3275da80c0cc4059126dc7bdec77e0538e4",
+    "bytes": 30503517,
+    "duration_seconds": 48,
+    "width": 1280,
+    "height": 720,
+    "codec": "vp9",
+    "container": "webm",
+    "frame_rate": "30/1",
+    "decoded_frames": 1440,
+    "audio_tracks": 0,
+    "text": "星海"
+  },
+  "checks": {
+    "browser_video_metadata": {
+      "duration": 48,
+      "videoWidth": 1280,
+      "videoHeight": 720,
+      "readyState": 4
+    },
+    "ffprobe_count_frames": 1440,
+    "ffmpeg_decode_contactsheet": "assets/film-contactsheet.jpg",
+    "first_last_comparison": "assets/film-seam.jpg",
+    "cancel_and_restore": true,
+    "custom_text_enters_film": true,
+    "unit_tests": 10,
+    "restored_canvas_css": {
+      "inlineWidth": "",
+      "inlineHeight": "",
+      "canvas_fills_viewport": true
+    },
+    "free_camera_restored_after_cancel": true,
+    "tour_medium_shards": 19922,
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "body_width": 375,
+      "scroll_width": 375,
+      "screenshot": "assets/film-mobile.jpg"
+    }
+  },
+  "limits": [
+    "1080p full encoding not tested",
+    "PNG sequence not tested",
+    "No audio export",
+    "Not remotely deployed"
+  ]
+}

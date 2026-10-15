@@ -14,13 +14,14 @@
 
 <!-- PROJECTS:START -->
 
-已收录 **4** 个项目，按收录编号升序展示。
+已收录 **5** 个项目，按收录编号升序展示。
 
 | 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |
 | --- | --- | --- | --- | --- | --- |
 | 001 | [AetherViz Master 课件生成规范研究](projects/001-aetherviz-master/README.md) | [aetherviz-master](https://github.com/andyhuo520/aetherviz-master) | 通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可按知识顺序组织为系列课程。 | 已完成 | [研究](projects/001-aetherviz-master/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html) |
 | 002 | [image-blaster 图生三维工作流研究](projects/002-image-blaster/README.md) | [image-blaster](https://github.com/neilsonnn/image-blaster) | 将场景图拆成背景、独立物体与声音，借助外部模型生成并组装三维场景；价值在资产解耦、请求恢复和局部返工，可扩展自动布局与质量验收。 | 已完成 | [研究](projects/002-image-blaster/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/) |
 | 003 | [ER Mario 跨游戏动作系统研究](projects/003-er-mario/README.md) | [er-mario](https://github.com/deltarooo/er-mario) | 复用 SM64 运动与动画，经碰撞、骨骼、战斗与事件适配接入法环；用艾雷教堂和七模型演示说明行为与外形解耦、减少重复开发的价值，并梳理更多角色、场景与引擎的扩展条件。 | 已完成 | [研究](projects/003-er-mario/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/overview.html) |
+| 004 | [Obsidian 程序化碎片变形研究](projects/004-obsidian/README.md) | [obsidian](https://github.com/iamtechartist/obsidian) | 以表面碎裂、目标采样匹配和 GPU 时间函数驱动同一批三维碎片重组，适合片头、品牌与舞台视觉；研究页扩展四种形态、48 秒声画循环和 MP4 导出，并梳理模型、音乐、数据与交互的扩展条件。 | 已完成 | [研究](projects/004-obsidian/README.md) |
 | 005 | [Pulse 本地 Agent 用量统计研究](projects/005-pulse/README.md) | [Pulse](https://github.com/qunqin24/Pulse) | 读取多种 Agent 的本地日志、数据库与导出记录，校正累计值和重复消息，按模型归集 Token 与 API 等价费用；为自建用量统计模块提供采集、归因、计价和扩展参考。 | 已完成 | [研究](projects/005-pulse/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html) |
 
 ### 项目预览
@@ -49,6 +50,14 @@
 
 标签：游戏模组 · 跨引擎整合 · 交互演示
 
+#### 004 · Obsidian 程序化碎片变形研究
+
+[![Obsidian 程序化碎片变形研究 项目预览](projects/004-obsidian/assets/obsidian-understanding.png)](projects/004-obsidian/README.md)
+
+以表面碎裂、目标采样匹配和 GPU 时间函数驱动同一批三维碎片重组，适合片头、品牌与舞台视觉；研究页扩展四种形态、48 秒声画循环和 MP4 导出，并梳理模型、音乐、数据与交互的扩展条件。
+
+标签：Three.js · 程序化动画 · 交互演示
+
 #### 005 · Pulse 本地 Agent 用量统计研究
 
 [![Pulse 本地 Agent 用量统计研究 项目预览](projects/005-pulse/assets/research-map.png)](projects/005-pulse/README.md)
@@ -72,6 +81,12 @@
 源库：[image-blaster](https://github.com/neilsonnn/image-blaster)。它先理解和拆分场景图，再借助外部模型分别生成静态环境、独立物体与声音，最后组合并人工调整布局。
 
 Claude Code 按技能规范调度，脚本记录请求和本地资产；价值在资产解耦、请求恢复与局部返工。可扩展质量验收、辅助布局、成本面板与混合建模，这些方向尚未实现。上方使用我们生成的能力全景引导图，详细分析见[在线研究与演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/)及[完整研究](projects/002-image-blaster/README.md)。
+
+## 004 · Obsidian：三维碎片重组与视觉叙事
+
+源库：[iamtechartist/obsidian](https://github.com/iamtechartist/obsidian)。通过表面碎裂、目标采样匹配和 GPU 时间函数，把同一批立体碎片重组为巨石、教堂与巨鲸，再以材质、运镜和声音组成实时视听作品，适合片头、品牌与舞台视觉。
+
+本研究接入星系、龙卷、双螺旋与文字，提供参数调节、48 秒声画循环和带声音 MP4 导出。上方引导图原样使用我们生成的理解总览，区分原作、本研究和未来方向；模型导入、音乐 / 数据驱动、互动装置及真实装配的条件见[完整研究](projects/004-obsidian/README.md)。
 
 ## 005 · Pulse：本地 Agent 用量统计与产品参考
 

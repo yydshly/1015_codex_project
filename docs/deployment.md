@@ -86,3 +86,12 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 2026-10-15：内容提交 `a50d868` 已推送， [Pages 任务 38730101441](https://github.com/yydshly/1015_codex_project/actions/runs/38730101441) 构建与部署成功。[研究总览](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/overview.html) · [七人物艾雷教堂试玩](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/elleh/?character=human&compare=all) · [动作展厅](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/)。
 
 已验证总览原图弹窗、原理切换、模型切换与跳跃，正式站点与 39 个文件加总导航共 43 项 HTTP 检查返回 200；引导 PNG 和写实 GLB 的哈希与原文件一致。桌面、手机与窄屏检查通过。索引在部署成功后回填真实 URL；证据与截图在 `projects/003-er-mario/assets/deployed-verification.json`。只发布 003 及其导航，其他本地未提交研究保留。
+
+
+## 004 · Obsidian 三维碎片研究页
+
+沿用现有 Pages Actions，入口为 `projects/004-obsidian/#understanding`，互动演示为 `#demo`。同一张 1920 × 4280 的研究总览 PNG 用于仓库首页、站点导航与子项目引导；SVG 内嵌七张真实渲染效果并支持独立保存。
+
+内容说明表面 Voronoi 碎裂、曲面采样、空间匹配、GPU 时间函数与电影化呈现，区分原作已有、本研究新增和未来方向。提供四种可调形态、48 秒完整声画循环、带声音 MP4 / WebM 输出；价值聚焦片头、品牌、发布会与舞台视觉，并列出模型、音乐、数据、交互与真实装配的扩展条件。第三方运行依赖和许可证随静态构建保存，无根目录应用依赖、后端与密钥。
+
+004 本轮准备发布；仅在 Pages 成功并实际验证后登记正式 URL。

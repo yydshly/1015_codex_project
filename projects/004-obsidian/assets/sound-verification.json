@@ -1,0 +1,112 @@
+{
+  "file": "obsidian-complete-48s-720p-sound.mp4",
+  "sha256": "55183e06cb154717a4a1ba360cc78a558a0cc09acaa8f10269d8a6157e0b1d87",
+  "bytes": 28201791,
+  "duration": 48.0,
+  "video": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "r_frame_rate": "30/1",
+    "nb_read_frames": "1440",
+    "duration": "48.000000",
+    "start_time": "0.000000"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "48000",
+    "channels": 2,
+    "duration": "48.000000",
+    "start_time": "0.000000"
+  },
+  "decoded_audio_seconds": 48.0,
+  "scene_levels": [
+    {
+      "scene": "original",
+      "range_seconds": [
+        0,
+        18
+      ],
+      "rms_dbfs": -26.48,
+      "peak_dbfs": -5.5,
+      "stereo_difference_rms": 0.009149
+    },
+    {
+      "scene": "galaxy",
+      "range_seconds": [
+        20,
+        25
+      ],
+      "rms_dbfs": -31.23,
+      "peak_dbfs": -17.4,
+      "stereo_difference_rms": 0.022409
+    },
+    {
+      "scene": "tornado",
+      "range_seconds": [
+        27,
+        32
+      ],
+      "rms_dbfs": -32.25,
+      "peak_dbfs": -13.04,
+      "stereo_difference_rms": 0.014359
+    },
+    {
+      "scene": "dna",
+      "range_seconds": [
+        34,
+        39
+      ],
+      "rms_dbfs": -30.34,
+      "peak_dbfs": -12.23,
+      "stereo_difference_rms": 0.026147
+    },
+    {
+      "scene": "text",
+      "range_seconds": [
+        41,
+        46
+      ],
+      "rms_dbfs": -30.16,
+      "peak_dbfs": -10.54,
+      "stereo_difference_rms": 0.020117
+    },
+    {
+      "scene": "return",
+      "range_seconds": [
+        46,
+        48
+      ],
+      "rms_dbfs": -31.69,
+      "peak_dbfs": -21.27,
+      "stereo_difference_rms": 0.003799
+    }
+  ],
+  "browser_checks": {
+    "preview_volume": 0.7,
+    "preview_muted_export_with_audio": true,
+    "pause_resume_seek": true,
+    "cancel_restores_sound": true,
+    "video_preview_pauses_live_film": true,
+    "video_preview_duration": 48,
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "mobile_body_width": 375,
+    "mobile_scroll_width": 375,
+    "webm_regression": {
+      "codec": "vp9",
+      "audio_codec": "opus",
+      "fps": 24,
+      "frames": 1152,
+      "container_duration": 48.02
+    },
+    "screenshots": [
+      "sound-studio.jpg",
+      "sound-mobile.jpg",
+      "sound-mobile-export.jpg"
+    ]
+  },
+  "tests_passed": 15
+}

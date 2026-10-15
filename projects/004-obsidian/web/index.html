@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一图读懂 Obsidian 的能力、原理、实际效果与使用价值：七张真实渲染图、原作与新增能力对照、六类用途与十二类扩展方向，附可调三维演示与声画视频导出。">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="Obsidian：三维碎片重组的能力、原理与价值｜研究 004">
+  <meta property="og:description" content="表面碎裂、目标采样匹配与 GPU 时间函数如何组成视觉叙事；附七张真实效果、使用场景、十二类扩展和带声音视频导出。">
+  <meta property="og:image" content="https://yydshly.github.io/1015_codex_project/projects/004-obsidian/assets/understanding/obsidian-understanding.png">
+  <title>Obsidian：三维碎片重组的能力、原理与价值 | 004 Research Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <script type="module" src="assets/studio-controls.mjs"></script>
+  <script type="module" src="assets/understanding-viewer.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#understanding">跳到研究总览</a>
+  <header class="header wrap">
+    <a class="wordmark" href="../../"><span class="mark" aria-hidden="true">◈</span> RESEARCH LAB <span class="muted">/ 004</span></a>
+    <nav aria-label="页内导航"><a href="#understanding">一图读懂</a><a href="#demo">观看效果</a><a href="#value">使用价值</a><a href="#scenarios">扩展场景</a></nav>
+    <a class="source-link" href="https://github.com/iamtechartist/obsidian" target="_blank" rel="noreferrer">上游源码 ↗</a>
+  </header>
+
+  <main>
+    <section class="intro wrap">
+      <div><p class="eyebrow"><span class="dot"></span> OBSIDIAN / 程序化视觉研究</p><h1>同一批碎片，<br>重组整个世界<span class="copper">。</span></h1></div>
+      <div class="intro-aside"><p>巨石、教堂与巨鲸，继续变成星系、<br>龙卷、双螺旋与文字，再回到起点。<br>一段可以调节、聆听与导出的碎片之旅。</p><div class="intro-facts"><span><b>48 s</b>完整声画循环</span><span><b>3.2 万</b>高档碎片目标</span><span><b>MP4</b>带声音导出</span></div></div>
+    </section>
+
+    <a class="understanding-entry wrap" href="#understanding"><span>研究共识 / 一图读懂</span><strong>最成熟的用途是片头与品牌视觉，可复用的是组织变化的方法。</strong><span>能力 · 原理 · 七张效果图 · 场景 · 边界 ↘</span></a>
+
+    <section class="section wrap understanding-section" id="understanding" aria-labelledby="understanding-heading">
+      <div class="section-top"><h2 id="understanding-heading">01 <span>一张图，读懂我们的研究结论</span></h2><span class="badge">七张真实效果 · 完整能力边界</span></div>
+      <p class="understanding-lead">当前最成熟的价值是<strong>电影片头、品牌宣传、发布会开场与舞台视觉</strong>。进一步的复用，是围绕具体资产和输入，做成可定制的视觉工具。下面把“是什么、怎么做、能做什么、适合用在哪、还缺什么”放到同一张图里。</p>
+      <div class="understanding-toolbar" role="group" aria-label="研究总览图操作"><button class="button primary" id="open-understanding">放大阅读 ↗</button><button class="button" id="download-understanding-png">下载 PNG 图片 ↓</button><a class="button" href="assets/understanding/obsidian-understanding.svg" download="obsidian-understanding.svg">下载 SVG 原图 ↓</a><a class="tool" href="#understanding-text">阅读文字解读</a><span id="understanding-status" role="status">1920 × 4280 · SVG 内嵌全部效果图，可独立保存</span></div>
+      <figure class="understanding-figure"><button id="open-understanding-image" aria-label="放大查看 Obsidian 完整研究总览图"><img id="understanding-image" src="assets/understanding/obsidian-understanding.svg" width="1920" height="4280" loading="lazy" alt="Obsidian 研究总览图：原作巨石、教堂、鲸鱼与新增星系、龙卷、双螺旋、文字七张真实画面；下接五步实现原理、原作和本研究能力对照、价值判断、六类使用场景、十二类扩展方向及能力边界。" aria-describedby="understanding-caption"></button><figcaption id="understanding-caption">铜色表示原作已有，青色表示本研究已实现，浅金表示需要继续开发。效果图来自已验证的 48 秒 MP4 成片；星系、龙卷和双螺旋均为艺术化结构示意。点击图片可放大，手机上可在放大视图中横向移动阅读。</figcaption></figure>
+      <details class="understanding-text" id="understanding-text"><summary>文字解读与研究依据</summary><div class="understanding-notes">
+        <article><h3>这个库是什么</h3><p>它是一段浏览器中的实时三维视听作品。作者通过程序化几何、碎片重组、光照、运镜与合成音效，把巨石、玻璃教堂与鲸鱼串成约 18 秒的作品。可迁移的核心是这套组织变化的方法。</p></article>
+        <article><h3>原理与能力</h3><p>巨石表面经 Voronoi 分割并挤出厚度；目标形态采样成位置、朝向和尺度，再用高度分带与角度排序配对。GPU 按碎片编号和时间求姿态，四张浮点状态纹理驱动合并网格。阴影、反射、光束、景深与调色共同完成画面，整帧仍有多个渲染过程。<a href="architecture.md">原理与源码定位 ↗</a></p></article>
+        <article><h3>我们已经实现什么</h3><p>四种可调三维形态与原作共用碎片和渲染管线；增加 48 秒声画循环、2 秒转场、运镜、章节定位、四种新声音以及带声音的 MP4 / WebM 导出。已验证 48 秒、720p、30 fps、H.264 / AAC 双声道 MP4。<a href="capabilities.md">完整能力与验证范围 ↗</a></p></article>
+        <article><h3>价值与使用场景</h3><p>现阶段可创作片头、文字揭示、宣传片转场和舞台循环视频。替换文字、参数与编排可以形成系列内容；定制品牌标志或产品，仍需资产接入。展馆要补输入与长期运行；科普和数据故事要补真实模型、语义、标签与验证。商业价值取决于具体内容和用途。</p></article>
+        <article><h3>还能扩展什么</h3><p>文字与标志、建筑生长、晶体与分形、星系与轨道、龙卷与烟羽、鸟群鱼群、波传播、音乐驱动、数据关系、触摸与身体参与、产品装配、材料再生，共十二类方向。可分别沿着目标形态、运动规则、外部输入和对象语义扩展。<a href="extensions.md">十二类场景与所需改造 ↗</a></p></article>
+        <article><h3>哪些边界要保留</h3><p>当前运动由编排规则计算；真实天体、流体、分子或机械装配需要相应求解器、数据和约束。尚无任意模型一键导入、通用可视编辑器、音频输入分析与姿态识别。目标设备上的帧率、长期运行与编码支持仍需验证。<a href="THIRD_PARTY.md">来源与许可 ↗</a></p></article>
+      </div></details>
+    </section>
+
+    <section class="demo wrap demo-after-guide" id="demo" aria-labelledby="demo-heading">
+      <div class="section-top"><h2 id="demo-heading">02 <span>亲眼看见变形</span></h2><span class="badge" id="mode-badge">上游原作 · 本地复现</span></div>
+      <div class="mode-bar" role="group" aria-label="选择三维演示模式"><button data-mode="tour" aria-pressed="false" disabled>完整循环 · 48 s</button><button data-mode="original" aria-pressed="true" disabled>原作循环</button><button data-mode="galaxy" aria-pressed="false" disabled>星系盘</button><button data-mode="tornado" aria-pressed="false" disabled>龙卷</button><button data-mode="dna" aria-pressed="false" disabled>双螺旋</button><button data-mode="text" aria-pressed="false" disabled>文字聚合</button></div>
+      <div class="studio-layout" id="studio">
+      <div class="player" id="player">
+        <img class="poster" src="poster.jpg" alt="Obsidian 原作实时画面：夕阳下的镜面盐滩与碎片构成的建筑" width="1280" height="720">
+        <iframe id="original" title="Obsidian 原作与扩展形态三维碎片演示" allow="fullscreen" allowfullscreen hidden></iframe>
+        <div class="player-cover" id="player-cover"><span class="eyebrow">NOTHING IS LOST. EVERYTHING TRANSFORMS.</span><p>让碎片开始旅行。</p><button class="button primary" id="start">启动完整动画 <span>↗</span></button><small>本地资源 · 默认低画质 · 48 秒自动循环</small></div>
+        <div class="player-stamp" aria-hidden="true">OBSIDIAN <span>BY TECHARTIST</span></div>
+      </div>
+      <aside class="studio-panel" id="parameters" aria-label="三维形态参数" hidden>
+        <p class="eyebrow">GPU SHARD STUDIO / 三维扩展</p><h3 id="shape-title">星系盘</h3><p class="shape-description" id="shape-description"></p>
+        <label class="param-label" for="shape-a"><span id="label-a">旋臂数量</span><output id="value-a">4</output></label><input id="shape-a" type="range" data-param="a" min="2" max="7" step="1" value="4">
+        <label class="param-label" for="shape-b"><span id="label-b">旋臂卷曲</span><output id="value-b">1.2</output></label><input id="shape-b" type="range" data-param="b" min="0.4" max="2.2" step="0.1" value="1.2">
+        <label class="param-label" for="spread">聚合程度 <output id="value-assembly">100%</output></label><input id="spread" type="range" data-param="assembly" min="0" max="1" step="0.01" value="1">
+        <label class="param-label" for="rotation">旋转速度 <output id="value-speed">0.22</output></label><input id="rotation" type="range" data-param="speed" min="0" max="1.2" step="0.01" value="0.22">
+        <label class="param-label" for="shard-size">碎片尺寸 <output id="value-size">1×</output></label><input id="shard-size" type="range" data-param="size" min="0.5" max="1.8" step="0.05" value="1">
+        <label class="param-label" for="noise">局部扰动 <output id="value-noise">0.08</output></label><input id="noise" type="range" data-param="noise" min="0" max="1.5" step="0.01" value="0.08">
+        <div class="text-controls" id="text-option" hidden><label for="custom-text">聚合文字 · 最多 8 个字符</label><div><input id="custom-text" type="text" maxlength="8" value="重组" autocomplete="off"><button class="tool" id="apply-text">应用</button></div></div>
+        <div class="studio-actions"><button class="button" id="reassemble">散开再重组 ↻</button><button class="tool" id="reset-view">重置视角</button><button class="tool" id="reset-params">恢复参数</button></div>
+        <p class="pipeline-state" id="pipeline-state">正在准备三维目标…</p>
+      </aside></div>
+      <div class="player-tools"><span id="player-status" role="status">正在准备演示</span><div><button class="tool" id="play" disabled>暂停</button><button class="tool" id="orbit" aria-pressed="false" disabled>自由视角</button><label class="quality">画质 <select id="quality" disabled><option value="low">低 · 8 千目标</option><option value="medium">中 · 2 万目标</option><option value="high">高 · 3.2 万目标</option></select></label><button class="tool" id="stop" hidden>关闭演示</button><a class="tool" id="standalone" href="vendor/obsidian/index.html" target="_blank" rel="noreferrer">独立打开 ↗</a></div></div>
+      <div class="sound-panel" aria-label="动画声音"><button class="tool" id="sound" aria-pressed="false" disabled>开启声音 ♪</button><label for="sound-volume">音量 <output id="sound-value">70%</output></label><input id="sound-volume" type="range" min="0" max="1" step="0.01" value="0.7" disabled><div><span id="sound-scene">原作 · 风声 / 碎裂 / 钟鸣 / 鲸歌</span><small id="sound-status" role="status">点击开启试听 · 导出声音可单独选择</small></div></div>
+      <div class="film-timeline" id="film-timeline" hidden>
+        <div class="film-timeline-head"><label for="film-seek">完整动画 <span id="film-chapter">原作 · 巨石 / 教堂 / 巨鲸</span></label><output id="film-time" for="film-seek">00.0 / 48.0 s</output></div>
+        <input id="film-seek" type="range" min="0" max="47.99" step="0.01" value="0" aria-label="完整动画时间轴" disabled>
+        <div class="film-chapters" role="group" aria-label="定位动画章节"><button data-tour-time="0">00 原作</button><button data-tour-time="18">18 星系</button><button data-tour-time="25">25 龙卷</button><button data-tour-time="32">32 双螺旋</button><button data-tour-time="39">39 文字</button><button data-tour-time="46">46 回归</button></div>
+        <p>2 秒碎片转场 · 连续环绕与升降镜头 · 结尾重聚巨石并自动接回开场。拖动时间轴暂停观察。</p>
+      </div>
+      <div class="export-panel" aria-label="导出完整动画">
+        <div><strong>把这段旅行带走</strong><p>导出当前参数与画质下的完整 48 秒声画作品。原作音效与四种新声音随形态衔接，使用编排镜头，无网页界面。</p></div>
+        <div class="export-options"><label for="export-format">格式 <select id="export-format"><option value="mp4">MP4 · H.264 / AAC</option><option value="webm">WebM · VP9 / Opus</option></select></label><label for="export-size">分辨率 <select id="export-size"><option value="1280x720">720p · 1280 × 720</option><option value="1920x1080">1080p · 1920 × 1080</option></select></label><label for="export-fps">帧率 <select id="export-fps"><option value="30">30 fps</option><option value="24">24 fps</option></select></label><label class="audio-check"><input id="export-audio" type="checkbox" checked>包含声音</label><button class="button primary" id="export-film" disabled>导出完整视频 ↓</button><button class="tool" id="cancel-export" hidden>取消导出</button></div>
+        <div class="export-progress" id="export-progress" hidden><progress id="export-meter" max="1" value="0" aria-label="视频生成进度"></progress><span id="export-progress-text" role="status">准备编码…</span></div>
+        <p id="export-status" role="status">MP4 / WebM · 本地逐帧生成 · 导出采用上方音量，试听静音不影响“包含声音”选项 · 无需上传。</p>
+        <p id="export-support">正在检查此浏览器的声音与视频编码支持…</p>
+        <div id="export-result" hidden><video id="export-preview" controls loop playsinline preload="metadata" aria-label="导出视频预览"></video><a class="button" id="download-film">再次下载视频 ↓</a><p id="export-result-meta"></p></div>
+      </div>
+      <div class="stages" id="original-stages" aria-label="定格观察不同形态">
+        <button data-story="0.8" disabled><span>01 / MONOLITH</span><strong>黑曜石</strong><small>表面与裂纹</small></button>
+        <button data-story="6.65" disabled><span>02 / FRACTURE</span><strong>碎裂</strong><small>慢动作与爆散</small></button>
+        <button data-story="14.9" disabled><span>03 / CATHEDRAL</span><strong>玻璃教堂</strong><small>轮廓与聚合</small></button>
+        <button data-story="23.3" disabled><span>04 / WHALE</span><strong>巨鲸</strong><small>局部摆动与游动</small></button>
+        <button data-story="32.7" disabled><span>05 / RETURN</span><strong>回到巨石</strong><small>原位锁定与循环</small></button>
+      </div>
+      <p class="caption"><span id="render-meta">实际碎片数随画质和生成结果变化。</span> <span id="mode-hint">选择一个原作形态即可暂停观察；画面底部可拖进度、切速度、开启声音。</span><a id="capture-link" href="vendor/obsidian/index.html?capture" target="_blank" rel="noreferrer">打开原作录制模式 ↗</a></p>
+      <noscript><p>请启用 JavaScript 观看实时动画。也可阅读 <a href="capabilities.md">能力说明</a> 和 <a href="extensions.md">扩展方向</a>。</p></noscript>
+    </section>
+
+    <section class="section wrap" id="value">
+      <div class="section-top"><h2>03 <span>先交付视觉内容，再围绕用途复用</span></h2><span class="subtle">片头 / 品牌 / 发布会 / 舞台</span></div>
+      <div class="value-grid">
+        <article><span class="value-num">A</span><h3>让变化本身讲故事</h3><p>材质、尺度和形态持续改变，观众仍能追踪同一批碎片。适合表达重生、循环、连接与品牌转化。</p><span class="tag">叙事价值</span></article>
+        <article><span class="value-num">B</span><h3>用规则替代资产堆积</h3><p>巨石、教堂、鲸鱼和音效由代码构造。调整生成规则和采样目标，就能探索新形态，而无需逐帧制作碎片动画。</p><span class="tag">创作价值</span></article>
+        <article><span class="value-num">C</span><h3>把复杂画面搬进浏览器</h3><p>合并几何体、GPU 状态计算和分档渲染配合工作。它提供了研究大量对象变形与电影化表现的完整样本。</p><span class="tag">工程价值</span></article>
+      </div>
+      <div class="boundary"><span>能力边界</span><p>它是一段精心编排的实时视觉作品。碎片运动通过时间函数计算；扩展为可信的物理或科学演示，还需要相应模型、数据和验证。</p></div>
+    </section>
+
+    <section class="section wrap" id="capabilities">
+      <div class="section-top"><h2>04 <span>原作已经具备什么</span></h2><a class="subtle" href="capabilities.md">完整能力记录 ↗</a></div>
+      <div class="table-scroll"><table><thead><tr><th>能力</th><th>你能看到的结果</th><th>迁移时要做的事</th></tr></thead><tbody>
+        <tr><td>程序化碎裂</td><td>裂纹与真实碎片边界对应</td><td>为新物体定义曲面展开或体积分割</td></tr>
+        <tr><td>多目标形态重组</td><td>同一块碎片在巨石、教堂和鲸鱼之间旅行</td><td>生成新目标点、方向、尺度与匹配关系</td></tr>
+        <tr><td>有组织的运动</td><td>旋涡、群舞、爆散、逐层搭建</td><td>增加运动函数和阶段衔接规则</td></tr>
+        <tr><td>电影化呈现</td><td>镜面、体积光、辉光、景深与运镜</td><td>围绕新主题调整材质、灯光和镜头</td></tr>
+        <tr><td>交互与输出</td><td>暂停、时间定位、自由视角、视频 / PNG 录制</td><td>增加面向使用者的操作与导出流程</td></tr>
+        <tr><td>性能分档</td><td>8 千 / 2 万 / 3.2 万碎片目标及特效裁剪</td><td>在目标设备上重新测量帧率和资源预算</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="section lab-section" id="extensions">
+      <div class="wrap"><div class="section-top"><h2>05 <span>四种形态，真正接入三维碎片</span></h2><span class="badge">本页新增 · GPU 三维扩展</span></div>
+        <p class="section-deck">与原作共用立体碎片、GPU 状态计算、材质、阴影和镜面。切换后可调节参数，也可自由旋转视角，观察结构与厚度。</p>
+        <div class="extension-examples">
+          <article><span class="eyebrow">SPIRAL / 星系盘</span><h3>从碎片，聚成星系。</h3><p>螺旋臂分布在有厚度的三维盘面，旋臂数量与卷曲程度均可调节。</p><button class="tool" data-activate="galaxy">打开星系盘 ↗</button></article>
+          <article><span class="eyebrow">VORTEX / 龙卷</span><h3>让漏斗持续旋转。</h3><p>高度影响半径与角速度。调节顶部半径、环绕圈数，观察差速旋转。</p><button class="tool" data-activate="tornado">打开龙卷 ↗</button></article>
+          <article><span class="eyebrow">HELIX / 双螺旋</span><h3>两条骨架，一种秩序。</h3><p>两条立体管状螺旋与横向连接共同重组；圈数、半径可以连续调整。</p><button class="tool" data-activate="dna">打开双螺旋 ↗</button></article>
+          <article><span class="eyebrow">TYPE / 文字聚合</span><h3>让文字拥有厚度。</h3><p>文字正反面与边缘被采样为立体目标；可输入文字、调整厚度和宽度。</p><button class="tool" data-activate="text">打开文字聚合 ↗</button></article>
+        </div><p class="caption">四种形态是本研究在上游系统中的新增实现。视觉结构与运动按参数生成，不表示天体、流体或分子仿真。切换模式保留当前碎片姿态作为过渡起点；暂停后调整参数可直接观察结果。</p>
+      </div>
+    </section>
+
+    <section class="section wrap" id="scenarios">
+      <div class="section-top"><h2>06 <span>还可以扩展哪些现象与场景</span></h2><a class="subtle" href="extensions.md">实施路线与完整场景矩阵 ↗</a></div>
+      <div class="filter-row" role="group" aria-label="筛选扩展场景"><button data-filter="all" aria-pressed="true">全部方向</button><button data-filter="form" aria-pressed="false">形态与结构</button><button data-filter="motion" aria-pressed="false">运动与自然</button><button data-filter="interaction" aria-pressed="false">交互与叙事</button></div>
+      <div class="scenario-grid" id="scenario-grid"></div><p class="caption" id="scenario-count" role="status"></p>
+      <div class="roadmap"><span class="eyebrow">建议推进顺序</span><div><p><b>01</b> 替换形态<small>文字 / 标志 / 参数化物体</small></p><span aria-hidden="true">→</span><p><b>02</b> 扩展运动<small>螺旋 / 波动 / 定向流</small></p><span aria-hidden="true">→</span><p><b>03</b> 接入输入<small>音频 / 鼠标 / 实际数据</small></p><span aria-hidden="true">→</span><p><b>04</b> 面向场景交付<small>设备性能 / 无障碍 / 导出</small></p></div></div>
+    </section>
+
+    <section class="section wrap" id="mechanism">
+      <div class="section-top"><h2>07 <span>从生成规则，到屏幕上的一帧</span></h2><a class="subtle" href="architecture.md">查看源码定位 ↗</a></div>
+      <div class="pipeline" role="group" aria-label="选择原理步骤"><button data-step="0" aria-pressed="true"><small>01 / GENERATE</small><strong>生成碎片与形状</strong><span>Voronoi + 参数化曲面</span></button><button data-step="1" aria-pressed="false"><small>02 / ASSIGN</small><strong>为碎片安排目标</strong><span>曲面采样 + 空间匹配</span></button><button data-step="2" aria-pressed="false"><small>03 / EVALUATE</small><strong>按当前时间求状态</strong><span>曲线轨迹 + GPU 并行</span></button><button data-step="3" aria-pressed="false"><small>04 / PRESENT</small><strong>组成电影化画面</strong><span>合并绘制 + 镜头与后期</span></button></div>
+      <p class="step-detail" id="step-detail" role="status">在巨石表面生成 Voronoi 单元并挤出厚度；用参数化几何构造教堂与鲸鱼。固定随机种子让结构能够复现。</p>
+    </section>
+
+    <section class="closing wrap"><div><p class="eyebrow">研究结论</p><h2>形态可以替换，<br>组织变化的方法可以复用。</h2><p>先从文字或标志入手，验证采样、匹配与轨迹；再按场景加入输入、材质与交付能力。</p></div><a class="button" href="https://github.com/iamtechartist/obsidian/blob/74510f112c0a7e4318f688b851523105ec4f79e4/index.html" target="_blank" rel="noreferrer">阅读固定版本源码 ↗</a></section>
+  </main>
+  <dialog class="understanding-dialog" id="understanding-dialog" aria-labelledby="understanding-dialog-title"><div class="map-viewer-head"><strong id="understanding-dialog-title">Obsidian / 完整研究总览</strong><div role="group" aria-label="总览缩放"><button class="tool" id="map-zoom-out" aria-label="缩小总览图">−</button><output id="map-zoom-level" aria-live="polite">100%</output><button class="tool" id="map-zoom-in" aria-label="放大总览图">＋</button><button class="tool" id="map-fit">适应宽度</button></div><button class="tool" id="close-understanding" autofocus>关闭 ×</button></div><div class="map-viewer-nav"><label for="map-jump">定位到</label><select id="map-jump"><option value="0">开篇 / 核心判断</option><option value="330">01 实际效果</option><option value="1200">02 实现原理</option><option value="1670">03 能力对照</option><option value="2250">04 价值判断</option><option value="2630">05 使用场景</option><option value="3130">06 扩展现象</option><option value="3750">07 边界与落地</option></select><span>可滚动阅读 · Esc 关闭</span></div><div class="map-viewer-scroll" id="map-viewer-scroll" tabindex="0" role="region" aria-label="可横向与纵向滚动的总览图"><img id="understanding-large" src="assets/understanding/obsidian-understanding.svg" width="1920" height="4280" alt="Obsidian 完整研究总览，内容与页面下方文字解读对应。"></div></dialog>
+  <footer class="footer wrap"><span>004 / OBSIDIAN · 研究日期 2026.10.15</span><div><a href="THIRD_PARTY.md">来源与许可</a><a href="references/sources.json">版本证据</a><a href="../../">返回项目导航 ↗</a></div><p>原作 © 2026 Techartist · MIT。中文页面与四种 GPU 三维形态由本仓库新增。演示与导出在浏览器本地运行，依赖与许可随页面保存。</p></footer>
+</body>
+</html>
