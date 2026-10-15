@@ -70,3 +70,12 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 本地已验证目录筛选、搜索空结果、模型切换、重复快照不累加、引导图弹窗与原图哈希；1440px 桌面、390px 手机与 320px 窄屏无页面横向溢出。共 13 个相对资源和文档返回 200。正式地址：[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html)。
 
 2026-10-15：内容提交 `9a426fd` 已推送至 main，[Pages 任务 38726572897](https://github.com/yydshly/1015_codex_project/actions/runs/38726572897) 成功。线上重复验证来源筛选、合成记账、原图查看与哈希，以及 13 个相对资源 / 文档；桌面和手机访问正常，无脚本错误或失败资源。真实 URL 已在发布后回填索引。仅发布 005 相关变更，其他本地未提交研究保留。证据见 `projects/005-pulse/assets/deployed-verification.json`。
+
+
+## 003 ER Mario 研究总览与试玩
+
+新增 003，主入口 `projects/003-er-mario/overview.html`，保留动作展厅 `index.html` 与七人物艾雷教堂试玩 `elleh/`。总览说明 libsm64 运动复用、碰撞/骨骼/战斗/事件适配、行为与外形解耦的价值，以及更多模型、场景和引擎的扩展条件。
+
+引导图原样使用本次生成的 PNG / SVG，支持完整图查看和下载。经典形象与教堂为本地几何，写实人物采用随子项目保存的 Rocketbox GLB，保留 MIT 来源及许可。本地演示不运行法环、ROM、libsm64 或模组 DLL。
+
+本地验证总览弹窗、原理步骤、七人物跳跃与切换、3 / 3 地标导览；桌面、390px 手机与 320px 窄屏无页面横向溢出，18 项动作/计算/蒙皮检查通过。通过既有 Pages Actions 发布，部署成功并验证后再登记真实 URL。此次只新增 003，其余未提交项目保留在工作区。

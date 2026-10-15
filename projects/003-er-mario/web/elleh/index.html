@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#202920"><meta name="description" content="六个经典形象与一个写实人物，共用一套跑跳动作。在艾雷教堂切换马里奥、路易吉、索尼克、卡比、史蒂夫、林克和写实人物，比较动作复用。">
+  <title>七位旅人 × 艾雷教堂 · 动作复用试玩</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23ca4131'/%3E%3Ctext x='16' y='24' text-anchor='middle' font-family='serif' font-size='25' fill='white'%3EM%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="../vendor/three.min.js"></script><script defer src="../vendor/GLTFLoader.js"></script><script defer src="../vendor/SkeletonUtils.js"></script><script defer src="human.js"></script><script defer src="controller.js"></script><script defer src="characters.js"></script><script defer src="world.js"></script><script defer src="wardrobe.js"></script><script defer src="game.js"></script>
+</head>
+<body>
+  <main id="game" tabindex="0" aria-label="马里奥探索艾雷教堂，WASD 移动，空格跳跃，E 交互">
+    <div id="viewport" role="img" aria-label="参考艾雷教堂的三维局部场景：破损钟楼、拱墙、赐福、商人篝火与马里奥"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="topbar"><a href="../overview.html" class="back-link">‹ 研究总览</a><span>ER MARIO <i>×</i> CHURCH OF ELLEH</span><button id="help-toggle" type="button" aria-expanded="false" aria-controls="help-panel">操作说明 <b>?</b></button></header>
+    <div class="mario-hud" aria-label="角色状态"><span id="character-emblem" class="mario-emblem" aria-hidden="true">M</span><span class="lives">×<b>4</b></span><div class="life-gauge" aria-label="八格生命值"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    <button id="character-toggle" disabled class="character-toggle" aria-haspopup="dialog" aria-controls="wardrobe" type="button"><span id="character-name">马里奥</span><i>更换角色 / 动作对比</i><b>↗</b></button>
+    <div class="compass" aria-label="方向"><span>W</span><i></i><span id="compass-heading">N</span><i></i><span>E</span></div>
+    <div class="place-card"><span>LIMGRAVE</span><h1>艾雷教堂</h1><p>Church of Elleh</p><div></div></div>
+    <div class="goal-card"><span>探索这片废墟</span><p id="goal-grace"><i></i>点亮赐福</p><p id="goal-merchant"><i></i>拜访商人咖列</p><p id="goal-smith"><i></i>找到锻造台</p><small id="goal-count">0 / 3 处地标</small></div>
+    <div id="toast" class="toast" role="status" hidden></div>
+    <div id="discovery" class="discovery" role="status" hidden><span>LOST GRACE DISCOVERED</span><h2>赐福已点亮</h2><div></div></div>
+    <div class="action-status"><span id="action-name">站立</span><i></i><span id="mode-name">自由探索</span></div>
+    <div class="interaction" id="interaction" hidden><kbd>E</kbd><span id="interaction-name">触碰赐福</span><button id="interact-button" type="button">交互</button></div>
+    <footer class="controls"><div><span><kbd>W A S D</kbd> 移动</span><span><kbd>空格</kbd> 跳跃</span><span><kbd>Shift</kbd> 奔跑</span><span><kbd>X</kbd> 下砸</span><span class="desktop-extra"><kbd>C + 空格</kbd> 远跳</span></div><div><button id="tour-button" type="button" aria-pressed="false">观看导览</button><button id="overview-button" type="button" aria-pressed="false">俯瞰教堂</button><button id="reset-button" type="button">回到入口 <span>R</span></button></div></footer>
+    <aside id="help-panel" hidden><button id="help-close" type="button" aria-label="关闭操作说明">×</button><span class="eyebrow">HOW TO PLAY</span><h2>用熟悉的动作，<br>探索陌生的世界。</h2><dl><dt>更换角色 / 动作对比</dt><dd>点击左上角角色按钮或按 V；数字 1–7 快速切换。预览中可让七个角色同步跑跳。</dd><dt>移动 / 奔跑</dt><dd>WASD 或方向键；按住 Shift 奔跑。</dd><dt>三段跳</dt><dd>保持移动，在落地后迅速再次按空格，连续衔接三次。</dd><dt>远跳 / 下砸</dt><dd>移动中按住 C 再跳跃；空中按 X 下砸。</dd><dt>蹬墙跳</dt><dd>腾空触墙后迅速再按空格。</dd><dt>镜头 / 交互</dt><dd>拖动画面转镜头，滚轮缩放；靠近地标后按 E。</dd></dl><p>场景参考《艾尔登法环》艾雷教堂的实机画面，使用重新制作的几何、材质和角色控制。此处没有运行原版游戏或 libsm64。</p></aside>
+    <section id="dialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" hidden><div><span id="dialog-kicker">CHURCH OF ELLEH</span><h2 id="dialog-title">商人咖列</h2><p id="dialog-text"></p><button id="dialog-close" type="button">继续探索 <span>↵</span></button></div></section>
+    <section id="wardrobe" class="wardrobe" role="dialog" aria-modal="true" aria-labelledby="wardrobe-title" hidden>
+      <div class="wardrobe-panel">
+        <header class="wardrobe-heading"><div><span class="eyebrow">SEVEN FORMS · ONE MOVESET</span><h2 id="wardrobe-title">换个形象，同样身手。</h2></div><button id="wardrobe-close" type="button" aria-label="关闭角色选择">×</button></header>
+        <div id="character-list" class="character-list" role="group" aria-label="选择角色"></div>
+        <div class="avatar-stage"><div id="avatar-viewport" role="img" aria-label="角色动作预览"></div><div id="avatar-labels" class="avatar-labels" aria-hidden="true"></div><div class="preview-caption"><span id="preview-name">MARIO</span><button id="compare-toggle" type="button" aria-pressed="false">七人同步对比</button></div><span id="preview-action" class="preview-action">奔跑</span></div>
+        <div id="preview-actions" class="preview-actions" role="group" aria-label="预览动作"><button type="button" data-action="run" aria-pressed="true">奔跑</button><button type="button" data-action="triple" aria-pressed="false">三段跳</button><button type="button" data-action="long" aria-pressed="false">远跳</button><button type="button" data-action="pound" aria-pressed="false">下砸</button></div>
+        <p id="character-note" class="character-note"></p>
+        <footer class="wardrobe-footer"><p>动作、速度与碰撞规则共用。切换保留当前位置和跳跃状态。<small>经典形象为本地几何；写实人物来自 Microsoft Rocketbox（MIT），没有运行 libsm64。</small></p><button id="wardrobe-play" type="button">用马里奥探索 →</button></footer>
+      </div>
+    </section>
+    <section id="welcome" class="welcome"><div><span class="eyebrow">A PLAYABLE RECONSTRUCTION</span><h2>异乡的水管工。</h2><p>以马里奥的动作，走进艾雷教堂。<br>穿过断壁，触碰赐福，拜访火光旁的商人。</p><button id="start-button" disabled type="button">开始探索 <span>→</span></button><small>WASD 移动 · 空格跳跃 · 1–7 换角色 · V 动作对比</small></div></section>
+    <div id="touch-controls" class="touch-controls"><div class="dpad"><button data-touch="forward" aria-label="向前">▲</button><button data-touch="left" aria-label="向左">◀</button><button data-touch="back" aria-label="向后">▼</button><button data-touch="right" aria-label="向右">▶</button></div><div class="touch-actions"><button id="touch-jump" aria-label="跳跃">跳</button><button id="touch-pound" aria-label="下砸">砸</button></div></div>
+    <div id="loading" class="loading" role="status">正在准备教堂与角色…</div>
+    <p id="render-error" class="render-error" hidden>当前浏览器无法启用三维绘制。请使用支持 WebGL 的浏览器打开本场景。</p>
+    <output id="telemetry" class="sr-only" aria-live="off">角色位置：0, 0, 16</output>
+  </main>
+</body>
+</html>

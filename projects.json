@@ -32,6 +32,21 @@
       "demo_url": "https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/"
     },
     {
+      "id": 3,
+      "slug": "er-mario",
+      "name": "ER Mario 跨游戏动作系统研究",
+      "repository": "https://github.com/deltarooo/er-mario",
+      "summary": "复用 SM64 运动与动画，经碰撞、骨骼、战斗与事件适配接入法环；用艾雷教堂和七模型演示说明行为与外形解耦、减少重复开发的价值，并梳理更多角色、场景与引擎的扩展条件。",
+      "status": "completed",
+      "tags": [
+        "游戏模组",
+        "跨引擎整合",
+        "交互演示"
+      ],
+      "cover": "assets/er-mario-overview.png",
+      "demo_url": ""
+    },
+    {
       "id": 5,
       "slug": "pulse",
       "name": "Pulse 本地 Agent 用量统计研究",

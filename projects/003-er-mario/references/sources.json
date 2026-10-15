@@ -1,0 +1,97 @@
+{
+  "repository": "https://github.com/deltarooo/er-mario",
+  "tag": "v0.4.2",
+  "commit": "11744b855bf546ca0b66dfd09068858feaa18d0e",
+  "reviewed_at": "2026-10-15",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/README.md",
+      "evidence": "能力、运行条件、已知问题与许可范围"
+    },
+    {
+      "path": "Cargo.toml",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/Cargo.toml",
+      "evidence": "Rust 动态库、绑定与依赖"
+    },
+    {
+      "path": "src/assets/mod.rs",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/src/assets/mod.rs",
+      "evidence": "本机资源构建与重启加载"
+    },
+    {
+      "path": "src/havok_col.rs",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/src/havok_col.rs",
+      "evidence": "Havok 实时碰撞解码"
+    },
+    {
+      "path": "src/collision.rs",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/src/collision.rs",
+      "evidence": "尺度与 X 镜像坐标转换"
+    },
+    {
+      "path": "src/moving.rs",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/src/moving.rs",
+      "evidence": "移动表面同步"
+    },
+    {
+      "path": "src/lib.rs",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/src/lib.rs",
+      "evidence": "30 Hz 更新、插值与事件控制权"
+    },
+    {
+      "path": "src/engine_mario.rs",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/src/engine_mario.rs",
+      "evidence": "模型部件姿态写入宿主骨骼"
+    },
+    {
+      "path": "src/combat.rs",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/src/combat.rs",
+      "evidence": "攻击比例、Boss 加成与比例扣血"
+    },
+    {
+      "path": "src/carry.rs",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/src/carry.rs",
+      "evidence": "敌人搬运"
+    },
+    {
+      "path": "src/swing.rs",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/src/swing.rs",
+      "evidence": "Boss 甩投"
+    },
+    {
+      "path": "libsm64/src/decomp/game/mario_actions_airborne.c",
+      "url": "https://github.com/deltarooo/er-mario/blob/11744b855bf546ca0b66dfd09068858feaa18d0e/libsm64/src/decomp/game/mario_actions_airborne.c",
+      "evidence": "原作空中动作实现"
+    }
+  ],
+  "runtime_verification": false,
+  "media": [
+    {
+      "url": "https://x.com/Deltaroo3D/status/2105345162771648883",
+      "kind": "author_post",
+      "post_embed_verified": true,
+      "video_playback_verified": false,
+      "media_status": "disabled_after_copyright_report",
+      "checked_at": "2026-10-15"
+    },
+    {
+      "url": "https://x.com/Deltaroo3D/status/2106403168829714692",
+      "kind": "author_post",
+      "post_embed_verified": true,
+      "video_playback_verified": false,
+      "media_status": "disabled_after_copyright_report",
+      "checked_at": "2026-10-15"
+    }
+  ],
+  "local_scene": {
+    "entry": "web/elleh/index.html",
+    "description": "Reference-led Church of Elleh reconstruction with original local character controller",
+    "game_assets_included": false,
+    "libsm64_runtime": false,
+    "references": [
+      "https://eldendle.com/images/locations/church-of-elleh.jpg",
+      "https://images.steamusercontent.com/ugc/1820021756096495704/95C5A18416EFB449FE3951F2615AC98D14F73403/"
+    ]
+  }
+}
