@@ -1,0 +1,36 @@
+{
+  "routes": [
+    {
+      "route": "/api/orders",
+      "method": "POST",
+      "handler": "server/create-order.ts",
+      "runtimeEvidence": {
+        "confirmed": false
+      },
+      "responseKeys": [
+        "orderId",
+        "total",
+        "status"
+      ],
+      "consumers": [
+        {
+          "name": "create-order.ts",
+          "filePath": "client/create-order.ts",
+          "accessedKeys": [
+            "receiptId",
+            "total"
+          ],
+          "mismatched": [
+            "receiptId"
+          ],
+          "mismatchConfidence": "high"
+        }
+      ],
+      "status": "MISMATCH"
+    }
+  ],
+  "total": 1,
+  "routesWithShapes": 1,
+  "mismatches": 1,
+  "message": "Found 1 route(s) with response shape data. 1 route(s) have consumer/shape mismatches."
+}

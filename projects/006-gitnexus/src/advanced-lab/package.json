@@ -1,0 +1,7 @@
+{
+  "name": "gitnexus-advanced-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Original static-analysis fixtures. Express and FastMCP imports are analysis examples; no server or dangerous sink is executed."
+}

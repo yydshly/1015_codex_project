@@ -19,3 +19,5 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 页面不运行上游引擎；点击图谱只在浏览器查询本次记录。更新数据需要重新采集，不能只手改关系或指标。本地 npm 依赖、数据库、解析缓存和凭据不进入发布产物。
 
 能力效果入口 `#showcase`：七个可键盘切换的页签，展示分组、流程、上下文、完整影响、搜索、路径和 diff。`assets/showcase.css / showcase.js / showcase.json` 随 assets/ 复制，无新依赖。数据来自补充 Cypher 查询与隔离实验，原始输出位于 references/showcase-*；流程步骤按数据库顺序显示。搜索框只是过滤固定查询的结果，不表示在线语义搜索。能力覆盖表说明扩展条件及未实跑项。
+
+2026-10-16：主入口 `#showcase / #explorer` 升级为内嵌完整工作台，独立入口 `assets/atlas.html`。`atlas.js / atlas.css / atlas.json / advanced.json / business-probes.json` 全部随 assets/ 复制。无第三方绘图库、CDN、新根依赖。完整 SVG 图谱有缩放、拖动、键盘平移与节点选择；12 类能力共用图和源码检查器，高级部分使用独立真实索引。12 步导览与 Agent 步骤属于教学编排。旧七种页签及简单函数图保留在折叠档案中。

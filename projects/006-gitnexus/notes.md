@@ -10,7 +10,7 @@
 
 ## 实际执行
 
-原创 checkout-lab 复制到临时仓库运行，避免 analyze 修改本研究仓库的 AGENTS.md / CLAUDE.md 或全局配置。没有运行 setup，没有将根仓库接入 MCP。固定 npm `gitnexus@1.6.12`，tag SHA `26ddd95685f13d07f3661ef37c7ca1b62d29c409`，使用独立 Node 24 运行时。
+原创 checkout-lab 复制到临时仓库运行，避免 analyze 修改本研究仓库的 AGENTS.md / CLAUDE.md 或全局配置。没有运行 setup，没有将根仓库接入 MCP。固定 npm `gitnexus@1.6.12`；后续核对发现 npm gitHead 与文档 tag SHA 不同，源码等价关系未建立，使用独立 Node 24 运行时。
 
 LadybugDB 平台二进制需要保留；不能通过 omit optional 仅跳过向量模型依赖。安装恢复、环境、命令、原始输出和最终结论以 [run-report.md](references/run-report.md) 为准。
 
@@ -50,3 +50,11 @@ LadybugDB 平台二进制需要保留；不能通过 omit optional 仅跳过向�
 图谱视图与教学流水线分开标明，搜索只过滤保存结果；能力覆盖表列出重命名、API、PDG、仓库组和模型文档的条件。无需新后端或依赖，官方 Web UI / CLI / MCP 作为分析新仓库的入口。沿用 GitHub Pages 构建与发布。
 
 能力效果发布：内容提交 ea933ca，Pages 任务 38762226140 成功。线上 24 项 HTTP / 数据一致性检查通过，七种视图、四步流程选择、18 条命中与 shipping 筛选、390px 无溢出通过；无控制台错误。初次线上交互发生在 JSON 尚未加载时，等待页面明确就绪后重新核对全部视图，均显示真实结果。线上截图与检查保存到 assets/showcase-*。
+
+## 完整交互与高级实跑 · 2026-10-16
+
+导出基础全部 71/131 图谱，为 10 个函数追加 context / impact，实际运行 3 组关键词查询。新增独立 SVG 工作台，让整仓、文件、分组、函数、流程、影响、搜索、diff 和源码联动，具备播放与 12 步导览。原结果档案折叠保留。金额探针实际执行 5 个输入的修改前后行为，110 元本地购物车运费从 0 变 9 元，不将这个结果冒充图谱预测。
+
+独立高级样本使用 --pdg 实跑 103/154。rename 预览 4 文件 5 候选，其中 1 个 text_search 字符串命中；API 检查发现 receiptId/orderId 偏差；Python工具可识别；控制 / 数据依赖和直接 / 跨函数污点有实际结果。参数路由消费者与回调传播漏报明确展示。LLM、embeddings、Wiki 与仓库组没有运行，条件写入能力全景。
+
+版本核对新增证据：固定 npm 分发的 gitHead 为 c4ecf398…，文档参考 tag 为26ddd956…，二者不同且源码等价关系未建立。已补充基础 metadata 与运行说明，保留原始 CLI 输出和锁文件。

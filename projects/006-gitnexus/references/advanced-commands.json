@@ -1,0 +1,195 @@
+[
+  {
+    "id": "rename",
+    "method": "rename",
+    "params": {
+      "symbol_name": "calculateShipping",
+      "file_path": "services/shipping.ts",
+      "new_name": "computeShippingFee",
+      "dry_run": true,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 477,
+    "status": "returned",
+    "raw": "references/advanced-rename.json"
+  },
+  {
+    "id": "route_map",
+    "method": "route_map",
+    "params": {
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 23,
+    "status": "returned",
+    "raw": "references/advanced-route_map.json"
+  },
+  {
+    "id": "shape_check",
+    "method": "shape_check",
+    "params": {
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 10,
+    "status": "returned",
+    "raw": "references/advanced-shape_check.json"
+  },
+  {
+    "id": "api_impact",
+    "method": "api_impact",
+    "params": {
+      "route": "/api/orders",
+      "method": "POST",
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 22,
+    "status": "returned",
+    "raw": "references/advanced-api_impact.json"
+  },
+  {
+    "id": "tool_map",
+    "method": "tool_map",
+    "params": {
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 14,
+    "status": "returned",
+    "raw": "references/advanced-tool_map.json"
+  },
+  {
+    "id": "pdg_controls",
+    "method": "pdg_query",
+    "params": {
+      "mode": "controls",
+      "target": "calculateShipping",
+      "limit": 100,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 32,
+    "status": "returned",
+    "raw": "references/advanced-pdg_controls.json"
+  },
+  {
+    "id": "pdg_flows",
+    "method": "pdg_query",
+    "params": {
+      "mode": "flows",
+      "target": "calculateShipping",
+      "variable": "shipping",
+      "limit": 100,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 29,
+    "status": "returned",
+    "raw": "references/advanced-pdg_flows.json"
+  },
+  {
+    "id": "pdg_impact",
+    "method": "impact",
+    "params": {
+      "target": "calculateShipping",
+      "mode": "pdg",
+      "line": 5,
+      "direction": "upstream",
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 237,
+    "status": "returned",
+    "raw": "references/advanced-pdg_impact.json"
+  },
+  {
+    "id": "explain",
+    "method": "explain",
+    "params": {
+      "target": "security/preview.ts",
+      "limit": 100,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 56,
+    "status": "returned",
+    "raw": "references/advanced-explain.json"
+  },
+  {
+    "id": "explain_unsafe",
+    "method": "explain",
+    "params": {
+      "target": "unsafePreview",
+      "limit": 100,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 77,
+    "status": "returned",
+    "raw": "references/advanced-explain_unsafe.json"
+  },
+  {
+    "id": "explain_safe",
+    "method": "explain",
+    "params": {
+      "target": "safePreview",
+      "limit": 100,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 64,
+    "status": "returned",
+    "raw": "references/advanced-explain_safe.json"
+  },
+  {
+    "id": "explain_wrapped",
+    "method": "explain",
+    "params": {
+      "target": "wrappedPreview",
+      "limit": 100,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 75,
+    "status": "returned",
+    "raw": "references/advanced-explain_wrapped.json"
+  },
+  {
+    "id": "explain_callback",
+    "method": "explain",
+    "params": {
+      "target": "callbackPreview",
+      "limit": 100,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 72,
+    "status": "returned",
+    "raw": "references/advanced-explain_callback.json"
+  },
+  {
+    "id": "graph_nodes",
+    "method": "cypher",
+    "params": {
+      "statement": "MATCH (n) RETURN n.id AS id, n.name AS name, labels(n) AS kind, n.filePath AS filePath, n.startLine AS startLine, n.endLine AS endLine ORDER BY n.id",
+      "limit": 1000,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 11,
+    "status": "returned",
+    "raw": "references/advanced-graph_nodes.json"
+  },
+  {
+    "id": "graph_edges",
+    "method": "cypher",
+    "params": {
+      "statement": "MATCH (a)-[r:CodeRelation]->(b) RETURN a.id AS source, b.id AS target, r.type AS type, r.confidence AS confidence ORDER BY a.id,b.id,r.type",
+      "limit": 2000,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 40,
+    "status": "returned",
+    "raw": "references/advanced-graph_edges.json"
+  },
+  {
+    "id": "graph_types",
+    "method": "cypher",
+    "params": {
+      "statement": "MATCH (a)-[r:CodeRelation]->(b) RETURN r.type AS type, count(r) AS count ORDER BY count DESC",
+      "limit": 100,
+      "repo": "<LAB>/advanced-lab"
+    },
+    "durationMs": 27,
+    "status": "returned",
+    "raw": "references/advanced-graph_types.json"
+  }
+]

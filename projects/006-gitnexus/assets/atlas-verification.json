@@ -1,0 +1,251 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-15T16:23:29.214Z",
+  "checks": [
+    {
+      "name": "完整图71实体131边",
+      "passed": true
+    },
+    {
+      "name": "业务图邻居3实体2边",
+      "passed": true
+    },
+    {
+      "name": "图谱缩放",
+      "passed": true
+    },
+    {
+      "name": "图谱键盘平移",
+      "passed": true
+    },
+    {
+      "name": "查找空结果",
+      "passed": true
+    },
+    {
+      "name": "分组7节点同步高亮",
+      "passed": true
+    },
+    {
+      "name": "10函数上下文与源码可切换",
+      "passed": true
+    },
+    {
+      "name": "真实流程自动播放到第三步",
+      "passed": true
+    },
+    {
+      "name": "四步流程定位库存校验",
+      "passed": true
+    },
+    {
+      "name": "影响第一层3节点",
+      "passed": true
+    },
+    {
+      "name": "影响含验证入口5节点",
+      "passed": true
+    },
+    {
+      "name": "影响实体定位保留原目标",
+      "passed": true
+    },
+    {
+      "name": "FTS18项结构化命中",
+      "passed": true
+    },
+    {
+      "name": "搜索命中联动源码",
+      "passed": true
+    },
+    {
+      "name": "真实diff联动修改后源码",
+      "passed": true
+    },
+    {
+      "name": "5组真实金额探针",
+      "passed": true
+    },
+    {
+      "name": "重命名5候选分类",
+      "passed": true
+    },
+    {
+      "name": "字符串候选定位第2行",
+      "passed": true
+    },
+    {
+      "name": "路由图仅1条实际FETCHES",
+      "passed": true
+    },
+    {
+      "name": "参数URL未关联明示",
+      "passed": true
+    },
+    {
+      "name": "字段偏差定位到真实消费行",
+      "passed": true
+    },
+    {
+      "name": "API两端与路由3节点联动",
+      "passed": true
+    },
+    {
+      "name": "MCP工具定义3节点2关系",
+      "passed": true
+    },
+    {
+      "name": "PDG控制7项",
+      "passed": true
+    },
+    {
+      "name": "控制边点击定位赋值行",
+      "passed": true
+    },
+    {
+      "name": "PDG数据依赖3项",
+      "passed": true
+    },
+    {
+      "name": "def-use定位return",
+      "passed": true
+    },
+    {
+      "name": "函数内3行传播步骤",
+      "passed": true
+    },
+    {
+      "name": "传播步骤定位res.send",
+      "passed": true
+    },
+    {
+      "name": "编码对照保留SANITIZES边",
+      "passed": true
+    },
+    {
+      "name": "跨函数路径正确换算行号",
+      "passed": true
+    },
+    {
+      "name": "回调漏报明确展示",
+      "passed": true
+    },
+    {
+      "name": "12步导览覆盖全部能力",
+      "passed": true
+    },
+    {
+      "name": "导览完成可退出",
+      "passed": true
+    },
+    {
+      "name": "390px-overview",
+      "passed": true
+    },
+    {
+      "name": "390px-communities",
+      "passed": true
+    },
+    {
+      "name": "390px-context",
+      "passed": true
+    },
+    {
+      "name": "390px-flows",
+      "passed": true
+    },
+    {
+      "name": "390px-impact",
+      "passed": true
+    },
+    {
+      "name": "390px-search",
+      "passed": true
+    },
+    {
+      "name": "390px-changes",
+      "passed": true
+    },
+    {
+      "name": "390px-rename",
+      "passed": true
+    },
+    {
+      "name": "390px-api",
+      "passed": true
+    },
+    {
+      "name": "390px-pdg",
+      "passed": true
+    },
+    {
+      "name": "390px-agent",
+      "passed": true
+    },
+    {
+      "name": "390px-coverage",
+      "passed": true
+    },
+    {
+      "name": "320px-overview",
+      "passed": true
+    },
+    {
+      "name": "320px-communities",
+      "passed": true
+    },
+    {
+      "name": "320px-context",
+      "passed": true
+    },
+    {
+      "name": "320px-flows",
+      "passed": true
+    },
+    {
+      "name": "320px-impact",
+      "passed": true
+    },
+    {
+      "name": "320px-search",
+      "passed": true
+    },
+    {
+      "name": "320px-changes",
+      "passed": true
+    },
+    {
+      "name": "320px-rename",
+      "passed": true
+    },
+    {
+      "name": "320px-api",
+      "passed": true
+    },
+    {
+      "name": "320px-pdg",
+      "passed": true
+    },
+    {
+      "name": "320px-agent",
+      "passed": true
+    },
+    {
+      "name": "320px-coverage",
+      "passed": true
+    },
+    {
+      "name": "主页面入口联动内嵌API字段视图",
+      "passed": true
+    },
+    {
+      "name": "图谱查找卡片可定位源码",
+      "passed": true
+    },
+    {
+      "name": "390px主页面与内嵌均无溢出",
+      "passed": true
+    }
+  ],
+  "consoleErrors": []
+}

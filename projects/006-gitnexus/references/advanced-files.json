@@ -1,0 +1,50 @@
+[
+  {
+    "path": "client/create-order.ts",
+    "content": "export async function placeOrder(subtotal: number) {\n  const response = await fetch(\"/api/orders\", {\n    method: \"POST\",\n    body: JSON.stringify({ subtotal }),\n    headers: { \"Content-Type\": \"application/json\" },\n  });\n  const data = await response.json();\n  // Intentional shape drift: provider returns orderId, consumer reads receiptId.\n  return { id: data.receiptId, total: data.total };\n}\n"
+  },
+  {
+    "path": "client/dynamic-order.ts",
+    "content": "export async function loadDynamicOrder(id: string) {\n  const url = \"/api/orders/\" + id;\n  const response = await fetch(url);\n  const data = await response.json();\n  return data.orderId;\n}\n"
+  },
+  {
+    "path": "client/order-detail.ts",
+    "content": "export async function loadOrder() {\n  const response = await fetch(\"/api/orders/42\");\n  const data = await response.json();\n  return { id: data.orderId, total: data.total };\n}\n"
+  },
+  {
+    "path": "notes.ts",
+    "content": "// A text-only mention should carry lower confidence in a rename preview.\nexport const developerNote = \"calculateShipping is the current shipping helper\";\n"
+  },
+  {
+    "path": "package.json",
+    "content": "{\n  \"name\": \"gitnexus-advanced-lab\",\n  \"version\": \"1.0.0\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"description\": \"Original static-analysis fixtures. Express and FastMCP imports are analysis examples; no server or dangerous sink is executed.\"\n}\n"
+  },
+  {
+    "path": "security/preview.ts",
+    "content": "// Static-analysis examples only. None of these handlers are invoked by this lab.\nexport function unsafePreview(req: any, res: any) {\n  const raw = req.query;\n  const html = raw;\n  res.send(html);\n}\n\nexport function safePreview(req: any, res: any) {\n  const raw = req.query;\n  const html = encodeURIComponent(raw);\n  res.send(html);\n}\n\nexport function sendPreview(res: any, html: string) {\n  res.send(html);\n}\n\nexport function wrappedPreview(req: any, res: any) {\n  const raw = req.query;\n  sendPreview(res, raw);\n}\n\nexport function callbackPreview(req: any, res: any) {\n  const raw = req.query;\n  [raw].forEach(value => res.send(value));\n}\n"
+  },
+  {
+    "path": "server/create-order.ts",
+    "content": "import express from \"express\";\nimport { calculateShipping } from \"../services/shipping.ts\";\n\nconst app = express();\n\nexport function createOrder(req: any, res: any) {\n  const subtotal = Number(req.body.subtotal);\n  const total = subtotal + calculateShipping(subtotal, \"local\");\n  return res.json({ orderId: \"demo-001\", total, status: \"confirmed\" });\n}\n\napp.post(\"/api/orders\", createOrder);\nexport default app;\n"
+  },
+  {
+    "path": "server/health.ts",
+    "content": "import express from \"express\";\n\nconst app = express();\n\nexport function healthCheck(_req: any, res: any) {\n  return res.json({ ok: true });\n}\n\napp.get(\"/api/health\", healthCheck);\nexport default app;\n"
+  },
+  {
+    "path": "server/order-detail.ts",
+    "content": "import express from \"express\";\n\nconst app = express();\n\nexport function getOrder(req: any, res: any) {\n  return res.json({ orderId: req.params.id, total: 5900, status: \"confirmed\" });\n}\n\napp.get(\"/api/orders/:id\", getOrder);\nexport default app;\n"
+  },
+  {
+    "path": "services/estimate.ts",
+    "content": "import { calculateShipping as shippingCost } from \"./shipping.ts\";\n\nexport function estimateOrder(subtotal: number): number {\n  return subtotal + shippingCost(subtotal, \"local\");\n}\n"
+  },
+  {
+    "path": "services/shipping.ts",
+    "content": "export function calculateShipping(subtotal: number, region: string): number {\n  if (subtotal < 0) throw new Error(\"Subtotal cannot be negative\");\n  let shipping = 500;\n  if (subtotal >= 10000) {\n    shipping = 0;\n  }\n  if (region === \"remote\") {\n    shipping = 1200;\n  }\n  return shipping;\n}\n"
+  },
+  {
+    "path": "tools/shipping_tool.py",
+    "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"Shipping research fixture\")\n\n\n@mcp.tool()\ndef quote_shipping(subtotal: int) -> dict:\n    \"\"\"Quote a local shipping fee in integer cents.\"\"\"\n    shipping = 0 if subtotal >= 10000 else 500\n    return {\"shipping\": shipping, \"total\": subtotal + shipping}\n"
+  }
+]

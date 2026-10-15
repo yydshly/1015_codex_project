@@ -1,0 +1,42 @@
+{
+  "route": "/api/orders",
+  "method": "POST",
+  "handler": "server/create-order.ts",
+  "runtimeEvidence": {
+    "confirmed": false
+  },
+  "responseShape": {
+    "success": [
+      "orderId",
+      "total",
+      "status"
+    ],
+    "error": []
+  },
+  "middleware": [],
+  "consumers": [
+    {
+      "name": "create-order.ts",
+      "file": "client/create-order.ts",
+      "accesses": [
+        "receiptId",
+        "total"
+      ]
+    }
+  ],
+  "mismatches": [
+    {
+      "consumer": "client/create-order.ts",
+      "field": "receiptId",
+      "reason": "accessed but not in response shape",
+      "confidence": "high"
+    }
+  ],
+  "executionFlows": [],
+  "impactSummary": {
+    "directConsumers": 1,
+    "affectedFlows": 0,
+    "riskLevel": "MEDIUM",
+    "warning": "Changing response shape will affect 1 component"
+  }
+}

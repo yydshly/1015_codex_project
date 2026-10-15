@@ -1,0 +1,70 @@
+{
+  "status": "found",
+  "contentAvailability": {
+    "requested": true,
+    "profile": "full",
+    "available": true,
+    "scope": "full"
+  },
+  "symbol": {
+    "uid": "Function:services/estimate.ts:estimateOrder",
+    "name": "estimateOrder",
+    "kind": "Function",
+    "filePath": "services/estimate.ts",
+    "startLine": 7,
+    "endLine": 12,
+    "content": "export function estimateOrder(input: OrderInput): Quote {   const subtotal = calculateSubtotal(input.items);   const discount = applyDiscount(subtotal, input.coupon);   const shipping = shippingCost(input.items, input.customer.region);   return { subtotal, discount, shipping, total: subtotal - discount + shipping }; }"
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "uid": "File:verify.ts",
+        "name": "verify.ts",
+        "filePath": "verify.ts"
+      }
+    ]
+  },
+  "outgoing": {
+    "calls": [
+      {
+        "uid": "Function:services/discount.ts:applyDiscount",
+        "name": "applyDiscount",
+        "filePath": "services/discount.ts"
+      },
+      {
+        "uid": "Function:services/pricing.ts:calculateSubtotal",
+        "name": "calculateSubtotal",
+        "filePath": "services/pricing.ts"
+      },
+      {
+        "uid": "Function:services/shipping.ts:calculateShipping",
+        "name": "calculateShipping",
+        "filePath": "services/shipping.ts"
+      }
+    ],
+    "accesses": [
+      {
+        "uid": "Property:types.ts:OrderInput.coupon",
+        "name": "coupon",
+        "filePath": "types.ts"
+      },
+      {
+        "uid": "Property:types.ts:OrderInput.customer",
+        "name": "customer",
+        "filePath": "types.ts"
+      },
+      {
+        "uid": "Property:types.ts:OrderInput.items",
+        "name": "items",
+        "filePath": "types.ts"
+      },
+      {
+        "uid": "Property:types.ts:OrderInput.items",
+        "name": "items",
+        "filePath": "types.ts"
+      }
+    ]
+  },
+  "processes": []
+}

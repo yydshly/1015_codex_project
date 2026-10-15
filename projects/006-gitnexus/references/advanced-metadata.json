@@ -1,0 +1,116 @@
+{
+  "repoPath": "<LAB>/advanced-lab",
+  "storagePath": "<LAB>/advanced-lab\\.gitnexus",
+  "lastCommit": "8e2d96a6dcde22788a994d736a015a60b90dd775",
+  "indexedAt": "2026-10-15T15:59:19.660Z",
+  "contentRetention": "full",
+  "contentRetentionSchemaVersion": 1,
+  "ftsProfile": "full",
+  "runnerIdentity": {
+    "schemaVersion": 4,
+    "runtime": {
+      "executablePath": "<USER_HOME>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "version": "v24.19.0",
+      "platform": "win32",
+      "architecture": "x64",
+      "modulesAbi": "137",
+      "libc": "not-applicable"
+    },
+    "cliVersion": "1.6.12",
+    "invokedArtifact": {
+      "path": "<LAB>\\node_modules\\gitnexus\\dist\\cli\\index.js",
+      "digest": "sha256:e2c96d62b26a1898e536457377f7b73c539b080c7e8c316869ffc6a790003eb4"
+    },
+    "build": {
+      "kind": "distribution",
+      "rootPath": "<LAB>\\node_modules\\gitnexus\\dist",
+      "canonicalization": "gitnexus-analyzer-build-v2",
+      "digest": "sha256:262cf80deec8ff56ec019ac08406b7098bf40ae07756aa02ef8fa42720d3583e"
+    },
+    "dependencyRuntime": {
+      "manifestPath": "<LAB>\\node_modules\\gitnexus\\package.json",
+      "lockfilePath": "<LAB>\\package-lock.json",
+      "canonicalization": "gitnexus-analyzer-dependency-runtime-v4",
+      "packageCount": 218,
+      "artifactCount": 9777,
+      "digest": "sha256:c1344b9f627a5ac8266a33509d34b308a567a3cfb2d5171113843a25254f7ac2"
+    }
+  },
+  "branch": "main",
+  "stats": {
+    "files": 12,
+    "nodes": 103,
+    "edges": 154,
+    "communities": 2,
+    "processes": 0,
+    "embeddings": 0
+  },
+  "capabilities": {
+    "graph": {
+      "provider": "ladybugdb",
+      "status": "available"
+    },
+    "fts": {
+      "provider": "ladybugdb-fts",
+      "status": "available"
+    },
+    "vectorSearch": {
+      "provider": "ladybugdb-vector",
+      "status": "unavailable",
+      "exactScanLimit": 10000
+    }
+  },
+  "schemaFingerprint": "60fc01e4e4ed",
+  "scopeExtractionReceipt": 1,
+  "analysisFeatures": {
+    "graph.class-framework-annotations": 1
+  },
+  "springVendorPrefixes": "[\"Win\"]",
+  "cjkSegmentation": "none",
+  "embeddingDims": 384,
+  "fileHashes": {
+    "client/create-order.ts": "e2edf34f9a786bf83ba70f174a40c764ea0ec084df7925f6a4fd236bd794d7cb",
+    "client/dynamic-order.ts": "228dbbe9c3d66852eecedbb2a2c3ede3a1a82a98e62dd06644e91070ce97b687",
+    "client/order-detail.ts": "d393ce69ab2d173e42d42edd12a1d5e1a032d19eb4e6b78014dc4c545c0fe792",
+    "notes.ts": "8f594387838f0142364d39e49f119503220d39c1ff3fbf46690608fe3eaa0bd0",
+    "package.json": "7a2469ee2ed7133f8856c945995dd533e1e205162c77289fa37c732d8243e8ab",
+    "security/preview.ts": "951ffb16c70cfc09e149ca03e761bb808d50f84d001f3334b75b04fbc19c196e",
+    "server/create-order.ts": "997a9668108ac8b281e61d1516d784868eafc7919f2ae3050ee9887e92d7d15c",
+    "server/health.ts": "baa5eb05276aca7f4e01ce82b63872dd9ae725964d948e3c6515e7993898ffbd",
+    "server/order-detail.ts": "7a65057d5e147dfd578437bd6ec146332a881f50649ff1cc4eeb3da065f76092",
+    "services/estimate.ts": "6c4100811623bff819b1000e12fc03c203db20384f534009f6730fd94c1f5617",
+    "services/shipping.ts": "b301000940d702a1dcf5761642e361f00cb74a166e9921ba9fd1d1ad4736b445",
+    "tools/shipping_tool.py": "510d32257c7e9808d9a816e9894037df8c7f79d898dad2fe62004c05ebd727ed"
+  },
+  "indexCoverage": {
+    "maxFileSizeBytes": 524288,
+    "dirtyPaths": []
+  },
+  "cacheKeys": [
+    "93691fc80f1eecc4c2c1d4798353d2cc13d1c04d164c2cf29140dd20b337d692",
+    "190ce702b793c84b053dcccbe5abe3b738b0644dad674a67095faefbcb520977",
+    "ff9b96c44319d4a97b3334c3ccd4f0ee2d96505797c16f2d9616903ed26361fb",
+    "5693e8f352f5fbbd9bc4de809bb7df1329c5d7c2791faad4ec7234b911c3ec0a",
+    "304254dbc4a83ec1f7cb75463e8d85a96dbd5e1ac7f29b2d90c3bfe2e1adff21",
+    "a6869730381e097254b5f22ba97caa257e28c4b3db1195c8df129b5148bfc9a1",
+    "e02a6fd9c2e15b838c63235c84cdedaeb8b9e42f52322d25ab30aa920a2c9dda",
+    "f5403752480f9795181805d1d0892e570ca172435742ffc74af8696efa3ab925",
+    "69d8e8637279da2b5dde224cb00f797ad87a3b49c9228240f5f81cd863187153",
+    "5c7c006bfd6c3629a7c6a7310deebdf2424fb9c0fd8d8ade6d20269cdf44b6e1",
+    "2019bbfdbceaa6cecedf84c13157c88ac13fdf8233cc75a93fd41cdd2a096265"
+  ],
+  "pdg": {
+    "maxFunctionLines": 2000,
+    "maxEdgesPerFunction": 5000,
+    "maxReachingDefEdgesPerFunction": 4000,
+    "maxCdgEdgesPerFunction": 5000,
+    "maxTaintFindingsPerFunction": 200,
+    "maxTaintHops": 32,
+    "maxInterprocFindings": 2000,
+    "maxInterprocHops": 32,
+    "maxInterprocEdges": 1000,
+    "taintModelVersion": "249bce0bbcd8",
+    "reachingDefSolver": "ssa-sparse-v1",
+    "hasCallSummary": true
+  }
+}

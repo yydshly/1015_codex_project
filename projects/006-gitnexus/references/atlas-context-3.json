@@ -1,0 +1,42 @@
+{
+  "status": "found",
+  "contentAvailability": {
+    "requested": true,
+    "profile": "full",
+    "available": true,
+    "scope": "full"
+  },
+  "symbol": {
+    "uid": "Function:services/discount.ts:applyDiscount",
+    "name": "applyDiscount",
+    "kind": "Function",
+    "filePath": "services/discount.ts",
+    "startLine": 1,
+    "endLine": 3,
+    "content": "export function applyDiscount(subtotal: number, coupon?: string): number {   return coupon === \"SAVE10\" ? Math.floor(subtotal * 0.1) : 0; }"
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "uid": "Function:services/checkout.ts:checkoutOrder",
+        "name": "checkoutOrder",
+        "filePath": "services/checkout.ts"
+      },
+      {
+        "uid": "Function:services/estimate.ts:estimateOrder",
+        "name": "estimateOrder",
+        "filePath": "services/estimate.ts"
+      }
+    ]
+  },
+  "outgoing": {},
+  "processes": [
+    {
+      "id": "proc_1_submitorder",
+      "name": "SubmitOrder → ApplyDiscount",
+      "step_index": 3,
+      "step_count": 3
+    }
+  ]
+}

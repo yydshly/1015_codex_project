@@ -85,6 +85,13 @@
       "id": "codeflow-comparison-readme",
       "url": "https://github.com/braedonsaunders/codeflow/blob/main/README.md",
       "supports": "浏览器使用、文件关联与源码卡片、导出、CLI和Card"
+    },
+    {
+      "id": "npm-distribution-provenance",
+      "url": "https://registry.npmjs.org/gitnexus/1.6.12",
+      "supports": "npm gitHead、integrity，与文档tag区分；详见advanced-provenance.json"
     }
-  ]
+  ],
+  "runtimeNpmGitHead": "c4ecf398de637cf779ab2238e69958cfd5d601ce",
+  "runtimeTagCommitRole": "reference tag only; not equal to npm gitHead"
 }

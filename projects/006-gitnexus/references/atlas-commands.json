@@ -1,0 +1,330 @@
+[
+  {
+    "name": "nodes",
+    "arguments": [
+      "cypher",
+      "MATCH (n) RETURN n.id AS id, labels(n) AS kind, n.name AS name, n.filePath AS filePath, n.startLine AS startLine, n.endLine AS endLine, n.label AS label ORDER BY n.id",
+      "--limit",
+      "500"
+    ],
+    "exitCode": 0,
+    "seconds": 2.078
+  },
+  {
+    "name": "edges",
+    "arguments": [
+      "cypher",
+      "MATCH (a)-[r:CodeRelation]->(b) RETURN a.id AS source, b.id AS target, r.type AS type, r.confidence AS confidence, r.step AS step ORDER BY a.id, b.id, r.type",
+      "--limit",
+      "500"
+    ],
+    "exitCode": 0,
+    "seconds": 1.294
+  },
+  {
+    "name": "context-0",
+    "arguments": [
+      "context",
+      "submitOrder",
+      "--file",
+      "routes/order.ts",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.458
+  },
+  {
+    "name": "impact-0",
+    "arguments": [
+      "impact",
+      "submitOrder",
+      "--file",
+      "routes/order.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "4"
+    ],
+    "exitCode": 0,
+    "seconds": 1.166
+  },
+  {
+    "name": "context-1",
+    "arguments": [
+      "context",
+      "checkoutOrder",
+      "--file",
+      "services/checkout.ts",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.349
+  },
+  {
+    "name": "impact-1",
+    "arguments": [
+      "impact",
+      "checkoutOrder",
+      "--file",
+      "services/checkout.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "4"
+    ],
+    "exitCode": 0,
+    "seconds": 1.849
+  },
+  {
+    "name": "context-2",
+    "arguments": [
+      "context",
+      "validate",
+      "--file",
+      "services/customer.ts",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.91
+  },
+  {
+    "name": "impact-2",
+    "arguments": [
+      "impact",
+      "validate",
+      "--file",
+      "services/customer.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "4"
+    ],
+    "exitCode": 0,
+    "seconds": 2.06
+  },
+  {
+    "name": "context-3",
+    "arguments": [
+      "context",
+      "applyDiscount",
+      "--file",
+      "services/discount.ts",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.558
+  },
+  {
+    "name": "impact-3",
+    "arguments": [
+      "impact",
+      "applyDiscount",
+      "--file",
+      "services/discount.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "4"
+    ],
+    "exitCode": 0,
+    "seconds": 1.406
+  },
+  {
+    "name": "context-4",
+    "arguments": [
+      "context",
+      "estimateOrder",
+      "--file",
+      "services/estimate.ts",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.559
+  },
+  {
+    "name": "impact-4",
+    "arguments": [
+      "impact",
+      "estimateOrder",
+      "--file",
+      "services/estimate.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "4"
+    ],
+    "exitCode": 0,
+    "seconds": 1.276
+  },
+  {
+    "name": "context-5",
+    "arguments": [
+      "context",
+      "validate",
+      "--file",
+      "services/inventory.ts",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.245
+  },
+  {
+    "name": "impact-5",
+    "arguments": [
+      "impact",
+      "validate",
+      "--file",
+      "services/inventory.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "4"
+    ],
+    "exitCode": 0,
+    "seconds": 1.442
+  },
+  {
+    "name": "context-6",
+    "arguments": [
+      "context",
+      "reserveStock",
+      "--file",
+      "services/inventory.ts",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.39
+  },
+  {
+    "name": "impact-6",
+    "arguments": [
+      "impact",
+      "reserveStock",
+      "--file",
+      "services/inventory.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "4"
+    ],
+    "exitCode": 0,
+    "seconds": 1.505
+  },
+  {
+    "name": "context-7",
+    "arguments": [
+      "context",
+      "calculateSubtotal",
+      "--file",
+      "services/pricing.ts",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.606
+  },
+  {
+    "name": "impact-7",
+    "arguments": [
+      "impact",
+      "calculateSubtotal",
+      "--file",
+      "services/pricing.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "4"
+    ],
+    "exitCode": 0,
+    "seconds": 1.531
+  },
+  {
+    "name": "context-8",
+    "arguments": [
+      "context",
+      "calculateShipping",
+      "--file",
+      "services/shipping.ts",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.592
+  },
+  {
+    "name": "impact-8",
+    "arguments": [
+      "impact",
+      "calculateShipping",
+      "--file",
+      "services/shipping.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "4"
+    ],
+    "exitCode": 0,
+    "seconds": 1.43
+  },
+  {
+    "name": "context-9",
+    "arguments": [
+      "context",
+      "saveOrder",
+      "--file",
+      "storage/orders.ts",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.257
+  },
+  {
+    "name": "impact-9",
+    "arguments": [
+      "impact",
+      "saveOrder",
+      "--file",
+      "storage/orders.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "4"
+    ],
+    "exitCode": 0,
+    "seconds": 1.733
+  },
+  {
+    "name": "query-0",
+    "arguments": [
+      "query",
+      "shipping checkout order",
+      "--limit",
+      "5",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.772
+  },
+  {
+    "name": "query-1",
+    "arguments": [
+      "query",
+      "inventory stock validate",
+      "--limit",
+      "5",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.459
+  },
+  {
+    "name": "query-2",
+    "arguments": [
+      "query",
+      "discount subtotal",
+      "--limit",
+      "5",
+      "--content"
+    ],
+    "exitCode": 0,
+    "seconds": 1.385
+  }
+]

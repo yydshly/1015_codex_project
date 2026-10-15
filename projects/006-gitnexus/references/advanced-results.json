@@ -1,0 +1,718 @@
+{
+  "rename": {
+    "status": "success",
+    "old_name": "calculateShipping",
+    "new_name": "computeShippingFee",
+    "files_affected": 4,
+    "total_edits": 5,
+    "graph_edits": 4,
+    "text_search_edits": 1,
+    "changes": [
+      {
+        "file_path": "services/shipping.ts",
+        "edits": [
+          {
+            "line": 1,
+            "old_text": "export function calculateShipping(subtotal: number, region: string): number {",
+            "new_text": "export function computeShippingFee(subtotal: number, region: string): number {",
+            "confidence": "graph"
+          }
+        ]
+      },
+      {
+        "file_path": "server/create-order.ts",
+        "edits": [
+          {
+            "line": 2,
+            "old_text": "import { calculateShipping } from \"../services/shipping.ts\";",
+            "new_text": "import { computeShippingFee } from \"../services/shipping.ts\";",
+            "confidence": "graph"
+          },
+          {
+            "line": 8,
+            "old_text": "const total = subtotal + calculateShipping(subtotal, \"local\");",
+            "new_text": "const total = subtotal + computeShippingFee(subtotal, \"local\");",
+            "confidence": "graph"
+          }
+        ]
+      },
+      {
+        "file_path": "services/estimate.ts",
+        "edits": [
+          {
+            "line": 1,
+            "old_text": "import { calculateShipping as shippingCost } from \"./shipping.ts\";",
+            "new_text": "import { computeShippingFee as shippingCost } from \"./shipping.ts\";",
+            "confidence": "graph"
+          }
+        ]
+      },
+      {
+        "file_path": "notes.ts",
+        "edits": [
+          {
+            "line": 2,
+            "old_text": "export const developerNote = \"calculateShipping is the current shipping helper\";",
+            "new_text": "export const developerNote = \"computeShippingFee is the current shipping helper\";",
+            "confidence": "text_search"
+          }
+        ]
+      }
+    ],
+    "applied": false
+  },
+  "route_map": {
+    "routes": [
+      {
+        "route": "/api/health",
+        "method": "GET",
+        "handler": "server/health.ts",
+        "runtimeEvidence": {
+          "confirmed": false
+        },
+        "middleware": [],
+        "consumers": [],
+        "flows": []
+      },
+      {
+        "route": "/api/orders/:id",
+        "method": "GET",
+        "handler": "server/order-detail.ts",
+        "runtimeEvidence": {
+          "confirmed": false
+        },
+        "middleware": [],
+        "consumers": [],
+        "flows": []
+      },
+      {
+        "route": "/api/orders",
+        "method": "POST",
+        "handler": "server/create-order.ts",
+        "runtimeEvidence": {
+          "confirmed": false
+        },
+        "middleware": [],
+        "consumers": [
+          {
+            "name": "create-order.ts",
+            "filePath": "client/create-order.ts",
+            "accessedKeys": [
+              "receiptId",
+              "total"
+            ]
+          }
+        ],
+        "flows": []
+      }
+    ],
+    "total": 3
+  },
+  "shape_check": {
+    "routes": [
+      {
+        "route": "/api/orders",
+        "method": "POST",
+        "handler": "server/create-order.ts",
+        "runtimeEvidence": {
+          "confirmed": false
+        },
+        "responseKeys": [
+          "orderId",
+          "total",
+          "status"
+        ],
+        "consumers": [
+          {
+            "name": "create-order.ts",
+            "filePath": "client/create-order.ts",
+            "accessedKeys": [
+              "receiptId",
+              "total"
+            ],
+            "mismatched": [
+              "receiptId"
+            ],
+            "mismatchConfidence": "high"
+          }
+        ],
+        "status": "MISMATCH"
+      }
+    ],
+    "total": 1,
+    "routesWithShapes": 1,
+    "mismatches": 1,
+    "message": "Found 1 route(s) with response shape data. 1 route(s) have consumer/shape mismatches."
+  },
+  "api_impact": {
+    "route": "/api/orders",
+    "method": "POST",
+    "handler": "server/create-order.ts",
+    "runtimeEvidence": {
+      "confirmed": false
+    },
+    "responseShape": {
+      "success": [
+        "orderId",
+        "total",
+        "status"
+      ],
+      "error": []
+    },
+    "middleware": [],
+    "consumers": [
+      {
+        "name": "create-order.ts",
+        "file": "client/create-order.ts",
+        "accesses": [
+          "receiptId",
+          "total"
+        ]
+      }
+    ],
+    "mismatches": [
+      {
+        "consumer": "client/create-order.ts",
+        "field": "receiptId",
+        "reason": "accessed but not in response shape",
+        "confidence": "high"
+      }
+    ],
+    "executionFlows": [],
+    "impactSummary": {
+      "directConsumers": 1,
+      "affectedFlows": 0,
+      "riskLevel": "MEDIUM",
+      "warning": "Changing response shape will affect 1 component"
+    }
+  },
+  "tool_map": {
+    "tools": [
+      {
+        "name": "quote_shipping",
+        "filePath": "tools/shipping_tool.py",
+        "description": "Quote a local shipping fee in integer cents.",
+        "flows": []
+      }
+    ],
+    "total": 1
+  },
+  "pdg_controls": {
+    "mode": "controls",
+    "anchor": {
+      "file": "services/shipping.ts",
+      "symbol": "calculateShipping",
+      "startLine": 1,
+      "endLine": 11
+    },
+    "results": [
+      {
+        "functionLine": 1,
+        "controller": {
+          "line": 2
+        },
+        "dependent": {
+          "line": 2,
+          "text": "throw new Error(\"Subtotal cannot be negative\");"
+        },
+        "label": "T",
+        "guard": true
+      },
+      {
+        "functionLine": 1,
+        "controller": {
+          "line": 2
+        },
+        "dependent": {
+          "line": 3,
+          "text": "let shipping = 500;"
+        },
+        "label": "F"
+      },
+      {
+        "functionLine": 1,
+        "controller": {
+          "line": 2
+        },
+        "dependent": {
+          "line": 4,
+          "text": "(subtotal >= 10000)"
+        },
+        "label": "F"
+      },
+      {
+        "functionLine": 1,
+        "controller": {
+          "line": 2
+        },
+        "dependent": {
+          "line": 7,
+          "text": "(region === \"remote\")"
+        },
+        "label": "F"
+      },
+      {
+        "functionLine": 1,
+        "controller": {
+          "line": 2
+        },
+        "dependent": {
+          "line": 10,
+          "text": "return shipping;"
+        },
+        "label": "F",
+        "guard": true
+      },
+      {
+        "functionLine": 1,
+        "controller": {
+          "line": 4
+        },
+        "dependent": {
+          "line": 5,
+          "text": "shipping = 0;"
+        },
+        "label": "T"
+      },
+      {
+        "functionLine": 1,
+        "controller": {
+          "line": 7
+        },
+        "dependent": {
+          "line": 8,
+          "text": "shipping = 1200;"
+        },
+        "label": "T"
+      }
+    ],
+    "total": 7
+  },
+  "pdg_flows": {
+    "mode": "flows",
+    "anchor": {
+      "file": "services/shipping.ts",
+      "symbol": "calculateShipping",
+      "startLine": 1,
+      "endLine": 11
+    },
+    "results": [
+      {
+        "functionLine": 1,
+        "variable": "shipping",
+        "def": {
+          "line": 3
+        },
+        "use": {
+          "line": 10,
+          "text": "return shipping;"
+        }
+      },
+      {
+        "functionLine": 1,
+        "variable": "shipping",
+        "def": {
+          "line": 5
+        },
+        "use": {
+          "line": 10,
+          "text": "return shipping;"
+        }
+      },
+      {
+        "functionLine": 1,
+        "variable": "shipping",
+        "def": {
+          "line": 8
+        },
+        "use": {
+          "line": 10,
+          "text": "return shipping;"
+        }
+      }
+    ],
+    "total": 3
+  },
+  "pdg_impact": {
+    "mode": "pdg",
+    "pdgResultVersion": 3,
+    "target": {
+      "id": "Function:services/shipping.ts:calculateShipping",
+      "name": "calculateShipping",
+      "type": "Function",
+      "filePath": "services/shipping.ts"
+    },
+    "direction": "upstream",
+    "impactedCount": 3,
+    "risk": "UNKNOWN",
+    "epistemic": "pdg-intra-procedural",
+    "note": "mode:'pdg' — intra-procedural slice from line 5 of 'calculateShipping'. 3 statements are upstream-dependent on it (over CDG + REACHING_DEF). Inter-procedural symbol reach is attached by impact mode's unified PDG dispatcher in interproceduralByDepth/byDepth. Inter-procedural symbol reach is included using the resolved symbol graph; statement-level PDG reach remains in affectedStatements. The symbol reach is labeled as a PDG evidence bridge, not as pure statement-level dependence.",
+    "pdgEvidence": {
+      "statements": "local-dependence",
+      "localSymbols": "owner-projection",
+      "localSymbolCount": 1,
+      "unresolvedBlockCount": 0,
+      "ambiguousProjectionCount": 0,
+      "interprocedural": "callgraph-bridge",
+      "interproceduralEvidenceCounts": {
+        "callgraph-bridge": 2
+      }
+    },
+    "criterionLine": 5,
+    "affectedStatements": [
+      {
+        "line": 1,
+        "filePath": "services/shipping.ts",
+        "text": "",
+        "scope": "intra"
+      },
+      {
+        "line": 2,
+        "filePath": "services/shipping.ts",
+        "text": "(subtotal < 0)",
+        "scope": "intra"
+      },
+      {
+        "line": 4,
+        "filePath": "services/shipping.ts",
+        "text": "(subtotal >= 10000)",
+        "scope": "intra"
+      }
+    ],
+    "affectedStatementCount": 3,
+    "reachableBlocks": [
+      "BasicBlock:services/shipping.ts:1:7:0",
+      "BasicBlock:services/shipping.ts:1:7:2",
+      "BasicBlock:services/shipping.ts:1:7:5"
+    ],
+    "intraReachableBlocks": [
+      "BasicBlock:services/shipping.ts:1:7:0",
+      "BasicBlock:services/shipping.ts:1:7:2",
+      "BasicBlock:services/shipping.ts:1:7:5"
+    ],
+    "seedBlocks": [
+      "BasicBlock:services/shipping.ts:1:7:6"
+    ],
+    "blockCount": 3,
+    "depthReached": 3,
+    "unresolvedBlockCount": 0,
+    "ambiguousProjectionCount": 0,
+    "summary": {
+      "direct": 3,
+      "processes_affected": 0,
+      "modules_affected": 1
+    },
+    "byDepthCounts": {
+      "1": 3
+    },
+    "affected_processes": [],
+    "affected_modules": [
+      {
+        "name": "Services",
+        "hits": 2,
+        "impact": "direct"
+      }
+    ],
+    "byDepth": {
+      "1": [
+        {
+          "depth": 1,
+          "id": "Function:services/shipping.ts:calculateShipping",
+          "name": "calculateShipping",
+          "type": "Function",
+          "filePath": "services/shipping.ts",
+          "startLine": 1,
+          "pdgEvidence": "owner-projection",
+          "pdgEvidenceReason": "reachable BasicBlock projected to its owning symbol",
+          "processes": []
+        },
+        {
+          "depth": 1,
+          "id": "Function:server/create-order.ts:createOrder",
+          "name": "createOrder",
+          "filePath": "server/create-order.ts",
+          "relationType": "CALLS",
+          "confidence": 0.85,
+          "processes": [],
+          "pdgEvidence": "callgraph-bridge",
+          "pdgEvidenceReason": "symbol reached through the resolved symbol graph compatibility bridge"
+        },
+        {
+          "depth": 1,
+          "id": "Function:services/estimate.ts:estimateOrder",
+          "name": "estimateOrder",
+          "filePath": "services/estimate.ts",
+          "relationType": "CALLS",
+          "confidence": 0.85,
+          "processes": [],
+          "pdgEvidence": "callgraph-bridge",
+          "pdgEvidenceReason": "symbol reached through the resolved symbol graph compatibility bridge"
+        }
+      ]
+    },
+    "interproceduralByDepth": {
+      "1": [
+        {
+          "depth": 1,
+          "id": "Function:server/create-order.ts:createOrder",
+          "name": "createOrder",
+          "filePath": "server/create-order.ts",
+          "relationType": "CALLS",
+          "confidence": 0.85,
+          "processes": [],
+          "pdgEvidence": "callgraph-bridge",
+          "pdgEvidenceReason": "symbol reached through the resolved symbol graph compatibility bridge"
+        },
+        {
+          "depth": 1,
+          "id": "Function:services/estimate.ts:estimateOrder",
+          "name": "estimateOrder",
+          "filePath": "services/estimate.ts",
+          "relationType": "CALLS",
+          "confidence": 0.85,
+          "processes": [],
+          "pdgEvidence": "callgraph-bridge",
+          "pdgEvidenceReason": "symbol reached through the resolved symbol graph compatibility bridge"
+        }
+      ]
+    },
+    "interproceduralByDepthCounts": {
+      "1": 2
+    },
+    "interproceduralEpistemic": "exact",
+    "pdgInterprocedural": {
+      "engine": "symbol-graph",
+      "evidence": "callgraph-bridge",
+      "impactedCount": 2,
+      "byDepthCounts": {
+        "1": 2
+      },
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:server/create-order.ts:createOrder",
+            "name": "createOrder",
+            "filePath": "server/create-order.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [],
+            "pdgEvidence": "callgraph-bridge",
+            "pdgEvidenceReason": "symbol reached through the resolved symbol graph compatibility bridge"
+          },
+          {
+            "depth": 1,
+            "id": "Function:services/estimate.ts:estimateOrder",
+            "name": "estimateOrder",
+            "filePath": "services/estimate.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [],
+            "pdgEvidence": "callgraph-bridge",
+            "pdgEvidenceReason": "symbol reached through the resolved symbol graph compatibility bridge"
+          }
+        ]
+      },
+      "evidenceCounts": {
+        "callgraph-bridge": 2
+      },
+      "statementPreciseByDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:server/create-order.ts:createOrder",
+            "name": "createOrder",
+            "filePath": "server/create-order.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [],
+            "pdgEvidence": "callgraph-bridge",
+            "pdgEvidenceReason": "symbol reached through the resolved symbol graph compatibility bridge"
+          },
+          {
+            "depth": 1,
+            "id": "Function:services/estimate.ts:estimateOrder",
+            "name": "estimateOrder",
+            "filePath": "services/estimate.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [],
+            "pdgEvidence": "callgraph-bridge",
+            "pdgEvidenceReason": "symbol reached through the resolved symbol graph compatibility bridge"
+          }
+        ]
+      },
+      "statementPreciseByDepthCounts": {
+        "1": 2
+      },
+      "statementPreciseImpactedCount": 2,
+      "statementPrecision": 1,
+      "partial": false
+    }
+  },
+  "explain": {
+    "anchor": {
+      "file": "security/preview.ts"
+    },
+    "findings": [
+      {
+        "file": "security/preview.ts",
+        "functionLine": 2,
+        "sinkKind": "xss",
+        "source": {
+          "variable": "raw",
+          "line": 3
+        },
+        "sink": {
+          "line": 5
+        },
+        "hops": [
+          {
+            "variable": "raw",
+            "line": 3
+          },
+          {
+            "variable": "html",
+            "line": 4
+          },
+          {
+            "variable": "html",
+            "line": 5
+          }
+        ]
+      },
+      {
+        "interprocedural": true,
+        "file": "security/preview.ts",
+        "sinkKind": "xss",
+        "source": {
+          "function": "wrappedPreview",
+          "line": 17
+        },
+        "sink": {
+          "function": "sendPreview",
+          "line": 13
+        },
+        "hops": [
+          {
+            "function": "wrappedPreview",
+            "line": 17
+          },
+          {
+            "function": "sendPreview",
+            "line": 13
+          }
+        ]
+      }
+    ],
+    "totalFindings": 2,
+    "note": "Intra-procedural (TAINTED, statement hops) AND cross-function (TAINT_PATH, function hops, `interprocedural: true`) flows are modeled. Closure/callback, property/field, and implicit flows are NOT modeled; absence of a finding is not proof of safety. Cross-function findings are context-insensitive and may over-attribute among same-named callees. SANITIZES (kill) edges are queryable via cypher."
+  },
+  "explain_unsafe": {
+    "anchor": {
+      "file": "security/preview.ts",
+      "symbol": "unsafePreview",
+      "startLine": 2,
+      "endLine": 6
+    },
+    "findings": [
+      {
+        "file": "security/preview.ts",
+        "functionLine": 2,
+        "sinkKind": "xss",
+        "source": {
+          "variable": "raw",
+          "line": 3
+        },
+        "sink": {
+          "line": 5
+        },
+        "hops": [
+          {
+            "variable": "raw",
+            "line": 3
+          },
+          {
+            "variable": "html",
+            "line": 4
+          },
+          {
+            "variable": "html",
+            "line": 5
+          }
+        ]
+      }
+    ],
+    "totalFindings": 1,
+    "note": "Intra-procedural (TAINTED, statement hops) AND cross-function (TAINT_PATH, function hops, `interprocedural: true`) flows are modeled. Closure/callback, property/field, and implicit flows are NOT modeled; absence of a finding is not proof of safety. Cross-function findings are context-insensitive and may over-attribute among same-named callees. SANITIZES (kill) edges are queryable via cypher."
+  },
+  "explain_safe": {
+    "anchor": {
+      "file": "security/preview.ts",
+      "symbol": "safePreview",
+      "startLine": 8,
+      "endLine": 12
+    },
+    "findings": [],
+    "totalFindings": 0,
+    "note": "Intra-procedural (TAINTED, statement hops) AND cross-function (TAINT_PATH, function hops, `interprocedural: true`) flows are modeled. Closure/callback, property/field, and implicit flows are NOT modeled; absence of a finding is not proof of safety. Cross-function findings are context-insensitive and may over-attribute among same-named callees. SANITIZES (kill) edges are queryable via cypher."
+  },
+  "explain_wrapped": {
+    "anchor": {
+      "file": "security/preview.ts",
+      "symbol": "wrappedPreview",
+      "startLine": 18,
+      "endLine": 21
+    },
+    "findings": [
+      {
+        "interprocedural": true,
+        "file": "security/preview.ts",
+        "sinkKind": "xss",
+        "source": {
+          "function": "wrappedPreview",
+          "line": 17
+        },
+        "sink": {
+          "function": "sendPreview",
+          "line": 13
+        },
+        "hops": [
+          {
+            "function": "wrappedPreview",
+            "line": 17
+          },
+          {
+            "function": "sendPreview",
+            "line": 13
+          }
+        ]
+      }
+    ],
+    "totalFindings": 1,
+    "note": "Intra-procedural (TAINTED, statement hops) AND cross-function (TAINT_PATH, function hops, `interprocedural: true`) flows are modeled. Closure/callback, property/field, and implicit flows are NOT modeled; absence of a finding is not proof of safety. Cross-function findings are context-insensitive and may over-attribute among same-named callees. SANITIZES (kill) edges are queryable via cypher."
+  },
+  "explain_callback": {
+    "anchor": {
+      "file": "security/preview.ts",
+      "symbol": "callbackPreview",
+      "startLine": 23,
+      "endLine": 26
+    },
+    "findings": [],
+    "totalFindings": 0,
+    "note": "Intra-procedural (TAINTED, statement hops) AND cross-function (TAINT_PATH, function hops, `interprocedural: true`) flows are modeled. Closure/callback, property/field, and implicit flows are NOT modeled; absence of a finding is not proof of safety. Cross-function findings are context-insensitive and may over-attribute among same-named callees. SANITIZES (kill) edges are queryable via cypher."
+  },
+  "graph_nodes": {
+    "markdown": "| id | name | kind | filePath | startLine | endLine |\n| --- | --- | --- | --- | --- | --- |\n| BasicBlock:client/create-order.ts:1:7:0 |  | BasicBlock | client/create-order.ts | 1 | 1 |\n| BasicBlock:client/create-order.ts:1:7:1 |  | BasicBlock | client/create-order.ts | 10 | 10 |\n| BasicBlock:client/create-order.ts:1:7:2 |  | BasicBlock | client/create-order.ts | 2 | 7 |\n| BasicBlock:client/create-order.ts:1:7:3 |  | BasicBlock | client/create-order.ts | 9 | 9 |\n| BasicBlock:client/dynamic-order.ts:1:7:0 |  | BasicBlock | client/dynamic-order.ts | 1 | 1 |\n| BasicBlock:client/dynamic-order.ts:1:7:1 |  | BasicBlock | client/dynamic-order.ts | 6 | 6 |\n| BasicBlock:client/dynamic-order.ts:1:7:2 |  | BasicBlock | client/dynamic-order.ts | 2 | 4 |\n| BasicBlock:client/dynamic-order.ts:1:7:3 |  | BasicBlock | client/dynamic-order.ts | 5 | 5 |\n| BasicBlock:client/order-detail.ts:1:7:0 |  | BasicBlock | client/order-detail.ts | 1 | 1 |\n| BasicBlock:client/order-detail.ts:1:7:1 |  | BasicBlock | client/order-detail.ts | 5 | 5 |\n| BasicBlock:client/order-detail.ts:1:7:2 |  | BasicBlock | client/order-detail.ts | 2 | 3 |\n| BasicBlock:client/order-detail.ts:1:7:3 |  | BasicBlock | client/order-detail.ts | 4 | 4 |\n| BasicBlock:security/preview.ts:14:7:0 |  | BasicBlock | security/preview.ts | 14 | 14 |\n| BasicBlock:security/preview.ts:14:7:1 |  | BasicBlock | security/preview.ts | 16 | 16 |\n| BasicBlock:security/preview.ts:14:7:2 |  | BasicBlock | security/preview.ts | 15 | 15 |\n| BasicBlock:security/preview.ts:18:7:0 |  | BasicBlock | security/preview.ts | 18 | 18 |\n| BasicBlock:security/preview.ts:18:7:1 |  | BasicBlock | security/preview.ts | 21 | 21 |\n| BasicBlock:security/preview.ts:18:7:2 |  | BasicBlock | security/preview.ts | 19 | 20 |\n| BasicBlock:security/preview.ts:23:7:0 |  | BasicBlock | security/preview.ts | 23 | 23 |\n| BasicBlock:security/preview.ts:23:7:1 |  | BasicBlock | security/preview.ts | 26 | 26 |\n| BasicBlock:security/preview.ts:23:7:2 |  | BasicBlock | security/preview.ts | 24 | 25 |\n| BasicBlock:security/preview.ts:25:16:0 |  | BasicBlock | security/preview.ts | 25 | 25 |\n| BasicBlock:security/preview.ts:25:16:1 |  | BasicBlock | security/preview.ts | 25 | 25 |\n| BasicBlock:security/preview.ts:25:16:2 |  | BasicBlock | security/preview.ts | 25 | 25 |\n| BasicBlock:security/preview.ts:2:7:0 |  | BasicBlock | security/preview.ts | 2 | 2 |\n| BasicBlock:security/preview.ts:2:7:1 |  | BasicBlock | security/preview.ts | 6 | 6 |\n| BasicBlock:security/preview.ts:2:7:2 |  | BasicBlock | security/preview.ts | 3 | 5 |\n| BasicBlock:security/preview.ts:8:7:0 |  | BasicBlock | security/preview.ts | 8 | 8 |\n| BasicBlock:security/preview.ts:8:7:1 |  | BasicBlock | security/preview.ts | 12 | 12 |\n| BasicBlock:security/preview.ts:8:7:2 |  | BasicBlock | security/preview.ts | 9 | 11 |\n| BasicBlock:server/create-order.ts:6:7:0 |  | BasicBlock | server/create-order.ts | 6 | 6 |\n| BasicBlock:server/create-order.ts:6:7:1 |  | BasicBlock | server/create-order.ts | 10 | 10 |\n| BasicBlock:server/create-order.ts:6:7:2 |  | BasicBlock | server/create-order.ts | 7 | 8 |\n| BasicBlock:server/create-order.ts:6:7:3 |  | BasicBlock | server/create-order.ts | 9 | 9 |\n| BasicBlock:server/health.ts:5:7:0 |  | BasicBlock | server/health.ts | 5 | 5 |\n| BasicBlock:server/health.ts:5:7:1 |  | BasicBlock | server/health.ts | 7 | 7 |\n| BasicBlock:server/health.ts:5:7:2 |  | BasicBlock | server/health.ts | 6 | 6 |\n| BasicBlock:server/order-detail.ts:5:7:0 |  | BasicBlock | server/order-detail.ts | 5 | 5 |\n| BasicBlock:server/order-detail.ts:5:7:1 |  | BasicBlock | server/order-detail.ts | 7 | 7 |\n| BasicBlock:server/order-detail.ts:5:7:2 |  | BasicBlock | server/order-detail.ts | 6 | 6 |\n| BasicBlock:services/estimate.ts:3:7:0 |  | BasicBlock | services/estimate.ts | 3 | 3 |\n| BasicBlock:services/estimate.ts:3:7:1 |  | BasicBlock | services/estimate.ts | 5 | 5 |\n| BasicBlock:services/estimate.ts:3:7:2 |  | BasicBlock | services/estimate.ts | 4 | 4 |\n| BasicBlock:services/shipping.ts:1:7:0 |  | BasicBlock | services/shipping.ts | 1 | 1 |\n| BasicBlock:services/shipping.ts:1:7:1 |  | BasicBlock | services/shipping.ts | 11 | 11 |\n| BasicBlock:services/shipping.ts:1:7:2 |  | BasicBlock | services/shipping.ts | 2 | 2 |\n| BasicBlock:services/shipping.ts:1:7:3 |  | BasicBlock | services/shipping.ts | 2 | 2 |\n| BasicBlock:services/shipping.ts:1:7:4 |  | BasicBlock | services/shipping.ts | 3 | 3 |\n| BasicBlock:services/shipping.ts:1:7:5 |  | BasicBlock | services/shipping.ts | 4 | 4 |\n| BasicBlock:services/shipping.ts:1:7:6 |  | BasicBlock | services/shipping.ts | 5 | 5 |\n| BasicBlock:services/shipping.ts:1:7:7 |  | BasicBlock | services/shipping.ts | 7 | 7 |\n| BasicBlock:services/shipping.ts:1:7:8 |  | BasicBlock | services/shipping.ts | 8 | 8 |\n| BasicBlock:services/shipping.ts:1:7:9 |  | BasicBlock | services/shipping.ts | 10 | 10 |\n| BasicBlock:tools/shipping_tool.py:7:0:0 |  | BasicBlock | tools/shipping_tool.py | 7 | 7 |\n| BasicBlock:tools/shipping_tool.py:7:0:1 |  | BasicBlock | tools/shipping_tool.py | 10 | 10 |\n| BasicBlock:tools/shipping_tool.py:7:0:2 |  | BasicBlock | tools/shipping_tool.py | 8 | 9 |\n| BasicBlock:tools/shipping_tool.py:7:0:3 |  | BasicBlock | tools/shipping_tool.py | 10 | 10 |\n| Const:notes.ts:developerNote | developerNote | Const | notes.ts | 1 | 1 |\n| Const:server/create-order.ts:app | app | Const | server/create-order.ts | 3 | 3 |\n| Const:server/health.ts:app | app | Const | server/health.ts | 2 | 2 |\n| Const:server/order-detail.ts:app | app | Const | server/order-detail.ts | 2 | 2 |\n| File:client/create-order.ts | create-order.ts | File | client/create-order.ts |  |  |\n| File:client/dynamic-order.ts | dynamic-order.ts | File | client/dynamic-order.ts |  |  |\n| File:client/order-detail.ts | order-detail.ts | File | client/order-detail.ts |  |  |\n| File:notes.ts | notes.ts | File | notes.ts |  |  |\n| File:package.json | package.json | File | package.json |  |  |\n| File:security/preview.ts | preview.ts | File | security/preview.ts |  |  |\n| File:server/create-order.ts | create-order.ts | File | server/create-order.ts |  |  |\n| File:server/health.ts | health.ts | File | server/health.ts |  |  |\n| File:server/order-detail.ts | order-detail.ts | File | server/order-detail.ts |  |  |\n| File:services/estimate.ts | estimate.ts | File | services/estimate.ts |  |  |\n| File:services/shipping.ts | shipping.ts | File | services/shipping.ts |  |  |\n| File:tools/shipping_tool.py | shipping_tool.py | File | tools/shipping_tool.py |  |  |\n| Folder:client | client | Folder | client |  |  |\n| Folder:security | security | Folder | security |  |  |\n| Folder:server | server | Folder | server |  |  |\n| Folder:services | services | Folder | services |  |  |\n| Folder:tools | tools | Folder | tools |  |  |\n| Function:client/create-order.ts:placeOrder | placeOrder | Function | client/create-order.ts | 0 | 9 |\n| Function:client/dynamic-order.ts:loadDynamicOrder | loadDynamicOrder | Function | client/dynamic-order.ts | 0 | 5 |\n| Function:client/order-detail.ts:loadOrder | loadOrder | Function | client/order-detail.ts | 0 | 4 |\n| Function:security/preview.ts:callbackPreview | callbackPreview | Function | security/preview.ts | 22 | 25 |\n| Function:security/preview.ts:safePreview | safePreview | Function | security/preview.ts | 7 | 11 |\n| Function:security/preview.ts:sendPreview | sendPreview | Function | security/preview.ts | 13 | 15 |\n| Function:security/preview.ts:unsafePreview | unsafePreview | Function | security/preview.ts | 1 | 5 |\n| Function:security/preview.ts:wrappedPreview | wrappedPreview | Function | security/preview.ts | 17 | 20 |\n| Function:server/create-order.ts:createOrder | createOrder | Function | server/create-order.ts | 5 | 9 |\n| Function:server/health.ts:healthCheck | healthCheck | Function | server/health.ts | 4 | 6 |\n| Function:server/order-detail.ts:getOrder | getOrder | Function | server/order-detail.ts | 4 | 6 |\n| Function:services/estimate.ts:estimateOrder | estimateOrder | Function | services/estimate.ts | 2 | 4 |\n| Function:services/shipping.ts:calculateShipping | calculateShipping | Function | services/shipping.ts | 0 | 10 |\n| Function:tools/shipping_tool.py:quote_shipping | quote_shipping | Function | tools/shipping_tool.py | 6 | 9 |\n| Property:client/create-order.ts:placeOrder.id@8:11 | id | Property | client/create-order.ts | 8 | 8 |\n| Property:client/create-order.ts:placeOrder.total@8:31 | total | Property | client/create-order.ts | 8 | 8 |\n| Property:client/order-detail.ts:loadOrder.id@3:11 | id | Property | client/order-detail.ts | 3 | 3 |\n| Property:client/order-detail.ts:loadOrder.total@3:29 | total | Property | client/order-detail.ts | 3 | 3 |\n| Route:GET /api/health | /api/health | Route | server/health.ts |  |  |\n| Route:GET /api/orders/:id | /api/orders/:id | Route | server/order-detail.ts |  |  |\n| Route:POST /api/orders | /api/orders | Route | server/create-order.ts |  |  |\n| Tool:quote_shipping | quote_shipping | Tool | tools/shipping_tool.py |  |  |\n| Variable:tools/shipping_tool.py:mcp | mcp | Variable | tools/shipping_tool.py | 2 | 2 |\n| comm_0 |  | Community |  |  |  |\n| comm_1 |  | Community |  |  |  |",
+    "row_count": 103
+  },
+  "graph_edges": {
+    "markdown": "| source | target | type | confidence |\n| --- | --- | --- | --- |\n| BasicBlock:client/create-order.ts:1:7:0 | BasicBlock:client/create-order.ts:1:7:2 | CFG | 1 |\n| BasicBlock:client/create-order.ts:1:7:0 | BasicBlock:client/create-order.ts:1:7:2 | REACHING_DEF | 1 |\n| BasicBlock:client/create-order.ts:1:7:2 | BasicBlock:client/create-order.ts:1:7:2 | REACHING_DEF | 1 |\n| BasicBlock:client/create-order.ts:1:7:2 | BasicBlock:client/create-order.ts:1:7:3 | CFG | 1 |\n| BasicBlock:client/create-order.ts:1:7:2 | BasicBlock:client/create-order.ts:1:7:3 | REACHING_DEF | 1 |\n| BasicBlock:client/create-order.ts:1:7:3 | BasicBlock:client/create-order.ts:1:7:1 | CFG | 1 |\n| BasicBlock:client/dynamic-order.ts:1:7:0 | BasicBlock:client/dynamic-order.ts:1:7:2 | CFG | 1 |\n| BasicBlock:client/dynamic-order.ts:1:7:0 | BasicBlock:client/dynamic-order.ts:1:7:2 | REACHING_DEF | 1 |\n| BasicBlock:client/dynamic-order.ts:1:7:2 | BasicBlock:client/dynamic-order.ts:1:7:2 | REACHING_DEF | 1 |\n| BasicBlock:client/dynamic-order.ts:1:7:2 | BasicBlock:client/dynamic-order.ts:1:7:2 | REACHING_DEF | 1 |\n| BasicBlock:client/dynamic-order.ts:1:7:2 | BasicBlock:client/dynamic-order.ts:1:7:3 | CFG | 1 |\n| BasicBlock:client/dynamic-order.ts:1:7:2 | BasicBlock:client/dynamic-order.ts:1:7:3 | REACHING_DEF | 1 |\n| BasicBlock:client/dynamic-order.ts:1:7:3 | BasicBlock:client/dynamic-order.ts:1:7:1 | CFG | 1 |\n| BasicBlock:client/order-detail.ts:1:7:0 | BasicBlock:client/order-detail.ts:1:7:2 | CFG | 1 |\n| BasicBlock:client/order-detail.ts:1:7:2 | BasicBlock:client/order-detail.ts:1:7:2 | REACHING_DEF | 1 |\n| BasicBlock:client/order-detail.ts:1:7:2 | BasicBlock:client/order-detail.ts:1:7:3 | CFG | 1 |\n| BasicBlock:client/order-detail.ts:1:7:2 | BasicBlock:client/order-detail.ts:1:7:3 | REACHING_DEF | 1 |\n| BasicBlock:client/order-detail.ts:1:7:3 | BasicBlock:client/order-detail.ts:1:7:1 | CFG | 1 |\n| BasicBlock:security/preview.ts:14:7:0 | BasicBlock:security/preview.ts:14:7:2 | CFG | 1 |\n| BasicBlock:security/preview.ts:14:7:0 | BasicBlock:security/preview.ts:14:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:14:7:0 | BasicBlock:security/preview.ts:14:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:14:7:2 | BasicBlock:security/preview.ts:14:7:1 | CFG | 1 |\n| BasicBlock:security/preview.ts:18:7:0 | BasicBlock:security/preview.ts:18:7:2 | CFG | 1 |\n| BasicBlock:security/preview.ts:18:7:0 | BasicBlock:security/preview.ts:18:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:18:7:0 | BasicBlock:security/preview.ts:18:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:18:7:2 | BasicBlock:security/preview.ts:18:7:1 | CFG | 1 |\n| BasicBlock:security/preview.ts:18:7:2 | BasicBlock:security/preview.ts:18:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:23:7:0 | BasicBlock:security/preview.ts:23:7:2 | CFG | 1 |\n| BasicBlock:security/preview.ts:23:7:0 | BasicBlock:security/preview.ts:23:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:23:7:2 | BasicBlock:security/preview.ts:23:7:1 | CFG | 1 |\n| BasicBlock:security/preview.ts:23:7:2 | BasicBlock:security/preview.ts:23:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:25:16:0 | BasicBlock:security/preview.ts:25:16:2 | CFG | 1 |\n| BasicBlock:security/preview.ts:25:16:0 | BasicBlock:security/preview.ts:25:16:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:25:16:2 | BasicBlock:security/preview.ts:25:16:1 | CFG | 1 |\n| BasicBlock:security/preview.ts:2:7:0 | BasicBlock:security/preview.ts:2:7:2 | CFG | 1 |\n| BasicBlock:security/preview.ts:2:7:0 | BasicBlock:security/preview.ts:2:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:2:7:0 | BasicBlock:security/preview.ts:2:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:2:7:2 | BasicBlock:security/preview.ts:2:7:1 | CFG | 1 |\n| BasicBlock:security/preview.ts:2:7:2 | BasicBlock:security/preview.ts:2:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:2:7:2 | BasicBlock:security/preview.ts:2:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:2:7:2 | BasicBlock:security/preview.ts:2:7:2 | TAINTED | 1 |\n| BasicBlock:security/preview.ts:8:7:0 | BasicBlock:security/preview.ts:8:7:2 | CFG | 1 |\n| BasicBlock:security/preview.ts:8:7:0 | BasicBlock:security/preview.ts:8:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:8:7:0 | BasicBlock:security/preview.ts:8:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:8:7:2 | BasicBlock:security/preview.ts:8:7:1 | CFG | 1 |\n| BasicBlock:security/preview.ts:8:7:2 | BasicBlock:security/preview.ts:8:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:8:7:2 | BasicBlock:security/preview.ts:8:7:2 | REACHING_DEF | 1 |\n| BasicBlock:security/preview.ts:8:7:2 | BasicBlock:security/preview.ts:8:7:2 | SANITIZES | 1 |\n| BasicBlock:server/create-order.ts:6:7:0 | BasicBlock:server/create-order.ts:6:7:2 | CFG | 1 |\n| BasicBlock:server/create-order.ts:6:7:0 | BasicBlock:server/create-order.ts:6:7:2 | REACHING_DEF | 1 |\n| BasicBlock:server/create-order.ts:6:7:0 | BasicBlock:server/create-order.ts:6:7:3 | REACHING_DEF | 1 |\n| BasicBlock:server/create-order.ts:6:7:2 | BasicBlock:server/create-order.ts:6:7:2 | REACHING_DEF | 1 |\n| BasicBlock:server/create-order.ts:6:7:2 | BasicBlock:server/create-order.ts:6:7:3 | CFG | 1 |\n| BasicBlock:server/create-order.ts:6:7:2 | BasicBlock:server/create-order.ts:6:7:3 | REACHING_DEF | 1 |\n| BasicBlock:server/create-order.ts:6:7:3 | BasicBlock:server/create-order.ts:6:7:1 | CFG | 1 |\n| BasicBlock:server/health.ts:5:7:0 | BasicBlock:server/health.ts:5:7:2 | CFG | 1 |\n| BasicBlock:server/health.ts:5:7:0 | BasicBlock:server/health.ts:5:7:2 | REACHING_DEF | 1 |\n| BasicBlock:server/health.ts:5:7:2 | BasicBlock:server/health.ts:5:7:1 | CFG | 1 |\n| BasicBlock:server/order-detail.ts:5:7:0 | BasicBlock:server/order-detail.ts:5:7:2 | CFG | 1 |\n| BasicBlock:server/order-detail.ts:5:7:0 | BasicBlock:server/order-detail.ts:5:7:2 | REACHING_DEF | 1 |\n| BasicBlock:server/order-detail.ts:5:7:0 | BasicBlock:server/order-detail.ts:5:7:2 | REACHING_DEF | 1 |\n| BasicBlock:server/order-detail.ts:5:7:2 | BasicBlock:server/order-detail.ts:5:7:1 | CFG | 1 |\n| BasicBlock:services/estimate.ts:3:7:0 | BasicBlock:services/estimate.ts:3:7:2 | CFG | 1 |\n| BasicBlock:services/estimate.ts:3:7:0 | BasicBlock:services/estimate.ts:3:7:2 | REACHING_DEF | 1 |\n| BasicBlock:services/estimate.ts:3:7:2 | BasicBlock:services/estimate.ts:3:7:1 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:0 | BasicBlock:services/shipping.ts:1:7:2 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:0 | BasicBlock:services/shipping.ts:1:7:2 | REACHING_DEF | 1 |\n| BasicBlock:services/shipping.ts:1:7:0 | BasicBlock:services/shipping.ts:1:7:5 | REACHING_DEF | 1 |\n| BasicBlock:services/shipping.ts:1:7:0 | BasicBlock:services/shipping.ts:1:7:7 | REACHING_DEF | 1 |\n| BasicBlock:services/shipping.ts:1:7:2 | BasicBlock:services/shipping.ts:1:7:3 | CDG | 1 |\n| BasicBlock:services/shipping.ts:1:7:2 | BasicBlock:services/shipping.ts:1:7:3 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:2 | BasicBlock:services/shipping.ts:1:7:4 | CDG | 1 |\n| BasicBlock:services/shipping.ts:1:7:2 | BasicBlock:services/shipping.ts:1:7:4 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:2 | BasicBlock:services/shipping.ts:1:7:5 | CDG | 1 |\n| BasicBlock:services/shipping.ts:1:7:2 | BasicBlock:services/shipping.ts:1:7:7 | CDG | 1 |\n| BasicBlock:services/shipping.ts:1:7:2 | BasicBlock:services/shipping.ts:1:7:9 | CDG | 1 |\n| BasicBlock:services/shipping.ts:1:7:3 | BasicBlock:services/shipping.ts:1:7:1 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:4 | BasicBlock:services/shipping.ts:1:7:5 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:4 | BasicBlock:services/shipping.ts:1:7:9 | REACHING_DEF | 1 |\n| BasicBlock:services/shipping.ts:1:7:5 | BasicBlock:services/shipping.ts:1:7:6 | CDG | 1 |\n| BasicBlock:services/shipping.ts:1:7:5 | BasicBlock:services/shipping.ts:1:7:6 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:5 | BasicBlock:services/shipping.ts:1:7:7 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:6 | BasicBlock:services/shipping.ts:1:7:7 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:6 | BasicBlock:services/shipping.ts:1:7:9 | REACHING_DEF | 1 |\n| BasicBlock:services/shipping.ts:1:7:7 | BasicBlock:services/shipping.ts:1:7:8 | CDG | 1 |\n| BasicBlock:services/shipping.ts:1:7:7 | BasicBlock:services/shipping.ts:1:7:8 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:7 | BasicBlock:services/shipping.ts:1:7:9 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:8 | BasicBlock:services/shipping.ts:1:7:9 | CFG | 1 |\n| BasicBlock:services/shipping.ts:1:7:8 | BasicBlock:services/shipping.ts:1:7:9 | REACHING_DEF | 1 |\n| BasicBlock:services/shipping.ts:1:7:9 | BasicBlock:services/shipping.ts:1:7:1 | CFG | 1 |\n| BasicBlock:tools/shipping_tool.py:7:0:0 | BasicBlock:tools/shipping_tool.py:7:0:2 | CFG | 1 |\n| BasicBlock:tools/shipping_tool.py:7:0:0 | BasicBlock:tools/shipping_tool.py:7:0:2 | REACHING_DEF | 1 |\n| BasicBlock:tools/shipping_tool.py:7:0:0 | BasicBlock:tools/shipping_tool.py:7:0:3 | REACHING_DEF | 1 |\n| BasicBlock:tools/shipping_tool.py:7:0:2 | BasicBlock:tools/shipping_tool.py:7:0:3 | CFG | 1 |\n| BasicBlock:tools/shipping_tool.py:7:0:2 | BasicBlock:tools/shipping_tool.py:7:0:3 | REACHING_DEF | 1 |\n| BasicBlock:tools/shipping_tool.py:7:0:3 | BasicBlock:tools/shipping_tool.py:7:0:1 | CFG | 1 |\n| File:client/create-order.ts | Function:client/create-order.ts:placeOrder | DEFINES | 1 |\n| File:client/create-order.ts | Property:client/create-order.ts:placeOrder.id@8:11 | DEFINES | 1 |\n| File:client/create-order.ts | Property:client/create-order.ts:placeOrder.total@8:31 | DEFINES | 1 |\n| File:client/create-order.ts | Route:POST /api/orders | FETCHES | 0.9 |\n| File:client/dynamic-order.ts | Function:client/dynamic-order.ts:loadDynamicOrder | DEFINES | 1 |\n| File:client/order-detail.ts | Function:client/order-detail.ts:loadOrder | DEFINES | 1 |\n| File:client/order-detail.ts | Property:client/order-detail.ts:loadOrder.id@3:11 | DEFINES | 1 |\n| File:client/order-detail.ts | Property:client/order-detail.ts:loadOrder.total@3:29 | DEFINES | 1 |\n| File:notes.ts | Const:notes.ts:developerNote | DEFINES | 1 |\n| File:security/preview.ts | Function:security/preview.ts:callbackPreview | DEFINES | 1 |\n| File:security/preview.ts | Function:security/preview.ts:safePreview | DEFINES | 1 |\n| File:security/preview.ts | Function:security/preview.ts:sendPreview | DEFINES | 1 |\n| File:security/preview.ts | Function:security/preview.ts:unsafePreview | DEFINES | 1 |\n| File:security/preview.ts | Function:security/preview.ts:wrappedPreview | DEFINES | 1 |\n| File:server/create-order.ts | Const:server/create-order.ts:app | DEFINES | 1 |\n| File:server/create-order.ts | File:services/shipping.ts | IMPORTS | 1 |\n| File:server/create-order.ts | Function:server/create-order.ts:createOrder | ACCESSES | 0.55 |\n| File:server/create-order.ts | Function:server/create-order.ts:createOrder | DEFINES | 1 |\n| File:server/create-order.ts | Route:POST /api/orders | HANDLES_ROUTE | 1 |\n| File:server/health.ts | Const:server/health.ts:app | DEFINES | 1 |\n| File:server/health.ts | Function:server/health.ts:healthCheck | ACCESSES | 0.55 |\n| File:server/health.ts | Function:server/health.ts:healthCheck | DEFINES | 1 |\n| File:server/health.ts | Route:GET /api/health | HANDLES_ROUTE | 1 |\n| File:server/order-detail.ts | Const:server/order-detail.ts:app | DEFINES | 1 |\n| File:server/order-detail.ts | Function:server/order-detail.ts:getOrder | ACCESSES | 0.55 |\n| File:server/order-detail.ts | Function:server/order-detail.ts:getOrder | DEFINES | 1 |\n| File:server/order-detail.ts | Route:GET /api/orders/:id | HANDLES_ROUTE | 1 |\n| File:services/estimate.ts | File:services/shipping.ts | IMPORTS | 1 |\n| File:services/estimate.ts | Function:services/estimate.ts:estimateOrder | DEFINES | 1 |\n| File:services/shipping.ts | Function:services/shipping.ts:calculateShipping | DEFINES | 1 |\n| File:tools/shipping_tool.py | Function:tools/shipping_tool.py:quote_shipping | DEFINES | 1 |\n| File:tools/shipping_tool.py | Variable:tools/shipping_tool.py:mcp | DEFINES | 1 |\n| Folder:client | File:client/create-order.ts | CONTAINS | 1 |\n| Folder:client | File:client/dynamic-order.ts | CONTAINS | 1 |\n| Folder:client | File:client/order-detail.ts | CONTAINS | 1 |\n| Folder:security | File:security/preview.ts | CONTAINS | 1 |\n| Folder:server | File:server/create-order.ts | CONTAINS | 1 |\n| Folder:server | File:server/health.ts | CONTAINS | 1 |\n| Folder:server | File:server/order-detail.ts | CONTAINS | 1 |\n| Folder:services | File:services/estimate.ts | CONTAINS | 1 |\n| Folder:services | File:services/shipping.ts | CONTAINS | 1 |\n| Folder:tools | File:tools/shipping_tool.py | CONTAINS | 1 |\n| Function:client/create-order.ts:placeOrder | Function:client/create-order.ts:placeOrder | CALL_SUMMARY | 0.6 |\n| Function:client/dynamic-order.ts:loadDynamicOrder | Function:client/dynamic-order.ts:loadDynamicOrder | CALL_SUMMARY | 0.6 |\n| Function:security/preview.ts:sendPreview | comm_0 | MEMBER_OF | 1 |\n| Function:security/preview.ts:wrappedPreview | Function:security/preview.ts:sendPreview | CALLS | 0.85 |\n| Function:security/preview.ts:wrappedPreview | Function:security/preview.ts:sendPreview | TAINT_PATH | 0.6 |\n| Function:security/preview.ts:wrappedPreview | comm_0 | MEMBER_OF | 1 |\n| Function:server/create-order.ts:createOrder | Function:server/create-order.ts:createOrder | CALL_SUMMARY | 0.6 |\n| Function:server/create-order.ts:createOrder | Function:services/shipping.ts:calculateShipping | CALLS | 0.85 |\n| Function:server/create-order.ts:createOrder | comm_1 | MEMBER_OF | 1 |\n| Function:server/health.ts:healthCheck | Function:server/health.ts:healthCheck | CALL_SUMMARY | 0.6 |\n| Function:server/order-detail.ts:getOrder | Function:server/order-detail.ts:getOrder | CALL_SUMMARY | 0.6 |\n| Function:services/estimate.ts:estimateOrder | Function:services/estimate.ts:estimateOrder | CALL_SUMMARY | 0.6 |\n| Function:services/estimate.ts:estimateOrder | Function:services/shipping.ts:calculateShipping | CALLS | 0.85 |\n| Function:services/estimate.ts:estimateOrder | comm_1 | MEMBER_OF | 1 |\n| Function:services/shipping.ts:calculateShipping | comm_1 | MEMBER_OF | 1 |\n| Function:tools/shipping_tool.py:quote_shipping | Tool:quote_shipping | HANDLES_TOOL | 1 |",
+    "row_count": 154
+  },
+  "graph_types": {
+    "markdown": "| type | count |\n| --- | --- |\n| CFG | 45 |\n| REACHING_DEF | 42 |\n| DEFINES | 23 |\n| CONTAINS | 10 |\n| CDG | 7 |\n| CALL_SUMMARY | 6 |\n| MEMBER_OF | 5 |\n| CALLS | 3 |\n| HANDLES_ROUTE | 3 |\n| ACCESSES | 3 |\n| IMPORTS | 2 |\n| HANDLES_TOOL | 1 |\n| TAINTED | 1 |\n| FETCHES | 1 |\n| SANITIZES | 1 |\n| TAINT_PATH | 1 |",
+    "row_count": 16
+  }
+}

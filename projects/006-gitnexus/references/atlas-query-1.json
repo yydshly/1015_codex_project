@@ -1,0 +1,121 @@
+{
+  "processes": [
+    {
+      "id": "proc_0_submitorder",
+      "summary": "SubmitOrder → Validate",
+      "priority": 0.115,
+      "symbol_count": 3,
+      "process_type": "cross_community",
+      "step_count": 4
+    },
+    {
+      "id": "proc_1_submitorder",
+      "summary": "SubmitOrder → ApplyDiscount",
+      "priority": 0.082,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_2_submitorder",
+      "summary": "SubmitOrder → CalculateSubtotal",
+      "priority": 0.082,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 3
+    },
+    {
+      "id": "proc_3_submitorder",
+      "summary": "SubmitOrder → CalculateShipping",
+      "priority": 0.082,
+      "symbol_count": 1,
+      "process_type": "cross_community",
+      "step_count": 3
+    }
+  ],
+  "process_symbols": [
+    {
+      "id": "Function:services/inventory.ts:validate",
+      "name": "validate",
+      "filePath": "services/inventory.ts",
+      "startLine": 4,
+      "endLine": 8,
+      "module": "Services",
+      "content": "export function validate(items: CartItem[]): void {   if (!items.length || items.some(item => item.quantity < 1)) {     throw new Error(\"Cart must contain positive quantities\");   } }",
+      "process_id": "proc_0_submitorder",
+      "step_index": 4
+    },
+    {
+      "id": "Function:services/inventory.ts:reserveStock",
+      "name": "reserveStock",
+      "filePath": "services/inventory.ts",
+      "startLine": 10,
+      "endLine": 13,
+      "module": "Services",
+      "content": "export function reserveStock(items: CartItem[]): number {   validate(items);   return items.reduce((quantity, item) => quantity + item.quantity, 0); }",
+      "process_id": "proc_0_submitorder",
+      "step_index": 3
+    },
+    {
+      "id": "Function:routes/order.ts:submitOrder",
+      "name": "submitOrder",
+      "filePath": "routes/order.ts",
+      "startLine": 6,
+      "endLine": 9,
+      "module": "Routes",
+      "content": "export function submitOrder(input: OrderInput): SavedOrder {   validate(input.customer);   return checkoutOrder(input); }",
+      "process_id": "proc_0_submitorder",
+      "step_index": 1
+    }
+  ],
+  "definitions": [
+    {
+      "id": "File:services/inventory.ts",
+      "name": "inventory.ts",
+      "filePath": "services/inventory.ts",
+      "content": "import type { CartItem } from \"../types.ts\"; // Same symbol name as customer.validate, with different callers. export function validate(items: CartItem[]): void {   if (!items.length || items.some(item => item.quantity < 1)) {     throw new Error(\"Cart must contain positive quantities\");   } } export function reserveStock(items: CartItem[]): number {   validate(items);   return items.reduce((quantity, item) => quantity + item.quantity, 0); } "
+    },
+    {
+      "id": "Function:services/customer.ts:validate",
+      "name": "validate",
+      "filePath": "services/customer.ts",
+      "startLine": 4,
+      "endLine": 6,
+      "module": "Routes",
+      "content": "export function validate(customer: Customer): void {   if (!customer.id.trim()) throw new Error(\"Customer id is required\"); }"
+    },
+    {
+      "id": "File:services/customer.ts",
+      "name": "customer.ts",
+      "filePath": "services/customer.ts",
+      "content": "import type { Customer } from \"../types.ts\"; // Same symbol name as inventory.validate; the import target should disambiguate it. export function validate(customer: Customer): void {   if (!customer.id.trim()) throw new Error(\"Customer id is required\"); } "
+    },
+    {
+      "id": "File:routes/order.ts",
+      "name": "order.ts",
+      "filePath": "routes/order.ts",
+      "content": "import { validate } from \"../services/customer.ts\"; import { checkoutOrder } from \"../services/checkout.ts\"; import type { OrderInput, SavedOrder } from \"../types.ts\"; // HTTP route equivalent: POST /orders. export function submitOrder(input: OrderInput): SavedOrder {   validate(input.customer);   return checkoutOrder(input); } "
+    },
+    {
+      "id": "File:services/checkout.ts",
+      "name": "checkout.ts",
+      "filePath": "services/checkout.ts",
+      "content": "import { calculateSubtotal } from \"./pricing.ts\"; import { applyDiscount } from \"./discount.ts\"; import { calculateShipping } from \"./shipping.ts\"; import { reserveStock } from \"./inventory.ts\"; import { saveOrder } from \"../storage/orders.ts\"; import type { OrderInput, SavedOrder } from \"../types.ts\"; export function checkoutOrder(input: OrderInput): SavedOrder {   const subtotal = calculateSubtotal(input.items);   const discount = applyDiscount(subtotal, input.coupon);   const shipping = calculateShipping(input.items, input.customer.region);   reserveStock(input.items);   return saveOrder(input.customer.id, {     subtotal, discount, shipping, total: subtotal - discount + shipping,   }); } "
+    }
+  ],
+  "timing": {
+    "vector": 11.9,
+    "bm25": 245.2,
+    "merge": 0.2,
+    "symbol_lookup": 45.3,
+    "ranking": 0.1,
+    "formatting": 0.2,
+    "wall": 295.1
+  },
+  "contentAvailability": {
+    "requested": true,
+    "profile": "full",
+    "available": true,
+    "scope": "full"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "status": "found",
+  "contentAvailability": {
+    "requested": true,
+    "profile": "full",
+    "available": true,
+    "scope": "full"
+  },
+  "symbol": {
+    "uid": "Function:routes/order.ts:submitOrder",
+    "name": "submitOrder",
+    "kind": "Function",
+    "filePath": "routes/order.ts",
+    "startLine": 6,
+    "endLine": 9,
+    "content": "export function submitOrder(input: OrderInput): SavedOrder {   validate(input.customer);   return checkoutOrder(input); }"
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "uid": "File:verify.ts",
+        "name": "verify.ts",
+        "filePath": "verify.ts"
+      }
+    ]
+  },
+  "outgoing": {
+    "calls": [
+      {
+        "uid": "Function:services/checkout.ts:checkoutOrder",
+        "name": "checkoutOrder",
+        "filePath": "services/checkout.ts"
+      },
+      {
+        "uid": "Function:services/customer.ts:validate",
+        "name": "validate",
+        "filePath": "services/customer.ts"
+      }
+    ],
+    "accesses": [
+      {
+        "uid": "Property:types.ts:OrderInput.customer",
+        "name": "customer",
+        "filePath": "types.ts"
+      }
+    ]
+  },
+  "processes": [
+    {
+      "id": "proc_0_submitorder",
+      "name": "SubmitOrder → Validate",
+      "step_index": 1,
+      "step_count": 4
+    },
+    {
+      "id": "proc_1_submitorder",
+      "name": "SubmitOrder → ApplyDiscount",
+      "step_index": 1,
+      "step_count": 3
+    },
+    {
+      "id": "proc_2_submitorder",
+      "name": "SubmitOrder → CalculateSubtotal",
+      "step_index": 1,
+      "step_count": 3
+    },
+    {
+      "id": "proc_3_submitorder",
+      "name": "SubmitOrder → CalculateShipping",
+      "step_index": 1,
+      "step_count": 3
+    }
+  ]
+}

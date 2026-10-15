@@ -1,0 +1,115 @@
+{
+  "status": "found",
+  "contentAvailability": {
+    "requested": true,
+    "profile": "full",
+    "available": true,
+    "scope": "full"
+  },
+  "symbol": {
+    "uid": "Function:services/checkout.ts:checkoutOrder",
+    "name": "checkoutOrder",
+    "kind": "Function",
+    "filePath": "services/checkout.ts",
+    "startLine": 8,
+    "endLine": 16,
+    "content": "export function checkoutOrder(input: OrderInput): SavedOrder {   const subtotal = calculateSubtotal(input.items);   const discount = applyDiscount(subtotal, input.coupon);   const shipping = calculateShipping(input.items, input.customer.region);   reserveStock(input.items);   return saveOrder(input.customer.id, {     subtotal, discount, shipping, total: subtotal - discount + shipping,   }); }"
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "uid": "Function:routes/order.ts:submitOrder",
+        "name": "submitOrder",
+        "filePath": "routes/order.ts"
+      }
+    ]
+  },
+  "outgoing": {
+    "calls": [
+      {
+        "uid": "Function:services/discount.ts:applyDiscount",
+        "name": "applyDiscount",
+        "filePath": "services/discount.ts"
+      },
+      {
+        "uid": "Function:services/inventory.ts:reserveStock",
+        "name": "reserveStock",
+        "filePath": "services/inventory.ts"
+      },
+      {
+        "uid": "Function:services/pricing.ts:calculateSubtotal",
+        "name": "calculateSubtotal",
+        "filePath": "services/pricing.ts"
+      },
+      {
+        "uid": "Function:services/shipping.ts:calculateShipping",
+        "name": "calculateShipping",
+        "filePath": "services/shipping.ts"
+      },
+      {
+        "uid": "Function:storage/orders.ts:saveOrder",
+        "name": "saveOrder",
+        "filePath": "storage/orders.ts"
+      }
+    ],
+    "accesses": [
+      {
+        "uid": "Property:types.ts:OrderInput.coupon",
+        "name": "coupon",
+        "filePath": "types.ts"
+      },
+      {
+        "uid": "Property:types.ts:OrderInput.customer",
+        "name": "customer",
+        "filePath": "types.ts"
+      },
+      {
+        "uid": "Property:types.ts:OrderInput.customer",
+        "name": "customer",
+        "filePath": "types.ts"
+      },
+      {
+        "uid": "Property:types.ts:OrderInput.items",
+        "name": "items",
+        "filePath": "types.ts"
+      },
+      {
+        "uid": "Property:types.ts:OrderInput.items",
+        "name": "items",
+        "filePath": "types.ts"
+      },
+      {
+        "uid": "Property:types.ts:OrderInput.items",
+        "name": "items",
+        "filePath": "types.ts"
+      }
+    ]
+  },
+  "processes": [
+    {
+      "id": "proc_0_submitorder",
+      "name": "SubmitOrder → Validate",
+      "step_index": 2,
+      "step_count": 4
+    },
+    {
+      "id": "proc_1_submitorder",
+      "name": "SubmitOrder → ApplyDiscount",
+      "step_index": 2,
+      "step_count": 3
+    },
+    {
+      "id": "proc_2_submitorder",
+      "name": "SubmitOrder → CalculateSubtotal",
+      "step_index": 2,
+      "step_count": 3
+    },
+    {
+      "id": "proc_3_submitorder",
+      "name": "SubmitOrder → CalculateShipping",
+      "step_index": 2,
+      "step_count": 3
+    }
+  ]
+}

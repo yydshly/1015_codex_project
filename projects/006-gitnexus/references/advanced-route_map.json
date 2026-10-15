@@ -1,0 +1,47 @@
+{
+  "routes": [
+    {
+      "route": "/api/health",
+      "method": "GET",
+      "handler": "server/health.ts",
+      "runtimeEvidence": {
+        "confirmed": false
+      },
+      "middleware": [],
+      "consumers": [],
+      "flows": []
+    },
+    {
+      "route": "/api/orders/:id",
+      "method": "GET",
+      "handler": "server/order-detail.ts",
+      "runtimeEvidence": {
+        "confirmed": false
+      },
+      "middleware": [],
+      "consumers": [],
+      "flows": []
+    },
+    {
+      "route": "/api/orders",
+      "method": "POST",
+      "handler": "server/create-order.ts",
+      "runtimeEvidence": {
+        "confirmed": false
+      },
+      "middleware": [],
+      "consumers": [
+        {
+          "name": "create-order.ts",
+          "filePath": "client/create-order.ts",
+          "accessedKeys": [
+            "receiptId",
+            "total"
+          ]
+        }
+      ],
+      "flows": []
+    }
+  ],
+  "total": 3
+}

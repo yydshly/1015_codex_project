@@ -1,0 +1,45 @@
+{
+  "mode": "flows",
+  "anchor": {
+    "file": "services/shipping.ts",
+    "symbol": "calculateShipping",
+    "startLine": 1,
+    "endLine": 11
+  },
+  "results": [
+    {
+      "functionLine": 1,
+      "variable": "shipping",
+      "def": {
+        "line": 3
+      },
+      "use": {
+        "line": 10,
+        "text": "return shipping;"
+      }
+    },
+    {
+      "functionLine": 1,
+      "variable": "shipping",
+      "def": {
+        "line": 5
+      },
+      "use": {
+        "line": 10,
+        "text": "return shipping;"
+      }
+    },
+    {
+      "functionLine": 1,
+      "variable": "shipping",
+      "def": {
+        "line": 8
+      },
+      "use": {
+        "line": 10,
+        "text": "return shipping;"
+      }
+    }
+  ],
+  "total": 3
+}

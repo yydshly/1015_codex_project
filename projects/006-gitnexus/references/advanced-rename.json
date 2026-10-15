@@ -1,0 +1,62 @@
+{
+  "status": "success",
+  "old_name": "calculateShipping",
+  "new_name": "computeShippingFee",
+  "files_affected": 4,
+  "total_edits": 5,
+  "graph_edits": 4,
+  "text_search_edits": 1,
+  "changes": [
+    {
+      "file_path": "services/shipping.ts",
+      "edits": [
+        {
+          "line": 1,
+          "old_text": "export function calculateShipping(subtotal: number, region: string): number {",
+          "new_text": "export function computeShippingFee(subtotal: number, region: string): number {",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "server/create-order.ts",
+      "edits": [
+        {
+          "line": 2,
+          "old_text": "import { calculateShipping } from \"../services/shipping.ts\";",
+          "new_text": "import { computeShippingFee } from \"../services/shipping.ts\";",
+          "confidence": "graph"
+        },
+        {
+          "line": 8,
+          "old_text": "const total = subtotal + calculateShipping(subtotal, \"local\");",
+          "new_text": "const total = subtotal + computeShippingFee(subtotal, \"local\");",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "services/estimate.ts",
+      "edits": [
+        {
+          "line": 1,
+          "old_text": "import { calculateShipping as shippingCost } from \"./shipping.ts\";",
+          "new_text": "import { computeShippingFee as shippingCost } from \"./shipping.ts\";",
+          "confidence": "graph"
+        }
+      ]
+    },
+    {
+      "file_path": "notes.ts",
+      "edits": [
+        {
+          "line": 2,
+          "old_text": "export const developerNote = \"calculateShipping is the current shipping helper\";",
+          "new_text": "export const developerNote = \"computeShippingFee is the current shipping helper\";",
+          "confidence": "text_search"
+        }
+      ]
+    }
+  ],
+  "applied": false
+}

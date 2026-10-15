@@ -1,0 +1,38 @@
+{
+  "anchor": {
+    "file": "security/preview.ts",
+    "symbol": "unsafePreview",
+    "startLine": 2,
+    "endLine": 6
+  },
+  "findings": [
+    {
+      "file": "security/preview.ts",
+      "functionLine": 2,
+      "sinkKind": "xss",
+      "source": {
+        "variable": "raw",
+        "line": 3
+      },
+      "sink": {
+        "line": 5
+      },
+      "hops": [
+        {
+          "variable": "raw",
+          "line": 3
+        },
+        {
+          "variable": "html",
+          "line": 4
+        },
+        {
+          "variable": "html",
+          "line": 5
+        }
+      ]
+    }
+  ],
+  "totalFindings": 1,
+  "note": "Intra-procedural (TAINTED, statement hops) AND cross-function (TAINT_PATH, function hops, `interprocedural: true`) flows are modeled. Closure/callback, property/field, and implicit flows are NOT modeled; absence of a finding is not proof of safety. Cross-function findings are context-insensitive and may over-attribute among same-named callees. SANITIZES (kill) edges are queryable via cypher."
+}

@@ -1,0 +1,11 @@
+{
+  "tools": [
+    {
+      "name": "quote_shipping",
+      "filePath": "tools/shipping_tool.py",
+      "description": "Quote a local shipping fee in integer cents.",
+      "flows": []
+    }
+  ],
+  "total": 1
+}

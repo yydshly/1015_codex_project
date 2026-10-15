@@ -7,7 +7,11 @@
     "repository": "https://github.com/abhigyanpatwari/GitNexus",
     "tag": "v1.6.12",
     "commit": "26ddd95685f13d07f3661ef37c7ca1b62d29c409",
-    "license": "PolyForm-Noncommercial-1.0.0"
+    "license": "PolyForm-Noncommercial-1.0.0",
+    "npmGitHead": "c4ecf398de637cf779ab2238e69958cfd5d601ce",
+    "npmIntegrity": "sha512-Wz++hOW73SkluTkQLJbRIT8+IW649Kmf4mI+99ZxzcQg2Nl47sSjlfe89NN/q0uutGTvbVeXaYMHRDSznDsk5g==",
+    "commitRole": "GitHub reference tag commit; source equivalence to npm distribution is not established",
+    "tagAndNpmGitHeadMatch": false
   },
   "sample": "checkout-lab",
   "searchStatus": "verified",

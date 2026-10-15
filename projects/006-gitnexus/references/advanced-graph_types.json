@@ -1,0 +1,4 @@
+{
+  "markdown": "| type | count |\n| --- | --- |\n| CFG | 45 |\n| REACHING_DEF | 42 |\n| DEFINES | 23 |\n| CONTAINS | 10 |\n| CDG | 7 |\n| CALL_SUMMARY | 6 |\n| MEMBER_OF | 5 |\n| CALLS | 3 |\n| HANDLES_ROUTE | 3 |\n| ACCESSES | 3 |\n| IMPORTS | 2 |\n| HANDLES_TOOL | 1 |\n| TAINTED | 1 |\n| FETCHES | 1 |\n| SANITIZES | 1 |\n| TAINT_PATH | 1 |",
+  "row_count": 16
+}

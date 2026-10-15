@@ -1,0 +1,91 @@
+{
+  "mode": "controls",
+  "anchor": {
+    "file": "services/shipping.ts",
+    "symbol": "calculateShipping",
+    "startLine": 1,
+    "endLine": 11
+  },
+  "results": [
+    {
+      "functionLine": 1,
+      "controller": {
+        "line": 2
+      },
+      "dependent": {
+        "line": 2,
+        "text": "throw new Error(\"Subtotal cannot be negative\");"
+      },
+      "label": "T",
+      "guard": true
+    },
+    {
+      "functionLine": 1,
+      "controller": {
+        "line": 2
+      },
+      "dependent": {
+        "line": 3,
+        "text": "let shipping = 500;"
+      },
+      "label": "F"
+    },
+    {
+      "functionLine": 1,
+      "controller": {
+        "line": 2
+      },
+      "dependent": {
+        "line": 4,
+        "text": "(subtotal >= 10000)"
+      },
+      "label": "F"
+    },
+    {
+      "functionLine": 1,
+      "controller": {
+        "line": 2
+      },
+      "dependent": {
+        "line": 7,
+        "text": "(region === \"remote\")"
+      },
+      "label": "F"
+    },
+    {
+      "functionLine": 1,
+      "controller": {
+        "line": 2
+      },
+      "dependent": {
+        "line": 10,
+        "text": "return shipping;"
+      },
+      "label": "F",
+      "guard": true
+    },
+    {
+      "functionLine": 1,
+      "controller": {
+        "line": 4
+      },
+      "dependent": {
+        "line": 5,
+        "text": "shipping = 0;"
+      },
+      "label": "T"
+    },
+    {
+      "functionLine": 1,
+      "controller": {
+        "line": 7
+      },
+      "dependent": {
+        "line": 8,
+        "text": "shipping = 1200;"
+      },
+      "label": "T"
+    }
+  ],
+  "total": 7
+}

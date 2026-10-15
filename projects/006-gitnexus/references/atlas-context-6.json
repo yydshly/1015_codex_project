@@ -1,0 +1,45 @@
+{
+  "status": "found",
+  "contentAvailability": {
+    "requested": true,
+    "profile": "full",
+    "available": true,
+    "scope": "full"
+  },
+  "symbol": {
+    "uid": "Function:services/inventory.ts:reserveStock",
+    "name": "reserveStock",
+    "kind": "Function",
+    "filePath": "services/inventory.ts",
+    "startLine": 10,
+    "endLine": 13,
+    "content": "export function reserveStock(items: CartItem[]): number {   validate(items);   return items.reduce((quantity, item) => quantity + item.quantity, 0); }"
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "uid": "Function:services/checkout.ts:checkoutOrder",
+        "name": "checkoutOrder",
+        "filePath": "services/checkout.ts"
+      }
+    ]
+  },
+  "outgoing": {
+    "calls": [
+      {
+        "uid": "Function:services/inventory.ts:validate",
+        "name": "validate",
+        "filePath": "services/inventory.ts"
+      }
+    ]
+  },
+  "processes": [
+    {
+      "id": "proc_0_submitorder",
+      "name": "SubmitOrder → Validate",
+      "step_index": 3,
+      "step_count": 4
+    }
+  ]
+}

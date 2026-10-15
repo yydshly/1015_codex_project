@@ -1,0 +1,62 @@
+[
+  {
+    "id": "local-60",
+    "label": "本地 · 商品 60 元",
+    "subtotal": 6000,
+    "region": "local",
+    "quote": {
+      "subtotal": 6000,
+      "discount": 600,
+      "shipping": 900,
+      "total": 6300
+    }
+  },
+  {
+    "id": "local-100",
+    "label": "本地 · 商品 100 元",
+    "subtotal": 10000,
+    "region": "local",
+    "quote": {
+      "subtotal": 10000,
+      "discount": 1000,
+      "shipping": 0,
+      "total": 9000
+    }
+  },
+  {
+    "id": "local-110",
+    "label": "本地 · 商品 110 元",
+    "subtotal": 11000,
+    "region": "local",
+    "quote": {
+      "subtotal": 11000,
+      "discount": 1100,
+      "shipping": 0,
+      "total": 9900
+    }
+  },
+  {
+    "id": "local-120",
+    "label": "本地 · 商品 120 元",
+    "subtotal": 12000,
+    "region": "local",
+    "quote": {
+      "subtotal": 12000,
+      "discount": 1200,
+      "shipping": 0,
+      "total": 10800
+    }
+  },
+  {
+    "id": "remote-110",
+    "label": "远程 · 商品 110 元",
+    "subtotal": 11000,
+    "region": "remote",
+    "quote": {
+      "subtotal": 11000,
+      "discount": 1100,
+      "shipping": 1600,
+      "total": 11500
+    }
+  }
+]

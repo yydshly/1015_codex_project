@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitNexus · 完整能力工作台</title><link rel="stylesheet" href="atlas.css"><script src="atlas.js" defer></script></head><body>
+<a class="skip" href="#workspace">跳到图谱工作区</a>
+<header class="app-header"><a class="app-brand" href="../#showcase" target="_top"><span>⌘</span><b>GitNexus</b><small>能力工作台</small></a><div class="run-state" id="run-state">正在加载真实数据…</div><a href="atlas.html" target="_blank" rel="noreferrer" class="standalone">独立打开 ↗</a></header>
+<div class="app-shell"><aside class="sidebar"><p class="nav-label">从源码，到开发决策</p><label class="mobile-navigator">12 类能力<select id="mobile-mode" aria-label="选择工作台能力"></select></label><nav aria-label="能力导航">
+<button data-mode="overview" class="active" aria-current="page"><span>01</span>整仓地图<small>71 实体 / 131 关系</small></button>
+<button data-mode="communities"><span>02</span>功能模块<small>分组与成员联动</small></button>
+<button data-mode="context"><span>03</span>调用上下文<small>定义 / 调用者 / 源码</small></button>
+<button data-mode="flows"><span>04</span>流程追踪<small>按步骤穿过调用图</small></button>
+<button data-mode="impact"><span>05</span>修改影响<small>逐层展开上游依赖</small></button>
+<button data-mode="search"><span>06</span>检索定位<small>命中 → 图谱 → 源码</small></button>
+<button data-mode="changes"><span>07</span>提交检查<small>diff → 符号 → 流程</small></button>
+<button data-mode="rename"><span>08</span>重命名预览<small>绑定位置与改写差异</small></button>
+<button data-mode="api"><span>09</span>API 与工具<small>请求 / 路由 / 字段</small></button>
+<button data-mode="pdg"><span>10</span>语句与数据流<small>控制 / 数据依赖</small></button>
+<button data-mode="agent"><span>11</span>交给 AI 使用<small>从问题到证据的步骤</small></button>
+<button data-mode="coverage"><span>12</span>能力全景<small>入口、条件与覆盖</small></button>
+</nav><div class="sidebar-foot"><b>真实索引 · 原创样本</b><p>图谱数据来自固定 npm 分发包。图上布局和交互为本展厅实现。</p><a href="../references/atlas-commands.json" target="_blank">核对采集命令 ↗</a></div></aside>
+<main id="workspace"><div class="workspace-head"><div><p class="kicker" id="mode-kicker">REPOSITORY ATLAS</p><h1 id="mode-title">从整仓地图开始。</h1><p id="mode-description">点一个实体，查看它与代码的关系。</p></div><button id="tour-start" class="tour-button">跟着案例走一遍 <span>→</span></button></div>
+<div id="tour-banner" class="tour-banner" hidden><div><span id="tour-number"></span><b id="tour-title"></b><p id="tour-copy"></p></div><div class="tour-actions"><button id="tour-prev">上一步</button><button id="tour-next">下一步 →</button><button id="tour-close" aria-label="退出导览">×</button></div></div>
+<div class="mode-controls" id="mode-controls"></div>
+<section class="work-grid" id="work-grid"><div class="graph-column"><div class="graph-toolbar"><label>视角<select id="graph-scope"><option value="all">整仓所有实体</option><option value="business">业务调用图</option><option value="files">文件依赖图</option><option value="case">当前能力子图</option></select></label><label class="entity-search"><span class="sr-only">查找图谱实体</span><input type="search" id="graph-search" placeholder="查找实体 / 文件…" autocomplete="off"></label><button id="expand-neighbors" title="只显示当前实体的一跳邻居">聚焦邻居</button><button id="clear-focus">显示全部</button></div>
+<div class="canvas" id="graph-canvas"><div class="graph-topline"><span id="graph-caption">加载完整图谱…</span><span id="graph-context">真实边 · 可缩放拖动</span></div><svg id="atlas-graph" tabindex="0" viewBox="0 0 1000 650" role="group" aria-label="完整代码关系图"></svg><div class="empty-state" id="graph-empty" hidden>当前条件没有可显示的实体。清空查找或显示全部。</div><div class="graph-bottomline"><span>拖动空白平移 · 滚轮缩放 · 点节点查看</span><div class="zoom-controls"><button id="zoom-out" aria-label="缩小图谱">−</button><button id="zoom-reset" aria-label="重置图谱视野">100%</button><button id="zoom-in" aria-label="放大图谱">+</button></div></div></div>
+<div id="graph-legend" class="graph-legend"></div><div id="mode-insight" class="mode-insight"></div><div id="mode-results" class="mode-results"></div></div>
+<aside class="inspector" aria-label="实体详情"><div class="inspector-label"><span id="entity-kind">ENTITY DETAILS</span><button id="source-toggle">源码</button></div><h2 id="entity-name">选择一个节点</h2><p id="entity-location"></p><div id="entity-summary"></div><div id="source-box" hidden><div class="source-heading"><b id="source-file"></b><button id="source-close" aria-label="关闭源码">×</button></div><pre id="entity-source"></pre></div><div id="entity-relations"></div><details class="raw-details"><summary>本视图的数据与原始输出</summary><p id="raw-explanation"></p><a id="raw-link" href="atlas.json" target="_blank">打开原始记录 ↗</a><pre id="raw-preview"></pre></details></aside></section>
+<div id="coverage-panel" hidden></div>
+<footer class="workspace-foot"><p id="proof-scope">静态索引实跑，浏览器本地回放与图遍历；点击不会运行新的 GitNexus 分析。</p><a href="https://github.com/abhigyanpatwari/GitNexus" target="_blank" rel="noreferrer">官方源码 ↗</a></footer></main></div>
+</body></html>

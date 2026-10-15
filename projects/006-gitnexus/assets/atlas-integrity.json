@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "modes": 12,
+  "baseGraph": {
+    "nodes": 71,
+    "edges": 131
+  },
+  "advancedGraph": {
+    "nodes": 103,
+    "edges": 154
+  },
+  "contexts": 10,
+  "impacts": 10,
+  "searches": 3,
+  "renameEdits": 5,
+  "pdgControls": 7,
+  "pdgFlows": 3,
+  "shapeMismatches": 1,
+  "businessProbePairs": 5,
+  "sourceSnapshotsMatch": true,
+  "graphReferencesValid": true
+}

@@ -9,11 +9,11 @@ GitNexus 从源码提取符号和跨文件关系，建立可持久查询的代�
 | 项目 | 记录 |
 | --- | --- |
 | 编号 / 日期 | `006` / 2026-10-15，Asia/Shanghai |
-| 实测版本 | npm `gitnexus@1.6.12`；tag SHA `26ddd95685f13d07f3661ef37c7ca1b62d29c409` |
+| 实测版本 | 固定 npm `gitnexus@1.6.12`，gitHead `c4ecf398…`；文档参考 tag `26ddd956…`，二者源码等价关系未建立 |
 | 源码研究 | 当前主线架构、流程、聚类和混合搜索，与稳定版实测分别标明 |
 | 上游许可 | PolyForm Noncommercial 1.0.0；[完整原文](references/UPSTREAM_LICENSE.txt) |
 | 网页 | 原生 HTML / CSS / JavaScript / SVG，无运行时外部依赖 |
-| 研究范围 | 源码研究和真实小样本输出；未测生产准确率和 AI 任务收益 |
+| 研究范围 | 源码研究和真实小样本输出；含独立 API / PDG / rename 实跑；未测生产准确率和 AI 任务收益 |
 | 在线入口 | [已发布并验证的中文展厅](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/) |
 
 ## 网页内容
@@ -95,3 +95,30 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 本地 25 项交互 / 响应式检查通过，包含七种视图、四条流程、18 项真实搜索结果与筛选、原始 diff、键盘 Home / End，以及 390px / 320px 布局；没有控制台错误。[浏览器检查](assets/showcase-verification.json) · [效果预览](assets/showcase-desktop.jpg)。
 
 内容提交 `ea933ca` 已通过 [Pages 任务 38762226140](https://github.com/yydshly/1015_codex_project/actions/runs/38762226140) 发布。线上 24 项资源与数据核对通过，七种效果、流程选择、搜索与 390px 布局正常，没有控制台错误。[线上浏览器记录](assets/showcase-deployed-browser.json) · [手机效果](assets/showcase-mobile.jpg)。
+
+## 完整能力工作台 · 2026-10-16
+
+[独立工作台](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/assets/atlas.html) · [主页面内嵌入口](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#explorer)
+
+以联动图谱取代分散的静态结果介绍。原七种档案和简单函数图保留在折叠区，新的主入口是完整工作台，支持 12 步导览与手机能力选择器。
+
+| 体验 | 能实际操作和看到什么 |
+| --- | --- |
+| 整仓地图 | 全部 71 实体 / 131 关系；切换文件依赖与业务调用视角、查找、聚焦邻居、缩放和平移 |
+| 功能模块 | 4 个分组和成员与图联动；说明分组不等同目录 |
+| 调用上下文 | 为 10 个业务函数分别实跑 context；点选切换调用者、被调用者、流程与源码 |
+| 流程追踪 | 4 条流程逐步播放；点步骤定位源码；另有真实 trace 到存储路径 |
+| 修改影响 | 10 个函数的实际 impact；切换目标、层级和返回项，含验证入口 |
+| 检索定位 | 3 次 FTS 查询；流程 / 符号 / 定义命中可定位到图与源码 |
+| 提交检查 | 免邮规则 diff 联动函数与流程；5 个业务探针真实比较修改前后金额 |
+| 重命名预览 | 高级样本 4 文件 / 5 候选，graph 与 text_search 分别显示；点差异定位源码，无文件写入 |
+| API 与工具 | 3 路由、客户端与处理器、receiptId 字段偏差、接口影响、Python MCP 工具；明确参数 URL 未关联 |
+| 语句与数据流 | --pdg 的 7 条控制依赖、3 条变量依赖；直接、编码、跨函数、回调四种传播对照，回调明确漏报 |
+| 交给 AI | 用真实工具结果逐步讲解 query → context → impact → detect_changes → 验证和更新索引；未调用 LLM |
+| 能力全景 | 补齐 embeddings、仓库组、Wiki、索引维护等入口和条件，未运行部分明确说明 |
+
+高级样本实跑为 103 节点 / 154 关系，与基础样本分开保存。API / PDG 为 verified-with-gaps；空结果不能证明不存在关联。npm 分发 gitHead 与 GitHub 文档 tag 不同，不能将源码等价关系当作已证实。
+
+[完整图谱与金额探针报告](references/atlas-report.md) · [高级运行报告](references/advanced-run-report.md) · [高级原始数据](web/assets/advanced.json) · [高级原创源码](src/advanced-lab)
+
+本地 61 项浏览器交互与响应式检查通过，涵盖图谱视角、查找、缩放、平移、分组、上下文、流程播放、分层影响、搜索与源码、diff 与金额探针、改名差异、API 字段、语句依赖、四种污点对照、12 步导览、390px / 320px 全部模式，以及主页面内嵌联动；没有脚本错误。[交互检查](assets/atlas-verification.json) · [数据与源码完整性](assets/atlas-integrity.json)。

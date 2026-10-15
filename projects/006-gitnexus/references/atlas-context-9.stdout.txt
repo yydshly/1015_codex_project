@@ -1,0 +1,30 @@
+{
+  "status": "found",
+  "contentAvailability": {
+    "requested": true,
+    "profile": "full",
+    "available": true,
+    "scope": "full"
+  },
+  "symbol": {
+    "uid": "Function:storage/orders.ts:saveOrder",
+    "name": "saveOrder",
+    "kind": "Function",
+    "filePath": "storage/orders.ts",
+    "startLine": 4,
+    "endLine": 6,
+    "content": "export function saveOrder(customerId: string, quote: Quote): SavedOrder {   return { id: `demo-${customerId}`, customerId, status: \"confirmed\", ...quote }; }"
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "uid": "Function:services/checkout.ts:checkoutOrder",
+        "name": "checkoutOrder",
+        "filePath": "services/checkout.ts"
+      }
+    ]
+  },
+  "outgoing": {},
+  "processes": []
+}

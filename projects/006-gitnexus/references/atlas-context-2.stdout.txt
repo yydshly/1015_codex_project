@@ -1,0 +1,38 @@
+{
+  "status": "found",
+  "contentAvailability": {
+    "requested": true,
+    "profile": "full",
+    "available": true,
+    "scope": "full"
+  },
+  "symbol": {
+    "uid": "Function:services/customer.ts:validate",
+    "name": "validate",
+    "kind": "Function",
+    "filePath": "services/customer.ts",
+    "startLine": 4,
+    "endLine": 6,
+    "content": "export function validate(customer: Customer): void {   if (!customer.id.trim()) throw new Error(\"Customer id is required\"); }"
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "uid": "Function:routes/order.ts:submitOrder",
+        "name": "submitOrder",
+        "filePath": "routes/order.ts"
+      }
+    ]
+  },
+  "outgoing": {
+    "accesses": [
+      {
+        "uid": "Property:types.ts:Customer.id",
+        "name": "id",
+        "filePath": "types.ts"
+      }
+    ]
+  },
+  "processes": []
+}

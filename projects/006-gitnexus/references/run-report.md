@@ -5,11 +5,13 @@
 ## 版本与环境
 
 - 上游：<https://github.com/abhigyanpatwari/GitNexus>
-- 固定 tag：`v1.6.12`；Git SHA：`26ddd95685f13d07f3661ef37c7ca1b62d29c409`。
+- 文档参考 tag：`v1.6.12`；Git SHA：`26ddd95685f13d07f3661ef37c7ca1b62d29c409`。
 - npm：`gitnexus@1.6.12`；依赖锁定记录：[runtime-package-lock.json](runtime-package-lock.json)。
 - Windows x64，Node.js `v24.19.0`，npm `10.9.2`，LadybugDB `0.18.3`。
 - 原创样本：`src/checkout-lab/`，12 个被索引文件，其中 11 个 `.ts` 和 1 个 `package.json`。
 - 上游许可证：PolyForm Noncommercial 1.0.0；完整原文见 [UPSTREAM_LICENSE.txt](UPSTREAM_LICENSE.txt)。研究网页及样本未复制上游运行时代码。
+
+2026-10-16 补充核对：npm 分发包的 gitHead 为 `c4ecf398de637cf779ab2238e69958cfd5d601ce`，与文档 tag 不同；不能将两者认作等同源码。实际运行以锁文件中的 npm 包及 integrity 为准，详见 [分发来源核对](advanced-provenance.json)。
 
 ## 实际结果
 

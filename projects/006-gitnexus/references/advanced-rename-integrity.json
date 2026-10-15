@@ -1,0 +1,32 @@
+{
+  "dryRun": true,
+  "changedSourceFiles": [],
+  "sourceHashesBefore": {
+    "client/create-order.ts": "e2edf34f9a786bf83ba70f174a40c764ea0ec084df7925f6a4fd236bd794d7cb",
+    "client/dynamic-order.ts": "228dbbe9c3d66852eecedbb2a2c3ede3a1a82a98e62dd06644e91070ce97b687",
+    "client/order-detail.ts": "d393ce69ab2d173e42d42edd12a1d5e1a032d19eb4e6b78014dc4c545c0fe792",
+    "notes.ts": "8f594387838f0142364d39e49f119503220d39c1ff3fbf46690608fe3eaa0bd0",
+    "package.json": "7a2469ee2ed7133f8856c945995dd533e1e205162c77289fa37c732d8243e8ab",
+    "security/preview.ts": "951ffb16c70cfc09e149ca03e761bb808d50f84d001f3334b75b04fbc19c196e",
+    "server/create-order.ts": "997a9668108ac8b281e61d1516d784868eafc7919f2ae3050ee9887e92d7d15c",
+    "server/health.ts": "baa5eb05276aca7f4e01ce82b63872dd9ae725964d948e3c6515e7993898ffbd",
+    "server/order-detail.ts": "7a65057d5e147dfd578437bd6ec146332a881f50649ff1cc4eeb3da065f76092",
+    "services/estimate.ts": "6c4100811623bff819b1000e12fc03c203db20384f534009f6730fd94c1f5617",
+    "services/shipping.ts": "b301000940d702a1dcf5761642e361f00cb74a166e9921ba9fd1d1ad4736b445",
+    "tools/shipping_tool.py": "510d32257c7e9808d9a816e9894037df8c7f79d898dad2fe62004c05ebd727ed"
+  },
+  "sourceHashesAfter": {
+    "client/create-order.ts": "e2edf34f9a786bf83ba70f174a40c764ea0ec084df7925f6a4fd236bd794d7cb",
+    "client/dynamic-order.ts": "228dbbe9c3d66852eecedbb2a2c3ede3a1a82a98e62dd06644e91070ce97b687",
+    "client/order-detail.ts": "d393ce69ab2d173e42d42edd12a1d5e1a032d19eb4e6b78014dc4c545c0fe792",
+    "notes.ts": "8f594387838f0142364d39e49f119503220d39c1ff3fbf46690608fe3eaa0bd0",
+    "package.json": "7a2469ee2ed7133f8856c945995dd533e1e205162c77289fa37c732d8243e8ab",
+    "security/preview.ts": "951ffb16c70cfc09e149ca03e761bb808d50f84d001f3334b75b04fbc19c196e",
+    "server/create-order.ts": "997a9668108ac8b281e61d1516d784868eafc7919f2ae3050ee9887e92d7d15c",
+    "server/health.ts": "baa5eb05276aca7f4e01ce82b63872dd9ae725964d948e3c6515e7993898ffbd",
+    "server/order-detail.ts": "7a65057d5e147dfd578437bd6ec146332a881f50649ff1cc4eeb3da065f76092",
+    "services/estimate.ts": "6c4100811623bff819b1000e12fc03c203db20384f534009f6730fd94c1f5617",
+    "services/shipping.ts": "b301000940d702a1dcf5761642e361f00cb74a166e9921ba9fd1d1ad4736b445",
+    "tools/shipping_tool.py": "510d32257c7e9808d9a816e9894037df8c7f79d898dad2fe62004c05ebd727ed"
+  }
+}
