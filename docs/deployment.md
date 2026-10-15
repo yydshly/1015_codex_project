@@ -98,3 +98,14 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 2026-10-15：内容提交 `0b8ee4c` 已推送至 main，[Pages 任务 38742663794](https://github.com/yydshly/1015_codex_project/actions/runs/38742663794) 构建与部署成功，目录校验任务亦通过。[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#understanding) · [三维声画演示](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#demo)。
 
 已实际验证总览图、放大与章节定位、完整动画、双螺旋章节跳转、MP4 / WebM 编码能力；390px 手机页面与弹窗均无页面横向溢出。真实 URL 在成功后回填。引导 PNG 与效果原图、来源和第三方许可随页面保存；证据和线上截图位于子项目 assets/。本轮未在正式站点重新编码 48 秒影片，完整成片证据保留本地验证记录。
+
+
+## 006 · GitNexus 代码关系展厅实际发布
+
+2026-10-15：内容提交 `488397b` 已推送，[Pages 任务 38745006562](https://github.com/yydshly/1015_codex_project/actions/runs/38745006562) 构建部署成功。[在线中文展厅](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/)。
+
+源目录 `projects/006-gitnexus/web/`，汇总输出 `_site/projects/006-gitnexus/`。原生HTML/CSS/JS/SVG，无根目录新增应用依赖。网页以六步原理切换和真实结算样本CALLS子图展示代码定位、上下文、影响及路径；浏览器回放已采集结果，未在公网部署GitNexus数据库或索引服务。
+
+固定v1.6.12的实际分析为71节点、131关系、4社区和4流程；业务子图为10函数、11调用。导入别名、同名消歧、调用者、路径、业务案例和关键词检索共7项通过。FTS首次超时后修复成功，保留修复前后原始证据。未启用embedding、LLM、Wiki或PDG。
+
+线上13项HTTP检查返回200，规范换行后的脚本、样式和JSON与本地一致；1280px桌面和390px手机正常，局部源码与查询记录可用，无控制台错误。另有320px窄屏及12项本地交互检查。发布后才回填demo_url；记录在 `projects/006-gitnexus/assets/deployed-verification.json`、`assets/deployed-browser.json` 与 `verification.json`。

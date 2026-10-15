@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-15T21:44:22.068920+08:00",
+  "url": "https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/",
+  "responses": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 19041,
+      "sha256": "e75a33f7be0d8e06f87faef4b986dd7aee6c49b37952ca49df44a24db48e1f8f"
+    },
+    {
+      "path": "styles.css",
+      "status": 200,
+      "bytes": 23117,
+      "sha256": "cfc2f12bc6955e7895a7913d44a341793f8969af788f1f062465ec69308eaeb0"
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 22950,
+      "sha256": "7b087dbe1416a1b231cc0b6fa878adf2014ea50447335d99d94624d2e6b9a5d8"
+    },
+    {
+      "path": "assets/evidence.json",
+      "status": 200,
+      "bytes": 35495,
+      "sha256": "35bd2404e49f0f7884d278d11119f8dfb895bd43dad48fefd0ffc9af43eb1d94"
+    },
+    {
+      "path": "notes.md",
+      "status": 200,
+      "bytes": 3193,
+      "sha256": "74d25b3ca5bf8081e1c02eb8f2d0bf5b30d3bb578421b1cdc57fbb2e7c09f877"
+    },
+    {
+      "path": "references/run-report.md",
+      "status": 200,
+      "bytes": 6901,
+      "sha256": "102f497afe47d7a2a1e1503c5a4080d7aa2ca7f74a3bff7d81cdabf97e281f96"
+    },
+    {
+      "path": "references/sources.json",
+      "status": 200,
+      "bytes": 2589,
+      "sha256": "8a0789c13d5ecc315b3c516e917e9dd32943229bac47df49db07364c2777a782"
+    },
+    {
+      "path": "references/context.json",
+      "status": 200,
+      "bytes": 1351,
+      "sha256": "c7c2038c752dd8676b8df517dd83788fbf4ecaf5b4ed4a1e8e853bd58086b74b"
+    },
+    {
+      "path": "references/impact.json",
+      "status": 200,
+      "bytes": 3482,
+      "sha256": "be526b1c1157dc3e9d60bd6ac29738f584d259057848cad487ed52edeac6a425"
+    },
+    {
+      "path": "references/trace.json",
+      "status": 200,
+      "bytes": 699,
+      "sha256": "5bdd08c46b67f578b1712870104fa0ba9c03f5a43a5ea276f383448107a522cf"
+    },
+    {
+      "path": "references/query.json",
+      "status": 200,
+      "bytes": 9287,
+      "sha256": "4f01d2fdb02952a5fe9ea30594b9251e416a2560bdd1fb2680d9de53d8d09086"
+    },
+    {
+      "path": "references/query-before-repair.json",
+      "status": 200,
+      "bytes": 775,
+      "sha256": "0ccb4c5335839b894b49fddd61e43e488f6ad353e11dac584048e49635fe26eb"
+    },
+    {
+      "path": "references/UPSTREAM_LICENSE.txt",
+      "status": 200,
+      "bytes": 4588,
+      "sha256": "b3e617e5e5eea01b2e9153156c88706c14899e78b4a5d48b9fc14f4f10115c72"
+    }
+  ],
+  "runtimeEvidenceMatches": true,
+  "textAssetsMatchAfterNewlineNormalization": true,
+  "graphNodes": 71,
+  "graphEdges": 131,
+  "businessCalls": 11,
+  "upstreamChecks": 7
+}

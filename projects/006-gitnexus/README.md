@@ -14,7 +14,7 @@ GitNexus 从源码提取符号和跨文件关系，建立可持久查询的代�
 | 上游许可 | PolyForm Noncommercial 1.0.0；[完整原文](references/UPSTREAM_LICENSE.txt) |
 | 网页 | 原生 HTML / CSS / JavaScript / SVG，无运行时外部依赖 |
 | 研究范围 | 源码研究和真实小样本输出；未测生产准确率和 AI 任务收益 |
-| 在线入口 | 成功部署并验证后登记到首页 `demo_url`；本地入口为 `web/index.html` |
+| 在线入口 | [已发布并验证的中文展厅](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/) |
 
 ## 网页内容
 
@@ -58,3 +58,9 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 访问 `http://127.0.0.1:8096/projects/006-gitnexus/`。需要通过 HTTP 加载 JSON，双击 HTML 的 file 模式可能被浏览器拦截。发布遵循根目录 docs/deployment.md，不增加所有项目共享的 npm 依赖。
 
 页面、封面、样本和交互代码为本研究原创。[来源清单](references/sources.json) 保留依据；没有把上游引擎打包到网页。上游运行使用隔离安装的固定 npm 包，并保留许可证，不为总仓库选择统一许可。
+
+## 发布验证
+
+内容提交 `488397b` 已推送，[Pages 任务 38745006562](https://github.com/yydshly/1015_codex_project/actions/runs/38745006562) 成功。线上 13 个页面、资源与证据请求返回 200，JS / CSS / 数据在规范换行后与本地一致；桌面 1280px、手机 390px 无页面横向溢出，局部源码与关键词记录交互正常，无控制台错误。本地另验证 320px、12 项交互及静态引用 / 源码快照完整性。
+
+[桌面预览](assets/desktop.jpg) · [手机预览](assets/mobile.jpg) · [本地交互验证](verification.json) · [线上HTTP检查](assets/deployed-verification.json) · [线上浏览器检查](assets/deployed-browser.json)

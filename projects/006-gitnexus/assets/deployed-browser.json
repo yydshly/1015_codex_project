@@ -1,0 +1,25 @@
+{
+  "url": "https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#",
+  "date": "2026-10-15",
+  "liveChecks": [
+    {
+      "name": "线上别名源码回放",
+      "passed": true
+    },
+    {
+      "name": "线上关键词查询记录",
+      "passed": true
+    }
+  ],
+  "desktop": {
+    "overflow": false,
+    "ready": "true",
+    "width": 1280
+  },
+  "mobile": {
+    "overflow": false,
+    "ready": "true",
+    "width": 390
+  },
+  "consoleErrors": []
+}

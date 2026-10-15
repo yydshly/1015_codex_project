@@ -34,3 +34,5 @@ LadybugDB 平台二进制需要保留；不能通过 omit optional 仅跳过向�
 检查静态资源、桌面 / 手机布局、三种图模式、无匹配和重置、源码、六步页签键盘操作、输出选择器、折叠面板。结果记录在 verification.json 和截图中。静态展示没有在线数据库写入。
 
 构建沿用 scripts/build_web.py，输出 `_site/projects/006-gitnexus/`。发布遵循 docs/deployment.md，仅在成功部署并验证后填写真实 demo_url。
+
+发布完成：内容提交 `488397b`，Pages 任务 `38745006562` 成功。线上13项HTTP检查、桌面/手机与关键交互通过；数据与本地一致（文本按LF规范换行比较），记录在 assets/deployed-verification.json 与 assets/deployed-browser.json。索引已在部署并验证后回填真实地址。
