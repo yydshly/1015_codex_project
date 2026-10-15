@@ -75,4 +75,4 @@ python -m http.server 8081 --bind 127.0.0.1 --directory _site
 
 资源采用相对链接，仓库子路径下无需改写脚本。产物只包含运行文件、依赖与来源说明，不发布整个研究仓库。根构建工具目前支持本项目的无编译静态结构，未来其他技术栈需显式接入自己的构建产物。
 
-仓库提供 `.github/workflows/pages.yml` 手动发布工作流。正式发布需将 Pages 来源设为 GitHub Actions，提交并推送验证后的文件，再运行工作流。本轮未发布，`demo_url` 为空；部署并访问验证后再登记 HTTPS 地址。详见[部署约定](../../../docs/deployment.md)。
+仓库提供 `.github/workflows/pages.yml` 手动发布工作流。已启用 GitHub Pages Actions 发布，main 的项目、索引或构建变更会自动部署，也可手动运行。2026-10-15 已完成发布并访问验证，`demo_url` 已登记。[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html) · [互动课件](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/)。详见[部署约定](../../../docs/deployment.md)。

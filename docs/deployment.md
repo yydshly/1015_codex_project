@@ -44,6 +44,8 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 
 源库：[aetherviz-master](https://github.com/andyhuo520/aetherviz-master)。通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可编排为系列课程。
 
-`python scripts/build_web.py` 生成 `_site/`。001 的研究入口为 `projects/001-aetherviz-master/overview.html`，互动课件入口为 `projects/001-aetherviz-master/`。总览、下载长图、本地依赖与来源说明一起发布。首次部署完成并验证后，再登记真实演示地址。
+`python scripts/build_web.py` 生成 `_site/`。001 的研究入口为 `projects/001-aetherviz-master/overview.html`，互动课件入口为 `projects/001-aetherviz-master/`。总览、下载长图、本地依赖与来源说明一起发布。已于 2026-10-15 部署并实际访问验证，正式地址已登记到索引。
 
 `.github/workflows/pages.yml` 在 main 的项目、索引或构建变更时发布，也支持手动触发。只上传 `_site/`；其他项目按各自提交与验证进度接入。
+
+实际发布：2026-10-15，首次发布提交 `b7b8c15`，Pages 任务 `38721920976` 成功。[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html) · [互动课件](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/)。总导航、总览、三个案例及长图资源均已访问验证。

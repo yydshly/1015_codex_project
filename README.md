@@ -18,7 +18,7 @@
 
 | 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |
 | --- | --- | --- | --- | --- | --- |
-| 001 | [AetherViz Master 课件生成规范研究](projects/001-aetherviz-master/README.md) | [aetherviz-master](https://github.com/andyhuo520/aetherviz-master) | 通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可按知识顺序组织为系列课程。 | 已完成 | [研究](projects/001-aetherviz-master/README.md) |
+| 001 | [AetherViz Master 课件生成规范研究](projects/001-aetherviz-master/README.md) | [aetherviz-master](https://github.com/andyhuo520/aetherviz-master) | 通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可按知识顺序组织为系列课程。 | 已完成 | [研究](projects/001-aetherviz-master/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html) |
 
 ### 项目预览
 
@@ -38,7 +38,7 @@
 
 其原理是“教学主题 → 外部 AI 按 Skill 编写网页 → 浏览器运行课件”。规范整理了教学结构、渲染选型、视觉与交互要求；可以按知识顺序逐课生成、统一风格并组织成系列课程，课程编排、练习和科学审核需另行设计。
 
-上方引导图汇总了能力、原理、三个研究案例与扩展路线，并区分上游已有、本研究补充和未来设想。详见[研究总览](projects/001-aetherviz-master/web/overview.html)与[完整研究](projects/001-aetherviz-master/README.md)。
+上方引导图汇总了能力、原理、三个研究案例与扩展路线，并区分上游已有、本研究补充和未来设想。详见[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html)与[完整研究](projects/001-aetherviz-master/README.md)。
 
 ## 新增一个研究项目
 

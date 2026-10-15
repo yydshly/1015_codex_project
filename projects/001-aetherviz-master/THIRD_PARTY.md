@@ -37,3 +37,5 @@
 - `web/assets/overview/research-map.jpg`：同日由 `web/overview.html?poster=1` 的完整页面实际截图导出，包含自行整理的研究图解与上述三个案例画面。课程路线和产品扩展明确标为设想，没有复制上游宣传配图。
 
 部署产物保留本文件、上游许可与 vendor 完整许可；原始上游文档快照保存在研究源码目录。
+
+上线记录：`assets/deployed-overview.jpg` 为 2026-10-15 本研究 GitHub Pages 总览页的真实访问截图。`assets/research-map.jpg` 与 `web/assets/overview/research-map.jpg` 为同一张发布用总览图。

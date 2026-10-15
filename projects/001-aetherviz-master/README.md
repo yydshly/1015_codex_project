@@ -21,7 +21,7 @@
 | 研究日期 | 2026-10-15 |
 | 研究状态 | 资料与三个研究案例已整理；演示呈现仍需改进，未验证 Skill 的相对增益；见[研究笔记](notes.md) |
 | 上游许可证 | MIT，Copyright (c) 2026 andyhu，原文见 [LICENSE](references/upstream-LICENSE) |
-| 在线地址 | 尚未发布；`projects.json` 的 `demo_url` 保持为空 |
+| 在线地址 | [研究总览](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html) · [互动课件](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/) |
 
 ## 先看真实演示
 
