@@ -1,6 +1,6 @@
 # 多个 Web 的部署约定
 
-001 AetherViz Master、002 image-blaster 与 005 Pulse 的研究网页已于 2026-10-15 部署并实际访问验证。使用 GitHub Pages Actions，只发布已提交项目的静态构建产物；其他本地未提交研究不纳入发布。
+001 AetherViz Master、002 image-blaster、003 ER Mario 与 005 Pulse 的研究网页已于 2026-10-15 部署并实际访问验证。使用 GitHub Pages Actions，只发布已提交项目的静态构建产物；其他本地未提交研究不纳入发布。
 
 ## 构建与发布
 
@@ -78,4 +78,11 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 
 引导图原样使用本次生成的 PNG / SVG，支持完整图查看和下载。经典形象与教堂为本地几何，写实人物采用随子项目保存的 Rocketbox GLB，保留 MIT 来源及许可。本地演示不运行法环、ROM、libsm64 或模组 DLL。
 
-本地验证总览弹窗、原理步骤、七人物跳跃与切换、3 / 3 地标导览；桌面、390px 手机与 320px 窄屏无页面横向溢出，18 项动作/计算/蒙皮检查通过。通过既有 Pages Actions 发布，部署成功并验证后再登记真实 URL。此次只新增 003，其余未提交项目保留在工作区。
+本地验证总览弹窗、原理步骤、七人物跳跃与切换、3 / 3 地标导览；桌面、390px 手机与 320px 窄屏无页面横向溢出，18 项动作/计算/蒙皮检查通过。通过既有 Pages Actions 发布，已部署并实际访问验证，真实 URL 已在成功后登记。此次只新增 003，其余未提交项目保留在工作区。
+
+
+## 003 ER Mario 实际发布记录
+
+2026-10-15：内容提交 `a50d868` 已推送， [Pages 任务 38730101441](https://github.com/yydshly/1015_codex_project/actions/runs/38730101441) 构建与部署成功。[研究总览](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/overview.html) · [七人物艾雷教堂试玩](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/elleh/?character=human&compare=all) · [动作展厅](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/)。
+
+已验证总览原图弹窗、原理切换、模型切换与跳跃，正式站点与 39 个文件加总导航共 43 项 HTTP 检查返回 200；引导 PNG 和写实 GLB 的哈希与原文件一致。桌面、手机与窄屏检查通过。索引在部署成功后回填真实 URL；证据与截图在 `projects/003-er-mario/assets/deployed-verification.json`。只发布 003 及其导航，其他本地未提交研究保留。

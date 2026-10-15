@@ -20,7 +20,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 001 | [AetherViz Master 课件生成规范研究](projects/001-aetherviz-master/README.md) | [aetherviz-master](https://github.com/andyhuo520/aetherviz-master) | 通过提示词规范指导 AI 生成生物、物理、化学等互动课件，可按知识顺序组织为系列课程。 | 已完成 | [研究](projects/001-aetherviz-master/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/001-aetherviz-master/overview.html) |
 | 002 | [image-blaster 图生三维工作流研究](projects/002-image-blaster/README.md) | [image-blaster](https://github.com/neilsonnn/image-blaster) | 将场景图拆成背景、独立物体与声音，借助外部模型生成并组装三维场景；价值在资产解耦、请求恢复和局部返工，可扩展自动布局与质量验收。 | 已完成 | [研究](projects/002-image-blaster/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/002-image-blaster/) |
-| 003 | [ER Mario 跨游戏动作系统研究](projects/003-er-mario/README.md) | [er-mario](https://github.com/deltarooo/er-mario) | 复用 SM64 运动与动画，经碰撞、骨骼、战斗与事件适配接入法环；用艾雷教堂和七模型演示说明行为与外形解耦、减少重复开发的价值，并梳理更多角色、场景与引擎的扩展条件。 | 已完成 | [研究](projects/003-er-mario/README.md) |
+| 003 | [ER Mario 跨游戏动作系统研究](projects/003-er-mario/README.md) | [er-mario](https://github.com/deltarooo/er-mario) | 复用 SM64 运动与动画，经碰撞、骨骼、战斗与事件适配接入法环；用艾雷教堂和七模型演示说明行为与外形解耦、减少重复开发的价值，并梳理更多角色、场景与引擎的扩展条件。 | 已完成 | [研究](projects/003-er-mario/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/overview.html) |
 | 005 | [Pulse 本地 Agent 用量统计研究](projects/005-pulse/README.md) | [Pulse](https://github.com/qunqin24/Pulse) | 读取多种 Agent 的本地日志、数据库与导出记录，校正累计值和重复消息，按模型归集 Token 与 API 等价费用；为自建用量统计模块提供采集、归因、计价和扩展参考。 | 已完成 | [研究](projects/005-pulse/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html) |
 
 ### 项目预览

@@ -16,7 +16,7 @@
 | 本轮范围 | 源码研究、总览图、机制展厅、艾雷教堂局部重建、七人物动作对比与浏览器验证 |
 | 验证边界 | 未运行法环、SM64 ROM、libsm64 或模组 DLL；本地截图不代表模组实机效果 |
 | 来源许可 | 上游 er-mario 代码 MIT（Copyright © 2026 Delta），libsm64 CC0；写实模型 Microsoft Rocketbox MIT；详见 [来源与许可](THIRD_PARTY.md) |
-| 在线地址 | 待实际部署验证后回填；下文为仓库入口与本地运行方式 |
+| 在线地址 | [研究总览](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/overview.html) · [七人物试玩](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/elleh/?character=human&compare=all) · [机制展厅](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/) |
 
 ## 库的能力与原理
 

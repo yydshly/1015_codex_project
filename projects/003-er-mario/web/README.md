@@ -42,7 +42,7 @@ python scripts/build_web.py
 
 ## 构建与发布
 
-根构建脚本汇总生产文件、vendor、许可与 references 到 `_site/projects/003-er-mario/`；不复制测试或游戏资源。发布遵循 [部署约定](../../../docs/deployment.md)，成功部署并验证后填写真实 `demo_url`。本轮没有远程发布。
+根构建脚本汇总生产文件、vendor、许可与 references 到 `_site/projects/003-er-mario/`；不复制测试或游戏资源。发布遵循 [部署约定](../../../docs/deployment.md)，成功部署并验证后填写真实 `demo_url`。已通过 GitHub Pages 发布，研究入口为 https://yydshly.github.io/1015_codex_project/projects/003-er-mario/overview.html ，部署记录见子项目 notes.md。
 
 ## 艾雷教堂可操作场景
 

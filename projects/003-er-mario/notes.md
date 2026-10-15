@@ -113,3 +113,12 @@ python scripts/build_web.py
 新增 `web/overview.html`、`overview.css`、`overview.js`，用总览图作为引导，整理库的能力、适配原理、行为复用的价值、演示效果、六类扩展与运行边界。PNG / SVG 以原始字节复制至 `web/assets/overview/`，提供完整图弹窗、原图下载、动作展厅和七人物试玩入口。
 
 本地总览检查：桌面 1280 × 800、手机 390 × 844、窄屏 320 × 740 没有页面横向溢出；引导图打开/关闭、原理步骤切换有效，浏览器 error / warn 为空。18 项动作、计算与真实模型检查继续通过。共享目录中其他项目的未提交研究不纳入本次发布提交。
+
+
+## 2026-10-15 正式发布验证
+
+内容提交 `a50d868099ad7e062710e3d476e2c28d2e516e11` 已推送 main；[Pages 任务 38730101441](https://github.com/yydshly/1015_codex_project/actions/runs/38730101441) 的构建与部署成功。[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/overview.html) · [七人物试玩](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/elleh/?character=human&compare=all)。
+
+正式站点已验证长图完整载入（3000px 原宽）、打开/关闭、四步原理切换；写实模型与七人物面板成功绘制，卡比移动跳跃读取 y≈1.16，并可切回写实人物。手机 390px 总览无页面水平溢出，浏览器 error / warn 为空。根入口、总览、展厅、试玩和 39 个构建文件加总导航共 43 项 HTTP 检查返回 200；原图与 GLB 校验见 `assets/deployed-verification.json`。
+
+引导 PNG 与原图 SHA-256 一致；GLB 包含 80 关节、0 动画片段，纹理和缓冲均封装在本地文件中。发布后回填真实 demo_url 并同步首页；仅提交 003 和相应导航信息，其他未提交研究保留。新增首屏预览优先加载、完整长图按需加载，避免未打开长图时竞争首屏资源。

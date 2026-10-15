@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-10-15",
+  "content_commit": "a50d868099ad7e062710e3d476e2c28d2e516e11",
+  "workflow_run": "https://github.com/yydshly/1015_codex_project/actions/runs/38730101441",
+  "workflow_conclusion": "success",
+  "overview_url": "https://yydshly.github.io/1015_codex_project/projects/003-er-mario/overview.html",
+  "exhibit_url": "https://yydshly.github.io/1015_codex_project/projects/003-er-mario/",
+  "playable_url": "https://yydshly.github.io/1015_codex_project/projects/003-er-mario/elleh/?character=human&compare=all",
+  "http_checks": {
+    "count": 43,
+    "all_status_200": true,
+    "includes": "39 project files plus project root, elleh directory, seven-character query, and site navigation"
+  },
+  "guide_png": {
+    "url": "https://yydshly.github.io/1015_codex_project/projects/003-er-mario/assets/overview/er-mario-overview.png",
+    "bytes": 3831304,
+    "sha256": "a2ebbd52126d94c96e967b70c156c77aac7ec8bb9e628363053ff2b72369b378",
+    "matches_original": true
+  },
+  "human_glb": {
+    "url": "https://yydshly.github.io/1015_codex_project/projects/003-er-mario/assets/rocketbox-human.glb",
+    "bytes": 2043332,
+    "sha256": "12a309ed6131175a02f97f33efe60e24f508f30a88867c2e1db8f060f8fa5589",
+    "joints": 80,
+    "animation_clips": 0,
+    "external_uris": 0
+  },
+  "browser_checks": {
+    "guide_full_width": 3000,
+    "guide_open_close": true,
+    "principle_steps": true,
+    "seven_characters_and_human_rendered": true,
+    "movement_jump_and_character_switch": true,
+    "kirby_jump_y": 1.16,
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "page_horizontal_overflow": false,
+    "console_errors": 0,
+    "console_warnings": 0
+  },
+  "screenshots": [
+    "deployed-overview.jpg",
+    "deployed-overview-mobile.jpg"
+  ],
+  "automated_checks": {
+    "character_math_skin_tests": 18,
+    "catalog_tests": 10,
+    "isolated_build_catalog_ids": [
+      1,
+      2,
+      3,
+      5
+    ]
+  },
+  "scope": "Browser research and custom controller only; original er-mario game runtime not tested.",
+  "guide_svg": {
+    "url": "https://yydshly.github.io/1015_codex_project/projects/003-er-mario/assets/overview/er-mario-overview.svg",
+    "sha256": "d873a6a21e59898e8baf449a8b0b2d131e8ea452e0bbb3db959b9050ae042655",
+    "matches_committed_svg": true,
+    "working_tree_difference": "CRLF vs LF only"
+  }
+}
