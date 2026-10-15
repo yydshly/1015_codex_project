@@ -14,11 +14,11 @@ python -m http.server 8084 --bind 127.0.0.1 --directory _site
 
 访问 <http://127.0.0.1:8084/projects/004-obsidian/>。所有资源使用相对路径，页内导航使用锚点。必须通过 HTTP 服务打开 ES modules，不能用 `file://`。
 
-生产输出为 `_site/projects/004-obsidian/`；Pages 子路径 `/1015_codex_project/projects/004-obsidian/`。第三方必要模块作为 vendored 源码保留在项目内；不提交 npm 的 node_modules 或构建产物。尚未发布线上地址。
+生产输出为 `_site/projects/004-obsidian/`；Pages 子路径 `/1015_codex_project/projects/004-obsidian/`。第三方必要模块作为 vendored 源码保留在项目内；不提交 npm 的 node_modules 或构建产物。已于 2026-10-15 发布并实际访问验证：[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#understanding) · [三维声画演示](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#demo)。
 
 ## 操作与范围
 
-- 默认低画质自动启动 48 秒完整循环；减少动态效果设置下等待手动启动。
+- 默认入口先阅读研究总览，点击画面启动演示；直接进入 `#demo` 时以低画质自动播放 48 秒完整循环。减少动态效果设置下等待手动启动。
 - 原作模式下的五个定格按钮会暂停并定位；“继续播放”恢复循环。自由视角支持拖动、缩放和平移。
 - 三档画质会重新生成对应碎片；下方显示实际数量。声音在原画面内明确开启。
 - “关闭演示”卸载 iframe；重新启动会再次初始化。标签隐藏时暂停，回来后由用户恢复。
@@ -67,3 +67,5 @@ python projects/004-obsidian/tools/vendor_upstream.py
 页面 `#understanding` 汇总研究共识，区分上游已有、本研究已实现、后续扩展三类内容。`assets/understanding/obsidian-understanding.svg` 是 1920 × 4280 的独立长图，含七张实际成片画面；另有文字解读、可缩放 / 分段定位的阅读窗口和本地 PNG 下载。使用现有页面样式，无新增第三方依赖。
 
 离线更新图文：`python projects/004-obsidian/tools/build_understanding.py`。已保存的 JPEG 帧足以重建 SVG，不需要样片。带 `--extract` 时需要本地忽略的 `exports/obsidian-complete-48s-720p-sound.mp4` 与 ffmpeg，按固定时间抽帧；更新后运行汇总构建并检查页面。PNG 从页面下载按钮生成，保持与当前 SVG 一致；`assets/understanding/obsidian-understanding.png` 保存了一份当前导出，修改 SVG 后也应通过页面重新下载更新。
+
+发布后的资源与引导图核验：`python projects/004-obsidian/tools/verify_deployment.py`。检查正式页面、本地运行依赖、文档与 PNG 原图，生成 `assets/deployed-verification.json`；Windows 使用系统 PowerShell 的 HTTPS 校验路径，其余平台使用 Python 标准 HTTPS。

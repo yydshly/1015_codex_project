@@ -15,7 +15,7 @@ Obsidian 是基于 Three.js / WebGL 2 的程序化三维视听作品：同一批
 | 研究日期 | 2026-10-15 |
 | 研究版本 | [`74510f112c0a7e4318f688b851523105ec4f79e4`](https://github.com/iamtechartist/obsidian/tree/74510f112c0a7e4318f688b851523105ec4f79e4) |
 | 上游许可证 | MIT，Copyright (c) 2026 Techartist；Three.js MIT，原文均随项目保留 |
-| 演示地址 | 本研究页尚未发布，`demo_url` 留空；[作者原站](https://iamtechartist.github.io/obsidian/) |
+| 演示地址 | [在线研究总览](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#understanding) · [三维声画演示](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#demo) · [作者原站](https://iamtechartist.github.io/obsidian/) |
 
 ## 项目预览
 

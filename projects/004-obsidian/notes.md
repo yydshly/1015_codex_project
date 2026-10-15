@@ -158,3 +158,13 @@
 本轮浏览器验证：SVG 实际加载为 1920 × 4280；PNG 下载成功，分辨率相同，保存副本 `web/assets/understanding/obsidian-understanding.png`。放大 / 缩小 / 适应宽度、使用场景与边界章节定位正常；Esc 关闭后恢复页面，文字解读链接自动展开内容。390 × 844 手机视口下阅读页宽度 / 滚动宽均为 375px；放大窗口内为独立双向滚动，页面没有横向溢出。当前页面错误日志为空。网页截图 `assets/understanding-desktop.png` / `assets/understanding-mobile.png`。
 
 直接打开 `#understanding` 或 `#understanding-text` 时先阅读图文，点击画面再启动三维场景，避免阅读总览前等待几何生成。默认演示入口继续自动运行完整动画。第三方资源与原作快照未改动；汇总构建、资源链接、模块语法与项目索引检查通过。本轮未重新编码声画影片。
+
+## 六期：整理摘要、使用生成引导图并发布
+
+仓库摘要明确能力、表面碎裂 / 采样匹配 / GPU 时间函数的原理、片头 / 品牌 / 舞台的价值，以及模型、音乐、数据和交互的扩展条件。总览图移至演示前；默认入口先读研究，`#demo` 直接进入三维动画。仓库首页、站点导航与子项目预览原样使用本次生成的 1920 × 4280 PNG 引导图。
+
+内容提交 `0b8ee4cffb3d951d877f615a6da28a572bbd86a7` 已推送到 main，[Pages 发布任务 38742663794](https://github.com/yydshly/1015_codex_project/actions/runs/38742663794) 与目录验证任务 38742663866 均成功。[正式研究总览](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#understanding)与[三维演示](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#demo)均实际访问。
+
+线上 44 项页面 / 依赖 / 文档 / 许可请求返回 200；站点导航与研究页两份 PNG 的 SHA-256 均与生成原图一致。浏览器验证总览放大与章节定位、48 秒完整动画、8,036 块实际碎片、双螺旋跳转至 36.8 秒以及 MP4 / WebM 声画编码支持；当前错误日志为空。390 × 844 手机视口页面 / 滚动宽均为 375px，弹窗为 390px，无页面横向溢出。截图 `assets/deployed-desktop.png`、`assets/deployed-mobile.png`；完整记录见 `assets/deployed-verification.json`。
+
+正式 URL 仅在发布与访问成功后回填。发布前对准确的暂存快照进行构建、第三方完整性和链接验证，15 项动画 / 声音检查和 10 项目录工具检查通过。仅提交 004 与对应导航和文档，其他在研项目保留；不改变仓库整体许可证。本轮没有在正式站点重新编码影片，既有完整 MP4 的本地解码证据保持独立。

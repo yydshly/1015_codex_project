@@ -1,6 +1,6 @@
 # 多个 Web 的部署约定
 
-001 AetherViz Master、002 image-blaster、003 ER Mario 与 005 Pulse 的研究网页已于 2026-10-15 部署并实际访问验证。使用 GitHub Pages Actions，只发布已提交项目的静态构建产物；其他本地未提交研究不纳入发布。
+001 AetherViz Master、002 image-blaster、003 ER Mario、004 Obsidian 与 005 Pulse 的研究网页已于 2026-10-15 部署并实际访问验证。使用 GitHub Pages Actions，只发布已提交项目的静态构建产物；其他本地未提交研究不纳入发布。
 
 ## 构建与发布
 
@@ -14,13 +14,14 @@ GitHub Pages 每个仓库提供一个站点，可以将多个静态 Web 构建�
 https://yydshly.github.io/1015_codex_project/
 ```
 
-总导航与以下三个项目均已上线并验证，采用以下映射：
+总导航与下列项目均已上线并验证，采用以下映射：
 
 | 内容 | 仓库源目录 | 汇总构建目录 | 站点路径 |
 | --- | --- | --- | --- |
 | 总导航页 | `scripts/build_web.py` 从 `projects.json` 生成 | `_site/index.html` | `/1015_codex_project/` |
 | 001 AetherViz | `projects/001-aetherviz-master/web/` | `_site/projects/001-aetherviz-master/` | `/1015_codex_project/projects/001-aetherviz-master/overview.html` |
 | 002 image-blaster | `projects/002-image-blaster/web/` | `_site/projects/002-image-blaster/` | `/1015_codex_project/projects/002-image-blaster/` |
+| 004 Obsidian | `projects/004-obsidian/web/` | `_site/projects/004-obsidian/` | `/1015_codex_project/projects/004-obsidian/#understanding` |
 | 005 Pulse | `projects/005-pulse/web/` | `_site/projects/005-pulse/` | `/1015_codex_project/projects/005-pulse/overview.html` |
 
 总导航从 `projects.json` 读取展示信息，保持与仓库首页一致；真实演示地址只在部署并验证成功后登记。
@@ -94,4 +95,6 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 
 内容说明表面 Voronoi 碎裂、曲面采样、空间匹配、GPU 时间函数与电影化呈现，区分原作已有、本研究新增和未来方向。提供四种可调形态、48 秒完整声画循环、带声音 MP4 / WebM 输出；价值聚焦片头、品牌、发布会与舞台视觉，并列出模型、音乐、数据、交互与真实装配的扩展条件。第三方运行依赖和许可证随静态构建保存，无根目录应用依赖、后端与密钥。
 
-004 本轮准备发布；仅在 Pages 成功并实际验证后登记正式 URL。
+2026-10-15：内容提交 `0b8ee4c` 已推送至 main，[Pages 任务 38742663794](https://github.com/yydshly/1015_codex_project/actions/runs/38742663794) 构建与部署成功，目录校验任务亦通过。[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#understanding) · [三维声画演示](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#demo)。
+
+已实际验证总览图、放大与章节定位、完整动画、双螺旋章节跳转、MP4 / WebM 编码能力；390px 手机页面与弹窗均无页面横向溢出。真实 URL 在成功后回填。引导 PNG 与效果原图、来源和第三方许可随页面保存；证据和线上截图位于子项目 assets/。本轮未在正式站点重新编码 48 秒影片，完整成片证据保留本地验证记录。

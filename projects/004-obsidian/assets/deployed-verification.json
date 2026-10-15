@@ -1,0 +1,271 @@
+{
+  "page": "https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#understanding",
+  "demo": "https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#demo",
+  "content_commit": "0b8ee4cffb3d951d877f615a6da28a572bbd86a7",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 4119
+    },
+    {
+      "path": "assets/004-obsidian/obsidian-understanding.png",
+      "status": 200,
+      "bytes": 2994066,
+      "sha256": "0bae5821ac64429133054b209f6859392756ad4cd0d1f6fc60facbe6edee20f1"
+    },
+    {
+      "path": "projects/004-obsidian/",
+      "status": 200,
+      "bytes": 25634
+    },
+    {
+      "path": "projects/004-obsidian/THIRD_PARTY.md",
+      "status": 200,
+      "bytes": 3758
+    },
+    {
+      "path": "projects/004-obsidian/app.js",
+      "status": 200,
+      "bytes": 4822
+    },
+    {
+      "path": "projects/004-obsidian/architecture.md",
+      "status": 200,
+      "bytes": 10017
+    },
+    {
+      "path": "projects/004-obsidian/assets/extension-shapes.mjs",
+      "status": 200,
+      "bytes": 5350
+    },
+    {
+      "path": "projects/004-obsidian/assets/extension-system.mjs",
+      "status": 200,
+      "bytes": 12107
+    },
+    {
+      "path": "projects/004-obsidian/assets/film-exporter.mjs",
+      "status": 200,
+      "bytes": 6977
+    },
+    {
+      "path": "projects/004-obsidian/assets/film-soundtrack.mjs",
+      "status": 200,
+      "bytes": 10410
+    },
+    {
+      "path": "projects/004-obsidian/assets/sound-score.mjs",
+      "status": 200,
+      "bytes": 1780
+    },
+    {
+      "path": "projects/004-obsidian/assets/studio-controls.mjs",
+      "status": 200,
+      "bytes": 16659
+    },
+    {
+      "path": "projects/004-obsidian/assets/tour-system.mjs",
+      "status": 200,
+      "bytes": 6378
+    },
+    {
+      "path": "projects/004-obsidian/assets/tour-timeline.mjs",
+      "status": 200,
+      "bytes": 1688
+    },
+    {
+      "path": "projects/004-obsidian/assets/understanding-viewer.mjs",
+      "status": 200,
+      "bytes": 3692
+    },
+    {
+      "path": "projects/004-obsidian/assets/understanding/obsidian-understanding.png",
+      "status": 200,
+      "bytes": 2994066,
+      "sha256": "0bae5821ac64429133054b209f6859392756ad4cd0d1f6fc60facbe6edee20f1"
+    },
+    {
+      "path": "projects/004-obsidian/assets/understanding/obsidian-understanding.svg",
+      "status": 200,
+      "bytes": 490035
+    },
+    {
+      "path": "projects/004-obsidian/assets/webm-duration.mjs",
+      "status": 200,
+      "bytes": 1821
+    },
+    {
+      "path": "projects/004-obsidian/capabilities.md",
+      "status": 200,
+      "bytes": 5734
+    },
+    {
+      "path": "projects/004-obsidian/extensions.md",
+      "status": 200,
+      "bytes": 6424
+    },
+    {
+      "path": "projects/004-obsidian/poster.jpg",
+      "status": 200,
+      "bytes": 67520
+    },
+    {
+      "path": "projects/004-obsidian/references/sources.json",
+      "status": 200,
+      "bytes": 4391
+    },
+    {
+      "path": "projects/004-obsidian/styles.css",
+      "status": 200,
+      "bytes": 26278
+    },
+    {
+      "path": "projects/004-obsidian/vendor/mediabunny/LICENSE",
+      "status": 200,
+      "bytes": 16726
+    },
+    {
+      "path": "projects/004-obsidian/vendor/mediabunny/dist/bundles/mediabunny.mjs",
+      "status": 200,
+      "bytes": 1493443
+    },
+    {
+      "path": "projects/004-obsidian/vendor/mediabunny/src/index.ts",
+      "status": 200,
+      "bytes": 7208
+    },
+    {
+      "path": "projects/004-obsidian/vendor/obsidian/LICENSE",
+      "status": 200,
+      "bytes": 1067
+    },
+    {
+      "path": "projects/004-obsidian/vendor/obsidian/index.html",
+      "status": 200,
+      "bytes": 293699
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/LICENSE",
+      "status": 200,
+      "bytes": 1081
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/build/three.core.js",
+      "status": 200,
+      "bytes": 1458113
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/build/three.module.js",
+      "status": 200,
+      "bytes": 662772
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/controls/OrbitControls.js",
+      "status": 200,
+      "bytes": 40755
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/math/MeshSurfaceSampler.js",
+      "status": 200,
+      "bytes": 8161
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/postprocessing/EffectComposer.js",
+      "status": 200,
+      "bytes": 8501
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/postprocessing/MaskPass.js",
+      "status": 200,
+      "bytes": 4694
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/postprocessing/OutputPass.js",
+      "status": 200,
+      "bytes": 4184
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/postprocessing/Pass.js",
+      "status": 200,
+      "bytes": 4218
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/postprocessing/RenderPass.js",
+      "status": 200,
+      "bytes": 4280
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/postprocessing/ShaderPass.js",
+      "status": 200,
+      "bytes": 3228
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "status": 200,
+      "bytes": 15397
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/shaders/CopyShader.js",
+      "status": 200,
+      "bytes": 729
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "status": 200,
+      "bytes": 1291
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/shaders/OutputShader.js",
+      "status": 200,
+      "bytes": 1876
+    },
+    {
+      "path": "projects/004-obsidian/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "status": 200,
+      "bytes": 37712
+    }
+  ],
+  "errors": [],
+  "guide_sha256": "0bae5821ac64429133054b209f6859392756ad4cd0d1f6fc60facbe6edee20f1",
+  "verified_at": "2026-10-15T13:39:00.758160+00:00",
+  "deployment_run": "https://github.com/yydshly/1015_codex_project/actions/runs/38742663794",
+  "catalog_validation_run": "https://github.com/yydshly/1015_codex_project/actions/runs/38742663866",
+  "browser_checks": {
+    "overview_loaded": [
+      1920,
+      4280
+    ],
+    "zoom_dialog": true,
+    "chapter_navigation": true,
+    "tour_playing": true,
+    "actual_shards": 8036,
+    "tour_seek_seconds": 36.8,
+    "tour_seek_chapter": "双螺旋",
+    "mp4_audio_video_support": true,
+    "webm_audio_video_support": true,
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "mobile_page_width": 375,
+    "mobile_scroll_width": 375,
+    "mobile_dialog_page_width": 390,
+    "mobile_dialog_scroll_width": 390,
+    "console_errors": [],
+    "screenshots": [
+      "deployed-desktop.png",
+      "deployed-mobile.png"
+    ]
+  },
+  "local_validation": {
+    "animation_audio_checks": 15,
+    "catalog_tool_checks": 10,
+    "exact_staged_snapshot_build": true,
+    "third_party_integrity_and_built_links": true
+  },
+  "limits": [
+    "本轮未在正式站点重新编码完整影片；已有本地完整 MP4 解码证据独立保留。",
+    "未重新验证全部浏览器、1080p 完整导出与长时间运行。"
+  ]
+}
