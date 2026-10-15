@@ -8,7 +8,7 @@ import json
 
 PROJECT = Path(__file__).resolve().parents[1]
 BASE = "https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/"
-PATHS = ["", "styles.css", "app.js", "assets/evidence.json", "notes.md", "references/run-report.md", "references/sources.json", "references/context.json", "references/impact.json", "references/trace.json", "references/query.json", "references/query-before-repair.json", "references/UPSTREAM_LICENSE.txt"]
+PATHS = ["", "styles.css", "app.js", "assets/evidence.json", "notes.md", "references/run-report.md", "references/sources.json", "references/context.json", "references/impact.json", "references/trace.json", "references/query.json", "references/query-before-repair.json", "references/UPSTREAM_LICENSE.txt", "assets/comparison.css", "assets/comparison.js", "comparison.md"]
 
 
 def fetch(path):
@@ -23,7 +23,7 @@ def main():
     evidence = json.loads(responses[3][1])
     assert evidence["status"] == "verified" and evidence["searchStatus"] == "verified"
     assert evidence["metrics"]["nodes"] == 71 and len(evidence["edges"]) == 11
-    for i, source in [(1,"styles.css"),(2,"app.js"),(3,"assets/evidence.json")]:
+    for i, source in [(0,"index.html"),(1,"styles.css"),(2,"app.js"),(3,"assets/evidence.json"),(13,"assets/comparison.css"),(14,"assets/comparison.js")]:
         # Git normalizes the Windows working copy's CRLF before Pages builds it.
         assert responses[i][1].replace(b"\r\n",b"\n") == (PROJECT / "web" / source).read_bytes().replace(b"\r\n",b"\n"), source
     assert evidence == json.loads((PROJECT / "web/assets/evidence.json").read_text(encoding="utf-8"))

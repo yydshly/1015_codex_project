@@ -22,7 +22,7 @@ GitNexus 从源码提取符号和跨文件关系，建立可持久查询的代�
 - **原理**：语法解析、跨文件绑定、LadybugDB 图谱、Leiden 分组与候选流程、混合搜索、MCP 输出六步切换。中间结构明确为教学示意。
 - **实际效果**：真实 Function / CALLS 业务子图，点击符号展开邻居、反向调用范围或入口路径，并打开对应源码。
 - **证据**：真实指标、检查项、查询 JSON、复现命令与失败边界。浏览器交互静态回放已提取关系，没有启动在线分析服务。
-- **对照**：公开社区评测、已知缺口和既有 Ix / CodeFlow / Graft 研究；不做未实测的收益排名。
+- **对照**：新增 GitNexus / Ix / CodeFlow 三种使用重心、核心区别矩阵、各自优势与场景，以及运费修改、快速浏览、结构追溯、底层研究四种可切换任务；明确能力交集与实测范围，另保留 Graft 研究入口。[完整对比](comparison.md)
 
 ## 本次样本与统计口径
 
@@ -64,3 +64,9 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 内容提交 `488397b` 已推送，[Pages 任务 38745006562](https://github.com/yydshly/1015_codex_project/actions/runs/38745006562) 成功。线上 13 个页面、资源与证据请求返回 200，JS / CSS / 数据在规范换行后与本地一致；桌面 1280px、手机 390px 无页面横向溢出，局部源码与关键词记录交互正常，无控制台错误。本地另验证 320px、12 项交互及静态引用 / 源码快照完整性。
 
 [桌面预览](assets/desktop.jpg) · [手机预览](assets/mobile.jpg) · [本地交互验证](verification.json) · [线上HTTP检查](assets/deployed-verification.json) · [线上浏览器检查](assets/deployed-browser.json)
+
+## 同类对照扩展
+
+[直接打开三工具对照](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#compare)：三种使用重心、五维区别、相对优势、能力交集及四种任务切换。新增内容只作功能与实现取舍分析，不形成未验证的准确率排名。
+
+[桌面对照预览](assets/comparison-desktop.jpg) · [手机任务切换](assets/comparison-mobile.jpg) · [11项交互与响应式检查](assets/comparison-verification.json) · [完整对比](comparison.md)

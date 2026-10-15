@@ -53,7 +53,10 @@ def verify():
     assert data["searchStatus"] == "verified" and data["results"]["query"]["processes"]
     assert not data["results"]["query"].get("warning")
     assert data["metrics"]["verifiedCalls"] == data["metrics"]["expectedCalls"]
-    result = {"status":"passed", "relativeLinks":len(local), "businessFunctions":len(ids), "callEdges":len(data["edges"]), "upstreamChecks":len(data["checks"]), "sourceSnapshotsMatch":True}
+    assert (SITE / "comparison.md").is_file()
+    assert all(f"scenario-{i}" in parser.ids for i in range(4))
+    assert (SITE / "assets/comparison.js").is_file() and (SITE / "assets/comparison.css").is_file()
+    result = {"status":"passed", "relativeLinks":len(local), "businessFunctions":len(ids), "callEdges":len(data["edges"]), "upstreamChecks":len(data["checks"]), "sourceSnapshotsMatch":True, "comparisonScenarios":4}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return result
 

@@ -36,3 +36,7 @@ LadybugDB 平台二进制需要保留；不能通过 omit optional 仅跳过向�
 构建沿用 scripts/build_web.py，输出 `_site/projects/006-gitnexus/`。发布遵循 docs/deployment.md，仅在成功部署并验证后填写真实 demo_url。
 
 发布完成：内容提交 `488397b`，Pages 任务 `38745006562` 成功。线上13项HTTP检查、桌面/手机与关键交互通过；数据与本地一致（文本按LF规范换行比较），记录在 assets/deployed-verification.json 与 assets/deployed-browser.json。索引已在部署并验证后回填真实地址。
+
+## 同类对比扩展
+
+2026-10-15：对照区扩展为三种使用重心、关系/存储/更新/源码边界矩阵、GitNexus相对优势、能力交集及四种任务分工。Ix后端未跑、CodeFlow与GitNexus不同样本等证据边界明确呈现；任务切换为教学内容，不新增或伪造分析结果。复核官方README、Ix命令和后端说明，来源加入sources.json，完整说明见comparison.md。新增对照资源随既有assets构建，验证沿用原样本并检查任务切换、键盘、移动布局与发布资源。

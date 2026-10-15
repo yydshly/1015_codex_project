@@ -7,7 +7,9 @@
   <meta name="theme-color" content="#101b22">
   <title>GitNexus · 看见代码之间的关系</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/comparison.css">
   <script src="app.js" defer></script>
+  <script src="assets/comparison.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">跳到内容</a>
@@ -79,7 +81,36 @@
       <div class="limitations"><b>哪些地方仍可能遗漏？</b><p>动态调用、复杂返回类型、框架封装和路由辅助函数会影响关系覆盖；流程追踪还受入口、深度和分支预算限制。缺少一条边，不能单独证明不存在依赖。</p><a href="https://github.com/abhigyanpatwari/GitNexus/blob/main/gitnexus/bench/tool-accuracy/known-gaps.json" target="_blank" rel="noreferrer">上游已知缺口 ↗</a></div>
     </section>
 
-    <section class="compare-section" id="compare"><div class="wrap section"><div class="section-intro"><div><div class="eyebrow muted">06 / IN OUR RESEARCH</div><h2>我们研究过的同一条路线。</h2></div><p>共同思路是从代码提取结构，再查询或展示。<br>选型要看解析、存储与任务入口。</p></div><div class="table-scroll comparison"><table><thead><tr><th>项目</th><th>侧重点</th><th>结构保存</th><th>我们的研究范围</th></tr></thead><tbody><tr class="highlight-row"><th>GitNexus <small>本项目</small></th><td>代码图谱 + Agent 任务查询</td><td>本地 LadybugDB</td><td id="comparison-scope">本页记录的真实样本与源码核查</td></tr><tr><th><a href="https://github.com/ix-infrastructure/Ix" target="_blank" rel="noreferrer">Ix ↗</a></th><td>持久结构索引与目标上下文</td><td>ArangoDB + memory-layer</td><td>已研究源码与数据链路，未运行后端</td></tr><tr><th><a href="https://github.com/braedonsaunders/codeflow" target="_blank" rel="noreferrer">CodeFlow ↗</a></th><td>网页结构浏览与轻量分析</td><td>当前分析、摘要缓存与导出</td><td>已用 15 文件真实样本运行原生展示</td></tr><tr><th><a href="https://github.com/trailhq/Graft" target="_blank" rel="noreferrer">Graft ↗</a></th><td>代码地图与按需上下文</td><td>代码索引与关系图</td><td>能力已整理，完整构建与收益待验证</td></tr></tbody></table></div><p class="compare-note">对照依据我们 2026-09-16 至 10-05 的既有研究记录，未做四工具同任务准确率排名。<a href="https://github.com/yydshly/1004_codex_project/tree/main/projects/002-codeflow" target="_blank" rel="noreferrer">查看之前的对照研究 ↗</a></p></div></section>
+    <section class="compare-section" id="compare"><div class="wrap section">
+      <div class="section-intro"><div><div class="eyebrow muted">06 / THREE TOOLS, DIFFERENT EMPHASES</div><h2>同一条路线，<br>三种使用重心。</h2></div><p>CodeFlow 偏快速浏览与报告；Ix 偏持久结构维护；<br>GitNexus 偏围绕开发任务返回上下文。<br>它们共享多项能力，选型取决于具体任务。</p></div>
+      <nav class="compare-jumps" aria-label="对照区章节"><a href="#tool-profiles">三种重心 ↓</a><a href="#difference-matrix">核心矩阵 ↓</a><a href="#tool-advantages">相对优势 ↓</a><a href="#task-scenarios">任务演示 ↓</a></nav>
+      <div class="shared-route" aria-label="三者共有的处理思路"><span>解析源码</span><i>→</i><span>提取并连接关系</span><i>→</i><span>查询或计算</span><i>→</i><span>交给人或 AI</span><p>差别集中在关系粒度、保存与更新、结果组织和使用入口。</p></div>
+      <div class="tool-profiles" id="tool-profiles">
+        <article class="tool-profile nexus"><div class="profile-head"><span class="profile-number">01</span><span class="profile-label">任务查询</span></div><h3>GitNexus</h3><p class="profile-role">围绕一个符号，组织开发上下文。</p><div class="profile-stack"><span>符号 · 关系 · 候选流程</span><b>↓</b><strong>本地 LadybugDB</strong><b>↓</b><span>CLI / MCP / HTTP / 网页</span></div><ul><li>查询调用上下文、潜在影响和入口路径</li><li>把分组、流程参与信息纳入结果</li><li>嵌入式索引，单机运行组件较少</li></ul><p class="profile-scene"><b>适合</b> 给编程助手提供局部上下文，调查公共函数修改。</p><a href="https://github.com/abhigyanpatwari/GitNexus/blob/main/ARCHITECTURE.md" target="_blank" rel="noreferrer">核对架构与工具 ↗</a></article>
+        <article class="tool-profile ix"><div class="profile-head"><span class="profile-number">02</span><span class="profile-label">结构维护</span></div><h3>Ix</h3><p class="profile-role">维护可持续查询、追溯的结构图。</p><div class="profile-stack"><span>符号 · 调用 · 导入 · 图谱修订</span><b>↓</b><strong>ArangoDB + memory-layer</strong><b>↓</b><span>Docker 后端 → CLI / MCP / Compass</span></div><ul><li>map / watch 持续维护代码结构</li><li>history / diff 追踪图谱实体和修订</li><li>结构导航、子系统分析与有限上下文</li></ul><p class="profile-scene"><b>适合</b> 长期跟踪仓库结构，查询依赖及结构变化。</p><a href="https://github.com/ix-infrastructure/Ix#how-it-works" target="_blank" rel="noreferrer">核对架构与命令 ↗</a></article>
+        <article class="tool-profile codeflow"><div class="profile-head"><span class="profile-number">03</span><span class="profile-label">快速浏览</span></div><h3>CodeFlow</h3><p class="profile-role">把仓库结构变成可浏览的视图。</p><div class="profile-stack"><span>函数信息 · 文件关联 · 目录指标</span><b>↓</b><strong>浏览器分析 + 摘要 / 导出</strong><b>↓</b><span>交互视图 / 源码卡片 / 报告</span></div><ul><li>无需业务后端，可直接打开本地文件</li><li>浏览关系、目录、规模和源码卡片</li><li>多格式导出与 Card 指标记录</li></ul><p class="profile-scene"><b>适合</b> 快速熟悉项目，做结构讲解与轻量报告。</p><a href="https://github.com/braedonsaunders/codeflow#features" target="_blank" rel="noreferrer">核对视图与导出 ↗</a></article>
+      </div>
+
+      <div class="difference-heading" id="difference-matrix"><h3>核心区别，放在同一张表里。</h3><span>功能与架构对照 · 非性能排名</span></div>
+      <div class="table-scroll comparison detailed-comparison"><table><caption class="sr-only">GitNexus、Ix、CodeFlow 核心区别</caption><thead><tr><th scope="col">维度</th><th scope="col">GitNexus</th><th scope="col">Ix</th><th scope="col">CodeFlow</th></tr></thead><tbody>
+        <tr><th scope="row">查询与展示重心</th><td>符号关系 + 分组 / 候选流程</td><td>符号结构 + 目标上下文 / 图谱历史</td><td>主图以文件关联为中心，附函数信息</td></tr>
+        <tr><th scope="row">更新与检查</th><td>analyze 更新；detect_changes 分析 Git diff</td><td>map / watch；history / diff 查询图谱修订</td><td>CLI 监听；Card 保存指标历史</td></tr>
+        <tr><th scope="row">运行组成</th><td>本地嵌入式数据库，无需独立数据库服务</td><td>Docker 中运行 ArangoDB 与 memory-layer</td><td>浏览器运行；CLI 可提供本地网页</td></tr>
+        <tr><th scope="row">研究底层实现</th><td>解析、持久化、查询和展示可继续追源码</td><td>公开 CLI 与解析；Scala 后端源码私有</td><td>可沿解析与图形代码研究浏览器呈现</td></tr>
+        <tr><th scope="row">使用时的取舍</th><td>要维护索引，原生依赖与搜索扩展可能需处理</td><td>要管理后端服务；镜像可用，后端源码不公开</td><td>浏览器内存、采样和解析规则影响覆盖</td></tr>
+      </tbody></table></div>
+      <p class="compare-note">图谱修订不等于 Git commit，指标历史也不等于版本化代码图谱。<a href="https://github.com/ix-infrastructure/Ix/blob/main/skills/ix/references/commands.md" target="_blank" rel="noreferrer">Ix 命令参考 ↗</a><a href="https://github.com/ix-infrastructure/Ix/blob/main/CONTRIBUTING.md#backend-development" target="_blank" rel="noreferrer">Ix 后端边界 ↗</a></p>
+
+      <div class="comparison-advantages" id="tool-advantages"><article><span>相对 CodeFlow</span><h3>更适合把具体调查交给 Agent。</h3><p>以函数为目标，返回调用者、流程和分层影响；MCP 直接提供任务工具。CodeFlow 的强项是让人快速浏览文件结构与报告，也能导出 JSON 供后续处理。</p></article><article><span>相对 Ix</span><h3>运行组件更少，底层链路更便于研究。</h3><p>GitNexus 使用嵌入式图数据库，可继续阅读建图、存储与查询实现。Ix 需要独立后端，后端镜像公开可用，Scala memory-layer 的源码位于私有仓库。</p></article></div>
+      <div class="shared-capabilities"><b>能力交集也要看清。</b><p>持久图谱、调用导航、影响分析、MCP、Agent 技能和 hooks 在 GitNexus 与 Ix 中都有对应能力。这里比较的是组织方式和运行取舍，尚无同仓库实验证明谁解析更准、速度更快或更省 Token。</p><a href="comparison.md">完整对比与证据 ↗</a></div>
+
+      <div class="scenario-heading" id="task-scenarios"><div><span class="eyebrow muted">PICK A TASK</span><h3>同一个任务，分别怎样处理？</h3></div><p>以下为任务分工示意；仅运费案例中的 GitNexus 结果来自本次实测。</p></div>
+      <div class="scenario-tabs" role="tablist" aria-label="按任务比较工具"><button id="scenario-0" role="tab" aria-selected="true" aria-controls="scenario-panel" data-scenario="0">修改运费规则</button><button id="scenario-1" role="tab" aria-selected="false" aria-controls="scenario-panel" tabindex="-1" data-scenario="1">快速熟悉仓库</button><button id="scenario-2" role="tab" aria-selected="false" aria-controls="scenario-panel" tabindex="-1" data-scenario="2">持续跟踪结构</button><button id="scenario-3" role="tab" aria-selected="false" aria-controls="scenario-panel" tabindex="-1" data-scenario="3">研究底层实现</button></div>
+      <div class="scenario-panel" id="scenario-panel" role="tabpanel" aria-labelledby="scenario-0"><div class="scenario-summary"><h4 id="scenario-title">修改运费规则</h4><p id="scenario-description">正在载入任务对照…</p></div><div class="scenario-lanes" id="scenario-lanes"></div><p class="scenario-choice" id="scenario-choice"></p></div>
+
+      <div class="comparison-evidence"><div><span>GitNexus</span><b>真实小样本已跑</b><p id="comparison-scope">11 条预期业务调用均找到；本页保留原始查询。</p></div><div><span>Ix</span><b>源码研究已完成</b><p>尚未运行后端，没有同样本输出和收益数据。</p></div><div><span>CodeFlow</span><b>原生展示已运行</b><p>已有 15 文件样本；与本次结算样本不是同一套输入。</p></div></div>
+      <p class="compare-note">2026-10-15 核对官方材料，结合 09-16 至 10-05 的既有研究。Graft 的代码地图与按需上下文研究另行保留。<a href="https://github.com/yydshly/1004_codex_project/tree/main/projects/002-codeflow" target="_blank" rel="noreferrer">既有四工具对照 ↗</a><a href="https://github.com/yydshly/0914_codex_project/tree/main/projects/010-graft" target="_blank" rel="noreferrer">Graft 研究 ↗</a></p>
+    </div></section>
     <section class="wrap sources-section" id="sources"><div><span class="eyebrow muted">SOURCE NOTES</span><h3>从每个结论，回到原始材料。</h3></div><div><a href="https://github.com/abhigyanpatwari/GitNexus/blob/main/ARCHITECTURE.md" target="_blank" rel="noreferrer">架构文档 ↗</a><a href="https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.12" target="_blank" rel="noreferrer">实测版本 v1.6.12 ↗</a><a href="references/sources.json">来源清单 ↗</a><a href="notes.md">研究记录 ↗</a></div><p>本页是独立中文研究与交互展示。首页关系图按原创样本绘制，实测区从运行记录读取。上游当前采用 PolyForm Noncommercial 1.0.0；使用范围以其许可证为准。主线功能描述与稳定版实测分别标明。</p></section>
   </main>
   <footer class="footer wrap"><a class="brand" href="#"><b>GitNexus</b><span>代码关系，逐条核对。</span></a><span>GITHUB RESEARCH LAB · 006 · 2026.10.15</span><a href="../../">返回研究导航 ↗</a></footer>

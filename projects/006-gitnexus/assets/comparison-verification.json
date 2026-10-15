@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-15",
+  "checks": [
+    {
+      "name": "三工具卡片与核心矩阵",
+      "passed": true
+    },
+    {
+      "name": "场景切换：修改运费规则",
+      "passed": true
+    },
+    {
+      "name": "场景切换：快速熟悉仓库",
+      "passed": true
+    },
+    {
+      "name": "场景切换：持续跟踪结构",
+      "passed": true
+    },
+    {
+      "name": "场景切换：研究底层实现",
+      "passed": true
+    },
+    {
+      "name": "场景页签键盘Home",
+      "passed": true
+    },
+    {
+      "name": "场景页签键盘方向键",
+      "passed": true
+    },
+    {
+      "name": "示意与实测标记",
+      "passed": true
+    },
+    {
+      "name": "返回实测图谱",
+      "passed": true
+    },
+    {
+      "name": "390px手机任务切换无页面溢出",
+      "passed": true
+    },
+    {
+      "name": "320px窄屏任务面板无页面溢出",
+      "passed": true
+    }
+  ],
+  "mobile": {
+    "overflow": false,
+    "scenario": "持续跟踪结构",
+    "width": 390
+  },
+  "narrow": {
+    "overflow": false,
+    "scenario": "研究底层实现",
+    "width": 320
+  },
+  "consoleErrors": [],
+  "scope": "Comparison teaching content and feature organization; no new Ix or CodeFlow analysis outputs."
+}
