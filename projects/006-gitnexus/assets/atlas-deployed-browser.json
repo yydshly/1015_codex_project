@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-15T16:29:00.468Z",
+  "url": "https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/assets/atlas.html#workspace",
+  "checks": [
+    {
+      "mode": "overview",
+      "title": "先看整仓，代码之间怎样连接。",
+      "passed": true
+    },
+    {
+      "mode": "communities",
+      "title": "目录之外，哪些代码联系更紧密？",
+      "passed": true
+    },
+    {
+      "mode": "context",
+      "title": "选一个函数，把上下文展开。",
+      "passed": true
+    },
+    {
+      "mode": "flows",
+      "title": "沿着流程，一步一步走过代码。",
+      "passed": true
+    },
+    {
+      "mode": "impact",
+      "title": "改一个函数，要调查哪些地方？",
+      "passed": true
+    },
+    {
+      "mode": "search",
+      "title": "让搜索命中回到代码地图。",
+      "passed": true
+    },
+    {
+      "mode": "changes",
+      "title": "把一次具体修改，放回关系图中。",
+      "passed": true
+    },
+    {
+      "mode": "rename",
+      "title": "改名字之前，先看确切修改位置。",
+      "passed": true
+    },
+    {
+      "mode": "api",
+      "title": "从客户端请求，连到服务端处理器。",
+      "passed": true
+    },
+    {
+      "mode": "pdg",
+      "title": "从函数关系，继续深入到语句。",
+      "passed": true
+    },
+    {
+      "mode": "agent",
+      "title": "编程助手，怎样用这些能力？",
+      "passed": true
+    },
+    {
+      "mode": "coverage",
+      "title": "把所有入口，放进同一张能力地图。",
+      "passed": true
+    },
+    {
+      "mode": "shape-source",
+      "passed": true
+    },
+    {
+      "mode": "pdg-source",
+      "passed": true
+    },
+    {
+      "mode": "mobile-flow",
+      "passed": true
+    }
+  ],
+  "consoleErrors": []
+}

@@ -122,3 +122,5 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 [完整图谱与金额探针报告](references/atlas-report.md) · [高级运行报告](references/advanced-run-report.md) · [高级原始数据](web/assets/advanced.json) · [高级原创源码](src/advanced-lab)
 
 本地 61 项浏览器交互与响应式检查通过，涵盖图谱视角、查找、缩放、平移、分组、上下文、流程播放、分层影响、搜索与源码、diff 与金额探针、改名差异、API 字段、语句依赖、四种污点对照、12 步导览、390px / 320px 全部模式，以及主页面内嵌联动；没有脚本错误。[交互检查](assets/atlas-verification.json) · [数据与源码完整性](assets/atlas-integrity.json)。
+
+工作台内容提交 `4821707` 已通过 [Pages 任务 38768846028](https://github.com/yydshly/1015_codex_project/actions/runs/38768846028) 发布。线上 39 项资源与文本 / 数据一致性检查通过，12 类能力及 API 字段、PDG 源码、手机流程共 15 项浏览器检查通过，无脚本错误。[线上检查](assets/atlas-deployed-browser.json) · [整仓地图](assets/atlas-desktop.jpg) · [API 字段联动](assets/atlas-api.jpg) · [PDG](assets/atlas-pdg.jpg) · [手机](assets/atlas-mobile.jpg)。
