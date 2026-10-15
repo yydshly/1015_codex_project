@@ -1,0 +1,21 @@
+{
+  "processes": [],
+  "process_symbols": [],
+  "definitions": [],
+  "timing": {
+    "bm25": 1.1,
+    "vector": 7.8,
+    "merge": 0.1,
+    "symbol_lookup": 0.1,
+    "ranking": 0,
+    "formatting": 0,
+    "wall": 10.2
+  },
+  "contentAvailability": {
+    "requested": true,
+    "profile": "full",
+    "available": true,
+    "scope": "full"
+  },
+  "warning": "FTS extension failed to load — keyword search degraded (load-only policy (no install attempted); LOAD fts failed: Binder exception: Extension: fts is an official extension and has not been installed. You can install it by: install fts). Run `gitnexus doctor` for details, then `gitnexus analyze --repair-fts` with network access to reinstall. (resolved: checkout-lab/branch:main, indexed 2026-10-15T13:27:57.532Z)"
+}

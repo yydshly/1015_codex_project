@@ -1,0 +1,20 @@
+
+  GitNexus Analyzer (1.6.12)
+
+  GitNexus Analyzer (1.6.12)
+(node:43244) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":40,"time":1792070877407,"name":"gitnexus","msg":"GitNexus: FTS extension unavailable; continuing without FTS features. extension install for fts timed out after 15000ms; LOAD fts had failed: Binder exception: Extension: fts is an official extension and has not been installed. You can install it by: install fts."}
+[2K
+FTS extension unavailable; skipping search-index creation. Full-text/BM25 search will be disabled until the LadybugDB FTS extension is installed once with network access (GITNEXUS_LBUG_EXTENSION_INSTALL=auto) or pre-installed for offline use. Run `gitnexus doctor` for details.
+
+  Repository indexed successfully (22.4s)
+
+  71 nodes | 131 edges | 4 clusters | 4 flows
+  <LAB>\checkout-lab
+
+  Warning: full-text/BM25 search is disabled — the LadybugDB FTS extension was unavailable.
+  Install it once with network access (GITNEXUS_LBUG_EXTENSION_INSTALL=auto), then run
+  `gitnexus analyze --repair-fts` to build the search indexes. Run `gitnexus doctor` for details.
+
+

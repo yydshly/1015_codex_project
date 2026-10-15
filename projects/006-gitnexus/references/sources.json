@@ -1,0 +1,22 @@
+{
+  "researchedAt": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "runtimeVersion": "1.6.12",
+  "runtimeTagCommit": "26ddd95685f13d07f3661ef37c7ca1b62d29c409",
+  "mainTreeObserved": "5c3961756bc06e3a0b1af53864bb5d479abea656",
+  "note": "实测使用固定npm版本，主线链接可能变化；功能说明不等同于全部已实测。",
+  "sources": [
+    {"id":"readme","url":"https://github.com/abhigyanpatwari/GitNexus/blob/5c3961756bc06e3a0b1af53864bb5d479abea656/README.md","supports":"能力、工具、可选embeddings与接入"},
+    {"id":"architecture","url":"https://github.com/abhigyanpatwari/GitNexus/blob/5c3961756bc06e3a0b1af53864bb5d479abea656/ARCHITECTURE.md","supports":"流水线、LadybugDB、入口、语言规则和条件"},
+    {"id":"processes","url":"https://github.com/abhigyanpatwari/GitNexus/blob/5c3961756bc06e3a0b1af53864bb5d479abea656/gitnexus/src/core/ingestion/process-processor.ts","supports":"入口、调用遍历、预算和静态流程"},
+    {"id":"communities","url":"https://github.com/abhigyanpatwari/GitNexus/blob/5c3961756bc06e3a0b1af53864bb5d479abea656/gitnexus/src/core/ingestion/community-processor.ts","supports":"Leiden社区检测"},
+    {"id":"hybrid","url":"https://github.com/abhigyanpatwari/GitNexus/blob/5c3961756bc06e3a0b1af53864bb5d479abea656/gitnexus/src/core/search/hybrid-search.ts","supports":"BM25、语义检索、RRF和不可用分支"},
+    {"id":"release","url":"https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.12","supports":"固定版本与发布说明"},
+    {"id":"benchmark","url":"https://github.com/abhigyanpatwari/GitNexus/discussions/3493","supports":"12个真实Python修复任务；Opus8/12至9/12成本+11%，Codex11/12至10/12成本+20%；多数单元n=1"},
+    {"id":"gaps","url":"https://github.com/abhigyanpatwari/GitNexus/blob/5c3961756bc06e3a0b1af53864bb5d479abea656/gitnexus/bench/tool-accuracy/known-gaps.json","supports":"特定路由、工厂返回和污点处理缺口"},
+    {"id":"license","url":"https://github.com/abhigyanpatwari/GitNexus/blob/v1.6.12/LICENSE","supports":"PolyForm Noncommercial1.0.0原文另存"},
+    {"id":"ix-prior","url":"https://github.com/yydshly/1002_codex_project/tree/main/projects/010-ix","supports":"2026-10-04既有研究"},
+    {"id":"codeflow-prior","url":"https://github.com/yydshly/1004_codex_project/tree/main/projects/002-codeflow","supports":"2026-10-05既有研究与15文件样本"},
+    {"id":"graft-prior","url":"https://github.com/yydshly/0914_codex_project/tree/main/projects/010-graft","supports":"2026-09-16既有能力研究"}
+  ]
+}

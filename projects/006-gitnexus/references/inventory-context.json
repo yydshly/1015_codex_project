@@ -1,0 +1,30 @@
+{
+  "status": "found",
+  "symbol": {
+    "uid": "Function:services/inventory.ts:validate",
+    "name": "validate",
+    "kind": "Function",
+    "filePath": "services/inventory.ts",
+    "startLine": 4,
+    "endLine": 8
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "uid": "Function:services/inventory.ts:reserveStock",
+        "name": "reserveStock",
+        "filePath": "services/inventory.ts"
+      }
+    ]
+  },
+  "outgoing": {},
+  "processes": [
+    {
+      "id": "proc_0_submitorder",
+      "name": "SubmitOrder → Validate",
+      "step_index": 4,
+      "step_count": 4
+    }
+  ]
+}

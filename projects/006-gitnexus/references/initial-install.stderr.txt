@@ -1,0 +1,160 @@
+2037 warn cleanup       code: 'EBUSY',
+2037 warn cleanup       syscall: 'rmdir',
+2037 warn cleanup       path: '<LAB>\\node_modules\\tree-sitter-java'
+2037 warn cleanup     }
+2037 warn cleanup   ],
+2037 warn cleanup   [
+2037 warn cleanup     '\\\\?\\<LAB>\\node_modules\\tree-sitter-rust',
+2037 warn cleanup     [Error: EBUSY: resource busy or locked, rmdir '<LAB>\node_modules\tree-sitter-rust'] {
+2037 warn cleanup       errno: -4082,
+2037 warn cleanup       code: 'EBUSY',
+2037 warn cleanup       syscall: 'rmdir',
+2037 warn cleanup       path: '<LAB>\\node_modules\\tree-sitter-rust'
+2037 warn cleanup     }
+2037 warn cleanup   ],
+2037 warn cleanup   [
+2037 warn cleanup     '\\\\?\\<LAB>\\node_modules\\tree-sitter-javascript',
+2037 warn cleanup     [Error: EBUSY: resource busy or locked, rmdir '<LAB>\node_modules\tree-sitter-javascript'] {
+2037 warn cleanup       errno: -4082,
+2037 warn cleanup       code: 'EBUSY',
+2037 warn cleanup       syscall: 'rmdir',
+2037 warn cleanup       path: '<LAB>\\node_modules\\tree-sitter-javascript'
+2037 warn cleanup     }
+2037 warn cleanup   ],
+2037 warn cleanup   [
+2037 warn cleanup     '\\\\?\\<LAB>\\node_modules\\tree-sitter-python',
+2037 warn cleanup     [Error: EBUSY: resource busy or locked, rmdir '<LAB>\node_modules\tree-sitter-python'] {
+2037 warn cleanup       errno: -4082,
+2037 warn cleanup       code: 'EBUSY',
+2037 warn cleanup       syscall: 'rmdir',
+2037 warn cleanup       path: '<LAB>\\node_modules\\tree-sitter-python'
+2037 warn cleanup     }
+2037 warn cleanup   ],
+2037 warn cleanup   [
+2037 warn cleanup     '\\\\?\\<LAB>\\node_modules\\tree-sitter-php',
+2037 warn cleanup     [Error: EBUSY: resource busy or locked, rmdir '<LAB>\node_modules\tree-sitter-php'] {
+2037 warn cleanup       errno: -4082,
+2037 warn cleanup       code: 'EBUSY',
+2037 warn cleanup       syscall: 'rmdir',
+2037 warn cleanup       path: '<LAB>\\node_modules\\tree-sitter-php'
+2037 warn cleanup     }
+2037 warn cleanup   ],
+2037 warn cleanup   [
+2037 warn cleanup     '\\\\?\\<LAB>\\node_modules\\tree-sitter-typescript',
+2037 warn cleanup     [Error: EBUSY: resource busy or locked, rmdir '<LAB>\node_modules\tree-sitter-typescript'] {
+2037 warn cleanup       errno: -4082,
+2037 warn cleanup       code: 'EBUSY',
+2037 warn cleanup       syscall: 'rmdir',
+2037 warn cleanup       path: '<LAB>\\node_modules\\tree-sitter-typescript'
+2037 warn cleanup     }
+2037 warn cleanup   ],
+2037 warn cleanup   [
+2037 warn cleanup     '\\\\?\\<LAB>\\node_modules\\tree-sitter-ruby',
+2037 warn cleanup     [Error: EBUSY: resource busy or locked, rmdir '<LAB>\node_modules\tree-sitter-ruby'] {
+2037 warn cleanup       errno: -4082,
+2037 warn cleanup       code: 'EBUSY',
+2037 warn cleanup       syscall: 'rmdir',
+2037 warn cleanup       path: '<LAB>\\node_modules\\tree-sitter-ruby'
+2037 warn cleanup     }
+2037 warn cleanup   ],
+2037 warn cleanup   [
+2037 warn cleanup     '\\\\?\\<LAB>\\node_modules',
+2037 warn cleanup     [Error: EBUSY: resource busy or locked, rmdir '<LAB>\node_modules\tree-sitter-go'] {
+2037 warn cleanup       errno: -4082,
+2037 warn cleanup       code: 'EBUSY',
+2037 warn cleanup       syscall: 'rmdir',
+2037 warn cleanup       path: '<LAB>\\node_modules\\tree-sitter-go'
+2037 warn cleanup     }
+2037 warn cleanup   ],
+2037 warn cleanup   [
+2037 warn cleanup     '\\\\?\\<LAB>\\node_modules\\gitnexus',
+2037 warn cleanup     [Error: EPERM: operation not permitted, rmdir '<LAB>\node_modules\gitnexus\web'] {
+2037 warn cleanup       errno: -4048,
+2037 warn cleanup       code: 'EPERM',
+2037 warn cleanup       syscall: 'rmdir',
+2037 warn cleanup       path: '<LAB>\\node_modules\\gitnexus\\web'
+2037 warn cleanup     }
+2037 warn cleanup   ],
+2037 warn cleanup   [
+2037 warn cleanup     '\\\\?\\<LAB>\\node_modules\\@modelcontextprotocol',
+2037 warn cleanup     [Error: EPERM: operation not permitted, rmdir '<LAB>\node_modules\@modelcontextprotocol\sdk\dist'] {
+2037 warn cleanup       errno: -4048,
+2037 warn cleanup       code: 'EPERM',
+2037 warn cleanup       syscall: 'rmdir',
+2037 warn cleanup       path: '<LAB>\\node_modules\\@modelcontextprotocol\\sdk\\dist'
+2037 warn cleanup     }
+2037 warn cleanup   ]
+2037 warn cleanup ]
+2038 verbose stack Error: command failed
+2038 verbose stack     at promiseSpawn (D:\software\nodejs\node_modules\npm\node_modules\@npmcli\promise-spawn\lib\index.js:22:22)
+2038 verbose stack     at spawnWithShell (D:\software\nodejs\node_modules\npm\node_modules\@npmcli\promise-spawn\lib\index.js:124:10)
+2038 verbose stack     at promiseSpawn (D:\software\nodejs\node_modules\npm\node_modules\@npmcli\promise-spawn\lib\index.js:12:12)
+2038 verbose stack     at runScriptPkg (D:\software\nodejs\node_modules\npm\node_modules\@npmcli\run-script\lib\run-script-pkg.js:77:13)
+2038 verbose stack     at runScript (D:\software\nodejs\node_modules\npm\node_modules\@npmcli\run-script\lib\run-script.js:9:12)
+2038 verbose stack     at D:\software\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\rebuild.js:329:17
+2038 verbose stack     at run (D:\software\nodejs\node_modules\npm\node_modules\promise-call-limit\dist\commonjs\index.js:67:22)
+2038 verbose stack     at D:\software\nodejs\node_modules\npm\node_modules\promise-call-limit\dist\commonjs\index.js:84:9
+2038 verbose stack     at new Promise (<anonymous>)
+2038 verbose stack     at callLimit (D:\software\nodejs\node_modules\npm\node_modules\promise-call-limit\dist\commonjs\index.js:35:69)
+2039 verbose pkgid @ladybugdb/core@0.18.3
+2040 error code 1
+2041 error path <LAB>\node_modules\@ladybugdb\core
+2042 error command failed
+2043 error command C:\WINDOWS\system32\cmd.exe /d /s /c node install.js
+2044 error Prebuilt binary is not available, building from source...
+2044 error Using 32 threads to build Lbug.
+2044 error Installing dependencies...
+2045 error node:child_process:1017
+2045 error     throw err;
+2045 error     ^
+2045 error
+2045 error <ref *1> Error: spawnSync C:\WINDOWS\system32\cmd.exe ENOENT
+2045 error     at Object.spawnSync (node:internal/child_process:1160:20)
+2045 error     at spawnSync (node:child_process:928:24)
+2045 error     at Object.execSync (node:child_process:1009:15)
+2045 error     at Object.<anonymous> (<LAB>\node_modules\@ladybugdb\core\install.js:107:14)
+2045 error     at Module._compile (node:internal/modules/cjs/loader:1872:14)
+2045 error     at Object..js (node:internal/modules/cjs/loader:2003:10)
+2045 error     at Module.load (node:internal/modules/cjs/loader:1594:32)
+2045 error     at Module._load (node:internal/modules/cjs/loader:1396:12)
+2045 error     at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+2045 error     at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5) {
+2045 error   errno: -4058,
+2045 error   code: 'ENOENT',
+2045 error   syscall: 'spawnSync C:\\WINDOWS\\system32\\cmd.exe',
+2045 error   path: 'C:\\WINDOWS\\system32\\cmd.exe',
+2045 error   spawnargs: [ '/d', '/s', '/c', '"npm install"' ],
+2045 error   error: [Circular *1],
+2045 error   status: null,
+2045 error   signal: null,
+2045 error   output: null,
+2045 error   pid: 0,
+2045 error   stdout: undefined,
+2045 error   stderr: undefined
+2045 error }
+2045 error
+2045 error Node.js v24.19.0
+2046 silly unfinished npm timer reify 1792070480091
+2047 silly unfinished npm timer reify:build 1792070686916
+2048 silly unfinished npm timer build 1792070686923
+2049 silly unfinished npm timer build:deps 1792070686924
+2050 silly unfinished npm timer build:run:install 1792070687062
+2051 silly unfinished npm timer build:run:install:node_modules/@ladybugdb/core 1792070687064
+2052 silly unfinished npm timer build:run:install:node_modules/tree-sitter 1792070687175
+2053 silly unfinished npm timer build:run:install:node_modules/tree-sitter-c-sharp 1792070687199
+2054 silly unfinished npm timer build:run:install:node_modules/tree-sitter-cpp 1792070687211
+2055 silly unfinished npm timer build:run:install:node_modules/tree-sitter-go 1792070687223
+2056 silly unfinished npm timer build:run:install:node_modules/tree-sitter-java 1792070687234
+2057 silly unfinished npm timer build:run:install:node_modules/tree-sitter-javascript 1792070687247
+2058 silly unfinished npm timer build:run:install:node_modules/tree-sitter-php 1792070687258
+2059 silly unfinished npm timer build:run:install:node_modules/tree-sitter-python 1792070687273
+2060 silly unfinished npm timer build:run:install:node_modules/tree-sitter-ruby 1792070687293
+2061 silly unfinished npm timer build:run:install:node_modules/tree-sitter-rust 1792070687307
+2062 silly unfinished npm timer build:run:install:node_modules/tree-sitter-typescript 1792070687323
+2063 verbose cwd <WORKSPACE>
+2064 verbose os Windows_NT 10.0.26200
+2065 verbose node v24.19.0
+2066 verbose npm  v10.9.2
+2067 verbose exit 1
+2068 verbose code 1
+2069 error A complete log of this run can be found in: <USER_HOME>\AppData\Local\npm-cache\_logs\2026-10-15T13_21_19_519Z-debug-0.log

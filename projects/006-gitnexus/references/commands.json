@@ -1,0 +1,137 @@
+[
+  {
+    "name": "context",
+    "command": "gitnexus 'context' 'calculateShipping' '--file' 'services/shipping.ts' '--content'",
+    "exitCode": 0,
+    "seconds": 1.704,
+    "stdout": "references/context.stdout.txt",
+    "stderr": "references/context.stderr.txt",
+    "arguments": [
+      "context",
+      "calculateShipping",
+      "--file",
+      "services/shipping.ts",
+      "--content"
+    ]
+  },
+  {
+    "name": "impact",
+    "command": "gitnexus 'impact' 'calculateShipping' '--file' 'services/shipping.ts' '--direction' 'upstream' '--depth' '3'",
+    "exitCode": 0,
+    "seconds": 1.44,
+    "stdout": "references/impact.stdout.txt",
+    "stderr": "references/impact.stderr.txt",
+    "arguments": [
+      "impact",
+      "calculateShipping",
+      "--file",
+      "services/shipping.ts",
+      "--direction",
+      "upstream",
+      "--depth",
+      "3"
+    ]
+  },
+  {
+    "name": "query",
+    "command": "gitnexus 'query' 'shipping checkout order' '--limit' '5' '--content'",
+    "exitCode": 0,
+    "seconds": 1.33,
+    "stdout": "references/query.stdout.txt",
+    "stderr": "references/query.stderr.txt",
+    "arguments": [
+      "query",
+      "shipping checkout order",
+      "--limit",
+      "5",
+      "--content"
+    ]
+  },
+  {
+    "name": "trace",
+    "command": "gitnexus 'trace' 'submitOrder' 'saveOrder' '--from-file' 'routes/order.ts' '--to-file' 'storage/orders.ts'",
+    "exitCode": 0,
+    "seconds": 0.936,
+    "stdout": "references/trace.stdout.txt",
+    "stderr": "references/trace.stderr.txt",
+    "arguments": [
+      "trace",
+      "submitOrder",
+      "saveOrder",
+      "--from-file",
+      "routes/order.ts",
+      "--to-file",
+      "storage/orders.ts"
+    ]
+  },
+  {
+    "name": "customer-context",
+    "command": "gitnexus 'context' 'validate' '--file' 'services/customer.ts'",
+    "exitCode": 0,
+    "seconds": 0.952,
+    "stdout": "references/customer-context.stdout.txt",
+    "stderr": "references/customer-context.stderr.txt",
+    "arguments": [
+      "context",
+      "validate",
+      "--file",
+      "services/customer.ts"
+    ]
+  },
+  {
+    "name": "inventory-context",
+    "command": "gitnexus 'context' 'validate' '--file' 'services/inventory.ts'",
+    "exitCode": 0,
+    "seconds": 0.961,
+    "stdout": "references/inventory-context.stdout.txt",
+    "stderr": "references/inventory-context.stderr.txt",
+    "arguments": [
+      "context",
+      "validate",
+      "--file",
+      "services/inventory.ts"
+    ]
+  },
+  {
+    "name": "graph-nodes",
+    "command": "gitnexus 'cypher' 'MATCH (n:Function) RETURN n.id AS id, n.name AS name, n.filePath AS filePath, n.startLine AS startLine, n.endLine AS endLine ORDER BY n.filePath, n.startLine' '--limit' '200'",
+    "exitCode": 0,
+    "seconds": 0.85,
+    "stdout": "references/graph-nodes.stdout.txt",
+    "stderr": "references/graph-nodes.stderr.txt",
+    "arguments": [
+      "cypher",
+      "MATCH (n:Function) RETURN n.id AS id, n.name AS name, n.filePath AS filePath, n.startLine AS startLine, n.endLine AS endLine ORDER BY n.filePath, n.startLine",
+      "--limit",
+      "200"
+    ]
+  },
+  {
+    "name": "graph-edges",
+    "command": "gitnexus 'cypher' 'MATCH (a:Function)-[r:CodeRelation {type: ''CALLS''}]->(b:Function) RETURN a.id AS source, b.id AS target, r.type AS type, r.confidence AS confidence ORDER BY a.id, b.id' '--limit' '200'",
+    "exitCode": 0,
+    "seconds": 0.708,
+    "stdout": "references/graph-edges.stdout.txt",
+    "stderr": "references/graph-edges.stderr.txt",
+    "arguments": [
+      "cypher",
+      "MATCH (a:Function)-[r:CodeRelation {type: 'CALLS'}]->(b:Function) RETURN a.id AS source, b.id AS target, r.type AS type, r.confidence AS confidence ORDER BY a.id, b.id",
+      "--limit",
+      "200"
+    ]
+  },
+  {
+    "name": "graph-counts",
+    "command": "gitnexus 'cypher' 'MATCH (n) RETURN labels(n) AS label, count(n) AS count ORDER BY count DESC' '--limit' '100'",
+    "exitCode": 0,
+    "seconds": 0.623,
+    "stdout": "references/graph-counts.stdout.txt",
+    "stderr": "references/graph-counts.stderr.txt",
+    "arguments": [
+      "cypher",
+      "MATCH (n) RETURN labels(n) AS label, count(n) AS count ORDER BY count DESC",
+      "--limit",
+      "100"
+    ]
+  }
+]

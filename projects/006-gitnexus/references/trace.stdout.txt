@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "from": {
+    "name": "submitOrder",
+    "filePath": "routes/order.ts",
+    "startLine": 5
+  },
+  "to": {
+    "name": "saveOrder",
+    "filePath": "storage/orders.ts",
+    "startLine": 3
+  },
+  "hopCount": 2,
+  "hops": [
+    {
+      "name": "submitOrder",
+      "filePath": "routes/order.ts",
+      "startLine": 5
+    },
+    {
+      "name": "checkoutOrder",
+      "filePath": "services/checkout.ts",
+      "startLine": 7
+    },
+    {
+      "name": "saveOrder",
+      "filePath": "storage/orders.ts",
+      "startLine": 3
+    }
+  ],
+  "edges": [
+    {
+      "relType": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "relType": "CALLS",
+      "confidence": 0.85
+    }
+  ]
+}

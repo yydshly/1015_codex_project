@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GitNexus 中文研究展厅：从 AST 到跨文件代码图谱，用真实结算样本探索调用、影响和源码证据。">
+  <meta name="theme-color" content="#101b22">
+  <title>GitNexus · 看见代码之间的关系</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到内容</a>
+  <header class="topbar">
+    <a class="brand" href="#"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M6 6 22 14 6 22V6"/><circle cx="6" cy="6" r="3"/><circle cx="22" cy="14" r="3"/><circle cx="6" cy="22" r="3"/></svg><b>GitNexus</b><span>研究展厅 / 006</span></a>
+    <nav aria-label="主导航"><a href="#capabilities">能力</a><a href="#mechanism">原理</a><a href="#explorer">效果实测</a><a href="#compare">同类对照</a></nav>
+    <a class="source-link" href="https://github.com/abhigyanpatwari/GitNexus" target="_blank" rel="noreferrer">上游仓库 <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main">
+    <section class="hero wrap">
+      <div class="hero-copy"><div class="eyebrow"><i></i> CODE INTELLIGENCE, MADE VISIBLE</div><h1>看见代码<br>之间的<span>关系。</span></h1><p class="hero-lead">从一个函数出发，找到它的调用者、依赖和影响范围。<br>探索 GitNexus 如何把源码变成可查询的代码地图。</p><div class="hero-actions"><a class="button lime" href="#explorer">探索真实样本 <span>↗</span></a><a class="text-button" href="#mechanism">先看底层原理 <span>↓</span></a></div><div class="hero-tags"><span>静态分析</span><span>本地图数据库</span><span>MCP 接入</span></div></div>
+      <div class="hero-visual" aria-label="结算样本调用关系预览">
+        <div class="visual-heading"><span><i></i> CHECKOUT / RELATION MAP</span><span>CALLS</span></div>
+        <svg viewBox="0 0 660 390" role="img" aria-label="submitOrder 调用 checkoutOrder，checkoutOrder 调用运费、折扣、库存和订单存储；estimateOrder 也调用运费函数">
+          <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#30404a"/></pattern><marker id="heroArrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8" fill="none" stroke="#9baeb6"/></marker></defs>
+          <rect width="660" height="390" fill="url(#dots)"/>
+          <g class="hero-edges"><path d="M167 105C220 105 220 190 274 190"/><path d="M393 190C443 190 445 70 496 70"/><path d="M393 190C443 190 445 150 496 150"/><path d="M393 190C443 190 445 230 496 230"/><path d="M393 190C443 190 445 310 496 310"/><path d="M167 310C310 310 330 70 496 70"/></g>
+          <g class="hero-node"><rect x="28" y="82" width="139" height="47" rx="8"/><text x="97" y="111">submitOrder</text></g>
+          <g class="hero-node"><rect x="28" y="287" width="139" height="47" rx="8"/><text x="97" y="316">estimateOrder</text></g>
+          <g class="hero-node focus"><rect x="252" y="166" width="141" height="49" rx="8"/><text x="322" y="196">checkoutOrder</text></g>
+          <g class="hero-node"><rect x="496" y="47" width="150" height="47" rx="8"/><text x="571" y="76">calculateShipping</text></g>
+          <g class="hero-node"><rect x="496" y="127" width="150" height="47" rx="8"/><text x="571" y="156">applyDiscount</text></g>
+          <g class="hero-node"><rect x="496" y="207" width="150" height="47" rx="8"/><text x="571" y="236">reserveStock</text></g>
+          <g class="hero-node"><rect x="496" y="287" width="150" height="47" rx="8"/><text x="571" y="316">saveOrder</text></g>
+          <text x="213" y="330" class="alias-note">import alias → shippingCost</text>
+        </svg><div class="visual-foot"><span>节点是符号，连线是调用关系</span><span>↓ 下方可逐个检查</span></div>
+      </div>
+    </section>
+    <div class="concept-strip"><div class="wrap"><p><span>01</span> AST 识别语法</p><b>→</b><p><span>02</span> 跨文件解析关系</p><b>→</b><p><span>03</span> LadybugDB 保存图谱</p><b>→</b><p><span>04</span> 工具返回相关上下文</p></div></div>
+
+    <section class="section wrap" id="capabilities">
+      <div class="section-intro"><div><div class="eyebrow muted">01 / CAPABILITIES</div><h2>围绕问题，<br>获取相关代码。</h2></div><p>先建立索引，再围绕目标查询；代码变化后更新索引。<br>人可以看图，编程助手通过 MCP 获取结构信息。<a class="cite" href="https://github.com/abhigyanpatwari/GitNexus#what-your-ai-agent-gets" target="_blank" rel="noreferrer">官方工具说明 ↗</a></p></div>
+      <div class="cap-grid">
+        <a class="cap-card" href="#explorer" data-set-mode="context"><span class="cap-icon">⌘</span><code>context</code><h3>这个函数连接了谁？</h3><p>查看定义、调用者、被调用者与所属流程，围绕一个符号理解上下文。</p><span class="card-action">在样本里查看 <b>↗</b></span></a>
+        <a class="cap-card" href="#explorer" data-set-mode="impact"><span class="cap-icon">◎</span><code>impact</code><h3>改这里，要检查哪里？</h3><p>沿依赖关系展开潜在影响，按深度组织调用方，形成修改前的检查范围。</p><span class="card-action">查看运费函数影响 <b>↗</b></span></a>
+        <a class="cap-card" href="#explorer" data-set-mode="trace"><span class="cap-icon">↝</span><code>trace</code><h3>入口怎样走到这里？</h3><p>连接两个符号，返回可解析的有向路径，定位跨文件实现链路。</p><span class="card-action">追踪下单到运费 <b>↗</b></span></a>
+        <article class="cap-card"><span class="cap-icon">⌕</span><code>query</code><h3>相关实现在哪里？</h3><p>组合关键词与可选语义检索，并组织相关符号和流程。向量索引需另行启用。</p><span class="card-note">下方保留本次真实查询输出</span></article>
+        <article class="cap-card"><span class="cap-icon">±</span><code>detect_changes</code><h3>本次提交触及了什么？</h3><p>把 Git diff 映射到符号和相关流程，辅助审查修改及规划回归范围。</p><span class="card-note">能力说明 · 本页未做变更实测</span></article>
+        <article class="cap-card"><span class="cap-icon">Aa</span><code>rename</code><h3>怎样检查跨文件重命名？</h3><p>预览工具识别出的修改位置。解析覆盖和写入规则随版本而异，仍要检查差异并验证。</p><span class="card-note">能力说明 · 本页未执行源码改写</span></article>
+      </div>
+      <div class="advanced"><span class="small-label">更深一层</span><p>主线还提供 API 路由关联、响应形状检查、仓库组，以及需开启 <code>--pdg</code> 的控制 / 数据依赖和污点线索。各能力有语言、框架和版本限制。</p><a href="https://github.com/abhigyanpatwari/GitNexus/blob/main/ARCHITECTURE.md" target="_blank" rel="noreferrer">查看条件 ↗</a></div>
+    </section>
+
+    <section class="mechanism-section" id="mechanism"><div class="wrap section">
+      <div class="section-intro"><div><div class="eyebrow">02 / UNDER THE HOOD</div><h2>AST 是起点。<br>关系，让代码连起来。</h2></div><p>逐步查看源码怎样成为可查询的图。<br>以下中间结构用于解释原理，标为教学示意。</p></div>
+      <div class="pipeline-tabs" role="tablist" aria-label="索引流水线"><button role="tab" aria-selected="true" aria-controls="pipeline-panel" id="step-0" data-step="0"><span>01</span>语法解析</button><button role="tab" aria-selected="false" aria-controls="pipeline-panel" id="step-1" data-step="1" tabindex="-1"><span>02</span>关系解析</button><button role="tab" aria-selected="false" aria-controls="pipeline-panel" id="step-2" data-step="2" tabindex="-1"><span>03</span>图谱存储</button><button role="tab" aria-selected="false" aria-controls="pipeline-panel" id="step-3" data-step="3" tabindex="-1"><span>04</span>结构预计算</button><button role="tab" aria-selected="false" aria-controls="pipeline-panel" id="step-4" data-step="4" tabindex="-1"><span>05</span>检索与查询</button><button role="tab" aria-selected="false" aria-controls="pipeline-panel" id="step-5" data-step="5" tabindex="-1"><span>06</span>MCP 输出</button></div>
+      <div class="pipeline-panel" id="pipeline-panel" role="tabpanel" aria-labelledby="step-0"><div class="pipeline-explain"><span class="small-label" id="step-kicker"></span><h3 id="step-title"></h3><p id="step-description"></p><div class="pipeline-insight" id="step-insight"></div><a class="cite" id="step-source" target="_blank" rel="noreferrer">核对实现 ↗</a></div><div class="code-pane"><div class="code-heading"><span id="step-file"></span><span>教学示意</span></div><pre><code id="step-code"></code></pre></div></div>
+      <div class="ast-note"><b>树，怎样变成图？</b><p>AST 记录单文件中的语法包含关系；图谱把解析后的符号用 <code>CALLS / IMPORTS / EXTENDS</code> 等边跨文件连接。架构分组由关系归纳，静态流程需要运行证据进一步确认。</p></div>
+    </div></section>
+
+    <section class="section wrap" id="explorer">
+      <div class="section-intro"><div><div class="eyebrow muted">03 / CHECKOUT LAB</div><h2>选一个函数。<br>沿着关系，检查源码。</h2></div><p>原创 TypeScript 结算样本，包含命名导入、别名和同名函数。<br><span id="dataset-status" class="data-badge">正在读取本次运行记录…</span></p></div>
+      <div class="lab-toolbar"><div class="mode-tabs" role="group" aria-label="图谱查看模式"><button class="active" aria-pressed="true" data-mode="context">调用上下文</button><button aria-pressed="false" data-mode="impact">影响范围</button><button aria-pressed="false" data-mode="trace">入口路径</button></div><label class="symbol-search"><span aria-hidden="true">⌕</span><span class="sr-only">查找已提取的符号</span><input id="symbol-search" type="search" placeholder="查找图中符号…" autocomplete="off"></label><button class="reset-button" id="reset-graph">重置</button></div>
+      <div class="lab"><div class="graph-area"><div class="graph-meta"><span id="graph-count">正在加载图谱</span><span>箭头：调用者 → 被调用者</span></div><div class="graph-scroll"><svg id="relation-graph" viewBox="0 0 920 550" role="group" aria-label="可交互结算代码关系图"></svg><div id="graph-empty" hidden>没有匹配的符号。试试 shipping 或 checkout。</div></div><div class="graph-legend"><span><i class="legend-dot selected"></i>选中符号</span><span><i class="legend-dot related"></i>相关符号</span><span><i class="legend-dot unrelated"></i>其他符号</span><span class="graph-replay">真实 CALLS 边 · 浏览器局部遍历</span></div></div><aside class="inspector" aria-live="polite"><div class="inspector-top"><span id="inspector-type">SYMBOL CONTEXT</span><span class="live-dot"></span></div><h3 id="symbol-name">读取样本…</h3><p id="symbol-location" class="file-location"></p><p id="mode-description"></p><div id="relation-results"></div><button class="button dark" id="show-source">查看对应源码 <span>↗</span></button><p class="inspector-foot">图中操作在浏览器回放已提取关系；下方可核对上游工具原始输出。</p></aside></div>
+      <div class="source-panel" id="source-panel" hidden><div class="source-panel-head"><div><span class="small-label">FIXTURE SOURCE</span><h3 id="source-title">样本源码</h3></div><button id="close-source" aria-label="关闭源码">×</button></div><pre id="source-code"></pre></div>
+      <div class="lab-question"><span>试着操作</span><button data-example="shipping">改运费，要检查谁？ ↗</button><button data-example="alias">shippingCost 指向哪里？ ↗</button><button data-example="homonym">两个 validate 会混淆吗？ ↗</button></div>
+    </section>
+
+    <section class="evidence-section"><div class="wrap section">
+      <div class="section-intro"><div><div class="eyebrow muted">04 / OBSERVED OUTPUT</div><h2>效果，要能回到证据。</h2></div><p id="run-caption">读取索引、查询与核对记录。<br>规模数字描述这个样本，不代表通用准确率。</p></div>
+      <div class="metrics" id="metrics"><div><strong>—</strong><span>TypeScript 源码文件</span></div><div><strong>—</strong><span>图谱节点</span></div><div><strong>—</strong><span>图谱关系</span></div><div><strong>—</strong><span>核对结果</span></div></div>
+      <div class="evidence-columns"><div class="checks-box"><div class="box-heading"><h3>我们具体核对了什么</h3><span class="small-label">CHECKS</span></div><div id="checks-list"><p>运行记录尚未载入。</p></div><p class="evidence-note">样本测试验证明确的局部事实；真实项目仍可能出现误连、漏连和过期索引。</p></div><div class="output-box"><div class="box-heading"><h3>上游工具原始输出</h3><label><span class="sr-only">选择原始记录</span><select id="raw-select"><option>读取中…</option></select></label></div><pre id="raw-output" tabindex="0"></pre><div class="output-footer"><span>保留结构与原始字段，路径作隐私处理</span><a href="assets/evidence.json" download>下载完整记录 ↓</a></div></div></div>
+      <details class="reproduce"><summary>查看复现命令与运行边界 <span>+</span></summary><div><pre id="reproduce-commands"></pre><ul id="run-limitations"></ul><a href="references/" id="evidence-readme">复现说明与原始记录 ↗</a></div></details>
+    </div></section>
+
+    <section class="section wrap" id="results"><div class="section-intro"><div><div class="eyebrow muted">05 / WHAT THE EVIDENCE MEANS</div><h2>关系更清楚，<br>收益仍需在任务中测量。</h2></div><p>本页验证工具能否提取和返回明确关系。<br>AI 修复质量、Token 和耗时需要独立对照实验。</p></div>
+      <div class="findings"><article><span class="finding-label">可以直接观察</span><h3>定位、连边、追踪、复核</h3><p>找到函数所在文件，展开调用者和被调用者，观察跨文件链路，再回到源码核对。它提供的是可继续调查的结构上下文。</p></article><article><span class="finding-label">不能从图直接推出</span><h3>线上耗时与业务正确性</h3><p>静态调用链没有记录请求真正走过的分支、调用次数或 CPU 耗时；是否修对，还需要类型检查、测试和运行证据。</p></article></div>
+      <div class="benchmark"><div><span class="small-label">COMMUNITY BENCHMARK / v1.6.12</span><h3>公开评测没有给出稳定提效结论。</h3><p>社区在 12 个真实 Python Bug 修复任务上对比接入前后结果，多数实验单元只运行一次。下表展示该次记录，不外推到全部模型或当前主线。</p><a class="cite" href="https://github.com/abhigyanpatwari/GitNexus/discussions/3493" target="_blank" rel="noreferrer">阅读方法、结果与限制 ↗</a></div><div class="table-scroll"><table><thead><tr><th>该次评测</th><th>未接入</th><th>完整接入</th><th>成本变化</th></tr></thead><tbody><tr><th>Claude Opus</th><td>8 / 12</td><td>9 / 12</td><td>+11%</td></tr><tr><th>Codex</th><td>11 / 12</td><td>10 / 12</td><td>+20%</td></tr></tbody></table><p>计数为修复成功任务数；差异可能受单次运行噪声影响。</p></div></div>
+      <div class="limitations"><b>哪些地方仍可能遗漏？</b><p>动态调用、复杂返回类型、框架封装和路由辅助函数会影响关系覆盖；流程追踪还受入口、深度和分支预算限制。缺少一条边，不能单独证明不存在依赖。</p><a href="https://github.com/abhigyanpatwari/GitNexus/blob/main/gitnexus/bench/tool-accuracy/known-gaps.json" target="_blank" rel="noreferrer">上游已知缺口 ↗</a></div>
+    </section>
+
+    <section class="compare-section" id="compare"><div class="wrap section"><div class="section-intro"><div><div class="eyebrow muted">06 / IN OUR RESEARCH</div><h2>我们研究过的同一条路线。</h2></div><p>共同思路是从代码提取结构，再查询或展示。<br>选型要看解析、存储与任务入口。</p></div><div class="table-scroll comparison"><table><thead><tr><th>项目</th><th>侧重点</th><th>结构保存</th><th>我们的研究范围</th></tr></thead><tbody><tr class="highlight-row"><th>GitNexus <small>本项目</small></th><td>代码图谱 + Agent 任务查询</td><td>本地 LadybugDB</td><td id="comparison-scope">本页记录的真实样本与源码核查</td></tr><tr><th><a href="https://github.com/ix-infrastructure/Ix" target="_blank" rel="noreferrer">Ix ↗</a></th><td>持久结构索引与目标上下文</td><td>ArangoDB + memory-layer</td><td>已研究源码与数据链路，未运行后端</td></tr><tr><th><a href="https://github.com/braedonsaunders/codeflow" target="_blank" rel="noreferrer">CodeFlow ↗</a></th><td>网页结构浏览与轻量分析</td><td>当前分析、摘要缓存与导出</td><td>已用 15 文件真实样本运行原生展示</td></tr><tr><th><a href="https://github.com/trailhq/Graft" target="_blank" rel="noreferrer">Graft ↗</a></th><td>代码地图与按需上下文</td><td>代码索引与关系图</td><td>能力已整理，完整构建与收益待验证</td></tr></tbody></table></div><p class="compare-note">对照依据我们 2026-09-16 至 10-05 的既有研究记录，未做四工具同任务准确率排名。<a href="https://github.com/yydshly/1004_codex_project/tree/main/projects/002-codeflow" target="_blank" rel="noreferrer">查看之前的对照研究 ↗</a></p></div></section>
+    <section class="wrap sources-section" id="sources"><div><span class="eyebrow muted">SOURCE NOTES</span><h3>从每个结论，回到原始材料。</h3></div><div><a href="https://github.com/abhigyanpatwari/GitNexus/blob/main/ARCHITECTURE.md" target="_blank" rel="noreferrer">架构文档 ↗</a><a href="https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.12" target="_blank" rel="noreferrer">实测版本 v1.6.12 ↗</a><a href="references/sources.json">来源清单 ↗</a><a href="notes.md">研究记录 ↗</a></div><p>本页是独立中文研究与交互展示。首页关系图按原创样本绘制，实测区从运行记录读取。上游当前采用 PolyForm Noncommercial 1.0.0；使用范围以其许可证为准。主线功能描述与稳定版实测分别标明。</p></section>
+  </main>
+  <footer class="footer wrap"><a class="brand" href="#"><b>GitNexus</b><span>代码关系，逐条核对。</span></a><span>GITHUB RESEARCH LAB · 006 · 2026.10.15</span><a href="../../">返回研究导航 ↗</a></footer>
+</body></html>

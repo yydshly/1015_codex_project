@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "name": "local-discount",
+      "passed": true,
+      "total": 5900,
+      "quoteMatchesCheckout": true
+    },
+    {
+      "name": "remote-shipping",
+      "passed": true,
+      "total": 6600,
+      "quoteMatchesCheckout": true
+    },
+    {
+      "name": "free-shipping",
+      "passed": true,
+      "total": 10800,
+      "quoteMatchesCheckout": true
+    }
+  ],
+  "invalidCustomerRejected": true,
+  "emptyCartRejected": true
+}

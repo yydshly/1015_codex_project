@@ -1,0 +1,140 @@
+{
+  "target": {
+    "id": "Function:services/shipping.ts:calculateShipping",
+    "name": "calculateShipping",
+    "type": "Function",
+    "filePath": "services/shipping.ts"
+  },
+  "direction": "upstream",
+  "impactedCount": 4,
+  "risk": "LOW",
+  "riskSharedAxes": "LOW",
+  "riskScale": {
+    "comparableAcrossKinds": true,
+    "unusedAxes": []
+  },
+  "epistemic": "exact",
+  "summary": {
+    "direct": 2,
+    "processes_affected": 1,
+    "modules_affected": 2
+  },
+  "byDepthCounts": {
+    "1": 2,
+    "2": 2
+  },
+  "affected_processes": [
+    {
+      "name": "submitOrder",
+      "type": "Function",
+      "filePath": "routes/order.ts",
+      "affected_process_count": 4,
+      "total_hits": 8,
+      "earliest_broken_step": 1
+    }
+  ],
+  "affected_modules": [
+    {
+      "name": "Services",
+      "hits": 2,
+      "impact": "direct"
+    },
+    {
+      "name": "Routes",
+      "hits": 1,
+      "impact": "indirect"
+    }
+  ],
+  "byDepth": {
+    "1": [
+      {
+        "depth": 1,
+        "id": "Function:services/checkout.ts:checkoutOrder",
+        "name": "checkoutOrder",
+        "filePath": "services/checkout.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_0_submitorder",
+            "label": "SubmitOrder → Validate",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_3_submitorder",
+            "label": "SubmitOrder → CalculateShipping",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_2_submitorder",
+            "label": "SubmitOrder → CalculateSubtotal",
+            "processType": "cross_community",
+            "step": 2
+          },
+          {
+            "id": "proc_1_submitorder",
+            "label": "SubmitOrder → ApplyDiscount",
+            "processType": "cross_community",
+            "step": 2
+          }
+        ]
+      },
+      {
+        "depth": 1,
+        "id": "Function:services/estimate.ts:estimateOrder",
+        "name": "estimateOrder",
+        "filePath": "services/estimate.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      }
+    ],
+    "2": [
+      {
+        "depth": 2,
+        "id": "File:verify.ts",
+        "name": "verify.ts",
+        "filePath": "verify.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": []
+      },
+      {
+        "depth": 2,
+        "id": "Function:routes/order.ts:submitOrder",
+        "name": "submitOrder",
+        "filePath": "routes/order.ts",
+        "relationType": "CALLS",
+        "confidence": 0.85,
+        "processes": [
+          {
+            "id": "proc_1_submitorder",
+            "label": "SubmitOrder → ApplyDiscount",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_2_submitorder",
+            "label": "SubmitOrder → CalculateSubtotal",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_0_submitorder",
+            "label": "SubmitOrder → Validate",
+            "processType": "cross_community",
+            "step": 1
+          },
+          {
+            "id": "proc_3_submitorder",
+            "label": "SubmitOrder → CalculateShipping",
+            "processType": "cross_community",
+            "step": 1
+          }
+        ]
+      }
+    ]
+  }
+}

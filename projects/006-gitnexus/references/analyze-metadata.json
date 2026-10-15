@@ -1,0 +1,102 @@
+{
+  "repoPath": "<LAB>/checkout-lab",
+  "storagePath": "<LAB>/checkout-lab\\.gitnexus",
+  "lastCommit": "10baf23ff97e7309aee8f85df4c0d06a0303fb39",
+  "indexedAt": "2026-10-15T13:27:57.532Z",
+  "contentRetention": "full",
+  "contentRetentionSchemaVersion": 1,
+  "ftsProfile": "full",
+  "runnerIdentity": {
+    "schemaVersion": 4,
+    "runtime": {
+      "executablePath": "<USER_HOME>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "version": "v24.19.0",
+      "platform": "win32",
+      "architecture": "x64",
+      "modulesAbi": "137",
+      "libc": "not-applicable"
+    },
+    "cliVersion": "1.6.12",
+    "invokedArtifact": {
+      "path": "<LAB>\\node_modules\\gitnexus\\dist\\cli\\index.js",
+      "digest": "sha256:e2c96d62b26a1898e536457377f7b73c539b080c7e8c316869ffc6a790003eb4"
+    },
+    "build": {
+      "kind": "distribution",
+      "rootPath": "<LAB>\\node_modules\\gitnexus\\dist",
+      "canonicalization": "gitnexus-analyzer-build-v2",
+      "digest": "sha256:262cf80deec8ff56ec019ac08406b7098bf40ae07756aa02ef8fa42720d3583e"
+    },
+    "dependencyRuntime": {
+      "manifestPath": "<LAB>\\node_modules\\gitnexus\\package.json",
+      "lockfilePath": "<LAB>\\package-lock.json",
+      "canonicalization": "gitnexus-analyzer-dependency-runtime-v4",
+      "packageCount": 218,
+      "artifactCount": 9777,
+      "digest": "sha256:c1344b9f627a5ac8266a33509d34b308a567a3cfb2d5171113843a25254f7ac2"
+    }
+  },
+  "branch": "main",
+  "stats": {
+    "files": 12,
+    "nodes": 71,
+    "edges": 131,
+    "communities": 4,
+    "processes": 4,
+    "embeddings": 0
+  },
+  "capabilities": {
+    "graph": {
+      "provider": "ladybugdb",
+      "status": "available"
+    },
+    "fts": {
+      "provider": "ladybugdb-fts",
+      "status": "available"
+    },
+    "vectorSearch": {
+      "provider": "ladybugdb-vector",
+      "status": "unavailable",
+      "exactScanLimit": 10000
+    }
+  },
+  "schemaFingerprint": "60fc01e4e4ed",
+  "scopeExtractionReceipt": 1,
+  "analysisFeatures": {
+    "graph.class-framework-annotations": 1
+  },
+  "springVendorPrefixes": "[\"Win\"]",
+  "cjkSegmentation": "none",
+  "embeddingDims": 384,
+  "fileHashes": {
+    "package.json": "1cbad78ef64fdd5596d42f9702ff9356a707f04a8cc2e21940f6bb20b35dc9ac",
+    "routes/order.ts": "87c28c01ad245ff169c67bf27aae1101194e60520a8268802f7c450c247df2e6",
+    "services/checkout.ts": "341d95bd041dd85dfb54e03d2edabbb13b1ad1f17d24b2a494367b12d56fe194",
+    "services/customer.ts": "a4310f685861aafda32fb294e2af407c807e1d74438b54e6382844e7f6d373fc",
+    "services/discount.ts": "fee8724cebe089482397cbe30d16bba97862e52a97519aa3f4141ef4fa988544",
+    "services/estimate.ts": "ae5430e1c8036144d39b30d56ccea4f63adf0c6524f0b3f89f06e8cf102f8bfb",
+    "services/inventory.ts": "95343118630b234b96d6589b669f8376d8175fb64f94d9bc1c2c6e8bc80e9e3d",
+    "services/pricing.ts": "52a82b1b9af33c25f9c796e68cb670f4b3a458703b74d96cc70602a083144dc3",
+    "services/shipping.ts": "c270684f9ab02f50b61a174c009ff773c848b02b8d43e6c70008757a7879fd21",
+    "storage/orders.ts": "1c110aa518df4e73a227023eadbd25915db386904797b3ce45647762beacf5ec",
+    "types.ts": "2194f6eeb7d4bbd67181af9a4a93ccc570ca3933ba29481932f67c26f576ce0d",
+    "verify.ts": "9fbf55639a786d40f66aba6b605c6201603753caa0c87e6436133ab34223bc38"
+  },
+  "indexCoverage": {
+    "maxFileSizeBytes": 524288,
+    "dirtyPaths": []
+  },
+  "cacheKeys": [
+    "6b8f60ad4ddf747ddb4a151955c7923e423f486b767439bd7f351d276f52428a",
+    "7a2a28efb15ac75faa3a7e8cd42d04931c6a68ccd61a9c40dfae8299a17e3e61",
+    "9ab90dbb0a6e91b1b917488347228e0ca00a9b432c6b6e122300ab7eb13da4ff",
+    "1a4736280c75e7ee82f6e3beb96e3fba0c95b4dac8b26047566c696c744b8da6",
+    "ce2375dea9374dea7adfefbbbd06ce2e48a0d5bf2291b90d80bfdf25754db1ff",
+    "bf1f6c42eaf8809d078d46847e8f9458a4ad47e2e288ae5c1b3cf9869c977ee6",
+    "76ada2c24ebeb86549227113d4e1a71dbec65d91c58a58a2376be1acea9fa8c7",
+    "67439350490bc75df664978f9aa0df0a8d5658ea90855d359d17b1cbf05ca0d5",
+    "b2c106df353d85e7ac661c91d7e53b83c21e29f1c584351a46e9c80cd589715c",
+    "5c6fd3b333385fae2a402d8e7bf8c794e0ad91a96120cbe0cd9a55f87ccd138d",
+    "d4df545e401af493fd1dcbc5dd7255bea2fee4a8b20ef2c4e12db3cbbdf2d1b8"
+  ]
+}

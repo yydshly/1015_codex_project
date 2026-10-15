@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-15",
+  "browser": "Codex in-app browser",
+  "checks": [
+    {
+      "name": "入口到运费路径",
+      "passed": true
+    },
+    {
+      "name": "别名与源码回放",
+      "passed": true
+    },
+    {
+      "name": "同名符号文件消歧",
+      "passed": true
+    },
+    {
+      "name": "无结果提示",
+      "passed": true
+    },
+    {
+      "name": "图谱重置",
+      "passed": true
+    },
+    {
+      "name": "原理页签",
+      "passed": true
+    },
+    {
+      "name": "页签键盘方向键",
+      "passed": true
+    },
+    {
+      "name": "关键词查询原始输出",
+      "passed": true
+    },
+    {
+      "name": "复现面板",
+      "passed": true
+    },
+    {
+      "name": "SVG节点键盘选择",
+      "passed": true
+    },
+    {
+      "name": "390px手机影响视图",
+      "passed": true
+    },
+    {
+      "name": "320px窄屏无页面横向溢出",
+      "passed": true
+    }
+  ],
+  "desktop": {
+    "height": 720,
+    "nodes": 10,
+    "overflow": false,
+    "ready": "true",
+    "width": 1280
+  },
+  "narrow": {
+    "clientWidth": 305,
+    "overflow": false,
+    "scrollWidth": 305,
+    "width": 320
+  },
+  "consoleErrors": [],
+  "scope": "Local static replay of actual v1.6.12 graph and query output; no online indexing API."
+}

@@ -1,0 +1,848 @@
+{
+  "status": "verified",
+  "version": "1.6.12",
+  "analyzedAt": "2026-10-15T13:27:57.532Z",
+  "schemaVersion": 1,
+  "upstream": {
+    "repository": "https://github.com/abhigyanpatwari/GitNexus",
+    "tag": "v1.6.12",
+    "commit": "26ddd95685f13d07f3661ef37c7ca1b62d29c409",
+    "license": "PolyForm-Noncommercial-1.0.0"
+  },
+  "sample": "checkout-lab",
+  "searchStatus": "verified",
+  "environment": {
+    "os": "Windows x64",
+    "node": "24.19.0",
+    "npm": "10.9.2",
+    "ladybugdb": "0.18.3",
+    "embedding": false,
+    "llm": false
+  },
+  "metrics": {
+    "sourceFiles": 12,
+    "tsFiles": 11,
+    "nodes": 71,
+    "edges": 131,
+    "functions": 10,
+    "functionEdges": 11,
+    "clusters": 4,
+    "flows": 4,
+    "analysisSeconds": 22.4,
+    "expectedCalls": 11,
+    "verifiedCalls": 11,
+    "businessCases": 3,
+    "directCallers": 2,
+    "impactedSymbols": 4,
+    "searchFlows": 4,
+    "searchSymbols": 1,
+    "searchDefinitions": 13
+  },
+  "files": [
+    {
+      "path": "package.json",
+      "content": "{\n  \"name\": \"gitnexus-checkout-lab\",\n  \"private\": true,\n  \"version\": \"1.0.0\",\n  \"type\": \"module\",\n  \"scripts\": { \"check\": \"node --experimental-strip-types verify.ts\" }\n}\n"
+    },
+    {
+      "path": "routes/order.ts",
+      "content": "import { validate } from \"../services/customer.ts\";\nimport { checkoutOrder } from \"../services/checkout.ts\";\nimport type { OrderInput, SavedOrder } from \"../types.ts\";\n\n// HTTP route equivalent: POST /orders.\nexport function submitOrder(input: OrderInput): SavedOrder {\n  validate(input.customer);\n  return checkoutOrder(input);\n}\n"
+    },
+    {
+      "path": "services/checkout.ts",
+      "content": "import { calculateSubtotal } from \"./pricing.ts\";\nimport { applyDiscount } from \"./discount.ts\";\nimport { calculateShipping } from \"./shipping.ts\";\nimport { reserveStock } from \"./inventory.ts\";\nimport { saveOrder } from \"../storage/orders.ts\";\nimport type { OrderInput, SavedOrder } from \"../types.ts\";\n\nexport function checkoutOrder(input: OrderInput): SavedOrder {\n  const subtotal = calculateSubtotal(input.items);\n  const discount = applyDiscount(subtotal, input.coupon);\n  const shipping = calculateShipping(input.items, input.customer.region);\n  reserveStock(input.items);\n  return saveOrder(input.customer.id, {\n    subtotal, discount, shipping, total: subtotal - discount + shipping,\n  });\n}\n"
+    },
+    {
+      "path": "services/customer.ts",
+      "content": "import type { Customer } from \"../types.ts\";\n\n// Same symbol name as inventory.validate; the import target should disambiguate it.\nexport function validate(customer: Customer): void {\n  if (!customer.id.trim()) throw new Error(\"Customer id is required\");\n}\n"
+    },
+    {
+      "path": "services/discount.ts",
+      "content": "export function applyDiscount(subtotal: number, coupon?: string): number {\n  return coupon === \"SAVE10\" ? Math.floor(subtotal * 0.1) : 0;\n}\n"
+    },
+    {
+      "path": "services/estimate.ts",
+      "content": "import { calculateShipping as shippingCost } from \"./shipping.ts\";\nimport { calculateSubtotal } from \"./pricing.ts\";\nimport { applyDiscount } from \"./discount.ts\";\nimport type { OrderInput, Quote } from \"../types.ts\";\n\n// Quote calculation shares shipping logic through a named import alias.\nexport function estimateOrder(input: OrderInput): Quote {\n  const subtotal = calculateSubtotal(input.items);\n  const discount = applyDiscount(subtotal, input.coupon);\n  const shipping = shippingCost(input.items, input.customer.region);\n  return { subtotal, discount, shipping, total: subtotal - discount + shipping };\n}\n"
+    },
+    {
+      "path": "services/inventory.ts",
+      "content": "import type { CartItem } from \"../types.ts\";\n\n// Same symbol name as customer.validate, with different callers.\nexport function validate(items: CartItem[]): void {\n  if (!items.length || items.some(item => item.quantity < 1)) {\n    throw new Error(\"Cart must contain positive quantities\");\n  }\n}\n\nexport function reserveStock(items: CartItem[]): number {\n  validate(items);\n  return items.reduce((quantity, item) => quantity + item.quantity, 0);\n}\n"
+    },
+    {
+      "path": "services/pricing.ts",
+      "content": "import type { CartItem } from \"../types.ts\";\n\nexport function calculateSubtotal(items: CartItem[]): number {\n  return items.reduce((sum, item) => sum + item.quantity * item.unitPrice, 0);\n}\n"
+    },
+    {
+      "path": "services/shipping.ts",
+      "content": "import type { CartItem, Customer } from \"../types.ts\";\n\n// All money values are integer cents. Free shipping starts at a 10,000-cent subtotal.\nexport function calculateShipping(items: CartItem[], region: Customer[\"region\"]): number {\n  const subtotal = items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);\n  if (subtotal >= 10000 && region === \"local\") return 0;\n  const weight = items.reduce((sum, item) => sum + item.weight * item.quantity, 0);\n  return (region === \"remote\" ? 1200 : 500) + Math.max(0, Math.ceil(weight) - 1) * 200;\n}\n"
+    },
+    {
+      "path": "storage/orders.ts",
+      "content": "import type { Quote, SavedOrder } from \"../types.ts\";\n\n// Deliberately deterministic, in-memory example; no database or payment side effect.\nexport function saveOrder(customerId: string, quote: Quote): SavedOrder {\n  return { id: `demo-${customerId}`, customerId, status: \"confirmed\", ...quote };\n}\n"
+    },
+    {
+      "path": "types.ts",
+      "content": "export interface CartItem { sku: string; quantity: number; unitPrice: number; weight: number }\nexport interface Customer { id: string; region: \"local\" | \"remote\" }\nexport interface OrderInput { customer: Customer; items: CartItem[]; coupon?: string }\nexport interface Quote { subtotal: number; discount: number; shipping: number; total: number }\nexport interface SavedOrder extends Quote { id: string; customerId: string; status: \"confirmed\" }\n"
+    },
+    {
+      "path": "verify.ts",
+      "content": "import assert from \"node:assert/strict\";\nimport { submitOrder } from \"./routes/order.ts\";\nimport { estimateOrder } from \"./services/estimate.ts\";\nimport type { OrderInput } from \"./types.ts\";\n\nconst input: OrderInput = {\n  customer: { id: \"buyer-01\", region: \"local\" },\n  items: [{ sku: \"BOOK\", quantity: 2, unitPrice: 3000, weight: 0.5 }],\n  coupon: \"SAVE10\",\n};\nconst cases = [\n  { name: \"local-discount\", input, expected: 5900 },\n  { name: \"remote-shipping\", input: { ...input, customer: { id: \"buyer-02\", region: \"remote\" as const } }, expected: 6600 },\n  { name: \"free-shipping\", input: { ...input, items: [{ sku: \"DESK\", quantity: 1, unitPrice: 12000, weight: 3 }] }, expected: 10800 },\n];\nconst results = cases.map(test => {\n  const quote = estimateOrder(test.input);\n  const order = submitOrder(test.input);\n  assert.equal(order.total, test.expected);\n  assert.equal(quote.total, order.total);\n  return { name: test.name, passed: true, total: order.total, quoteMatchesCheckout: true };\n});\nassert.throws(() => submitOrder({ ...input, customer: { id: \"\", region: \"local\" } }), /Customer/);\nassert.throws(() => submitOrder({ ...input, items: [] }), /positive quantities/);\nconsole.log(JSON.stringify({ status: \"passed\", cases: results, invalidCustomerRejected: true, emptyCartRejected: true }, null, 2));\n"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "Function:routes/order.ts:submitOrder",
+      "name": "submitOrder",
+      "filePath": "routes/order.ts",
+      "startLine": 6,
+      "endLine": 9,
+      "label": "Function"
+    },
+    {
+      "id": "Function:services/checkout.ts:checkoutOrder",
+      "name": "checkoutOrder",
+      "filePath": "services/checkout.ts",
+      "startLine": 8,
+      "endLine": 16,
+      "label": "Function"
+    },
+    {
+      "id": "Function:services/customer.ts:validate",
+      "name": "validate",
+      "filePath": "services/customer.ts",
+      "startLine": 4,
+      "endLine": 6,
+      "label": "Function"
+    },
+    {
+      "id": "Function:services/discount.ts:applyDiscount",
+      "name": "applyDiscount",
+      "filePath": "services/discount.ts",
+      "startLine": 1,
+      "endLine": 3,
+      "label": "Function"
+    },
+    {
+      "id": "Function:services/estimate.ts:estimateOrder",
+      "name": "estimateOrder",
+      "filePath": "services/estimate.ts",
+      "startLine": 7,
+      "endLine": 12,
+      "label": "Function"
+    },
+    {
+      "id": "Function:services/inventory.ts:validate",
+      "name": "validate",
+      "filePath": "services/inventory.ts",
+      "startLine": 4,
+      "endLine": 8,
+      "label": "Function"
+    },
+    {
+      "id": "Function:services/inventory.ts:reserveStock",
+      "name": "reserveStock",
+      "filePath": "services/inventory.ts",
+      "startLine": 10,
+      "endLine": 13,
+      "label": "Function"
+    },
+    {
+      "id": "Function:services/pricing.ts:calculateSubtotal",
+      "name": "calculateSubtotal",
+      "filePath": "services/pricing.ts",
+      "startLine": 3,
+      "endLine": 5,
+      "label": "Function"
+    },
+    {
+      "id": "Function:services/shipping.ts:calculateShipping",
+      "name": "calculateShipping",
+      "filePath": "services/shipping.ts",
+      "startLine": 4,
+      "endLine": 9,
+      "label": "Function"
+    },
+    {
+      "id": "Function:storage/orders.ts:saveOrder",
+      "name": "saveOrder",
+      "filePath": "storage/orders.ts",
+      "startLine": 4,
+      "endLine": 6,
+      "label": "Function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "Function:routes/order.ts:submitOrder",
+      "target": "Function:services/checkout.ts:checkoutOrder",
+      "type": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "source": "Function:routes/order.ts:submitOrder",
+      "target": "Function:services/customer.ts:validate",
+      "type": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "source": "Function:services/checkout.ts:checkoutOrder",
+      "target": "Function:services/discount.ts:applyDiscount",
+      "type": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "source": "Function:services/checkout.ts:checkoutOrder",
+      "target": "Function:services/inventory.ts:reserveStock",
+      "type": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "source": "Function:services/checkout.ts:checkoutOrder",
+      "target": "Function:services/pricing.ts:calculateSubtotal",
+      "type": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "source": "Function:services/checkout.ts:checkoutOrder",
+      "target": "Function:services/shipping.ts:calculateShipping",
+      "type": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "source": "Function:services/checkout.ts:checkoutOrder",
+      "target": "Function:storage/orders.ts:saveOrder",
+      "type": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "source": "Function:services/estimate.ts:estimateOrder",
+      "target": "Function:services/discount.ts:applyDiscount",
+      "type": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "source": "Function:services/estimate.ts:estimateOrder",
+      "target": "Function:services/pricing.ts:calculateSubtotal",
+      "type": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "source": "Function:services/estimate.ts:estimateOrder",
+      "target": "Function:services/shipping.ts:calculateShipping",
+      "type": "CALLS",
+      "confidence": 0.85
+    },
+    {
+      "source": "Function:services/inventory.ts:reserveStock",
+      "target": "Function:services/inventory.ts:validate",
+      "type": "CALLS",
+      "confidence": 0.85
+    }
+  ],
+  "results": {
+    "context": {
+      "status": "found",
+      "contentAvailability": {
+        "requested": true,
+        "profile": "full",
+        "available": true,
+        "scope": "full"
+      },
+      "symbol": {
+        "uid": "Function:services/shipping.ts:calculateShipping",
+        "name": "calculateShipping",
+        "kind": "Function",
+        "filePath": "services/shipping.ts",
+        "startLine": 4,
+        "endLine": 9,
+        "content": "export function calculateShipping(items: CartItem[], region: Customer[\"region\"]): number {   const subtotal = items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);   if (subtotal >= 10000 && region === \"local\") return 0;   const weight = items.reduce((sum, item) => sum + item.weight * item.quantity, 0);   return (region === \"remote\" ? 1200 : 500) + Math.max(0, Math.ceil(weight) - 1) * 200; }"
+      },
+      "epistemic": "exact",
+      "incoming": {
+        "calls": [
+          {
+            "uid": "Function:services/checkout.ts:checkoutOrder",
+            "name": "checkoutOrder",
+            "filePath": "services/checkout.ts"
+          },
+          {
+            "uid": "Function:services/estimate.ts:estimateOrder",
+            "name": "estimateOrder",
+            "filePath": "services/estimate.ts"
+          }
+        ]
+      },
+      "outgoing": {},
+      "processes": [
+        {
+          "id": "proc_3_submitorder",
+          "name": "SubmitOrder → CalculateShipping",
+          "step_index": 3,
+          "step_count": 3
+        }
+      ]
+    },
+    "impact": {
+      "target": {
+        "id": "Function:services/shipping.ts:calculateShipping",
+        "name": "calculateShipping",
+        "type": "Function",
+        "filePath": "services/shipping.ts"
+      },
+      "direction": "upstream",
+      "impactedCount": 4,
+      "risk": "LOW",
+      "riskSharedAxes": "LOW",
+      "riskScale": {
+        "comparableAcrossKinds": true,
+        "unusedAxes": []
+      },
+      "epistemic": "exact",
+      "summary": {
+        "direct": 2,
+        "processes_affected": 1,
+        "modules_affected": 2
+      },
+      "byDepthCounts": {
+        "1": 2,
+        "2": 2
+      },
+      "affected_processes": [
+        {
+          "name": "submitOrder",
+          "type": "Function",
+          "filePath": "routes/order.ts",
+          "affected_process_count": 4,
+          "total_hits": 8,
+          "earliest_broken_step": 1
+        }
+      ],
+      "affected_modules": [
+        {
+          "name": "Services",
+          "hits": 2,
+          "impact": "direct"
+        },
+        {
+          "name": "Routes",
+          "hits": 1,
+          "impact": "indirect"
+        }
+      ],
+      "byDepth": {
+        "1": [
+          {
+            "depth": 1,
+            "id": "Function:services/checkout.ts:checkoutOrder",
+            "name": "checkoutOrder",
+            "filePath": "services/checkout.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_0_submitorder",
+                "label": "SubmitOrder → Validate",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_3_submitorder",
+                "label": "SubmitOrder → CalculateShipping",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_2_submitorder",
+                "label": "SubmitOrder → CalculateSubtotal",
+                "processType": "cross_community",
+                "step": 2
+              },
+              {
+                "id": "proc_1_submitorder",
+                "label": "SubmitOrder → ApplyDiscount",
+                "processType": "cross_community",
+                "step": 2
+              }
+            ]
+          },
+          {
+            "depth": 1,
+            "id": "Function:services/estimate.ts:estimateOrder",
+            "name": "estimateOrder",
+            "filePath": "services/estimate.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          }
+        ],
+        "2": [
+          {
+            "depth": 2,
+            "id": "File:verify.ts",
+            "name": "verify.ts",
+            "filePath": "verify.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": []
+          },
+          {
+            "depth": 2,
+            "id": "Function:routes/order.ts:submitOrder",
+            "name": "submitOrder",
+            "filePath": "routes/order.ts",
+            "relationType": "CALLS",
+            "confidence": 0.85,
+            "processes": [
+              {
+                "id": "proc_1_submitorder",
+                "label": "SubmitOrder → ApplyDiscount",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_2_submitorder",
+                "label": "SubmitOrder → CalculateSubtotal",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_0_submitorder",
+                "label": "SubmitOrder → Validate",
+                "processType": "cross_community",
+                "step": 1
+              },
+              {
+                "id": "proc_3_submitorder",
+                "label": "SubmitOrder → CalculateShipping",
+                "processType": "cross_community",
+                "step": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "query": {
+      "processes": [
+        {
+          "id": "proc_0_submitorder",
+          "summary": "SubmitOrder → Validate",
+          "priority": 0.104,
+          "symbol_count": 1,
+          "process_type": "cross_community",
+          "step_count": 4
+        },
+        {
+          "id": "proc_1_submitorder",
+          "summary": "SubmitOrder → ApplyDiscount",
+          "priority": 0.104,
+          "symbol_count": 1,
+          "process_type": "cross_community",
+          "step_count": 3
+        },
+        {
+          "id": "proc_2_submitorder",
+          "summary": "SubmitOrder → CalculateSubtotal",
+          "priority": 0.104,
+          "symbol_count": 1,
+          "process_type": "cross_community",
+          "step_count": 3
+        },
+        {
+          "id": "proc_3_submitorder",
+          "summary": "SubmitOrder → CalculateShipping",
+          "priority": 0.104,
+          "symbol_count": 1,
+          "process_type": "cross_community",
+          "step_count": 3
+        }
+      ],
+      "process_symbols": [
+        {
+          "id": "Function:services/checkout.ts:checkoutOrder",
+          "name": "checkoutOrder",
+          "filePath": "services/checkout.ts",
+          "startLine": 8,
+          "endLine": 16,
+          "module": "Services",
+          "content": "export function checkoutOrder(input: OrderInput): SavedOrder {   const subtotal = calculateSubtotal(input.items);   const discount = applyDiscount(subtotal, input.coupon);   const shipping = calculateShipping(input.items, input.customer.region);   reserveStock(input.items);   return saveOrder(input.customer.id, {     subtotal, discount, shipping, total: subtotal - discount + shipping,   }); }",
+          "process_id": "proc_0_submitorder",
+          "step_index": 2
+        }
+      ],
+      "definitions": [
+        {
+          "id": "File:services/checkout.ts",
+          "name": "checkout.ts",
+          "filePath": "services/checkout.ts",
+          "content": "import { calculateSubtotal } from \"./pricing.ts\"; import { applyDiscount } from \"./discount.ts\"; import { calculateShipping } from \"./shipping.ts\"; import { reserveStock } from \"./inventory.ts\"; import { saveOrder } from \"../storage/orders.ts\"; import type { OrderInput, SavedOrder } from \"../types.ts\"; export function checkoutOrder(input: OrderInput): SavedOrder {   const subtotal = calculateSubtotal(input.items);   const discount = applyDiscount(subtotal, input.coupon);   const shipping = calculateShipping(input.items, input.customer.region);   reserveStock(input.items);   return saveOrder(input.customer.id, {     subtotal, discount, shipping, total: subtotal - discount + shipping,   }); } "
+        },
+        {
+          "id": "Const:verify.ts:cases",
+          "name": "cases",
+          "filePath": "verify.ts",
+          "startLine": 11,
+          "endLine": 15,
+          "content": "const cases = [   { name: \"local-discount\", input, expected: 5900 },   { name: \"remote-shipping\", input: { ...input, customer: { id: \"buyer-02\", region: \"remote\" as const } }, expected: 6600 },   { name: \"free-shipping\", input: { ...input, items: [{ sku: \"DESK\", quantity: 1, unitPrice: 12000, weight: 3 }] }, expected: 10800 }, ];"
+        },
+        {
+          "id": "Const:verify.ts:results",
+          "name": "results",
+          "filePath": "verify.ts",
+          "startLine": 16,
+          "endLine": 22,
+          "content": "const results = cases.map(test => {   const quote = estimateOrder(test.input);   const order = submitOrder(test.input);   assert.equal(order.total, test.expected);   assert.equal(quote.total, order.total);   return { name: test.name, passed: true, total: order.total, quoteMatchesCheckout: true }; });"
+        },
+        {
+          "id": "File:verify.ts",
+          "name": "verify.ts",
+          "filePath": "verify.ts",
+          "content": "import assert from \"node:assert/strict\"; import { submitOrder } from \"./routes/order.ts\"; import { estimateOrder } from \"./services/estimate.ts\"; import type { OrderInput } from \"./types.ts\"; const input: OrderInput = {   customer: { id: \"buyer-01\", region: \"local\" },   items: [{ sku: \"BOOK\", quantity: 2, unitPrice: 3000, weight: 0.5 }],   coupon: \"SAVE10\", }; const cases = [   { name: \"local-discount\", input, expected: 5900 },   { name: \"remote-shipping\", input: { ...input, customer: { id: \"buyer-02\", region: \"remote\" as const } }, expected: 6600 },   { name: \"free-shipping\", input: { ...input, items: [{ sku: \"DESK\", quantity: 1, unitPrice: 12000, weight: 3 }] }, expected: 10800 }, ]; const results = cases.map(test => {   const quote = estimateOrder(test.input);   const order = submitOrder(test.input);   assert.equal(order.total, test.expected);   assert.equal(quote.total, order.total);   return { name: test.name, passed: true, total: order.total, quoteMatchesCheckout: true }; }); assert.throws(() => submitOrder({ ...input, customer: { id: \"\", region: \"local\" } }), /Customer/); assert.throws(() => submitOrder({ ...input, items: [] }), /positive quantities/); console.log(JSON.stringify({ status: \"passed\", cases: results, invalidCustomerRejected: true, emptyCartRejected: true }, null, 2)); "
+        },
+        {
+          "id": "Interface:types.ts:Quote",
+          "name": "Quote",
+          "filePath": "types.ts",
+          "startLine": 4,
+          "endLine": 4,
+          "module": "Cluster_3",
+          "content": "export interface Quote { subtotal: number; discount: number; shipping: number; total: number }"
+        },
+        {
+          "id": "Property:types.ts:Quote.discount",
+          "name": "discount",
+          "filePath": "types.ts",
+          "startLine": 4,
+          "endLine": 4,
+          "content": "export interface Quote { subtotal: number; discount: number; shipping: number; total: number }"
+        },
+        {
+          "id": "Property:types.ts:Quote.shipping",
+          "name": "shipping",
+          "filePath": "types.ts",
+          "startLine": 4,
+          "endLine": 4,
+          "content": "export interface Quote { subtotal: number; discount: number; shipping: number; total: number }"
+        },
+        {
+          "id": "Function:services/estimate.ts:estimateOrder",
+          "name": "estimateOrder",
+          "filePath": "services/estimate.ts",
+          "startLine": 7,
+          "endLine": 12,
+          "module": "Services",
+          "content": "export function estimateOrder(input: OrderInput): Quote {   const subtotal = calculateSubtotal(input.items);   const discount = applyDiscount(subtotal, input.coupon);   const shipping = shippingCost(input.items, input.customer.region);   return { subtotal, discount, shipping, total: subtotal - discount + shipping }; }"
+        },
+        {
+          "id": "File:services/estimate.ts",
+          "name": "estimate.ts",
+          "filePath": "services/estimate.ts",
+          "content": "import { calculateShipping as shippingCost } from \"./shipping.ts\"; import { calculateSubtotal } from \"./pricing.ts\"; import { applyDiscount } from \"./discount.ts\"; import type { OrderInput, Quote } from \"../types.ts\"; // Quote calculation shares shipping logic through a named import alias. export function estimateOrder(input: OrderInput): Quote {   const subtotal = calculateSubtotal(input.items);   const discount = applyDiscount(subtotal, input.coupon);   const shipping = shippingCost(input.items, input.customer.region);   return { subtotal, discount, shipping, total: subtotal - discount + shipping }; } "
+        },
+        {
+          "id": "File:routes/order.ts",
+          "name": "order.ts",
+          "filePath": "routes/order.ts",
+          "content": "import { validate } from \"../services/customer.ts\"; import { checkoutOrder } from \"../services/checkout.ts\"; import type { OrderInput, SavedOrder } from \"../types.ts\"; // HTTP route equivalent: POST /orders. export function submitOrder(input: OrderInput): SavedOrder {   validate(input.customer);   return checkoutOrder(input); } "
+        },
+        {
+          "id": "File:package.json",
+          "name": "package.json",
+          "filePath": "package.json",
+          "content": "{   \"name\": \"gitnexus-checkout-lab\",   \"private\": true,   \"version\": \"1.0.0\",   \"type\": \"module\",   \"scripts\": { \"check\": \"node --experimental-strip-types verify.ts\" } } "
+        },
+        {
+          "id": "File:storage/orders.ts",
+          "name": "orders.ts",
+          "filePath": "storage/orders.ts",
+          "content": "import type { Quote, SavedOrder } from \"../types.ts\"; // Deliberately deterministic, in-memory example; no database or payment side effect. export function saveOrder(customerId: string, quote: Quote): SavedOrder {   return { id: `demo-${customerId}`, customerId, status: \"confirmed\", ...quote }; } "
+        },
+        {
+          "id": "File:services/shipping.ts",
+          "name": "shipping.ts",
+          "filePath": "services/shipping.ts",
+          "content": "import type { CartItem, Customer } from \"../types.ts\"; // All money values are integer cents. Free shipping starts at a 10,000-cent subtotal. export function calculateShipping(items: CartItem[], region: Customer[\"region\"]): number {   const subtotal = items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);   if (subtotal >= 10000 && region === \"local\") return 0;   const weight = items.reduce((sum, item) => sum + item.weight * item.quantity, 0);   return (region === \"remote\" ? 1200 : 500) + Math.max(0, Math.ceil(weight) - 1) * 200; } "
+        }
+      ],
+      "timing": {
+        "vector": 6,
+        "bm25": 198.2,
+        "merge": 0.1,
+        "symbol_lookup": 49,
+        "ranking": 0.2,
+        "formatting": 0.1,
+        "wall": 249.7
+      },
+      "contentAvailability": {
+        "requested": true,
+        "profile": "full",
+        "available": true,
+        "scope": "full"
+      }
+    },
+    "trace": {
+      "status": "ok",
+      "from": {
+        "name": "submitOrder",
+        "filePath": "routes/order.ts",
+        "startLine": 5
+      },
+      "to": {
+        "name": "saveOrder",
+        "filePath": "storage/orders.ts",
+        "startLine": 3
+      },
+      "hopCount": 2,
+      "hops": [
+        {
+          "name": "submitOrder",
+          "filePath": "routes/order.ts",
+          "startLine": 5
+        },
+        {
+          "name": "checkoutOrder",
+          "filePath": "services/checkout.ts",
+          "startLine": 7
+        },
+        {
+          "name": "saveOrder",
+          "filePath": "storage/orders.ts",
+          "startLine": 3
+        }
+      ],
+      "edges": [
+        {
+          "relType": "CALLS",
+          "confidence": 0.85
+        },
+        {
+          "relType": "CALLS",
+          "confidence": 0.85
+        }
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "预期业务调用",
+      "passed": true,
+      "detail": "预先列出的 11 条函数调用全部核对；命中 11/11。",
+      "matched": 11,
+      "expected": 11
+    },
+    {
+      "name": "导入别名",
+      "passed": true,
+      "detail": "estimateOrder 通过 shippingCost 别名导入，仍解析到 calculateShipping。"
+    },
+    {
+      "name": "同名函数消歧",
+      "passed": true,
+      "detail": "submitOrder → customer.validate；reserveStock → inventory.validate；两条交叉误连均未出现。"
+    },
+    {
+      "name": "直接调用者",
+      "passed": true,
+      "detail": "context 返回 checkoutOrder 与 estimateOrder 两个直接调用者。"
+    },
+    {
+      "name": "跨文件调用链",
+      "passed": true,
+      "detail": "trace 找到 submitOrder → checkoutOrder → saveOrder，共 2 跳。"
+    },
+    {
+      "name": "业务行为",
+      "passed": true,
+      "detail": "3 个报价/下单案例通过；无效客户与空购物车均被拒绝。"
+    },
+    {
+      "name": "关键词检索",
+      "passed": true,
+      "detail": "FTS 修复后实际返回 4 条流程、1 个流程符号和 13 条定义。"
+    }
+  ],
+  "businessChecks": {
+    "status": "passed",
+    "cases": [
+      {
+        "name": "local-discount",
+        "passed": true,
+        "total": 5900,
+        "quoteMatchesCheckout": true
+      },
+      {
+        "name": "remote-shipping",
+        "passed": true,
+        "total": 6600,
+        "quoteMatchesCheckout": true
+      },
+      {
+        "name": "free-shipping",
+        "passed": true,
+        "total": 10800,
+        "quoteMatchesCheckout": true
+      }
+    ],
+    "invalidCustomerRejected": true,
+    "emptyCartRejected": true
+  },
+  "limitations": [
+    "这是原创小型 TypeScript 样本的实跑结果，不能外推为任意语言、大型项目或 AI 修复成功率。",
+    "调用关系与流程来自静态分析；未覆盖运行时反射、动态依赖注入、外部系统和任意框架语义。",
+    "未启用 embedding、LLM、Wiki 或 PDG；本实验验证的是结构图谱与查询工具。",
+    "边 confidence=0.85 是工具给出的解析置信度，不能读成 85% 的实际正确率。",
+    "影响分析返回的是需检查的依赖范围；实际破坏性仍需结合源码、类型检查与业务测试判断。"
+  ],
+  "commands": [
+    {
+      "name": "context",
+      "command": "gitnexus 'context' 'calculateShipping' '--file' 'services/shipping.ts' '--content'",
+      "exitCode": 0,
+      "seconds": 1.704,
+      "stdout": "references/context.stdout.txt",
+      "stderr": "references/context.stderr.txt",
+      "arguments": [
+        "context",
+        "calculateShipping",
+        "--file",
+        "services/shipping.ts",
+        "--content"
+      ]
+    },
+    {
+      "name": "impact",
+      "command": "gitnexus 'impact' 'calculateShipping' '--file' 'services/shipping.ts' '--direction' 'upstream' '--depth' '3'",
+      "exitCode": 0,
+      "seconds": 1.44,
+      "stdout": "references/impact.stdout.txt",
+      "stderr": "references/impact.stderr.txt",
+      "arguments": [
+        "impact",
+        "calculateShipping",
+        "--file",
+        "services/shipping.ts",
+        "--direction",
+        "upstream",
+        "--depth",
+        "3"
+      ]
+    },
+    {
+      "name": "query",
+      "command": "gitnexus 'query' 'shipping checkout order' '--limit' '5' '--content'",
+      "exitCode": 0,
+      "seconds": 1.33,
+      "stdout": "references/query.stdout.txt",
+      "stderr": "references/query.stderr.txt",
+      "arguments": [
+        "query",
+        "shipping checkout order",
+        "--limit",
+        "5",
+        "--content"
+      ]
+    },
+    {
+      "name": "trace",
+      "command": "gitnexus 'trace' 'submitOrder' 'saveOrder' '--from-file' 'routes/order.ts' '--to-file' 'storage/orders.ts'",
+      "exitCode": 0,
+      "seconds": 0.936,
+      "stdout": "references/trace.stdout.txt",
+      "stderr": "references/trace.stderr.txt",
+      "arguments": [
+        "trace",
+        "submitOrder",
+        "saveOrder",
+        "--from-file",
+        "routes/order.ts",
+        "--to-file",
+        "storage/orders.ts"
+      ]
+    },
+    {
+      "name": "customer-context",
+      "command": "gitnexus 'context' 'validate' '--file' 'services/customer.ts'",
+      "exitCode": 0,
+      "seconds": 0.952,
+      "stdout": "references/customer-context.stdout.txt",
+      "stderr": "references/customer-context.stderr.txt",
+      "arguments": [
+        "context",
+        "validate",
+        "--file",
+        "services/customer.ts"
+      ]
+    },
+    {
+      "name": "inventory-context",
+      "command": "gitnexus 'context' 'validate' '--file' 'services/inventory.ts'",
+      "exitCode": 0,
+      "seconds": 0.961,
+      "stdout": "references/inventory-context.stdout.txt",
+      "stderr": "references/inventory-context.stderr.txt",
+      "arguments": [
+        "context",
+        "validate",
+        "--file",
+        "services/inventory.ts"
+      ]
+    },
+    {
+      "name": "graph-nodes",
+      "command": "gitnexus 'cypher' 'MATCH (n:Function) RETURN n.id AS id, n.name AS name, n.filePath AS filePath, n.startLine AS startLine, n.endLine AS endLine ORDER BY n.filePath, n.startLine' '--limit' '200'",
+      "exitCode": 0,
+      "seconds": 0.85,
+      "stdout": "references/graph-nodes.stdout.txt",
+      "stderr": "references/graph-nodes.stderr.txt",
+      "arguments": [
+        "cypher",
+        "MATCH (n:Function) RETURN n.id AS id, n.name AS name, n.filePath AS filePath, n.startLine AS startLine, n.endLine AS endLine ORDER BY n.filePath, n.startLine",
+        "--limit",
+        "200"
+      ]
+    },
+    {
+      "name": "graph-edges",
+      "command": "gitnexus 'cypher' 'MATCH (a:Function)-[r:CodeRelation {type: ''CALLS''}]->(b:Function) RETURN a.id AS source, b.id AS target, r.type AS type, r.confidence AS confidence ORDER BY a.id, b.id' '--limit' '200'",
+      "exitCode": 0,
+      "seconds": 0.708,
+      "stdout": "references/graph-edges.stdout.txt",
+      "stderr": "references/graph-edges.stderr.txt",
+      "arguments": [
+        "cypher",
+        "MATCH (a:Function)-[r:CodeRelation {type: 'CALLS'}]->(b:Function) RETURN a.id AS source, b.id AS target, r.type AS type, r.confidence AS confidence ORDER BY a.id, b.id",
+        "--limit",
+        "200"
+      ]
+    },
+    {
+      "name": "graph-counts",
+      "command": "gitnexus 'cypher' 'MATCH (n) RETURN labels(n) AS label, count(n) AS count ORDER BY count DESC' '--limit' '100'",
+      "exitCode": 0,
+      "seconds": 0.623,
+      "stdout": "references/graph-counts.stdout.txt",
+      "stderr": "references/graph-counts.stderr.txt",
+      "arguments": [
+        "cypher",
+        "MATCH (n) RETURN labels(n) AS label, count(n) AS count ORDER BY count DESC",
+        "--limit",
+        "100"
+      ]
+    }
+  ],
+  "raw": {
+    "context": "references/context.json",
+    "impact": "references/impact.json",
+    "query": "references/query.json",
+    "trace": "references/trace.json",
+    "customer-context": "references/customer-context.json",
+    "inventory-context": "references/inventory-context.json",
+    "graph-nodes": "references/graph-nodes.json",
+    "graph-edges": "references/graph-edges.json",
+    "graph-counts": "references/graph-counts.json"
+  },
+  "lineNumbers": {
+    "normalized": "one-based",
+    "rawCypherAndTrace": "zero-based",
+    "rawContext": "one-based"
+  }
+}

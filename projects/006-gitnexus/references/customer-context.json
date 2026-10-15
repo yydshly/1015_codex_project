@@ -1,0 +1,31 @@
+{
+  "status": "found",
+  "symbol": {
+    "uid": "Function:services/customer.ts:validate",
+    "name": "validate",
+    "kind": "Function",
+    "filePath": "services/customer.ts",
+    "startLine": 4,
+    "endLine": 6
+  },
+  "epistemic": "exact",
+  "incoming": {
+    "calls": [
+      {
+        "uid": "Function:routes/order.ts:submitOrder",
+        "name": "submitOrder",
+        "filePath": "routes/order.ts"
+      }
+    ]
+  },
+  "outgoing": {
+    "accesses": [
+      {
+        "uid": "Property:types.ts:Customer.id",
+        "name": "id",
+        "filePath": "types.ts"
+      }
+    ]
+  },
+  "processes": []
+}

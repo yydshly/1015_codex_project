@@ -75,6 +75,21 @@
       ],
       "cover": "assets/research-map.png",
       "demo_url": "https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html"
+    },
+    {
+      "id": 6,
+      "slug": "gitnexus",
+      "name": "GitNexus 代码图谱与影响分析研究",
+      "repository": "https://github.com/abhigyanpatwari/GitNexus",
+      "summary": "以 AST 和语言规则解析跨文件代码图，借助 LadybugDB 与 MCP 提供调用、影响和路径查询；网页用真实结算样本及原始输出展示能力、原理和检索恢复过程。",
+      "status": "completed",
+      "tags": [
+        "代码图谱",
+        "静态分析",
+        "MCP"
+      ],
+      "cover": "assets/cover.svg",
+      "demo_url": ""
     }
   ]
 }
