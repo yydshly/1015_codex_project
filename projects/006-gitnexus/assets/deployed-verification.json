@@ -1,13 +1,13 @@
 {
   "status": "passed",
-  "checkedAt": "2026-10-19T14:23:26.212043+08:00",
+  "checkedAt": "2026-10-19T15:51:32.421543+08:00",
   "url": "https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/",
   "responses": [
     {
       "path": "index.html",
       "status": 200,
-      "bytes": 42185,
-      "sha256": "92d100161669c616eca2f35b183f0d1d5c0f6dcf32489e423db8b19162c37bbe"
+      "bytes": 41770,
+      "sha256": "e4b544fb1187b35f2221025e5fd03ab916b15b2878204de9fc715932d232e126"
     },
     {
       "path": "styles.css",
@@ -260,10 +260,47 @@
       "status": 200,
       "bytes": 7912,
       "sha256": "9a6cf3aa58e4ccff315d0b5f0128b3ff102a8930367b290aef5aaf4ae89bdb73"
+    },
+    {
+      "path": "assets/guide.css",
+      "status": 200,
+      "bytes": 2735,
+      "sha256": "0ebafd789cda906d072a2624db5014c8484d86a4ef3b55068ca2520e846451c1"
+    },
+    {
+      "path": "assets/guide.js",
+      "status": 200,
+      "bytes": 1179,
+      "sha256": "1610da3f6ccb14bb65303abf7d7bb60cc1763186ef0d9a0686f58db1efbdfd4d"
+    },
+    {
+      "path": "assets/research-guide.svg",
+      "status": 200,
+      "bytes": 40673,
+      "sha256": "9dbe3a37eb2ef4b7159f66d198909fa0975c1953e2854546340151dbf6ba4f0d"
+    },
+    {
+      "path": "assets/research-guide.mmd",
+      "status": 200,
+      "bytes": 2983,
+      "sha256": "81d63110ded66247410dec2f5946ac6b90bdf8f21d613626f971e8cbbdce6765"
+    },
+    {
+      "path": "references/guide-provenance.json",
+      "status": 200,
+      "bytes": 789,
+      "sha256": "c1e6e849c8a77e5c163486a6b03c327bf36a0626f0f69032db9d4d6770567f40"
+    },
+    {
+      "path": "https://yydshly.github.io/1015_codex_project/assets/006-gitnexus/cover.svg",
+      "status": 200,
+      "bytes": 40673,
+      "sha256": "9dbe3a37eb2ef4b7159f66d198909fa0975c1953e2854546340151dbf6ba4f0d"
     }
   ],
   "runtimeEvidenceMatches": true,
   "textAssetsMatchAfterNewlineNormalization": true,
+  "overviewAndCatalogCoverMatch": true,
   "graphNodes": 71,
   "graphEdges": 131,
   "businessCalls": 11,

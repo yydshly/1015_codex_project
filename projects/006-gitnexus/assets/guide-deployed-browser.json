@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-19",
+  "deploymentRun": 39218490366,
+  "checks": [
+    {
+      "check": "published-guide-image",
+      "naturalHeight": 1448,
+      "naturalWidth": 1417,
+      "open": true,
+      "src": "assets/research-guide.svg"
+    },
+    {
+      "check": "tablet-fit-view",
+      "dialogBottom": 1008,
+      "imageBottom": 849.0729370117188,
+      "pageWidth": 768,
+      "width": 768
+    },
+    {
+      "check": "published-mobile-original",
+      "contentWidth": 1417,
+      "pageWidth": 390,
+      "viewWidth": 357,
+      "width": 390
+    },
+    {
+      "check": "published-escape-closes",
+      "closed": true
+    },
+    {
+      "check": "published-catalog-cover",
+      "naturalHeight": 1448,
+      "naturalWidth": 1417,
+      "src": "assets/006-gitnexus/cover.svg"
+    }
+  ],
+  "errorsDuringVerification": []
+}

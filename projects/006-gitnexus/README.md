@@ -143,3 +143,7 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 主页面与独立工作台使用相同总结，12 张能力卡分别注明小样本已验证、实跑但存在缺口和尚未验证的部分。沿用 2026-10-16 的固定 npm 1.6.12 证据，没有把模型闭环、跨仓库组或真实大型项目收益标为已验证。
 
 该次总结及缓存更新已通过 [Pages 任务 39208538994](https://github.com/yydshly/1015_codex_project/actions/runs/39208538994) 发布。12 项本地检查与 41 项线上资源核对通过，12 张状态标签与本地一致，无脚本错误。保留标签页曾缓存旧工作台脚本，已添加资源版本参数并复核。[本地检查](assets/positioning-local-verification.json) · [线上检查](assets/positioning-deployed-browser.json) · [截图](assets/positioning-desktop.jpg)。
+
+## 整体引导图接入 · 2026-10-19
+
+内容提交 `4435b8e` 已通过 [Pages 任务 39218490366](https://github.com/yydshly/1015_codex_project/actions/runs/39218490366) 发布。首页改用前文整理的整体流程图，项目封面与网页原图字节一致；Mermaid 源内容、可复现导出方式与来源记录一同保存。9 项本地检查覆盖图片、放大、原始尺寸、适应宽度、Esc 关闭、390px／320px 与下载入口；49 项线上 HTTP／一致性核对、5 项线上浏览器检查通过，含平板全图、手机滚动及站点导航封面，无本轮线上脚本错误。[本地检查](assets/guide-local-verification.json) · [线上检查](assets/guide-deployed-browser.json) · [线上完整图查看效果](assets/guide-deployed.jpg)。
