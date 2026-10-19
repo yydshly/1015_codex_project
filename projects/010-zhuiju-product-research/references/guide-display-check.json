@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-19",
+  "change": "Complete original overview preview without cropping or overlay",
+  "source": "assets/research-overview-20261019.png",
+  "layouts": [
+    {
+      "fit": "contain",
+      "image": [
+        159,
+        640
+      ],
+      "natural": [
+        2048,
+        8246
+      ],
+      "pageWidth": 1265,
+      "scrollWidth": 1265,
+      "viewport": 1280
+    },
+    {
+      "fit": "contain",
+      "image": [
+        139,
+        560
+      ],
+      "natural": [
+        2048,
+        8246
+      ],
+      "pageWidth": 375,
+      "scrollWidth": 375,
+      "viewport": 390
+    },
+    {
+      "fit": "contain",
+      "image": [
+        139,
+        560
+      ],
+      "natural": [
+        2048,
+        8246
+      ],
+      "pageWidth": 305,
+      "scrollWidth": 305,
+      "viewport": 320
+    }
+  ],
+  "modal": {
+    "open": true,
+    "natural_size": [
+      2048,
+      8246
+    ]
+  },
+  "new_images_generated": false
+}
