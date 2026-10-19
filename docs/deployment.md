@@ -109,3 +109,13 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 固定v1.6.12的实际分析为71节点、131关系、4社区和4流程；业务子图为10函数、11调用。导入别名、同名消歧、调用者、路径、业务案例和关键词检索共7项通过。FTS首次超时后修复成功，保留修复前后原始证据。未启用embedding、LLM、Wiki或PDG。
 
 线上13项HTTP检查返回200，规范换行后的脚本、样式和JSON与本地一致；1280px桌面和390px手机正常，局部源码与查询记录可用，无控制台错误。另有320px窄屏及12项本地交互检查。发布后才回填demo_url；记录在 `projects/006-gitnexus/assets/deployed-verification.json`、`assets/deployed-browser.json` 与 `verification.json`。
+
+## 010 · 追剧资源与视频产品研究页实际发布
+
+2026-10-19：内容提交 `6332848` 和网页附件修复提交 `af367a9` 已推送至 main，[Pages 任务 39233290157](https://github.com/yydshly/1015_codex_project/actions/runs/39233290157) 成功。[在线研究页](https://yydshly.github.io/1015_codex_project/projects/010-zhuiju-product-research/) 沿用现有静态构建与 Pages Actions，无根目录新增应用依赖。
+
+摘要明确源库以 JSON 资源目录、维护者审核和定时 HTTP 检测整理入口；页面解释配置 → API → HLS 的发现与播放链路，并把同类产品拆为内容供应、片目与适配、前端观看、存储/CDN和经营验证。引导图原样使用本次生成的全景 PNG / SVG，支持放大和下载。
+
+公开范围为研究、证据、11 篇文档阅读器、来源筛选与成本工具。007 代码和证据作为依赖一并提交；它的实时搜播后端仅在本机运行，公网按钮提供运行说明。未部署公开影片 API，也未签署内容供应合同。008 / 009 的未提交研究没有纳入发布。
+
+线上总导航、010 / 007 入口及 40 项静态资源合计 43 项 HTTP / 内容检查通过，图像哈希与原图一致；图像弹窗、阅读器深链接刷新、筛选、成本计算和重置、1280 / 390 / 320px 布局通过。首次检查发现隐藏 `.github` 附件路径 404，现已映射到可发布路径并复核。证据及截图位于 `projects/010-zhuiju-product-research/references/deployed-verification.json`、`references/deployed-browser.json` 与 `assets/deployed-*.png`。真实 URL 在部署并访问成功后回填索引。

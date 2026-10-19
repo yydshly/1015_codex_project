@@ -1,0 +1,285 @@
+{
+  "verified_at": "2026-10-19T09:53:36.792676+00:00",
+  "site_url": "https://yydshly.github.io/1015_codex_project/projects/010-zhuiju-product-research/",
+  "content_commit": "af367a9f5524f84ee1579928161bdddc31ba6e7d",
+  "pages_run": "https://github.com/yydshly/1015_codex_project/actions/runs/39233290157",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 5773,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/",
+      "status": 200,
+      "bytes": 26344,
+      "matches_local": true
+    },
+    {
+      "path": "projects/007-zhuiju-source-demo/",
+      "status": 200,
+      "bytes": 2323,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/app.js",
+      "status": 200,
+      "bytes": 21615,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/favicon.svg",
+      "status": 200,
+      "bytes": 245,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/007/THIRD_PARTY.md",
+      "status": 200,
+      "bytes": 1237,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/007/assets/api-probes.json",
+      "status": 200,
+      "bytes": 27539,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/007/assets/browser-verification.json",
+      "status": 200,
+      "bytes": 1895,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/007/assets/demo-playback-verified.jpg",
+      "status": 200,
+      "bytes": 160167,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/007/assets/ffprobe.json",
+      "status": 200,
+      "bytes": 842,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/007/assets/live-verification.json",
+      "status": 200,
+      "bytes": 3317,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/007/assets/source-scan.json",
+      "status": 200,
+      "bytes": 20899,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/007/notes.md",
+      "status": 200,
+      "bytes": 2135,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/007/source.json",
+      "status": 200,
+      "bytes": 706,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/007/web/README.md",
+      "status": 200,
+      "bytes": 1523,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/assets/cover.svg",
+      "status": 200,
+      "bytes": 4046,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/assets/live-demo-integrated.png",
+      "status": 200,
+      "bytes": 49516,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/assets/research-overview-20261019.png",
+      "status": 200,
+      "bytes": 1746396,
+      "matches_local": true,
+      "sha256": "83acad97a1fe7124a647e5ff0f9bb171328892c5a986a5fccbce59bb6ba21ee2"
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/assets/research-overview-20261019.svg",
+      "status": 200,
+      "bytes": 56741,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/evidence-summary.json",
+      "status": 200,
+      "bytes": 5229,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/live-demo-browser.json",
+      "status": 200,
+      "bytes": 555,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/live-demo-integration.json",
+      "status": 200,
+      "bytes": 3474,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/overview-generation.json",
+      "status": 200,
+      "bytes": 563,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/sources.json",
+      "status": 200,
+      "bytes": 16818,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/upstream-manifest.json",
+      "status": 200,
+      "bytes": 5547,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/upstream/github-actions/workflows/issue-to-resource-pr.yml",
+      "status": 200,
+      "bytes": 16614,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/upstream/LICENSE",
+      "status": 200,
+      "bytes": 17023,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/upstream/README.md",
+      "status": 200,
+      "bytes": 53004,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/upstream/reports/availability.json",
+      "status": 200,
+      "bytes": 29412,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/upstream/reports/verifications.json",
+      "status": 200,
+      "bytes": 42764,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/upstream/resources/resources.json",
+      "status": 200,
+      "bytes": 149889,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/upstream/resources/schema.json",
+      "status": 200,
+      "bytes": 6215,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/upstream/scripts/check-availability.mjs",
+      "status": 200,
+      "bytes": 5150,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/upstream/scripts/sync-readme.mjs",
+      "status": 200,
+      "bytes": 21190,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/validation.json",
+      "status": 200,
+      "bytes": 4854,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/references/web-verification.json",
+      "status": 200,
+      "bytes": 1243,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/tools/draw_overview.py",
+      "status": 200,
+      "bytes": 22492,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/tools/estimate_cost.py",
+      "status": 200,
+      "bytes": 3612,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/files/010/web/README.md",
+      "status": 200,
+      "bytes": 4617,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/playback-evidence.jpg",
+      "status": 200,
+      "bytes": 160167,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/assets/research-data.js",
+      "status": 200,
+      "bytes": 139753,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/index.html",
+      "status": 200,
+      "bytes": 26344,
+      "matches_local": true
+    },
+    {
+      "path": "projects/010-zhuiju-product-research/styles.css",
+      "status": 200,
+      "bytes": 38542,
+      "matches_local": true
+    }
+  ],
+  "guide_original_sha256": "83acad97a1fe7124a647e5ff0f9bb171328892c5a986a5fccbce59bb6ba21ee2",
+  "text_comparison": "CRLF normalized to LF",
+  "scope": {
+    "public_static_research": true,
+    "public_live_playback_api": false,
+    "real_time_demo": "Run loopback-only Python server locally"
+  },
+  "excluded_local_projects": [
+    8,
+    9
+  ],
+  "corrections": [
+    {
+      "initial_issue": "The workflow attachment under hidden .github returned 404 after the first deployment.",
+      "fix": "The web bundle exports it under github-actions; original archived upstream files remain unchanged.",
+      "result": "Retested in checks below."
+    }
+  ]
+}

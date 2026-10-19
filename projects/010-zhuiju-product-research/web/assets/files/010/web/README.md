@@ -47,7 +47,9 @@ python scripts/build_web.py
 
 现有构建器会将 `index.html`、`styles.css`、`app.js` 和完整 `assets/` 复制到 `_site/projects/010-zhuiju-product-research/`，总导航自动收录本页。研究静态资源采用相对路径，阅读器用 `#read/<文档ID>`，可在子路径刷新。`/live-demo/` 与 `/api/` 属于本地联合服务，不会被静态构建器伪装成 Pages 功能。
 
-本轮按 [仓库部署约定](../../../docs/deployment.md)通过现有 Pages Actions 发布研究页，部署及访问验证后才登记真实 URL。发布范围包括研究章节、全景图原图与 SVG、资料阅读器、来源筛选、历史搜播证据与成本计算；实时搜播后端继续本机运行。
+2026-10-19 按 [仓库部署约定](../../../docs/deployment.md)通过现有 Pages Actions 部署并实际访问验证：[公开研究页](https://yydshly.github.io/1015_codex_project/projects/010-zhuiju-product-research/)。发布范围包括研究章节、全景图原图与 SVG、资料阅读器、来源筛选、历史搜播证据与成本计算；实时搜播后端继续本机运行。公网版的演示按钮打开本地运行说明，不请求访问者的本机服务。
+
+内容提交 `6332848`，附件导出修复提交 `af367a9`，[Pages 任务 39233290157](https://github.com/yydshly/1015_codex_project/actions/runs/39233290157) 成功。43 项 HTTP 与内容检查、图像放大、文档深链接刷新、筛选、成本重置及三档响应式布局通过，见 [线上资源核验](../references/deployed-verification.json)与[浏览器核验](../references/deployed-browser.json)。上游工作流原档仍在研究快照的 `.github` 下，网页附件单独导出到 `github-actions`，避免 Pages 产物忽略隐藏目录。
 
 首页引导图使用本次生成的 `assets/research-overview-20261019.png` 原图，提供完整图弹窗和 PNG / SVG 下载。图中“未公开部署”为制图时的历史状态，不改写原图；网页发布状态以发布记录为准。
 

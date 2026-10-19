@@ -6,7 +6,7 @@
 
 **核心结论：这个库是一套公开的资源发现、整理和维护系统。它提供寻找网站、播放器与配置的线索；站内搜索、影片播放、内容授权和视频分发，需要另外实现或采购。**
 
-**网页研究版：**[打开交互研究网页](web/index.html)，或按 [Web 运行说明](web/README.md)启动本地预览。八个章节串起库的能力、我们的探索、片源发现、分发成本、Filmhub 与产品路线，包含 11 篇完整资料的站内阅读器。
+**网页研究版：**[打开已部署的交互研究网页](https://yydshly.github.io/1015_codex_project/projects/010-zhuiju-product-research/)，或按 [Web 运行说明](web/README.md)启动本地预览。八个章节串起库的能力、我们的探索、片源发现、分发成本、Filmhub 与产品路线，包含 11 篇完整资料的站内阅读器。
 
 **真实演示已接入：**用 `python projects/010-zhuiju-product-research/server.py --port 8871` 启动联合服务，打开研究页的“演示体验”，点击“加载真实搜播 Demo”，即可在页面内使用原来的 007 搜索、选集和播放。静态文件版保留研究内容和启动提示。
 
@@ -27,7 +27,9 @@
 | 播放实测 | 2026-10-15 的 [007 · 搜片、选集与播放 Demo](../007-zhuiju-source-demo/README.md) |
 | 本项目交付 | 中文交互研究网页、完整文档阅读器、来源索引、证据摘要和成本估算工具 |
 | 实施状态 | 研究归纳完成；未取得商业片库合同，未建设正式运营站 |
-| 公开部署 | 本轮按现有 GitHub Pages 流程发布；实际访问验证后登记真实 URL。实时搜播保持本地运行 |
+| 公开部署 | 2026-10-19 已部署并访问验证：[在线研究页](https://yydshly.github.io/1015_codex_project/projects/010-zhuiju-product-research/)。公开版提供研究与交互工具；实时搜播运行于本地后端 |
+
+部署沿用现有 GitHub Pages Actions，内容提交 `6332848`，附件路径修复提交 `af367a9`，[部署任务成功](https://github.com/yydshly/1015_codex_project/actions/runs/39233290157)。线上 43 项页面与资源检查通过，全景 PNG 与原图哈希一致；桌面、390px 手机及 320px 窄屏无页面横向溢出。见 [HTTP 核验](references/deployed-verification.json)、[交互与布局记录](references/deployed-browser.json)、[桌面截图](assets/deployed-desktop.png)与[手机截图](assets/deployed-mobile.png)。这些是静态研究页的发布检查，未部署公网实时搜播 API。
 
 ## 阅读入口
 

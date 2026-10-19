@@ -1,0 +1,49 @@
+{
+  "verified_at": "2026-10-19T09:53:01.110Z",
+  "url": "https://yydshly.github.io/1015_codex_project/projects/010-zhuiju-product-research/",
+  "checks": [
+    {
+      "name": "Original overview opens in modal",
+      "result": "2048 × 8246"
+    },
+    {
+      "name": "Public demo button opens local run instructions",
+      "result": "007 实测与运行说明; iframe has no src"
+    },
+    {
+      "name": "Contract source filter",
+      "result": "Filmhub only"
+    },
+    {
+      "name": "10000 plays in Asia",
+      "result": "$67.70"
+    },
+    {
+      "name": "Cost reset",
+      "result": "$6.95"
+    },
+    {
+      "name": "Reader deep-link survives refresh",
+      "result": "#read/architecture / 原理与实现架构"
+    }
+  ],
+  "layouts": [
+    {
+      "client": 1265,
+      "scroll": 1265,
+      "viewport": 1280
+    },
+    {
+      "client": 375,
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 305,
+      "scroll": 305,
+      "viewport": 320
+    }
+  ],
+  "console_errors": [],
+  "scope": "Static public research; live search and playback backend runs locally"
+}
