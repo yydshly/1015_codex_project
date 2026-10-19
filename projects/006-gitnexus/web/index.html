@@ -3,12 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GitNexus 中文研究展厅：从 AST 到跨文件代码图谱，用真实结算样本探索调用、影响和源码证据。">
+  <meta name="description" content="GitNexus 中文研究展厅：代码知识索引、分析与 AI 工具接入。用真实样本展示能力，区分已验证、已知缺口和尚未验证的部分。">
   <meta name="theme-color" content="#101b22">
   <title>GitNexus · 看见代码之间的关系</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/comparison.css">
   <link rel="stylesheet" href="assets/showcase.css">
+  <link rel="stylesheet" href="assets/positioning.css">
+  <script src="assets/positioning.js" defer></script>
   <script src="app.js" defer></script>
   <script src="assets/comparison.js" defer></script>
   <script src="assets/showcase.js" defer></script>
@@ -18,12 +20,12 @@
   <a class="skip" href="#main">跳到内容</a>
   <header class="topbar">
     <a class="brand" href="#"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M6 6 22 14 6 22V6"/><circle cx="6" cy="6" r="3"/><circle cx="22" cy="14" r="3"/><circle cx="6" cy="22" r="3"/></svg><b>GitNexus</b><span>研究展厅 / 006</span></a>
-    <nav aria-label="主导航"><a href="#showcase">效果展厅</a><a href="#mechanism">原理</a><a href="#explorer">关系探索</a><a href="#compare">同类对照</a></nav>
+    <nav aria-label="主导航"><a href="#understanding">核心与验证</a><a href="#showcase">效果展厅</a><a href="#mechanism">原理</a><a href="#compare">同类对照</a></nav>
     <a class="source-link" href="https://github.com/abhigyanpatwari/GitNexus" target="_blank" rel="noreferrer">上游仓库 <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
     <section class="hero wrap">
-      <div class="hero-copy"><div class="eyebrow"><i></i> CODE INTELLIGENCE, MADE VISIBLE</div><h1>看见代码<br>之间的<span>关系。</span></h1><p class="hero-lead">从一个函数出发，找到它的调用者、依赖和影响范围。<br>探索 GitNexus 如何把源码变成可查询的代码地图。</p><div class="hero-actions"><a class="button lime" href="#showcase">打开能力效果展厅 <span>↗</span></a><a class="text-button" href="#mechanism">先看底层原理 <span>↓</span></a></div><div class="hero-tags"><span>静态分析</span><span>本地图数据库</span><span>MCP 接入</span></div></div>
+      <div class="hero-copy"><div class="eyebrow"><i></i> CODE INTELLIGENCE, MADE VISIBLE</div><h1>看见代码<br>之间的<span>关系。</span></h1><p class="hero-lead">建立代码知识索引，分析关系与修改影响，<br>通过工具接口把上下文交给人和 AI。</p><div class="hero-actions"><a class="button lime" href="#showcase">打开能力效果展厅 <span>↗</span></a><a class="text-button" href="#understanding">核心定位与验证范围 <span>↓</span></a></div><div class="hero-tags"><span>静态分析</span><span>本地图数据库</span><span>MCP 接入</span></div></div>
       <div class="hero-visual" aria-label="结算样本调用关系预览">
         <div class="visual-heading"><span><i></i> CHECKOUT / RELATION MAP</span><span>CALLS</span></div>
         <svg viewBox="0 0 660 390" role="img" aria-label="submitOrder 调用 checkoutOrder，checkoutOrder 调用运费、折扣、库存和订单存储；estimateOrder 也调用运费函数">
@@ -42,6 +44,8 @@
       </div>
     </section>
     <div class="concept-strip"><div class="wrap"><p><span>01</span> AST 识别语法</p><b>→</b><p><span>02</span> 跨文件解析关系</p><b>→</b><p><span>03</span> LadybugDB 保存图谱</p><b>→</b><p><span>04</span> 工具返回相关上下文</p></div></div>
+
+    <section class="section wrap" id="understanding" data-research-summary="full" data-report-base=""><noscript><h2>代码知识索引、分析与 AI 工具接入</h2><p>展示是其中一种输出。<a href="references/atlas-report.md">基础能力实跑</a>；<a href="references/advanced-run-report.md">API／PDG 与改名实验存在缺口</a>；模型、跨仓库组与真实大型项目收益尚未验证。</p></noscript></section>
 
     <section class="section wrap full-workbench" id="showcase"><span id="explorer" class="workbench-anchor"></span>
       <div class="section-intro"><div><div class="eyebrow muted">INTERACTIVE WORKBENCH / FOLLOW THE EVIDENCE</div><h2>把整个仓库，<br>变成可以探索的地图。</h2></div><p>从整仓进入模块、函数、流程和源码。<br>再用真实变更、API 与数据流案例，理解工具的边界。<br>建议先点“跟着案例走一遍”，完成 12 步导览。</p></div>
@@ -75,8 +79,8 @@
         <tr><th scope="row">跨文件重命名<br><code>rename</code></th><td>修改位置与差异预览</td><td><span class="coverage-state done">已实跑预览</span>4 文件 / 5 处候选；未写源码</td></tr>
         <tr><th scope="row">API / 工具关联<br><code>route_map · tool_map · shape_check · api_impact</code></th><td>页面请求到处理器、字段使用与接口影响</td><td><span class="coverage-state done">高级样本已跑</span>发现字段偏差；参数 URL 未关联</td></tr>
         <tr><th scope="row">语句与数据流<br><code>pdg_query · explain</code></th><td>控制依赖、数据依赖、source → sink 线索</td><td><span class="coverage-state done">--pdg 已跑</span>控制 / 数据依赖；回调线索存在漏报</td></tr>
-        <tr><th scope="row">多个仓库<br><code>group_list · group_sync</code></th><td>仓库组、契约与跨仓库关联</td><td><span class="coverage-state">需仓库组</span>本次只有一个结算样本</td></tr>
-        <tr><th scope="row">文档与 AI 问答<br><code>wiki · Web UI / MCP</code></th><td>模块文档、图谱辅助回答、Agent 工具调用</td><td><span class="coverage-state">需模型接入</span>Wiki / AI 回答未在本页运行</td></tr>
+        <tr><th scope="row">多个仓库<br><code>group_list · group_sync</code></th><td>仓库组、契约与跨仓库关联</td><td><span class="coverage-state">尚未验证</span>两组独立单仓库样本，未验证跨仓库组</td></tr>
+        <tr><th scope="row">文档与 AI 问答<br><code>wiki · Web UI / MCP</code></th><td>模块文档、图谱辅助回答、Agent 工具调用</td><td><span class="coverage-state">尚未验证</span>未调用 LLM；Wiki、模型回答及 Agent 闭环未实跑</td></tr>
       </tbody></table></div><p class="coverage-note">本页源码来自保存的样本快照；主线另有 <code>read_file / grep</code> 读取工作区、<code>list_repos</code> 发现索引。图谱可以支持这些展示，但静态流程和风险标签需要结合实际运行与测试解释。<a href="https://github.com/abhigyanpatwari/GitNexus#what-your-ai-agent-gets" target="_blank" rel="noreferrer">核对官方能力清单 ↗</a></p></div>
     </section>
 

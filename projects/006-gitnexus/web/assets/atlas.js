@@ -325,20 +325,20 @@
   }
   function renderCoverage(){
     const cards=[
-      ['图谱与数据库','analyze / cypher / schema','源码实体、跨文件关系、节点类型、任意图查询。','71/131 全图、文件与业务视角已实跑。','overview'],
-      ['模块与流程','clusters / processes','自动分组、跨组关系和候选流程。','4 分组、4 流程可联动和逐步播放。','communities'],
-      ['符号上下文','context / trace','定义、引用、调用者与有向路径。','10 个函数真实 context，入口到存储路径。','context'],
-      ['检索','query / grep / read_file','关键词、工作区查找、文件内容与可选语义召回。','3 次 FTS 查询可定位图与源码；未启用 embeddings。','search'],
-      ['影响与提交','impact / detect_changes / check','深度分层、Git diff 关联流程、结构检查。','10 个函数影响查询、规则变更和循环检查。','changes'],
-      ['重命名','rename','语义绑定对应的改名位置和差异预览。','高级样本 dry-run；网页不写文件。','rename'],
-      ['API 与工具','route_map / tool_map / shape_check / api_impact','请求到处理器、字段使用、工具定义与接口影响。','独立 API/客户端/工具样本，含故意字段偏差。','api'],
-      ['语句与数据流','pdg_query / explain','控制依赖、到达定义与已保存的污点线索。','独立 --pdg 样本；覆盖与未命中均保留。','pdg'],
-      ['仓库组','list_repos / group_list / group_sync','索引发现、契约注册与跨仓库连接。','需要多个仓库与可匹配契约；以高级实验覆盖为准。','api'],
-      ['AI 与文档','MCP / wiki / Web chat','工具调用、图谱上下文和模型生成模块文档。','本页演示工具工作流；未调用 LLM、未生成真实 Wiki。','agent'],
-      ['更新与运行','analyze / branch / auto-sync / serve','维护索引、分支索引和本地 HTTP / MCP 入口。','此站点是保存结果回放；新仓库请用官方入口。','overview'],
-      ['实际使用入口','CLI / MCP / official Web UI','研究页帮助理解；官方环境可分析自己的仓库。','先分析与核对索引，再按任务调用工具。','agent']
+      ['图谱与数据库','analyze / cypher / schema','源码实体、跨文件关系、节点类型、图查询。','71/131 全图、文件与业务视角已实跑。','overview','已验证 · 小样本',''],
+      ['模块与流程','clusters / processes','自动分组、跨组关系和候选流程。','4 分组、4 条静态候选流程；播放为展厅交互。','communities','已验证 · 小样本',''],
+      ['符号上下文','context / trace','定义、引用、调用者与有向路径。','10 个函数真实 context，入口到存储路径。','context','已验证 · 小样本',''],
+      ['检索','query / grep / read_file','关键词、工作区查找、文件内容与可选语义召回。','3 次 FTS 查询已跑；未验证 embeddings 或全部检索工具。','search','部分验证 · FTS','limited'],
+      ['影响与提交','impact / detect_changes / check','深度分层、Git diff 关联流程、结构检查。','10 个函数影响查询、规则变更和循环检查；不代表全部检查规则已覆盖。','changes','已验证 · 指定案例',''],
+      ['重命名','rename','图谱绑定与文本匹配候选的改名差异预览。','4 文件 / 5 候选，仅 dry-run；含 1 项 text_search，未验证实际写入。','rename','部分验证 · 仅预览','limited'],
+      ['API 与工具','route_map / tool_map / shape_check / api_impact','请求到处理器、字段使用、工具定义与接口影响。','3 路由、1 条客户端关联、1 个字段偏差；参数 URL 未关联。','api','已实跑 · 有缺口','limited'],
+      ['语句与数据流','pdg_query / explain','控制依赖、到达定义与已保存的污点线索。','独立 --pdg 样本，7 条控制 / 3 条变量依赖；回调案例漏报。','pdg','已实跑 · 有缺口','limited'],
+      ['仓库组','list_repos / group_list / group_sync','索引发现、契约注册与跨仓库连接。','跨仓库组与契约关联未实跑；单仓库 API 案例不能替代该验证。','api','尚未验证 · 跨仓库','pending'],
+      ['AI 与文档','MCP / wiki / Web chat','工具调用、图谱上下文和模型生成模块文档。','工具结果已保存；Agent 步骤为教学编排，未做真实模型任务或 Wiki 生成。','agent','尚未验证 · 模型闭环','pending'],
+      ['更新与运行','analyze / branch / auto-sync / serve','维护索引、分支索引和本地 HTTP / MCP 入口。','小样本 analyze 已跑；分支、自动同步、长期维护及 serve 未验证。','overview','部分验证 · 仅建索引','limited'],
+      ['实际使用入口','CLI / MCP / official Web UI','研究页帮助理解；官方环境可分析自己的仓库。','CLI 工具已跑；MCP 接入真实 Agent 与官方 Web 完整流程未验证。','agent','部分验证 · CLI 工具','limited']
     ];
-    $('coverage-panel').innerHTML='<div class="coverage-grid">'+cards.map(([title,tools,description,status,target])=>`<article class="coverage-card"><span class="status-pill">能力与覆盖</span><h2>${title}</h2><code>${tools}</code><p>${description}</p><p>${status}</p><button data-go-mode="${target}">打开对应演示 →</button></article>`).join('')+'</div><div class="case-report"><h3>把实际产出与展示方式分开理解</h3><p>GitNexus 产生图谱、查询结果和相关工具输出；本展厅用图、颜色、播放和源码联动帮助理解。当前站点不在公网运行上游数据库或模型。不同语言、框架和动态调用有不同覆盖，缺少边不证明不存在依赖。</p><p><a href="https://gitnexus.vercel.app/" target="_blank" rel="noreferrer">官方 Web UI ↗</a> · <a href="../references/run-report.md" target="_blank">基础运行报告 ↗</a> · <a href="../references/advanced-run-report.md" target="_blank">高级案例与边界 ↗</a></p></div>';
+    $('coverage-panel').innerHTML='<div class="coverage-grid">'+cards.map(([title,tools,description,status,target,label,level])=>`<article class="coverage-card"><span class="status-pill ${level}">${label}</span><h2>${title}</h2><code>${tools}</code><p>${description}</p><p>${status}</p><button data-go-mode="${target}">${level==='pending'?'查看相关工作流与条件':'打开对应案例'} →</button></article>`).join('')+'</div><div class="case-report"><h3>把实际产出与展示方式分开理解</h3><p>核心是代码知识索引、分析与 AI 工具接入；GitNexus 产生图谱、查询结果和工具输出，本展厅用图、颜色、播放和源码联动帮助理解。公开站点只回放保存结果。理解能力与初步选型已有依据，真实大型项目的关系完整性、索引成本与任务收益仍需验证。</p><p><a href="#understanding">核心定位与三类验证范围 ↑</a> · <a href="https://gitnexus.vercel.app/" target="_blank" rel="noreferrer">官方 Web UI ↗</a> · <a href="../references/advanced-run-report.md" target="_blank">高级案例与边界 ↗</a></p></div>';
   }
   function render(){
     if(!data)return;renderNav();renderControls();$('graph-scope').value=['communities','rename','api','pdg'].includes(mode)?'case':scope;

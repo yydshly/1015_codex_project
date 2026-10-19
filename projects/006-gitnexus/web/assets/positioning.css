@@ -1,0 +1,39 @@
+.research-summary{--rs-text:#20352f;--rs-muted:#5a7066;--rs-surface:#f0f4eb;--rs-line:#cedacb;--rs-card:#f9fbf6;--rs-good:#365c2d;--rs-good-bg:#e0edcc;--rs-warn:#795020;--rs-warn-bg:#f4e7d0;--rs-pending:#53636b;--rs-pending-bg:#e6ebed;color:var(--rs-text);scroll-margin-top:100px}
+.research-summary .research-kicker{font:10px var(--mono);letter-spacing:1.5px;color:var(--rs-muted);margin:0 0 12px}
+.research-summary .research-heading h2{font-size:30px;letter-spacing:-.8px;line-height:1.45;margin:0 0 13px}
+.research-summary .research-heading>p:last-child{font-size:13px;line-height:1.9;color:var(--rs-muted);max-width:950px}
+.research-summary .research-layers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:27px 0 17px}
+.research-summary .research-layers article{border-top:2px solid var(--rs-line);padding:17px 0 0;min-width:0}
+.research-summary .research-layers span{font:10px var(--mono);color:var(--rs-muted)}
+.research-summary .research-layers h3{font-size:18px;margin:10px 0 8px}
+.research-summary .research-layers p{font-size:12px;line-height:1.9;color:var(--rs-muted)}
+.research-summary .research-output{background:var(--rs-surface);padding:14px 17px;font-size:12px;line-height:1.9;border-radius:5px;margin:0 0 23px}
+.research-summary .research-output b{margin-right:13px}
+.research-summary .research-proof{border:1px solid var(--rs-line);border-radius:7px;padding:0 20px}
+.research-summary .research-proof>summary{cursor:pointer;padding:17px 0;font-size:13px;line-height:1.8}
+.research-summary .research-proof>summary small{font-size:11px;color:var(--rs-muted);margin-left:16px}
+.research-summary .research-status-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:6px 0 20px}
+.research-summary .research-status{background:var(--rs-card);border:1px solid var(--rs-line);border-radius:5px;padding:18px;min-width:0}
+.research-summary .research-badge{display:inline-block;font-size:11px;line-height:1.7;padding:4px 8px;border-radius:3px;color:var(--rs-good);background:var(--rs-good-bg)}
+.research-summary [data-proof=limited] .research-badge{color:var(--rs-warn);background:var(--rs-warn-bg)}
+.research-summary [data-proof=pending] .research-badge{color:var(--rs-pending);background:var(--rs-pending-bg)}
+.research-summary .research-status h3{font-size:15px;margin:14px 0 12px;line-height:1.6}
+.research-summary .research-status ul{font-size:12px;line-height:1.9;margin:0 0 16px;padding-left:17px;color:var(--rs-muted)}
+.research-summary .research-status li+li{margin-top:9px}
+.research-summary .research-status a{font-size:11px;color:var(--rs-text);text-underline-offset:4px}
+.research-summary .research-conclusion{display:grid;grid-template-columns:auto 1fr;gap:18px;font-size:12px;line-height:1.9;border-top:1px solid var(--rs-line);padding:18px 0 0}
+.research-summary .research-conclusion p{color:var(--rs-muted)}
+.research-summary .research-provenance{font-size:11px;line-height:1.9;color:var(--rs-muted);padding:14px 0 20px}
+.research-summary[data-research-summary=compact]{--rs-text:#e4ece8;--rs-muted:#a5b9ae;--rs-surface:#1c3031;--rs-line:#3b514d;--rs-card:#192c31;--rs-good:#d1e8b0;--rs-good-bg:#324b30;--rs-warn:#efc991;--rs-warn-bg:#4b3b29;--rs-pending:#b5cbd4;--rs-pending-bg:#283e4b;margin-bottom:28px;border-bottom:1px solid var(--rs-line);padding-bottom:23px}
+.research-summary[data-research-summary=compact] .research-heading h2{font-size:23px}
+.research-summary[data-research-summary=compact] .research-heading>p:last-child{font-size:12px}
+.research-summary[data-research-summary=compact] .research-layers{margin-top:18px;gap:17px}
+.research-summary[data-research-summary=compact] .research-layers h3{font-size:15px}
+.research-summary[data-research-summary=compact] .research-layers p{font-size:11px}
+.research-summary[data-research-summary=compact] .research-output{font-size:11px;margin-bottom:15px}
+.research-summary[data-research-summary=compact] .research-status-grid{grid-template-columns:1fr}
+.research-summary[data-research-summary=compact] .research-status ul{columns:2;column-gap:32px}
+.research-summary[data-research-summary=compact] .research-status li{break-inside:avoid}
+.status-pill.limited{color:#efc991;background:#4b3b29}
+@media(max-width:900px){.research-summary .research-status-grid{grid-template-columns:1fr}.research-summary .research-status ul{columns:2;column-gap:30px}.research-summary .research-status li{break-inside:avoid}}
+@media(max-width:600px){.research-summary .research-heading h2{font-size:25px}.research-summary .research-layers{grid-template-columns:1fr;gap:16px;margin-top:20px}.research-summary .research-layers article{padding-top:12px}.research-summary .research-layers h3{font-size:17px;margin-top:6px}.research-summary .research-heading>p:last-child{font-size:12px}.research-summary .research-proof{padding:0 13px}.research-summary .research-proof>summary small{display:block;margin:5px 0 0 15px}.research-summary .research-status-grid{gap:12px}.research-summary .research-status{padding:15px}.research-summary .research-status ul,.research-summary[data-research-summary=compact] .research-status ul{columns:1}.research-summary .research-conclusion{display:block}.research-summary .research-conclusion p{margin-top:7px}.research-summary[data-research-summary=compact] .research-heading h2{font-size:21px}.research-summary[data-research-summary=compact] .research-layers{display:none}}

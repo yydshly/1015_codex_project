@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-19",
+  "checks": [
+    {
+      "check": "main-summary",
+      "expanded": true,
+      "layers": 3,
+      "scrollWidth": 728,
+      "statuses": 3,
+      "width": 743
+    },
+    {
+      "check": "atlas-collapsed-and-graph",
+      "expanded": false,
+      "nodes": 71,
+      "statuses": 3
+    },
+    {
+      "check": "expand",
+      "open": true
+    },
+    {
+      "check": "keyboard-collapse",
+      "closed": true
+    },
+    {
+      "check": "coverage-labels",
+      "labels": [
+        "已验证 · 小样本",
+        "已验证 · 小样本",
+        "已验证 · 小样本",
+        "部分验证 · FTS",
+        "已验证 · 指定案例",
+        "部分验证 · 仅预览",
+        "已实跑 · 有缺口",
+        "已实跑 · 有缺口",
+        "尚未验证 · 跨仓库",
+        "尚未验证 · 模型闭环",
+        "部分验证 · 仅建索引",
+        "部分验证 · CLI 工具"
+      ]
+    },
+    {
+      "check": "summary-anchor-expands",
+      "open": true
+    },
+    {
+      "check": "atlas-mobile-390",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "atlas-mobile-320",
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "check": "main-desktop-1440",
+      "layers": 3,
+      "scrollWidth": 1425,
+      "statuses": 3,
+      "width": 1440
+    },
+    {
+      "check": "main-mobile-390",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "main-mobile-320",
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "check": "original-tour-still-works",
+      "title": "从整仓开始",
+      "nodes": 71
+    }
+  ],
+  "consoleErrors": []
+}
