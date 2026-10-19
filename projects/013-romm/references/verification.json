@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-20",
+  "checked_at_utc": "2026-10-19T18:44:56.696283+00:00",
+  "result": "passed",
+  "checks": [
+    "source hash: README.md",
+    "source hash: LICENSE",
+    "source hash: pyproject.toml",
+    "source hash: frontend/package.json",
+    "guide hash: png",
+    "guide hash: svg",
+    "local Markdown links: 20",
+    "all existing catalog entries unchanged; 013 cover and summary synchronized",
+    "python scripts/projects.py check: passed (12 catalog entries)",
+    "git diff --check: passed",
+    "staged Git blobs: all 4 upstream snapshots and both guide hashes match committed manifests after line-ending normalization",
+    "git diff --cached --check: passed"
+  ],
+  "poster": {
+    "width": 1920,
+    "height": 3036,
+    "text_lines": 92,
+    "layout_overflows": 0,
+    "visual_review": "passed"
+  },
+  "scope": "Documentation, source hashes, graphic layout, local links and catalog only; no RomM runtime or game testing."
+}

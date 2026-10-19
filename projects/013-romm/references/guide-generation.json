@@ -1,0 +1,16 @@
+{
+  "width": 1920,
+  "height": 3036,
+  "text_lines": 92,
+  "layout_overflows": [],
+  "svg_sha256": "ae3d43618bd156f7119ffb7499f904e5aee37977f3842d50c81bec29ef92ac23",
+  "png_sha256": "0b6907883919964721dfbb6b3975005e0cbe8b4d40762f4e0dde7b2e38c0ef46",
+  "png_bytes": 729984,
+  "method": "Original native SVG; Pillow font metrics; Chromium PNG rendering and glyph-bounds checks.",
+  "scope": "Original research infographic, not a screenshot or verification of RomM runtime.",
+  "visual_review": {
+    "result": "passed",
+    "method": "Inspected top, value and extensions PNG sections visually.",
+    "findings": "No clipped text, overlapping type, missing glyphs or unreadable table rows."
+  }
+}

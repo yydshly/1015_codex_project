@@ -1,0 +1,102 @@
+{
+  "research_date": "2026-10-20",
+  "accessed_at_utc": "2026-10-19T18:39:27.353760+00:00",
+  "repository": "https://github.com/rommapp/romm",
+  "commit": "6fae8185f81dd4897940e76045bc9834cfb798d1",
+  "license": "AGPL-3.0-only",
+  "upstream_snapshots": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/rommapp/romm/blob/6fae8185f81dd4897940e76045bc9834cfb798d1/README.md",
+      "snapshot": "references/upstream/README.md",
+      "bytes": 12615,
+      "sha256": "373cf224cbf0ed6b8de5a463d6fd7c215363f5716c6c3a430d53704be28f98bb"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://github.com/rommapp/romm/blob/6fae8185f81dd4897940e76045bc9834cfb798d1/LICENSE",
+      "snapshot": "references/upstream/LICENSE",
+      "bytes": 34523,
+      "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef"
+    },
+    {
+      "path": "pyproject.toml",
+      "url": "https://github.com/rommapp/romm/blob/6fae8185f81dd4897940e76045bc9834cfb798d1/pyproject.toml",
+      "snapshot": "references/upstream/pyproject.toml",
+      "bytes": 3680,
+      "sha256": "c865bfe3432402da228b28d63edfaae7714edea9d0ab09e6c261792de0a69431"
+    },
+    {
+      "path": "frontend/package.json",
+      "url": "https://github.com/rommapp/romm/blob/6fae8185f81dd4897940e76045bc9834cfb798d1/frontend/package.json",
+      "snapshot": "references/upstream/frontend/package.json",
+      "bytes": 4161,
+      "sha256": "12d4f664432757a29ae185ab0acbe6d83b74449452bf0ec7b5aa2152db95dced"
+    }
+  ],
+  "official_documentation": [
+    {
+      "id": "faq",
+      "url": "https://docs.romm.app/latest/about/faqs/",
+      "supports": "不附带游戏与固件；自部署定位与维护前提",
+      "html_sha256_at_access": "45e1545e67d0f9868eda9668545dc8cd3dad6908bf49c5253ed865834d27d2a7",
+      "version_scope": "官方 latest 文档为动态页面；不声称与固定源码提交完全同版"
+    },
+    {
+      "id": "metadata",
+      "url": "https://docs.romm.app/latest/getting-started/metadata-providers/",
+      "supports": "文件名与哈希匹配、多来源资料及优先级",
+      "html_sha256_at_access": "e432af6780bd92566550072fd85022966c7aeb0b9dca6ec72487a4feccca6907",
+      "version_scope": "官方 latest 文档为动态页面；不声称与固定源码提交完全同版"
+    },
+    {
+      "id": "scanning",
+      "url": "https://docs.romm.app/latest/administration/scanning-and-watcher/",
+      "supports": "手动、定时与文件变动扫描",
+      "html_sha256_at_access": "62d56d52a0ec3248cb45a808081b34cf3d2ea10dcefbaa49a307bbf9a6ba6606",
+      "version_scope": "官方 latest 文档为动态页面；不声称与固定源码提交完全同版"
+    },
+    {
+      "id": "architecture",
+      "url": "https://docs.romm.app/latest/developers/architecture/",
+      "supports": "前后端、数据库、任务、文件与模拟器的分工",
+      "html_sha256_at_access": "b7c10288753a4481f8ee527aba952621b83ea929332f5f6224dd8220a0d27ad7",
+      "version_scope": "官方 latest 文档为动态页面；不声称与固定源码提交完全同版"
+    },
+    {
+      "id": "platforms",
+      "url": "https://docs.romm.app/latest/platforms/supported-platforms/",
+      "supports": "平台支持包含目录识别与资料覆盖；可玩范围另列",
+      "html_sha256_at_access": "4d8ded8bfd688444a71e4289f5cea16c99633672c7cd8a11e33023f1df33de38",
+      "version_scope": "官方 latest 文档为动态页面；不声称与固定源码提交完全同版"
+    },
+    {
+      "id": "browser-play",
+      "url": "https://docs.romm.app/latest/using/in-browser-play/emulatorjs/",
+      "supports": "EmulatorJS、WebAssembly 与终端性能要求",
+      "html_sha256_at_access": "91e0a95fc8be88d935ad7b32ef41b5f29940ac3f966916ba1c1291fd1ab93fd0",
+      "version_scope": "官方 latest 文档为动态页面；不声称与固定源码提交完全同版"
+    },
+    {
+      "id": "saves",
+      "url": "https://docs.romm.app/latest/using/saves-and-states/",
+      "supports": "存档同步与即时存档核心兼容性",
+      "html_sha256_at_access": "e1f89c7b676b56077c71314cd9d05e3aa83a682deb882805f7d887c5006e9efd",
+      "version_scope": "官方 latest 文档为动态页面；不声称与固定源码提交完全同版"
+    },
+    {
+      "id": "streaming",
+      "url": "https://docs.romm.app/latest/using/emulator-streaming/",
+      "supports": "可选的服务器模拟器与浏览器串流",
+      "html_sha256_at_access": "90742e92b832b6aba9217d90679b8190ec08bb9a5ee6c39d25de705baedc7abb",
+      "version_scope": "官方 latest 文档为动态页面；不声称与固定源码提交完全同版"
+    }
+  ],
+  "interpretations": [
+    "针对我们希望直接获得游戏内容的需求，当前直接价值有限、研究优先级较低。",
+    "大量已有收藏、多设备或多人使用时，管理和同步的整合价值更明显。",
+    "价值判断属于本研究的场景判断，不代表项目对所有人价值低。",
+    "自有内容门户是二次开发设想，不是已经交付的上游功能。"
+  ],
+  "validation_scope": "官方文档与四份固定源码资料核对；未运行 RomM、游戏、模拟器、存档同步或串流。"
+}

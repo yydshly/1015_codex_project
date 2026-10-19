@@ -165,6 +165,21 @@
       ],
       "cover": "assets/smart-excalidraw-understanding-20261020.png",
       "demo_url": "https://yydshly.github.io/1015_codex_project/projects/012-smart-excalidraw-next/"
+    },
+    {
+      "id": 13,
+      "slug": "romm",
+      "name": "RomM 游戏库管理与价值边界研究",
+      "repository": "https://github.com/rommapp/romm",
+      "summary": "将自备 ROM 识别、补齐资料并组织为可浏览、可启动、可同步兼容存档的私人游戏库；不附带游戏、不提供通用加速。对直接获取内容的需求价值有限，对大量收藏、多设备和多人使用有整合价值，可扩展掌机接力、家庭游戏馆与服务器串流。",
+      "status": "archived",
+      "tags": [
+        "游戏库管理",
+        "自部署",
+        "价值边界"
+      ],
+      "cover": "assets/romm-understanding-20261020.png",
+      "demo_url": ""
     }
   ]
 }
