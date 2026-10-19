@@ -49,7 +49,10 @@ def main():
         if not target.is_file():
             raise FileNotFoundError(f"Unresolved local reference: {source.name}: {value}")
         if target.is_relative_to(ROOT):
-            relative = Path("010") / target.relative_to(ROOT)
+            # Pages artifact upload excludes hidden directories. Keep the source
+            # snapshot intact, but expose its workflow attachment at a visible path.
+            parts = target.relative_to(ROOT).parts
+            relative = Path("010") / Path(*("github-actions" if part == ".github" else part for part in parts))
         elif target.is_relative_to(DEMO):
             relative = Path("007") / target.relative_to(DEMO)
         else:
