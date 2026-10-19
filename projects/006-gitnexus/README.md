@@ -2,6 +2,8 @@
 
 2026-10-19 补充：[核心定位与验证范围](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#understanding)。核心是代码知识索引、分析与 AI 工具接入，展示只是其中一种输出。主页面与独立工作台使用相同总结，分开列明小样本已验证、已实跑但存在缺口、尚未验证的能力；12 张能力卡也分别注明验证状态。沿用 2026-10-16 的固定 npm 1.6.12 证据，没有把模型闭环、跨仓库组或真实大型项目收益标为已验证。
 
+本次总结及缓存更新已通过 [Pages 任务 39208538994](https://github.com/yydshly/1015_codex_project/actions/runs/39208538994) 发布。12 项本地浏览器检查覆盖三层定位、三类证据、展开／键盘折叠、12 张能力卡、桌面及 390px／320px 布局与原有导览；线上 41 项资源与文本核对通过，12 张状态标签与本地一致，无脚本错误。保留标签页曾缓存旧工作台脚本，已为脚本与内嵌页面添加版本参数并复核。[本地检查](assets/positioning-local-verification.json) · [线上检查](assets/positioning-deployed-browser.json) · [总结截图](assets/positioning-desktop.jpg)。
+
 GitNexus 从源码提取符号和跨文件关系，建立可持久查询的代码图谱。CLI、MCP 和网页共享这份索引，用于定位实现、展开调用链、调查变更影响和为编程助手提供上下文。
 
 [中文展示页](web/index.html) · [研究记录](notes.md) · [真实运行报告](references/run-report.md) · [完整数据](web/assets/evidence.json) · [原创样本](src/checkout-lab) · [上游仓库](https://github.com/abhigyanpatwari/GitNexus)

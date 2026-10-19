@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-19",
+  "deploymentRun": 39208538994,
+  "checks": [
+    {
+      "check": "main-online-summary",
+      "expanded": true,
+      "layers": 3,
+      "statuses": 3
+    },
+    {
+      "check": "atlas-online-summary-after-refresh",
+      "open": true,
+      "nodes": 71
+    },
+    {
+      "check": "online-atlas-mobile",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "online-coverage-labels-after-versioning",
+      "labels": [
+        "已验证 · 小样本",
+        "已验证 · 小样本",
+        "已验证 · 小样本",
+        "部分验证 · FTS",
+        "已验证 · 指定案例",
+        "部分验证 · 仅预览",
+        "已实跑 · 有缺口",
+        "已实跑 · 有缺口",
+        "尚未验证 · 跨仓库",
+        "尚未验证 · 模型闭环",
+        "部分验证 · 仅建索引",
+        "部分验证 · CLI 工具"
+      ],
+      "passed": true
+    },
+    {
+      "check": "online-summary-anchor",
+      "expanded": true
+    },
+    {
+      "check": "online-final-mobile",
+      "scrollWidth": 375,
+      "width": 390
+    }
+  ],
+  "consoleErrors": [],
+  "browserCache": "Stale atlas HTML and script observed in retained tab; versioned workbench script and iframe, then verified all 12 published labels match local checks."
+}
