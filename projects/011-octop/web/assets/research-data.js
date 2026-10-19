@@ -1,0 +1,629 @@
+window.OCTOP_RESEARCH = {
+  "date": "2026-10-20",
+  "capabilities": [
+    {
+      "title": "多入口，共用一套运行时",
+      "tag": "已有 · 文档",
+      "kind": "implemented",
+      "text": "网页、CLI、HTTP/WebSocket、飞书、钉钉、微信、企微等入口汇入统一消息处理。价值在统一入口、身份与会话。",
+      "example": "同事从企业微信提问，助手读取获授权的资料后返回结果。",
+      "sources": [
+        "architecture",
+        "overview"
+      ]
+    },
+    {
+      "title": "多个用户，多个专业助手",
+      "tag": "已有 · 文档",
+      "kind": "implemented",
+      "text": "为用户配置不同专家，每个专家有自己的工作区、模型、提示与工具配置；可以复用和分享专家配置。",
+      "example": "资料助手与代码助手使用不同的资料、模型和工具。",
+      "sources": [
+        "overview",
+        "architecture"
+      ]
+    },
+    {
+      "title": "持久记忆与文档检索",
+      "tag": "已有 · 源码",
+      "kind": "implemented",
+      "text": "记忆保存长期上下文；知识库检索相关文档片段后交给模型。PDF、Word、Excel、Markdown 等有解析实现。",
+      "example": "根据已导入的项目笔记回答问题；检索质量与回答正确性仍需验证。",
+      "sources": [
+        "knowledge",
+        "parse",
+        "overview"
+      ]
+    },
+    {
+      "title": "工具让判断变成动作",
+      "tag": "已有 · 文档",
+      "kind": "implemented",
+      "text": "可使用终端、浏览器、连接器及编程执行器。操作发生在主机、配置的工作环境或外部服务，受工具与账号权限约束。",
+      "example": "读取文件、运行分析脚本、保存报告；远程桌面本身是查看与输入入口。",
+      "sources": [
+        "overview",
+        "connectors",
+        "acp"
+      ]
+    },
+    {
+      "title": "定时提醒与定时办事",
+      "tag": "已有 · 源码",
+      "kind": "implemented",
+      "text": "定时任务区分 text 和 agent：前者直接发送固定提醒，后者每次调用助手处理最新信息，再返回结果。",
+      "example": "每天检查更新并生成摘要，需要额外接好信息源与通知渠道。",
+      "sources": [
+        "cron",
+        "architecture"
+      ]
+    },
+    {
+      "title": "专家分工与主持人汇总",
+      "tag": "Beta · 文档",
+      "kind": "beta",
+      "text": "主持人异步分派，成员用各自工作区执行并回报。当前团队在途任务不支持跨进程持久化，取消主持人也不会同时停下成员。",
+      "example": "调研与代码分析可分别派工；不据此推断完成率高于单个助手。",
+      "sources": [
+        "teams",
+        "jobs"
+      ]
+    },
+    {
+      "title": "插件、MCP 与 ACP",
+      "tag": "已有 · 文档",
+      "kind": "implemented",
+      "text": "插件和 MCP 扩展业务工具；ACP 连接外部编程助手。MCP 主要连接工具和数据，ACP 主要连接智能体会话与执行器。",
+      "example": "用 MCP 调内部工单 API，用 ACP 把代码任务交给 Codex CLI。",
+      "sources": [
+        "connectors",
+        "acp",
+        "overview"
+      ]
+    },
+    {
+      "title": "录制技能与自动提炼",
+      "tag": "规划 · 路线图",
+      "kind": "planned",
+      "text": "README 将浏览器工作流录制、从对话自动提炼技能等列为计划。现有记忆、手工技能与这些规划要分开理解。",
+      "example": "本研究没有将“一次演示，永久自动学会”作为 Octop 已验证效果。",
+      "sources": [
+        "overview"
+      ]
+    }
+  ],
+  "flow": [
+    {
+      "name": "接收请求",
+      "component": "Gateway / WebSocket",
+      "where": "Octop 服务端",
+      "description": "将不同入口的消息接入处理管线。聊天入口负责传递请求；它不会自动授予文件、邮箱或业务系统权限。",
+      "decision": "先确认：谁在什么会话中请求了什么？",
+      "sources": [
+        "architecture",
+        "processor"
+      ]
+    },
+    {
+      "name": "定位用户与专家",
+      "component": "UserManager / AgentManager",
+      "where": "Octop 服务端",
+      "description": "识别用户和专家归属，选定模型、工作区、已启用工具和会话。JWT 与行级归属检查帮助控制访问；实际工具隔离仍取决于执行环境。",
+      "decision": "专家配置决定这次能看到什么、能调用什么。",
+      "sources": [
+        "architecture"
+      ]
+    },
+    {
+      "name": "准备上下文",
+      "component": "Memory / search_knowledge",
+      "where": "工作区与知识库",
+      "description": "把任务说明、相关记忆、选定知识库的检索片段和工具说明交给模型。RAG 是检索资料后辅助回答，内容不会因此自动写入模型权重。",
+      "decision": "相关资料帮助判断，检索结果仍需要查验。",
+      "sources": [
+        "knowledge",
+        "parse"
+      ]
+    },
+    {
+      "name": "模型决定下一步",
+      "component": "octop-harness / LLM provider",
+      "where": "所选模型服务",
+      "description": "模型可能直接回答，也可能提出结构化工具调用。Octop 提供运行时与配置，推理来自所接入模型；更换聊天入口不会自行提升推理能力。",
+      "decision": "工具调用是执行请求，接下来还要由运行时落实。",
+      "sources": [
+        "overview",
+        "architecture"
+      ]
+    },
+    {
+      "name": "工具实际执行",
+      "component": "Tool / MCP / ACP runner",
+      "where": "主机、工作环境或外部服务",
+      "description": "运行时根据工具、授权与审批规则执行操作。MCP 把请求交给业务工具；ACP 可以启动已安装并认证的外部编程助手。",
+      "decision": "检查动作在哪里发生、使用哪个账号、会写入什么。",
+      "sources": [
+        "connectors",
+        "acp"
+      ]
+    },
+    {
+      "name": "结果回到模型",
+      "component": "Tool result → agent loop",
+      "where": "智能体运行时",
+      "description": "实际工具返回内容或错误，模型据此继续处理、重试、请求协助或结束。这是概念化执行循环；具体恢复与重试策略需逐工具验证。",
+      "decision": "检查文件、差异、日志等产物，区分执行完成与任务达成。",
+      "sources": [
+        "architecture",
+        "processor"
+      ]
+    },
+    {
+      "name": "回传与保存",
+      "component": "Channel / Archive / Workspace",
+      "where": "原消息渠道与存储",
+      "description": "向用户返回结果，保存会话和产物。配置、会话可恢复，不代表所有在途任务都能无损续跑；团队文档明确记录了相关限制。",
+      "decision": "用可检查的产物验收，再决定是否继续或调度下一轮。",
+      "sources": [
+        "architecture",
+        "teams"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "report",
+      "label": "日志 → 分析报告",
+      "request": "读取获授权目录中的日志，分析错误，把报告保存到工作区。",
+      "actions": [
+        "通过网页或企业微信提交请求",
+        "选择日志分析专家和工作区",
+        "提供目录信息与相关历史背景",
+        "模型提出读取和分析工具调用",
+        "文件工具读取日志；脚本分析；写出报告",
+        "读取实际输出，检查错误与报告内容",
+        "回传报告位置，保存会话"
+      ],
+      "artifact": "报告文件 + 所用输入 + 脚本返回记录",
+      "boundary": "需要文件与命令工具权限。本页只解释执行机制，不读取你的目录。"
+    },
+    {
+      "id": "research",
+      "label": "更新 → 研究记录",
+      "request": "每天检查关注项目的重要更新，形成中文摘要并保存研究记录。",
+      "actions": [
+        "由已经保存的定时任务触发",
+        "选择项目研究专家和通知会话",
+        "加载项目清单、上次检查状态与研究资料",
+        "模型确定需要查询的项目与更新范围",
+        "经已接入的 GitHub API、MCP 或脚本查询更新",
+        "按真实响应整理摘要，检查来源与重复内容",
+        "保存 Markdown，再向指定渠道发送摘要"
+      ],
+      "artifact": "带来源的 Markdown + 检查时间 + 去重状态",
+      "boundary": "GitHub 信息源与幂等保存要另行配置；不是安装 Octop 后自动监控整个仓库。"
+    },
+    {
+      "id": "coding",
+      "label": "问题 → 编程派工",
+      "request": "检查指定代码目录中的一个问题，提出修复并返回可审查的差异。",
+      "actions": [
+        "从授权的消息渠道提交问题",
+        "选中启用了 ACP 执行器的专家",
+        "提供目标目录、复现条件与项目约束",
+        "模型决定将代码工作委派给外部助手",
+        "ACP 启动主机上已安装、已认证的编程执行器",
+        "根据差异与检查结果继续处理或请求协助",
+        "返回可审查结果；是否提交或发布按授权执行"
+      ],
+      "artifact": "代码 diff + 检查结果 + 待处理问题",
+      "boundary": "调用的是配置好的 CLI/适配器，不会自动接管你所有 Codex 应用会话。"
+    }
+  ],
+  "comparison": [
+    {
+      "dimension": "主要用途",
+      "octop": "搭建自己管理的 AI 助手服务",
+      "codex": "构建、调试、测试、审查软件及其他工具任务",
+      "dots": "接下持续职责，在对话之间推进与跟进",
+      "grok": "持久化 Bot 团队，跨应用完成工作",
+      "sources": [
+        "overview",
+        "codex",
+        "dots",
+        "grok"
+      ]
+    },
+    {
+      "dimension": "运行与维护",
+      "octop": "自行部署，维护主机、升级、备份与凭证",
+      "codex": "可用官方产品；CLI / SDK 可供自行集成",
+      "dots": "官方云端运行，也可授权连接个人电脑",
+      "grok": "官方托管的持久化云端电脑",
+      "sources": [
+        "architecture",
+        "codex-open",
+        "dots-computer",
+        "grok"
+      ]
+    },
+    {
+      "dimension": "入口与资料",
+      "octop": "Web / API 与多种 IM；内置知识库与工作区",
+      "codex": "桌面、CLI、IDE；项目、文件、插件与工具",
+      "dots": "ChatGPT、语音、Slack、Teams；上下文跨渠道延续",
+      "grok": "桌面、移动端和 Bot 群聊；连接器与电脑应用",
+      "sources": [
+        "overview",
+        "codex",
+        "dots-channels",
+        "grok"
+      ]
+    },
+    {
+      "dimension": "真实执行",
+      "octop": "按配置在主机、工作环境、MCP 服务或 ACP 执行器操作",
+      "codex": "在授权工作环境中操作代码、命令和工具",
+      "dots": "云端电脑与浏览器，可委派 Work / Codex 任务",
+      "grok": "云端文件、终端、浏览器、连接器和电脑操作",
+      "sources": [
+        "architecture",
+        "acp",
+        "codex",
+        "dots-computer",
+        "grok"
+      ]
+    },
+    {
+      "dimension": "持续工作与分工",
+      "octop": "Cron + 多专家；团队协调仍 Beta",
+      "codex": "支持定时任务及可扩展的任务流程",
+      "dots": "持续职责、自主跟进、后台任务与可保存的日程",
+      "grok": "多个 Bot 并行、互相交接、技能与例行任务",
+      "sources": [
+        "cron",
+        "teams",
+        "codex",
+        "dots-tasks",
+        "grok"
+      ]
+    },
+    {
+      "dimension": "可定制的层次",
+      "octop": "模型接入、业务工具、存储、入口乃至平台源码",
+      "codex": "项目指令、Skills、插件、CLI / SDK；因产品形态而异",
+      "dots": "官方支持的连接、权限、规则和任务配置",
+      "grok": "官方支持的 Bot、连接器、技能及运行设置",
+      "sources": [
+        "overview",
+        "codex-open",
+        "dots",
+        "grok"
+      ]
+    },
+    {
+      "dimension": "关掉个人电脑后",
+      "octop": "部署主机常开即可继续；仅部署在已关机电脑上则停止",
+      "codex": "取决于任务在本地还是云端执行",
+      "dots": "云端工作继续；本地步骤要求连接电脑在线",
+      "grok": "云端工作继续",
+      "sources": [
+        "architecture",
+        "dots-computer",
+        "grok"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "personal",
+      "label": "我自己完成工作",
+      "title": "先把现成助手用到位。",
+      "text": "如果目标是研究仓库、写代码、整理资料或持续跟踪事项，可以先用 Codex、dots 或 Grok Bot 跑通同一组任务。Octop 的额外部署成本，需要由明确的接入或控制需求支撑。",
+      "checks": [
+        "用同一份任务说明与验收清单比较",
+        "记录失败后的人工接管时间",
+        "核算真实用量、执行环境与维护成本"
+      ]
+    },
+    {
+      "id": "team",
+      "label": "我为团队自建服务",
+      "title": "Octop 的平台价值开始清晰。",
+      "text": "当成员需要从企业微信或飞书访问内部资料、内部 API，而且你要管理专家、模型和存储时，Octop 提供了一组已经整合的基础模块。",
+      "checks": [
+        "先选一个岗位和一条消息渠道",
+        "验证账号与工具权限是否满足实际隔离要求",
+        "为失败、重启和重复触发设计验收"
+      ]
+    },
+    {
+      "id": "builder",
+      "label": "我准备二次开发",
+      "title": "把它当作可改造的服务底座。",
+      "text": "保留运行时、渠道、知识库和任务管理，围绕特定业务接入 MCP、专家技能与产物检查。工程投入应优先用来提升可验收性，再扩展更多角色。",
+      "checks": [
+        "固定上游版本，保留 MIT 许可",
+        "优先配置和标准协议，必要时再改核心",
+        "用真实任务完成率指导扩展方向"
+      ]
+    }
+  ],
+  "extensions": [
+    {
+      "id": "model",
+      "label": "01 模型与存储",
+      "status": "现有扩展点",
+      "title": "先改变配置，再改变运行时。",
+      "text": "按专家配置模型服务；README 列出兼容 API、DashScope 与 Ollama。工作区支持多种后端，控制面数据库与工作区文件存储是两个层次。",
+      "steps": [
+        "选择支持所需工具调用的模型与接口",
+        "确定数据库、工作区和模型分别运行在哪里",
+        "用同一任务检查工具调用、延迟、费用与数据流向"
+      ],
+      "output": "交付：模型配置与环境说明 + 一份相同任务的对照记录。",
+      "sources": [
+        "overview",
+        "architecture"
+      ]
+    },
+    {
+      "id": "channel",
+      "label": "02 消息入口",
+      "status": "现有扩展点",
+      "title": "让业务人员从熟悉的入口使用。",
+      "text": "先使用已支持的飞书、钉钉、企微等渠道；新平台需要适配 Gateway 的消息、会话与回传机制。接入聊天渠道与授权业务系统是分别进行的。",
+      "steps": [
+        "先验证机器人凭证与平台权限",
+        "映射外部用户、群聊和内部会话",
+        "测试长任务回传、重复消息及失败通知"
+      ],
+      "output": "交付：一条可收发消息的渠道 + 用户映射 + 失败回传记录。",
+      "sources": [
+        "overview",
+        "architecture"
+      ]
+    },
+    {
+      "id": "mcp",
+      "label": "03 业务工具 MCP",
+      "status": "现有扩展点",
+      "title": "把业务系统变成有边界的工具。",
+      "text": "通过内置连接器或自定义 MCP 暴露业务查询与写操作。可以连接内部工单、CRM、知识库或 GitHub 工具；权限范围取决于实际账号与工具。",
+      "steps": [
+        "先暴露只读查询并定义输入、输出和错误",
+        "再增加范围明确的写操作与审查流程",
+        "为重试设计幂等键，保存可检查的动作结果"
+      ],
+      "output": "交付：工具接口 + 授权范围 + 错误及重复请求处理说明。",
+      "sources": [
+        "connectors",
+        "overview"
+      ]
+    },
+    {
+      "id": "skills",
+      "label": "04 专家、技能与插件",
+      "status": "现有扩展点",
+      "title": "把岗位知识与工作方法变成可复用配置。",
+      "text": "专家用提示、技能、资料和工具形成岗位能力；插件可封装扩展。增加一个角色不等于增加一个独立训练过的模型，也不自动提高协作收益。",
+      "steps": [
+        "写清职责、输入资料和停止条件",
+        "把稳定步骤封装成技能或小脚本",
+        "约定产物格式，并用固定样本验收"
+      ],
+      "output": "交付：一个岗位配置 + 样例输入 + 可验收的输出规范。",
+      "sources": [
+        "overview",
+        "teams"
+      ]
+    },
+    {
+      "id": "acp",
+      "label": "05 编程执行 ACP",
+      "status": "现有扩展点",
+      "title": "让专门的编程工具接手代码任务。",
+      "text": "在部署 Octop 的主机安装并认证对应 CLI；配置 runner，再按专家启用 acp_runner。Codex 通过相应 ACP 适配器接入。",
+      "steps": [
+        "限制目标工作目录，准备项目约束",
+        "传入复现条件、预期变化与检查要求",
+        "返回差异与检查证据，再决定提交或部署"
+      ],
+      "output": "交付：可启动的 runner + 代码差异 + 检查结果。",
+      "sources": [
+        "acp"
+      ]
+    },
+    {
+      "id": "reliability",
+      "label": "06 可靠性与产品化",
+      "status": "我们的工程建议",
+      "title": "把“能调用”推进到“能稳定交付”。",
+      "text": "若要承接长期业务，需围绕任务状态、幂等重试、取消传播、配额、可观测性与结果验收进行工程设计。当前团队文档记录了在途任务与取消行为的限制。",
+      "steps": [
+        "先测试断网、重启、重复消息和凭证失效",
+        "为有副作用的动作保存任务状态与幂等标识",
+        "建立产物检查、人工接管与回归任务集"
+      ],
+      "output": "交付：失败场景记录 + 恢复策略 + 真实完成率与人工接管数据。",
+      "sources": [
+        "teams",
+        "jobs",
+        "architecture"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "title": "有了统一入口，AI 就会更聪明吗？",
+      "answer": "入口解决可达性，模型解决推理，工具解决动作，验收判断任务是否达成。四者要分别验证。Octop 的收益首先是把这些部分组织到一个可管理的服务中。",
+      "next": "验证方式：保持模型和任务不变，对照部署前后的接入步骤与交付结果。"
+    },
+    {
+      "title": "已经能用 dots 或 Grok Bot，为什么还要自建？",
+      "answer": "当你需要国内 IM、内网数据、自己的模型策略或源码级改造时，自建控制权才形成实际收益。对个人通用任务，托管产品通常能减少前期部署工作。",
+      "next": "决策方式：写出一个托管产品当前难以满足的必要条件，再判断自建投入。"
+    },
+    {
+      "title": "本地部署后，数据会留在哪里？",
+      "answer": "需要分别追踪控制面数据库、工作区、模型请求和连接器。接云端模型时，相关上下文仍会送往模型服务；远程工具也有自己的数据流。",
+      "next": "验证方式：列清每种数据的保存位置、发送目标与实际授权。"
+    },
+    {
+      "title": "多专家是否一定比一个助手做得好？",
+      "answer": "分工可能减少相互干扰，也可能增加上下文丢失、调度和调用成本。不同任务的收益需要实测，角色数量不能替代完成率。",
+      "next": "验证方式：用相同任务比较单专家与团队的产物、费用、耗时和接管次数。"
+    },
+    {
+      "title": "常驻运行，是否等于可靠地办完事情？",
+      "answer": "运行中的进程、保存的会话、持久化的任务和业务结果是不同层次。尤其要验证重启、重复触发、部分失败与取消；当前团队在途任务持久化仍有限制。",
+      "next": "验证方式：故意中断一次真实任务，检查能否恢复、是否重复写入、是否留下证据。"
+    },
+    {
+      "title": "我们应该优先扩展什么？",
+      "answer": "先做一个窄而完整的“项目更新研究助手”：选信息源、保存状态、形成带来源的记录、通知成员，并检查结果。跑通之后，再增加专家和更多业务入口。",
+      "next": "验收方式：有输入版本、真实来源、产物位置、失败记录与人工确认点。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "overview",
+      "title": "Octop 功能与路线图",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/README.md",
+      "path": "README.md",
+      "kind": "上游文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "architecture",
+      "title": "服务端、会话与存储架构",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/architecture.md",
+      "path": "docs/architecture.md",
+      "kind": "上游文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "processor",
+      "title": "统一请求与会话处理",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/gateway/process/processor.py",
+      "path": "src/octop/infra/gateway/process/processor.py",
+      "kind": "源码",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "knowledge",
+      "title": "知识库检索工具",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/knowledge/tools.py",
+      "path": "src/octop/infra/knowledge/tools.py",
+      "kind": "源码",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "parse",
+      "title": "文档解析格式",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/knowledge/parse.py",
+      "path": "src/octop/infra/knowledge/parse.py",
+      "kind": "源码",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "cron",
+      "title": "定时提醒与 Agent 任务",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/cron/tools.py",
+      "path": "src/octop/infra/cron/tools.py",
+      "kind": "源码",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "teams",
+      "title": "专家团队行为与限制",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/expert-teams.md",
+      "path": "docs/expert-teams.md",
+      "kind": "上游文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "jobs",
+      "title": "团队在途任务状态",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/agents/teams/jobs.py",
+      "path": "src/octop/infra/agents/teams/jobs.py",
+      "kind": "源码",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "connectors",
+      "title": "连接器与 MCP 模式",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/connectors.md",
+      "path": "docs/connectors.md",
+      "kind": "上游文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "acp",
+      "title": "ACP 双向集成与执行器",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/acp.md",
+      "path": "docs/acp.md",
+      "kind": "上游文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "codex",
+      "title": "OpenAI：当前功能与扩展",
+      "url": "https://learn.chatgpt.com/docs/features",
+      "kind": "官方产品文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "codex-open",
+      "title": "OpenAI：开源 CLI、SDK 与 App Server",
+      "url": "https://learn.chatgpt.com/docs/open-source",
+      "kind": "官方产品文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "dots",
+      "title": "OpenAI：dots 的持续职责",
+      "url": "https://learn.chatgpt.com/docs/dots",
+      "kind": "官方产品文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "dots-computer",
+      "title": "OpenAI：dots 的电脑与应用",
+      "url": "https://learn.chatgpt.com/docs/dots/computers-and-apps",
+      "kind": "官方产品文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "dots-tasks",
+      "title": "OpenAI：dots 的任务与记忆",
+      "url": "https://learn.chatgpt.com/docs/dots/tasks-and-memory",
+      "kind": "官方产品文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "dots-channels",
+      "title": "OpenAI：dots 的消息渠道",
+      "url": "https://learn.chatgpt.com/docs/dots/channels",
+      "kind": "官方产品文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "grok",
+      "title": "官方 Grok Bot：云端电脑与 Bot 协作",
+      "url": "https://docs.x.ai/grok-bot/overview",
+      "kind": "官方产品文档",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "grok-chat",
+      "title": "官方 Grok：聊天、搜索与资料分析",
+      "url": "https://x.ai/grok",
+      "kind": "官方产品文档",
+      "date": "2026-10-20"
+    }
+  ],
+  "commit": "dd9dce470844c25d59effb50615bb3c667ea25cd",
+  "version": "1.0.2",
+  "sourceFileCount": 13
+};

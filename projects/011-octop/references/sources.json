@@ -1,0 +1,138 @@
+[
+  {
+    "id": "overview",
+    "title": "Octop 功能与路线图",
+    "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/README.md",
+    "path": "README.md",
+    "kind": "上游文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "architecture",
+    "title": "服务端、会话与存储架构",
+    "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/architecture.md",
+    "path": "docs/architecture.md",
+    "kind": "上游文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "processor",
+    "title": "统一请求与会话处理",
+    "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/gateway/process/processor.py",
+    "path": "src/octop/infra/gateway/process/processor.py",
+    "kind": "源码",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "knowledge",
+    "title": "知识库检索工具",
+    "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/knowledge/tools.py",
+    "path": "src/octop/infra/knowledge/tools.py",
+    "kind": "源码",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "parse",
+    "title": "文档解析格式",
+    "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/knowledge/parse.py",
+    "path": "src/octop/infra/knowledge/parse.py",
+    "kind": "源码",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "cron",
+    "title": "定时提醒与 Agent 任务",
+    "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/cron/tools.py",
+    "path": "src/octop/infra/cron/tools.py",
+    "kind": "源码",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "teams",
+    "title": "专家团队行为与限制",
+    "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/expert-teams.md",
+    "path": "docs/expert-teams.md",
+    "kind": "上游文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "jobs",
+    "title": "团队在途任务状态",
+    "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/agents/teams/jobs.py",
+    "path": "src/octop/infra/agents/teams/jobs.py",
+    "kind": "源码",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "connectors",
+    "title": "连接器与 MCP 模式",
+    "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/connectors.md",
+    "path": "docs/connectors.md",
+    "kind": "上游文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "acp",
+    "title": "ACP 双向集成与执行器",
+    "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/acp.md",
+    "path": "docs/acp.md",
+    "kind": "上游文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "codex",
+    "title": "OpenAI：当前功能与扩展",
+    "url": "https://learn.chatgpt.com/docs/features",
+    "kind": "官方产品文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "codex-open",
+    "title": "OpenAI：开源 CLI、SDK 与 App Server",
+    "url": "https://learn.chatgpt.com/docs/open-source",
+    "kind": "官方产品文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "dots",
+    "title": "OpenAI：dots 的持续职责",
+    "url": "https://learn.chatgpt.com/docs/dots",
+    "kind": "官方产品文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "dots-computer",
+    "title": "OpenAI：dots 的电脑与应用",
+    "url": "https://learn.chatgpt.com/docs/dots/computers-and-apps",
+    "kind": "官方产品文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "dots-tasks",
+    "title": "OpenAI：dots 的任务与记忆",
+    "url": "https://learn.chatgpt.com/docs/dots/tasks-and-memory",
+    "kind": "官方产品文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "dots-channels",
+    "title": "OpenAI：dots 的消息渠道",
+    "url": "https://learn.chatgpt.com/docs/dots/channels",
+    "kind": "官方产品文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "grok",
+    "title": "官方 Grok Bot：云端电脑与 Bot 协作",
+    "url": "https://docs.x.ai/grok-bot/overview",
+    "kind": "官方产品文档",
+    "date": "2026-10-20"
+  },
+  {
+    "id": "grok-chat",
+    "title": "官方 Grok：聊天、搜索与资料分析",
+    "url": "https://x.ai/grok",
+    "kind": "官方产品文档",
+    "date": "2026-10-20"
+  }
+]

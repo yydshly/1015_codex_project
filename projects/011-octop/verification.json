@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-20",
+  "scope": "Research documents and static website; upstream Octop not executed",
+  "upstream_commit": "dd9dce470844c25d59effb50615bb3c667ea25cd",
+  "upstream_files_verified": 13,
+  "browser_checks": 84,
+  "resources_checked": 13,
+  "viewports": [
+    {
+      "viewport": 1440,
+      "document": 1440
+    },
+    {
+      "viewport": 1024,
+      "document": 1024
+    },
+    {
+      "viewport": 768,
+      "document": 768
+    },
+    {
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "viewport": 320,
+      "document": 320
+    }
+  ],
+  "direct_file_preview": true,
+  "checks_passed": true,
+  "commands": [
+    [
+      "node",
+      "--check",
+      "projects\\011-octop\\web\\app.js"
+    ],
+    [
+      "node",
+      "--check",
+      "projects\\011-octop\\web\\assets\\research-data.js"
+    ],
+    [
+      "python",
+      "scripts/projects.py",
+      "check"
+    ],
+    [
+      "git",
+      "diff",
+      "--check"
+    ]
+  ],
+  "build": "Existing repository Pages build passed from a clean candidate containing committed projects plus 011; unrelated 008 excluded.",
+  "preview_build": "Clean candidate _site/projects/011-octop/",
+  "deployment": "Pending first publication; demo_url intentionally empty until live verification.",
+  "poster_checks": 14
+}

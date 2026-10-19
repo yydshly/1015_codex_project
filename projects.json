@@ -135,6 +135,21 @@
       ],
       "cover": "assets/research-overview-20261019.png",
       "demo_url": "https://yydshly.github.io/1015_codex_project/projects/010-zhuiju-product-research/"
+    },
+    {
+      "id": 11,
+      "slug": "octop",
+      "name": "Octop 自建 AI 助手平台研究",
+      "repository": "https://github.com/TencentCloud/Octop",
+      "summary": "把群聊、网页与定时任务接入自建 Agent 服务，整合模型、记忆、知识库与工具执行，形成资料回答、简报、报告或代码差异。群聊只是入口；价值在多人管理、内网业务与模型/源码控制，可经 MCP、ACP、技能和渠道扩展，并对比 Codex、dots、官方 Grok 的托管与自建取舍。",
+      "status": "completed",
+      "tags": [
+        "AI 助手平台",
+        "Agent 原理",
+        "产品对比"
+      ],
+      "cover": "assets/octop-understanding-overview-20261020.png",
+      "demo_url": ""
     }
   ]
 }

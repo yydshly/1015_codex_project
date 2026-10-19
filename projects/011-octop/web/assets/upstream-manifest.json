@@ -1,0 +1,89 @@
+{
+  "repository": "https://github.com/TencentCloud/Octop",
+  "commit": "dd9dce470844c25d59effb50615bb3c667ea25cd",
+  "commit_date": "2026-10-18T14:53:37Z",
+  "checked_on": "2026-10-20",
+  "captured_at": "2026-10-19T16:26:46.757685+00:00",
+  "scope": "Documentation and selected source inspection; no Octop instance or model API run.",
+  "license": "MIT; original LICENSE retained alongside the snapshot.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 30387,
+      "sha256": "3b7dfed94413522454de48b300da849b123614c41d92b1c284658e8fa745d8bb",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1062,
+      "sha256": "5f2089cdcc57d00c6b70c0fb83368cbf3a86bb57839385fc6ac9086878d606e8",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/LICENSE"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 5771,
+      "sha256": "7a6b5c5751a757e754008f39bcf058761d82edad1259429eda0ea3470039c81c",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/pyproject.toml"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 9069,
+      "sha256": "75949dbc836ee3387aa0ff815ade424e7f7f8618b98927e6b807b3c659ff9600",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/architecture.md"
+    },
+    {
+      "path": "docs/expert-teams.md",
+      "bytes": 9057,
+      "sha256": "9e89f584e8534642cc2996bdd13c297a5ee79610d5c63888aa783987f670f81f",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/expert-teams.md"
+    },
+    {
+      "path": "docs/acp.md",
+      "bytes": 6395,
+      "sha256": "714f6d43137267b2e7665b13466e6b81ab8c69952d06774b41985e8d81fa4578",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/acp.md"
+    },
+    {
+      "path": "docs/connectors.md",
+      "bytes": 5249,
+      "sha256": "f96557e6106eafd29d4fc2aef397e9d72e2ee67e88a4026377f467bf86b80593",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/docs/connectors.md"
+    },
+    {
+      "path": "src/octop/infra/gateway/process/processor.py",
+      "bytes": 72241,
+      "sha256": "a42a43c3fd35a9ad228b44dafda9574899ad4e642318a406ce4250a02c4f6207",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/gateway/process/processor.py"
+    },
+    {
+      "path": "src/octop/infra/cron/tools.py",
+      "bytes": 9859,
+      "sha256": "6a7fae99689a2deb295e230405954df9b0dbe598c4fd2013d470e89353af8fb9",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/cron/tools.py"
+    },
+    {
+      "path": "src/octop/infra/knowledge/tools.py",
+      "bytes": 4115,
+      "sha256": "5c2ad7896bc2e22f121536541168add5982e22f0b02de43a52e2d118ad3614ec",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/knowledge/tools.py"
+    },
+    {
+      "path": "src/octop/infra/knowledge/parse.py",
+      "bytes": 9616,
+      "sha256": "1009b9e8b783e724f327a3a44c5750e94a070d9ef5342b67d2bbaa8f91bb1670",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/knowledge/parse.py"
+    },
+    {
+      "path": "src/octop/infra/agents/providers/harness_factory.py",
+      "bytes": 1438,
+      "sha256": "d0fc6671ab342633d0dc942ba77b125216418a584b080c341c4786faa489ec85",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/agents/providers/harness_factory.py"
+    },
+    {
+      "path": "src/octop/infra/agents/teams/jobs.py",
+      "bytes": 2553,
+      "sha256": "e0b2c04102eb5fc7a2636093a1b05cf798bc2aae82b7932b1809c74e754db4f1",
+      "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/src/octop/infra/agents/teams/jobs.py"
+    }
+  ]
+}

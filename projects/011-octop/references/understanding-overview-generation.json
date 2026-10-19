@@ -1,0 +1,15 @@
+{
+  "text_blocks": 234,
+  "characters": 3035,
+  "sections": 6,
+  "layout_overflows": [],
+  "width": 2160,
+  "height": 6786,
+  "svg": "F:\\codex_project\\1015_codex_project\\projects\\011-octop\\assets\\octop-understanding-overview-20261020.svg",
+  "png": "F:\\codex_project\\1015_codex_project\\projects\\011-octop\\assets\\octop-understanding-overview-20261020.png",
+  "png_bytes": 1536502,
+  "method": "Original SVG typesetting; Pillow font metrics; Chromium PNG export.",
+  "imagegen_attempt": "Built-in image_gen failed with a network error. No CLI/API fallback used.",
+  "scope": "Summary of existing project research, no new Octop runtime or product benchmark.",
+  "imagegen_prompt": "references/understanding-overview-image-prompt.txt"
+}

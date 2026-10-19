@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-20",
+  "passed": true,
+  "checks": [
+    {
+      "name": "Native PNG dimensions match SVG",
+      "passed": true
+    },
+    {
+      "name": "Six requested subject areas present",
+      "passed": true
+    },
+    {
+      "name": "Four compared products present",
+      "passed": true
+    },
+    {
+      "name": "Group chat and execution boundary explicit",
+      "passed": true
+    },
+    {
+      "name": "Export has no canvas text overflow",
+      "passed": true
+    },
+    {
+      "name": "Exact website copy: png",
+      "passed": true
+    },
+    {
+      "name": "Exact website copy: svg",
+      "passed": true
+    },
+    {
+      "name": "Existing research content still renders",
+      "passed": true
+    },
+    {
+      "name": "Hero, summary and download links use the full original PNG",
+      "passed": true
+    },
+    {
+      "name": "Poster opens at original resolution",
+      "passed": true
+    },
+    {
+      "name": "No overflow after adding poster link: 1440",
+      "passed": true
+    },
+    {
+      "name": "No overflow after adding poster link: 390",
+      "passed": true
+    },
+    {
+      "name": "No overflow after adding poster link: 320",
+      "passed": true
+    },
+    {
+      "name": "No browser errors",
+      "passed": true
+    }
+  ],
+  "viewports": [
+    {
+      "viewport": 1440,
+      "document": 1440
+    },
+    {
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "viewport": 320,
+      "document": 320
+    }
+  ],
+  "dimensions": [
+    2160,
+    6786
+  ],
+  "svg_bytes": 54234,
+  "png_bytes": 1536502,
+  "scope": "Poster and its local website entry; no Octop runtime execution."
+}

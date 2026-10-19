@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153a3d">
+  <meta name="description" content="Octop 把群聊、网页与定时任务接入可自部署的 Agent 服务，整合模型、记忆、知识库和工具执行。梳理资料问答、研究简报、日志分析与编程派工场景，对比 Codex、dots、Grok 的自建与托管价值。">
+  <title>Octop · 从一个请求，到一次真实执行 | Research 011</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/research-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到研究正文</a>
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Octop 研究首页"><img src="assets/mark.svg" alt="" width="32" height="32"><span>Octop<span class="brand-separator"> / </span><small>研究手记</small></span></a>
+      <div class="header-right"><span class="edition">GITHUB RESEARCH LAB <b>011</b></span><a class="source-link" href="https://github.com/TencentCloud/Octop" target="_blank" rel="noopener noreferrer">上游仓库 <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="reading-progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-dot"></span> OPEN-SOURCE AGENT PLATFORM</p>
+        <h1 id="hero-title">一个请求，<br>连接 AI 与<br><em>真实的工作。</em></h1>
+        <p class="hero-lead">群聊、私聊、网页和定时任务，都可以成为入口。<br class="desktop-break">Octop 在后台组织模型、记忆、知识库和工具执行，<br class="desktop-break">形成可以自行部署和管理的 Agent 服务。</p>
+        <div class="hero-actions"><a href="#principle" class="button primary">看清执行链路 <span aria-hidden="true">↗</span></a><a href="#comparison" class="button quiet">和同类产品比较 <span aria-hidden="true">→</span></a><a href="assets/octop-understanding-overview-20261020.png" class="button quiet" target="_blank" rel="noopener">一图读懂 <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-meta"><span>文档与源码研究</span><span>2026.10.20</span><span>原理 · 价值 · 扩展</span></div>
+      </div>
+      <div class="system-figure" role="img" aria-label="多种消息入口进入 Octop，经模型决策、工具执行和结果回传组成工作循环。结构示意，非运行结果。">
+        <div class="figure-top"><span>SYSTEM FIELD NOTES</span><span>01 — REQUEST TO ACTION</span></div>
+        <div class="model-node"><span class="node-indicator"></span><span>模型判断</span><small>API / Ollama</small></div>
+        <svg class="connector-lines" viewBox="0 0 560 430" aria-hidden="true"><g fill="none" stroke="#8ba9a0" stroke-width="1.3"><path d="M145 156H210V215H240"/><path d="M145 215H240"/><path d="M145 274H210V215H240"/><path d="M280 110V175"/><path d="M325 215H380V156H415"/><path d="M325 215H415"/><path d="M325 215H380V274H415"/><path d="M455 302V351H280V260" stroke-dasharray="4 5"/></g><g fill="#567e71"><circle cx="210" cy="215" r="3"/><circle cx="380" cy="215" r="3"/></g></svg>
+        <div class="io-stack inputs"><div><span>01</span>Web / CLI</div><div><span>02</span>飞书 / 企微</div><div><span>03</span>定时任务</div></div>
+        <div class="server-node"><img src="assets/mark.svg" alt="" width="58" height="58"><strong>Octop</strong><span>身份 · 上下文 · 调度</span></div>
+        <div class="io-stack outputs"><div>文件 / 终端 <span>↗</span></div><div>浏览器 / MCP <span>↗</span></div><div>ACP 执行器 <span>↗</span></div></div>
+        <div class="return-label">工具结果回传 · 继续判断与保存</div>
+        <div class="figure-bottom"><span>YOUR HOST / YOUR CONFIGURATION</span><span>结构示意</span></div>
+      </div>
+    </section>
+
+    <div class="thesis-strip"><div class="wrap"><span class="strip-label">我们的核心理解</span><p><strong>群聊是入口之一，</strong>核心是自己管理的 Agent 执行与服务平台。</p><a href="#overview">先读研究摘要 <span aria-hidden="true">↓</span></a></div></div>
+
+    <section class="section wrap overview-section" id="overview" aria-labelledby="overview-title">
+      <div class="section-heading"><div><p class="eyebrow">RESEARCH BRIEF / 一图总览</p><h2 id="overview-title">先把这六件事，<br>说清楚。</h2></div><p class="section-intro">能力带来哪些产物？自建解决什么问题？<br>把功能、使用价值和判断依据连起来看。</p></div>
+      <div class="overview-layout">
+        <dl class="research-summary">
+          <div><dt>能力与效果</dt><dd>整合多入口、多用户与专家、模型、记忆、知识库、定时任务和工具；配置并授权后，可交付带来源的回答、报告文件、更新简报或代码差异。</dd></div>
+          <div><dt>本质是群聊吗？</dt><dd>群聊只是交互入口之一。后台识别用户与专家，准备上下文，由模型提出工具调用，再由运行时执行、回传和保存；私聊、网页、API、定时触发也能走这条链路。</dd></div>
+          <div><dt>适合什么场景？</dt><dd>团队内部资料问答、项目更新研究、获授权日志分析，以及通过 ACP 派给编程助手的代码任务。场景是否成立，要看真实工具、数据和可检查的产物。</dd></div>
+          <div><dt>还可以怎样扩展？</dt><dd>用 MCP 或连接器接工单、CRM、运维和内部 API；用专家、技能与脚本封装岗位流程；用 ACP 接外部 Agent，或增加渠道、模型与存储。新业务流程仍需另行开发和验收。</dd></div>
+          <div><dt>和现成产品相比呢？</dt><dd>Codex、dots、官方 Grok 产品也有工具与执行能力。Octop 的主要差异是自部署、国内 IM、内网接入及模型和源码的控制；个人通用任务是否值得自建，要算维护投入。</dd></div>
+          <div><dt>它的价值与意义</dt><dd>把一次性对话组织成可重复使用的团队服务，让业务从熟悉的入口调用 AI 并留下产物。收益来自整合与控制；模型智力、任务完成率和重启恢复能力仍要分别验证。</dd></div>
+        </dl>
+        <figure class="overview-poster"><a href="assets/octop-understanding-overview-20261020.png" target="_blank" rel="noopener" aria-label="打开 Octop 理解全景图高清原图"><img src="assets/octop-understanding-overview-20261020.png" width="2160" height="6786" loading="lazy" alt="Octop 理解全景图：入口与七步执行链路、能力状态、四类使用场景、六条扩展路径、四产品对比与自建取舍"></a><figcaption>完整原图 · 2160 × 6786<br><a href="assets/octop-understanding-overview-20261020.png" target="_blank" rel="noopener">放大阅读 ↗</a><a href="assets/octop-understanding-overview-20261020.svg" download>下载 SVG ↓</a></figcaption></figure>
+      </div>
+    </section>
+
+    <nav class="chapter-nav" aria-label="研究章节"><div class="wrap"><a href="#capabilities" class="active"><span>01</span>能力与边界</a><a href="#principle"><span>02</span>底层原理</a><a href="#comparison"><span>03</span>同类对比</a><a href="#thinking"><span>04</span>我们的思考</a><a href="#extensions"><span>05</span>如何扩展</a><a href="#evidence"><span>↗</span>来源与验证</a></div></nav>
+
+    <section class="section wrap" id="capabilities" aria-labelledby="capability-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / CAPABILITIES</p><h2 id="capability-title">从“能聊天”，<br>到一套可管理的服务。</h2></div><p class="section-intro">模型负责判断，工具负责动作，平台把它们连接起来。<br>先看已有什么，再看需要配置什么。</p></div>
+      <div class="capability-toolbar"><div class="filter-group" role="group" aria-label="按能力状态筛选"><button type="button" data-cap-filter="all" aria-pressed="true">全部能力</button><button type="button" data-cap-filter="implemented" aria-pressed="false">已有能力</button><button type="button" data-cap-filter="beta" aria-pressed="false">Beta</button><button type="button" data-cap-filter="planned" aria-pressed="false">路线图</button></div><p id="capabilityCount" class="muted" aria-live="polite"></p></div>
+      <div class="capability-grid" id="capabilityGrid"></div>
+      <div class="scope-note"><span class="scope-icon" aria-hidden="true">i</span><p><strong>本页的验证范围：</strong>核对固定版本文档与选定源码，未启动 Octop 实例或调用付费模型。下面的交互解释机制，情景和产物均为示意。</p><a href="#evidence">查看证据 <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="section principle-section" id="principle" aria-labelledby="principle-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">02 / UNDER THE HOOD</p><h2 id="principle-title">一句话，<br>是怎样变成一个动作的？</h2></div><p class="section-intro">跟着一个请求走过七步。<br>观察模型、运行时与工具各自负责什么。</p></div>
+      <div class="trace-lab">
+        <div class="lab-toolbar"><span class="lab-label"><i></i> 执行机制示意</span><label class="scenario-label">选择任务<select id="scenarioSelect"><option value="report">日志 → 分析报告</option><option value="research">更新 → 研究记录</option><option value="coding">问题 → 编程派工</option></select></label></div>
+        <div class="request-line"><span>用户请求</span><p id="scenarioRequest">读取获授权目录中的日志，分析错误，把报告保存到工作区。</p></div>
+        <div class="flow-track" id="flowTrack" role="group" aria-label="选择执行步骤"></div>
+        <div class="flow-detail" id="flowDetail" aria-live="polite"></div>
+        <div class="trace-footer"><p><span>预期产物</span><strong id="scenarioArtifact"></strong></p><div class="trace-controls"><button id="prevStep" type="button" aria-label="上一步">←</button><span id="stepCounter">01 / 07</span><button id="nextStep" type="button" aria-label="下一步">→</button></div></div>
+        <p class="lab-boundary" id="scenarioBoundary"></p>
+      </div>
+      <div class="execution-layout"><div><p class="eyebrow">WHERE DOES IT RUN?</p><h3>部署位置和模型位置，<br>是两个独立的选择。</h3><p>接上聊天渠道，只是让消息到达。实际动作还需要相应工具、账号与执行环境。</p><a class="inline-link" href="assets/architecture.svg" target="_blank" rel="noopener">打开完整结构图 <span aria-hidden="true">↗</span></a></div><div class="environment-panel"><div class="environment-controls"><label>部署位置<select id="hostSelect"><option value="personal">个人电脑</option><option value="server">常开服务器 / NAS</option></select></label><label>模型位置<select id="modelSelect"><option value="cloud">云端模型 API</option><option value="local">本地 Ollama</option></select></label></div><div class="environment-result" id="environmentResult" aria-live="polite"></div></div></div>
+      <div class="runtime-strip"><div><span>octop-gateway</span><p>统一消息入口与回传</p></div><div><span>octop-harness</span><p>模型、工具与会话运行时</p></div><div><span>octop-memory</span><p>长期记忆与检索</p></div><div><span>octop-browser</span><p>浏览器自动化</p></div></div>
+      <p class="runtime-caption">单进程服务 · Python 3.12+ / FastAPI · React 控制台 · LangGraph 智能体运行时 · SQLite / PostgreSQL 控制面数据库</p>
+      <div class="storage-note"><span>保存什么？</span><p><b>控制面数据库</b>管理用户、专家、通道、任务等记录；<b>工作区</b>保存专家文件和产物。文件存储后端与数据库后端需要分别配置。</p></div>
+    </div></section>
+
+    <section class="section wrap" id="comparison" aria-labelledby="comparison-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / POSITIONING</p><h2 id="comparison-title">能力会重叠，<br>选择取决于你要掌握哪一层。</h2></div><p class="section-intro">Codex、dots、Grok Bot 也有工具和执行能力。<br>Octop 的差异集中在自部署、业务接入和源码定制。</p></div>
+      <p class="product-scope"><strong>先区分 Grok 的两种形态：</strong><a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">官方聊天入口</a>提供聊天、搜索、资料分析与内容生成；下表另外纳入<a href="https://docs.x.ai/grok-bot/overview" target="_blank" rel="noopener noreferrer">官方 Grok Bot</a>的常驻电脑与任务协作形态。Bot 的执行能力不默认适用于每个普通聊天会话。</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的四产品对比表"><table class="comparison-table"><caption>按官方文档比较产品定位与运行方式；不对完成率、稳定性或成本做未经实测的排名。</caption><thead><tr><th scope="col">比较维度</th><th scope="col" class="octop-column"><span class="table-product">Octop</span><small>自行管理的助手平台</small></th><th scope="col"><span class="table-product">Codex</span><small>任务与工程执行工具</small></th><th scope="col"><span class="table-product">dots</span><small>持续职责与主动跟进</small></th><th scope="col"><span class="table-product">Grok Bot</span><small>官方常驻 Bot 团队</small></th></tr></thead><tbody id="comparisonRows"></tbody></table></div>
+      <div class="decision-box"><div class="decision-top"><p class="eyebrow">WHAT DO YOU NEED?</p><div class="segmented" role="group" aria-label="选择你的使用目标"><button data-persona="personal" aria-pressed="true" type="button">自己完成工作</button><button data-persona="team" aria-pressed="false" type="button">为团队自建</button><button data-persona="builder" aria-pressed="false" type="button">准备二次开发</button></div></div><div id="decisionPanel" class="decision-panel" aria-live="polite"></div></div>
+      <p class="comparison-footnote">此处 Grok Bot 指官方常驻智能体产品；Codex 同时包含应用、CLI / SDK 等形态。产品开放范围与账号能力可能变化，请以所链接的当前官方文档为准。</p>
+    </section>
+
+    <section class="section thinking-section" id="thinking" aria-labelledby="thinking-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">04 / OUR QUESTIONS</p><h2 id="thinking-title">从“能做什么”，<br>追问“为什么值得做”。</h2></div><p class="section-intro">把讨论中形成的判断留下来。<br>每个判断都配一个可以继续验证的问题。</p></div>
+      <div class="thinking-journey"><div><span>起点</span><h3>功能清单</h3><p>能接哪些模型、渠道和工具？</p></div><div><span>进一步</span><h3>服务端组织</h3><p>身份、上下文与执行如何协作？</p></div><div><span>关键问题</span><h3>真实执行</h3><p>谁运行工具，产物保存在哪里？</p></div><div><span>落到选择</span><h3>自建的价值</h3><p>控制需求能否支撑维护投入？</p></div></div>
+      <div class="question-list" id="questionList"></div>
+      <div class="research-conclusion"><span>当前判断</span><p>自建的收益，要由<strong>必要的控制需求</strong>支撑；<br>实际的可靠性，要用<strong>任务与产物</strong>来验证。</p></div>
+    </div></section>
+
+    <section class="section wrap" id="extensions" aria-labelledby="extensions-title">
+      <div class="section-heading"><div><p class="eyebrow">05 / EXTENSION PATHS</p><h2 id="extensions-title">沿着现有接口扩展，<br>先交付一个完整的小任务。</h2></div><p class="section-intro">从配置、协议到工程改造，逐步增加投入。<br>每条路径都写清接入位置与需要交付的证据。</p></div>
+      <div class="extension-layout"><div class="extension-tabs" id="extensionTabs" role="tablist" aria-orientation="vertical" aria-label="扩展路径"></div><div id="extensionPanel" class="extension-panel" role="tabpanel" tabindex="0"></div></div>
+      <div class="first-project"><div class="first-project-label">FIRST USE CASE</div><div><h3>我们的第一个合理扩展：项目更新研究助手。</h3><p>项目清单 → GitHub 信息源 → 变更判断 → 带来源的 Markdown → 渠道通知。先验证去重、失败恢复和产物质量，再加入更多专家。</p></div><a href="#principle" class="inline-link" id="researchScenarioLink">查看任务链路 <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">EVIDENCE / READING ROOM</p><h2 id="evidence-title">让每个理解，<br>都能回到来源。</h2></div><p class="section-intro">Octop 文档与源码链接固定到研究提交。<br>产品对比来自官方文档，核查日期为 2026.10.20。</p></div>
+      <div class="version-box"><div><span>OCTOP SOURCE SNAPSHOT</span><code id="commitLabel"></code></div><a href="assets/upstream-manifest.json" download class="inline-link">下载文件校验清单 ↓</a></div>
+      <div class="source-toolbar"><div class="filter-group" role="group" aria-label="按来源类型筛选"><button data-source-filter="all" aria-pressed="true" type="button">全部来源</button><button data-source-filter="源码" aria-pressed="false" type="button">源码</button><button data-source-filter="上游文档" aria-pressed="false" type="button">上游文档</button><button data-source-filter="官方产品文档" aria-pressed="false" type="button">官方产品文档</button></div><label class="source-search"><span class="sr-only">搜索来源标题</span><input type="search" id="sourceSearch" placeholder="搜索来源…" autocomplete="off"></label></div>
+      <p class="muted source-count" id="sourceCount" aria-live="polite"></p><div class="source-grid" id="sourceGrid"></div>
+      <div class="document-shelf"><span>带走完整笔记</span><a href="assets/docs/capabilities.md" download>能力与边界 ↓</a><a href="assets/docs/architecture.md" download>底层原理 ↓</a><a href="assets/docs/comparison.md" download>产品对比 ↓</a><a href="assets/docs/notes.md" download>思考与待验证问题 ↓</a><a href="assets/docs/extensions.md" download>扩展路径 ↓</a><a href="assets/architecture.svg" download>结构图 SVG ↓</a></div>
+      <div class="document-shelf"><span>理解全景图</span><a href="assets/octop-understanding-overview-20261020.png" download>高清 PNG 原图 ↓</a><a href="assets/octop-understanding-overview-20261020.svg" download>可编辑 SVG ↓</a></div>
+      <p class="method-note"><strong>研究方式：</strong>固定版本文档与源码核查、官方产品文档比较，以及本研究网页的静态和浏览器验证。尚未验证 Octop 的安装运行、跨平台通道、模型调用、业务成功率或恢复能力。方案与决策建议均标为我们的判断。上游 MIT 许可随源码快照保留。</p>
+    </div></section>
+    <noscript><div class="wrap scope-note">本页的能力筛选、执行链路、产品表格和来源列表使用 JavaScript。请启用 JavaScript，或下载上方 Markdown 笔记阅读完整研究。</div></noscript>
+  </main>
+  <footer class="site-footer wrap"><div><a class="brand" href="#top">Octop <small>研究手记</small></a><p>研究 011 · 能力、原理与产品选择</p></div><div><a href="https://github.com/TencentCloud/Octop" target="_blank" rel="noopener noreferrer">上游项目 ↗</a><a href="https://github.com/yydshly/1015_codex_project" target="_blank" rel="noopener noreferrer">研究仓库 ↗</a><a href="#top">回到顶部 ↑</a></div></footer>
+</body>
+</html>

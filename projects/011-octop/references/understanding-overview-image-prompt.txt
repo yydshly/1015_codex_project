@@ -1,0 +1,114 @@
+Use case: infographic-diagram.
+Asset type: ONE comprehensive Chinese research overview poster, meant to be zoomed and saved as the single visual summary of the existing Octop research project.
+Create a finished, exceptionally legible, high-resolution LONG PORTRAIT infographic, target approximately 2160 x 3840 pixels or a similarly generous portrait canvas. It must be ONE continuous image, with all six numbered sections below. It is an educational research synthesis, not an advertisement and not a screenshot of the software.
+
+Design: match the research page's quiet editorial look: warm ivory background, dark petrol-green headlines, sage/mint structural blocks, restrained amber for Beta and gray for roadmap. Crisp Chinese sans-serif typography, generous column alignment, numbered section markers, thin directional arrows, small purposeful tool/file/chat/server icons. Use simple recognizable illustrations and a central execution architecture diagram to explain the meaning; avoid purely decorative giant mascots. Content-dense but organized, highly readable when zoomed. Chinese characters must be accurate; product names must be spelled Octop, Codex, dots, Grok Bot. Distinct title, section headings, diagram labels and body hierarchy. No giant whitespace, no tiny illegible paragraphs, no made-up performance scores, no fake test results, no official logo claims. All text in Simplified Chinese except proper names, protocol/module names, and source URLs. Do not insert the unrelated smart-excalidraw project.
+
+Main title (exact):
+「Octop 理解全景图」
+Subtitle:
+「从聊天入口，到模型判断、工具执行与持续服务」
+One highlighted thesis directly beneath the title:
+「群聊是入口之一；核心是把 Agent 执行与后台管理组织成可自建的服务。」
+A small framing line:
+「使用体验：群聊或私聊里让 Agent 办事。系统组成：入口 + 身份 + 上下文 + 模型 + 工具 + 状态管理。」
+
+SECTION 01 — 「本质与底层原理」
+Make this the largest visual architecture diagram, with actual connected directional arrows and a return loop:
+Left inputs: 「群聊 / 私聊」「Web / CLI / API」「定时任务」
+These enter an outlined container labelled 「Octop 服务端 · 你部署和管理」.
+Inside, the sequential nodes are:
+「识别用户与专家」 → 「加载会话、记忆与知识库」 → 「模型判断下一步」 → 「运行时调用工具」 → 「检查结果、回传并保存」.
+From the model node draw a link to an external model node labelled 「云端 API / 本地 Ollama」.
+From the tool node show three execution branches:
+「文件 / 终端 / 浏览器」
+「MCP：业务工具与数据」
+「ACP：外部编程执行器」
+All tool result branches loop back to model decision, labelled 「真实返回结果 → 继续处理 / 结束」.
+At bottom of the diagram, make two distinctions visually explicit:
+「模型提出工具调用；实际动作由程序和工具执行。」
+「入口不会自动授予业务权限；执行受工具、账号与环境配置约束。」
+Small technical foundation strip:
+「Python / FastAPI + React · octop-harness（LangGraph）· Gateway / Memory / Browser」
+「SQLite / PostgreSQL 管理控制面；工作区保存文件与产物。」
+
+SECTION 02 — 「已有能力，能产生什么效果？」
+Use an orderly 2-column or 4-column capability matrix, label status clearly:
+1. 「多入口」 — 「把网页、飞书、钉钉、微信、企微等请求汇入同一服务」
+2. 「多用户 / 多专家」 — 「为不同成员和岗位配置模型、资料、工作区与工具」
+3. 「记忆 + 知识库」 — 「延续上下文；检索 PDF、Word、Excel、Markdown 等资料」
+4. 「真实工具执行」 — 「读取文件、运行脚本、操作网页、调用业务 API」
+5. 「定时任务」 — 「直接发送固定提醒，或每次查询分析最新信息」
+6. 「MCP / ACP / 插件」 — 「连接业务工具；把编程工作交给已配置的执行器」
+7. Amber label 「Beta：多专家团队」 — 「主持人派工，成员执行并回报；协作收益需验证」
+8. Gray label 「规划：工作流录制 / 自动提炼技能」 — 「当前路线图内容，不能当作已交付效果」
+Add a small legend: 「已有能力｜Beta｜规划｜扩展方案」. The image must not imply that all features are production-validated.
+
+SECTION 03 — 「使用场景：输入 → 动作 → 可验收产物」
+Four concise rows, using arrows and small icons:
+「团队资料问答」: 「成员提问 → 检索获授权资料 → 带依据的回答」
+「项目更新研究」: 「项目清单 → GitHub API / MCP / 脚本查询 → 中文 Markdown + 渠道通知」
+「日志排障与报告」: 「授权日志 → 文件读取与脚本分析 → 报告 + 执行记录」
+「编程任务入口」: 「复现问题 → ACP 调用编程助手 → 代码差异 + 检查结果」
+Important supporting line:
+「这些是配置后的可实现方案；需要接好信息源、工具和权限，并检查真实产物。」
+
+SECTION 04 — 「可扩展方式与业务场景」
+Six compact labelled extension paths, each with technical extension point and expected business use:
+「模型与存储」 → 「兼容 API / Ollama / 工作区后端」 → 「模型策略与运行环境选择」
+「消息渠道」 → 「Gateway 适配」 → 「接入自有消息平台与团队入口」
+「业务系统」 → 「MCP / 连接器 / 插件」 → 「CRM、工单、内部 API 与资料库」
+「岗位方法」 → 「专家配置 / Skills / 脚本」 → 「客服、研究、报告与标准操作流程」
+「专业执行」 → 「ACP runner」 → 「编程、代码审查与专门工具委派」
+「可靠性工程〔我们的建议〕」 → 「任务状态 / 幂等 / 重试 / 审计 / 人工接管」 → 「可持续的业务交付」
+A single line about potential scenarios:
+「可扩展场景：内部客服、运维巡检、销售 CRM、研究简报、跨系统工单；均需分别接入与验收。」
+
+SECTION 05 — 「和同类产品相比，价值在哪里？」
+A REAL, readable comparison TABLE. Four product columns: Octop | Codex | dots | Grok Bot. Use concise entries, no winner badges or numeric ratings.
+Rows:
+「定位」
+Octop: 「自建 AI 助手服务」
+Codex: 「工程与工具任务执行」
+dots: 「持续职责与主动跟进」
+Grok Bot: 「常驻 Bot 团队协作」
+「运行环境」
+Octop: 「你管理的电脑 / 服务器」
+Codex: 「本地或云端，依产品形态」
+dots: 「官方云端，可连接个人电脑」
+Grok Bot: 「官方持久化云端电脑」
+「真实执行」
+Octop: 「主机工具 / MCP / ACP」
+Codex: 「代码 / 命令 / 工具」
+dots: 「云端电脑 + 委派 Work / Codex」
+Grok Bot: 「浏览器 / 文件 / 终端 / 连接器」
+「定制范围」
+Octop: 「模型、渠道、存储、源码」
+Codex: 「指令、Skills、插件、CLI / SDK」
+dots: 「官方连接、规则与任务配置」
+Grok Bot: 「Bot、连接器、技能与设置」
+「个人电脑关机」
+Octop: 「部署主机常开即可继续」
+Codex: 「看任务在本地还是云端」
+dots: 「云端继续；本地步骤需在线」
+Grok Bot: 「云端继续」
+Below the table:
+「四者都能使用工具执行。Octop 的差异主要在自部署、国内 IM、内部业务接入与源码控制。」
+「功能重叠不等于相同完成率；稳定性与实际成本需要同任务实测。」
+
+SECTION 06 — 「我们的思考与选择」
+Three clear decision branches:
+「只需要“群里喊 Agent 干活”」 → 「轻量机器人适配层 + Agent 执行器，可能已经够用」
+「需要多人管理、内网业务、模型策略、源码定制」 → 「Octop 的平台价值更明确」
+「主要做个人研究、编码或通用持续工作」 → 「先用现成产品跑通任务，再判断自建投入」
+A prominent final lesson:
+「自建的收益由必要的控制需求支撑；可靠性用任务与产物验证。」
+Small final boundary strip, readable:
+「云端模型会接收请求上下文；远程连接器也有自己的数据流向。」
+「当前团队仍 Beta：重启可能丢失在途任务；取消主持人不会自动取消成员。」
+「研究范围：文档与源码核查；尚未运行 Octop 或做同任务产品实测。」
+Footer source note:
+「研究快照：2026.10.20 · Octop v1.0.2 / dd9dce4」
+「来源：github.com/TencentCloud/Octop · learn.chatgpt.com/docs/dots · learn.chatgpt.com/docs/features · docs.x.ai/grok-bot/overview」
+
+Composition priority: show ALL six sections in the one image, all four products in the table, and all key arrows in the execution loop. Preserve the distinction between existing features, Beta, roadmap and our proposed extensions. Keep the term 群聊 in the thesis but show multiple inputs. No scientific benchmark claims, no claims of fully autonomous guaranteed completion, no fictitious output screenshots. Make the result beautiful enough to share while retaining the depth of a technical study.
