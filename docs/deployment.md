@@ -119,3 +119,14 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 公开范围为研究、证据、11 篇文档阅读器、来源筛选与成本工具。007 代码和证据作为依赖一并提交；它的实时搜播后端仅在本机运行，公网按钮提供运行说明。未部署公开影片 API，也未签署内容供应合同。008 / 009 的未提交研究没有纳入发布。
 
 线上总导航、010 / 007 入口及 40 项静态资源合计 43 项 HTTP / 内容检查通过，图像哈希与原图一致；图像弹窗、阅读器深链接刷新、筛选、成本计算和重置、1280 / 390 / 320px 布局通过。首次检查发现隐藏 `.github` 附件路径 404，现已映射到可发布路径并复核。证据及截图位于 `projects/010-zhuiju-product-research/references/deployed-verification.json`、`references/deployed-browser.json` 与 `assets/deployed-*.png`。真实 URL 在部署并访问成功后回填索引。
+
+
+## 009 · Tracy 运行时性能定位与 AI 优化研究实际发布
+
+2026-10-19：内容提交 [417cb4f](https://github.com/yydshly/1015_codex_project/commit/417cb4f7187806d33089d0ec96e3901637f742ff) 已推送 main，[Pages 任务 39240151135](https://github.com/yydshly/1015_codex_project/actions/runs/39240151135) 构建部署成功。[在线研究网页](https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/)。
+
+摘要说明调用栈采样、区间埋点与线程/锁、GPU、内存事件如何定位运行时性能瓶颈，解释 AI/GitHub 多语言项目的接入条件、游戏/桌面/数据/服务场景和开发者/编码 Agent 的复测价值。网页保留 22 项同类与互补工具差异及合成机制交互，分析接口与完整自动修复分别说明。
+
+首页导航、项目说明与网页使用本次生成的 1920×6830 完整引导图原文件；支持 PNG/SVG 原图下载，线上图片哈希与源图一致。19 项 HTTP 检查、20 项线上交互检查通过，375px 手机与 320px 窄屏无页面横向溢出。成功验证后回填真实 demo_url；记录在 projects/009-tracy-performance/references/deployment-verification.json、deployment-browser.json，线上截图随子项目保存。
+
+此次仅发布 009 及其导航与部署记录，008 和 outputs 的未提交工作保留本地。网页验证不代表已执行上游 Tracy 原生采集、C/C++ 性能实测或 AI 自动修复。

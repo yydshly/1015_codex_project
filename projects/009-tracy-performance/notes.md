@@ -42,3 +42,13 @@
 ## 部署
 
 沿用 docs/deployment.md 的 Pages 静态构建。初版与补充理解阶段只创建并本地验证，未提交部署；后续发布记录在实际成功并验证后追加，demo_url 同步回填。
+
+## 2026-10-19 · 实际发布与线上验证
+
+按用户要求把摘要改为说明库的能力、采样/埋点/事件原理、使用场景、可用目标与意义，明确分析接口与完整修复流程的区别。首页与网页使用已生成的 1920×6830 完整引导图原文件，PNG 的 SHA-256 为 8ad3007e7e08b5295b4af4a4e459e074aefc44a339c1e521dfa71ecb3f134411。
+
+暂存发布快照仅含 009 和对应导航：9 个已提交项目目录校验与静态构建通过，008 与 outputs 保留本地。内容提交 417cb4f7187806d33089d0ec96e3901637f742ff 已推送 main，Pages 任务 39240151135 成功。
+
+正式入口：https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/ 。19 项 HTTP 检查、20 项线上浏览器检查通过，下载 PNG/SVG 与源文件一致；375px 与 320px 页面无横向溢出，控制台无错误。实际成功后才把真实 demo_url 写入 projects.json 并同步首页。
+
+线上证据为 references/deployment-verification.json、references/deployment-browser.json 与 assets/screenshots/deployed-*.jpg；其范围仅为研究网页、原图和合成机制交互，不表示运行了上游性能测试或修复工作流。

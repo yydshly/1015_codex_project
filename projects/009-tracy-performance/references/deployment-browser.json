@@ -1,0 +1,123 @@
+{
+  "checked_on": "2026-10-19",
+  "timezone": "Asia/Shanghai",
+  "commit": "417cb4f7187806d33089d0ec96e3901637f742ff",
+  "run_id": 39240151135,
+  "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/",
+  "scope": "正式静态网页与合成机制交互；未运行上游性能分析或AI修复。",
+  "checks": [
+    {
+      "test": "desktop_content",
+      "observed": {
+        "clientWidth": 1265,
+        "ids": [],
+        "products": 22,
+        "scenarios": 6,
+        "scrollWidth": 1265,
+        "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/"
+      }
+    },
+    {
+      "test": "map_open",
+      "observed": {
+        "image": [
+          1920,
+          6830
+        ],
+        "open": true
+      }
+    },
+    {
+      "test": "original_size",
+      "width": 1920
+    },
+    {
+      "test": "png_download",
+      "sha256": "8ad3007e7e08b5295b4af4a4e459e074aefc44a339c1e521dfa71ecb3f134411"
+    },
+    {
+      "test": "svg_download",
+      "sha256": "72f90c87c685a21ee87484868e590fecc94bb2886e926444b66cfe2b0d22a415"
+    },
+    {
+      "test": "escape_focus_restore",
+      "observed": {
+        "focus": "open-map",
+        "open": false
+      }
+    },
+    {
+      "test": "ai_filter",
+      "rows": 4
+    },
+    {
+      "test": "measure_filter",
+      "rows": 5
+    },
+    {
+      "test": "combined_gpu_search",
+      "names": [
+        "Nsight Systems ↗",
+        "Nsight Compute ↗"
+      ]
+    },
+    {
+      "test": "empty_search",
+      "observed": "没有匹配项目，请更换关键词、场景或选择“全部”。"
+    },
+    {
+      "test": "normal_record",
+      "observed": "15.1 ms"
+    },
+    {
+      "test": "hitch_record",
+      "observed": "45.0 ms"
+    },
+    {
+      "test": "sampling_mode",
+      "samples": 19
+    },
+    {
+      "test": "principle_keyboard",
+      "observed": "tab-zones"
+    },
+    {
+      "test": "correctness_gate",
+      "observed": "拒绝候选：正确性未通过"
+    },
+    {
+      "test": "performance_gate",
+      "observed": "拒绝候选：性能超过当前阈值"
+    },
+    {
+      "test": "accepted_gate",
+      "observed": "接受候选：两道检查均通过"
+    },
+    {
+      "test": "mobile_layout",
+      "observed": {
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "width": 375
+      }
+    },
+    {
+      "test": "mobile_map",
+      "observed": {
+        "open": true,
+        "scrollWidth": 359,
+        "width": 359
+      }
+    },
+    {
+      "test": "narrow_layout",
+      "observed": {
+        "clientWidth": 305,
+        "scrollWidth": 305,
+        "width": 320
+      }
+    }
+  ],
+  "console_errors": [],
+  "all_passed": true
+}

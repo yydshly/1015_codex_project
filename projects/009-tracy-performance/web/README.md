@@ -17,7 +17,7 @@ python -m http.server 8769 --bind 127.0.0.1 --directory _site
 - 源目录：projects/009-tracy-performance/web/
 - 产物：_site/projects/009-tracy-performance/
 - 预期 Pages 路径：/1015_codex_project/projects/009-tracy-performance/
-- 公网发布：未执行，demo_url 保持空字符串。
+- 公网发布：2026-10-19 已部署并实际验证，入口为 <https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/>，demo_url 在成功验证后登记。
 
 沿用[仓库部署约定](../../../docs/deployment.md)。不修改构建器，不上传整个仓库，不把预期路径作为真实演示地址。
 
@@ -36,3 +36,9 @@ assets/upstream.js 由 ../src/collect_sources.py 生成，页面可离线展示�
 ## 2026-10-19 补充
 
 新增理解长图与多语言/代码来源说明。原图为 assets/understanding-map.png 与 .svg；支持弹窗滚动、原始尺寸、下载和 Escape 关闭。产品数据由 ../references/products.json 集中维护，运行 ../src/build_overview.py 同步网页数据与图形。新增语言/场景选择，22 项明确输出、接入、差异与边界。
+
+## 正式发布验证
+
+通过仓库既有 Pages Actions 发布，内容提交 417cb4f，首轮任务 39240151135 成功。19 项 HTTP 检查核对页面、文档、导航与源文件一致性；20 项线上交互检查覆盖长图、下载、筛选、时间轴、验收和手机/窄屏。完整引导图原文件也用作导航封面，不使用旧的裁剪图替代。
+
+验证记录位于 ../references/deployment-verification.json 与 deployment-browser.json。src/verify_published.py 可重查线上静态文件，验证网页不等于验证上游性能效果。

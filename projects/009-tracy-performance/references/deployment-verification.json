@@ -1,0 +1,135 @@
+{
+  "checked_on": "2026-10-19",
+  "timezone": "Asia/Shanghai",
+  "commit": "417cb4f7187806d33089d0ec96e3901637f742ff",
+  "run_id": "39240151135",
+  "workflow_url": "https://github.com/yydshly/1015_codex_project/actions/runs/39240151135",
+  "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/",
+  "scope": "已发布研究网页、静态资源与引导图；不验证上游性能或自动修复效果。",
+  "checks": [
+    {
+      "path": "THIRD_PARTY.md",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/THIRD_PARTY.md",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "fc686380eeb5606731a08f0f3dc6ce62648275028319aa7d4cf33337a64223b5"
+    },
+    {
+      "path": "app.js",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/app.js",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "8a9e16e7fca4491cd8ed5146aa79492a629618fa514c30960fdff0aa09340f38"
+    },
+    {
+      "path": "architecture.md",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/architecture.md",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "170f8549c3d0653dc8e0342fcf03d50034e4918486f5c9070f6c670f32f6498e"
+    },
+    {
+      "path": "assets/favicon.svg",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/assets/favicon.svg",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "767c69c531f104606fba2f59b2bbeed3364d0b5b73de3201d49176a500898372"
+    },
+    {
+      "path": "assets/products.js",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/assets/products.js",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "005f2a4d41cfa29b02067cf10011a98a8a155ff2c483f9c8a88c60d48fc22b5c"
+    },
+    {
+      "path": "assets/understanding-map.png",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/assets/understanding-map.png",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "8ad3007e7e08b5295b4af4a4e459e074aefc44a339c1e521dfa71ecb3f134411"
+    },
+    {
+      "path": "assets/understanding-map.svg",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/assets/understanding-map.svg",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "72f90c87c685a21ee87484868e590fecc94bb2886e926444b66cfe2b0d22a415"
+    },
+    {
+      "path": "assets/upstream.js",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/assets/upstream.js",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "bd67f65a2c03281ec3f8df05022e955ad63b108eefe974b5a3a7b31eff68bb2d"
+    },
+    {
+      "path": "capabilities.md",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/capabilities.md",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "80305dea8164c62897b067e17ebc80d8bdb8d42d1b75bba1ccdf4e57ad2175bb"
+    },
+    {
+      "path": "comparison.md",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/comparison.md",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "ea88aae14502ecda95e679141c6ce75229cd0281bb5803e32b110f170467d4fa"
+    },
+    {
+      "path": "extensions.md",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/extensions.md",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "9fbe439373e5bfb9ad7ad388aceeef9cd7f64c597da100b4ebe1afeaab19a632"
+    },
+    {
+      "path": "index.html",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "b472009a6b6a3fe82a442efbaf65b42b2ce7f8876f9d4e78bbcf0edafdcd207e"
+    },
+    {
+      "path": "notes.md",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/notes.md",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "1a73bd2189d8c40e7368b532ced6536dbfe84e2ae7b814cfea73e94aedd4d8af"
+    },
+    {
+      "path": "references/products.json",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/references/products.json",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "f3b6206009be7fb38d4287808325b4fd081581a11c5b4e68798bd0dc9963b0bb"
+    },
+    {
+      "path": "references/tracy-BSD-3-Clause.txt",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/references/tracy-BSD-3-Clause.txt",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "27ab6b51e57f7e263a6e953d9c8984cd26e69d2f7606bde81e4b3048acf30732"
+    },
+    {
+      "path": "references/upstream.json",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/references/upstream.json",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "437f6090c8c3f3da70e8fbf84554363f385b5c0c119bf392bc23625dd3585190"
+    },
+    {
+      "path": "styles.css",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/styles.css",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "900c97daf9b4a5c343b5bac95171ccf9311087560ef06b25fa7922e765bbe113"
+    }
+  ],
+  "navigation_verified": true,
+  "guide_matches_original": true,
+  "guide_sha256": "8ad3007e7e08b5295b4af4a4e459e074aefc44a339c1e521dfa71ecb3f134411",
+  "http_check_count": 19,
+  "all_passed": true
+}

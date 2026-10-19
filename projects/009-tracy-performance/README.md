@@ -22,12 +22,14 @@ Tracy 通过调用栈采样、区间埋点及线程/锁、GPU、内存事件，�
 | 整理日期 | 初版 2026-10-16；补充理解与总图 2026-10-19（Asia/Shanghai） |
 | 研究方式 | 官方资料、关键源码与候选项目工作流核对 |
 | 实现内容 | 中文研究网页、1920×6830 全景图、原图阅读/下载、两组离线交互、22 项产品筛选、研究文档 |
-| 本地验证 | 初版 21 项；补充版本 30 项浏览器检查，含下载与 375/320px 布局；见 references/supplement-verification.json |
+| 页面验证 | 本地补充版 30 项；正式站点 20 项浏览器检查与 19 项 HTTP 检查，含原图下载与 375/320px 布局 |
 | 未运行 | Tracy 原生采集、C/C++ 性能实测、外部模型与自动修复项目 |
 | 上游许可证 | BSD 3-Clause，保留[原始许可](references/tracy-BSD-3-Clause.txt) |
-| 公网演示 | 未部署；projects.json 的 demo_url 留空 |
+| 公网演示 | [在线研究网页](https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/)；2026-10-19 部署并实际验证 |
 
 ## 网页入口
+
+正式入口：[Tracy 运行时性能定位与 AI 优化研究](https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/)。
 
 在仓库根目录执行：
 
@@ -68,9 +70,11 @@ AI 生成、GitHub 下载、自写均可；不只 C/C++，官方还支持 Python
 
 </details>
 
-![研究网页桌面预览](assets/screenshots/desktop.jpg)
+![正式研究网页桌面预览](assets/screenshots/deployed-desktop.jpg)
 
 验证记录见 [verification.json](references/verification.json)，另保留[手机预览](assets/screenshots/mobile.jpg)与[AI 价值章节](assets/screenshots/ai-value.jpg)。这些记录只验证研究网页，不代表运行了上游性能测试。
+
+正式站点另保存 [HTTP / 文件一致性记录](references/deployment-verification.json)、[20 项线上交互记录](references/deployment-browser.json)、[总图入口截图](assets/screenshots/deployed-overview.jpg)与[手机截图](assets/screenshots/deployed-mobile.jpg)。
 
 ### 交互边界
 
@@ -111,3 +115,15 @@ python projects/009-tracy-performance/src/build_overview.py
 ~~~
 
 作者环境使用 Pillow 与 Windows 微软雅黑字体。图形由代码排版，SVG/PNG 共用坐标与文本；产品事实集中于 references/products.json，同步生成网页数据、长图、封面与 comparison.md。网页运行不依赖 Pillow 或 Python，也不需要运行上游分析器。
+
+## 实际发布
+
+2026-10-19：内容提交 [417cb4f](https://github.com/yydshly/1015_codex_project/commit/417cb4f7187806d33089d0ec96e3901637f742ff) 已推送 main，[Pages 任务 39240151135](https://github.com/yydshly/1015_codex_project/actions/runs/39240151135) 成功。线上通过总导航、页面及资源的 19 项 HTTP 检查与 20 项浏览器检查，PNG/SVG 下载哈希与源图一致。正式地址在成功验证后回填索引。
+
+仅发布 009 与对应导航、部署记录。008 和 outputs 的未提交工作保持在本地；网页展示合成机制，不宣称完成上游原生性能实测或 AI 自动修复。
+
+可重新检查正式静态文件：
+
+~~~powershell
+python projects/009-tracy-performance/src/verify_published.py
+~~~
