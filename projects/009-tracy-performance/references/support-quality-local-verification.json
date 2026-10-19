@@ -1,0 +1,28 @@
+{
+  "checked_on": "2026-10-19",
+  "url": "http://127.0.0.1:8769/projects/009-tracy-performance/",
+  "scope": "Research webpage and synthetic interactions only; no upstream profiling or quality SDK execution.",
+  "checks": {
+    "support_matrix_rows": 5,
+    "quality_dimension_rows": 5,
+    "quality_pipeline_steps": 6,
+    "design_only_statement_visible": true,
+    "desktop_1280_no_page_overflow": true,
+    "mobile_375_no_page_overflow": true,
+    "narrow_320_no_page_overflow": true,
+    "mobile_pipeline_columns": 2,
+    "guide_dialog_opens_original_1920px_image": true,
+    "escape_closes_dialog_and_restores_trigger_focus": true,
+    "product_count_after_reset": 22,
+    "cuda_search_result_count": 4,
+    "wrong_candidate_rejected": true,
+    "valid_candidate_accepted": true,
+    "console_error_count": 0
+  },
+  "guide_sha256": "8ad3007e7e08b5295b4af4a4e459e074aefc44a339c1e521dfa71ecb3f134411",
+  "screenshots": [
+    "assets/screenshots/quality-local.jpg",
+    "assets/screenshots/quality-mobile.jpg"
+  ],
+  "all_passed": true
+}

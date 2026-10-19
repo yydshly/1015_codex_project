@@ -111,7 +111,7 @@
       "slug": "tracy-performance",
       "name": "Tracy 运行时性能定位与 AI 优化研究",
       "repository": "https://github.com/wolfpld/tracy",
-      "summary": "通过调用栈采样、区间埋点及线程/锁、GPU、内存事件定位运行时性能瓶颈；适合可接入采集的 AI/GitHub 多语言项目，服务游戏、桌面、数据与服务优化，为开发者和编码 Agent 提供可复测证据。附完整引导图与 22 项工具差异。",
+      "summary": "以采样、区间埋点和事件定位运行时性能瓶颈；官方接入 C/C++、Python、Lua、Fortran，Rust/C# 等有第三方绑定，并支持 OpenGL/Vulkan/CUDA 等 GPU API。面向 AI/GitHub 项目的游戏、桌面与服务优化，为开发者和编码 Agent 提供可复测证据；可扩展为自动性能回归组件，完整质量检测需结合业务测试、静态与运行时检查。",
       "status": "completed",
       "tags": [
         "性能分析",

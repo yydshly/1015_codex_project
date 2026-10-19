@@ -1,0 +1,56 @@
+{
+  "checked_on": "2026-10-19",
+  "scope": "官方文档核对；业务库示例为推导场景，质量检测SDK为设计，未执行这些工具。",
+  "official_languages": [
+    "C",
+    "C++",
+    "Python",
+    "Lua",
+    "Fortran"
+  ],
+  "third_party_binding_examples": [
+    "Rust",
+    "Zig",
+    "C#",
+    "OCaml",
+    "Odin"
+  ],
+  "gpu_apis": [
+    "OpenGL",
+    "Vulkan",
+    "Direct3D 11",
+    "Direct3D 12",
+    "Metal",
+    "OpenCL",
+    "CUDA",
+    "WebGPU"
+  ],
+  "sources": [
+    {
+      "title": "Tracy README / 语言与GPU接入",
+      "url": "https://github.com/wolfpld/tracy#tracy-profiler"
+    },
+    {
+      "title": "Tracy v0.14.1 / 语言、C API、GPU、构建与MCP",
+      "url": "https://github.com/wolfpld/tracy/blob/v0.14.1/manual/tracy.tex"
+    },
+    {
+      "title": "CTest / 测试编排",
+      "url": "https://cmake.org/cmake/help/latest/manual/ctest.1.html"
+    },
+    {
+      "title": "AddressSanitizer / 内存安全检测",
+      "url": "https://clang.llvm.org/docs/AddressSanitizer.html"
+    },
+    {
+      "title": "ThreadSanitizer / 数据竞争检测",
+      "url": "https://clang.llvm.org/docs/ThreadSanitizer.html"
+    },
+    {
+      "title": "clang-tidy / 静态诊断",
+      "url": "https://clang.llvm.org/extra/clang-tidy/"
+    }
+  ],
+  "quality_extension_status": "design-only",
+  "guide_sha256": "8ad3007e7e08b5295b4af4a4e459e074aefc44a339c1e521dfa71ecb3f134411"
+}

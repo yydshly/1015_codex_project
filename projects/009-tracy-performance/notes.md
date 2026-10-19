@@ -1,5 +1,13 @@
 # 研究笔记
 
+## 2026-10-19 · 语言/API 与自动质量检测扩展补充
+
+按用户追加要求，摘要直接列出官方 C/C++、Python、Lua、Fortran 与第三方 Rust/C# 等绑定，并解释 OpenGL/Vulkan/Direct3D/Metal/OpenCL/CUDA/WebGPU 的官方 GPU API 接入。业务库按宿主程序和采集路径分析，Qt/OpenCV/SDL 仅为推导场景，未冒充已验证的专用插件。
+
+新增自动性能回归 SDK / CLI 及完整质量检测的分工：执行合同、基线、指标、PASS/FAIL/INCONCLUSIVE 判定、报告和 CI；功能测试、静态诊断、内存安全和数据竞争由相应外部工具承担。以上为设计评估，没有实现或运行该 SDK。
+
+来源重新核对 Tracy v0.14.1 手册和官方 README，以及 CTest、AddressSanitizer、ThreadSanitizer、clang-tidy 官方文档，存于 references/support-quality-sources.json。引导图沿用原 PNG/SVG，不重新绘制；新增说明放在图后正文。
+
 ## 2026-10-19 · 补充理解与全景图
 
 补充代码来源与运行条件：AI 生成、GitHub 下载、自写项目都可；面向对象、过程式、单/多线程、循环、事件驱动、批处理均可。官方语言与第三方绑定分开说明，不承诺各语言拥有相同自动采样和源码映射能力。

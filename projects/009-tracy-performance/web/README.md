@@ -1,5 +1,7 @@
 # 009 · Tracy 中文研究网页
 
+语言/API 与质量检测补充：新增 #integration-support 对照与 #quality-roadmap，说明官方语言、第三方绑定、GPU API、业务库边界和 SDK 扩展。图形原文件保持不变，页面展示的是设计说明，未实现自动质量检测服务。
+
 原生 HTML、CSS、JavaScript。无 npm 应用依赖、外部字体或运行时 API。页面图形与交互由本项目编写，不是 Tracy WebAssembly 实例。
 
 ## 构建与预览

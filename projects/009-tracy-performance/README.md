@@ -1,6 +1,8 @@
 # 009 · Tracy 运行时性能定位与 AI 优化研究
 
-Tracy 通过调用栈采样、区间埋点及线程/锁、GPU、内存事件，定位真实运行中的性能瓶颈。它适合可接入采集的 AI 生成、GitHub 下载或自写项目，用于游戏、桌面、数据处理与服务优化，为开发者和编码 Agent 提供可复测证据。完整保障还需要固定负载、正确性测试、性能预算和外部修复流程。
+Tracy 通过调用栈采样、区间埋点及线程/锁、GPU、内存事件，定位真实运行中的性能瓶颈。官方接入 C/C++、Python、Lua、Fortran，Rust、Zig、C# 等有第三方绑定；GPU 接入覆盖 OpenGL、Vulkan、Direct3D 11/12、Metal、OpenCL、CUDA、WebGPU。它适合可接入采集的 AI/GitHub/自写项目，用于游戏、桌面、数据与服务优化，为开发者和编码 Agent 提供可复测证据。
+
+**可以扩展成自动质量检测组件，最直接的是自动性能回归 SDK / CLI。** Tracy 提供采集与定位，外层补上场景执行、基线、规则、报告与 CI；完整质量检测还需业务正确性测试、静态分析及运行时安全检查。这是扩展设计，当前研究网页尚未实现或运行该 SDK。
 
 ![Tracy 能力、原理、目标、场景、产品差异与AI价值完整引导图](assets/understanding-map.png)
 
@@ -10,9 +12,13 @@ Tracy 通过调用栈采样、区间埋点及线程/锁、GPU、内存事件，�
 | 底层原理 | 系统采样与符号解析定位执行路径；埋点时间戳记录起止；结合调度、锁、设备与分配事件还原关系 |
 | 使用场景 | 游戏/渲染/仿真卡帧、桌面/CAD 慢操作、批处理退化、多线程同步、原生服务与可控 AI/GPU 计算 |
 | 可用目标 | AI/GitHub/自写项目均可；官方 C/C++、Python、Lua、Fortran 及第三方语言绑定，定位深度依运行时与平台 |
+| 支持哪些库/API | 官方 GPU API 接入与 CMake/Meson 工程接入有文档；Qt/OpenCV/SDL 等是宿主场景举例，深入依赖内部仍需符号与采集，未宣称这些库均有专用插件 |
 | 价值与意义 | 降低复现、排查和复测成本，为开发者与编码 Agent 提供运行证据；Assist/MCP 是分析入口，完整自动修复仍需测试与验收流程 |
+| 自动质量检测扩展 | 组合测试与采集适配器、基线比较、PASS/FAIL/INCONCLUSIVE 规则、JSON/trace 报告和 CI；AI 候选重走同一套验收 |
 
 首页、项目说明和网页使用本次生成的同一张 1920×6830 引导图原文件；PNG/SVG 均可完整查看与下载。下文区分上游已有能力、合成机制演示和扩展设想。
+
+网页新增[语言、库与 API 对照](https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/#integration-support)与[自动质量检测 SDK 路线](https://yydshly.github.io/1015_codex_project/projects/009-tracy-performance/#quality-roadmap)，原引导图保持原文件与哈希，不重新生成替换。资料依据见 [support-quality-sources.json](references/support-quality-sources.json)。
 
 | 项目资料 | 内容 |
 | --- | --- |

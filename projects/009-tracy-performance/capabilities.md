@@ -19,6 +19,18 @@ Tracy 由程序内采集客户端与独立分析器组成，提供实时、远�
 
 官方直接提供 C、C++、Lua、Python、Fortran 接入，其他语言有第三方绑定。不同语言运行时的采样与源码映射不能直接等同。
 
+## 支持哪些库、接口与工程
+
+| 层次 | 对象与边界 |
+| --- | --- |
+| 官方语言 API | C、C++、Python、Lua、Fortran；绑定功能、采样与源码映射分开核对 |
+| 第三方语言绑定 | Rust、Zig、C#、OCaml、Odin 等；维护、版本和覆盖范围由绑定项目决定 |
+| 官方 GPU API 接入 | OpenGL、Vulkan、Direct3D 11、Direct3D 12、Metal、OpenCL、CUDA、WebGPU；需要对应上下文与设备区间接入，不同 API 特性并不完全一致 |
+| 工程接入与分析接口 | TracyClient，CMake/Meson 集成，.tracy/CSV，以及可选 Python MCP 服务；接口不自动补齐业务测试和验收规则 |
+| 第三方业务库 | 按宿主程序的已采集调用路径观察开销，细节依调试符号和事件接入；Qt/OpenCV/SDL 为场景推导示例，本研究没有验证这些库的专用插件 |
+
+官方依据：[v0.14.1 手册的 GPU、C API、First steps 与 MCP 章节](https://github.com/wolfpld/tracy/blob/v0.14.1/manual/tracy.tex)。Tracy C API 可作为其他语言绑定的封装基础，实际可用性仍需逐个运行时验证。
+
 ## 补充理解：代码来源、语言与运行模式
 
 AI 生成、GitHub 下载、自己编写的代码都可以使用。代码来源不决定适用性；需要语言与平台支持，程序能实际运行，并具有相应采集记录。这里“能控制源码”指能配置工程、集成采集并运行，不要求本人是原作者。
