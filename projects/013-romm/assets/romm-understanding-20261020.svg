@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="3036" viewBox="0 0 1920 3036" role="img" aria-labelledby="title desc">
 <title id="title">RomM 能力与价值引导图</title>
-<desc id="desc">RomM 不附带游戏；整合已有游戏的识别、资料、启动、模拟器游玩和兼容存档同步。针对直接获取游戏内容的需求，当前直接价值有限；大量收藏、多设备和多人使用时更有价值。图中区分现有整合、可选部署与二次开发设想，并列出边界。</desc>
+<desc id="desc">RomM 不附带游戏；整合已有游戏的识别、资料、启动、模拟器游玩和兼容存档同步。我们开发一批游戏时，可以复用它组织作品；直接运行取决于格式和适配。针对直接获取游戏内容的需求价值有限，大量收藏、多设备和多人使用时有整合价值。图中区分现有管理、可选部署和运行适配，并列出边界。</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#2c775d" stroke-width="1.5"/></marker></defs>
 <rect width="1920" height="3036" fill="#f4f5ee"/>
 <text x="80" y="77" font-size="25" fill="#2c775d" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">RESEARCH 013 / ROMM</text>
 <text x="1840" y="76" font-size="24" fill="#6b8075" font-weight="400" text-anchor="end" font-family="Microsoft YaHei, sans-serif">理解归纳 · 2026.10.20</text>
 <text x="80" y="196" font-size="84" fill="#173b37" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">RomM 能力与价值引导图</text>
-<text x="80" y="257" font-size="33" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">把已有游戏整理成可浏览、可启动、可同步进度的私人游戏库</text>
+<text x="80" y="257" font-size="33" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">把自研或已有游戏组织成作品库、统一入口与兼容进度管理</text>
 <rect x="80" y="306" width="1760" height="172" rx="18" fill="#153d37" stroke="none" stroke-width="2"/>
 <text x="112" y="374" font-size="45" fill="#f1f3df" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">游戏内容由你提供，RomM 负责组织与使用。</text>
-<text x="112" y="431" font-size="29" fill="#d7e8cf" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">我们的结论：若目标是直接获得游戏内容，当前直接价值有限，研究优先级较低。</text>
+<text x="112" y="431" font-size="29" fill="#d7e8cf" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">判断：获取现成内容的价值有限；已有一批自研游戏时，组织与使用的价值就成立。</text>
 <rect x="80" y="502" width="256.0" height="50" rx="25" fill="#f3e5cc" stroke="none" stroke-width="2"/>
 <text x="101" y="535" font-size="25" fill="#8b5b2b" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">不附带游戏与 BIOS</text>
 <rect x="354.0" y="502" width="267.0" height="50" rx="25" fill="#f3e5cc" stroke="none" stroke-width="2"/>
@@ -22,8 +22,8 @@
 <path d="M80 654H1840" fill="none" stroke="#ced9cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="80.0" y="684" width="416.0" height="156" rx="14" fill="#f3e5cc" stroke="#ced9cc" stroke-width="2"/>
 <text x="104.0" y="732" font-size="32" fill="#8b5b2b" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">你提供游戏</text>
-<text x="104.0" y="784" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">ROM / 镜像文件</text>
-<text x="104.0" y="821" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">需要时准备 BIOS</text>
+<text x="104.0" y="784" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">自研或已有游戏文件</text>
+<text x="104.0" y="821" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">运行需核对格式与核心</text>
 <path d="M501.0 762H521.0" fill="none" stroke="#2c775d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
 <rect x="528.0" y="684" width="416.0" height="156" rx="14" fill="#fffef9" stroke="#ced9cc" stroke-width="2"/>
 <text x="552.0" y="732" font-size="32" fill="#2c775d" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">扫描与识别</text>
@@ -86,16 +86,16 @@
 <text x="700.6666666666666" y="1788" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">直接用模拟器往往更简单；</text>
 <text x="700.6666666666666" y="1828" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">部署、更新与备份仍要投入。</text>
 <rect x="1269.3333333333333" y="1620" width="570.6666666666666" height="254" rx="14" fill="#e1eddd" stroke="#ced9cc" stroke-width="2"/>
-<text x="1295.3333333333333" y="1673" font-size="30" fill="#173b37" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">大量收藏 / 多设备 / 多人</text>
-<text x="1295.3333333333333" y="1728" font-size="28" fill="#2c775d" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">适用场景：价值更明显</text>
-<text x="1295.3333333333333" y="1788" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">统一整理、入口、账号与进度，</text>
-<text x="1295.3333333333333" y="1828" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">减少重复管理与手动搬存档。</text>
+<text x="1295.3333333333333" y="1673" font-size="30" fill="#173b37" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">已有收藏 / 一批自研游戏</text>
+<text x="1295.3333333333333" y="1728" font-size="28" fill="#2c775d" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">组织已有内容：有价值</text>
+<text x="1295.3333333333333" y="1788" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">作品库与统一入口可复用；</text>
+<text x="1295.3333333333333" y="1828" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">多设备、多人使用时收益更明显。</text>
 <rect x="80" y="1902" width="1760" height="112" rx="14" fill="#153d37" stroke="none" stroke-width="2"/>
 <text x="108" y="1949" font-size="29" fill="#eef3dd" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">意义：把分散的游戏文件、资料、模拟器和存档，组织成可持续使用的私人游戏库。</text>
 <text x="108" y="1994" font-size="26" fill="#d7e8cf" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">值得借鉴：多来源资料融合、文件与索引分离、统一入口、按用户与游戏管理进度。</text>
 <text x="80" y="2115" font-size="43" fill="#2c775d" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">04</text>
-<text x="170" y="2114" font-size="40" fill="#173b37" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">可扩展效果：已有整合与二次开发分开看</text>
-<text x="1840" y="2112" font-size="23" fill="#6b8075" font-weight="400" text-anchor="end" font-family="Microsoft YaHei, sans-serif">扩展提升使用效率，游戏内容仍需另行提供</text>
+<text x="170" y="2114" font-size="40" fill="#173b37" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">可扩展效果：从自研作品库到多设备使用</text>
+<text x="1840" y="2112" font-size="23" fill="#6b8075" font-weight="400" text-anchor="end" font-family="Microsoft YaHei, sans-serif">收录与运行分别核对；定制门户需另开发</text>
 <path d="M80 2142H1840" fill="none" stroke="#ced9cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="80" y="2172" width="1760" height="68" rx="9" fill="#e1eddd" stroke="none" stroke-width="2"/>
 <text x="104" y="2215" font-size="27" fill="#173b37" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">扩展方向</text>
@@ -120,10 +120,10 @@
 <text x="1134" y="2489" font-size="25" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">额外容器 + 主机性能 + 低延迟</text>
 <path d="M80 2534H1840" fill="none" stroke="#ced9cc" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="80" y="2534" width="1760" height="98" rx="0" fill="#eef1e8" stroke="none" stroke-width="2"/>
-<text x="104" y="2589" font-size="27" fill="#173b37" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">自有游戏内容门户</text>
-<text x="454" y="2570" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">自有游戏展示、检索与分发入口</text>
-<text x="454" y="2605" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">二次开发设想，尚未实现</text>
-<text x="1134" y="2587" font-size="25" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">自有或授权内容 + API 与页面开发</text>
+<text x="104" y="2589" font-size="27" fill="#173b37" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">自研游戏作品库</text>
+<text x="454" y="2570" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">组织自研作品；管理能力可复用</text>
+<text x="454" y="2605" font-size="26" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">能否直接运行取决于格式适配</text>
+<text x="1134" y="2587" font-size="25" fill="#48615a" font-weight="400" text-anchor="start" font-family="Microsoft YaHei, sans-serif">自研文件 + 自备资料 + 运行兼容</text>
 <path d="M80 2632H1840" fill="none" stroke="#ced9cc" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="80" y="2676" width="1760" height="174" rx="14" fill="#f3e5cc" stroke="none" stroke-width="2"/>
 <text x="106" y="2724" font-size="30" fill="#8b5b2b" font-weight="700" text-anchor="start" font-family="Microsoft YaHei, sans-serif">三个边界，避免误读</text>

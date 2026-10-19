@@ -3,14 +3,14 @@
   "height": 3036,
   "text_lines": 92,
   "layout_overflows": [],
-  "svg_sha256": "ae3d43618bd156f7119ffb7499f904e5aee37977f3842d50c81bec29ef92ac23",
-  "png_sha256": "0b6907883919964721dfbb6b3975005e0cbe8b4d40762f4e0dde7b2e38c0ef46",
-  "png_bytes": 729984,
+  "svg_sha256": "23451438b6a405c71a4772dd7c10cb1f55bf0bbe96e1c75b3dd6cd3e778740fe",
+  "png_sha256": "79576e4028c6be8d0275f9d3f42abca2e14498c29f626bb5341c223b6b0b7351",
+  "png_bytes": 729001,
   "method": "Original native SVG; Pillow font metrics; Chromium PNG rendering and glyph-bounds checks.",
   "scope": "Original research infographic, not a screenshot or verification of RomM runtime.",
   "visual_review": {
     "result": "passed",
-    "method": "Inspected top, value and extensions PNG sections visually.",
-    "findings": "No clipped text, overlapping type, missing glyphs or unreadable table rows."
+    "method": "Inspected updated top, value and extensions PNG sections visually.",
+    "findings": "Self-developed game scenarios readable; no clipping, overlapping type or missing glyphs."
   }
 }

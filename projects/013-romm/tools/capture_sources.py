@@ -16,6 +16,7 @@ DOCS = [
     ("scanning", "administration/scanning-and-watcher/", "手动、定时与文件变动扫描"),
     ("architecture", "developers/architecture/", "前后端、数据库、任务、文件与模拟器的分工"),
     ("platforms", "platforms/supported-platforms/", "平台支持包含目录识别与资料覆盖；可玩范围另列"),
+    ("custom-platforms", "platforms/custom-platforms/", "可收录自定义平台；不自动获得资料覆盖，管理与可玩支持分开理解"),
     ("browser-play", "using/in-browser-play/emulatorjs/", "EmulatorJS、WebAssembly 与终端性能要求"),
     ("saves", "using/saves-and-states/", "存档同步与即时存档核心兼容性"),
     ("streaming", "using/emulator-streaming/", "可选的服务器模拟器与浏览器串流"),
@@ -67,8 +68,9 @@ def main():
         "interpretations": [
             "针对我们希望直接获得游戏内容的需求，当前直接价值有限、研究优先级较低。",
             "大量已有收藏、多设备或多人使用时，管理和同步的整合价值更明显。",
+            "我们开发一批游戏时，可复用作品收录、资料与访问管理；直接运行和存档同步需按发布格式、模拟器或客户端验证。",
             "价值判断属于本研究的场景判断，不代表项目对所有人价值低。",
-            "自有内容门户是二次开发设想，不是已经交付的上游功能。",
+            "基础作品管理可评估复用现有能力；品牌专题与业务发布门户是二次开发设想。",
         ],
         "validation_scope": "官方文档与四份固定源码资料核对；未运行 RomM、游戏、模拟器、存档同步或串流。",
     }

@@ -1,20 +1,16 @@
 {
   "date": "2026-10-20",
-  "checked_at_utc": "2026-10-19T18:44:56.696283+00:00",
+  "checked_at_utc": "2026-10-19T18:52:08.018019+00:00",
   "result": "passed",
+  "update": "Added self-developed games as a works-library scenario; management and direct runtime compatibility are separate.",
   "checks": [
-    "source hash: README.md",
-    "source hash: LICENSE",
-    "source hash: pyproject.toml",
-    "source hash: frontend/package.json",
-    "guide hash: png",
-    "guide hash: svg",
+    "4 upstream source hashes match",
+    "9 official documentation references including custom platforms",
+    "PNG and SVG hashes match generation manifest",
     "local Markdown links: 20",
-    "all existing catalog entries unchanged; 013 cover and summary synchronized",
-    "python scripts/projects.py check: passed (12 catalog entries)",
-    "git diff --check: passed",
-    "staged Git blobs: all 4 upstream snapshots and both guide hashes match committed manifests after line-ending normalization",
-    "git diff --cached --check: passed"
+    "all other catalog entries unchanged; 013 summary synchronized",
+    "self-developed ROM, HTML5 and PC runtime boundaries documented",
+    "python scripts/projects.py check: passed (12 entries)"
   ],
   "poster": {
     "width": 1920,
@@ -23,5 +19,5 @@
     "layout_overflows": 0,
     "visual_review": "passed"
   },
-  "scope": "Documentation, source hashes, graphic layout, local links and catalog only; no RomM runtime or game testing."
+  "scope": "Documentation, source hashes, graphic layout, local links and catalog only; no self-developed game import or runtime testing."
 }

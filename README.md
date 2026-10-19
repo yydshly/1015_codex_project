@@ -29,7 +29,7 @@
 | 010 | [追剧资源库与视频产品全链路研究](projects/010-zhuiju-product-research/README.md) | [awesome-zhuiju-free](https://github.com/laoma528/awesome-zhuiju-free) | 源库用 JSON 资源目录、维护者审核和定时 HTTP 检测整理影视入口。研究验证配置→API→HLS 的搜播链路，说明同类产品的内容授权、接口适配、存储/CDN与盈利验证；附全景图、实测证据和本地 Demo。 | 已完成 | [研究](projects/010-zhuiju-product-research/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/010-zhuiju-product-research/) |
 | 011 | [Octop 自建 AI 助手平台研究](projects/011-octop/README.md) | [Octop](https://github.com/TencentCloud/Octop) | 把群聊、网页与定时任务接入自建 Agent 服务，整合模型、记忆、知识库与工具执行，形成资料回答、简报、报告或代码差异。群聊只是入口；价值在多人管理、内网业务与模型/源码控制，可经 MCP、ACP、技能和渠道扩展，并对比 Codex、dots、官方 Grok 的托管与自建取舍。 | 已完成 | [研究](projects/011-octop/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/011-octop/) |
 | 012 | [Smart Excalidraw 场景与图表能力研究](projects/012-smart-excalidraw-next/README.md) | [smart-excalidraw-next](https://github.com/liujuntao123/smart-excalidraw-next) | AI 将文字、文档与截图中的步骤、结构、关系和时间组织成图形 JSON，经部分修复与箭头端点调整，由 Excalidraw 渲染为可编辑图表。含 22 类规范及流程、架构、ER、思维导图、甘特与能力树示例；可扩展数据接入、行业模板、持续改图和团队协作。 | 已完成 | [研究](projects/012-smart-excalidraw-next/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/012-smart-excalidraw-next/) |
-| 013 | [RomM 游戏库管理与价值边界研究](projects/013-romm/README.md) | [romm](https://github.com/rommapp/romm) | 将自备 ROM 识别、补齐资料并组织为可浏览、可启动、可同步兼容存档的私人游戏库；不附带游戏、不提供通用加速。对直接获取内容的需求价值有限，对大量收藏、多设备和多人使用有整合价值，可扩展掌机接力、家庭游戏馆与服务器串流。 | 已归档 | [研究](projects/013-romm/README.md) |
+| 013 | [RomM 游戏库管理与价值边界研究](projects/013-romm/README.md) | [romm](https://github.com/rommapp/romm) | 组织自备或自研游戏的作品库，复用分类、封面资料、用户管理与统一入口；直接运行和进度同步需兼容或适配，HTML5 / PC 游戏需另评估接入。不附带游戏，对获取现成内容价值有限，对一批自研作品、大量收藏和多设备使用有整合价值，可扩展掌机接力、家庭游戏馆与串流。 | 已归档 | [研究](projects/013-romm/README.md) |
 
 ### 项目预览
 
@@ -125,7 +125,7 @@ AI 将文字、文档与截图中的步骤、结构、关系和时间组织成�
 
 [![RomM 游戏库管理与价值边界研究 项目预览](projects/013-romm/assets/romm-understanding-20261020.png)](projects/013-romm/README.md)
 
-将自备 ROM 识别、补齐资料并组织为可浏览、可启动、可同步兼容存档的私人游戏库；不附带游戏、不提供通用加速。对直接获取内容的需求价值有限，对大量收藏、多设备和多人使用有整合价值，可扩展掌机接力、家庭游戏馆与服务器串流。
+组织自备或自研游戏的作品库，复用分类、封面资料、用户管理与统一入口；直接运行和进度同步需兼容或适配，HTML5 / PC 游戏需另评估接入。不附带游戏，对获取现成内容价值有限，对一批自研作品、大量收藏和多设备使用有整合价值，可扩展掌机接力、家庭游戏馆与串流。
 
 标签：游戏库管理 · 自部署 · 价值边界
 
