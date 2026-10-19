@@ -52,7 +52,15 @@
     ]
   ],
   "build": "Existing repository Pages build passed from a clean candidate containing committed projects plus 011; unrelated 008 excluded.",
-  "preview_build": "Clean candidate _site/projects/011-octop/",
-  "deployment": "Pending first publication; demo_url intentionally empty until live verification.",
+  "deployment": {
+    "url": "https://yydshly.github.io/1015_codex_project/projects/011-octop/",
+    "verified": true,
+    "content_commit": "199d99438715e76296c6482257a1742167828d2d",
+    "pages_run": "https://github.com/yydshly/1015_codex_project/actions/runs/39293559756",
+    "browser_checks": 84,
+    "http_hash_checks": 17,
+    "browser_report": "references/deployed-browser.json",
+    "asset_report": "references/deployed-verification.json"
+  },
   "poster_checks": 14
 }

@@ -33,6 +33,8 @@ python -m http.server 8872 --directory _site --bind 127.0.0.1
 
 ## 发布
 
-使用根目录现有 `scripts/build_web.py` 与 `.github/workflows/pages.yml`。预期子路径为 `/1015_codex_project/projects/011-octop/`；此处仅记录路径约定，部署成功并实际访问前不填 `demo_url`。
+使用根目录现有 `scripts/build_web.py` 与 `.github/workflows/pages.yml`，子路径为 `/1015_codex_project/projects/011-octop/`。已于 2026-10-20 部署并实际访问：[在线研究网页](https://yydshly.github.io/1015_codex_project/projects/011-octop/)。真实地址在访问成功后回填 `demo_url`。
+
+内容提交 `199d994` 的 [Pages 任务](https://github.com/yydshly/1015_codex_project/actions/runs/39293559756) 成功。线上 84 项页面与资源检查、17 项导航 / 原图 / 上游快照检查通过；本地全景图另有 14 项检查。记录位于子项目 `references/deployed-browser.json`、`references/deployed-verification.json`，线上截图为 `assets/deployed-*.png`。只发布已提交研究，不运行 Octop 后端或真实模型任务。
 
 完整规则见 [多 Web 部署说明](../../../docs/deployment.md)。

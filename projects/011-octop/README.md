@@ -11,8 +11,8 @@ Octop 把群聊、私聊、网页、API 和定时任务接入可自行部署的 
 | 研究日期 | 2026-10-20 |
 | 研究状态 | 文档、源码与网页研究；尚未运行 Octop 实例或做同任务产品实测 |
 | 上游许可证 | MIT；原文保留于 [LICENSE](references/upstream/LICENSE) |
-| 网页入口 | [研究网页](web/index.html)；本地预览方式见 [Web 说明](web/README.md) |
-| 部署状态 | 本地网页与 Pages 构建接入；真实演示地址仅在部署验证后登记 |
+| 网页入口 | [在线研究总览](https://yydshly.github.io/1015_codex_project/projects/011-octop/) · [网页源码](web/index.html)；本地预览方式见 [Web 说明](web/README.md) |
+| 部署状态 | 2026-10-20 已通过既有 GitHub Pages Actions 部署并实际访问验证；发布研究网页，未部署 Octop 服务 |
 
 ## 一图总览
 
@@ -63,5 +63,7 @@ python -m http.server 8872 --directory _site --bind 127.0.0.1
 访问 `http://127.0.0.1:8872/projects/011-octop/`。无需 npm 依赖；浏览器交互与本地 HTTP 检查记录见 `references/`。
 
 也可以直接在浏览器打开 `web/index.html`，无需 HTTP 服务；交互数据、样式与下载资料均随文件保存。验证覆盖 1440 / 1024 / 768 / 390 / 320px、任务链路、筛选、扩展导航与资源下载；最新结果见 [网页验证记录](references/web-verification.json)。验证结论限于研究网页。
+
+线上同样通过 84 项页面与资源检查，13 个相对资源 / 文档返回 200；另核对总导航、三处原图哈希和 13 份固定源码快照，共 17 项发布检查通过。[线上交互记录](references/deployed-browser.json) · [发布与哈希记录](references/deployed-verification.json)。演示地址在部署并访问成功后回填，008 等未提交研究未纳入发布。
 
 需要刷新上游研究版本时，可运行 `tools/capture_sources.py`，再审查内容变化并更新研究结论；构建不会自动抓取或替换来源。发布遵循 [仓库部署约定](../../docs/deployment.md)。

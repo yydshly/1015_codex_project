@@ -130,3 +130,13 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 首页导航、项目说明与网页使用本次生成的 1920×6830 完整引导图原文件；支持 PNG/SVG 原图下载，线上图片哈希与源图一致。19 项 HTTP 检查、20 项线上交互检查通过，375px 手机与 320px 窄屏无页面横向溢出。成功验证后回填真实 demo_url；记录在 projects/009-tracy-performance/references/deployment-verification.json、deployment-browser.json，线上截图随子项目保存。
 
 此次仅发布 009 及其导航与部署记录，008 和 outputs 的未提交工作保留本地。网页验证不代表已执行上游 Tracy 原生采集、C/C++ 性能实测或 AI 自动修复。
+
+## 011 · Octop 自建 AI 助手平台研究实际发布
+
+2026-10-20：内容提交 [199d994](https://github.com/yydshly/1015_codex_project/commit/199d99438715e76296c6482257a1742167828d2d) 已推送 main，[Pages 任务 39293559756](https://github.com/yydshly/1015_codex_project/actions/runs/39293559756) 构建与部署成功。[在线研究网页](https://yydshly.github.io/1015_codex_project/projects/011-octop/) 沿用既有静态构建与 Actions，无根目录新增应用依赖。
+
+摘要明确：群聊是入口之一，Octop 在后台整合用户与专家、模型、记忆、知识库、定时任务和工具执行，形成自己管理的 Agent 服务。页面说明资料问答、项目简报、日志分析和 ACP 编程派工的预期产物，区分已有能力、团队 Beta、规划和扩展建议；对比 Codex、dots、官方 Grok 聊天入口与 Grok Bot 的运行形态、自建控制与维护取舍。
+
+导航与子项目使用完整理解全景 PNG 原图，保留 SVG 下载。线上 84 项页面 / 资源检查通过，含 13 个相对资源与文档；总导航、三处原图哈希及 13 份固定源码快照另有 17 项检查通过。1440 / 1024 / 768 / 390 / 320px 均无页面横向溢出，未发现脚本错误或失败资源。本地全景图另通过 14 项检查。证据见 `projects/011-octop/references/deployed-browser.json`、`references/deployed-verification.json` 与 `assets/deployed-*.png`。
+
+真实 `demo_url` 在部署并访问成功后回填。只提交和发布 011 及其导航、部署记录；008 与 outputs 的未提交工作保留。发布范围是有来源的静态研究与机制示意，未部署 Octop 服务、调用真实模型或实测同任务产品完成率。

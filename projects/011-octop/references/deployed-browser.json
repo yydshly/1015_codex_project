@@ -1,0 +1,534 @@
+{
+  "checked_at": "2026-10-19T17:23:28.653870+00:00",
+  "url": "https://yydshly.github.io/1015_codex_project/projects/011-octop/",
+  "scope": "Research website only; no real Octop/model/connector execution.",
+  "checks": [
+    {
+      "name": "Built page HTTP response",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: app.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/architecture.svg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/docs/architecture.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/docs/capabilities.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/docs/comparison.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/docs/extensions.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/docs/notes.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/mark.svg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/octop-understanding-overview-20261020.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/octop-understanding-overview-20261020.svg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/research-data.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: assets/upstream-manifest.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resource: styles.css",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Chinese research title and rendered capabilities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Six clear summary answers and full overview image",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Grok chat and Bot are distinguished",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Capability status filter: implemented",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Capability status filter: beta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Capability status filter: planned",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Capability status filter: all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario report stage 1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario report stage 2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario report stage 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario report stage 4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario report stage 5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario report stage 6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario report stage 7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "End boundary: report",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario research stage 1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario research stage 2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario research stage 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario research stage 4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario research stage 5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario research stage 6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario research stage 7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "End boundary: research",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario coding stage 1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario coding stage 2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario coding stage 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario coding stage 4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario coding stage 5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario coding stage 6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Scenario coding stage 7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "End boundary: coding",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "First step boundary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Previous / next navigation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Host and model location are independent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Personal shutdown and cloud data explanation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Four product comparison",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Three distinct user goals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Thought accordion 1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Thought accordion 2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Thought accordion 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Thought accordion 4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Thought accordion 5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Thought accordion 6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Extension path: model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Extension path: channel",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Extension path: mcp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Extension path: skills",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Extension path: acp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Extension path: reliability",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Extension keyboard navigation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Extension keyboard End",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source filter: 源码",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source filter: 上游文档",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source filter: 官方产品文档",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source filter: all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source search empty state",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source search matches content",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "First project links to research scenario",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "All internal anchors resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Unique element IDs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reference links are pinned or official",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No page overflow at 1440px",
+      "passed": true,
+      "detail": {
+        "viewport": 1440,
+        "document": 1440
+      }
+    },
+    {
+      "name": "No page overflow at 1024px",
+      "passed": true,
+      "detail": {
+        "viewport": 1024,
+        "document": 1024
+      }
+    },
+    {
+      "name": "No page overflow at 768px",
+      "passed": true,
+      "detail": {
+        "viewport": 768,
+        "document": 768
+      }
+    },
+    {
+      "name": "No page overflow at 390px",
+      "passed": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "name": "Mobile scenario controls",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No page overflow at 320px",
+      "passed": true,
+      "detail": {
+        "viewport": 320,
+        "document": 320
+      }
+    },
+    {
+      "name": "No JavaScript errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No failed browser requests",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Direct file opening without HTTP or network data fetch",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "resources": [
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 11586
+    },
+    {
+      "path": "assets/architecture.svg",
+      "status": 200,
+      "bytes": 3567
+    },
+    {
+      "path": "assets/docs/architecture.md",
+      "status": 200,
+      "bytes": 4966
+    },
+    {
+      "path": "assets/docs/capabilities.md",
+      "status": 200,
+      "bytes": 5193
+    },
+    {
+      "path": "assets/docs/comparison.md",
+      "status": 200,
+      "bytes": 4732
+    },
+    {
+      "path": "assets/docs/extensions.md",
+      "status": 200,
+      "bytes": 4982
+    },
+    {
+      "path": "assets/docs/notes.md",
+      "status": 200,
+      "bytes": 3285
+    },
+    {
+      "path": "assets/mark.svg",
+      "status": 200,
+      "bytes": 409
+    },
+    {
+      "path": "assets/octop-understanding-overview-20261020.png",
+      "status": 200,
+      "bytes": 1536502
+    },
+    {
+      "path": "assets/octop-understanding-overview-20261020.svg",
+      "status": 200,
+      "bytes": 54234
+    },
+    {
+      "path": "assets/research-data.js",
+      "status": 200,
+      "bytes": 26014
+    },
+    {
+      "path": "assets/upstream-manifest.json",
+      "status": 200,
+      "bytes": 4148
+    },
+    {
+      "path": "styles.css",
+      "status": 200,
+      "bytes": 36528
+    }
+  ],
+  "viewports": [
+    {
+      "viewport": 1440,
+      "document": 1440
+    },
+    {
+      "viewport": 1024,
+      "document": 1024
+    },
+    {
+      "viewport": 768,
+      "document": 768
+    },
+    {
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "viewport": 320,
+      "document": 320
+    }
+  ],
+  "console_errors": [],
+  "request_failures": [],
+  "passed": true
+}

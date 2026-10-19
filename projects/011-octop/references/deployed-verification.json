@@ -1,0 +1,94 @@
+{
+  "checked_at": "2026-10-19T17:23:36.087886+00:00",
+  "url": "https://yydshly.github.io/1015_codex_project/projects/011-octop/",
+  "content_commit": "199d99438715e76296c6482257a1742167828d2d",
+  "pages_run": "https://github.com/yydshly/1015_codex_project/actions/runs/39293559756",
+  "passed": true,
+  "checks": [
+    {
+      "name": "Live navigation includes Octop summary and excludes uncommitted 008",
+      "passed": true
+    },
+    {
+      "name": "Exact deployed original: assets/011-octop/octop-understanding-overview-20261020.png",
+      "passed": true,
+      "sha256": "e12b63d83280c38c01612fd22d96f884d47a9f838772072f5868ee9aac1e56e9"
+    },
+    {
+      "name": "Exact deployed original: projects/011-octop/assets/octop-understanding-overview-20261020.png",
+      "passed": true,
+      "sha256": "e12b63d83280c38c01612fd22d96f884d47a9f838772072f5868ee9aac1e56e9"
+    },
+    {
+      "name": "Exact deployed original: projects/011-octop/assets/octop-understanding-overview-20261020.svg",
+      "passed": true,
+      "sha256": "1d1a88928daac75572416648fbb215e86feb1d2f0c3bb44008f93ba1635187d1"
+    },
+    {
+      "name": "Published pinned snapshot: README.md",
+      "passed": true,
+      "sha256": "3b7dfed94413522454de48b300da849b123614c41d92b1c284658e8fa745d8bb"
+    },
+    {
+      "name": "Published pinned snapshot: LICENSE",
+      "passed": true,
+      "sha256": "5f2089cdcc57d00c6b70c0fb83368cbf3a86bb57839385fc6ac9086878d606e8"
+    },
+    {
+      "name": "Published pinned snapshot: pyproject.toml",
+      "passed": true,
+      "sha256": "7a6b5c5751a757e754008f39bcf058761d82edad1259429eda0ea3470039c81c"
+    },
+    {
+      "name": "Published pinned snapshot: docs/architecture.md",
+      "passed": true,
+      "sha256": "75949dbc836ee3387aa0ff815ade424e7f7f8618b98927e6b807b3c659ff9600"
+    },
+    {
+      "name": "Published pinned snapshot: docs/expert-teams.md",
+      "passed": true,
+      "sha256": "9e89f584e8534642cc2996bdd13c297a5ee79610d5c63888aa783987f670f81f"
+    },
+    {
+      "name": "Published pinned snapshot: docs/acp.md",
+      "passed": true,
+      "sha256": "714f6d43137267b2e7665b13466e6b81ab8c69952d06774b41985e8d81fa4578"
+    },
+    {
+      "name": "Published pinned snapshot: docs/connectors.md",
+      "passed": true,
+      "sha256": "f96557e6106eafd29d4fc2aef397e9d72e2ee67e88a4026377f467bf86b80593"
+    },
+    {
+      "name": "Published pinned snapshot: src/octop/infra/gateway/process/processor.py",
+      "passed": true,
+      "sha256": "a42a43c3fd35a9ad228b44dafda9574899ad4e642318a406ce4250a02c4f6207"
+    },
+    {
+      "name": "Published pinned snapshot: src/octop/infra/cron/tools.py",
+      "passed": true,
+      "sha256": "6a7fae99689a2deb295e230405954df9b0dbe598c4fd2013d470e89353af8fb9"
+    },
+    {
+      "name": "Published pinned snapshot: src/octop/infra/knowledge/tools.py",
+      "passed": true,
+      "sha256": "5c2ad7896bc2e22f121536541168add5982e22f0b02de43a52e2d118ad3614ec"
+    },
+    {
+      "name": "Published pinned snapshot: src/octop/infra/knowledge/parse.py",
+      "passed": true,
+      "sha256": "1009b9e8b783e724f327a3a44c5750e94a070d9ef5342b67d2bbaa8f91bb1670"
+    },
+    {
+      "name": "Published pinned snapshot: src/octop/infra/agents/providers/harness_factory.py",
+      "passed": true,
+      "sha256": "d0fc6671ab342633d0dc942ba77b125216418a584b080c341c4786faa489ec85"
+    },
+    {
+      "name": "Published pinned snapshot: src/octop/infra/agents/teams/jobs.py",
+      "passed": true,
+      "sha256": "e0b2c04102eb5fc7a2636093a1b05cf798bc2aae82b7932b1809c74e754db4f1"
+    }
+  ],
+  "scope": "Static research website and published source evidence, not Octop runtime execution."
+}
