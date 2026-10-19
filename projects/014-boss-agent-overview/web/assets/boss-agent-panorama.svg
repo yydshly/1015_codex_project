@@ -1,0 +1,311 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="5505" viewBox="0 0 1800 5505" role="img" aria-labelledby="title desc">
+<title id="title">BOSS Agent CLI 全景理解：能力、原理、风险、场景与意义</title>
+<desc id="desc">基于固定版本 3.0.0 / 4716ee1 的中文研究长图。区分源库已有功能、本研究合成原型与尚需开发的职业探索场景，并展示三种平台访问路径、本地处理、可选模型 API 和证据边界。</desc>
+<rect width="1800" height="5505" fill="#F3F5EF"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="64" y="63" font-size="21" font-weight="700" fill="#0D7567">013 / OPEN-SOURCE RESEARCH     ·     2026.10.20</text>
+<text x="64" y="147" font-size="66" font-weight="700" fill="#163E37">BOSS Agent CLI 全景理解</text>
+<text x="64" y="201" font-size="30" font-weight="400" fill="#526B61">从招聘操作到职业探索：能力、访问路径、风险、场景与意义</text>
+<text x="64" y="247" font-size="22" font-weight="400" fill="#526B61">固定研究快照：v3.0.0 / 4716ee1     ·     当前实际平台：BOSS 直聘</text>
+<rect x="64" y="279" width="1672" height="139" rx="14" fill="#143E36" stroke="none"/>
+<text x="92" y="329" font-size="31" font-weight="700" fill="#F6FAEE">我们的核心理解：把招聘平台上的操作，组织成 Agent 可调用的业务工具。</text>
+<text x="92" y="374.0" font-size="24" font-weight="400" fill="#C9DECC">登录会话与网页接口提供数据入口；本地规则和状态管理组织流程；可选模型辅助分析；职业探索产品在此基础上继续建设。</text>
+<text x="64" y="471" font-size="21" font-weight="700" fill="#163E37">阅读标记</text>
+<text x="200" y="471" font-size="21" font-weight="700" fill="#0D7567">● 源库已有：源码 / 文档可见</text>
+<text x="720" y="471" font-size="21" font-weight="700" fill="#91532C">◆ 扩展方向：本研究原型 / 仍需开发</text>
+<text x="1334" y="471" font-size="21" font-weight="400" fill="#526B61">○ 证据边界：尚未实测</text>
+<rect x="64" y="514" width="44" height="42" rx="7" fill="#0D7567" stroke="none"/>
+<text x="72" y="543" font-size="23" font-weight="700" fill="#F6FAEE">01</text>
+<text x="125" y="546" font-size="34" font-weight="700" fill="#163E37">能力版图：求职者、招聘者与 Agent 三个入口</text>
+<text x="125" y="586.0" font-size="22" font-weight="400" fill="#526B61">已有能力指固定快照中的实现与文档，不代表本研究已验证每项真实账号操作。 [S1–S2]</text>
+<rect x="64.0" y="620.44" width="544.0" height="451.6400000000001" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="90.0" y="664.44" font-size="29" font-weight="700" fill="#163E37">求职者｜发现、整理与跟进</text>
+<text x="90.0" y="710.44" font-size="23" font-weight="700" fill="#0D7567">发现与筛选</text>
+<text x="90.0" y="750.4000000000001" font-size="23" font-weight="400" fill="#526B61">关键词、城市、薪资、经验与学历；搜索、推</text>
+<text x="90.0" y="785.3600000000001" font-size="23" font-weight="400" fill="#526B61">荐、详情；福利 AND 与 HR 活跃度过滤。</text>
+<text x="90.0" y="835.32" font-size="23" font-weight="700" fill="#0D7567">候选与进度</text>
+<text x="90.0" y="875.2800000000001" font-size="23" font-weight="400" fill="#526B61">缓存、候选池、标签备注、离线比较、搜索预</text>
+<text x="90.0" y="910.2400000000001" font-size="23" font-weight="400" fill="#526B61">设；进度、跟进、日报与增量观察。</text>
+<text x="90.0" y="960.2" font-size="23" font-weight="700" fill="#0D7567">沟通与行动</text>
+<text x="90.0" y="1000.1600000000001" font-size="23" font-weight="400" fill="#526B61">会话、消息、面试、交换信息；打招呼与投递沟</text>
+<text x="90.0" y="1035.1200000000001" font-size="23" font-weight="400" fill="#526B61">通。apply 最小实现复用立即沟通。</text>
+<rect x="628.0" y="620.44" width="544.0" height="451.6400000000001" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="654.0" y="664.44" font-size="29" font-weight="700" fill="#163E37">招聘者｜候选人、简历与职位</text>
+<text x="654.0" y="710.44" font-size="23" font-weight="700" fill="#0D7567">发现与资料</text>
+<text x="654.0" y="750.4000000000001" font-size="23" font-weight="400" fill="#526B61">候选人搜索、推荐、投递申请、在线简历；需要</text>
+<text x="654.0" y="785.3600000000001" font-size="23" font-weight="400" fill="#526B61">招聘者会话与对应权限。</text>
+<text x="654.0" y="835.32" font-size="23" font-weight="700" fill="#0D7567">沟通与附件</text>
+<text x="654.0" y="875.2800000000001" font-size="23" font-weight="400" fill="#526B61">会话、历史消息、最近摘要、回复与交换信息；</text>
+<text x="654.0" y="910.2400000000001" font-size="23" font-weight="400" fill="#526B61">请求、同意和下载已收附件简历。</text>
+<text x="654.0" y="960.2" font-size="23" font-weight="700" fill="#0D7567">招聘工作管理</text>
+<text x="654.0" y="1000.1600000000001" font-size="23" font-weight="400" fill="#526B61">职位查询、上线与下线、首次招呼；资料访问与</text>
+<text x="654.0" y="1035.1200000000001" font-size="23" font-weight="400" fill="#526B61">写操作受平台权限和操作边界约束。</text>
+<rect x="1192.0" y="620.44" width="544.0" height="451.6400000000001" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="1218.0" y="664.44" font-size="29" font-weight="700" fill="#163E37">Agent / 开发者｜调用与恢复</text>
+<text x="1218.0" y="710.44" font-size="23" font-weight="700" fill="#0D7567">统一调用契约</text>
+<text x="1218.0" y="750.4000000000001" font-size="23" font-weight="400" fill="#526B61">CLI、Python API、MCP 共用业务层；schema</text>
+<text x="1218.0" y="785.3600000000001" font-size="23" font-weight="400" fill="#526B61">暴露参数、能力可用性与风险信息。</text>
+<text x="1218.0" y="835.32" font-size="23" font-weight="700" fill="#0D7567">结构化与可恢复</text>
+<text x="1218.0" y="875.2800000000001" font-size="23" font-weight="400" fill="#526B61">JSON 数据、分页、错误与后续提示；SQLite 状</text>
+<text x="1218.0" y="910.2400000000001" font-size="23" font-weight="400" fill="#526B61">态、预算、run ID、断点与停止控制。</text>
+<text x="1218.0" y="960.2" font-size="23" font-weight="700" fill="#0D7567">可选模型分析</text>
+<text x="1218.0" y="1000.1600000000001" font-size="23" font-weight="400" fill="#526B61">JD 匹配、简历润色与定向优化、回复草稿、沟</text>
+<text x="1218.0" y="1035.1200000000001" font-size="23" font-weight="400" fill="#526B61">通建议及面试准备；需另配模型服务。</text>
+<rect x="64" y="1089.0800000000002" width="1672" height="61" rx="7" fill="#E5EEE3" stroke="none"/>
+<text x="86" y="1128.0800000000002" font-size="24" font-weight="400" fill="#163E37">基础搜索 / 词表规则无需大模型；本地离线操作不必访问平台；刷新、补查详情和真实动作会增加平台请求。</text>
+<rect x="64" y="1195.0800000000002" width="44" height="42" rx="7" fill="#0D7567" stroke="none"/>
+<text x="72" y="1224.0800000000002" font-size="23" font-weight="700" fill="#F6FAEE">02</text>
+<text x="125" y="1227.0800000000002" font-size="34" font-weight="700" fill="#163E37">技术原理：API 是数据入口，浏览器是请求环境</text>
+<text x="125" y="1267.0800000000002" font-size="22" font-weight="400" fill="#526B61">主取数结果是内部网页接口 JSON。浏览器 fetch、网络监听与 DOM 文本提取，需要分开理解。 [S3–S6]</text>
+<rect x="64" y="1301.5200000000002" width="1672" height="82" rx="10" fill="#143E36" stroke="none"/>
+<text x="88" y="1334.5200000000002" font-size="27" font-weight="700" fill="#F6FAEE">用户目标 → CLI / MCP / Python API → 会话与通道路由</text>
+<text x="88" y="1367.5200000000002" font-size="23" font-weight="400" fill="#C9DECC">AuthManager / 页面会话：Cookie + __zp_stoken__ 等页面令牌 + 账号角色权限</text>
+<rect x="64.0" y="1411.5200000000002" width="544.0" height="326.7600000000002" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="90.0" y="1455.5200000000002" font-size="29" font-weight="700" fill="#163E37">A｜HTTP 直连</text>
+<text x="90.0" y="1501.5200000000002" font-size="23" font-weight="700" fill="#0D7567">httpx + 保存的凭据</text>
+<text x="90.0" y="1541.4800000000002" font-size="23" font-weight="400" fill="#526B61">允许 HTTP 的会话中，直接向网页内部接口发请</text>
+<text x="90.0" y="1576.4400000000003" font-size="23" font-weight="400" fill="#526B61">求；不需要逐条提取 DOM 卡片。</text>
+<text x="90.0" y="1626.4000000000003" font-size="23" font-weight="700" fill="#0D7567">典型路径</text>
+<text x="90.0" y="1666.3600000000004" font-size="23" font-weight="400" fill="#526B61">详情 / 卡片等适用操作；是否走 HTTP 还取决于</text>
+<text x="90.0" y="1701.3200000000004" font-size="23" font-weight="400" fill="#526B61">配置与已连接的浏览器会话。</text>
+<rect x="628.0" y="1411.5200000000002" width="544.0" height="326.7600000000002" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="654.0" y="1455.5200000000002" font-size="29" font-weight="700" fill="#163E37">B｜浏览器内 fetch</text>
+<text x="654.0" y="1501.5200000000002" font-size="23" font-weight="700" fill="#0D7567">CDP / Patchright + 页面</text>
+<text x="654.0" y="1541.4800000000002" font-size="23" font-weight="400" fill="#526B61">在 BOSS 页面环境请求同源接口并取 JSON；正</text>
+<text x="654.0" y="1576.4400000000003" font-size="23" font-weight="400" fill="#526B61">常搜索与推荐直接进入浏览器请求方法。</text>
+<text x="654.0" y="1626.4000000000003" font-size="23" font-weight="700" fill="#0D7567">典型路径</text>
+<text x="654.0" y="1666.3600000000004" font-size="23" font-weight="400" fill="#526B61">搜索、推荐与适用的沟通操作。显式</text>
+<text x="654.0" y="1701.3200000000004" font-size="23" font-weight="400" fill="#526B61">existing-browser 来源有只读复用边界。</text>
+<rect x="1192.0" y="1411.5200000000002" width="544.0" height="326.7600000000002" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="1218.0" y="1455.5200000000002" font-size="29" font-weight="700" fill="#163E37">C｜页面驱动 + 网络监听</text>
+<text x="1218.0" y="1501.5200000000002" font-size="23" font-weight="700" fill="#0D7567">DrissionPage 专用 crawl</text>
+<text x="1218.0" y="1541.4800000000002" font-size="23" font-weight="400" fill="#526B61">独立 profile；导航与滚动加载后，监听</text>
+<text x="1218.0" y="1576.4400000000003" font-size="23" font-weight="400" fill="#526B61">joblist.json 响应。DOM / 页面状态辅助检查。</text>
+<text x="1218.0" y="1626.4000000000003" font-size="23" font-weight="700" fill="#0D7567">普通监听失败时</text>
+<text x="1218.0" y="1666.3600000000004" font-size="23" font-weight="400" fill="#526B61">可退到同一页面内 fetch；详情也页面内</text>
+<text x="1218.0" y="1701.3200000000004" font-size="23" font-weight="400" fill="#526B61">fetch，不把浏览器凭据拷给 httpx 回退。</text>
+<path d="M336.0,1388.5200000000002 L336.0,1405.5200000000002" fill="none" stroke="#0D7567" stroke-width="2.5"/>
+<polygon points="336.0,1405.5200000000002 331.6503446588877,1396.5155289764734 340.3496553411123,1396.5155289764734" fill="#0D7567"/>
+<path d="M900.0,1388.5200000000002 L900.0,1405.5200000000002" fill="none" stroke="#0D7567" stroke-width="2.5"/>
+<polygon points="900.0,1405.5200000000002 895.6503446588877,1396.5155289764734 904.3496553411123,1396.5155289764734" fill="#0D7567"/>
+<path d="M1464.0,1388.5200000000002 L1464.0,1405.5200000000002" fill="none" stroke="#0D7567" stroke-width="2.5"/>
+<polygon points="1464.0,1405.5200000000002 1459.6503446588877,1396.5155289764734 1468.3496553411123,1396.5155289764734" fill="#0D7567"/>
+<path d="M336.0,1743.2800000000004 L336.0,1767.2800000000004" fill="none" stroke="#0D7567" stroke-width="2.5"/>
+<polygon points="336.0,1767.2800000000004 331.6503446588877,1758.2755289764737 340.3496553411123,1758.2755289764737" fill="#0D7567"/>
+<path d="M900.0,1743.2800000000004 L900.0,1767.2800000000004" fill="none" stroke="#0D7567" stroke-width="2.5"/>
+<polygon points="900.0,1767.2800000000004 895.6503446588877,1758.2755289764737 904.3496553411123,1758.2755289764737" fill="#0D7567"/>
+<path d="M1464.0,1743.2800000000004 L1464.0,1767.2800000000004" fill="none" stroke="#0D7567" stroke-width="2.5"/>
+<polygon points="1464.0,1767.2800000000004 1459.6503446588877,1758.2755289764737 1468.3496553411123,1758.2755289764737" fill="#0D7567"/>
+<rect x="64" y="1776.2800000000004" width="1672" height="79" rx="9" fill="#E5EEE3" stroke="none"/>
+<text x="88" y="1810.2800000000004" font-size="28" font-weight="700" fill="#163E37">BOSS 网页内部 /wapi/… 接口 → 服务端身份、权限、频率与环境校验 → JSON</text>
+<text x="88" y="1840.2800000000004" font-size="22" font-weight="400" fill="#526B61">所查源码未显示官方开放平台授权接入；工具层 CLI / MCP 接口不扩大平台数据权限。</text>
+<path d="M584.38,1860.2800000000004 L584.38,1875.2800000000004" fill="none" stroke="#0D7567" stroke-width="2.5"/>
+<polygon points="584.38,1875.2800000000004 580.0303446588877,1866.2755289764737 588.7296553411123,1866.2755289764737" fill="#0D7567"/>
+<rect x="64" y="1880.2800000000004" width="1040.76" height="172" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="89" y="1921.2800000000004" font-size="28" font-weight="700" fill="#163E37">本地业务层｜把原始数据组织成可用结果</text>
+<text x="89" y="1967.2800000000004" font-size="23" font-weight="400" fill="#526B61">字段适配 → 标签 / 描述规则 → AND 筛选与排序</text>
+<text x="89" y="2002.2400000000005" font-size="23" font-weight="400" fill="#526B61">SQLite：缓存、候选池、任务状态、预算、断点</text>
+<text x="89" y="2037.2000000000005" font-size="23" font-weight="400" fill="#526B61">本地规则不理解否定和真实待遇；补查详情会消耗请求。</text>
+<rect x="1124.76" y="1880.2800000000004" width="611.24" height="172" rx="12" fill="#E5EEE3" stroke="none"/>
+<text x="1149.76" y="1921.2800000000004" font-size="28" font-weight="700" fill="#0D7567">按需：另一套模型 API</text>
+<text x="1149.76" y="1967.2800000000004" font-size="23" font-weight="400" fill="#526B61">简历 / JD → 配置的 /chat/completions</text>
+<text x="1149.76" y="2002.2400000000005" font-size="23" font-weight="400" fill="#526B61">可指向外部或本地服务；输入可能离开本机。</text>
+<text x="1149.76" y="2037.2000000000005" font-size="23" font-weight="400" fill="#526B61">模型服务不替代平台会话、权限与事实核对。</text>
+<path d="M1106.76,1966.2800000000004 L1121.76,1966.2800000000004" fill="none" stroke="#0D7567" stroke-width="2.5"/>
+<polygon points="1121.76,1966.2800000000004 1112.7555289764732,1970.6296553411128 1112.7555289764732,1961.930344658888" fill="#0D7567"/>
+<path d="M584.38,2057.2800000000007 L584.38,2078.2800000000007" fill="none" stroke="#0D7567" stroke-width="2.5"/>
+<polygon points="584.38,2078.2800000000007 580.0303446588877,2069.275528976474 588.7296553411123,2069.275528976474" fill="#0D7567"/>
+<path d="M1430.38,2057.2800000000007 L1430.38,2078.2800000000007" fill="none" stroke="#0D7567" stroke-width="2.5"/>
+<polygon points="1430.38,2078.2800000000007 1426.0303446588878,2069.275528976474 1434.7296553411124,2069.275528976474" fill="#0D7567"/>
+<rect x="64" y="2081.2800000000007" width="1672" height="73" rx="9" fill="#143E36" stroke="none"/>
+<text x="88" y="2113.2800000000007" font-size="28" font-weight="700" fill="#F6FAEE">输出：岗位清单 / 导出 / JSON 信封 / 后续动作 / 可恢复 workflow</text>
+<text x="88" y="2141.2800000000007" font-size="22" font-weight="400" fill="#C9DECC">工具信封示意：ok · data · pagination · error · hints        →        可接自己的界面、分析方法与工作流</text>
+<text x="74" y="2201.2800000000007" font-size="23" font-weight="400" fill="#526B61">通道路由：显式 CDP、非 auto 浏览器来源或已接入 CDP 的会话会进入 browser-only，适用平台请求保留在浏览器；缺少实现可报错。</text>
+<text x="74" y="2245.2400000000007" font-size="23" font-weight="400" fill="#526B61">回退边界：job_card 在允许 HTTP 时优先 httpx，普通异常可回退浏览器；风险停止异常直接抛出。浏览器路径不继承整套 HTTP 刷新重试。</text>
+<text x="74" y="2289.2000000000007" font-size="23" font-weight="400" fill="#526B61">页面边界：部分招聘者流程访问现有聊天页 JS 运行时；existing-browser 只复用已有目标页，不代表授权发送、投递或启动新登录。</text>
+<rect x="64" y="2340.1600000000008" width="44" height="42" rx="7" fill="#0D7567" stroke="none"/>
+<text x="72" y="2369.1600000000008" font-size="23" font-weight="700" fill="#F6FAEE">03</text>
+<text x="125" y="2372.1600000000008" font-size="34" font-weight="700" fill="#163E37">呈现效果：我们实际演示了什么</text>
+<text x="125" y="2412.1600000000008" font-size="22" font-weight="400" fill="#526B61">本仓库 008 保留原始实验；013 展示总览与职业探索原型。以下岗位和公司均为合成数据。 [E1–E3]</text>
+<rect x="64.0" y="2446.600000000001" width="544.0" height="361.72000000000025" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="90.0" y="2490.600000000001" font-size="29" font-weight="700" fill="#163E37">候选岗位清单｜规则复现</text>
+<text x="90.0" y="2536.600000000001" font-size="23" font-weight="700" fill="#0D7567">8 个合成岗位</text>
+<text x="90.0" y="2576.560000000001" font-size="23" font-weight="400" fill="#526B61">杭州 + 双休 + 五险一金：5 / 8 命中，其中 2 个</text>
+<text x="90.0" y="2611.520000000001" font-size="23" font-weight="400" fill="#526B61">按人工语义标注不满足。</text>
+<text x="90.0" y="2661.480000000001" font-size="23" font-weight="700" fill="#0D7567">可见边界</text>
+<text x="90.0" y="2701.440000000001" font-size="23" font-weight="400" fill="#526B61">“不提供双休”仍可能命中；“周末休两天”可</text>
+<text x="90.0" y="2736.400000000001" font-size="23" font-weight="400" fill="#526B61">能漏判。10 个手选探针有 4 个语义差异，非准</text>
+<text x="90.0" y="2771.360000000001" font-size="23" font-weight="400" fill="#526B61">确率评测。</text>
+<rect x="628.0" y="2446.600000000001" width="544.0" height="361.72000000000025" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="654.0" y="2490.600000000001" font-size="29" font-weight="700" fill="#163E37">JSON 输出｜结构示意</text>
+<text x="654.0" y="2536.600000000001" font-size="23" font-weight="700" fill="#0D7567">与筛选结果同步</text>
+<text x="654.0" y="2576.560000000001" font-size="23" font-weight="400" fill="#526B61">切换城市和福利条件后，清单与 JSON 一起变</text>
+<text x="654.0" y="2611.520000000001" font-size="23" font-weight="400" fill="#526B61">化；可复制文本，交由后续工具处理。</text>
+<text x="654.0" y="2661.480000000001" font-size="23" font-weight="700" fill="#0D7567">可见边界</text>
+<text x="654.0" y="2701.440000000001" font-size="23" font-weight="400" fill="#526B61">信封是研究简化示意，不是 BOSS 实际响应，也</text>
+<text x="654.0" y="2736.400000000001" font-size="23" font-weight="400" fill="#526B61">不是本轮真实 CLI 在线输出。</text>
+<rect x="1192.0" y="2446.600000000001" width="544.0" height="361.72000000000025" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="1218.0" y="2490.600000000001" font-size="29" font-weight="700" fill="#163E37">职业画像｜本研究新增</text>
+<text x="1218.0" y="2536.600000000001" font-size="23" font-weight="700" fill="#91532C">9 个手工结构化样本</text>
+<text x="1218.0" y="2576.560000000001" font-size="23" font-weight="400" fill="#526B61">后端 / 数据 / AI 应用三个方向，各 3 个；按岗</text>
+<text x="1218.0" y="2611.520000000001" font-size="23" font-weight="400" fill="#526B61">位计数技能，查看任务、样本 ID 与技能对照。</text>
+<text x="1218.0" y="2661.480000000001" font-size="23" font-weight="700" fill="#91532C">可见边界</text>
+<text x="1218.0" y="2701.440000000001" font-size="23" font-weight="400" fill="#526B61">没有运行模型抽取；技能勾选是自述。频次只描</text>
+<text x="1218.0" y="2736.400000000001" font-size="23" font-weight="400" fill="#526B61">述示例内部构成，不是市场占比或能力认证。</text>
+<rect x="64" y="2855.320000000001" width="44" height="42" rx="7" fill="#0D7567" stroke="none"/>
+<text x="72" y="2884.320000000001" font-size="23" font-weight="700" fill="#F6FAEE">04</text>
+<text x="125" y="2887.320000000001" font-size="34" font-weight="700" fill="#163E37">可实现场景：复用哪些基础，还要补齐什么</text>
+<text x="125" y="2927.320000000001" font-size="22" font-weight="400" fill="#526B61">绿色场景已有较多业务基础；◆ 场景需要新增分析与数据建设。职业画像在本页只有合成原型。</text>
+<rect x="64" y="2961.760000000001" width="1672" height="58" rx="8" fill="#143E36" stroke="none"/>
+<text x="82" y="2999.760000000001" font-size="24" font-weight="700" fill="#F6FAEE">场景 / 成熟度</text>
+<text x="337" y="2999.760000000001" font-size="24" font-weight="700" fill="#F6FAEE">库提供的基础</text>
+<text x="742" y="2999.760000000001" font-size="24" font-weight="700" fill="#F6FAEE">仍需建设</text>
+<text x="1317" y="2999.760000000001" font-size="24" font-weight="700" fill="#F6FAEE">产物与判断边界</text>
+<rect x="64" y="3019.760000000001" width="1672" height="67.5" rx="0" fill="#FEFFFB" stroke="none"/>
+<text x="82" y="3056.760000000001" font-size="23" font-weight="700" fill="#163E37">● 求职筛选与跟进</text>
+<text x="337" y="3056.760000000001" font-size="23" font-weight="400" fill="#526B61">搜索、详情、规则、候选池与进度</text>
+<text x="742" y="3056.760000000001" font-size="23" font-weight="400" fill="#526B61">个人条件、证据核对、排序与确认</text>
+<text x="1317" y="3056.760000000001" font-size="23" font-weight="400" fill="#526B61">候选清单 / 跟进表；规则命中仍需复核</text>
+<rect x="64" y="3087.260000000001" width="1672" height="102.0" rx="0" fill="#EAF0E5" stroke="none"/>
+<text x="82" y="3124.260000000001" font-size="23" font-weight="700" fill="#91532C">◆ 职业画像</text>
+<text x="337" y="3124.260000000001" font-size="23" font-weight="400" fill="#526B61">岗位入口、详情、导出与可选 AI</text>
+<text x="742" y="3124.260000000001" font-size="23" font-weight="400" fill="#526B61">技能 / 任务提取、术语归一化、去重、频次、原文溯</text>
+<text x="742" y="3158.760000000001" font-size="23" font-weight="400" fill="#526B61">源</text>
+<text x="1317" y="3124.260000000001" font-size="23" font-weight="400" fill="#526B61">岗位要求画像；JD 不涵盖全部真实工</text>
+<text x="1317" y="3158.760000000001" font-size="23" font-weight="400" fill="#526B61">作</text>
+<rect x="64" y="3189.260000000001" width="1672" height="67.5" rx="0" fill="#FEFFFB" stroke="none"/>
+<text x="82" y="3226.260000000001" font-size="23" font-weight="700" fill="#91532C">◆ 方向 / 城市比较</text>
+<text x="337" y="3226.260000000001" font-size="23" font-weight="400" fill="#526B61">按关键词、城市等条件搜索并保存</text>
+<text x="742" y="3226.260000000001" font-size="23" font-weight="400" fill="#526B61">统一采样口径、职业分类、薪资解析与比较方法</text>
+<text x="1317" y="3226.260000000001" font-size="23" font-weight="400" fill="#526B61">共性 / 差异对照；少量样本不代表总体</text>
+<rect x="64" y="3256.760000000001" width="1672" height="102.0" rx="0" fill="#EAF0E5" stroke="none"/>
+<text x="82" y="3293.760000000001" font-size="23" font-weight="700" fill="#91532C">◆ 个人差距探索</text>
+<text x="337" y="3293.760000000001" font-size="23" font-weight="400" fill="#526B61">本地简历、JD 分析与候选匹配</text>
+<text x="742" y="3293.760000000001" font-size="23" font-weight="400" fill="#526B61">个人经历证据、逐项对照、人工复核与行动清单</text>
+<text x="1317" y="3293.760000000001" font-size="23" font-weight="400" fill="#526B61">学习 / 访谈 / 实践任务；不预测录用概</text>
+<text x="1317" y="3328.260000000001" font-size="23" font-weight="400" fill="#526B61">率</text>
+<rect x="64" y="3358.760000000001" width="1672" height="67.5" rx="0" fill="#FEFFFB" stroke="none"/>
+<text x="82" y="3395.760000000001" font-size="23" font-weight="700" fill="#91532C">◆ 需求变化观察</text>
+<text x="337" y="3395.760000000001" font-size="23" font-weight="400" fill="#526B61">增量读取、本地状态、可恢复采集</text>
+<text x="742" y="3395.760000000001" font-size="23" font-weight="400" fill="#526B61">带时间戳的历史快照、去重与同口径时间比较</text>
+<text x="1317" y="3395.760000000001" font-size="23" font-weight="400" fill="#526B61">要求变化记录；单次搜索不能说明趋势</text>
+<rect x="64" y="3426.260000000001" width="1672" height="102.0" rx="0" fill="#EAF0E5" stroke="none"/>
+<text x="82" y="3463.260000000001" font-size="23" font-weight="700" fill="#163E37">● 招聘工作助手</text>
+<text x="337" y="3463.260000000001" font-size="23" font-weight="400" fill="#526B61">候选人、简历、沟通、附件与职位接</text>
+<text x="337" y="3497.760000000001" font-size="23" font-weight="400" fill="#526B61">口</text>
+<text x="742" y="3463.260000000001" font-size="23" font-weight="400" fill="#526B61">业务界面、角色权限、动作确认、记录与团队流程</text>
+<text x="1317" y="3463.260000000001" font-size="23" font-weight="400" fill="#526B61">工作列表 / 流程助手；须具备对应权限</text>
+<rect x="64" y="3573.260000000001" width="44" height="42" rx="7" fill="#0D7567" stroke="none"/>
+<text x="72" y="3602.260000000001" font-size="23" font-weight="700" fill="#F6FAEE">05</text>
+<text x="125" y="3605.260000000001" font-size="34" font-weight="700" fill="#163E37">风险与控制：能调用、能登录，不等于稳定可用</text>
+<text x="125" y="3645.260000000001" font-size="22" font-weight="400" fill="#526B61">下列是机制与使用边界分析。本轮没有测量真实平台通过率、封禁率或实际求职 / 招聘效果。 [S3–S7]</text>
+<rect x="64.0" y="3679.700000000001" width="544.0" height="329.7600000000002" rx="12" fill="#FCF7ED" stroke="#E0D4BF"/>
+<text x="89.0" y="3722.700000000001" font-size="27" font-weight="700" fill="#91532C">01  平台风控与会话异常</text>
+<text x="89.0" y="3766.700000000001" font-size="23" font-weight="400" fill="#526B61">账号、IP、频率、令牌和环境都影响结果；HTTP</text>
+<text x="89.0" y="3801.660000000001" font-size="23" font-weight="400" fill="#526B61">401 / 403 / 429、安全页与业务码要分类处理，</text>
+<text x="89.0" y="3836.6200000000013" font-size="23" font-weight="400" fill="#526B61">code 37 不宜一律刷新。</text>
+<path d="M89.0,3864.5800000000013 L583.0,3864.5800000000013" fill="none" stroke="#DCCFB7" stroke-width="2"/>
+<text x="89.0" y="3903.5800000000013" font-size="23" font-weight="400" fill="#91532C">已有节流、预算、冷却与风险锁；命中风险先保</text>
+<text x="89.0" y="3938.5400000000013" font-size="23" font-weight="400" fill="#91532C">存状态并停止。浏览器、慢速或重新登录均不保</text>
+<text x="89.0" y="3973.5000000000014" font-size="23" font-weight="400" fill="#91532C">证放行。</text>
+<rect x="628.0" y="3679.700000000001" width="544.0" height="329.7600000000002" rx="12" fill="#FCF7ED" stroke="#E0D4BF"/>
+<text x="653.0" y="3722.700000000001" font-size="27" font-weight="700" fill="#91532C">02  内部接口与页面漂移</text>
+<text x="653.0" y="3766.700000000001" font-size="23" font-weight="400" fill="#526B61">字段、路径、页面令牌、聊天运行时、浏览器版</text>
+<text x="653.0" y="3801.660000000001" font-size="23" font-weight="400" fill="#526B61">本与监听行为都可能变化；JSON 成功也可能缺</text>
+<text x="653.0" y="3836.6200000000013" font-size="23" font-weight="400" fill="#526B61">数据。</text>
+<path d="M653.0,3864.5800000000013 L1147.0,3864.5800000000013" fill="none" stroke="#DCCFB7" stroke-width="2"/>
+<text x="653.0" y="3903.5800000000013" font-size="23" font-weight="400" fill="#91532C">固定版本、检查业务状态、结构与少量样本；</text>
+<text x="653.0" y="3938.5400000000013" font-size="23" font-weight="400" fill="#91532C">schema 或本地健康检查成功不证明 live 平台可</text>
+<text x="653.0" y="3973.5000000000014" font-size="23" font-weight="400" fill="#91532C">用。</text>
+<rect x="1192.0" y="3679.700000000001" width="544.0" height="329.7600000000002" rx="12" fill="#FCF7ED" stroke="#E0D4BF"/>
+<text x="1217.0" y="3722.700000000001" font-size="27" font-weight="700" fill="#91532C">03  会话、个人资料与权限</text>
+<text x="1217.0" y="3766.700000000001" font-size="23" font-weight="400" fill="#526B61">Cookie、Token、profile、调试端口和 SQLite</text>
+<text x="1217.0" y="3801.660000000001" font-size="23" font-weight="400" fill="#526B61">可能暴露会话、简历、聊天或联系方式。</text>
+<path d="M1217.0,3829.6200000000013 L1711.0,3829.6200000000013" fill="none" stroke="#DCCFB7" stroke-width="2"/>
+<text x="1217.0" y="3868.6200000000013" font-size="23" font-weight="400" fill="#91532C">本机端口与文件限权、脱敏、最少保存及清理。</text>
+<text x="1217.0" y="3903.5800000000013" font-size="23" font-weight="400" fill="#91532C">MIT 许可覆盖代码，不扩大平台数据权限或保存</text>
+<text x="1217.0" y="3938.5400000000013" font-size="23" font-weight="400" fill="#91532C">授权。</text>
+<rect x="64.0" y="4029.4600000000014" width="544.0" height="329.75999999999976" rx="12" fill="#FCF7ED" stroke="#E0D4BF"/>
+<text x="89.0" y="4072.4600000000014" font-size="27" font-weight="700" fill="#91532C">04  写操作副作用与重复</text>
+<text x="89.0" y="4116.460000000001" font-size="23" font-weight="400" fill="#526B61">打招呼、消息、交换信息和职位状态会产生真实</text>
+<text x="89.0" y="4151.420000000001" font-size="23" font-weight="400" fill="#526B61">影响；超时后远端结果可能未知。apply 不证明</text>
+<text x="89.0" y="4186.380000000001" font-size="23" font-weight="400" fill="#526B61">附件已送达。</text>
+<path d="M89.0,4214.340000000001 L583.0,4214.340000000001" fill="none" stroke="#DCCFB7" stroke-width="2"/>
+<text x="89.0" y="4253.340000000001" font-size="23" font-weight="400" fill="#91532C">仅适用且标注 replay_safe 的请求允许自动重</text>
+<text x="89.0" y="4288.300000000001" font-size="23" font-weight="400" fill="#91532C">试；写操作需核对远端结果，设置业务确认与操</text>
+<text x="89.0" y="4323.260000000001" font-size="23" font-weight="400" fill="#91532C">作记录。</text>
+<rect x="628.0" y="4029.4600000000014" width="544.0" height="329.75999999999976" rx="12" fill="#FCF7ED" stroke="#E0D4BF"/>
+<text x="653.0" y="4072.4600000000014" font-size="27" font-weight="700" fill="#91532C">05  模型资料传输、费用与幻觉</text>
+<text x="653.0" y="4116.460000000001" font-size="23" font-weight="400" fill="#526B61">启用 AI 会向配置端点发送输入，可能产生费</text>
+<text x="653.0" y="4151.420000000001" font-size="23" font-weight="400" fill="#526B61">用、资料处理风险，以及缺乏依据的建议。</text>
+<path d="M653.0,4179.380000000001 L1147.0,4179.380000000001" fill="none" stroke="#DCCFB7" stroke-width="2"/>
+<text x="653.0" y="4218.380000000001" font-size="23" font-weight="400" fill="#91532C">核对目的端与输入范围，必要时脱敏或选本地服</text>
+<text x="653.0" y="4253.340000000001" font-size="23" font-weight="400" fill="#91532C">务；重要结论回查原文。分析分数不等于录用概</text>
+<text x="653.0" y="4288.300000000001" font-size="23" font-weight="400" fill="#91532C">率。</text>
+<rect x="1192.0" y="4029.4600000000014" width="544.0" height="329.75999999999976" rx="12" fill="#FCF7ED" stroke="#E0D4BF"/>
+<text x="1217.0" y="4072.4600000000014" font-size="27" font-weight="700" fill="#91532C">06  样本偏差与结论过度</text>
+<text x="1217.0" y="4116.460000000001" font-size="23" font-weight="400" fill="#526B61">规则误判、个性化推荐、重复 JD 和采样口径会</text>
+<text x="1217.0" y="4151.420000000001" font-size="23" font-weight="400" fill="#526B61">影响统计；招聘要求也不能替代真实工作体验。</text>
+<path d="M1217.0,4179.380000000001 L1711.0,4179.380000000001" fill="none" stroke="#DCCFB7" stroke-width="2"/>
+<text x="1217.0" y="4218.380000000001" font-size="23" font-weight="400" fill="#91532C">记录时间、条件与原文，归一化、去重并复核；</text>
+<text x="1217.0" y="4253.340000000001" font-size="23" font-weight="400" fill="#91532C">补从业者访谈与实践证据。合成演示不作为市场</text>
+<text x="1217.0" y="4288.300000000001" font-size="23" font-weight="400" fill="#91532C">事实。</text>
+<rect x="64" y="4379.220000000001" width="1672" height="81" rx="8" fill="#F5EBDD" stroke="none"/>
+<text x="86" y="4415.220000000001" font-size="24" font-weight="400" fill="#91532C">运行原则：明确数量、时间、重试和停止上限；复用指定 run ID；保存 checkpoint；风险停止后核实再继续。assisted / research 的名称不取消预算、</text>
+<text x="86" y="4451.700000000001" font-size="24" font-weight="400" fill="#91532C">权限、数据保管与平台规则。</text>
+<rect x="64" y="4507.220000000001" width="44" height="42" rx="7" fill="#0D7567" stroke="none"/>
+<text x="72" y="4536.220000000001" font-size="23" font-weight="700" fill="#F6FAEE">06</text>
+<text x="125" y="4539.220000000001" font-size="34" font-weight="700" fill="#163E37">意义与实施顺序：从操作能力，形成有证据的探索</text>
+<text x="125" y="4579.220000000001" font-size="22" font-weight="400" fill="#526B61">以下为我们的工程理解与扩展判断，完整职业分析产品仍需自己的数据模型、分析方法和验证。</text>
+<rect x="64.0" y="4613.660000000001" width="544.0" height="201.8800000000001" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="90.0" y="4657.660000000001" font-size="29" font-weight="700" fill="#163E37">对个人：形成值得验证的问题</text>
+<text x="90.0" y="4703.660000000001" font-size="23" font-weight="700" fill="#91532C">从要求到探索</text>
+<text x="90.0" y="4743.620000000001" font-size="23" font-weight="400" fill="#526B61">把岗位任务与技能变成学习、访谈和项目实践清</text>
+<text x="90.0" y="4778.580000000001" font-size="23" font-weight="400" fill="#526B61">单；用个人经历逐项举证，辅助判断方向。</text>
+<rect x="628.0" y="4613.660000000001" width="544.0" height="201.8800000000001" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="654.0" y="4657.660000000001" font-size="29" font-weight="700" fill="#163E37">对开发者：复用业务基础</text>
+<text x="654.0" y="4703.660000000001" font-size="23" font-weight="700" fill="#91532C">从人工操作到工具调用</text>
+<text x="654.0" y="4743.620000000001" font-size="23" font-weight="400" fill="#526B61">复用会话适配、字段组织、JSON 契约与本地状</text>
+<text x="654.0" y="4778.580000000001" font-size="23" font-weight="400" fill="#526B61">态，把投入集中在产品界面和可解释分析。</text>
+<rect x="1192.0" y="4613.660000000001" width="544.0" height="201.8800000000001" rx="12" fill="#FEFFFB" stroke="#CEDBCF"/>
+<text x="1218.0" y="4657.660000000001" font-size="29" font-weight="700" fill="#163E37">对研究：积累可追溯样本</text>
+<text x="1218.0" y="4703.660000000001" font-size="23" font-weight="700" fill="#91532C">从一次搜索到可比较记录</text>
+<text x="1218.0" y="4743.620000000001" font-size="23" font-weight="400" fill="#526B61">保存条件、时间与原文，持续去重和复核；逐步</text>
+<text x="1218.0" y="4778.580000000001" font-size="23" font-weight="400" fill="#526B61">形成同口径的职业要求观察，而非无依据结论。</text>
+<rect x="64" y="4837.540000000001" width="1672" height="107" rx="10" fill="#143E36" stroke="none"/>
+<text x="88" y="4875.540000000001" font-size="27" font-weight="700" fill="#F6FAEE">建议最小路径</text>
+<text x="88" y="4915.540000000001" font-size="25" font-weight="400" fill="#D7E7D2">固定探索问题 → 少量有界样本 + 原文 → 手工核对字段 → 职业画像 / 方向比较 → 个人经历对照 → 长期观察</text>
+<rect x="64" y="4990.540000000001" width="44" height="42" rx="7" fill="#0D7567" stroke="none"/>
+<text x="72" y="5019.540000000001" font-size="23" font-weight="700" fill="#F6FAEE">07</text>
+<text x="125" y="5022.540000000001" font-size="34" font-weight="700" fill="#163E37">证据边界与来源：把事实、演示和设想分开</text>
+<text x="125" y="5062.540000000001" font-size="22" font-weight="400" fill="#526B61">当前结论是固定快照的研究记录，不是对最新版本、全部功能或真实账号成功率的承诺。</text>
+<text x="64.0" y="5123.9800000000005" font-size="24" font-weight="700" fill="#163E37">14 个固定源码文件</text>
+<text x="64.0" y="5163.9800000000005" font-size="21" font-weight="400" fill="#526B61">本轮记录 SHA-256；v3.0.0 / 4716ee1。</text>
+<text x="64.0" y="5195.900000000001" font-size="21" font-weight="400" fill="#526B61">覆盖会话、客户端、crawl、筛选、模型服</text>
+<text x="64.0" y="5227.820000000001" font-size="21" font-weight="400" fill="#526B61">务与风险锁。</text>
+<text x="487.0" y="5123.9800000000005" font-size="24" font-weight="700" fill="#163E37">30 项当前本地检查</text>
+<text x="487.0" y="5163.9800000000005" font-size="21" font-weight="400" fill="#526B61">规则回归、条件组合与职业画像逻辑；浏</text>
+<text x="487.0" y="5195.900000000001" font-size="21" font-weight="400" fill="#526B61">览器另核对六场景、交互、资源与桌面 /</text>
+<text x="487.0" y="5227.820000000001" font-size="21" font-weight="400" fill="#526B61">窄屏。</text>
+<text x="910.0" y="5123.9800000000005" font-size="24" font-weight="700" fill="#163E37">59 项历史离线测试</text>
+<text x="910.0" y="5163.9800000000005" font-size="21" font-weight="400" fill="#526B61">008 的 2026.10.16 旧快照；仅确认四个福</text>
+<text x="910.0" y="5195.900000000001" font-size="21" font-weight="400" fill="#526B61">利相关符号 AST 未变，不能当作新版本全</text>
+<text x="910.0" y="5227.820000000001" font-size="21" font-weight="400" fill="#526B61">部回归。</text>
+<text x="1333.0" y="5123.9800000000005" font-size="24" font-weight="700" fill="#163E37">真实平台 / 模型调用 = 0</text>
+<text x="1333.0" y="5163.9800000000005" font-size="21" font-weight="400" fill="#526B61">未测试真实登录、在线搜索、消息发送、</text>
+<text x="1333.0" y="5195.900000000001" font-size="21" font-weight="400" fill="#526B61">简历送达或模型输出；没有真实求职效果</text>
+<text x="1333.0" y="5227.820000000001" font-size="21" font-weight="400" fill="#526B61">与封禁率证据。</text>
+<path d="M64,5268.740000000001 L1736,5268.740000000001" fill="none" stroke="#CEDBCF" stroke-width="2"/>
+<text x="64" y="5310.740000000001" font-size="20" font-weight="400" fill="#526B61">源库：github.com/can4hou6joeng4/boss-agent-cli  ·  固定 commit：4716ee1d211533db70ac7cc1ab2322eb269b43a0</text>
+<a href="https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/README.md"><text x="64" y="5353.740000000001" font-size="21" font-weight="700" fill="#0D7567">S1 README</text></a>
+<a href="https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/docs/capability-matrix.md"><text x="237.0" y="5353.740000000001" font-size="21" font-weight="700" fill="#0D7567">S2 能力矩阵</text></a>
+<a href="https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/api/client.py"><text x="400.0" y="5353.740000000001" font-size="21" font-weight="700" fill="#0D7567">S3 客户端</text></a>
+<a href="https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/api/_base_client.py"><text x="542.0" y="5353.740000000001" font-size="21" font-weight="700" fill="#0D7567">S4 模式路由</text></a>
+<a href="https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/crawler/transport.py"><text x="705.0" y="5353.740000000001" font-size="21" font-weight="700" fill="#0D7567">S5 crawl</text></a>
+<a href="https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/ai/service.py"><text x="840.0" y="5353.740000000001" font-size="21" font-weight="700" fill="#0D7567">S6 AI</text></a>
+<a href="https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/docs/platform-risk.md"><text x="942.0" y="5353.740000000001" font-size="21" font-weight="700" fill="#0D7567">S7 风险</text></a>
+<a href="https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/api/browser_client.py"><text x="1063.0" y="5353.740000000001" font-size="21" font-weight="700" fill="#0D7567">S8 浏览器</text></a>
+<text x="64" y="5395.740000000001" font-size="20" font-weight="400" fill="#526B61">E1–E3：本仓库 008 原始实验、013 模型检查与合成样本；详见 references/sources.json、verification.json。</text>
+<text x="64" y="5434.740000000001" font-size="20" font-weight="400" fill="#526B61">本图由 013 研究项目整理；绿色为源库能力，琥珀色为扩展 / 风险；矢量文字与高分辨率图片表达同一张图。</text>
+</g>
+</svg>

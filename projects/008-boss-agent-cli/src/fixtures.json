@@ -1,0 +1,25 @@
+{
+  "provenance": "全部岗位、公司名和描述均为本研究合成，不来自 BOSS 平台。人工标注只用于展示规则边界。",
+  "jobs": [
+    {"id":"sample-01","company":"云舟科技（合成）","title":"Python 后端工程师","city":"杭州","salary":"20–30K","tags":["双休","五险一金"],"description":"负责业务接口与服务开发。","truth":{"双休":true,"五险一金":true}},
+    {"id":"sample-02","company":"山岚数据（合成）","title":"Python 数据工程师","city":"杭州","salary":"18–28K","tags":["五险一金"],"description":"五天工作制，负责数据管线开发。","truth":{"双休":true,"五险一金":true}},
+    {"id":"sample-03","company":"星桥服务（合成）","title":"Python 开发工程师","city":"杭州","salary":"20–26K","tags":["五险一金"],"description":"不提供双休，实行单休。","truth":{"双休":false,"五险一金":true}},
+    {"id":"sample-04","company":"青禾软件（合成）","title":"Python 平台工程师","city":"杭州","salary":"22–32K","tags":["五险一金"],"description":"周末休两天，负责内部工具开发。","truth":{"双休":true,"五险一金":true}},
+    {"id":"sample-05","company":"远山系统（合成）","title":"Python 后端工程师","city":"上海","salary":"25–35K","tags":["双休","五险一金"],"description":"负责服务稳定性建设。","truth":{"双休":true,"五险一金":true}},
+    {"id":"sample-06","company":"微光工作室（合成）","title":"Python 工具工程师","city":"杭州","salary":"15–22K","tags":["双休"],"description":"提供五险，暂不提供公积金。","truth":{"双休":true,"五险一金":false}},
+    {"id":"sample-07","company":"栖木应用（合成）","title":"Python 应用工程师","city":"杭州","salary":"20–30K","tags":["五险一金"],"description":"周末双休，参与产品迭代。","truth":{"双休":true,"五险一金":true}},
+    {"id":"sample-08","company":"岸线网络（合成）","title":"Python 服务工程师","city":"杭州","salary":"18–25K","tags":[],"description":"目前不是双休，五险一金按规定缴纳。","truth":{"双休":false,"五险一金":true}}
+  ],
+  "probes": [
+    {"id":"normal","label":"正常表述","tags":[],"text":"周末双休，五险一金。","conditions":["双休","五险一金"],"expected_semantics":true},
+    {"id":"negation","label":"否定语句","tags":[],"text":"不提供双休，实行单休；五险一金。","conditions":["双休","五险一金"],"expected_semantics":false},
+    {"id":"synonym","label":"词表之外","tags":[],"text":"周末休两天，五险一金。","conditions":["双休","五险一金"],"expected_semantics":true},
+    {"id":"five-days","label":"已收录同义词","tags":[],"text":"五天工作制，五险一金。","conditions":["双休","五险一金"],"expected_semantics":true},
+    {"id":"and","label":"AND 缺一项","tags":["双休"],"text":"提供餐补。","conditions":["双休","五险一金"],"expected_semantics":false},
+    {"id":"mixed","label":"标签与描述合并","tags":["五险一金"],"text":"周末双休。","conditions":["双休","五险一金"],"expected_semantics":true},
+    {"id":"not-now","label":"时间与否定","tags":[],"text":"目前不是双休。","conditions":["双休"],"expected_semantics":false},
+    {"id":"custom","label":"自定义关键词","tags":[],"text":"支持远程办公。","conditions":["远程办公"],"expected_semantics":true},
+    {"id":"insurance-negation","label":"福利承诺否定","tags":[],"text":"五险一金暂不提供。","conditions":["五险一金"],"expected_semantics":false},
+    {"id":"empty","label":"无福利信息","tags":[],"text":"负责接口开发。","conditions":["双休"],"expected_semantics":false}
+  ]
+}

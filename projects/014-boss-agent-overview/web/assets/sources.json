@@ -1,0 +1,96 @@
+{
+  "checked_date": "2026-10-20",
+  "repository": "https://github.com/can4hou6joeng4/boss-agent-cli",
+  "commit": "4716ee1d211533db70ac7cc1ab2322eb269b43a0",
+  "version": "3.0.0",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/README.md",
+      "sha256_utf8_lf": "e10db8bad9c87e152abf3eae5eb2270fc4163b458942c9e6250eac67b762ac75",
+      "lines": 233
+    },
+    {
+      "path": "pyproject.toml",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/pyproject.toml",
+      "sha256_utf8_lf": "bd03e24cdf4fd944047a7966a6c81aad6b1f969708398eaeaf25f5b44ed02ba8",
+      "lines": 297
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/LICENSE",
+      "sha256_utf8_lf": "92b87144eee89e4d52a8eac41e6da43d48d8758ec9aedcd3ba0b6b0a0070b1b3",
+      "lines": 21
+    },
+    {
+      "path": "docs/capability-matrix.md",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/docs/capability-matrix.md",
+      "sha256_utf8_lf": "a2f577a061443e83f33f0660c1edf2d6eeb3e8f08bb429bda2eab5eb7e989bfe",
+      "lines": 120
+    },
+    {
+      "path": "docs/platform-risk.md",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/docs/platform-risk.md",
+      "sha256_utf8_lf": "8b59964efb65fffbad6bb73b0c3b8e722c59fe1d625f2dfe867bf6bd729b3b15",
+      "lines": 94
+    },
+    {
+      "path": "src/boss_agent_cli/api/client.py",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/api/client.py",
+      "sha256_utf8_lf": "c17f3fc8aa24a4abe946d322cbf3d4a945e8b5f5b2f81ab5b7a83dbba8c676a0",
+      "lines": 315
+    },
+    {
+      "path": "src/boss_agent_cli/api/browser_client.py",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/api/browser_client.py",
+      "sha256_utf8_lf": "949538c32498d46b101b04398455dc452532da03e504faaabc0785f32d7e145a",
+      "lines": 1168
+    },
+    {
+      "path": "src/boss_agent_cli/search_filters.py",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/search_filters.py",
+      "sha256_utf8_lf": "9528a8e61161aa80f8c51afc190ed94e8695c8d783cbd41730da022ebbab0e8a",
+      "lines": 1147
+    },
+    {
+      "path": "src/boss_agent_cli/ai/service.py",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/ai/service.py",
+      "sha256_utf8_lf": "b2fc0a8fd60b1fc91d92cc7957050c6987a3ee7f17d26d750744b6135e205f2e",
+      "lines": 84
+    },
+    {
+      "path": "src/boss_agent_cli/api/cdp_risk_lock.py",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/api/cdp_risk_lock.py",
+      "sha256_utf8_lf": "0841a0f86ae86e5391caf8fa3395d2c12e9f1ddb6fee807adaf7dbdf5d560903",
+      "lines": 176
+    },
+    {
+      "path": "src/boss_agent_cli/api/_base_client.py",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/api/_base_client.py",
+      "sha256_utf8_lf": "4ba04366b99c3d8794cf7b262df0045209d0876ef04dabe2af5be19265a4ec76",
+      "lines": 496
+    },
+    {
+      "path": "src/boss_agent_cli/api/endpoints.py",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/api/endpoints.py",
+      "sha256_utf8_lf": "2e87255c6f761464e342f6014ca46401035a474088583b932d17ccd1b247e99e",
+      "lines": 69
+    },
+    {
+      "path": "src/boss_agent_cli/auth/manager.py",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/auth/manager.py",
+      "sha256_utf8_lf": "a535eac2d2f30db54f68272e84c04b2482e003a67aa1b668982954228a3712c7",
+      "lines": 346
+    },
+    {
+      "path": "src/boss_agent_cli/crawler/transport.py",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/4716ee1d211533db70ac7cc1ab2322eb269b43a0/src/boss_agent_cli/crawler/transport.py",
+      "sha256_utf8_lf": "4fcffc922ad1018b2bc7005783ff6c75251b7ff155fdc34fc172a8c352e50488",
+      "lines": 543
+    }
+  ],
+  "previous_snapshot": "7f46ba37c654d5f7675bb1328158030d7604847c",
+  "welfare_symbols_ast_unchanged": true,
+  "historical_test_evidence": "../008-boss-agent-cli/references/core-tests.json",
+  "note": "59 upstream tests belong to the 2026-10-16 snapshot. This check confirms only the four selected welfare symbols are unchanged; no live platform testing."
+}

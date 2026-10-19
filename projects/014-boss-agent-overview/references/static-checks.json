@@ -1,0 +1,175 @@
+{
+  "date": "2026-10-20",
+  "documentation_links": [
+    {
+      "from": "architecture.md",
+      "target": "references/sources.json"
+    },
+    {
+      "from": "architecture.md",
+      "target": "assets/boss-agent-panorama.png"
+    },
+    {
+      "from": "architecture.md",
+      "target": "assets/boss-agent-panorama.svg"
+    },
+    {
+      "from": "architecture.md",
+      "target": "verification.json"
+    },
+    {
+      "from": "architecture.md",
+      "target": "README.md"
+    },
+    {
+      "from": "README.md",
+      "target": "../008-boss-agent-cli/README.md"
+    },
+    {
+      "from": "README.md",
+      "target": "assets/boss-agent-panorama.png"
+    },
+    {
+      "from": "README.md",
+      "target": "assets/boss-agent-panorama.png"
+    },
+    {
+      "from": "README.md",
+      "target": "assets/boss-agent-panorama.png"
+    },
+    {
+      "from": "README.md",
+      "target": "assets/boss-agent-panorama.svg"
+    },
+    {
+      "from": "README.md",
+      "target": "verification.json"
+    },
+    {
+      "from": "README.md",
+      "target": "web/assets/standalone.html"
+    },
+    {
+      "from": "README.md",
+      "target": "architecture.md"
+    },
+    {
+      "from": "README.md",
+      "target": "extensions.md"
+    },
+    {
+      "from": "README.md",
+      "target": "references/sources.json"
+    },
+    {
+      "from": "README.md",
+      "target": "references/model-checks.json"
+    },
+    {
+      "from": "README.md",
+      "target": "verification.json"
+    },
+    {
+      "from": "README.md",
+      "target": "../008-boss-agent-cli/references/core-tests.json"
+    },
+    {
+      "from": "README.md",
+      "target": "scripts/draw_panorama.py"
+    },
+    {
+      "from": "README.md",
+      "target": "references/panorama-render.json"
+    },
+    {
+      "from": "README.md",
+      "target": "THIRD_PARTY.md"
+    },
+    {
+      "from": "README.md",
+      "target": "notes.md"
+    },
+    {
+      "from": "THIRD_PARTY.md",
+      "target": "web/assets/boss-agent-cli-MIT.txt"
+    }
+  ],
+  "http": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 25774
+    },
+    {
+      "path": "../008-boss-agent-cli/#lab",
+      "status": 200,
+      "bytes": 13308
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 18478
+    },
+    {
+      "path": "architecture.md",
+      "status": 200,
+      "bytes": 8777
+    },
+    {
+      "path": "assets/boss-agent-cli-MIT.txt",
+      "status": 200,
+      "bytes": 1092
+    },
+    {
+      "path": "assets/boss-agent-panorama.png",
+      "status": 200,
+      "bytes": 3830991
+    },
+    {
+      "path": "assets/boss-agent-panorama.svg",
+      "status": 200,
+      "bytes": 42786
+    },
+    {
+      "path": "assets/career-samples.json",
+      "status": 200,
+      "bytes": 2306
+    },
+    {
+      "path": "assets/model.mjs",
+      "status": 200,
+      "bytes": 1960
+    },
+    {
+      "path": "assets/sources.json",
+      "status": 200,
+      "bytes": 5006
+    },
+    {
+      "path": "assets/welfare-evidence.json",
+      "status": 200,
+      "bytes": 11375
+    },
+    {
+      "path": "extensions.md",
+      "status": 200,
+      "bytes": 2471
+    },
+    {
+      "path": "styles.css",
+      "status": 200,
+      "bytes": 25959
+    }
+  ],
+  "standalone_structure": {
+    "external_runtime_assets": 0,
+    "embedded_jobs": 8,
+    "embedded_career_samples": 9,
+    "file_protocol_browser_tested": false
+  },
+  "summary": {
+    "documentation_links": 23,
+    "http_resources": 13,
+    "failed": 0
+  }
+}

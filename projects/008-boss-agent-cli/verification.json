@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-16",
+  "commit": "7f46ba37c654d5f7675bb1328158030d7604847c",
+  "story": "打开静态研究页，读取本地 Python 证据，切换条件观察筛选结果，并回放风控停止与本地锁。",
+  "live_platform_requests": 0,
+  "llm_requests": 0,
+  "published": false,
+  "local_url": "http://127.0.0.1:8768/projects/008-boss-agent-cli/",
+  "flow_boundaries": [
+    {
+      "boundary": "static-ui-render",
+      "passed": true,
+      "evidence": "assets/demo-desktop.jpg"
+    },
+    {
+      "boundary": "local-json-to-render",
+      "passed": true,
+      "evidence": "实际显示 59 项测试；默认杭州+双休+五险一金，规则命中 5/8，语义误命中 2，漏判 1。"
+    },
+    {
+      "boundary": "python-to-javascript-parity",
+      "passed": true,
+      "evidence": "references/browser-model-checks.json：28/28；含 10 探针、12 条件组合及 6 项模拟流程检查。"
+    },
+    {
+      "boundary": "browser-interactions",
+      "passed": true,
+      "evidence": "下列实际浏览器操作及可见输出"
+    },
+    {
+      "boundary": "server-and-assets",
+      "passed": true,
+      "evidence": "references/static-checks.json；静态服务，无业务 API 或环境密钥。"
+    }
+  ],
+  "browser_checks": [
+    {
+      "name": "recruiter-role",
+      "passed": true,
+      "observed": "发现候选人、简历与沟通管理、管理招聘职位"
+    },
+    {
+      "name": "agent-role",
+      "passed": true,
+      "observed": "schema、多种调用方式、可恢复工作流"
+    },
+    {
+      "name": "principle-step",
+      "passed": true,
+      "observed": "步骤 03 显示标签→描述→AND→本地状态及否定边界"
+    },
+    {
+      "name": "city-filter",
+      "passed": true,
+      "observed": "切上海显示规则命中 1/8"
+    },
+    {
+      "name": "welfare-checkbox",
+      "passed": true,
+      "observed": "取消五险一金后副标题变为上海·双休"
+    },
+    {
+      "name": "reset-and-all",
+      "passed": true,
+      "observed": "重置为杭州双条件；显示全部时 8 张岗位卡"
+    },
+    {
+      "name": "synonym-probe",
+      "passed": true,
+      "observed": "周末休两天→未命中；人工标注满足，显示不一致"
+    },
+    {
+      "name": "free-text-probe",
+      "passed": true,
+      "observed": "自由文本周末双休，五险一金→命中；人工语义未标注"
+    },
+    {
+      "name": "environment-risk",
+      "passed": true,
+      "observed": "37→锁定，模拟发出 1 次"
+    },
+    {
+      "name": "repeat-request-blocked",
+      "passed": true,
+      "observed": "第二次回放本地阻止，模拟发出仍为 1 次"
+    },
+    {
+      "name": "explicit-simulated-recovery",
+      "passed": true,
+      "observed": "模拟页面恢复后正常回放，模拟请求总数变为 2"
+    },
+    {
+      "name": "keyboard-tabs",
+      "passed": true,
+      "observed": "求职者 tab 按 ArrowRight，招聘者 aria-selected=true"
+    }
+  ],
+  "responsive": [
+    {
+      "viewport_width": 1280,
+      "document_width": 1265,
+      "horizontal_overflow": false,
+      "screenshot": "assets/demo-desktop.jpg"
+    },
+    {
+      "viewport_width": 390,
+      "document_width": 375,
+      "horizontal_overflow": false,
+      "screenshot": "assets/demo-mobile-lab.jpg",
+      "interaction": "手机城市筛选为上海，命中 1/8"
+    },
+    {
+      "viewport_width": 320,
+      "document_width": 305,
+      "horizontal_overflow": false,
+      "screenshot": "assets/demo-narrow.jpg"
+    }
+  ],
+  "page_console_errors": [],
+  "limitations": [
+    "未验证真实平台登录、搜索、触达、附件送达或大模型效果。",
+    "4 个语义反例为刻意构造，不能据此估算真实岗位准确率。",
+    "风控回放由本研究编写，未连接真实平台；本地锁检查不能证明服务端风险解除。",
+    "上游测试只执行四组 59 项，不代表全部测试通过。"
+  ],
+  "static_checks": {
+    "local_links": 17,
+    "http_checks": 12,
+    "failed": 0
+  },
+  "catalog_check": "passed",
+  "build": "passed; existing static builder; no new root dependencies"
+}

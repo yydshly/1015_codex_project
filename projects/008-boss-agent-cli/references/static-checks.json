@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-16",
+  "base": "http://127.0.0.1:8768/projects/008-boss-agent-cli/",
+  "documentation_links": [
+    {
+      "from": "README.md",
+      "target": "assets/cover.svg",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "licenses/boss-agent-cli-MIT.txt",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "assets/demo-desktop.jpg",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "assets/demo-mobile-lab.jpg",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "assets/demo-narrow.jpg",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "capabilities.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "architecture.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "verification.json",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "references/replay.json",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "references/core-tests.txt",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "references/core-tests.json",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "references/source-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "notes.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "web/README.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "THIRD_PARTY.md",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY.md",
+      "target": "web/assets/boss-agent-cli-MIT.txt",
+      "exists": true
+    },
+    {
+      "from": "THIRD_PARTY.md",
+      "target": "references/source-manifest.json",
+      "exists": true
+    }
+  ],
+  "http": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 13308
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "status": 200,
+      "bytes": 1268
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 12224
+    },
+    {
+      "path": "architecture.md",
+      "status": 200,
+      "bytes": 4380
+    },
+    {
+      "path": "assets/boss-agent-cli-MIT.txt",
+      "status": 200,
+      "bytes": 1071
+    },
+    {
+      "path": "assets/core-tests.json",
+      "status": 200,
+      "bytes": 501
+    },
+    {
+      "path": "assets/evidence.json",
+      "status": 200,
+      "bytes": 11375
+    },
+    {
+      "path": "assets/lab.mjs",
+      "status": 200,
+      "bytes": 3221
+    },
+    {
+      "path": "capabilities.md",
+      "status": 200,
+      "bytes": 3410
+    },
+    {
+      "path": "references/core-tests.txt",
+      "status": 200,
+      "bytes": 101
+    },
+    {
+      "path": "references/replay.json",
+      "status": 200,
+      "bytes": 11375
+    },
+    {
+      "path": "styles.css",
+      "status": 200,
+      "bytes": 18963
+    }
+  ],
+  "summary": {
+    "local_links": 17,
+    "http_checks": 12,
+    "failed": 0
+  }
+}

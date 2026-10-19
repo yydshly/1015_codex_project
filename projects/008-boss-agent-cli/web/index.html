@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BOSS Agent CLI 能力、登录会话与风控分析。用合成岗位和上游原始函数，亲手验证筛选逻辑与边界。">
+  <title>BOSS Agent CLI · 招聘工作流研究 / 008</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+<header class="topbar"><div class="shell bar-inner">
+  <a class="brand" href="#"><span class="brand-icon" aria-hidden="true">b.</span><span>BOSS Agent <small>研究实验室 / 008</small></span></a>
+  <nav aria-label="章节导航"><a href="#capabilities">能力</a><a href="#principle">原理</a><a href="#lab">动手实验</a><a href="#risk">风控</a><a href="#evidence">证据</a></nav>
+  <a class="source-link" href="https://github.com/can4hou6joeng4/boss-agent-cli" target="_blank" rel="noreferrer">上游 GitHub ↗</a>
+</div></header>
+<main id="main" class="shell">
+  <div id="load-error" class="error-banner" role="alert" hidden></div>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy"><div class="eyebrow"><span class="dot"></span> OPEN SOURCE FIELD NOTES <span class="version">v3.0.0 / 7f46ba3</span></div>
+      <h1 id="hero-title">把招聘流程，<br>变成 <em>Agent 的工具。</em></h1>
+      <p class="hero-desc">从已登录会话到职位筛选，从本地管理到可选 AI。<br class="desktop-break">拆开 BOSS Agent CLI，看清它的能力，也验证它的边界。</p>
+      <div class="hero-actions"><a class="button primary" href="#lab">打开离线实验 <span>↗</span></a><a class="text-link" href="#principle">先看实现原理 <span>↓</span></a></div>
+      <div class="hero-note">本研究使用合成岗位 · 不连接 BOSS · 不调用大模型</div>
+    </div>
+    <div class="terminal" aria-label="工具工作流示意，非真实终端运行">
+      <div class="terminal-bar"><span><i></i><i></i><i></i></span><span>workflow / illustration</span><span>⌘</span></div>
+      <div class="terminal-body"><div class="terminal-comment"># 求职目标 → 可调用的工作流</div><p class="prompt"><span>$</span> boss search "Python"<br><span class="indent">--city 杭州 --welfare "双休,五险一金"</span></p>
+        <div class="terminal-flow"><div><span class="node-icon">01</span><span>登录会话<small>Cookie · 页面 Token</small></span><b>✓</b></div><div><span class="node-icon">02</span><span>平台访问<small>httpx / 浏览器环境</small></span><b>↔</b></div><div><span class="node-icon">03</span><span>本地筛选<small>词表 · AND · 候选池</small></span><b>✓</b></div></div>
+        <div class="terminal-output"><span class="json-key">"ok"</span>: <span class="json-value">true</span>, <span class="json-key">"data"</span>: [ … ]<br><span class="json-key">"hints"</span>: { <span class="json-muted">下一步动作</span> }</div>
+        <div class="terminal-foot"><span class="dot"></span> 结构化示意 · 不是平台实测输出</div>
+      </div>
+    </div>
+  </section>
+  <div class="facts"><div><strong id="test-count">—</strong><span>项上游离线测试<small>过滤、评分、管线与评测器</small></span></div><div><strong>02</strong><span>种访问通道<small>HTTP 客户端 + 浏览器</small></span></div><div><strong>00</strong><span>次真实平台请求<small>本页全部实验在本地运行</small></span></div></div>
+
+  <section id="capabilities" class="section">
+    <div class="section-heading"><div><span class="eyebrow">01 / CAPABILITIES</span><h2>同一套工具，三种使用方式。</h2></div><p>求职者、招聘者与外部 Agent，<br>复用底层能力，各自推进业务。</p></div>
+    <div class="tablist" id="role-tabs" role="tablist" aria-label="能力角色"><button id="role-candidate" role="tab" aria-selected="true" aria-controls="role-panel" data-role="candidate">求职者</button><button id="role-recruiter" role="tab" aria-selected="false" aria-controls="role-panel" tabindex="-1" data-role="recruiter">招聘者</button><button id="role-agent" role="tab" aria-selected="false" aria-controls="role-panel" tabindex="-1" data-role="agent">Agent 接入</button></div>
+    <div id="role-panel" role="tabpanel" aria-labelledby="role-candidate" class="role-panel"></div>
+    <p class="section-note">能力说明基于固定源码；本轮只验证选定的离线逻辑。当前实际接入平台为 BOSS 直聘。</p>
+  </section>
+
+  <section id="principle" class="section">
+    <div class="section-heading"><div><span class="eyebrow">02 / UNDER THE HOOD</span><h2>Cookie 是起点，业务处理在后面。</h2></div><p>点击每一步，查看数据经过哪里，<br>以及这一层能解决什么。</p></div>
+    <div id="step-tabs" class="steps" role="tablist" aria-label="实现原理步骤">
+      <button role="tab" id="step-0" aria-selected="true" aria-controls="step-panel" data-step="0"><span>01</span>登录会话<small>用户主动登录</small></button>
+      <button role="tab" id="step-1" aria-selected="false" aria-controls="step-panel" tabindex="-1" data-step="1"><span>02</span>平台访问<small>两种请求通道</small></button>
+      <button role="tab" id="step-2" aria-selected="false" aria-controls="step-panel" tabindex="-1" data-step="2"><span>03</span>本地业务<small>规则与状态</small></button>
+      <button role="tab" id="step-3" aria-selected="false" aria-controls="step-panel" tabindex="-1" data-step="3"><span>04</span>可选 AI<small>模型分析</small></button>
+      <button role="tab" id="step-4" aria-selected="false" aria-controls="step-panel" tabindex="-1" data-step="4"><span>05</span>工具输出<small>供下一步调用</small></button>
+    </div>
+    <div id="step-panel" class="step-detail" role="tabpanel" aria-labelledby="step-0"></div>
+  </section>
+
+  <section id="lab" class="section">
+    <div class="section-heading"><div><span class="eyebrow">03 / OFFLINE LAB</span><h2>亲手筛一次，看看规则会留下谁。</h2></div><span class="pill">8 个合成岗位 · 无网络搜索</span></div>
+    <div class="lab-layout"><form id="filters" class="filter-panel"><span class="small-label">搜索条件</span><h3>Python 开发岗位</h3><p>只演示城市与福利筛选，<br>不复刻平台排序。</p>
+      <label for="city">城市</label><select id="city" name="city"><option value="杭州">杭州</option><option value="上海">上海</option><option value="">不限城市</option></select>
+      <fieldset><legend>福利条件 <small>多项须同时满足</small></legend><label class="check"><input type="checkbox" name="welfare" value="双休" checked><span>双休</span></label><label class="check"><input type="checkbox" name="welfare" value="五险一金" checked><span>五险一金</span></label></fieldset>
+      <div class="filter-explainer"><span>匹配顺序</span><ol><li>先检查福利标签</li><li>再查职位描述</li><li>每项条件都要命中</li></ol></div><button type="button" id="reset-filters" class="button secondary full">重置条件</button>
+    </form><div class="results-panel"><div class="results-heading"><div><strong id="result-count">正在载入</strong><span id="result-subtitle"></span></div><label class="inline-check"><input id="show-all" type="checkbox">显示全部岗位</label></div><div id="result-summary" class="result-summary" aria-live="polite"></div><div id="jobs" class="jobs"></div></div></div>
+    <div class="probe-layout"><div><span class="eyebrow">SEMANTIC PROBE / 语义探针</span><h3>出现“双休”，就代表有双休吗？</h3><p>原始规则检查文字是否出现，不理解否定。选择预设或修改描述，对照算法结果与人工语义。</p><div id="probe-presets" class="probe-presets"><button data-probe="normal">正常表述</button><button data-probe="negation" class="active" aria-pressed="true">否定语句</button><button data-probe="synonym">词表之外</button></div><label for="probe-text" class="sr-only">待分析的岗位描述</label><textarea id="probe-text" rows="3" maxlength="500">不提供双休，实行单休；五险一金。</textarea><p class="fine-print">固定条件：双休 + 五险一金。自由文本没有自动生成的人工标注。</p></div><div id="probe-output" class="probe-output" aria-live="polite"></div></div>
+    <details class="raw"><summary>查看研究演示 JSON <span>非上游真实响应</span></summary><pre id="result-json"></pre></details>
+  </section>
+
+  <section id="risk" class="section risk-section">
+    <div class="section-heading"><div><span class="eyebrow">04 / RISK BOUNDARIES</span><h2>能登录，不等于每个请求都能通过。</h2></div><span class="pill warm">风控流程示意 · 不访问平台</span></div>
+    <div class="risk-layout"><div class="risk-controls"><h3>回放一次响应</h3><p>项目识别错误后停止当前流程。环境风险还可能触发本地锁，避免重复请求。</p><label for="risk-response">模拟响应类型</label><select id="risk-response"><option value="success">正常响应</option><option value="auth">登录失效</option><option value="account">账号风险 · 36</option><option value="environment">环境风险 · 37</option><option value="limited">限流 · 9</option><option value="budget">本地预算耗尽</option></select><button id="replay-risk" class="button primary full">回放一次 <span>→</span></button><div class="risk-actions"><button id="restore-risk" class="text-link">模拟页面恢复</button><button id="reset-risk" class="text-link">重置演示</button></div><p class="fine-print">“页面恢复”只改变演示本地锁；实际还需要平台重新校验。错误码是项目适配器的分类，非平台全部规则。</p></div><div class="risk-console"><div class="risk-console-top"><span id="risk-state" class="status">等待回放</span><span>模拟发出 <b id="request-count">0</b> 次</span></div><ol id="risk-trace" class="risk-trace"><li>选择响应，查看请求、判断与停止的顺序。</li></ol><div id="risk-outcome" class="risk-outcome" aria-live="polite">试试环境风险 37，再连续回放两次。</div></div></div>
+    <div class="boundary-grid"><article><span>01</span><h3>有效凭据 ≠ 服务端放行</h3><p>Cookie、Token 和浏览器环境建立访问条件，账号权限与平台风控仍然生效。</p></article><article><span>02</span><h3>控制请求，不承诺隐身</h3><p>缓存、节流、数量预算和断点停止约束访问规模，无法给出绝对安全的频率。</p></article><article><span>03</span><h3>业务动作要看实际语义</h3><p>当前 apply 复用立即沟通端点，不能据此确认附件简历已送达或招聘者已读。</p></article></div>
+  </section>
+
+  <section id="evidence" class="section">
+    <div class="section-heading"><div><span class="eyebrow">05 / EVIDENCE & TAKEAWAYS</span><h2>把结论，落到可以复查的证据上。</h2></div><a class="text-link" href="assets/evidence.json" download>下载离线实验 JSON ↓</a></div>
+    <div class="evidence-grid"><article><span class="evidence-tag">本轮实际运行</span><h3>59 项离线测试</h3><p>覆盖过滤、评分、搜索管线与 fixture 评测器；另有 10 个语义探针和 4 项本地锁检查。</p><a href="assets/core-tests.json" target="_blank">查看范围与结果 ↗</a></article><article><span class="evidence-tag">源码可核查</span><h3>固定 commit，原始函数</h3><p>7f46ba3 / v3.0.0。摘录保留版权、MIT 许可、行号和哈希，JS 移植与 Python 结果交叉验证。</p><a href="https://github.com/can4hou6joeng4/boss-agent-cli/blob/7f46ba37c654d5f7675bb1328158030d7604847c/src/boss_agent_cli/search_filters.py#L534" target="_blank" rel="noreferrer">查看筛选源码 ↗</a></article><article><span class="evidence-tag muted-tag">本轮未验证</span><h3>在线稳定性与求职转化</h3><p>没有登录真实账号，没有发送消息，也没有运行大模型。模拟评测不能证明面试或录用率提升。</p><a href="https://github.com/can4hou6joeng4/boss-agent-cli/blob/7f46ba37c654d5f7675bb1328158030d7604847c/evals/README.md" target="_blank" rel="noreferrer">查看上游评测边界 ↗</a></article></div>
+    <div class="takeaway"><div><span class="small-label">值得借鉴</span><h3>工具合同 + 业务状态 + 可恢复流程</h3><p>让 Agent 可靠地接上业务，比一条“帮我找工作”的提示词更具体。</p></div><div><span class="small-label">可继续研究 · 尚未实现</span><p>否定与时效识别、匹配证据片段、“未知”状态、人工复核队列，以及详情查询的成本预算。</p></div></div>
+  </section>
+</main>
+<footer><div class="shell footer-inner"><span>BOSS AGENT CLI / RESEARCH 008 <small>2026.10.16 · 本地研究演示</small></span><div><a href="assets/boss-agent-cli-MIT.txt">上游代码 MIT 许可</a><a href="https://github.com/can4hou6joeng4/boss-agent-cli/tree/7f46ba37c654d5f7675bb1328158030d7604847c" target="_blank" rel="noreferrer">固定源码快照 ↗</a></div></div></footer>
+</body>
+</html>

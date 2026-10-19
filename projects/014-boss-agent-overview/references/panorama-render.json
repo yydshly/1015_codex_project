@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-20",
+  "snapshot": "4716ee1d211533db70ac7cc1ab2322eb269b43a0",
+  "version": "3.0.0",
+  "svg_dimensions": [
+    1800,
+    5505
+  ],
+  "png_dimensions": [
+    3600,
+    11010
+  ],
+  "text_lines": 236,
+  "text_safe_area_failures": 0,
+  "sections": [
+    {
+      "number": "01",
+      "title": "能力版图：求职者、招聘者与 Agent 三个入口",
+      "y": 512
+    },
+    {
+      "number": "02",
+      "title": "技术原理：API 是数据入口，浏览器是请求环境",
+      "y": 1193.0800000000002
+    },
+    {
+      "number": "03",
+      "title": "呈现效果：我们实际演示了什么",
+      "y": 2338.1600000000008
+    },
+    {
+      "number": "04",
+      "title": "可实现场景：复用哪些基础，还要补齐什么",
+      "y": 2853.320000000001
+    },
+    {
+      "number": "05",
+      "title": "风险与控制：能调用、能登录，不等于稳定可用",
+      "y": 3571.260000000001
+    },
+    {
+      "number": "06",
+      "title": "意义与实施顺序：从操作能力，形成有证据的探索",
+      "y": 4505.220000000001
+    },
+    {
+      "number": "07",
+      "title": "证据边界与来源：把事实、演示和设想分开",
+      "y": 4988.540000000001
+    }
+  ],
+  "files": [
+    "assets/boss-agent-panorama.svg",
+    "assets/boss-agent-panorama.png"
+  ],
+  "evidence": "Source inspection, local research experiments and explicitly labelled extensions; no live BOSS or model requests."
+}

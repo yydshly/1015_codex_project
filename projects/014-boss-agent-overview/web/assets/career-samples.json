@@ -1,0 +1,14 @@
+{
+  "provenance": "本研究手工编写的 9 个合成岗位，技能字段人工结构化；不来自 BOSS，不代表市场分布，不是大模型提取结果。",
+  "samples": [
+    {"id":"B01","direction":"backend","title":"后端开发·样例 A","skills":["Python","SQL","API","测试"],"tasks":["接口开发","数据建模"],"description":"用 Python 开发业务接口，设计 SQL 数据表并编写测试。"},
+    {"id":"B02","direction":"backend","title":"后端开发·样例 B","skills":["Java","SQL","API","Linux"],"tasks":["接口开发","服务运维"],"description":"维护 Java 服务与 SQL 查询，负责 API 和 Linux 环境问题排查。"},
+    {"id":"B03","direction":"backend","title":"后端开发·样例 C","skills":["Python","SQL","Linux","测试"],"tasks":["服务运维","质量保障"],"description":"维护 Python 服务，使用 SQL 分析问题，补充 Linux 部署和测试。"},
+    {"id":"D01","direction":"data","title":"数据工程·样例 A","skills":["Python","SQL","ETL","数据建模"],"tasks":["数据管线","数据建模"],"description":"使用 Python 与 SQL 开发 ETL，整理业务模型。"},
+    {"id":"D02","direction":"data","title":"数据工程·样例 B","skills":["SQL","Spark","ETL","数据建模"],"tasks":["数据管线","数据建模"],"description":"以 SQL 和 Spark 开发 ETL 任务，维护数仓模型。"},
+    {"id":"D03","direction":"data","title":"数据工程·样例 C","skills":["Python","SQL","Airflow","ETL"],"tasks":["数据管线","任务调度"],"description":"使用 Python、SQL 及 Airflow 开发和调度 ETL。"},
+    {"id":"A01","direction":"ai","title":"AI 应用·样例 A","skills":["Python","API","RAG","评测"],"tasks":["检索应用","质量评测"],"description":"用 Python 与 API 组装 RAG 应用，并建立质量评测。"},
+    {"id":"A02","direction":"ai","title":"AI 应用·样例 B","skills":["Python","SQL","RAG","向量检索"],"tasks":["检索应用","数据准备"],"description":"用 Python 与 SQL 准备资料，实现向量检索和 RAG。"},
+    {"id":"A03","direction":"ai","title":"AI 应用·样例 C","skills":["API","RAG","评测","工具调用"],"tasks":["检索应用","工具集成"],"description":"集成模型 API、RAG 与工具调用，通过评测检查输出。"}
+  ]
+}

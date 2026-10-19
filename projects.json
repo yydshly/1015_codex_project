@@ -107,6 +107,21 @@
       "demo_url": ""
     },
     {
+      "id": 8,
+      "slug": "boss-agent-cli",
+      "name": "BOSS Agent CLI 招聘工作流与风控边界研究",
+      "repository": "https://github.com/can4hou6joeng4/boss-agent-cli",
+      "summary": "复用登录会话与浏览器环境，将 BOSS 职位发现、福利筛选和沟通封装成 Agent 工具；用离线实验展示匹配规则、语义误判与风控停止机制。",
+      "status": "completed",
+      "tags": [
+        "招聘自动化",
+        "MCP",
+        "风控分析"
+      ],
+      "cover": "assets/cover.svg",
+      "demo_url": ""
+    },
+    {
       "id": 9,
       "slug": "tracy-performance",
       "name": "Tracy 运行时性能定位与 AI 优化研究",
@@ -179,6 +194,21 @@
         "价值边界"
       ],
       "cover": "assets/romm-understanding-20261020.png",
+      "demo_url": ""
+    },
+    {
+      "id": 14,
+      "slug": "boss-agent-overview",
+      "name": "BOSS Agent CLI 能力总览与职业探索研究",
+      "repository": "https://github.com/can4hou6joeng4/boss-agent-cli",
+      "summary": "将 BOSS 求职与招聘的搜索、筛选、简历和沟通封装为 CLI/MCP 工具；复用网页登录态，经 HTTP、浏览器 fetch 与网络监听访问内部接口，再做本地处理和可选 AI 分析。可扩展职业画像、方向比较与个人差距探索，但受平台风控、接口变化、数据权限与样本偏差约束；附合成演示和证据边界。",
+      "status": "completed",
+      "tags": [
+        "招聘工具原理",
+        "职业探索",
+        "Agent工具"
+      ],
+      "cover": "assets/boss-agent-panorama.png",
       "demo_url": ""
     }
   ]

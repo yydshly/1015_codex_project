@@ -1,0 +1,241 @@
+{
+  "date": "2026-10-20",
+  "base_url": "http://127.0.0.1:8773/",
+  "project_url": "http://127.0.0.1:8773/projects/014-boss-agent-overview/",
+  "checks": [
+    {
+      "path": "",
+      "status": 200,
+      "bytes": 9085,
+      "sha256": "8c55effdf8757b65b6d89c2d452ad4420321c477ce0eec5d554cc05a2c22c557",
+      "source_match": false
+    },
+    {
+      "path": "assets/014-boss-agent-overview/boss-agent-panorama.png",
+      "status": 200,
+      "bytes": 3830991,
+      "sha256": "36858526571aa8f3dc075fe3d1aba55c35ec7d35dcc31fafd539fb97959c062f",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/",
+      "status": 200,
+      "bytes": 25774,
+      "sha256": "f65d5caec245387cee3ef64022e8a68395c6b3592303ca58d88801cb545ee03f",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/styles.css",
+      "status": 200,
+      "bytes": 25959,
+      "sha256": "3df133ff680493fd668d844e27348596c82a266138b6bc4cb6f7691ceeeb81b2",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/app.js",
+      "status": 200,
+      "bytes": 18478,
+      "sha256": "e79de27492cffd8800f3a60e3ef98e9ea087f260e1096bdd96bc6d0c593d7de9",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/model.mjs",
+      "status": 200,
+      "bytes": 1960,
+      "sha256": "e6d58641c401e2e8b6e7e9ee4eee7ad5b023a8cd36993cd3c70446cb9732ca95",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/boss-agent-panorama.png",
+      "status": 200,
+      "bytes": 3830991,
+      "sha256": "36858526571aa8f3dc075fe3d1aba55c35ec7d35dcc31fafd539fb97959c062f",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/boss-agent-panorama.svg",
+      "status": 200,
+      "bytes": 42786,
+      "sha256": "ad7d76b3beb1d944e2a21c32af9e141da18cc1f04e2c0b24dcc7b9bb75f51cb4",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/welfare-evidence.json",
+      "status": 200,
+      "bytes": 11375,
+      "sha256": "a4512a3fc7c46f5f4d2aa4bbafdd898dc42a2b5a795cad16f40904722717a779",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/career-samples.json",
+      "status": 200,
+      "bytes": 2306,
+      "sha256": "152f87fdcab2fbfc53b0535e355d0a9f01c847472062ae64163a366a2cfb14cb",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/sources.json",
+      "status": 200,
+      "bytes": 5006,
+      "sha256": "cdde7d66886df5a855b52bec8268e60b41730e16e335bc94c8c232c8154e0637",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/boss-agent-cli-MIT.txt",
+      "status": 200,
+      "bytes": 1092,
+      "sha256": "8a05d049a0fa45eae47de6591abe52448c2e1d7e02a54a1e7aabb8966cd672d4",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/standalone.html",
+      "status": 200,
+      "bytes": 5247510,
+      "sha256": "2d3ee71d16fca9469582c9fec361b32a578fc533585fd43bbfd2f0f933ac16c6",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/architecture.md",
+      "status": 200,
+      "bytes": 8777,
+      "sha256": "e90c19254da1dad473abd0e49f8489acbc0aa14aa2017357db8a69873a21e501",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/extensions.md",
+      "status": 200,
+      "bytes": 2471,
+      "sha256": "4ea1ece9128758663d9dcd4f2775abb644ec8876cfe137b7f03127c0a524ac74",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/THIRD_PARTY.md",
+      "status": 200,
+      "bytes": 1364,
+      "sha256": "038dfabb575b6ccd454116772d5c7f1fd9c5c91555a533f83f6122a181d8f2c0",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/notes.md",
+      "status": 200,
+      "bytes": 3363,
+      "sha256": "3a8367045194fd3bdccda578ed292cc6992cb9df2f0f2a0505d81b6564ff69d2",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/references/sources.json",
+      "status": 200,
+      "bytes": 5006,
+      "sha256": "cdde7d66886df5a855b52bec8268e60b41730e16e335bc94c8c232c8154e0637",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/references/model-checks.json",
+      "status": 200,
+      "bytes": 1166,
+      "sha256": "96631ae0cc0ee3ecf8029d97625b761abc87598f8b0803cdc5b9f66d2857b4fd",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/references/panorama-render.json",
+      "status": 200,
+      "bytes": 1527,
+      "sha256": "b5c79c2f628ba9c5107a16646c613e30d208571a89894281ce620caea83ea58b",
+      "source_match": false
+    },
+    {
+      "path": "projects/008-boss-agent-cli/",
+      "status": 200,
+      "bytes": 13308,
+      "sha256": "f0975ca46529103e6a48de7da58f49c0f0aeeb0acc8585dca924de6477d67a42",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/app.js",
+      "status": 200,
+      "bytes": 12224,
+      "sha256": "0c69beba6ad71741bbcde79bf04a6120aa2240fe4d7691eb57c7cd90c1a6b3fc",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/styles.css",
+      "status": 200,
+      "bytes": 18963,
+      "sha256": "7e20825642b08cab8e1638fa90e6f5b3625d9adc250087b5a3a7561c88e3f333",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/assets/lab.mjs",
+      "status": 200,
+      "bytes": 3221,
+      "sha256": "c485c1ef4c7340e0ec08c1a09697b77838ea9524c61e5b5579fc156fa773d771",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/assets/evidence.json",
+      "status": 200,
+      "bytes": 11375,
+      "sha256": "a4512a3fc7c46f5f4d2aa4bbafdd898dc42a2b5a795cad16f40904722717a779",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/assets/core-tests.json",
+      "status": 200,
+      "bytes": 501,
+      "sha256": "e166ab4db3e1d1af2ab90cf30fd719196d327ef262d89e17a07b09270c4e9cc2",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/assets/boss-agent-cli-MIT.txt",
+      "status": 200,
+      "bytes": 1071,
+      "sha256": "92b87144eee89e4d52a8eac41e6da43d48d8758ec9aedcd3ba0b6b0a0070b1b3",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/capabilities.md",
+      "status": 200,
+      "bytes": 3410,
+      "sha256": "e75022bf7b29c2b1b3985859d73c9449f7a96690838d7bd3c396ad8b5039406f",
+      "source_match": false
+    },
+    {
+      "path": "projects/008-boss-agent-cli/architecture.md",
+      "status": 200,
+      "bytes": 4380,
+      "sha256": "3c03e5ea42e4f63169f16783659913709ef6ddbf15733c27497d940c142c17c7",
+      "source_match": false
+    },
+    {
+      "path": "projects/008-boss-agent-cli/THIRD_PARTY.md",
+      "status": 200,
+      "bytes": 1268,
+      "sha256": "f7a70fed00fdfb82c5aaafa0ed146e20ce2a79645ddb5dd791ed60c07970237c",
+      "source_match": false
+    },
+    {
+      "path": "projects/008-boss-agent-cli/references/replay.json",
+      "status": 200,
+      "bytes": 11375,
+      "sha256": "a4512a3fc7c46f5f4d2aa4bbafdd898dc42a2b5a795cad16f40904722717a779",
+      "source_match": false
+    },
+    {
+      "path": "projects/008-boss-agent-cli/references/core-tests.json",
+      "status": 200,
+      "bytes": 501,
+      "sha256": "e166ab4db3e1d1af2ab90cf30fd719196d327ef262d89e17a07b09270c4e9cc2",
+      "source_match": false
+    }
+  ],
+  "guide_sha256": "36858526571aa8f3dc075fe3d1aba55c35ec7d35dcc31fafd539fb97959c062f",
+  "guide_is_original": true,
+  "navigation_uses_original": true,
+  "hero_and_dialog_use_original": true,
+  "live_boss_requests": 0,
+  "llm_requests": 0,
+  "summary": {
+    "http_checks": 32,
+    "failed": 0
+  }
+}

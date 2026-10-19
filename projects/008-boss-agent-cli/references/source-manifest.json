@@ -1,0 +1,61 @@
+{
+  "repository": "https://github.com/can4hou6joeng4/boss-agent-cli",
+  "commit": "7f46ba37c654d5f7675bb1328158030d7604847c",
+  "version": "3.0.0",
+  "research_date": "2026-10-15",
+  "extraction": [
+    {
+      "path": "src/boss_agent_cli/search_filters.py",
+      "sha256_utf8_lf": "24c06fecfae3165c529d12b87b018f324b549ce09b2aff1b24252fc58707e616",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/7f46ba37c654d5f7675bb1328158030d7604847c/src/boss_agent_cli/search_filters.py",
+      "symbols": [
+        {
+          "symbol": "WELFARE_KEYWORDS",
+          "start": 40,
+          "end": 51
+        },
+        {
+          "symbol": "resolve_welfare_keywords",
+          "start": 534,
+          "end": 536
+        },
+        {
+          "symbol": "_check_welfare_in_text",
+          "start": 539,
+          "end": 540
+        },
+        {
+          "symbol": "match_all_welfare",
+          "start": 543,
+          "end": 559
+        }
+      ],
+      "local": "src/upstream_welfare.py",
+      "local_sha256": "1717f3c9d1d8994758c9295cbe3b1a6b19a21d1bd758bb0e91556b8f491d3233"
+    },
+    {
+      "path": "src/boss_agent_cli/api/cdp_risk_lock.py",
+      "sha256_utf8_lf": "2b1cf9ce8d17b1d7419c6f245df33607a699209cfc183d14f480e5681baf1391",
+      "url": "https://github.com/can4hou6joeng4/boss-agent-cli/blob/7f46ba37c654d5f7675bb1328158030d7604847c/src/boss_agent_cli/api/cdp_risk_lock.py",
+      "symbols": [
+        {
+          "symbol": "ABSENT_STOKEN",
+          "start": 28,
+          "end": 28
+        },
+        {
+          "symbol": "hash_stoken",
+          "start": 38,
+          "end": 42
+        },
+        {
+          "symbol": "RiskLock",
+          "start": 57,
+          "end": 70
+        }
+      ],
+      "local": "src/upstream_risk_lock.py",
+      "local_sha256": "79aebeec8375adad15ef90f0b9bf0a8df60e47005add9a03518e23b8090489f7"
+    }
+  ]
+}

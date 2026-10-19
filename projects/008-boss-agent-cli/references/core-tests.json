@@ -1,0 +1,16 @@
+{
+  "commit": "7f46ba37c654d5f7675bb1328158030d7604847c",
+  "python": "3.10.11",
+  "date": "2026-10-16",
+  "tests": [
+    "tests/test_search_filters.py",
+    "tests/test_search_pipeline.py",
+    "tests/test_match_score.py",
+    "tests/test_eval_harness.py"
+  ],
+  "exit_code": 0,
+  "passed": 59,
+  "mode": "offline-mocked-platform",
+  "live_platform_tested": false,
+  "scope": "过滤、评分、搜索管线和 fixture 评测器；未覆盖完整 CLI、浏览器和真实平台。"
+}

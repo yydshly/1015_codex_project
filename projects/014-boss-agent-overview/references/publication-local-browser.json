@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-20",
+  "url": "http://127.0.0.1:8773/projects/014-boss-agent-overview/",
+  "checks": [
+    {
+      "errorHidden": true,
+      "guide": 3600,
+      "name": "hero",
+      "scroll": 1425,
+      "summary": 4,
+      "width": 1425
+    },
+    {
+      "imageWidth": 3600,
+      "name": "guide-fit",
+      "open": true,
+      "scrolls": true
+    },
+    {
+      "documentScroll": 1440,
+      "innerScroll": 3600,
+      "name": "guide-natural",
+      "selected": "true",
+      "viewport": 1440
+    },
+    {
+      "name": "guide-escape-close",
+      "open": false
+    },
+    {
+      "dialogWidth": 304,
+      "documentScroll": 320,
+      "name": "mobile-guide-fit",
+      "open": true,
+      "viewport": 320
+    },
+    {
+      "documentScroll": 320,
+      "innerScroll": 3600,
+      "name": "mobile-guide-natural",
+      "viewport": 320
+    },
+    {
+      "name": "career-data-profile",
+      "observed": "当前方向 3 个合成样本 · 按岗位计数，非市场占比"
+    },
+    {
+      "name": "crawl-path",
+      "observed": "crawl：页面操作触发请求，监听 JSON"
+    }
+  ],
+  "responsive": [
+    {
+      "guideLoaded": true,
+      "scroll": 1425,
+      "viewport": 1425
+    },
+    {
+      "guideLoaded": true,
+      "scroll": 1009,
+      "viewport": 1009
+    },
+    {
+      "guideLoaded": true,
+      "scroll": 753,
+      "viewport": 753
+    },
+    {
+      "guideLoaded": true,
+      "scroll": 375,
+      "viewport": 375
+    },
+    {
+      "guideLoaded": true,
+      "scroll": 305,
+      "viewport": 305
+    }
+  ],
+  "viewport_override_reset": true,
+  "console_errors": [],
+  "scope": "Static research UI, original panorama and synthetic-data interactions. No BOSS or model calls."
+}

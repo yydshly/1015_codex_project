@@ -1,0 +1,190 @@
+{
+  "date": "2026-10-20",
+  "source_commit": "4716ee1d211533db70ac7cc1ab2322eb269b43a0",
+  "story": "读取能力、技术通道与风险，切换六种请求路径并展开源码对照；筛选合成岗位、查看 JSON、职业画像与六类目标。",
+  "mode": "local-http-browser-and-offline-model-checks",
+  "published": false,
+  "live_boss_requests": 0,
+  "llm_requests": 0,
+  "source_files_checked": 14,
+  "model_checks": {
+    "total": 30,
+    "passed": 30,
+    "evidence": "references/model-checks.json"
+  },
+  "browser_checks": [
+    {
+      "name": "initial-render-and-local-data",
+      "passed": true,
+      "observed": "杭州双福利，5/8 命中，合成语义误命中 2，加载错误区域隐藏。"
+    },
+    {
+      "name": "recruiter-role",
+      "passed": true,
+      "observed": "候选人发现、简历与会话、招聘职位三个卡片正常显示。"
+    },
+    {
+      "name": "request-mechanism-step",
+      "passed": true,
+      "observed": "步骤 02 显示 httpx、CDP/Patchright、网页 fetch 与服务端边界。"
+    },
+    {
+      "name": "city-filter",
+      "passed": true,
+      "observed": "上海双福利，1/8 命中。"
+    },
+    {
+      "name": "welfare-switch-and-json-sync",
+      "passed": true,
+      "observed": "杭州关闭福利，JSON 中 data 为 7 项且 synthetic=true。"
+    },
+    {
+      "name": "copy-json",
+      "passed": true,
+      "observed": "按钮显示已复制。"
+    },
+    {
+      "name": "data-career-profile",
+      "passed": true,
+      "observed": "3 个数据工程样本；ETL 3/3，SQL 3/3，Python 2/3，任务可见。"
+    },
+    {
+      "name": "ai-profile-and-skill-selection",
+      "passed": true,
+      "observed": "切 AI 并勾选 RAG 后，待探索项不再包含 RAG。"
+    },
+    {
+      "name": "sample-evidence",
+      "passed": true,
+      "observed": "展开可见 A01/A02/A03 的描述及人工技能字段。"
+    },
+    {
+      "name": "six-goals",
+      "passed": true,
+      "observed": "机会筛选、职业画像、方向比较、个人差距、变化观察、招聘助手的标题与说明均可切换。"
+    },
+    {
+      "name": "goal-to-prototype",
+      "passed": true,
+      "observed": "个人差距目标的预览按钮切至职业画像，视图可见且 tab 选中。"
+    },
+    {
+      "name": "keyboard-tabs",
+      "passed": true,
+      "observed": "职业画像 tab 按 Home 后，候选岗位清单 aria-selected=true。"
+    }
+  ],
+  "responsive": [
+    {
+      "width": 1280,
+      "document_width": 1265,
+      "horizontal_overflow": false,
+      "screenshot": "assets/overview-desktop.jpg"
+    },
+    {
+      "width": 390,
+      "document_width": 375,
+      "horizontal_overflow": false,
+      "screenshot": "assets/career-mobile.jpg"
+    },
+    {
+      "width": 320,
+      "document_width": 305,
+      "horizontal_overflow": false,
+      "screenshot": "assets/goals-narrow.jpg"
+    }
+  ],
+  "page_console_errors": [],
+  "standalone": {
+    "path": "web/assets/standalone.html",
+    "code_css_and_data_embedded": true,
+    "direct_file_open_browser_tested": false,
+    "reason": "内置浏览器仅允许 HTTP/HTTPS，file:// 导航被协议策略拒绝；没有尝试绕过。",
+    "validation": "打包结构检查；正常网页的对应交互通过本地 HTTP 浏览器验证。",
+    "guide_png_and_svg_embedded": true
+  },
+  "limitations": [
+    "职业样本手工结构化，频次不代表市场分布；勾选不是技能认证。",
+    "未验证真实 BOSS 登录、搜索、消息、简历送达或模型输出。",
+    "59 项上游测试为 008 的旧快照历史证据；本轮未重跑新版本上游全套测试。"
+  ],
+  "static_checks": {
+    "documentation_links": 23,
+    "http_resources": 13,
+    "failed": 0
+  },
+  "technical_update": {
+    "date": "2026-10-20",
+    "source_snapshot_pinned": true,
+    "scenarios_checked": [
+      "search",
+      "detail-http-allowed",
+      "cdp-browser-only",
+      "crawl-network-listener",
+      "local-rules",
+      "model-api"
+    ],
+    "all_scenario_panels_rendered": true,
+    "expanded_source_table_rows": 7,
+    "risk_cards": 6,
+    "page_console_errors": [],
+    "responsive": [
+      {
+        "width": 1280,
+        "document_width": 1265,
+        "horizontal_overflow": false
+      },
+      {
+        "width": 390,
+        "document_width": 375,
+        "horizontal_overflow": false
+      },
+      {
+        "width": 320,
+        "document_width": 305,
+        "horizontal_overflow": false
+      }
+    ],
+    "responsive_table_state": "expanded",
+    "viewport_override_reset": true,
+    "screenshots": [
+      "assets/mechanism-desktop.png",
+      "assets/mechanism-mobile.png",
+      "assets/risks-desktop.png"
+    ],
+    "live_boss_requests": 0,
+    "llm_requests": 0,
+    "scope": "Source inspection and offline explanatory UI only; no measured account acceptance or ban rate."
+  },
+  "panorama": {
+    "date": "2026-10-20",
+    "sections": 7,
+    "png_dimensions": [
+      3600,
+      11010
+    ],
+    "svg_dimensions": [
+      1800,
+      5505
+    ],
+    "text_safe_area_failures": 0,
+    "visual_review": [
+      "complete-composition",
+      "mechanism-flow",
+      "scenarios-table",
+      "risk-cards"
+    ],
+    "source_links": 8,
+    "asset_copies_match": true,
+    "evidence": "references/panorama-render.json"
+  },
+  "publication_local": {
+    "http": "references/publication-local-http.json",
+    "browser": "references/publication-local-browser.json",
+    "guide_original_sha256": "36858526571aa8f3dc075fe3d1aba55c35ec7d35dcc31fafd539fb97959c062f",
+    "guide_copy_check": "Source, webpage and navigation copies match exactly.",
+    "catalog_id": 14,
+    "preserved_remote_project_id": 13,
+    "source_experiments_id": 8
+  }
+}

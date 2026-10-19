@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-16",
+  "mode": "node-offline-parity-and-demo-transitions",
+  "checks": [
+    {
+      "name": "upstream-parity:normal",
+      "passed": true
+    },
+    {
+      "name": "upstream-parity:negation",
+      "passed": true
+    },
+    {
+      "name": "upstream-parity:synonym",
+      "passed": true
+    },
+    {
+      "name": "upstream-parity:five-days",
+      "passed": true
+    },
+    {
+      "name": "upstream-parity:and",
+      "passed": true
+    },
+    {
+      "name": "upstream-parity:mixed",
+      "passed": true
+    },
+    {
+      "name": "upstream-parity:not-now",
+      "passed": true
+    },
+    {
+      "name": "upstream-parity:custom",
+      "passed": true
+    },
+    {
+      "name": "upstream-parity:insurance-negation",
+      "passed": true
+    },
+    {
+      "name": "upstream-parity:empty",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:杭州:none",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:杭州:双休",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:杭州:五险一金",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:杭州:双休+五险一金",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:上海:none",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:上海:双休",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:上海:五险一金",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:上海:双休+五险一金",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:all:none",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:all:双休",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:all:五险一金",
+      "passed": true
+    },
+    {
+      "name": "filter-parity:all:双休+五险一金",
+      "passed": true
+    },
+    {
+      "name": "environment-risk-blocks-next-request",
+      "passed": true
+    },
+    {
+      "name": "explicit-simulated-recovery-permits-one-attempt",
+      "passed": true
+    },
+    {
+      "name": "budget-stops-before-request",
+      "passed": true
+    },
+    {
+      "name": "response:auth",
+      "passed": true
+    },
+    {
+      "name": "response:account",
+      "passed": true
+    },
+    {
+      "name": "response:limited",
+      "passed": true
+    }
+  ],
+  "total": 28,
+  "passed": 28,
+  "live_platform_requests": 0
+}
