@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-19",
+  "status": "passed",
+  "scope": "010 static research website; no new live media test, contract, purchase, or public deployment",
+  "checks": {
+    "interactive_cases": 27,
+    "documents_opened": 11,
+    "cost_scenarios_matched_to_decimal_cli": 3,
+    "local_static_resources": 33,
+    "official_source_links_indexed": 43,
+    "viewport_widths": [
+      320,
+      390,
+      1280
+    ],
+    "page_horizontal_overflow": false,
+    "built_subpath_and_hash_refresh": true,
+    "console_errors": 0,
+    "repository_check": "passed",
+    "site_build": "passed"
+  },
+  "pricing_snapshot": "2026-10-16",
+  "playback_evidence_date": "2026-10-15",
+  "evidence": {
+    "browser": "browser-web-checks.json",
+    "static": "static-web-checks.json",
+    "desktop_screenshot": "../assets/web-desktop.png",
+    "mobile_screenshot": "../assets/web-mobile.png"
+  },
+  "fixes": [
+    "The reset handler restores input defaults before synchronous cost recomputation."
+  ],
+  "not_tested": [
+    "current availability or rights of the experimental video API",
+    "all videos or full episodes",
+    "supplier account approval or signed commercial terms",
+    "video concurrency or cross-region playback",
+    "public deployment"
+  ]
+}

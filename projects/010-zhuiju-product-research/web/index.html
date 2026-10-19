@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="awesome-zhuiju-free 用结构化 JSON、社区审核与定时检测维护影视资源入口。本研究验证配置到 API、HLS 的搜播链路，说明同类产品的片源授权、接口适配、存储分发和盈利验证方法。">
+  <meta name="theme-color" content="#173d35">
+  <title>追剧资源研究 · 从一个目录到一个产品</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20261019-publish1">
+  <script src="assets/research-data.js?v=20261019-publish1" defer></script>
+  <script src="app.js?v=20261019-publish1" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="#top" aria-label="追剧资源研究首页"><span class="brand-mark" aria-hidden="true">▤</span><span>追剧资源研究<small>FIELD NOTES / 010</small></span></a>
+    <nav aria-label="主要导航"><a href="#understanding">库的能力</a><a href="#exploration">我们的探索</a><a href="#future">后续意义</a></nav>
+    <button class="text-button header-docs" data-doc="overview">完整研究 <span aria-hidden="true">↗</span></button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero shell" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot"></span> AWESOME-ZHUIJU-FREE / 研究手记</p>
+      <h1>从一个资源目录，<br>看到<span>视频产品的全链路。</span></h1>
+      <p class="hero-lead">源库整理影视网站、播放器和配置入口。<br class="desktop-only">我们沿配置验证搜片与播放，再把内容授权、流量分发和经营验证，拆成可实施的产品路线。</p>
+      <div class="hero-actions"><a class="button primary" href="#understanding">开始阅读 <span aria-hidden="true">↓</span></a><a class="text-button" href="#live-demo">体验搜片 Demo <span aria-hidden="true">↗</span></a></div>
+      <p class="hero-credit">研究对象 <a href="https://github.com/laoma528/awesome-zhuiju-free" target="_blank" rel="noreferrer">laoma528/awesome-zhuiju-free ↗</a></p>
+      <a class="text-button hero-overview-link" href="assets/files/010/assets/research-overview-20261019.png" target="_blank" rel="noopener">研究全景图 · 查看原图 ↗</a>
+    </div>
+    <figure class="hero-map overview-guide">
+      <div class="overview-heading"><span>THE RESEARCH MAP</span><span>本次生成的八部分全景图</span></div>
+      <button class="overview-cover-button" id="showOverview" aria-label="放大阅读完整研究全景图"><img src="assets/files/010/assets/research-overview-20261019.png" alt="从资源目录到视频产品：源库能力、搜播实测、片源链路、架构、成本、产品路线与研究意义。" width="2048" height="8246"><span>↗ 放大阅读完整全景图</span></button>
+      <figcaption class="overview-caption"><div><a href="assets/files/010/assets/research-overview-20261019.png" download>下载 PNG</a><a href="assets/files/010/assets/research-overview-20261019.svg" download>下载 SVG</a></div><p>原图保持制图时的研究快照；网页发布与运行状态以本页说明为准。</p></figcaption>
+    </figure>
+  </section>
+
+  <div class="shell fact-strip" aria-label="研究关键事实">
+    <div><strong>119<span>条</span></strong><p>固定版本资源记录</p><small>含 8 条已移除记录</small></div>
+    <div><strong>17<span>份</span></strong><p>配置读取记录</p><small>探索入口，不代表独立片库</small></div>
+    <div><strong>1080<span>p</span></strong><p>首两集浏览器播放抽样</p><small>007 实测 · 2026.10.15</small></div>
+    <div><strong>43<span>项</span></strong><p>官方资料与来源链接</p><small>研究核查 · 2026.10.16</small></div>
+  </div>
+
+  <nav class="chapter-nav" aria-label="研究章节"><div class="shell"><a href="#understanding">01 能力</a><a href="#exploration">02 探索</a><a href="#live-demo">演示体验</a><a href="#principle">03 原理</a><a href="#sources">04 片源</a><a href="#economics">05 分发成本</a><a href="#filmhub">06 片库合作</a><a href="#future">07 产品价值</a><a href="#library">08 资料库</a></div></nav>
+
+  <section class="section shell" id="understanding">
+    <div class="section-heading"><div><p class="eyebrow">01 / UNDERSTANDING</p><h2>它维护的是入口，<br>产品需要接上更多层。</h2></div><p>一份可维护的资源情报库，能够降低发现成本。<br>我们把上游能力、实验成果和未来方案分别记录。</p></div>
+    <div class="summary-answers"><article><span>能力</span><h3>发现和维护资源入口</h3><p>整理网站、播放器、配置与开源项目，记录分类、状态和核验线索。目录本身没有提供完整影片后端。</p></article><article><span>原理</span><h3>数据、审核、检测各司其职</h3><p>JSON 是单一数据源，脚本生成目录；社区推荐经过维护者审核，定时 HTTP 检查帮助追踪失效入口。</p></article><article><span>实现同类产品</span><h3>从供应接到观看与经营</h3><p>先确认内容许可，再建片目表、搜索详情接口与播放器，选择存储/CDN，最后用真实观看和收入验证路线。</p></article></div>
+    <div class="scope-layout">
+      <div class="scope-tabs" role="tablist" aria-label="能力范围"><button role="tab" id="scope-upstream" aria-controls="scopePanel" aria-selected="true" data-scope="upstream"><span>01</span>原库已有能力 <i>↗</i></button><button role="tab" id="scope-demo" aria-controls="scopePanel" aria-selected="false" tabindex="-1" data-scope="demo"><span>02</span>我们的 Demo <i>↗</i></button><button role="tab" id="scope-product" aria-controls="scopePanel" aria-selected="false" tabindex="-1" data-scope="product"><span>03</span>后续产品方案 <i>↗</i></button></div>
+      <div class="scope-panel" id="scopePanel" role="tabpanel" aria-labelledby="scope-upstream"></div>
+    </div>
+    <div class="availability"><div><p class="eyebrow">一次检测，能说明多少？</p><h3>96 个入口的 HTTP 响应</h3><p>上游报告 · 2026.10.15。精选 111 条中，排除 15 个开源项目。</p></div><div class="availability-data"><div class="status-bar" aria-label="66 个可访问，21 个受限，9 个无法访问"><span class="reachable" style="flex:66"></span><span class="restricted" style="flex:21"></span><span class="failed" style="flex:9"></span></div><div class="status-legend"><span><i class="green"></i>66 可访问</span><span><i class="orange"></i>21 受限</span><span><i class="gray"></i>9 无法访问</span></div><p>这里只检查入口响应；搜得到、能解码、可商用和持续稳定，需要各自的证据。</p></div></div>
+  </section>
+
+  <section class="section experiment-section" id="exploration"><div class="shell">
+    <div class="section-heading"><div><p class="eyebrow">02 / OUR EXPLORATION</p><h2>从“看起来能用”，<br>走到一次真实的播放。</h2></div><p>007 保留了来源、请求、媒体与浏览器证据。<br>这里回看历史实验，不向第三方发起实时播放。</p></div>
+    <div class="experiment-grid">
+      <div class="experiment-copy"><div class="step-buttons" aria-label="探索过程"><button class="selected" data-step="0" aria-pressed="true">1 找入口</button><button data-step="1" aria-pressed="false">2 读配置</button><button data-step="2" aria-pressed="false">3 测接口</button><button data-step="3" aria-pressed="false">4 真播放</button></div><div id="experimentDetail" aria-live="polite"></div><div class="evidence-actions"><button class="text-button" data-doc="demo">查看 007 原始记录 ↗</button><button class="text-button" data-doc="notes">研究方法与边界 ↗</button></div><div class="boundary-note"><b>验证停在这里</b><p>只抽样首两集，未完整观看，也未验证全库、跨地区或并发容量。历史条目有 404，部分分片出现超时与缓冲。片名和季度资料来自上游，未独立核实。</p></div></div>
+      <figure class="proof-figure"><div class="proof-top"><span><i></i> HISTORICAL EVIDENCE</span><span>2026.10.15</span></div><button class="proof-image-button" id="showProof" aria-label="放大查看 007 实际播放截图"><img src="assets/playback-evidence.jpg" alt="007 网页真实搜片、选集与播放截图，展示第三方视频画面与八集选集。" width="678" height="2243" loading="lazy"><span class="zoom-hint">↗ 查看完整证据图</span></button><figcaption><span>浏览器解码：1920 × 1080</span><span>抽样结果，非持续可用承诺</span></figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="section shell live-demo-section" id="live-demo">
+    <div class="section-heading"><div><p class="eyebrow">TRY IT / 007 CONNECTED</p><h2>我们做过的演示，<br>现在就在这里操作。</h2></div><p>加载原来的 007 播放器，实时搜索、选集与播放。<br>沿用同一份后端与播放器代码，结果以当前响应为准。</p></div>
+    <div class="live-demo-panel">
+      <div class="live-demo-toolbar"><div><span class="live-demo-dot" aria-hidden="true"></span><b>映片 · 搜片与选集播放</b><span class="live-demo-label">本地技术演示</span></div><div class="live-demo-actions"><a id="openLiveDemo" class="text-button" href="/live-demo/" target="_blank" rel="noopener" hidden>独立窗口 ↗</a><button id="stopLiveDemo" class="text-button" hidden>关闭演示 ×</button></div></div>
+      <div class="live-demo-launch" id="liveDemoLaunch"><span class="live-demo-symbol" aria-hidden="true">▷</span><h3>从片名，到开场。</h3><p>点击后连接本地联合服务，加载真实播放器。<br>演示沿用原实验片源，不以录播或静态结果替换失败响应。</p><button id="loadLiveDemo" class="button primary" type="button">加载真实搜播 Demo <span aria-hidden="true">→</span></button></div>
+      <p id="liveDemoStatus" class="live-demo-status" role="status">尚未加载；加载后才会向上游查询影片。</p>
+      <div id="liveDemoInstructions" class="live-demo-instructions" hidden><p>请在仓库根目录启动联合演示服务，然后打开服务给出的研究页地址：</p><pre><code>python projects/010-zhuiju-product-research/server.py --port 8871</code></pre><p>只有静态托管时，研究内容和历史证据仍可阅读；实时搜播需要此后端。</p></div>
+      <iframe id="liveDemoFrame" title="007 实时搜片、选集与视频播放" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen hidden></iframe>
+    </div>
+    <p class="small-note live-demo-note">影片元数据来自第三方，未独立核实；片源可用性和内容授权不由本演示保证。打开播放器会产生上游 API 请求，选集后会从上游 CDN 加载媒体。历史实测日期仍保留在上方。</p>
+  </section>
+
+  <section class="section shell" id="principle">
+    <div class="section-heading"><div><p class="eyebrow">03 / HOW IT WORKS</p><h2>片源有来路，<br>流量也有去向。</h2></div><p>点击链路里的节点，看清每一层提供什么。<br>目录、API、播放地址和影片授权是不同的交付物。</p></div>
+    <div class="source-chain" aria-label="实际发现的来源链路"><button class="selected" data-node="0" aria-pressed="true"><small>01 / CATALOG</small><b>资源目录</b><span>resources.json</span></button><span class="chain-arrow" aria-hidden="true">→</span><button data-node="1" aria-pressed="false"><small>02 / CONFIG</small><b>小马配置</b><span>sites[]</span></button><span class="chain-arrow" aria-hidden="true">→</span><button data-node="2" aria-pressed="false"><small>03 / API</small><b>暴风接口</b><span>搜索与详情</span></button><span class="chain-arrow" aria-hidden="true">→</span><button data-node="3" aria-pressed="false"><small>04 / MEDIA</small><b>媒体地址</b><span>HLS 清单与分片</span></button></div>
+    <div class="node-detail" id="nodeDetail" aria-live="polite"></div>
+    <div class="traffic-lab"><div class="traffic-heading"><div><p class="eyebrow">FOLLOW THE BYTES</p><h3>同样在站内看，谁在传视频？</h3></div><div class="segmented" aria-label="视频分发方式"><button data-traffic="direct" aria-pressed="true" class="selected">上游直连</button><button data-traffic="relay" aria-pressed="false">后端转发</button><button data-traffic="owned" aria-pressed="false">自有分发</button></div></div><div class="traffic-canvas" id="trafficCanvas" aria-live="polite"></div><div class="traffic-caption" id="trafficCaption"></div></div>
+    <div class="implementation-plan"><p class="eyebrow">BUILD A SIMILAR PRODUCT</p><h3>做同类产品，按五层接起来。</h3><ol><li><b>确认内容供应</b><span>选定授权作品、官方嵌入或供应合同，记清地区、期限和使用模式。</span></li><li><b>建立片目与适配器</b><span>统一影片、线路与剧集数据，实现 search / detail / play，加入缓存和超时。</span></li><li><b>完成站内观看</b><span>搜索、详情、选集、字幕与 HLS 播放；以实际解码和时间推进验收。</span></li><li><b>安排存储与分发</b><span>根据许可选择平台嵌入或自有存储/CDN，核算观看小时成本。</span></li><li><b>补齐运营与验证</b><span>建设权限、质量监控、到期下架和结算；验证用户复访与真实收入。</span></li></ol><button class="text-button" data-doc="architecture">数据模型、接口与完整实现架构 ↗</button></div>
+  </section>
+
+  <section class="section sources-section" id="sources"><div class="shell">
+    <div class="section-heading"><div><p class="eyebrow">04 / CONTENT SUPPLY</p><h2>先选内容供应方式，<br>再选技术接入方式。</h2></div><p>免费开放内容、官方嵌入、商业采购各有价值。<br>“公开可读”只能回答接不接得到，使用范围另需核实。</p></div>
+    <div class="filter-row" aria-label="片源方式筛选"><button data-filter="all" class="selected" aria-pressed="true">全部方式</button><button data-filter="licensed" aria-pressed="false">开放内容与素材</button><button data-filter="embed" aria-pressed="false">官方嵌入</button><button data-filter="contract" aria-pressed="false">合同片库</button><button data-filter="unknown" aria-pressed="false">实验来源</button></div>
+    <div class="table-scroll"><table class="source-table"><thead><tr><th>来源</th><th>提供什么</th><th>使用条件与限制</th><th>适合的用途</th></tr></thead><tbody id="sourceRows"></tbody></table></div><p class="small-note">资料核查于 2026.10.16；未完成这些供应商的正式接入或跨地区压测。素材库 API 不等于成片分发许可。</p>
+    <button class="text-button" data-doc="sources">片源获取流程、台账模板与具体作品许可 ↗</button>
+  </div></section>
+
+  <section class="section shell" id="economics">
+    <div class="section-heading"><div><p class="eyebrow">05 / DISTRIBUTION ECONOMICS</p><h2>内容可以免费授权，<br>传输需要单独算账。</h2></div><p>调整观看量与码率，看看分发费用如何变化。<br>采用 2026.10.16 的公开价格快照，美元、不含税。</p></div>
+    <div class="calculator"><form id="costForm" class="cost-inputs"><div class="form-heading"><h3>你的观看情景</h3><button type="reset" class="text-button small">恢复示例 ↺</button></div><div class="input-grid"><label>每月观看次数<input id="plays" name="plays" type="number" min="0" max="100000000" step="1" value="1000" required></label><label>每次传输分钟<input id="minutes" name="minutes" type="number" min="0" max="10000" step="0.5" value="10" required></label><label>平均总码率 <span>Mbps</span><input id="mbps" name="mbps" type="number" min="0" max="1000" step="0.1" value="3" required></label><label>转码后存储 <span>GB</span><input id="storage" name="storage" type="number" min="0" max="10000000" step="1" value="20" required></label><label>片库总时长 <span>分钟</span><input id="catalog" name="catalog" type="number" min="0" max="100000000" step="1" value="200" required></label><label>额外传输系数<input id="overhead" name="overhead" type="number" min="1" max="10" step="0.05" value="1" required></label></div><label class="region-label">Bunny 分发地区 / 档位<select id="region" name="region"><option value="0.03">Standard · 亚洲与大洋洲 · $0.03/GB</option><option value="0.01">Standard · 欧美 · $0.01/GB</option><option value="0.045">Standard · 南美 · $0.045/GB</option><option value="0.06">Standard · 中东与非洲 · $0.06/GB</option><option value="0.005">Volume · 首 500 TB · $0.005/GB</option></select></label><p class="small-note">码率包含视频和音频；缓冲、重试和预加载可增加传输。所有观看按所选单一地区估算。</p></form><div class="cost-results" aria-live="polite"><p class="eyebrow">ESTIMATED / 仅视频基础设施</p><div class="traffic-total"><strong id="trafficValue">225</strong><span>GB / 月</span></div><p id="costEquation" class="cost-equation">1,000 次 × 10 分钟 × 3 Mbps</p><div class="cost-line"><div><span>Bunny Stream</span><b id="bunnyCost">$6.95</b></div><div class="cost-track"><i id="bunnyBar"></i></div></div><div class="cost-line cloudflare"><div><span>Cloudflare Stream</span><b id="cfCost">$15.00</b></div><div class="cost-track"><i id="cfBar"></i></div></div><p id="costFeedback" class="cost-feedback">含假设存储与最低消费，未含内容授权、网站、支付、营销、人力及可选功能。</p></div></div>
+    <div class="cost-footnotes"><p><b>按字节计费</b> Bunny Standard 随地区变化，存储按实际转码后体积；Volume 节点较少，体验需实测。</p><p><b>按分钟计费</b> Cloudflare 存储按 1,000 分钟容量档计算，传输按分钟计费；预加载也可能产生费用。</p><button class="text-button" data-doc="distribution">算式、价格来源与部署方案 ↗</button></div>
+  </section>
+
+  <section class="section filmhub-section" id="filmhub"><div class="shell">
+    <div class="filmhub-intro"><div><p class="eyebrow">06 / FILMHUB DEEP DIVE</p><h2>丰富片库的入口，<br>是一段供应关系。</h2></div><div><p>我们的身份是 <b>Channel / Buyer</b>：取得授权后，在自己的网站向观众播放。先与团队建立合作，再配置接收存储、选片、接收文件，并持续报表与结算。</p><span class="outline-tag">官方资料核查 · 尚未取得合同或报价</span></div></div>
+    <div class="filmhub-facts"><article><span>已确认</span><h3>有片库分成模式</h3><p>官网说明收入分成为主要方式，也存在固定费用合作。你的比例和计费基数要按渠道协议确定。</p></article><article><span>已确认</span><h3>标准流程交付文件</h3><p>视频、海报、字幕、元数据送往你的 S3 或 SFTP 等接收端；后续播放分发应单独安排。</p></article><article><span class="pending">待确认</span><h3>小团队是否获批</h3><p>个人主体、最低受众、预付款、保底和片数等，没有取得适用于本项目的书面答复。</p></article></div>
+    <div class="split-note"><strong>80 / 20</strong><div><h3>先看清楚，谁与谁在分。</h3><p>常见的 80/20 是 Filmhub 与制片方的分配。网站作为渠道，另签 Channel Agreement；不能据此计算自己默认保留的收入。</p></div><button class="light-button" data-doc="filmhub">阅读完整专题 ↗</button></div>
+    <details class="filmhub-questions"><summary>开始洽谈前，带上这 6 个问题 <span aria-hidden="true">＋</span></summary><ol><li>是否接受个人经营者、小团队和尚未上线的 Web 产品？</li><li>目标地区、模式和题材下，首批 50～100 部的适用片单与字幕有哪些？</li><li>能否无预付款、无保底、小规模非独家试点？</li><li>分成的收入基数、费用扣除、报表和付款周期怎样定义？</li><li>首次/重新交付、存储、CDN、DRM 和地域控制由谁承担？</li><li>授权期、下架、退出、撤回与原片处理有哪些条件？</li></ol></details>
+  </div></section>
+
+  <section class="section shell" id="future">
+    <div class="section-heading"><div><p class="eyebrow">07 / WHAT COMES NEXT</p><h2>代码解决接入，<br>产品价值来自持续供给。</h2></div><p>资源发现是起点。差异化还需要内容选择、可靠体验，<br>以及用户愿意再次回来或付费的理由。</p></div>
+    <div class="value-statement"><span class="large-quote" aria-hidden="true">“</span><p>从“什么都能搜到”，走向<br><strong>“这类内容，我愿意来这里看”。</strong></p><span class="statement-note">当前建议：动画短片精选＋原创解析 / 专题</span></div>
+    <div class="route-tabs" role="tablist" aria-label="产品路线"><button role="tab" id="route-curated" aria-selected="true" aria-controls="routePanel" data-route="curated">垂直精选站<span>当前建议</span></button><button role="tab" id="route-directory" aria-selected="false" aria-controls="routePanel" data-route="directory" tabindex="-1">资源导航站</button><button role="tab" id="route-catalog" aria-selected="false" aria-controls="routePanel" data-route="catalog" tabindex="-1">商业片库站</button></div><div id="routePanel" class="route-panel" role="tabpanel" aria-labelledby="route-curated"></div>
+    <div class="roadmap"><div><span>01 / 第 1 周</span><h3>找对内容与用户</h3><p>定主题，访谈目标观众，逐片核实许可，做小片库。</p></div><div><span>02 / 第 2 周</span><h3>让观看真正顺畅</h3><p>邀请约 20 人，验证首帧、字幕、卡顿与每小时成本。</p></div><div><span>03 / 第 3 周</span><h3>验证编辑的价值</h3><p>发布原创专题与解析，观察有效观看、收藏和复访。</p></div><div><span>04 / 第 4 周</span><h3>取得真实收入证据</h3><p>试验明确收费项或赞助；用留存与贡献利润决定扩张。</p></div></div><p class="small-note">路线和指标是待执行建议，尚未完成上述运营实验，也没有盈利结论。</p>
+    <div class="future-actions"><button class="text-button" data-doc="product">定位、收益与完整 30 天计划 ↗</button><button class="text-button" data-doc="architecture">实现类似产品需要的架构 ↗</button></div>
+  </section>
+
+  <section class="section library-section" id="library"><div class="shell">
+    <div class="section-heading"><div><p class="eyebrow">08 / THE RESEARCH LIBRARY</p><h2>结论可以追溯，<br>细节可以继续读。</h2></div><p>完整章节、官方资料、固定源码和历史测试各自保留。<br>网页整理于 2026.10.19；底层研究快照于 2026.10.16。</p></div>
+    <div class="document-grid" id="documentLinks"></div>
+    <div class="sources-heading"><h3>官方来源索引 <span>43</span></h3><label><span class="sr-only">搜索官方资料</span><input type="search" id="sourceSearch" placeholder="搜索资料，例如 Filmhub、Bunny、YouTube…"></label></div><div id="officialSources" class="official-sources" aria-live="polite"></div><button id="moreSources" class="text-button">展开全部来源 ↓</button>
+    <div class="provenance"><div><span>固定上游版本</span><code>d1049a3…52a0</code><p>119 条记录 / 17 份精选文件</p></div><div><span>历史播放实验</span><b>2026.10.15 / 007</b><p>首两集抽样，未验证完整内容</p></div><div><span>商业与运营状态</span><b>供应与需求继续验证</b><p>未签片库合同，未实施正式运营</p></div></div>
+  </div></section>
+</main>
+
+<footer class="shell footer"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">▤</span><span>追剧资源研究<small>RESEARCH 010</small></span></a><p>从发现入口，到理解系统。<br>保留证据，也保留尚未回答的问题。</p><button class="text-button" data-doc="licenses">来源与许可 ↗</button><a class="text-button" href="#top">回到顶部 ↑</a></footer>
+
+<dialog id="readerDialog" class="reader-dialog" aria-labelledby="readerTitle"><div class="reader-top"><div><span class="eyebrow">RESEARCH LIBRARY</span><h2 id="readerTitle">完整研究</h2></div><button class="icon-button" id="closeReader" aria-label="关闭阅读器">×</button></div><div class="reader-controls"><label for="docSelect" class="sr-only">切换研究文档</label><select id="docSelect"></select><span>研究核查 10.16 · 网页整理 10.19</span></div><article id="readerContent" class="reader-content"></article></dialog>
+<dialog id="imageDialog" class="image-dialog" aria-label="007 实际播放证据图"><button class="icon-button" id="closeImage" aria-label="关闭证据图">×</button><p>007 历史播放抽样 · 2026.10.15 · 第三方画面归原权利人</p><img src="assets/playback-evidence.jpg" alt="007 实际播放截图完整图" width="678" height="2243"></dialog>
+<dialog id="overviewDialog" class="image-dialog overview-dialog" aria-label="完整研究全景图"><button class="icon-button" id="closeOverview" aria-label="关闭研究全景图">×</button><p>原图 · 2048 × 8246 · 制图状态为历史快照，网页发布状态以本页说明为准。</p><div class="overview-downloads"><a href="assets/files/010/assets/research-overview-20261019.png" download>下载 PNG</a><a href="assets/files/010/assets/research-overview-20261019.svg" download>下载 SVG</a><a href="assets/files/010/assets/research-overview-20261019.png" target="_blank" rel="noopener">独立打开原图 ↗</a></div><img src="assets/files/010/assets/research-overview-20261019.png" alt="源库能力、真实演示、思考、架构、产品路线与意义的完整全景图" width="2048" height="8246" loading="lazy"></dialog>
+<noscript><p class="shell">网页交互需要 JavaScript。完整研究仍可在项目 README 中阅读。</p></noscript>
+</body>
+</html>

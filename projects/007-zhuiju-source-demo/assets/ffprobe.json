@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "{\r\n    \"programs\": [\r\n        {\r\n            \"streams\": [\r\n                {\r\n                    \"codec_name\": \"h264\",\r\n                    \"codec_type\": \"video\",\r\n                    \"width\": 1920,\r\n                    \"height\": 1080\r\n                },\r\n                {\r\n                    \"codec_name\": \"aac\",\r\n                    \"codec_type\": \"audio\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"streams\": [\r\n        {\r\n            \"codec_name\": \"h264\",\r\n            \"codec_type\": \"video\",\r\n            \"width\": 1920,\r\n            \"height\": 1080\r\n        },\r\n        {\r\n            \"codec_name\": \"aac\",\r\n            \"codec_type\": \"audio\"\r\n        }\r\n    ]\r\n}\r\n",
+  "stderr": ""
+}

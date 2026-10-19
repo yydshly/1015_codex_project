@@ -1,0 +1,161 @@
+{
+  "compiled_at_utc": "2026-10-15T16:39:24.346421+00:00",
+  "research_date_asia_shanghai": "2026-10-16",
+  "upstream_commit": "d1049a3af73c068c390decc92eebe9bff84d52a0",
+  "upstream_snapshot_hashes_verified": 17,
+  "catalog": {
+    "records": 119,
+    "featured": 111,
+    "categories": {
+      "online_video": 53,
+      "video_app": 4,
+      "subtitles": 3,
+      "player": 7,
+      "subscription": 2,
+      "tvbox_config": 15,
+      "magnet_search": 16,
+      "cloud_search": 4,
+      "open_source": 15
+    },
+    "verification_status": {
+      "caution": 95,
+      "removed": 8,
+      "recommended": 16
+    },
+    "submitted_by": {
+      "maintainer": 105,
+      "@laoma2053": 1,
+      "@LFNHHHHH": 1,
+      "@LesliesCheung": 1,
+      "@moeyukisako": 1,
+      "@sky22333": 1,
+      "@Function21": 1,
+      "@xwx6164": 1,
+      "@unilei": 1,
+      "@goodsand": 2,
+      "@Honsyu-cn": 1,
+      "@anyongki": 1,
+      "@miaodongsu7": 1,
+      "@zxaay": 1
+    }
+  },
+  "homepage_availability": {
+    "generated_at": "2026-10-15T01:26:02.527Z",
+    "checked_records": 96,
+    "statuses": {
+      "restricted": 21,
+      "reachable": 66,
+      "unreachable": 9
+    },
+    "scope": "Historical upstream HTTP checks, not video playback tests"
+  },
+  "historical_demo": {
+    "project": "007-zhuiju-source-demo",
+    "config_read_records": 17,
+    "http_api_call_records": 26,
+    "live_report_at": "2026-10-15T14:37:13.399435+00:00",
+    "checks": 9,
+    "passed": 9,
+    "browser_final_revision": {
+      "verified_at": "2026-10-15T14:39:17.990Z",
+      "first_episode": {
+        "duration": 2984.6400000000103,
+        "height": 1080,
+        "paused": false,
+        "readyState": 4,
+        "time": 31.546118,
+        "width": 1920
+      },
+      "second_episode": {
+        "duration": 2605.640000000011,
+        "height": 1080,
+        "paused": false,
+        "readyState": 2,
+        "time": 14.060911,
+        "width": 1920
+      },
+      "layout": {
+        "scrollWidth": 679,
+        "width": 679
+      },
+      "screenshot": "demo-final.jpg",
+      "observed_limitations": [
+        "Earlier seek triggered a third-party fragment timeout. The UI now exposes retry and configures bounded network retries.",
+        "Only sampled playback was verified; full-episode completion was not tested."
+      ]
+    },
+    "new_live_playback_test_in_this_project": false
+  },
+  "evidence_files": [
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/README.md",
+      "bytes": 3411,
+      "sha256": "ed69c4e1b7f627006e3d964f1483dac6ca488b88772b7c07208ab27599fc76a9"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/notes.md",
+      "bytes": 2135,
+      "sha256": "4e10b518ed69cff0afec3b081f5787f482a7aa1f1b1ecd5a91f55f6065115f6e"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/source.json",
+      "bytes": 727,
+      "sha256": "adb4fa428341e0be737de5662a4d988a5dd2d0058ffba6c4a8a2568175a1bbef"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/server.py",
+      "bytes": 15148,
+      "sha256": "ec0b53e6ee7eedb996ae0b4dffd98000a33d4624091f179893c31a51f157822d"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/web/app.js",
+      "bytes": 11149,
+      "sha256": "3957dd295417012b028ea7b5809b6f076b754a0c2bdfedd7ddfbdd6639347def"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/tests/test_adapter.py",
+      "bytes": 2411,
+      "sha256": "da6d213bc9b8f465bc013deb48fd2e913e3258204a6335dc4fdbf3dd335fd9f7"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/assets/source-scan.json",
+      "bytes": 21561,
+      "sha256": "2e143e7aa74ecbd4e9c0d230d5ae13e110fb88ece10f2c62d1aeca2884a19679"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/assets/api-probes.json",
+      "bytes": 28445,
+      "sha256": "defdd3922dbb7b117dfdd904d5bdd438675eadafcb6842497ee6490a17ffbae6"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/assets/playback-samples.json",
+      "bytes": 606342,
+      "sha256": "2856cd1b78652d27c56232ef3bd955cae9af0090c7f6012076659cf5034399b1"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/assets/live-verification.json",
+      "bytes": 3438,
+      "sha256": "dd415c08082642afce96b6797bde2e8343407c311dfd05ca761418628e98bd39"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/assets/browser-verification.json",
+      "bytes": 1895,
+      "sha256": "45282e78f5eafc4e5ebdcaa5c21cbde6e7081d2ba2d56e5736b3151f221f0e70"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/assets/ffprobe.json",
+      "bytes": 846,
+      "sha256": "7cca4166f57a8ed3be7e463d981128d5454012eaff7bb6b734237fce50bb561b"
+    },
+    {
+      "project_relative_path": "../007-zhuiju-source-demo/assets/demo-playback-verified.jpg",
+      "bytes": 160167,
+      "sha256": "a9ed54ce56d899c8447c854bcd6b73121a4963571d664787f0693622d3ce65d3"
+    }
+  ],
+  "limitations": [
+    "Source reports are historical and may become stale.",
+    "No full-episode, all-catalog, multi-region, concurrency, commercial-rights or profit validation.",
+    "Filmhub onboarding, pricing and agreements were not obtained."
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "generated_at_utc": "2026-10-15T16:42:04.081976+00:00",
+  "scenarios": [
+    {
+      "pricing_reference_date": "2026-10-16",
+      "assumptions": {
+        "plays": "100",
+        "minutes": "10",
+        "mbps": "3",
+        "storage_gb": "20",
+        "catalog_minutes": "200",
+        "overhead": "1"
+      },
+      "decimal_GB": "22.5",
+      "delivered_minutes": "1000",
+      "bunny_stream_USD_per_month": {
+        "volume_first_500_TB": "1.00",
+        "standard_europe_north_america": "1.00",
+        "standard_asia_oceania": "1.00",
+        "standard_south_america": "1.21",
+        "standard_middle_east_africa": "1.55"
+      },
+      "cloudflare_stream_USD_per_month": "6.00",
+      "excluded": [
+        "content licensing and revenue share",
+        "site/API/database/domain",
+        "tax and payment fees",
+        "cross-cloud transfers",
+        "premium encoding/transcription/DRM",
+        "storage replication",
+        "marketing and labor",
+        "provider billing granularity and unmodeled transfer"
+      ],
+      "notes": [
+        "Each scenario puts all traffic in one listed region/tier; not a blended global price.",
+        "Bunny storage assumes one default region, actual encoded footprint, and an active account.",
+        "Volume estimates above 500 TB are omitted; consult the appropriate pricing tier.",
+        "Cloudflare uses uploaded-content pricing with storage capacity rounded to 1000-minute blocks.",
+        "Rates and eligibility must be rechecked before purchase. This is not a total business budget."
+      ],
+      "sources": [
+        "https://bunny.net/docs/stream/pricing",
+        "https://developers.cloudflare.com/stream/pricing/"
+      ]
+    },
+    {
+      "pricing_reference_date": "2026-10-16",
+      "assumptions": {
+        "plays": "1000",
+        "minutes": "10",
+        "mbps": "3",
+        "storage_gb": "20",
+        "catalog_minutes": "200",
+        "overhead": "1"
+      },
+      "decimal_GB": "225",
+      "delivered_minutes": "10000",
+      "bunny_stream_USD_per_month": {
+        "volume_first_500_TB": "1.33",
+        "standard_europe_north_america": "2.45",
+        "standard_asia_oceania": "6.95",
+        "standard_south_america": "10.33",
+        "standard_middle_east_africa": "13.70"
+      },
+      "cloudflare_stream_USD_per_month": "15.00",
+      "excluded": [
+        "content licensing and revenue share",
+        "site/API/database/domain",
+        "tax and payment fees",
+        "cross-cloud transfers",
+        "premium encoding/transcription/DRM",
+        "storage replication",
+        "marketing and labor",
+        "provider billing granularity and unmodeled transfer"
+      ],
+      "notes": [
+        "Each scenario puts all traffic in one listed region/tier; not a blended global price.",
+        "Bunny storage assumes one default region, actual encoded footprint, and an active account.",
+        "Volume estimates above 500 TB are omitted; consult the appropriate pricing tier.",
+        "Cloudflare uses uploaded-content pricing with storage capacity rounded to 1000-minute blocks.",
+        "Rates and eligibility must be rechecked before purchase. This is not a total business budget."
+      ],
+      "sources": [
+        "https://bunny.net/docs/stream/pricing",
+        "https://developers.cloudflare.com/stream/pricing/"
+      ]
+    },
+    {
+      "pricing_reference_date": "2026-10-16",
+      "assumptions": {
+        "plays": "10000",
+        "minutes": "10",
+        "mbps": "3",
+        "storage_gb": "20",
+        "catalog_minutes": "200",
+        "overhead": "1"
+      },
+      "decimal_GB": "2250",
+      "delivered_minutes": "100000",
+      "bunny_stream_USD_per_month": {
+        "volume_first_500_TB": "11.45",
+        "standard_europe_north_america": "22.70",
+        "standard_asia_oceania": "67.70",
+        "standard_south_america": "101.45",
+        "standard_middle_east_africa": "135.20"
+      },
+      "cloudflare_stream_USD_per_month": "105.00",
+      "excluded": [
+        "content licensing and revenue share",
+        "site/API/database/domain",
+        "tax and payment fees",
+        "cross-cloud transfers",
+        "premium encoding/transcription/DRM",
+        "storage replication",
+        "marketing and labor",
+        "provider billing granularity and unmodeled transfer"
+      ],
+      "notes": [
+        "Each scenario puts all traffic in one listed region/tier; not a blended global price.",
+        "Bunny storage assumes one default region, actual encoded footprint, and an active account.",
+        "Volume estimates above 500 TB are omitted; consult the appropriate pricing tier.",
+        "Cloudflare uses uploaded-content pricing with storage capacity rounded to 1000-minute blocks.",
+        "Rates and eligibility must be rechecked before purchase. This is not a total business budget."
+      ],
+      "sources": [
+        "https://bunny.net/docs/stream/pricing",
+        "https://developers.cloudflare.com/stream/pricing/"
+      ]
+    }
+  ]
+}

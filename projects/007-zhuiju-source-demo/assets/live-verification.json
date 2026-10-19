@@ -1,0 +1,122 @@
+{
+  "verified_at": "2026-10-15T14:37:13.399435+00:00",
+  "base_url": "http://127.0.0.1:8767",
+  "source": {
+    "id": "bfzy",
+    "name": "暴风资源",
+    "api": "https://bfzyapi.com/api.php/provide/vod/",
+    "repository": "https://github.com/laoma528/awesome-zhuiju-free",
+    "catalog_url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/main/resources/resources.json",
+    "config_name": "小马",
+    "config_url": "https://szyyds.cn/tv/x.json",
+    "site_key": "暴風",
+    "verified_at": "2026-10-15T14:15:11.059787+00:00",
+    "fixture": {
+      "id": "168380",
+      "title": "头号外交官 第四季",
+      "query": "头号外交官",
+      "episode_count": 8
+    },
+    "rights_status": "未核实第三方内容授权；本地技术验证",
+    "allowed_hosts": [
+      "bfzyapi.com",
+      "v.fengbao14.com"
+    ]
+  },
+  "checks": [
+    {
+      "name": "search",
+      "ok": true,
+      "query": "头号外交官",
+      "count": 5,
+      "upstream": "https://bfzyapi.com/api.php/provide/vod/"
+    },
+    {
+      "name": "detail",
+      "ok": true,
+      "id": "168380",
+      "title": "头号外交官 第四季",
+      "episodes": 8
+    },
+    {
+      "name": "playback",
+      "ok": true,
+      "episode": "第1集",
+      "manifest": "https://v.fengbao14.com/video/touhaowaijiaoguandisiji/51e863af28e5/index.m3u8",
+      "manifest_http": 200,
+      "manifest_cors": "*",
+      "segment_count": 2950,
+      "samples": [
+        {
+          "index": 0,
+          "status": 200,
+          "bytes": 7332,
+          "sha256_sample": "6d5b819e4fefdf5b33c3d989d8eab56dadf234533640833fc6c1791c02f54fa5",
+          "cors": "*"
+        },
+        {
+          "index": 12,
+          "status": 200,
+          "bytes": 65536,
+          "sha256_sample": "d29fae541c6acced688dd92ea5da3ac4ffad6148087a07db1bcf6a6f1bb9b9b3",
+          "cors": "*"
+        }
+      ]
+    },
+    {
+      "name": "playback",
+      "ok": true,
+      "episode": "第2集",
+      "manifest": "https://v.fengbao14.com/video/touhaowaijiaoguandisiji/b2540da8d254/index.m3u8",
+      "manifest_http": 200,
+      "manifest_cors": "*",
+      "segment_count": 2572,
+      "samples": [
+        {
+          "index": 0,
+          "status": 200,
+          "bytes": 7332,
+          "sha256_sample": "6d5b819e4fefdf5b33c3d989d8eab56dadf234533640833fc6c1791c02f54fa5",
+          "cors": "*"
+        },
+        {
+          "index": 12,
+          "status": 200,
+          "bytes": 65536,
+          "sha256_sample": "006df08026edf29a93134bd21bf65a12037ce1b8bdb9fa251030b47608ba2f75",
+          "cors": "*"
+        }
+      ]
+    },
+    {
+      "name": "input-boundary",
+      "path": "/api/search?q=",
+      "status": 400,
+      "ok": true
+    },
+    {
+      "name": "input-boundary",
+      "path": "/api/detail?id=invalid",
+      "status": 400,
+      "ok": true
+    },
+    {
+      "name": "input-boundary",
+      "path": "/api/play?id=168380&episode=-1",
+      "status": 400,
+      "ok": true
+    },
+    {
+      "name": "input-boundary",
+      "path": "/media/unknown/resource",
+      "status": 404,
+      "ok": true
+    },
+    {
+      "name": "cross-origin-block",
+      "status": 403,
+      "ok": true
+    }
+  ],
+  "scope": "Live search/detail plus HLS and two segment samples per episode; browser decoding is recorded separately."
+}

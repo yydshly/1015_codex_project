@@ -1,0 +1,1037 @@
+{
+  "version": 1,
+  "updated_at": "2026-10-11",
+  "records": [
+    {
+      "id": "verify-20260606-initial",
+      "resource_ids": [
+        "kodi",
+        "iptv-org"
+      ],
+      "checked_at": "2026-06-06",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "external web access check"
+      },
+      "result": "available",
+      "notes": "Demo 初始验证仅确认主页可访问。上线前应从实际用户网络环境重新测试核心功能并补充细节。"
+    },
+    {
+      "id": "verify-20260613-no-video",
+      "resource_ids": [
+        "no-video"
+      ],
+      "checked_at": "2026-06-13",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "用户推荐：No影视，主打海外影视剧资源。已先按 4 星收录为精选，后续需要补充访问速度、广告干扰、版权和安全风险验证。"
+    },
+    {
+      "id": "verify-20260613-online-video-batch",
+      "resource_ids": [
+        "gaze-red",
+        "sotvla",
+        "xlys"
+      ],
+      "checked_at": "2026-06-13",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "用户推荐：注视影视、搜TV啦、雪落影视，均归类为在线影视。注视影视提交说明为需梯子访问；三者后续需要补充访问速度、广告干扰、版权和安全风险验证。"
+    },
+    {
+      "id": "verify-20260613-cloud-search-batch",
+      "resource_ids": [
+        "kuakeso",
+        "zhuiju-us",
+        "gugeso",
+        "kuake-so-1"
+      ],
+      "checked_at": "2026-06-13",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "用户推荐：夸克搜、追剧吧、谷哥搜，均归类为网盘资源搜索；同时将夸克点搜推荐指数调整为 5 星。后续需要补充访问速度、广告干扰、版权和链接安全验证。"
+    },
+    {
+      "id": "verify-20260619-magnet-search-batch",
+      "resource_ids": [
+        "meijufen",
+        "cilixiong"
+      ],
+      "checked_at": "2026-06-19",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "screenshot submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据截图信息收录：美剧粉（https://www.mjf2020.com，测评备注：全部高清无广告）和磁力熊（https://www.cilixiong.org，测评备注：无删减、无广告），推荐指数均为 5 星。截图中的访问状态不作为本项目状态依据，后续需要补充访问速度、广告干扰、版权和链接安全验证。"
+    },
+    {
+      "id": "verify-20260619-subtitles-batch",
+      "resource_ids": [
+        "zimuku",
+        "assrt",
+        "subhd"
+      ],
+      "checked_at": "2026-06-19",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "screenshot submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据截图信息收录：字幕库（https://zimuku.org，测评备注：字幕下载）、射手网(伪)（https://assrt.net，测评备注：字幕下载）和 SubHD（https://subhd.tv，测评备注：分享下载字幕平台），推荐指数均为 5 星。截图中的访问状态不作为本项目状态依据，后续需要补充访问速度、广告干扰、版权和下载安全验证。"
+    },
+    {
+      "id": "verify-20260619-online-video-second-batch",
+      "resource_ids": [
+        "duonao-video",
+        "tdgo",
+        "ai-movie",
+        "jpyy",
+        "tv-937",
+        "iyf",
+        "czzymovie",
+        "libvio"
+      ],
+      "checked_at": "2026-06-19",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "screenshot submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据截图信息收录在线影视资源：多瑙影视、火车太堵、爱电影、金牌影视、937影视、爱壹帆、厂长资源和 LIBVIO。推荐指数、访问网址和简介按截图填写；不可访问资源已从当前列表移除；截图中的访问状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性。"
+    },
+    {
+      "id": "verify-20260704-tvbox-config-batch",
+      "resource_ids": [
+        "fan-tai-ying",
+        "fei-mao",
+        "lao-liu-bei",
+        "xiao-ma",
+        "mo-yu-er",
+        "wang-er-xiao",
+        "xiao-he-zi-4k",
+        "xiao-he-zi-single",
+        "vox",
+        "ao-wu",
+        "wu-ming",
+        "xiao-he-zi-multi",
+        "shi-guang-multi",
+        "ting-hao-share-multi",
+        "xiao-he-zi"
+      ],
+      "checked_at": "2026-07-04",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "用户提交影视仓配置地址：饭太硬、肥猫、老刘备、小马、摸鱼儿、王二小、小盒子4K、小盒子单仓、VOX、嗷呜、无名、小盒子多仓、拾光多仓、挺好分享多仓，以及 TV 工具箱“小盒子”。配置地址在 README 地址列以代码样式展示，方便用户复制；带官网的资源名保留超链接；后续由 GitHub Actions 自动检测可用性。"
+    },
+    {
+      "id": "verify-20260704-ciligou",
+      "resource_ids": [
+        "ciligou"
+      ],
+      "checked_at": "2026-07-04",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "screenshot submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据截图信息收录：磁力狗（原地址 https://clg56.top，测评备注：干净好用的磁力资源搜索），当时推荐指数为 5 星。截图中的访问状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与链接安全性。"
+    },
+    {
+      "id": "verify-20260704-bt-yingshi",
+      "resource_ids": [
+        "bt-yingshi"
+      ],
+      "checked_at": "2026-07-04",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "screenshot submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据截图信息收录：BT影视（https://www.btbtla.com，测评备注：4k高清电影BT下载），推荐指数为 5 星。截图中的访问状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与链接安全性。"
+    },
+    {
+      "id": "verify-20260704-online-video-third-batch",
+      "resource_ids": [
+        "auete-video",
+        "dyrs",
+        "netflixgc",
+        "nfyingshi",
+        "nivod",
+        "ppnix",
+        "dbku"
+      ],
+      "checked_at": "2026-07-04",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "screenshot submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据截图信息收录在线影视资源：Auete影视、电影人生、黑夜影院、奈飞工厂、奈菲影视、泥视频、PPnix 和独播库。推荐指数、访问网址和简介按截图填写；注视影视已存在且按要求保持原条目不变；截图中的访问状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性。"
+    },
+    {
+      "id": "verify-20260704-online-video-fourth-batch",
+      "resource_ids": [
+        "ddmf",
+        "sorani",
+        "tdgo"
+      ],
+      "checked_at": "2026-07-04",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "screenshot submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据截图信息收录在线影视资源：蛋蛋魔法（https://ddmf.net，测评备注后续更新为：国内外热播剧，有福利伦理片）和青空次元（https://www.sorani.net，测评备注后续更新为：网友称最夯动漫在线站）；白嫖者联盟与已收录的 tdgo.shop 为同一网址，因此更新原 tdgo 条目的展示名和简介，避免重复收录。截图中的访问状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性。"
+    },
+    {
+      "id": "verify-20260704-appmovie",
+      "resource_ids": [
+        "appmovie"
+      ],
+      "checked_at": "2026-07-04",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "screenshot submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据截图信息收录：APP影院（https://www.appmovie.art，测评备注：国内外热播剧，纯净无广告），推荐指数为 5 星。截图中的访问状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260704-jpyy-url-update",
+      "resource_ids": [
+        "jpyy"
+      ],
+      "checked_at": "2026-07-04",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充将金牌影视访问地址从 https://jpyy2.com 更新为 https://www.vv3nwjk.com；后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260710-no-video-url-update",
+      "resource_ids": [
+        "no-video"
+      ],
+      "checked_at": "2026-07-10",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充将 No影视访问地址从 https://www.novipnoad.cc/ 更新为 https://novipnoad.org/；后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260710-animeko",
+      "resource_ids": [
+        "animeko-app"
+      ],
+      "checked_at": "2026-07-10",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录 Animeko（https://animeko.org/downloads/），简介为在线弹幕追番平台，支持 Android、Windows、macOS、Linux 和 iOS；后续由 GitHub Actions 自动检测可用性，并持续观察应用安装来源、内容来源、版权状态与隐私安全。"
+    },
+    {
+      "id": "verify-20260711-kazumi",
+      "resource_ids": [
+        "kazumi"
+      ],
+      "checked_at": "2026-07-11",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录 Kazumi（https://kazumi.app/download），简介为免费无广告/在线番剧，支持 Android / iOS / Windows / macOS / HarmonyOS；后续由 GitHub Actions 自动检测可用性，并持续观察应用安装来源、内容来源、版权状态与隐私安全。"
+    },
+    {
+      "id": "verify-20260712-selenetv",
+      "resource_ids": [
+        "selenetv-app"
+      ],
+      "checked_at": "2026-07-12",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录 SeleneTV（https://b.zhuiju.me/archives/4/），简介为跨平台 MoonTV 客户端，支持 Android、iOS、macOS 和 Windows；后续由 GitHub Actions 自动检测可用性，并持续观察应用安装来源、内容来源、版权状态与隐私安全。"
+    },
+    {
+      "id": "verify-20260712-magnet-bt-batch",
+      "resource_ids": [
+        "4k-yuanpan",
+        "dianyinggang",
+        "btshijiewang",
+        "gaoqing-mp4",
+        "gaoqingzu"
+      ],
+      "checked_at": "2026-07-12",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录磁力& BT资源：4K原盘（https://pomo.mom，推荐指数 5 星，简介：4K原盘免费下载）、电影港网（https://www.dyg22.com，推荐指数 4 星，简介：无水印4K高清BT种子资源）、BT世界网（https://www.btsj6.com，推荐指数 5 星，简介：高清电影美剧BT种子迅雷下载）、高清MP4（https://www.mp4ba.vip，推荐指数 4 星，简介：免费1080电影4K电影）和高清族（https://hdzu.org，推荐指数 3 星，简介：1080P电影下载,4K电影下载）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与链接安全性。"
+    },
+    {
+      "id": "verify-20260712-online-video-batch",
+      "resource_ids": [
+        "bubu-zhuiju",
+        "yingmao-cangku"
+      ],
+      "checked_at": "2026-07-12",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：布布追剧（https://bubuzhuiju.com，推荐指数 4 星，简介：速度快，有广告能接受）和影猫仓库（https://www.ymck.pro，推荐指数 4 星，简介：热门影视剧，有广告能接受）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260718-auete-url-update",
+      "resource_ids": [
+        "auete-video"
+      ],
+      "checked_at": "2026-07-18",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充将 Auete影视访问地址从 https://au1080.com 更新为 https://www.aeete.com；后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260718-iyf-nfyingshi-update",
+      "resource_ids": [
+        "iyf",
+        "nfyingshi"
+      ],
+      "checked_at": "2026-07-18",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充更新在线影视资源：奈菲影视推荐指数调整为 3 星，简介改为热门美剧（需梯子/有VIP限制）；爱壹帆推荐指数调整为 4 星，简介改为海外华人影视站（需梯子/有VIP限制）。后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260718-online-video-batch",
+      "resource_ids": [
+        "aikanbot",
+        "duse91",
+        "guangsu-yingshi",
+        "haohaokan"
+      ],
+      "checked_at": "2026-07-18",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：爱看机器人（https://www1.aikanbot.com，推荐指数 5 星，简介：全网热门的电影和电视剧榜单）、91毒舌（https://www.duse0.com/，推荐指数 5 星，简介后续更新为：最新Netflix新剧、4K高清（可访问））、光速影视（https://www.yingshiso.link/，推荐指数 4 星，简介：作为备选，纯净无广告）和好好看（https://www.hhkan2.com/，推荐指数 5 星，简介后续更新为：4K高清Netflix新剧（可访问需梯子））；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260718-ifn",
+      "resource_ids": [
+        "ifn"
+      ],
+      "checked_at": "2026-07-18",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：IFN（https://ifn.watch，推荐指数 5 星，简介：为数不多的真4K，无广告需登录）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260718-ifn-url-summary-update",
+      "resource_ids": [
+        "ifn"
+      ],
+      "checked_at": "2026-07-18",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充将 IFN 访问地址更新为 https://ifn.watch/register?code=8B1EF6，简介改为为数不多的真4K，部分免费；后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260802-ciligou-url-rating-update",
+      "resource_ids": [
+        "ciligou"
+      ],
+      "checked_at": "2026-08-02",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充将磁力狗访问地址从 https://clg56.top 更新为 https://ciligou.net，并将推荐指数从 5 星调整为 3 星；后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与链接安全性。"
+    },
+    {
+      "id": "verify-20260802-cilidi",
+      "resource_ids": [
+        "cilidi"
+      ],
+      "checked_at": "2026-08-02",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录磁力帝（https://www.cld123.com，推荐指数 5 星，简介：地址发布页cldi.top）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与链接安全性。"
+    },
+    {
+      "id": "verify-20260808-fdzys",
+      "resource_ids": [
+        "fdzys"
+      ],
+      "checked_at": "2026-08-08",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：饭搭子影视（https://fdzys.com，推荐指数 5 星，简介：最新热门电影电视剧动漫综艺）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260808-sa-video",
+      "resource_ids": [
+        "sa-video"
+      ],
+      "checked_at": "2026-08-08",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：SA视频（https://www.lsjys11.com/，推荐指数 5 星，简介：最新电影电视剧动漫综艺）；本次页面探测超时，暂不据此判定可用性，后续由 GitHub Actions 自动检测，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260809-aikanbot-summary-rating-update",
+      "resource_ids": [
+        "aikanbot"
+      ],
+      "checked_at": "2026-08-09",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充将爱看机器人推荐指数从 5 星调整为 3 星，简介更新为热门电影电视剧（有跳转广告）；后续由 GitHub Actions 自动检测可用性，并持续观察广告跳转、版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-juhebd",
+      "resource_ids": [
+        "juhebd"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录磁力& BT资源：BD影视聚合（https://www.juhebd.com/，推荐指数 5 星，简介：最新高清电影电视剧下载）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与链接安全性。"
+    },
+    {
+      "id": "verify-20260829-ainunu",
+      "resource_ids": [
+        "ainunu"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录磁力& BT资源：爱努努（https://video.ainunu.com/，推荐指数 4 星，简介：绿色影视下载）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与链接安全性。"
+    },
+    {
+      "id": "verify-20260829-bdflixs",
+      "resource_ids": [
+        "bdflixs"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录磁力& BT资源：BD电影首发（https://www.bdflixs.com/，推荐指数 5 星，简介：4K蓝光高清电影更新）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与链接安全性。"
+    },
+    {
+      "id": "verify-20260829-ldysg",
+      "resource_ids": [
+        "ldysg"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录磁力& BT资源：找电影时光（https://www.ldysg.win/，推荐指数 5 星，简介：影视高清晰无水印下载）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与链接安全性。"
+    },
+    {
+      "id": "verify-20260829-juok",
+      "resource_ids": [
+        "juok"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：剧OK（https://juok3.top/，推荐指数 5 星，简介：最新电视剧、最新电影）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-dandanqi",
+      "resource_ids": [
+        "dandanqi"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：蛋蛋奇（https://www.dandanqi.cc/，推荐指数 5 星，简介：最新电视剧/电影/无广告）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-zndy",
+      "resource_ids": [
+        "zndy"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：宅男影视（https://zndy.top/，推荐指数 4 星，简介：想看就看）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-yingshidaquan",
+      "resource_ids": [
+        "yingshidaquan"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：影视大全（https://yingshidaquan.top/，推荐指数 5 星，简介：在线搜索播放、官解无广）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-juzong",
+      "resource_ids": [
+        "juzong"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：剧踪影院（https://www.juzong01.me/，推荐指数 5 星，简介：海内外 SVIP 超前更新）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-jianyunys",
+      "resource_ids": [
+        "jianyunys"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：简云影视（https://jianyunys.com/，推荐指数 5 星，简介：纯净无广告/1080P高清秒播）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-pianku",
+      "resource_ids": [
+        "pianku"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：片库（https://4k01.pianku.online/，推荐指数 5 星，简介：纯净无广告/1080P高清秒播）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-66-dapianwang",
+      "resource_ids": [
+        "66-dapianwang"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：66 大片网（https://www.77dpw.vip/，推荐指数 5 星，简介：免费电影在线观看）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-didahd",
+      "resource_ids": [
+        "didahd"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：嘀嗒影视（https://www.didahd.xyz/，推荐指数 5 星，简介：高分电影聚集地，超清秒播）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-zhuiying",
+      "resource_ids": [
+        "zhuiying"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：追影（https://zhuiying3.cc/，推荐指数 5 星，简介：蓝光高清、无广告免费在线秒播）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-wbbb",
+      "resource_ids": [
+        "wbbb"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：歪比巴卜（https://wbbb1.com/，推荐指数 5 星，简介：高清视频免费在线观看）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-kxyy",
+      "resource_ids": [
+        "kxyy"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：开心影院（https://www.kxyy1.cc/，推荐指数 5 星，简介：最新电影热播电视剧）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-dhvideo",
+      "resource_ids": [
+        "dhvideo"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：豆花电影网（https://dhvideo.cc/，推荐指数 5 星，简介：最新免费电影_在线观看）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-4kvm-rating-summary-update",
+      "resource_ids": [
+        "4kvm-cc-18"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充将 4k影视推荐指数从 4 星调整为 3 星，简介更新为有广告能接受（需梯子/VIP限制）；后续由 GitHub Actions 自动检测可用性，并持续观察广告、VIP限制、版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260829-pomo-name-update",
+      "resource_ids": [
+        "4k-yuanpan"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "该网址已以“4K原盘”收录；根据用户补充将网站名更新为 POMO，网址规范为 https://pomo.mom/，并确认推荐指数 5 星、简介为4K原盘免费下载。后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与链接安全性。"
+    },
+    {
+      "id": "verify-20260829-czy0729-bangumi",
+      "resource_ids": [
+        "czy0729-bangumi"
+      ],
+      "checked_at": "2026-08-29",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "GitHub public repository"
+      },
+      "result": "recommended",
+      "notes": "根据用户补充收录开源项目 Bangumi（https://github.com/czy0729/Bangumi），简介为：专门做 ACG 的类豆瓣追番客户端；Star 数来自 GitHub 项目页，仓库更新时间来自提交订阅源。"
+    },
+    {
+      "id": "verify-20260830-zip0",
+      "resource_ids": [
+        "zip0"
+      ],
+      "checked_at": "2026-08-30",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充收录在线影视资源：ZIP0（https://zip0.com/，推荐指数 5 星，简介：在线影视搜索与播放）；提交状态不作为本项目状态依据，后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260906-zip0-url-update",
+      "resource_ids": [
+        "zip0"
+      ],
+      "checked_at": "2026-09-06",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充将 ZIP0 链接从 https://zip0.com/ 更新为 https://zip0.com/?r=KBDIG8；后续由 GitHub Actions 自动检测可用性，并持续观察版权状态与站点安全性。"
+    },
+    {
+      "id": "verify-20260912-online-video-removals",
+      "resource_ids": [
+        "dandanqi",
+        "yingshidaquan",
+        "ppnix",
+        "guangsu-yingshi"
+      ],
+      "checked_at": "2026-09-12",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "maintainer reported"
+      },
+      "result": "removed",
+      "notes": "维护者确认蛋蛋奇、影视大全、PPnix 和光速影视均已无法访问；从精选在线影视列表下架，并保留资源记录与历史验证信息。"
+    },
+    {
+      "id": "verify-20260912-duonao-video-removal",
+      "resource_ids": [
+        "duonao-video"
+      ],
+      "checked_at": "2026-09-12",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "maintainer reported"
+      },
+      "result": "removed",
+      "notes": "维护者确认多瑙影视已无法访问；从精选在线影视列表下架，并保留资源记录与历史验证信息。"
+    },
+    {
+      "id": "verify-20260913-ios-yingshi-app",
+      "resource_ids": [
+        "ios-yingshi-app"
+      ],
+      "checked_at": "2026-09-13",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "CN",
+        "network": "user tested"
+      },
+      "result": "pending_review",
+      "notes": "根据维护者亲测收录 iOS影视APP 合集（https://b.zhuiju.me/archives/23/），包含多款通过伪装方式在 App Store 上架的免费影视应用；应用含广告，上架状态、内容来源、版权及隐私安全需要持续观察。"
+    },
+    {
+      "id": "verify-20260930-online-video-removal",
+      "resource_ids": [
+        "nivod",
+        "xlys",
+        "jpyy"
+      ],
+      "checked_at": "2026-09-30",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user reported"
+      },
+      "result": "removed",
+      "notes": "维护者反馈泥视频、雪落影视和金牌影视已无法访问；从精选在线影视列表下架，并保留资源记录与历史验证信息。"
+    },
+    {
+      "id": "verify-20261001-ppnix-restored",
+      "resource_ids": [
+        "ppnix"
+      ],
+      "checked_at": "2026-10-01",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user submitted; page opened"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充重新收录 PPnix（https://www.ppnix.com/cn/），推荐指数 5 星，简介：在线观看电影电视剧。页面可打开并列出电影、电视剧；后续由 GitHub Actions 持续检测可用性。"
+    },
+    {
+      "id": "verify-20261001-online-video-descriptions",
+      "resource_ids": [
+        "103-39-111-180-29",
+        "sa-video"
+      ],
+      "checked_at": "2026-10-01",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user reported"
+      },
+      "result": "pending_review",
+      "notes": "根据用户补充更新简介：可可影视为“最新Netflix新剧（可访问）”，SA视频为“最新电影电视剧动漫综艺（可访问）”。可访问为用户反馈；自动检测状态仍以 reports/availability.json 为准。"
+    },
+    {
+      "id": "verify-20261010-ifn-removed",
+      "resource_ids": [
+        "ifn"
+      ],
+      "checked_at": "2026-10-10",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user reported"
+      },
+      "result": "removed",
+      "notes": "维护者反馈 IFN 已删除；从精选在线影视列表下架，并保留资源记录与历史验证信息。"
+    },
+    {
+      "id": "verify-20261010-luoxue-kanmovie-featured-update",
+      "resource_ids": [
+        "tv-lxyy-club-36",
+        "kanmovie-com-34"
+      ],
+      "checked_at": "2026-10-10",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user requested metadata update"
+      },
+      "result": "pending_review",
+      "notes": "根据维护者要求，洛雪TV和西瓜影视的推荐指数调整为5星，更新精选简介及贡献者链接，并依次置于在线影视精选榜单前两位。评分与描述为维护者提供，未进行新的体验复核。"
+    },
+    {
+      "id": "verify-20261010-iptv-pro-featured-update",
+      "resource_ids": [
+        "iptv-cqshushu-com-31"
+      ],
+      "checked_at": "2026-10-10",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user requested metadata update"
+      },
+      "result": "pending_review",
+      "notes": "根据维护者要求，IPTV神器Pro推荐指数调整为5星，简介改为“免费IPTV直播源（@goodsand贡献）”，首页精选中的贡献者用户名链接到 GitHub；未进行新的体验复核。"
+    },
+    {
+      "id": "verify-20261010-chuangxiang-issue-39",
+      "resource_ids": [
+        "ys-cxkjg-cn-39"
+      ],
+      "checked_at": "2026-10-10",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "HTTPS homepage opened in Chrome"
+      },
+      "result": "available",
+      "notes": "维护者在 Issue #39 回复 ok。提交地址 ys.cxkjg.cn 缺少协议，补全为 https://ys.cxkjg.cn/ 后可打开首页。根据维护者补充要求设为5星，置于在线影视精选最前；播放速度及广告情况未独立验证。"
+    },
+    {
+      "id": "verify-20261010-chuangxiang-description-update",
+      "resource_ids": [
+        "ys-cxkjg-cn-39"
+      ],
+      "checked_at": "2026-10-10",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user requested metadata update"
+      },
+      "result": "pending_review",
+      "notes": "根据维护者要求，创享影视简介改为“无广告三网高峰秒播@zxaay贡献”，精选中的 @zxaay 链接到 GitHub。此条仅记录文案修改，未重新验证播放体验。"
+    },
+    {
+      "id": "verify-20261010-chuangxiang-luoxue-description-parentheses",
+      "resource_ids": [
+        "ys-cxkjg-cn-39",
+        "tv-lxyy-club-36"
+      ],
+      "checked_at": "2026-10-10",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user requested metadata update"
+      },
+      "result": "pending_review",
+      "notes": "根据维护者要求调整创享影视和洛雪TV的贡献者标注格式，精选中继续链接各自的 GitHub 主页；未重新验证播放体验。"
+    },
+    {
+      "id": "verify-20261010-yingshicang-webhometv-description-update",
+      "resource_ids": [
+        "yingshicang-player",
+        "webhometv-player"
+      ],
+      "checked_at": "2026-10-10",
+      "checked_by": "maintainer",
+      "method": "manual",
+      "environment": {
+        "region": "unspecified",
+        "network": "user requested metadata update"
+      },
+      "result": "pending_review",
+      "notes": "根据维护者要求修改 TVBox/影视仓空壳分类中的影视仓和 WebHomeTV 简介；仅调整文案，未重新验证软件功能。"
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="8246" viewBox="0 0 2048 8246"><title>从资源目录，到视频产品：研究全景图</title><desc>源库能力、真实搜播效果、片源发现、流量架构、内容供应、成本、产品路线与经营验证。</desc><rect width="100%" height="100%" fill="#F5F2EA"/>
+<rect x="0" y="0" width="2048" height="480" rx="0" fill="#173D35" stroke="none" stroke-width="2"/>
+<text x="108.00" y="73.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="400" fill="#B9CDB7">RESEARCH FIELD NOTES  /  010</text>
+<text x="108.00" y="197.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="81" font-weight="700" fill="#FFFEF8">从资源目录，到视频产品</text>
+<text x="108.00" y="268.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="400" fill="#CDDDC7">awesome-zhuiju-free · 能力、实测、架构与产品全景</text>
+<text x="108.00" y="342.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="34" font-weight="400" fill="#E2EBD9">原库的价值，是可维护的资源发现与情报；视频产品还要连接内容许可、观看体验、流量分发和经营验证。</text>
+<rect x="108" y="512" width="112" height="39" rx="4" fill="#E8EDDF" stroke="none" stroke-width="2"/>
+<text x="122.00" y="538.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#407558">原库已有</text>
+<rect x="236" y="512" width="133" height="39" rx="4" fill="#173D35" stroke="none" stroke-width="2"/>
+<text x="250.00" y="538.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#FFFEF8">我们已验证</text>
+<rect x="385" y="512" width="112" height="39" rx="4" fill="#F2E7D2" stroke="none" stroke-width="2"/>
+<text x="399.00" y="538.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#A76632">后续设想</text>
+<rect x="513" y="512" width="112" height="39" rx="4" fill="#EBE8DF" stroke="none" stroke-width="2"/>
+<text x="527.00" y="538.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#6C7B6C">仍待确认</text>
+<text x="1640.00" y="543.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">研究与接入复验：2026.10.19</text>
+<polyline points="108,597 1940,597" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="108.00" y="670.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="400" fill="#C45D38">01</text>
+<text x="193.00" y="673.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="45" font-weight="700" fill="#173D35">源库的能力是什么？</text>
+<rect x="1828.0" y="632" width="112" height="39" rx="4" fill="#E8EDDF" stroke="none" stroke-width="2"/>
+<text x="1842.00" y="658.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#407558">原库已有</text>
+<text x="193.00" y="724.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">一套资源目录与维护系统：发现入口、组织信息、持续更新。</text>
+<rect x="108.0" y="763" width="425.0" height="145" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="226.50" y="820.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">维护者 / 社区</text>
+<text x="205.00" y="870.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">人工整理与 Issue 推荐</text>
+<polyline points="542.0,835.5 569.0,835.5" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="557.0,826.5 569.0,835.5 557.0,844.5" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="577.0" y="763" width="425.0" height="145" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="696.00" y="820.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">结构化 JSON</text>
+<text x="663.00" y="870.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">分类、标签、评分与状态</text>
+<polyline points="1011.0,835.5 1038.0,835.5" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="1026.0,826.5 1038.0,835.5 1026.0,844.5" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="1046.0" y="763" width="425.0" height="145" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1165.50" y="820.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">脚本与自动化</text>
+<text x="1145.50" y="870.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">目录生成、HTTP 检查</text>
+<polyline points="1480.0,835.5 1507.0,835.5" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="1495.0,826.5 1507.0,835.5 1495.0,844.5" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="1515.0" y="763" width="425.0" height="145" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1650.00" y="820.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">导航与记录</text>
+<text x="1587.00" y="870.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">README、周报、核验来源</text>
+<text x="133.00" y="995.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="58" font-weight="700" fill="#173D35">119</text>
+<text x="133.00" y="1042.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#173D35">条固定版本记录</text>
+<text x="133.00" y="1083.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#6C7B6C">111 条精选 + 8 条移除</text>
+<polyline points="566.0,941 566.0,1069" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="591.00" y="995.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="58" font-weight="700" fill="#173D35">53</text>
+<text x="591.00" y="1042.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#173D35">个在线影视入口</text>
+<text x="591.00" y="1083.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#6C7B6C">入口数量，不是影片数量</text>
+<polyline points="1024.0,941 1024.0,1069" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1049.00" y="995.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="58" font-weight="700" fill="#173D35">15</text>
+<text x="1049.00" y="1042.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#173D35">个 TVBox 配置</text>
+<text x="1049.00" y="1083.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#6C7B6C">不等于独立授权片库</text>
+<polyline points="1482.0,941 1482.0,1069" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1507.00" y="995.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="58" font-weight="700" fill="#173D35">15</text>
+<text x="1507.00" y="1042.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#173D35">个开源项目</text>
+<text x="1507.00" y="1083.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#6C7B6C">软件许可与内容许可分开</text>
+<text x="108.00" y="1158.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#173D35">最近报告：96 个入口的 HTTP 响应</text>
+<rect x="888" y="1140" width="720.25" height="20" rx="0" fill="#407558" stroke="none" stroke-width="2"/>
+<rect x="1611.25" y="1140" width="227.125" height="20" rx="0" fill="#C89451" stroke="none" stroke-width="2"/>
+<rect x="1841.375" y="1140" width="95.625" height="20" rx="0" fill="#A0AA96" stroke="none" stroke-width="2"/>
+<text x="108.00" y="1210.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#3F5145">66 可访问  /  21 受限  /  9 无法访问；111 条精选中排除了 15 个开源项目。</text>
+<text x="108.00" y="1256.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">固定版本数据与上游检测：2026.10.15。HTTP 响应不是播放成功率。</text>
+<rect x="108" y="1289" width="1832" height="76" rx="7" fill="#F2E7D2" stroke="none" stroke-width="2"/>
+<text x="133.00" y="1335.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#A76632">许可边界</text>
+<text x="267.00" y="1334.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#A76632">上游目录与代码的 CC BY 4.0，不自动覆盖第三方影片、海报、字幕和接口。</text>
+<polyline points="108,1415 1940,1415" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="108.00" y="1488.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="400" fill="#C45D38">02</text>
+<text x="193.00" y="1491.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="45" font-weight="700" fill="#173D35">展示效果：我们实际做出了什么？</text>
+<rect x="1807.0" y="1450" width="133" height="39" rx="4" fill="#173D35" stroke="none" stroke-width="2"/>
+<text x="1821.00" y="1476.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#FFFEF8">我们已验证</text>
+<text x="193.00" y="1542.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">007 映片 Demo 已嵌入 010 研究页；一个本地服务提供研究、播放器与 API。</text>
+<circle cx="113" cy="1602" r="4" fill="#407558"/>
+<text x="135.00" y="1611.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#173D35">实时搜片 → 详情 → 选集 → 浏览器播放</text>
+<text x="135.00" y="1663.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#6C7B6C">沿用 007 的实际后端与播放器，不用录播或静态结果替换失败响应。</text>
+<circle cx="113" cy="1720" r="4" fill="#407558"/>
+<text x="135.00" y="1729.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#173D35">2026.10.19 接入复验</text>
+<text x="135.00" y="1781.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#6C7B6C">搜索返回 5 条结果；样例返回 8 集。首两集均解码到 1920 × 1080。</text>
+<circle cx="113" cy="1838" r="4" fill="#407558"/>
+<text x="135.00" y="1847.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#173D35">有画面，也有时间推进</text>
+<text x="135.00" y="1899.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#6C7B6C">首集约 58.25 秒、次集约 63.92 秒；验证了切集、暂停与继续。</text>
+<rect x="1042.0" y="1581" width="898.0" height="494" rx="10" fill="#19271F" stroke="none" stroke-width="2"/>
+<text x="1069.00" y="1628.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#D8E7C9">映片 / CINEMA LAB</text>
+<text x="1740.00" y="1628.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#A9BC9F">界面示意</text>
+<rect x="1068.0" y="1659" width="846.0" height="57" rx="5" fill="#2B3A2E" stroke="none" stroke-width="2"/>
+<text x="1089.00" y="1697.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#D5E2C8">输入片名，实时搜索…</text>
+<rect x="1068.0" y="1736" width="846.0" height="195" rx="6" fill="#0F1913" stroke="none" stroke-width="2"/>
+<polyline points="1476.0,1809 1515.0,1833 1476.0,1857 1476.0,1809" fill="none" stroke="#BCD69C" stroke-width="4"/>
+<text x="1730.00" y="1904.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#C9DDB8">1080p · HLS</text>
+<text x="1068.00" y="1971.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#E1E8DB">选集 / 8 集</text>
+<rect x="1068.0" y="1990" width="97.875" height="48" rx="4" fill="#BCD69C" stroke="none" stroke-width="2"/>
+<text x="1109.94" y="2022.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#19321F">1</text>
+<rect x="1174.875" y="1990" width="97.875" height="48" rx="4" fill="#33432F" stroke="none" stroke-width="2"/>
+<text x="1216.81" y="2022.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#D4E1C9">2</text>
+<rect x="1281.75" y="1990" width="97.875" height="48" rx="4" fill="#33432F" stroke="none" stroke-width="2"/>
+<text x="1323.69" y="2022.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#D4E1C9">3</text>
+<rect x="1388.625" y="1990" width="97.875" height="48" rx="4" fill="#33432F" stroke="none" stroke-width="2"/>
+<text x="1430.56" y="2022.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#D4E1C9">4</text>
+<rect x="1495.5" y="1990" width="97.875" height="48" rx="4" fill="#33432F" stroke="none" stroke-width="2"/>
+<text x="1537.44" y="2022.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#D4E1C9">5</text>
+<rect x="1602.375" y="1990" width="97.875" height="48" rx="4" fill="#33432F" stroke="none" stroke-width="2"/>
+<text x="1644.31" y="2022.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#D4E1C9">6</text>
+<rect x="1709.25" y="1990" width="97.875" height="48" rx="4" fill="#33432F" stroke="none" stroke-width="2"/>
+<text x="1751.19" y="2022.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#D4E1C9">7</text>
+<rect x="1816.125" y="1990" width="97.875" height="48" rx="4" fill="#33432F" stroke="none" stroke-width="2"/>
+<text x="1858.06" y="2022.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#D4E1C9">8</text>
+<rect x="108" y="2101" width="1832" height="76" rx="7" fill="#F2E7D2" stroke="none" stroke-width="2"/>
+<text x="133.00" y="2147.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#A76632">实测边界</text>
+<text x="267.00" y="2146.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#A76632">只抽样首两集；未完整观看、遍历全库、跨地区或并发压测。片名与季度资料来自上游，未独立核实。</text>
+<polyline points="108,2227 1940,2227" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="108.00" y="2300.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="400" fill="#C45D38">03</text>
+<text x="193.00" y="2303.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="45" font-weight="700" fill="#173D35">片源如何找到？引发了什么思考？</text>
+<rect x="1765.0" y="2262" width="175" height="39" rx="4" fill="#173D35" stroke="none" stroke-width="2"/>
+<text x="1779.00" y="2288.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#FFFEF8">发现链路已验证</text>
+<text x="193.00" y="2354.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">追溯到了配置、接口与媒体地址；这条发现链路不等于原始内容的权属链。</text>
+<rect x="108.0" y="2393" width="331.2" height="160" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="195.60" y="2450.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">资源 JSON</text>
+<text x="149.10" y="2500.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">原库 tvbox_config 分类</text>
+<polyline points="448.2,2473.0 475.2,2473.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="463.2,2464.0 475.2,2473.0 463.2,2482.0" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="483.2" y="2393" width="331.2" height="160" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="586.80" y="2450.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">小马配置</text>
+<text x="544.30" y="2500.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">szyyds.cn/tv/x.json</text>
+<polyline points="823.4,2473.0 850.4,2473.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="838.4,2464.0 850.4,2473.0 838.4,2482.0" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="858.4" y="2393" width="331.2" height="160" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="915.99" y="2450.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">暴風 HTTP API</text>
+<text x="956.50" y="2500.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">bfzyapi.com</text>
+<polyline points="1198.6,2473.0 1225.6,2473.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="1213.6,2464.0 1225.6,2473.0 1213.6,2482.0" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="1233.6" y="2393" width="331.2" height="160" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1321.70" y="2450.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">详情与选集</text>
+<text x="1330.70" y="2500.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">vod_play_url</text>
+<polyline points="1573.8,2473.0 1600.8,2473.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="1588.8,2464.0 1600.8,2473.0 1588.8,2482.0" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="1608.8" y="2393" width="331.2" height="160" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1691.40" y="2450.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">HLS / CDN</text>
+<text x="1678.41" y="2500.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">v.fengbao14.com</text>
+<text x="108.00" y="2602.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#3F5145">接口：/api.php/provide/vod/    搜索：ac=detail&amp;wd=片名    详情：ac=detail&amp;ids=编号</text>
+<text x="108.00" y="2648.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#3F5145">详情解析 vod_play_from / vod_play_url → .m3u8 清单 → 媒体分片 → 浏览器解码</text>
+<text x="108.00" y="2693.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="400" fill="#6C7B6C">探索记录：读取 17 份配置、26 次 HTTP API 请求；次数不等于独立片库数；未执行远程 Spider。</text>
+<rect x="108" y="2728" width="1832" height="76" rx="7" fill="#F2E7D2" stroke="none" stroke-width="2"/>
+<text x="133.00" y="2774.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#A76632">仍待确认</text>
+<text x="267.00" y="2773.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#A76632">最初影片由谁取得、上游为何承担成本、是否允许第三方商用，以及额度和服务承诺，都没有充分证据。</text>
+<rect x="108.0" y="2832" width="425.0" height="149" rx="12" fill="#E8EDDF" stroke="#D4DCCB" stroke-width="2"/>
+<text x="227.50" y="2889.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">入口可访问？</text>
+<text x="250.00" y="2939.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">有 HTTP 响应</text>
+<polyline points="542.0,2906.5 569.0,2906.5" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="557.0,2897.5 569.0,2906.5 557.0,2915.5" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="577.0" y="2832" width="425.0" height="149" rx="12" fill="#E8EDDF" stroke="#D4DCCB" stroke-width="2"/>
+<text x="696.50" y="2889.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">媒体可播放？</text>
+<text x="686.00" y="2939.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">能读取、解码、推进</text>
+<polyline points="1011.0,2906.5 1038.0,2906.5" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="1026.0,2897.5 1038.0,2906.5 1026.0,2915.5" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="1046.0" y="2832" width="425.0" height="149" rx="12" fill="#E8EDDF" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1150.00" y="2889.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">有权用于业务？</text>
+<text x="1132.00" y="2939.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">许可、地区、期限、模式</text>
+<polyline points="1480.0,2906.5 1507.0,2906.5" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="1495.0,2897.5 1507.0,2906.5 1495.0,2915.5" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="1515.0" y="2832" width="425.0" height="149" rx="12" fill="#E8EDDF" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1634.50" y="2889.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">可持续经营？</text>
+<text x="1601.00" y="2939.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">供给、体验、用户与利润</text>
+<text x="108.00" y="3027.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700" fill="#407558">每一层都需要自己的证据；前一层成功，不能自动证明下一层成立。</text>
+<polyline points="108,3082 1940,3082" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="108.00" y="3155.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="400" fill="#C45D38">04</text>
+<text x="193.00" y="3158.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="45" font-weight="700" fill="#173D35">架构是什么？视频流量由谁承担？</text>
+<rect x="1765.0" y="3117" width="175" height="39" rx="4" fill="#173D35" stroke="none" stroke-width="2"/>
+<text x="1779.00" y="3143.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#FFFEF8">直连链路已验证</text>
+<text x="193.00" y="3209.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">控制与元数据走后端；媒体字节的真实路径决定带宽账单。</text>
+<text x="108.00" y="3275.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#C45D38">A / 搜索与播放控制</text>
+<rect x="108.0" y="3301" width="581.3333333333334" height="146" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="321.17" y="3358.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">用户浏览器</text>
+<text x="305.67" y="3408.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">搜索 / 选片 / 选集</text>
+<polyline points="698.3333333333334,3365.0 725.3333333333334,3365.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="713.3333333333334,3356.0 725.3333333333334,3365.0 713.3333333333334,3374.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="725.3333333333334,3383.0 698.3333333333334,3383.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="710.3333333333334,3374.0 698.3333333333334,3383.0 710.3333333333334,3392.0" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="733.3333333333334" y="3301" width="581.3333333333334" height="146" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="900.00" y="3358.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">我们的后端适配器</text>
+<text x="877.00" y="3408.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">/api/search · /detail · /play</text>
+<polyline points="1323.6666666666667,3365.0 1350.6666666666667,3365.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="1338.6666666666667,3356.0 1350.6666666666667,3365.0 1338.6666666666667,3374.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="1350.6666666666667,3383.0 1323.6666666666667,3383.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="1335.6666666666667,3374.0 1323.6666666666667,3383.0 1335.6666666666667,3392.0" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="1358.6666666666667" y="3301" width="581.3333333333334" height="146" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1587.33" y="3358.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">影片 API</text>
+<text x="1545.83" y="3408.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">影片资料与剧集地址</text>
+<text x="108.00" y="3494.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">后端负责：字段标准化、线路解析、超时重试、短期缓存、域名白名单与本机同源校验。</text>
+<text x="108.00" y="3567.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#C45D38">B / 真正的视频数据（007 正常播放路径）</text>
+<rect x="108.0" y="3592" width="894.0" height="146" rx="12" fill="#E8EDDF" stroke="#D4DCCB" stroke-width="2"/>
+<text x="452.50" y="3649.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">上游媒体 CDN</text>
+<text x="437.50" y="3699.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">HLS 清单 / 音视频分片</text>
+<polyline points="1011.0,3665.0 1038.0,3665.0" fill="none" stroke="#407558" stroke-width="4"/>
+<polyline points="1026.0,3656.0 1038.0,3665.0 1026.0,3674.0" fill="none" stroke="#407558" stroke-width="4"/>
+<rect x="1046.0" y="3592" width="894.0" height="146" rx="12" fill="#E8EDDF" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1415.50" y="3649.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">用户浏览器</text>
+<text x="1367.50" y="3699.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">HLS.js / 原生解码与播放</text>
+<text x="108.00" y="3788.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#407558">媒体直接从 CDN 到浏览器；我们后端主要传递元数据和播放地址。</text>
+<rect x="108.0" y="3838" width="592.0" height="320" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="108.0" y="3838" width="6" height="320" rx="0" fill="#407558" stroke="none" stroke-width="2"/>
+<text x="140.00" y="3896.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#173D35">上游直连</text>
+<text x="140.00" y="3950.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">上游 CDN → 浏览器</text>
+<text x="140.00" y="3993.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">视频流量主要由上游承担；额度、权利和稳定</text>
+<text x="140.00" y="4036.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">性未知。</text>
+<rect x="728.0" y="3838" width="592.0" height="320" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="728.0" y="3838" width="6" height="320" rx="0" fill="#407558" stroke="none" stroke-width="2"/>
+<text x="760.00" y="3896.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#173D35">后端转发</text>
+<text x="760.00" y="3950.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">上游 → 我们的服务器 → 浏览器</text>
+<text x="760.00" y="3993.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">我们增加出口带宽、连接与请求成本；转发不</text>
+<text x="760.00" y="4036.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">会产生授权。</text>
+<rect x="1348.0" y="3838" width="592.0" height="320" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="1348.0" y="3838" width="6" height="320" rx="0" fill="#407558" stroke="none" stroke-width="2"/>
+<text x="1380.00" y="3896.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#173D35">自有分发</text>
+<text x="1380.00" y="3950.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">获准使用的文件 → 存储 / 转码 → CDN</text>
+<text x="1380.00" y="3993.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">我们采购视频基础设施，规划分发、质量和地</text>
+<text x="1380.00" y="4036.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">域控制。</text>
+<rect x="108" y="4182" width="1832" height="76" rx="7" fill="#E8EDDF" stroke="none" stroke-width="2"/>
+<text x="133.00" y="4228.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#407558">生产扩展</text>
+<text x="267.00" y="4227.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#407558">片目库、许可地区与期限、字幕、播放质量监控、自动下架、报表与结算，都是正式产品需要补齐的部分。</text>
+<text x="108.00" y="4311.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">代码决定怎么接；合同决定能做什么；流量路径决定谁付钱。</text>
+<polyline points="108,4379 1940,4379" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="108.00" y="4452.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="400" fill="#C45D38">05</text>
+<text x="193.00" y="4455.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="45" font-weight="700" fill="#173D35">内容如何获取？成本如何计算？</text>
+<rect x="1700.0" y="4414" width="240" height="39" rx="4" fill="#F2E7D2" stroke="none" stroke-width="2"/>
+<text x="1714.00" y="4440.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#A76632">价格 / 条款快照 10.16</text>
+<text x="193.00" y="4506.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">内容许可、接入方式与视频分发，应分别核实。</text>
+<text x="108.00" y="4581.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="34" font-weight="700" fill="#173D35">先确认内容可用范围</text>
+<circle cx="113" cy="4637" r="4" fill="#407558"/>
+<text x="135.00" y="4644.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#173D35">开放电影</text>
+<text x="135.00" y="4693.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">Big Buck Bunny、Sintel 等；按具体作品核查许可、署名和片尾，自行分发</text>
+<text x="135.00" y="4736.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">另算成本。</text>
+<circle cx="113" cy="4792" r="4" fill="#407558"/>
+<text x="135.00" y="4799.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#173D35">官方播放器嵌入</text>
+<text x="135.00" y="4848.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">YouTube 等平台负责媒体分发；需遵守品牌、收费、广告与可用性规则。</text>
+<circle cx="113" cy="4904" r="4" fill="#407558"/>
+<text x="135.00" y="4911.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#173D35">独立作者 / 工作室合作</text>
+<text x="135.00" y="4960.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">取得非独家、地区、期限、用途明确的许可，建立逐片授权台账。</text>
+<circle cx="113" cy="5016" r="4" fill="#407558"/>
+<text x="135.00" y="5023.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#173D35">Filmhub 渠道合作</text>
+<text x="135.00" y="5072.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">我们是 Channel / Buyer。审核、选片、签协议；标准流程交付到 S3 /</text>
+<text x="135.00" y="5115.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">SFTP，再安排播放分发。</text>
+<circle cx="113" cy="5171" r="4" fill="#407558"/>
+<text x="135.00" y="5178.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#173D35">素材 API 与未知公共接口</text>
+<text x="135.00" y="5227.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">Pexels / Pixabay 是创作素材，不是完整影视片库。未知 API 可供技术研究，</text>
+<text x="135.00" y="5270.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">商用与容量仍未确认。</text>
+<rect x="1042.0" y="4545" width="898.0" height="835" rx="12" fill="#E8EDDF" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1074.00" y="4607.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="32" font-weight="700" fill="#173D35">免费内容许可 ≠ 免费基础设施</text>
+<text x="1074.00" y="4675.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#173D35">3 Mbps × 1 小时 ≈ 1.35 GB</text>
+<text x="1074.00" y="4721.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#173D35">100 人同时观看 ≈ 300 Mbps，尚未含余量。</text>
+<text x="1074.00" y="4795.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#3F5145">示例：1,000 次/月 × 10 分钟/次 × 3 Mbps；转码后存储 20 GB，片</text>
+<text x="1074.00" y="4840.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#3F5145">库 200 分钟。</text>
+<text x="1074.00" y="4947.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="62" font-weight="700" fill="#173D35">225 GB</text>
+<text x="1424.00" y="4945.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">约月传输量</text>
+<text x="1074.00" y="5017.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#3F5145">Bunny Standard · 欧美</text>
+<text x="1775.00" y="5018.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#173D35">$2.45 / 月</text>
+<polyline points="1074.0,5044 1908.0,5044" fill="none" stroke="#CAD5BE" stroke-width="2"/>
+<text x="1074.00" y="5102.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#3F5145">Bunny Standard · 亚洲 / 大洋洲</text>
+<text x="1775.00" y="5103.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#173D35">$6.95 / 月</text>
+<polyline points="1074.0,5129 1908.0,5129" fill="none" stroke="#CAD5BE" stroke-width="2"/>
+<text x="1074.00" y="5187.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#3F5145">Cloudflare Stream</text>
+<text x="1758.00" y="5188.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#173D35">$15.00 / 月</text>
+<polyline points="1074.0,5214 1908.0,5214" fill="none" stroke="#CAD5BE" stroke-width="2"/>
+<text x="1074.00" y="5276.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">美元、不含税；2026.10.16 公开价格快照。含示例存储与最低消费；不含版权、</text>
+<text x="1074.00" y="5314.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">整站、支付、营销、人力和可选功能。不是正式报价。</text>
+<rect x="108" y="5400" width="1832" height="76" rx="7" fill="#F2E7D2" stroke="none" stroke-width="2"/>
+<text x="133.00" y="5446.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#A76632">Filmhub 的 80/20</text>
+<text x="389.00" y="5445.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#A76632">通常指 Filmhub 与制片方，不代表网站默认保留 80%。个人准入、实际片单、预付款、保底和渠道分成仍待书面确认。</text>
+<text x="108.00" y="5525.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">成本变量：码率、地区、观看分钟、预加载与重试。文件交付给你，不等于供应商替你承担终端播放流量。</text>
+<polyline points="108,5598 1940,5598" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="108.00" y="5671.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="400" fill="#C45D38">06</text>
+<text x="193.00" y="5674.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="45" font-weight="700" fill="#173D35">可扩展成什么产品？</text>
+<rect x="1828.0" y="5633" width="112" height="39" rx="4" fill="#F2E7D2" stroke="none" stroke-width="2"/>
+<text x="1842.00" y="5659.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#A76632">后续设想</text>
+<text x="193.00" y="5725.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">选择垂直用户与可持续供给，再把模块复用到更多场景。</text>
+<rect x="108.0" y="5764" width="592.0" height="340" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="108.0" y="5764" width="6" height="340" rx="0" fill="#407558" stroke="none" stroke-width="2"/>
+<text x="140.00" y="5822.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#173D35">资源导航 / 状态目录</text>
+<text x="140.00" y="5876.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">价值：垂直分类、实测与更新。</text>
+<text x="140.00" y="5919.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">收益假设：专题赞助、信息服务。</text>
+<text x="140.00" y="5962.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">特点：接近原库，媒体带宽较低。</text>
+<rect x="728.0" y="5764" width="592.0" height="340" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="728.0" y="5764" width="6" height="340" rx="0" fill="#C45D38" stroke="none" stroke-width="2"/>
+<text x="760.00" y="5822.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#173D35">短片精选 + 原创解析</text>
+<text x="760.00" y="5876.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">价值：主题策展、字幕与创作背景。</text>
+<text x="760.00" y="5919.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">收益假设：原创课程、会员服务、赞助。</text>
+<text x="760.00" y="5962.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">判断：当前优先验证的路线。</text>
+<rect x="1348.0" y="5764" width="592.0" height="340" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="1348.0" y="5764" width="6" height="340" rx="0" fill="#407558" stroke="none" stroke-width="2"/>
+<text x="1380.00" y="5822.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#173D35">签约片库 / 小型流媒体</text>
+<text x="1380.00" y="5876.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">价值：许可片目、稳定观看与服务。</text>
+<text x="1380.00" y="5919.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">模式：广告 / 订阅 / 单片付费。</text>
+<text x="1380.00" y="5962.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">条件：渠道准入、供应合同和资金。</text>
+<text x="108.00" y="6168.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#173D35">来源适配器</text>
+<text x="108.00" y="6216.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">多源规范化、健康检测、失效处理</text>
+<polyline points="108.0,6236 1006.0,6236" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1042.00" y="6168.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#173D35">影片与许可台账</text>
+<text x="1042.00" y="6216.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">地区 / 到期 / 字幕 / 自动下架</text>
+<polyline points="1042.0,6236 1940.0,6236" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="108.00" y="6290.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#173D35">观看事件与成本</text>
+<text x="108.00" y="6338.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">质量归因、预算预警、单位经济核算</text>
+<polyline points="108.0,6358 1006.0,6358" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1042.00" y="6290.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#173D35">专题与用户关系</text>
+<text x="1042.00" y="6338.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">收藏、推荐、作者合作、教育与影展场景</text>
+<polyline points="1042.0,6358 1940.0,6358" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="108" y="6403" width="1832" height="76" rx="7" fill="#E8EDDF" stroke="none" stroke-width="2"/>
+<text x="133.00" y="6449.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#407558">产品壁垒</text>
+<text x="267.00" y="6448.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#407558">内容供给、编辑判断、可靠体验与用户关系。公共接口和一个搜索框，通常很容易重复实现。</text>
+<polyline points="108,6529 1940,6529" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="108.00" y="6602.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="400" fill="#C45D38">07</text>
+<text x="193.00" y="6605.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="45" font-weight="700" fill="#173D35">如何低成本起步，验证能否盈利？</text>
+<rect x="1786.0" y="6564" width="154" height="39" rx="4" fill="#F2E7D2" stroke="none" stroke-width="2"/>
+<text x="1800.00" y="6590.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700" fill="#A76632">四周验证路线</text>
+<text x="193.00" y="6656.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">把技术演示推进为有证据的需求与经营试验。以下是建议计划，尚未执行。</text>
+<rect x="108.0" y="6695" width="438.5" height="244" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="132.00" y="6744.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#C45D38">第 1 周</text>
+<text x="132.00" y="6798.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#173D35">收窄主题与供给</text>
+<text x="132.00" y="6853.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">访谈目标用户，逐片核实许可，整</text>
+<text x="132.00" y="6896.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">理小片库。</text>
+<rect x="572.5" y="6695" width="438.5" height="244" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="596.50" y="6744.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#C45D38">第 2 周</text>
+<text x="596.50" y="6798.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#173D35">测真实观看体验</text>
+<text x="596.50" y="6853.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">邀请约 20 人，测起播、卡顿、字</text>
+<text x="596.50" y="6896.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">幕与每观看小时成本。</text>
+<rect x="1037.0" y="6695" width="438.5" height="244" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1061.00" y="6744.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#C45D38">第 3 周</text>
+<text x="1061.00" y="6798.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#173D35">验证编辑价值</text>
+<text x="1061.00" y="6853.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">发布原创专题，观察有效观看、收</text>
+<text x="1061.00" y="6896.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">藏和复访。</text>
+<rect x="1501.5" y="6695" width="438.5" height="244" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<text x="1525.50" y="6744.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#C45D38">第 4 周</text>
+<text x="1525.50" y="6798.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#173D35">取得真实收入证据</text>
+<text x="1525.50" y="6853.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">试验明确收费项或赞助，核实支付</text>
+<text x="1525.50" y="6896.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#3F5145">与贡献利润。</text>
+<text x="108.00" y="7002.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">供给</text>
+<text x="108.00" y="7051.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">可授权，并且实际能播</text>
+<text x="728.67" y="7002.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">需求</text>
+<text x="728.67" y="7051.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">复访与真实支付，而非仅访问量</text>
+<text x="1349.33" y="7002.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="700" fill="#173D35">经济</text>
+<text x="1349.33" y="7051.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#6C7B6C">收入减去授权、分发、支付与获客成本</text>
+<rect x="108" y="7113" width="1832" height="76" rx="7" fill="#F2E7D2" stroke="none" stroke-width="2"/>
+<text x="133.00" y="7159.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#A76632">扩张门槛</text>
+<text x="267.00" y="7158.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#A76632">有收入证据、内容供应可持续、单位经济成立，再扩大片库。当前没有已验证的盈利结论。</text>
+<polyline points="108,7239 1940,7239" fill="none" stroke="#D4DCCB" stroke-width="2"/>
+<text x="108.00" y="7312.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="400" fill="#C45D38">08</text>
+<text x="193.00" y="7315.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="45" font-weight="700" fill="#173D35">这次探索的意义是什么？</text>
+<text x="193.00" y="7366.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#6C7B6C">把一份网址清单，变成一套理解内容产品的方法。</text>
+<rect x="108.0" y="7405" width="898.0" height="162" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="108.0" y="7405" width="6" height="162" rx="0" fill="#407558" stroke="none" stroke-width="2"/>
+<text x="140.00" y="7463.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#173D35">研究价值</text>
+<text x="140.00" y="7519.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#3F5145">从目录与配置发现接入链路，保留来源、原始数据与实测证据。</text>
+<rect x="1042.0" y="7405" width="898.0" height="162" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="1042.0" y="7405" width="6" height="162" rx="0" fill="#407558" stroke="none" stroke-width="2"/>
+<text x="1074.00" y="7463.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#173D35">工程价值</text>
+<text x="1074.00" y="7519.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#3F5145">复用结构化数据、审核检测、适配器、缓存与媒体解码的组织方法。</text>
+<rect x="108.0" y="7586" width="898.0" height="162" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="108.0" y="7586" width="6" height="162" rx="0" fill="#407558" stroke="none" stroke-width="2"/>
+<text x="140.00" y="7644.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#173D35">产品价值</text>
+<text x="140.00" y="7700.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#3F5145">从“什么都能搜到”，走向“这类内容，我愿意回来这里看”。</text>
+<rect x="1042.0" y="7586" width="898.0" height="162" rx="12" fill="#FFFEF8" stroke="#D4DCCB" stroke-width="2"/>
+<rect x="1042.0" y="7586" width="6" height="162" rx="0" fill="#407558" stroke="none" stroke-width="2"/>
+<text x="1074.00" y="7644.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#173D35">商业价值</text>
+<text x="1074.00" y="7700.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#3F5145">在采购与扩张之前，把许可、成本、需求和责任放到同一张图。</text>
+<rect x="108" y="7774" width="1832" height="76" rx="7" fill="#F2E7D2" stroke="none" stroke-width="2"/>
+<text x="133.00" y="7820.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#A76632">仍待解决</text>
+<text x="267.00" y="7819.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#A76632">原始内容权属、公共接口商用与流量承诺、全库稳定性、Filmhub 准入和报价、用户留存与整站利润。</text>
+<rect x="108" y="7892" width="1832" height="151" rx="6" fill="#173D35" stroke="none" stroke-width="2"/>
+<text x="481.00" y="7955.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="34" font-weight="700" fill="#FFFEF8">发现入口 → 验证播放 → 确认供应 → 设计体验 → 核算成本 → 验证经营</text>
+<text x="673.00" y="8014.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#C7D9BE">有价值的产品，来自可持续的供给与用户愿意再来的理由。</text>
+<text x="108.00" y="8114.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="400" fill="#6C7B6C">研究对象：github.com/laoma528/awesome-zhuiju-free   ·   固定提交 d1049a3…52a0</text>
+<text x="108.00" y="8158.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">源码与供应商资料：2026.10.15–16；演示接入复验：2026.10.19。UI 为示意，验证数据来自本地报告。</text>
+<text x="108.00" y="8202.00" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#6C7B6C">架构扩展与产品路线包含建议；尚未签商业片库合同，未公开部署。详细证据、来源与代码见研究项目 010 / 007。</text>
+</svg>

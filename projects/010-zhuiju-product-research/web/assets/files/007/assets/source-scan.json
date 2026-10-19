@@ -1,0 +1,663 @@
+{
+  "checked_at": "2026-10-15T14:07:47.798343+00:00",
+  "catalog_url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/main/resources/resources.json",
+  "catalog_sha256": "5631ba94a4af6fc50054dc14570420b74f1488dc734f50b8a7aee4a3f273e4fa",
+  "results": [
+    {
+      "name": "饭太硬",
+      "config_url": "http://www.饭太硬.net/tv",
+      "http_status": 200,
+      "final_url": "http://www.xn--sss604efuw.net/",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "elapsed_ms": 1781
+    },
+    {
+      "name": "肥猫",
+      "config_url": "http://肥猫.net/",
+      "http_status": 200,
+      "final_url": "http://xn--z7x900a.net/",
+      "sha256": "c5f3ac4e01052a1d0e41f86d6a577a35ed0844deacbc5301fc4a1a7fa42bd64c",
+      "site_count": 37,
+      "types": {
+        "3": 37
+      },
+      "http_sites": [],
+      "depots": [],
+      "elapsed_ms": 2016
+    },
+    {
+      "name": "老刘备",
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "http_status": 200,
+      "final_url": "https://raw.liucn.cc/box/m.json",
+      "sha256": "784d1e374385be38784ad9c65d3d2194df243323090babee0ae638258862a259",
+      "site_count": 234,
+      "types": {
+        "3": 219,
+        "1": 15
+      },
+      "http_sites": [
+        {
+          "name": "👒┃小胡┃资源┃",
+          "key": "csp_小胡",
+          "type": 1,
+          "api": "http://c.小胡.icu/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🐉┃索尼┃高清",
+          "key": "csp_SNzy",
+          "type": 1,
+          "api": "https://suoniapi.com/api.php/provide/vod/?ac=list",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🕹️淘片┃采集",
+          "key": "taopian",
+          "type": 1,
+          "api": "https://taopianapi.com/cjapi/mc/vod/json.html",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🥗┃非凡┃资源",
+          "key": "csp_非凡资源",
+          "type": 1,
+          "api": "http://ffzy1.tv/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🥑┃量子┃资源",
+          "key": "量子资源",
+          "type": 1,
+          "api": "https://lzizy1.com/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🦁┃四九┃资源",
+          "key": "49zy",
+          "type": 1,
+          "api": "https://49zy1.com/api.php/provide/vod/?ac=list",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🛰️飞速┃采集",
+          "key": "feisu",
+          "type": 1,
+          "api": "https://www.feisuzyapi.com/api.php/provide/vod/?ac=list",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🐯┃奇虎┃采集",
+          "key": "奇虎资源",
+          "type": 1,
+          "api": "https://caiji.qhzyapi.com/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "⛱┃可可┃采集",
+          "key": "可可资源",
+          "type": 1,
+          "api": "https://kekezy1.com/api.php/provide/vod/?ac=list",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🐯虎牙采集",
+          "key": "虎牙",
+          "type": 1,
+          "api": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🦊火狐采集",
+          "key": "火狐",
+          "type": 1,
+          "api": "https://hhzyapi.com/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🌪️暴风影音",
+          "key": "暴风采集",
+          "type": 1,
+          "api": "https://app.bfzyapi.com/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🎏百度┃采集",
+          "key": "百度",
+          "type": 1,
+          "api": "https://api.apibdzy.com/api.php/provide/vod/?ac=list",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🎶明星┃MV",
+          "key": "MV_vod",
+          "type": 1,
+          "api": "https://mv.wogg.link/mv/vod",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        },
+        {
+          "name": "🎹┃MTV┃合集",
+          "key": "MV_vod",
+          "type": 1,
+          "api": "https://mv.wogg.link/mv/vod",
+          "ext": null,
+          "config_url": "https://raw.liucn.cc/box/m.json",
+          "config_name": "老刘备"
+        }
+      ],
+      "depots": [],
+      "elapsed_ms": 1531
+    },
+    {
+      "name": "小马",
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "http_status": 200,
+      "final_url": "https://szyyds.cn/tv/x.json",
+      "sha256": "6ad54de8458333a1e5420062d84f7a6ba02f386cb3427ec49f24fd598ac138ad",
+      "site_count": 62,
+      "types": {
+        "3": 46,
+        "1": 15,
+        "0": 1
+      },
+      "http_sites": [
+        {
+          "name": "影视 | 电影天堂",
+          "key": "电影天堂",
+          "type": 1,
+          "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "影视 | 天涯",
+          "key": "天涯采集",
+          "type": 1,
+          "api": "http://tyyszy.com/api.php/provide/vod",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "影视 | 量子[直连]",
+          "key": "量子",
+          "type": 1,
+          "api": "https://cj.lziapi.com/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "影视 | 非凡[直连]",
+          "key": "非凡",
+          "type": 1,
+          "api": "http://ffzy.tv/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "影视 | 索尼[直连]",
+          "key": "索尼",
+          "type": 0,
+          "api": "https://suoniapi.com/api.php/provide/vod/at/xml/",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "影视 | 极速[直连]",
+          "key": "极速资源",
+          "type": 1,
+          "api": "https://jszyapi.com/api.php/provide/vod/?ac=list",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "影视 | 建安",
+          "key": "建安采集",
+          "type": 1,
+          "api": "http://154.219.117.232:9981/jacloudapi.php/provide/vod",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "影视 | 率率[直连]",
+          "key": "率率",
+          "type": 1,
+          "api": "https://suoniapi.com/api.php/provide/vod/?ac=list",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "百度",
+          "key": "百度",
+          "type": 1,
+          "api": "https://api.apibdzy.com/api.php/provide/vod?ac=list",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "影视 | 暴風[直连]",
+          "key": "暴風",
+          "type": 1,
+          "api": "https://bfzyapi.com/api.php/provide/vod/?ac=list",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "️天堂┃采集",
+          "key": "电影天堂",
+          "type": 1,
+          "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/from/dyttm3u8/at/m3u8/",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "量子资源(切)",
+          "key": "量子资源",
+          "type": 1,
+          "api": "http://cj.lziapi.com/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "红牛资源(切)",
+          "key": "红牛资源",
+          "type": 1,
+          "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "闪电资源(切)",
+          "key": "闪电资源",
+          "type": 1,
+          "api": "http://sdzyapi.com/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "光速资源(切)",
+          "key": "光速资源",
+          "type": 1,
+          "api": "https://api.guangsuapi.com/api.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        },
+        {
+          "name": "新浪资源(切)",
+          "key": "新浪资源",
+          "type": 1,
+          "api": "http://api.xinlangapi.com/xinlangapi.php/provide/vod/",
+          "ext": null,
+          "config_url": "https://szyyds.cn/tv/x.json",
+          "config_name": "小马"
+        }
+      ],
+      "depots": [],
+      "elapsed_ms": 2266
+    },
+    {
+      "name": "摸鱼儿",
+      "config_url": "http://摸鱼儿.cc",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "elapsed_ms": 4234
+    },
+    {
+      "name": "王二小",
+      "config_url": "http://new.王二小放牛娃.top",
+      "http_status": 200,
+      "final_url": "https://www.xn--4kq62z5rby2qupq9ub.top/",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "elapsed_ms": 2875
+    },
+    {
+      "name": "小盒子4K",
+      "config_url": "http://xhztv.top/4k.json",
+      "http_status": 200,
+      "final_url": "http://xhztv.top/4k.json",
+      "error": "Invalid control character at: line 682 column 142 (char 19095)",
+      "elapsed_ms": 547
+    },
+    {
+      "name": "小盒子单仓",
+      "config_url": "http://xhztv.top/xhz",
+      "http_status": 200,
+      "final_url": "http://xhztv.top/xhz/",
+      "sha256": "7594130e1ba680a4766997acc24286f1f2db91db391cc3dff5fd23ad7882d0ab",
+      "site_count": 54,
+      "types": {
+        "3": 54
+      },
+      "http_sites": [],
+      "depots": [],
+      "elapsed_ms": 782
+    },
+    {
+      "name": "VOX",
+      "config_url": "http://rihou.cc:88/demo.php",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "elapsed_ms": 5359
+    },
+    {
+      "name": "嗷呜",
+      "config_url": "http://itv666.cc/aowu/config.webp",
+      "http_status": 200,
+      "final_url": "http://xn--nsr30bl8nb2kyt7a8vs.top/",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "elapsed_ms": 2953
+    },
+    {
+      "name": "无名",
+      "config_url": "https://6800.kstore.vip/fish.json",
+      "http_status": 401,
+      "final_url": "https://6800.kstore.vip/fish.json",
+      "error": "401 Client Error:  for url: https://6800.kstore.vip/fish.json",
+      "elapsed_ms": 1265
+    },
+    {
+      "name": "小盒子多仓",
+      "config_url": "http://xhztv.top/dc",
+      "http_status": 200,
+      "final_url": "http://xhztv.top/dc/",
+      "sha256": "ece8e55722c5d6644d50b86fff93db67542865d85c08f9d6c3514a4239b6d252",
+      "site_count": 0,
+      "types": {},
+      "http_sites": [],
+      "depots": [
+        {
+          "name": "🚀小盒子",
+          "url": "http://xhztv.top/xhz"
+        },
+        {
+          "name": "🐔肥猫",
+          "url": "http://我不是.肥猫.live/接口禁止贩卖"
+        },
+        {
+          "name": "🐟 摸 鱼",
+          "url": "http://我不是.摸鱼儿.top"
+        },
+        {
+          "name": "🍯毒盒",
+          "url": "https://毒盒.com/tv"
+        },
+        {
+          "name": "🍯PG线路",
+          "url": "https://git.acwing.com/iduoduo/orange/-/raw/main/jsm.json"
+        },
+        {
+          "name": "🍯影视仓",
+          "url": "https://download.kstore.space/download/2883/nzk/nzk0722.json"
+        },
+        {
+          "name": "🦆神仙线路",
+          "url": "http://dp.sxtv.top:88/img"
+        },
+        {
+          "name": "🦆俊于",
+          "url": "http://home.jundie.top:81/top98.json"
+        },
+        {
+          "name": "😹影视资源",
+          "url": "http://bp.tvbox.cam"
+        },
+        {
+          "name": "😹玄珠",
+          "url": "https://jihulab.com/xuanzhuapp/xzys/-/raw/main/xzvip.json"
+        },
+        {
+          "name": "😹吾爱",
+          "url": "http://52pan.top:81/api/v3/file/get/174964/%E5%90%BE%E7%88%B1%E8%AF%84%E6%B5%8B.m3u?sign=rPssLoffquDXszCARt6UNF8MobSa1FA27XomzOluJBY%3D%3A0"
+        },
+        {
+          "name": "😹动漫城",
+          "url": "https://www.yingm.cc/dm/dm.json"
+        },
+        {
+          "name": "🚀喵影视",
+          "url": "http://meowtv.cn/tv"
+        },
+        {
+          "name": "🚀摸鱼",
+          "url": "http://我不是.摸鱼儿.top"
+        },
+        {
+          "name": "🚀小马",
+          "url": "https://szyyds.cn/tv/x.json"
+        },
+        {
+          "name": "🦉飘零",
+          "url": "https://100km.top/0"
+        },
+        {
+          "name": "🐹dxawi",
+          "url": "https://dxawi.github.io/0/0.json"
+        },
+        {
+          "name": "🍯HG",
+          "url": "https://api.hgyx.vip/hgyx.json"
+        }
+      ],
+      "elapsed_ms": 609
+    },
+    {
+      "name": "拾光多仓",
+      "config_url": "http://xmbjm.fh4u.org/dc.txt",
+      "http_status": 200,
+      "final_url": "http://xmbjm.fh4u.org/dc.txt",
+      "error": "Extra data: line 221 column 1 (char 5277)",
+      "elapsed_ms": 922
+    },
+    {
+      "name": "挺好分享多仓",
+      "config_url": "http://ztha.top/TVBox/GYCK.json",
+      "http_status": 200,
+      "final_url": "https://ztha.top/TVBox/GYCK.json",
+      "sha256": "a0524ba991e98c0da6705fde612e8ebe90a299b79ef606ba58fcc609dbf63565",
+      "site_count": 0,
+      "types": {},
+      "http_sites": [],
+      "depots": [
+        {
+          "url": "https://ztha.top/TVBox/thdjk.json",
+          "name": "📛挺好分享"
+        },
+        {
+          "url": "http://tv.nxog.top/m",
+          "name": "🍳挺好丨讴歌线路"
+        },
+        {
+          "url": "http://hb.小虎斑.site:25252/仅供测试",
+          "name": "🐯小虎斑线路"
+        },
+        {
+          "url": "https://ghproxy.cn/https://raw.githubusercontent.com/leevi0709/one/main/jsm.json",
+          "name": "🚀One线路"
+        },
+        {
+          "url": "https://github.moeyy.xyz/https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",
+          "name": "🚀南风线路"
+        },
+        {
+          "url": "https://git.acwing.com/lw0704/66/-/raw/master/jjzx.json",
+          "name": "🚀刘伟线路"
+        },
+        {
+          "url": "https://git.acwing.com/lkq0379/zjys/-/raw/main/zjys.json",
+          "name": "🚀剪影线路"
+        },
+        {
+          "url": "http://tv.nxog.top/m/111.php?ou=公众号欧歌",
+          "name": "🚀讴歌线路"
+        },
+        {
+          "name": "🚀小虎斑线",
+          "url": "https://hb.xyyh.online/tvbox"
+        },
+        {
+          "url": "http://www.mpanso.com/小米/DEMO.json",
+          "name": "🚀小米线路"
+        },
+        {
+          "url": "http://tvbox.王二小放牛娃.top",
+          "name": "🚀王二小线"
+        },
+        {
+          "url": "https://9877.kstore.space/AnotherD/api.json",
+          "name": "🚀潇洒专线"
+        },
+        {
+          "url": "http://我不是.摸鱼儿.com",
+          "name": "🚀摸鱼线路"
+        },
+        {
+          "url": "https://6492.kstore.space/xnf/xnf.json",
+          "name": "🚀环宇轩线"
+        },
+        {
+          "url": "https://bitbucket.org/xduo/duoapi/raw/master/xpg.json",
+          "name": "🚀小苹果线"
+        },
+        {
+          "url": "http://fmys.top/fmys.json",
+          "name": "🚀驸马线路"
+        },
+        {
+          "name": "🚀拾光线路",
+          "url": "https://4708.kstore.space/svip/svip.json"
+        },
+        {
+          "url": "http://mzjk.top/禁止贩卖",
+          "name": "🚀宝盒线路"
+        },
+        {
+          "name": "🚀小马线路",
+          "url": "https://szyyds.cn/tv/x.json"
+        },
+        {
+          "name": "🚀俊佬在线",
+          "url": "http://home.jundie.top:81/top98.json"
+        },
+        {
+          "url": "http://hucongrong.web3v.work/风水/fxz/fxz.json",
+          "name": "🚀分享者线"
+        },
+        {
+          "url": "https://github.moeyy.xyz/https://raw.githubusercontent.com/liu673cn/box/main/m.json",
+          "name": "🚀老刘线路"
+        },
+        {
+          "url": "https://chuanshuo.77blog.cn/tv.json",
+          "name": "🚀传说线路"
+        },
+        {
+          "url": "https://gitee.com/lukei7/lib/raw/Luck/%E8%87%AA%E5%BB%BA.json",
+          "name": "🚀蓝天线路"
+        },
+        {
+          "url": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
+          "name": "🚀高天流云"
+        },
+        {
+          "url": "http://home.jundie.top:81/top98.json",
+          "name": "🚀俊佬线路"
+        },
+        {
+          "url": "https://xn--8owq8u.com/tv/",
+          "name": "🚀毒盒线路"
+        },
+        {
+          "url": "https://zthaa.top/th/api.json",
+          "name": "📛公众号丨挺好分享"
+        },
+        {
+          "url": "https://zthaa.top/thzx/th.json",
+          "name": "🌠公众号丨挺好专享"
+        },
+        {
+          "url": "https://gitee.com/yiwu369/6758/raw/master/%E9%9D%92%E9%BE%99/1.json",
+          "name": "🚀青龙影线"
+        },
+        {
+          "url": "http://www.饭太硬.cc/tv",
+          "name": "🍨饭硬专线"
+        },
+        {
+          "url": "http://74.120.175.78/JK/XYQTVBox/dj.json",
+          "name": "🚀短剧大全"
+        }
+      ],
+      "elapsed_ms": 3109
+    },
+    {
+      "name": "🐔肥猫",
+      "config_url": "http://我不是.肥猫.live/接口禁止贩卖",
+      "http_status": 404,
+      "final_url": "http://xn--ihqu10cn4c.xn--z7x900a.live/%E6%8E%A5%E5%8F%A3%E7%A6%81%E6%AD%A2%E8%B4%A9%E5%8D%96",
+      "error": "404 Client Error: Not Found for url: http://xn--ihqu10cn4c.xn--z7x900a.live/%E6%8E%A5%E5%8F%A3%E7%A6%81%E6%AD%A2%E8%B4%A9%E5%8D%96",
+      "elapsed_ms": 719
+    },
+    {
+      "name": "📛挺好分享",
+      "config_url": "https://ztha.top/TVBox/thdjk.json",
+      "http_status": 200,
+      "final_url": "https://ztha.top/TVBox/thdjk.json",
+      "sha256": "aebec31ee34dac308d38650067334303e8f1f19af6fa80a9a8cb7e624765aa04",
+      "site_count": 46,
+      "types": {
+        "3": 46
+      },
+      "http_sites": [],
+      "depots": [],
+      "elapsed_ms": 2469
+    },
+    {
+      "name": "🍳挺好丨讴歌线路",
+      "config_url": "http://tv.nxog.top/m",
+      "http_status": 444,
+      "final_url": "http://tv.nxog.top/m",
+      "error": "444 Client Error: <none> for url: http://tv.nxog.top/m",
+      "elapsed_ms": 735
+    }
+  ]
+}

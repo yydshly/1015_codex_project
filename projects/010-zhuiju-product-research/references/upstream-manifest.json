@@ -1,0 +1,110 @@
+{
+  "repository": "https://github.com/laoma528/awesome-zhuiju-free",
+  "commit": "d1049a3af73c068c390decc92eebe9bff84d52a0",
+  "captured_at_utc": "2026-10-15T16:22:01.825538+00:00",
+  "license": "CC-BY-4.0; see upstream/LICENSE and ../THIRD_PARTY.md",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/README.md",
+      "bytes": 53004,
+      "sha256": "ad33cc929c7b66884d7779114b26a78242f3d61e28c7b612673a585f9d117ed0"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/LICENSE",
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/CONTRIBUTING.md",
+      "bytes": 4451,
+      "sha256": "431acc877218d48e226763a17124bafd72d793f12a6ddf4421e8db3801b661f7"
+    },
+    {
+      "path": "resources/README.md",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/resources/README.md",
+      "bytes": 1839,
+      "sha256": "27b86254522ec7961f5eb987ad4323232582fc23801be4eea6c50202e7e61dd9"
+    },
+    {
+      "path": "resources/schema.json",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/resources/schema.json",
+      "bytes": 6215,
+      "sha256": "99ae49e2c504f293a95163c2fbd454a90d4eed7477382f44b49f121e1e067b7d"
+    },
+    {
+      "path": "resources/resources.json",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/resources/resources.json",
+      "bytes": 149889,
+      "sha256": "5631ba94a4af6fc50054dc14570420b74f1488dc734f50b8a7aee4a3f273e4fa"
+    },
+    {
+      "path": "reports/availability.json",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/reports/availability.json",
+      "bytes": 29412,
+      "sha256": "8d6290a521a16c77fe53a6bf95f81d98faec603feaac946722767e22bca67d21"
+    },
+    {
+      "path": "reports/verifications.json",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/reports/verifications.json",
+      "bytes": 42764,
+      "sha256": "02ed0fb5a37150e2fd6736097ee66c7738ebc6a0ca89521dd25cc847bd4df544"
+    },
+    {
+      "path": "scripts/check-availability.mjs",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/scripts/check-availability.mjs",
+      "bytes": 5150,
+      "sha256": "40e445f433b56bdd45cbbf9d412fe23e3f1b50406a9f48ed14b008ca03019b0e"
+    },
+    {
+      "path": "scripts/sync-readme.mjs",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/scripts/sync-readme.mjs",
+      "bytes": 21190,
+      "sha256": "2f6116d8f5f6f9e26212b0b2f9e23994456873aa2951007c7e6c6d89aab69155"
+    },
+    {
+      "path": "scripts/validate-data.mjs",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/scripts/validate-data.mjs",
+      "bytes": 7411,
+      "sha256": "7f8c7f66da1a429059d6d6abe4a9afb98f8a976980ad202daf74b45b873c9446"
+    },
+    {
+      "path": "scripts/update-open-source-stats.mjs",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/scripts/update-open-source-stats.mjs",
+      "bytes": 2939,
+      "sha256": "8bee4366e05c1a47b668912d2721ff988e931207ee785e8cf212142d9680c393"
+    },
+    {
+      "path": ".github/workflows/check-availability.yml",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/.github/workflows/check-availability.yml",
+      "bytes": 1250,
+      "sha256": "acf8e30f03640635515f2268dcc6856d6da419cf13d8428553d4d35b1cfe2881"
+    },
+    {
+      "path": ".github/workflows/issue-to-resource-pr.yml",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/.github/workflows/issue-to-resource-pr.yml",
+      "bytes": 16614,
+      "sha256": "47927205dfc21680cffa0e187514d00ff228d3aa31bc6ebb25df440cb18adfe1"
+    },
+    {
+      "path": ".github/workflows/validate-data.yml",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/.github/workflows/validate-data.yml",
+      "bytes": 430,
+      "sha256": "b16fd07862f2fdeff47b4052936622d2cd2df0bd58cc63b435cb5ed8961296e8"
+    },
+    {
+      "path": ".github/workflows/update-open-source-stats.yml",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/.github/workflows/update-open-source-stats.yml",
+      "bytes": 1114,
+      "sha256": "7281f0f548ced30e389bb469593cb8945315115a350f18119ee554622d9d49b2"
+    },
+    {
+      "path": ".github/workflows/weekly-release.yml",
+      "url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/d1049a3af73c068c390decc92eebe9bff84d52a0/.github/workflows/weekly-release.yml",
+      "bytes": 1856,
+      "sha256": "def2ad40c5603ddd751f13d98d68793d72d87edf034873596a46515d24d87bee"
+    }
+  ]
+}

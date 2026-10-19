@@ -1,0 +1,304 @@
+{
+  "date": "2026-10-19",
+  "interaction_checks": [
+    {
+      "name": "Demo 能力说明",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "能力页签键盘切换",
+      "actual": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "探索步骤 1",
+      "actual": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "探索步骤 2",
+      "actual": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "探索步骤 3",
+      "actual": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "真实 API 链路",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "流量路径 relay",
+      "actual": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "流量路径 owned",
+      "actual": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "流量路径 direct",
+      "actual": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "合同片库筛选",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "全部片源方式",
+      "actual": 7,
+      "expected": 7,
+      "passed": true
+    },
+    {
+      "name": "Volume 100",
+      "actual": "$1.00",
+      "expected": "$1.00",
+      "passed": true
+    },
+    {
+      "name": "流量 GB 100",
+      "actual": "22.5",
+      "expected": "22.5",
+      "passed": true
+    },
+    {
+      "name": "亚洲 100",
+      "actual": "$1.00",
+      "expected": "$1.00",
+      "passed": true
+    },
+    {
+      "name": "Cloudflare 100",
+      "actual": "$6.00",
+      "expected": "$6.00",
+      "passed": true
+    },
+    {
+      "name": "Volume 1000",
+      "actual": "$1.33",
+      "expected": "$1.33",
+      "passed": true
+    },
+    {
+      "name": "流量 GB 1000",
+      "actual": "225",
+      "expected": "225",
+      "passed": true
+    },
+    {
+      "name": "亚洲 1000",
+      "actual": "$6.95",
+      "expected": "$6.95",
+      "passed": true
+    },
+    {
+      "name": "Cloudflare 1000",
+      "actual": "$15.00",
+      "expected": "$15.00",
+      "passed": true
+    },
+    {
+      "name": "Volume 10000",
+      "actual": "$11.45",
+      "expected": "$11.45",
+      "passed": true
+    },
+    {
+      "name": "流量 GB 10000",
+      "actual": "2,250",
+      "expected": "2,250",
+      "passed": true
+    },
+    {
+      "name": "亚洲 10000",
+      "actual": "$67.70",
+      "expected": "$67.70",
+      "passed": true
+    },
+    {
+      "name": "Cloudflare 10000",
+      "actual": "$105.00",
+      "expected": "$105.00",
+      "passed": true
+    },
+    {
+      "name": "拒绝负数",
+      "actual": "—",
+      "expected": "—",
+      "passed": true
+    },
+    {
+      "name": "观看次数需整数",
+      "actual": "—",
+      "expected": "—",
+      "passed": true
+    },
+    {
+      "name": "拒绝空值",
+      "actual": "—",
+      "expected": "—",
+      "passed": true
+    },
+    {
+      "name": "Volume 超出 500 TB 停止外推",
+      "actual": "需按阶梯询价",
+      "expected": "需按阶梯询价",
+      "passed": true
+    }
+  ],
+  "documents": [
+    {
+      "key": "overview",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 4190,
+      "title": "研究总览"
+    },
+    {
+      "key": "capabilities",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 3458,
+      "title": "能力、效果与参考价值"
+    },
+    {
+      "key": "architecture",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 3642,
+      "title": "原理与实现架构"
+    },
+    {
+      "key": "sources",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 4515,
+      "title": "片源发现与获取"
+    },
+    {
+      "key": "distribution",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 3980,
+      "title": "存储、分发与成本"
+    },
+    {
+      "key": "filmhub",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 4797,
+      "title": "Filmhub 合作专题"
+    },
+    {
+      "key": "product",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 3325,
+      "title": "产品与盈利验证计划"
+    },
+    {
+      "key": "notes",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 2928,
+      "title": "研究方法与复现"
+    },
+    {
+      "key": "references",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 1413,
+      "title": "证据与来源索引"
+    },
+    {
+      "key": "licenses",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 1279,
+      "title": "来源与许可"
+    },
+    {
+      "key": "demo",
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "h1": 1,
+      "length": 1668,
+      "title": "007 实测与运行说明"
+    }
+  ],
+  "responsive": [
+    {
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "viewport": 390
+    },
+    {
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "viewport": 1280
+    }
+  ],
+  "cost_cases": [
+    {
+      "plays": "100",
+      "GB": "22.5",
+      "volume": "$1.00",
+      "asia": "$1.00",
+      "cf": "$6.00",
+      "passed": true
+    },
+    {
+      "plays": "1000",
+      "GB": "225",
+      "volume": "$1.33",
+      "asia": "$6.95",
+      "cf": "$15.00",
+      "passed": true
+    },
+    {
+      "plays": "10000",
+      "GB": "2,250",
+      "volume": "$11.45",
+      "asia": "$67.70",
+      "cf": "$105.00",
+      "passed": true
+    }
+  ],
+  "scope": "Static page only; no current video source or Filmhub onboarding test.",
+  "reset_bunny": "$6.95",
+  "subpath_hash_reload": "Filmhub 合作专题",
+  "console_errors": []
+}

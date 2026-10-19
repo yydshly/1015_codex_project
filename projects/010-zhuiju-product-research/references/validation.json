@@ -1,0 +1,239 @@
+{
+  "validated_at_utc": "2026-10-15T16:42:04.256450+00:00",
+  "research_date_asia_shanghai": "2026-10-16",
+  "scope": "Documentation, source snapshot, cost assumptions and repository catalog; no new live playback or commercial onboarding test.",
+  "checks": [
+    {
+      "name": "local_markdown_links",
+      "ok": true,
+      "details": {
+        "documents": 11,
+        "local_references": 84,
+        "missing": []
+      }
+    },
+    {
+      "name": "no_template_placeholders",
+      "ok": true,
+      "details": []
+    },
+    {
+      "name": "snapshot_hash:README.md",
+      "ok": true,
+      "details": 53004
+    },
+    {
+      "name": "snapshot_hash:LICENSE",
+      "ok": true,
+      "details": 17023
+    },
+    {
+      "name": "snapshot_hash:CONTRIBUTING.md",
+      "ok": true,
+      "details": 4451
+    },
+    {
+      "name": "snapshot_hash:resources/README.md",
+      "ok": true,
+      "details": 1839
+    },
+    {
+      "name": "snapshot_hash:resources/schema.json",
+      "ok": true,
+      "details": 6215
+    },
+    {
+      "name": "snapshot_hash:resources/resources.json",
+      "ok": true,
+      "details": 149889
+    },
+    {
+      "name": "snapshot_hash:reports/availability.json",
+      "ok": true,
+      "details": 29412
+    },
+    {
+      "name": "snapshot_hash:reports/verifications.json",
+      "ok": true,
+      "details": 42764
+    },
+    {
+      "name": "snapshot_hash:scripts/check-availability.mjs",
+      "ok": true,
+      "details": 5150
+    },
+    {
+      "name": "snapshot_hash:scripts/sync-readme.mjs",
+      "ok": true,
+      "details": 21190
+    },
+    {
+      "name": "snapshot_hash:scripts/validate-data.mjs",
+      "ok": true,
+      "details": 7411
+    },
+    {
+      "name": "snapshot_hash:scripts/update-open-source-stats.mjs",
+      "ok": true,
+      "details": 2939
+    },
+    {
+      "name": "snapshot_hash:.github/workflows/check-availability.yml",
+      "ok": true,
+      "details": 1250
+    },
+    {
+      "name": "snapshot_hash:.github/workflows/issue-to-resource-pr.yml",
+      "ok": true,
+      "details": 16614
+    },
+    {
+      "name": "snapshot_hash:.github/workflows/validate-data.yml",
+      "ok": true,
+      "details": 430
+    },
+    {
+      "name": "snapshot_hash:.github/workflows/update-open-source-stats.yml",
+      "ok": true,
+      "details": 1114
+    },
+    {
+      "name": "snapshot_hash:.github/workflows/weekly-release.yml",
+      "ok": true,
+      "details": 1856
+    },
+    {
+      "name": "external_source_index",
+      "ok": true,
+      "details": {
+        "referenced": 43,
+        "indexed": 43,
+        "unindexed": []
+      }
+    },
+    {
+      "name": "json_parse",
+      "ok": true,
+      "details": 8
+    },
+    {
+      "name": "python_syntax",
+      "ok": true,
+      "details": 3
+    },
+    {
+      "name": "cover_svg",
+      "ok": true,
+      "details": {
+        "width": "1200",
+        "height": "720",
+        "viewBox": "0 0 1200 720",
+        "role": "img",
+        "aria-labelledby": "title desc"
+      }
+    },
+    {
+      "name": "cost_table:100",
+      "ok": true,
+      "details": {
+        "expected": [
+          "22.5",
+          "1.00",
+          "1.00",
+          "1.00",
+          "6.00"
+        ],
+        "actual": [
+          "22.5",
+          "1.00",
+          "1.00",
+          "1.00",
+          "6.00"
+        ]
+      }
+    },
+    {
+      "name": "cost_table:1000",
+      "ok": true,
+      "details": {
+        "expected": [
+          "225",
+          "1.33",
+          "2.45",
+          "6.95",
+          "15.00"
+        ],
+        "actual": [
+          "225",
+          "1.33",
+          "2.45",
+          "6.95",
+          "15.00"
+        ]
+      }
+    },
+    {
+      "name": "cost_table:10000",
+      "ok": true,
+      "details": {
+        "expected": [
+          "2250",
+          "11.45",
+          "22.70",
+          "67.70",
+          "105.00"
+        ],
+        "actual": [
+          "2250",
+          "11.45",
+          "22.70",
+          "67.70",
+          "105.00"
+        ]
+      }
+    },
+    {
+      "name": "cost_invalid_plays:-1",
+      "ok": true,
+      "details": {
+        "exit_code": 2
+      }
+    },
+    {
+      "name": "cost_invalid_plays:NaN",
+      "ok": true,
+      "details": {
+        "exit_code": 2
+      }
+    },
+    {
+      "name": "cost_invalid_plays:x",
+      "ok": true,
+      "details": {
+        "exit_code": 2
+      }
+    },
+    {
+      "name": "cost_invalid_plays:1.5",
+      "ok": true,
+      "details": {
+        "exit_code": 2
+      }
+    },
+    {
+      "name": "cost_volume_tier_guard",
+      "ok": true,
+      "details": "Omitted above 500 TB"
+    },
+    {
+      "name": "repository_catalog",
+      "ok": true,
+      "details": {
+        "exit_code": 0,
+        "output": "检查通过：10 个研究项目，首页索引已同步。"
+      }
+    }
+  ],
+  "passed": 32,
+  "new_live_playback_test": false
+}

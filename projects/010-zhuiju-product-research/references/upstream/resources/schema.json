@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zhuiju.me/schemas/resources.schema.json",
+  "title": "Awesome Zhuiju Free resources",
+  "type": "object",
+  "required": ["version", "updated_at", "resources"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updated_at": {
+      "$ref": "#/$defs/date"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/resource"
+      }
+    }
+  },
+  "$defs": {
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5,
+      "multipleOf": 0.1
+    },
+    "risk": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "unknown"]
+    },
+    "resource": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "url",
+        "category",
+        "summary",
+        "tags",
+        "access",
+        "scores",
+        "risks",
+        "verification",
+        "source",
+        "featured"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "link_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "online_video",
+            "video_app",
+            "cloud_search",
+            "magnet_search",
+            "subtitles",
+            "player",
+            "subscription",
+            "tvbox_config",
+            "membership",
+            "open_source",
+            "other"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary_short": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "access": {
+          "type": "object",
+          "required": ["requires_login", "free_level", "regions"],
+          "additionalProperties": false,
+          "properties": {
+            "requires_login": {
+              "type": "boolean"
+            },
+            "free_level": {
+              "type": "string",
+              "enum": ["free", "mostly_free", "partly_free", "paid", "unknown"]
+            },
+            "regions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 2
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          }
+        },
+        "scores": {
+          "type": "object",
+          "required": ["more", "speed", "clean", "stable", "ease"],
+          "additionalProperties": false,
+          "properties": {
+            "more": {
+              "$ref": "#/$defs/score"
+            },
+            "speed": {
+              "$ref": "#/$defs/score"
+            },
+            "clean": {
+              "$ref": "#/$defs/score"
+            },
+            "stable": {
+              "$ref": "#/$defs/score"
+            },
+            "ease": {
+              "$ref": "#/$defs/score"
+            }
+          }
+        },
+        "risks": {
+          "type": "object",
+          "required": ["copyright", "safety", "privacy", "payment"],
+          "additionalProperties": false,
+          "properties": {
+            "copyright": {
+              "$ref": "#/$defs/risk"
+            },
+            "safety": {
+              "$ref": "#/$defs/risk"
+            },
+            "privacy": {
+              "$ref": "#/$defs/risk"
+            },
+            "payment": {
+              "$ref": "#/$defs/risk"
+            }
+          }
+        },
+        "verification": {
+          "type": "object",
+          "required": ["status", "last_checked", "method", "notes"],
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "pending",
+                "verified",
+                "recommended",
+                "caution",
+                "temporarily_unavailable",
+                "removed"
+              ]
+            },
+            "last_checked": {
+              "$ref": "#/$defs/date"
+            },
+            "method": {
+              "type": "string",
+              "enum": ["manual", "automated", "mixed"]
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "source": {
+          "type": "object",
+          "required": ["submitted_by", "added_at"],
+          "additionalProperties": false,
+          "properties": {
+            "submitted_by": {
+              "type": "string",
+              "minLength": 1
+            },
+            "added_at": {
+              "$ref": "#/$defs/date"
+            }
+          }
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "featured_order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "github": {
+          "type": "object",
+          "required": ["full_name", "stars", "pushed_at"],
+          "additionalProperties": false,
+          "properties": {
+            "full_name": {
+              "type": "string",
+              "pattern": "^[^/]+/[^/]+$"
+            },
+            "stars": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "pushed_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    }
+  }
+}

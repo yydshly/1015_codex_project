@@ -1,0 +1,244 @@
+{
+  "date": "2026-10-19",
+  "static_resources": [
+    {
+      "path": "app.js",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/favicon.svg",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/007/THIRD_PARTY.md",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/007/assets/api-probes.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/007/assets/browser-verification.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/007/assets/demo-playback-verified.jpg",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/007/assets/ffprobe.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/007/assets/live-verification.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/007/assets/source-scan.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/007/notes.md",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/007/source.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/007/web/README.md",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/assets/cover.svg",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/evidence-summary.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/sources.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream-manifest.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/.github/workflows/issue-to-resource-pr.yml",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/LICENSE",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/README.md",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/reports/availability.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/reports/verifications.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/resources/resources.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/resources/schema.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/scripts/check-availability.mjs",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/scripts/sync-readme.mjs",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/validation.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/references/web-verification.json",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/tools/estimate_cost.py",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/files/010/web/README.md",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/playback-evidence.jpg",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "assets/research-data.js",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "index.html",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    },
+    {
+      "path": "styles.css",
+      "source_and_built_match": true,
+      "http_status": 200,
+      "built_subpath_http_status": 200
+    }
+  ],
+  "cli_cost_examples": [
+    {
+      "plays": 100,
+      "GB": "22.5",
+      "bunny": {
+        "volume_first_500_TB": "1.00",
+        "standard_europe_north_america": "1.00",
+        "standard_asia_oceania": "1.00",
+        "standard_south_america": "1.21",
+        "standard_middle_east_africa": "1.55"
+      },
+      "cloudflare": "6.00"
+    },
+    {
+      "plays": 1000,
+      "GB": "225",
+      "bunny": {
+        "volume_first_500_TB": "1.33",
+        "standard_europe_north_america": "2.45",
+        "standard_asia_oceania": "6.95",
+        "standard_south_america": "10.33",
+        "standard_middle_east_africa": "13.70"
+      },
+      "cloudflare": "15.00"
+    },
+    {
+      "plays": 10000,
+      "GB": "2250",
+      "bunny": {
+        "volume_first_500_TB": "11.45",
+        "standard_europe_north_america": "22.70",
+        "standard_asia_oceania": "67.70",
+        "standard_south_america": "101.45",
+        "standard_middle_east_africa": "135.20"
+      },
+      "cloudflare": "105.00"
+    }
+  ],
+  "document_count": 11,
+  "source_count": 43,
+  "live_media_retested": false
+}

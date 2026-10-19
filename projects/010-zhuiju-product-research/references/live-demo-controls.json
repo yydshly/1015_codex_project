@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-19",
+  "responsive": [
+    {
+      "client": 305,
+      "frameWidth": 271.3333435058594,
+      "scrollWidth": 305,
+      "viewport": 320
+    },
+    {
+      "client": 375,
+      "frameWidth": 333.3333435058594,
+      "scrollWidth": 375,
+      "viewport": 390
+    }
+  ],
+  "closed": {
+    "hidden": "",
+    "src": null,
+    "status": "演示已关闭，媒体请求已停止。"
+  },
+  "reloaded": "007 已接入；搜索结果、集数与媒体状态会显示在下方。"
+}

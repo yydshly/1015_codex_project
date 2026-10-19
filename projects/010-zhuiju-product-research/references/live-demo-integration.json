@@ -1,0 +1,137 @@
+{
+  "date": "2026-10-19",
+  "status": "passed",
+  "scope": "Local 010 research page embedding the existing 007 player on a shared origin; not a commercial or public deployment",
+  "browser": {
+    "date": "2026-10-19",
+    "url": "http://127.0.0.1:8871/projects/010-zhuiju-product-research/#live-demo",
+    "search_result": "5 个结果 · 1062 ms",
+    "episodes": "共 8 集",
+    "first_episode": {
+      "height": 1080,
+      "paused": false,
+      "readyState": 4,
+      "time": 58.252018,
+      "width": 1920
+    },
+    "second_episode": {
+      "height": 1080,
+      "paused": false,
+      "readyState": 4,
+      "time": 63.923937,
+      "width": 1920
+    },
+    "second_badge": "第2集 · 播放中",
+    "pause_status": "已暂停，可继续播放或选择其他集数。"
+  },
+  "routing_checks": [
+    {
+      "path": "/api/research-demo",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "path": "/projects/010-zhuiju-product-research/",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "path": "/live-demo/",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "path": "/live-demo/app.js",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "path": "/live-demo/vendor/hls.min.js",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "path": "/api/status",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "path": "/server.py",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "/live-demo/server.py",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "/projects/010-zhuiju-product-research/%2e%2e/server.py",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "rejected_header": {
+        "Host": "external.example"
+      },
+      "status": 403,
+      "passed": true
+    },
+    {
+      "rejected_header": {
+        "Origin": "http://evil.example"
+      },
+      "status": 403,
+      "passed": true
+    },
+    {
+      "rejected_header": {
+        "Sec-Fetch-Site": "cross-site"
+      },
+      "status": 403,
+      "passed": true
+    }
+  ],
+  "existing_007_adapter_tests": {
+    "passed": 6
+  },
+  "player_code_reused": "../007-zhuiju-source-demo/web/",
+  "backend_code_reused": "../007-zhuiju-source-demo/server.py",
+  "page_integration": "server.py + #live-demo iframe",
+  "screenshot": "../assets/live-demo-integrated.png",
+  "media_delivery": "existing 007 direct upstream CDN path",
+  "limits": [
+    "Only two episodes sampled; no complete-episode or full-catalog guarantee.",
+    "Metadata and content authorization remain unverified.",
+    "Supplier prices and Filmhub research are still the 2026-10-16 snapshot."
+  ],
+  "prior_static_page_evidence": "web-verification.json",
+  "controls": {
+    "date": "2026-10-19",
+    "responsive": [
+      {
+        "client": 305,
+        "frameWidth": 271.3333435058594,
+        "scrollWidth": 305,
+        "viewport": 320
+      },
+      {
+        "client": 375,
+        "frameWidth": 333.3333435058594,
+        "scrollWidth": 375,
+        "viewport": 390
+      }
+    ],
+    "closed": {
+      "hidden": "",
+      "src": null,
+      "status": "演示已关闭，媒体请求已停止。"
+    },
+    "reloaded": "007 已接入；搜索结果、集数与媒体状态会显示在下方。"
+  },
+  "static_fallback": {
+    "status": "没有连接到联合演示服务。请按下方命令启动；静态 HTTP 服务不提供播放接口。",
+    "instructionsVisible": true,
+    "frameVisible": false
+  }
+}

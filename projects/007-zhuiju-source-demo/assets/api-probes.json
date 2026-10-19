@@ -1,0 +1,907 @@
+{
+  "checked_at": "2026-10-15T14:10:43.177012+00:00",
+  "results": [
+    {
+      "name": "🐉┃索尼┃高清",
+      "key": "csp_SNzy",
+      "type": 1,
+      "api": "https://suoniapi.com/api.php/provide/vod/?ac=list",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "ok": false,
+      "elapsed_ms": 860
+    },
+    {
+      "name": "🕹️淘片┃采集",
+      "key": "taopian",
+      "type": 1,
+      "api": "https://taopianapi.com/cjapi/mc/vod/json.html",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "error": "HTTPSConnectionPool(host='taopianapi.com', port=443): Max retries exceeded with url: /cjapi/mc/vod/json.html?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1007)')))",
+      "ok": false,
+      "elapsed_ms": 828
+    },
+    {
+      "name": "🥑┃量子┃资源",
+      "key": "量子资源",
+      "type": 1,
+      "api": "https://lzizy1.com/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "error": "403 Client Error: Forbidden for url: https://lzizy1.com/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "ok": false,
+      "elapsed_ms": 985
+    },
+    {
+      "name": "🦁┃四九┃资源",
+      "key": "49zy",
+      "type": 1,
+      "api": "https://49zy1.com/api.php/provide/vod/?ac=list",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "error": "HTTPSConnectionPool(host='49zy1.com', port=443): Max retries exceeded with url: /api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0 (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))",
+      "ok": false,
+      "elapsed_ms": 1532
+    },
+    {
+      "name": "🛰️飞速┃采集",
+      "key": "feisu",
+      "type": 1,
+      "api": "https://www.feisuzyapi.com/api.php/provide/vod/?ac=list",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "ok": false,
+      "elapsed_ms": 1125
+    },
+    {
+      "name": "🐯┃奇虎┃采集",
+      "key": "奇虎资源",
+      "type": 1,
+      "api": "https://caiji.qhzyapi.com/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "error": "HTTPSConnectionPool(host='caiji.qhzyapi.com', port=443): Max retries exceeded with url: /api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0 (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))",
+      "ok": false,
+      "elapsed_ms": 1485
+    },
+    {
+      "name": "⛱┃可可┃采集",
+      "key": "可可资源",
+      "type": 1,
+      "api": "https://kekezy1.com/api.php/provide/vod/?ac=list",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "error": "HTTPSConnectionPool(host='kekezy1.com', port=443): Max retries exceeded with url: /api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0 (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))",
+      "ok": false,
+      "elapsed_ms": 1391
+    },
+    {
+      "name": "🐯虎牙采集",
+      "key": "虎牙",
+      "type": 1,
+      "api": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "search_url": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 20,
+      "cors": null,
+      "sample": [
+        {
+          "id": 155479,
+          "name": "后西游记第一季",
+          "type": "内地剧"
+        },
+        {
+          "id": 115365,
+          "name": "纪念86版《西游记》播出四十周年文艺晚会",
+          "type": "大陆综艺"
+        },
+        {
+          "id": 116408,
+          "name": "新西游记 第五季",
+          "type": "日韩综艺"
+        },
+        {
+          "id": 116409,
+          "name": "新西游记 第八季",
+          "type": "日韩综艺"
+        },
+        {
+          "id": 3162,
+          "name": "西游记后传",
+          "type": "内地剧"
+        }
+      ],
+      "detail_url": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8?ac=detail&ids=35885",
+      "detail_http": 200,
+      "selected": {
+        "id": 35885,
+        "name": "西游记女儿国",
+        "type": "喜剧片"
+      },
+      "lines": [
+        {
+          "name": "hym3u8",
+          "episode_count": 1,
+          "first": {
+            "name": "正片",
+            "url": "https://1080p.huyall.com/play/vbmZKl9d/index.m3u8"
+          }
+        }
+      ],
+      "error": "HTTPSConnectionPool(host='c.baisiweiting.com', port=18443): Read timed out. (read timeout=5)",
+      "ok": false,
+      "elapsed_ms": 9172
+    },
+    {
+      "name": "🦊火狐采集",
+      "key": "火狐",
+      "type": 1,
+      "api": "https://hhzyapi.com/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "search_url": "https://hhzyapi.com/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 20,
+      "cors": null,
+      "sample": [
+        {
+          "id": 177283,
+          "name": "后西游记第一季",
+          "type": "内地剧"
+        },
+        {
+          "id": 139256,
+          "name": "纪念86版《西游记》播出四十周年文艺晚会",
+          "type": "大陆综艺"
+        },
+        {
+          "id": 103093,
+          "name": "新西游记 第八季",
+          "type": "日韩综艺"
+        },
+        {
+          "id": 102309,
+          "name": "新西游记 第五季",
+          "type": "日韩综艺"
+        },
+        {
+          "id": 26759,
+          "name": "西游记后传",
+          "type": "内地剧"
+        }
+      ],
+      "detail_url": "https://hhzyapi.com/api.php/provide/vod/?ac=detail&ids=66347",
+      "detail_http": 200,
+      "selected": {
+        "id": 66347,
+        "name": "西游记之大圣归来",
+        "type": "动画片"
+      },
+      "lines": [
+        {
+          "name": "hhyun",
+          "episode_count": 1,
+          "first": {
+            "name": "正片",
+            "url": "https://play.hhuus.com/play/YaO2p9Be"
+          }
+        },
+        {
+          "name": "hhm3u8",
+          "episode_count": 1,
+          "first": {
+            "name": "正片",
+            "url": "https://play.hhuus.com/play/YaO2p9Be/index.m3u8"
+          }
+        }
+      ],
+      "error": "HTTPSConnectionPool(host='p.hhwenjian.com', port=65): Read timed out. (read timeout=5)",
+      "ok": false,
+      "elapsed_ms": 11390
+    },
+    {
+      "name": "🌪️暴风影音",
+      "key": "暴风采集",
+      "type": 1,
+      "api": "https://app.bfzyapi.com/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "error": "404 Client Error: Not Found for url: https://app.bfzyapi.com/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "ok": false,
+      "elapsed_ms": 750
+    },
+    {
+      "name": "🎏百度┃采集",
+      "key": "百度",
+      "type": 1,
+      "api": "https://api.apibdzy.com/api.php/provide/vod/?ac=list",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "search_url": "https://api.apibdzy.com/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 12,
+      "cors": null,
+      "sample": [
+        {
+          "id": 50978,
+          "name": "后西游记 第一季",
+          "type": "大陆剧"
+        },
+        {
+          "id": 43577,
+          "name": "西游记之西梁女国",
+          "type": "剧情片"
+        },
+        {
+          "id": 43573,
+          "name": "西游记比丘国",
+          "type": "剧情片"
+        },
+        {
+          "id": 43565,
+          "name": "西游记1966",
+          "type": "剧情片"
+        },
+        {
+          "id": 43564,
+          "name": "西游记之大圣归来",
+          "type": "剧情片"
+        }
+      ],
+      "detail_url": "https://api.apibdzy.com/api.php/provide/vod/?ac=detail&ids=14199",
+      "detail_http": 200,
+      "selected": {
+        "id": 14199,
+        "name": "西游记八戒降妖",
+        "type": "喜剧片"
+      },
+      "lines": [
+        {
+          "name": "dbm3u8",
+          "episode_count": 1,
+          "first": {
+            "name": "HD中字",
+            "url": "https://b2.bdzybf22.com/videos/202504/09/67eda158296ce36fb75b71bd/0a8327/index.m3u8"
+          }
+        }
+      ],
+      "error": "403 Client Error: Forbidden for url: https://b2.bdzybf22.com/videos/202504/09/67eda158296ce36fb75b71bd/0a8327/index.m3u8",
+      "ok": false,
+      "elapsed_ms": 5468
+    },
+    {
+      "name": "🎶明星┃MV",
+      "key": "MV_vod",
+      "type": 1,
+      "api": "https://mv.wogg.link/mv/vod",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "error": "410 Client Error: Gone for url: http://ww80.wogg.link/?subid1=f3455ed1-c8a1-11f1-9c34-916e993a3dda",
+      "ok": false,
+      "elapsed_ms": 2156
+    },
+    {
+      "name": "👒┃小胡┃资源┃",
+      "key": "csp_小胡",
+      "type": 1,
+      "api": "http://c.小胡.icu/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "ok": false,
+      "elapsed_ms": 1875
+    },
+    {
+      "name": "🥗┃非凡┃资源",
+      "key": "csp_非凡资源",
+      "type": 1,
+      "api": "http://ffzy1.tv/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://raw.liucn.cc/box/m.json",
+      "config_name": "老刘备",
+      "search_url": "http://ffzy1.tv/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 19,
+      "cors": null,
+      "sample": [
+        {
+          "id": 58320,
+          "name": "西游记 动画",
+          "type": "国产动漫"
+        },
+        {
+          "id": 57158,
+          "name": "西游记归来",
+          "type": "喜剧片"
+        },
+        {
+          "id": 56198,
+          "name": "西游记之天蓬元帅",
+          "type": "爱情片"
+        },
+        {
+          "id": 53497,
+          "name": "西游记国语1996",
+          "type": "香港剧"
+        },
+        {
+          "id": 45798,
+          "name": "西游记1999",
+          "type": "国产动漫"
+        }
+      ],
+      "detail_url": "http://ffzy1.tv/api.php/provide/vod/?ac=detail&ids=17409",
+      "detail_http": 200,
+      "selected": {
+        "id": 17409,
+        "name": "西游记后传",
+        "type": "国产剧"
+      },
+      "lines": [
+        {
+          "name": "feifan",
+          "episode_count": 30,
+          "first": {
+            "name": "第01集",
+            "url": "https://vip.ffzy-play.com/share/165cbe7ba268f8d7901f5edbc896084e"
+          }
+        },
+        {
+          "name": "ffm3u8",
+          "episode_count": 30,
+          "first": {
+            "name": "第01集",
+            "url": "https://vip.ffzy-play.com/20221128/26406_ce86c2d0/index.m3u8"
+          }
+        }
+      ],
+      "error": "HTTPSConnectionPool(host='vip.ffzy-play.com', port=443): Max retries exceeded with url: /20221128/26406_ce86c2d0/index.m3u8 (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))",
+      "ok": false,
+      "elapsed_ms": 11359
+    },
+    {
+      "name": "影视 | 电影天堂",
+      "key": "电影天堂",
+      "type": 1,
+      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "error": "403 Client Error: Forbidden for url: http://caiji.dyttzyapi.com/api.php/provide/vod?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "ok": false,
+      "elapsed_ms": 562
+    },
+    {
+      "name": "影视 | 天涯",
+      "key": "天涯采集",
+      "type": 1,
+      "api": "http://tyyszy.com/api.php/provide/vod",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "ok": false,
+      "elapsed_ms": 1141
+    },
+    {
+      "name": "影视 | 量子[直连]",
+      "key": "量子",
+      "type": 1,
+      "api": "https://cj.lziapi.com/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "search_url": "https://cj.lziapi.com/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 20,
+      "cors": "*",
+      "sample": [
+        {
+          "id": "105757",
+          "name": "西游记外传",
+          "type": "国产剧"
+        },
+        {
+          "id": "100712",
+          "name": "西游记张卫健版粤语",
+          "type": "香港剧"
+        },
+        {
+          "id": "91566",
+          "name": "西游记后传2000[电影解说]",
+          "type": "电影解说"
+        },
+        {
+          "id": "87536",
+          "name": "西游记之三件宝贝[电影解说]",
+          "type": "电影解说"
+        },
+        {
+          "id": "33871",
+          "name": "西游记张卫健版国语",
+          "type": "香港剧"
+        }
+      ],
+      "detail_url": "https://cj.lziapi.com/api.php/provide/vod/?ac=detail&ids=105757",
+      "detail_http": 200,
+      "selected": {
+        "id": 105757,
+        "name": "西游记外传",
+        "type": "国产剧"
+      },
+      "lines": [
+        {
+          "name": "liangzi",
+          "episode_count": 4,
+          "first": {
+            "name": "第01集",
+            "url": "https://v.lzcdn24.com/share/4c5bdd15468ef4803adc665552a3c95e"
+          }
+        },
+        {
+          "name": "lzm3u8",
+          "episode_count": 4,
+          "first": {
+            "name": "第01集",
+            "url": "https://v.lzcdn24.com/20250518/29335_d2fedb5c/index.m3u8"
+          }
+        }
+      ],
+      "error": "404 Client Error: Not Found for url: https://v.lzcdn24.com/20250518/29335_d2fedb5c/index.m3u8",
+      "ok": false,
+      "elapsed_ms": 7906
+    },
+    {
+      "name": "影视 | 非凡[直连]",
+      "key": "非凡",
+      "type": 1,
+      "api": "http://ffzy.tv/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "search_url": "http://ffzy.tv/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 19,
+      "cors": null,
+      "sample": [
+        {
+          "id": 58320,
+          "name": "西游记 动画",
+          "type": "国产动漫"
+        },
+        {
+          "id": 57158,
+          "name": "西游记归来",
+          "type": "喜剧片"
+        },
+        {
+          "id": 56198,
+          "name": "西游记之天蓬元帅",
+          "type": "爱情片"
+        },
+        {
+          "id": 53497,
+          "name": "西游记国语1996",
+          "type": "香港剧"
+        },
+        {
+          "id": 45798,
+          "name": "西游记1999",
+          "type": "国产动漫"
+        }
+      ],
+      "detail_url": "http://ffzy.tv/api.php/provide/vod/?ac=detail&ids=17409",
+      "detail_http": 200,
+      "selected": {
+        "id": 17409,
+        "name": "西游记后传",
+        "type": "国产剧"
+      },
+      "lines": [
+        {
+          "name": "feifan",
+          "episode_count": 30,
+          "first": {
+            "name": "第01集",
+            "url": "https://vip.ffzy-play.com/share/165cbe7ba268f8d7901f5edbc896084e"
+          }
+        },
+        {
+          "name": "ffm3u8",
+          "episode_count": 30,
+          "first": {
+            "name": "第01集",
+            "url": "https://vip.ffzy-play.com/20221128/26406_ce86c2d0/index.m3u8"
+          }
+        }
+      ],
+      "error": "403 Client Error: Forbidden for url: https://vip.ffzy-play.com/20221128/26406_ce86c2d0/index.m3u8",
+      "ok": false,
+      "elapsed_ms": 5156
+    },
+    {
+      "name": "影视 | 极速[直连]",
+      "key": "极速资源",
+      "type": 1,
+      "api": "https://jszyapi.com/api.php/provide/vod/?ac=list",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "search_url": "https://jszyapi.com/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 20,
+      "cors": null,
+      "sample": [
+        {
+          "id": 151172,
+          "name": "后西游记第一季",
+          "type": "内地剧"
+        },
+        {
+          "id": 113143,
+          "name": "纪念86版《西游记》播出四十周年文艺晚会",
+          "type": "大陆综艺"
+        },
+        {
+          "id": 79483,
+          "name": "新西游记 第八季",
+          "type": "日韩综艺"
+        },
+        {
+          "id": 78699,
+          "name": "新西游记 第五季",
+          "type": "日韩综艺"
+        },
+        {
+          "id": 25743,
+          "name": "西游记后传",
+          "type": "内地剧"
+        }
+      ],
+      "detail_url": "https://jszyapi.com/api.php/provide/vod/?ac=detail&ids=25743",
+      "detail_http": 200,
+      "selected": {
+        "id": 25743,
+        "name": "西游记后传",
+        "type": "内地剧"
+      },
+      "lines": [
+        {
+          "name": "jsyun",
+          "episode_count": 30,
+          "first": {
+            "name": "第1集",
+            "url": "https://vv.jisuzyv.com/play/1aKW0nra"
+          }
+        },
+        {
+          "name": "jsm3u8",
+          "episode_count": 30,
+          "first": {
+            "name": "第1集",
+            "url": "https://vv.jisuzyv.com/play/1aKW0nra/index.m3u8"
+          }
+        }
+      ],
+      "error": "HTTPSConnectionPool(host='vv.jisuzyv.com', port=443): Max retries exceeded with url: /play/1aKW0nra/index.m3u8 (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))",
+      "ok": false,
+      "elapsed_ms": 5625
+    },
+    {
+      "name": "影视 | 建安",
+      "key": "建安采集",
+      "type": 1,
+      "api": "http://154.219.117.232:9981/jacloudapi.php/provide/vod",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "error": "HTTPConnectionPool(host='154.219.117.232', port=9981): Read timed out. (read timeout=12)",
+      "ok": false,
+      "elapsed_ms": 12031
+    },
+    {
+      "name": "百度",
+      "key": "百度",
+      "type": 1,
+      "api": "https://api.apibdzy.com/api.php/provide/vod?ac=list",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "search_url": "https://api.apibdzy.com/api.php/provide/vod?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 12,
+      "cors": null,
+      "sample": [
+        {
+          "id": 50978,
+          "name": "后西游记 第一季",
+          "type": "大陆剧"
+        },
+        {
+          "id": 43577,
+          "name": "西游记之西梁女国",
+          "type": "剧情片"
+        },
+        {
+          "id": 43573,
+          "name": "西游记比丘国",
+          "type": "剧情片"
+        },
+        {
+          "id": 43565,
+          "name": "西游记1966",
+          "type": "剧情片"
+        },
+        {
+          "id": 43564,
+          "name": "西游记之大圣归来",
+          "type": "剧情片"
+        }
+      ],
+      "detail_url": "https://api.apibdzy.com/api.php/provide/vod?ac=detail&ids=50978",
+      "detail_http": 200,
+      "selected": {
+        "id": 50978,
+        "name": "后西游记 第一季",
+        "type": "大陆剧"
+      },
+      "lines": [
+        {
+          "name": "dbm3u8",
+          "episode_count": 10,
+          "first": {
+            "name": "第01集",
+            "url": "https://b3.bdzybf22.com/videos/202608/31/6a956662cba42bd4e17975c5/0acf3f/index.m3u8"
+          }
+        }
+      ],
+      "error": "403 Client Error: Forbidden for url: https://b3.bdzybf22.com/videos/202608/31/6a956662cba42bd4e17975c5/0acf3f/index.m3u8",
+      "ok": false,
+      "elapsed_ms": 5656
+    },
+    {
+      "name": "影视 | 暴風[直连]",
+      "key": "暴風",
+      "type": 1,
+      "api": "https://bfzyapi.com/api.php/provide/vod/?ac=list",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "search_url": "https://bfzyapi.com/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 20,
+      "cors": "*",
+      "sample": [
+        {
+          "id": "112818",
+          "name": "西游记1986",
+          "type": "国产剧"
+        },
+        {
+          "id": "116479",
+          "name": "西游记国语1996",
+          "type": "香港剧"
+        },
+        {
+          "id": "138469",
+          "name": "西游记粤语1996",
+          "type": "香港剧"
+        },
+        {
+          "id": "118725",
+          "name": "西游记之大闹天宫",
+          "type": "动作片"
+        },
+        {
+          "id": "111468",
+          "name": "西游记归来",
+          "type": "喜剧片"
+        }
+      ],
+      "detail_url": "https://bfzyapi.com/api.php/provide/vod/?ac=detail&ids=112818",
+      "detail_http": 200,
+      "selected": {
+        "id": 112818,
+        "name": "西游记1986",
+        "type": "国产剧"
+      },
+      "lines": [
+        {
+          "name": "bfzym3u8",
+          "episode_count": 25,
+          "first": {
+            "name": "第1集",
+            "url": "https://s1.bfllvip.com/video/xiyouji1986/第1集/index.m3u8"
+          }
+        }
+      ],
+      "error": "404 Client Error: Not Found for url: https://s1.bfllvip.com/video/xiyouji1986/%E7%AC%AC1%E9%9B%86/index.m3u8",
+      "ok": false,
+      "elapsed_ms": 4860
+    },
+    {
+      "name": "红牛资源(切)",
+      "key": "红牛资源",
+      "type": 1,
+      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "search_url": "https://www.hongniuzy2.com/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 20,
+      "cors": null,
+      "sample": [
+        {
+          "id": 193245,
+          "name": "后西游记第一季",
+          "type": "国产剧"
+        },
+        {
+          "id": 153464,
+          "name": "纪念86版《西游记》播出四十周年文艺晚会",
+          "type": "大陆综艺"
+        },
+        {
+          "id": 143496,
+          "name": "西游记的故事",
+          "type": "中国动漫"
+        },
+        {
+          "id": 142554,
+          "name": "西游记-1999年",
+          "type": "中国动漫"
+        },
+        {
+          "id": 154052,
+          "name": "新西游记 第五季",
+          "type": "日韩综艺"
+        }
+      ],
+      "error": "HTTPSConnectionPool(host='www.hongniuzy2.com', port=443): Read timed out. (read timeout=5)",
+      "ok": false,
+      "elapsed_ms": 6797
+    },
+    {
+      "name": "闪电资源(切)",
+      "key": "闪电资源",
+      "type": 1,
+      "api": "http://sdzyapi.com/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "ok": false,
+      "elapsed_ms": 500
+    },
+    {
+      "name": "光速资源(切)",
+      "key": "光速资源",
+      "type": 1,
+      "api": "https://api.guangsuapi.com/api.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "search_url": "https://api.guangsuapi.com/api.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 20,
+      "cors": null,
+      "sample": [
+        {
+          "id": 217368,
+          "name": "后西游记第一季",
+          "type": "大陆剧"
+        },
+        {
+          "id": 177595,
+          "name": "纪念86版《西游记》播出四十周年文艺晚会",
+          "type": "大陆综艺"
+        },
+        {
+          "id": 178014,
+          "name": "新西游记 第五季",
+          "type": "日韩综艺"
+        },
+        {
+          "id": 178015,
+          "name": "新西游记 第八季",
+          "type": "日韩综艺"
+        },
+        {
+          "id": 61015,
+          "name": "西游记后传",
+          "type": "大陆剧"
+        }
+      ],
+      "detail_url": "https://api.guangsuapi.com/api.php/provide/vod/?ac=detail&ids=61015",
+      "detail_http": 200,
+      "selected": {
+        "id": 61015,
+        "name": "西游记后传",
+        "type": "大陆剧"
+      },
+      "lines": [
+        {
+          "name": "gsyun",
+          "episode_count": 30,
+          "first": {
+            "name": "第1集",
+            "url": "https://v.gsuus.com/play/DbDMzgBd"
+          }
+        },
+        {
+          "name": "gsm3u8",
+          "episode_count": 30,
+          "first": {
+            "name": "第1集",
+            "url": "https://v.gsuus.com/play/DbDMzgBd/index.m3u8"
+          }
+        }
+      ],
+      "error": "HTTPSConnectionPool(host='gs.gszyi.com', port=999): Read timed out. (read timeout=5)",
+      "ok": false,
+      "elapsed_ms": 13328
+    },
+    {
+      "name": "新浪资源(切)",
+      "key": "新浪资源",
+      "type": 1,
+      "api": "http://api.xinlangapi.com/xinlangapi.php/provide/vod/",
+      "ext": null,
+      "config_url": "https://szyyds.cn/tv/x.json",
+      "config_name": "小马",
+      "search_url": "http://api.xinlangapi.com/xinlangapi.php/provide/vod/?ac=detail&wd=%E8%A5%BF%E6%B8%B8%E8%AE%B0",
+      "search_http": 200,
+      "search_count": 20,
+      "cors": null,
+      "sample": [
+        {
+          "id": 233276,
+          "name": "后西游记第一季",
+          "type": "大陆剧"
+        },
+        {
+          "id": 172877,
+          "name": "新西游记 第八季",
+          "type": "日韩综艺"
+        },
+        {
+          "id": 171915,
+          "name": "纪念86版《西游记》播出四十周年文艺晚会",
+          "type": "大陆综艺"
+        },
+        {
+          "id": 172876,
+          "name": "新西游记 第五季",
+          "type": "日韩综艺"
+        },
+        {
+          "id": 60260,
+          "name": "西游记后传",
+          "type": "大陆剧"
+        }
+      ],
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "ok": false,
+      "elapsed_ms": 1469
+    }
+  ]
+}

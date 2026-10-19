@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">追剧资源库与视频产品全链路研究</title>
+  <desc id="desc">资源发现、内容授权、站内搜播、视频分发四层关系。区分上游已有能力、007 播放实测和未来商业方案。</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#102c2c"/><stop offset="1" stop-color="#09191f"/></linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="none" stroke="#82b6aa" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1200" height="720" rx="24" fill="url(#bg)"/>
+  <circle cx="1100" cy="0" r="240" fill="#83e1bd" opacity=".035"/>
+  <g font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif">
+    <text x="54" y="62" fill="#91d6c1" font-size="14" letter-spacing="3">RESEARCH 010 / AWESOME-ZHUIJU-FREE</text>
+    <text x="54" y="126" fill="#f3f7ed" font-size="42" font-weight="700">从资源目录到可运营的视频产品</text>
+    <text x="56" y="168" fill="#a5bbb4" font-size="20">能力 · 真实效果 · 片源供应 · 内容授权 · 分发成本</text>
+    <g stroke="#34544e" fill="#122e30">
+      <rect x="54" y="214" width="252" height="300" rx="18"/>
+      <rect x="334" y="214" width="252" height="300" rx="18"/>
+      <rect x="614" y="214" width="252" height="300" rx="18"/>
+      <rect x="894" y="214" width="252" height="300" rx="18"/>
+    </g>
+    <g stroke="#82b6aa" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M311 364h17"/><path d="M591 364h17"/><path d="M871 364h17"/>
+    </g>
+    <g font-size="14" fill="#8bc5b6"><text x="78" y="252">01 / DISCOVERY</text><text x="358" y="252">02 / RIGHTS</text><text x="638" y="252">03 / PRODUCT</text><text x="918" y="252">04 / DELIVERY</text></g>
+    <g font-size="28" font-weight="700" fill="#edf5e9"><text x="78" y="300">资源发现</text><text x="358" y="300">内容供应</text><text x="638" y="300">站内搜播</text><text x="918" y="300">视频分发</text></g>
+    <g font-size="18" fill="#b8cdc4">
+      <text x="78" y="349">目录 / 配置 / 接口</text><text x="78" y="384">审核与状态维护</text><text x="78" y="419">来源与记录追溯</text>
+      <text x="358" y="349">开放许可 / 作者合作</text><text x="358" y="384">Filmhub 渠道授权</text><text x="358" y="419">地区 / 模式 / 期限</text>
+      <text x="638" y="349">搜索 / 详情 / 选集</text><text x="638" y="384">HLS / 字幕 / 质量</text><text x="638" y="419">留存与盈利验证</text>
+      <text x="918" y="349">存储 / 转码 / CDN</text><text x="918" y="384">直连与转发成本</text><text x="918" y="419">额度 / 预算 / 可用性</text>
+    </g>
+    <g font-size="13"><rect x="78" y="455" width="192" height="28" rx="14" fill="#21483e"/><text x="92" y="474" fill="#a9edcd">上游能力 · 固定版本阅读</text><rect x="358" y="455" width="192" height="28" rx="14" fill="#483e29"/><text x="372" y="474" fill="#ead6a8">逐片核实 · 商务条件待确认</text><rect x="638" y="455" width="192" height="28" rx="14" fill="#21483e"/><text x="652" y="474" fill="#a9edcd">007 实测 · 010 综合研究</text><rect x="918" y="455" width="192" height="28" rx="14" fill="#263f4b"/><text x="932" y="474" fill="#b7d9e7">按量预算 · 方案尚未部署</text></g>
+    <rect x="54" y="548" width="1092" height="112" rx="16" fill="#e7f1df"/>
+    <text x="80" y="588" fill="#21433d" font-size="21" font-weight="700">入口能访问、样例能播放、获得商用授权、供应可持续，需要分别验证。</text>
+    <text x="80" y="626" fill="#557063" font-size="16">119 条目录记录 / 007 首两集抽样 1080p / Filmhub 与 CDN 官方资料 / 2026-10-16 归纳</text>
+    <text x="56" y="695" fill="#799a92" font-size="13">原创研究关系图；统计与验证边界见对应文档。未取得商业片库合同，未公开部署。</text>
+  </g>
+</svg>

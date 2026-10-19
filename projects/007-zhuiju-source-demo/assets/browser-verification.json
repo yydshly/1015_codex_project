@@ -1,0 +1,78 @@
+{
+  "verified_at": "2026-10-15T14:26:50.892Z",
+  "url": "http://127.0.0.1:8767/",
+  "first_episode_initial": {
+    "currentTime": 7.253199,
+    "duration": 2984.6400000000103,
+    "height": 1080,
+    "paused": false,
+    "readyState": 2,
+    "width": 1920
+  },
+  "first_episode_direct": {
+    "currentTime": 29.223006,
+    "width": 1920,
+    "height": 1080,
+    "paused": false
+  },
+  "second_episode_initial": {
+    "currentTime": 10.830261,
+    "height": 1080,
+    "paused": false,
+    "readyState": 4,
+    "width": 1920
+  },
+  "second_episode_after": {
+    "currentTime": 36.7835,
+    "duration": 2605.640000000011,
+    "height": 1080,
+    "paused": false,
+    "readyState": 1,
+    "width": 1920
+  },
+  "empty_search": {
+    "message": "没有找到匹配的影片，换个片名试试。",
+    "cards": 0
+  },
+  "console": [],
+  "final_revision": {
+    "verified_at": "2026-10-15T14:39:17.990Z",
+    "first_episode": {
+      "duration": 2984.6400000000103,
+      "height": 1080,
+      "paused": false,
+      "readyState": 4,
+      "time": 31.546118,
+      "width": 1920
+    },
+    "second_episode": {
+      "duration": 2605.640000000011,
+      "height": 1080,
+      "paused": false,
+      "readyState": 2,
+      "time": 14.060911,
+      "width": 1920
+    },
+    "layout": {
+      "scrollWidth": 679,
+      "width": 679
+    },
+    "screenshot": "demo-final.jpg",
+    "observed_limitations": [
+      "Earlier seek triggered a third-party fragment timeout. The UI now exposes retry and configures bounded network retries.",
+      "Only sampled playback was verified; full-episode completion was not tested."
+    ]
+  },
+  "handoff": {
+    "time": "2026-10-15T14:41:36.140Z",
+    "playback": {
+      "duration": 2984.6400000000103,
+      "height": 1080,
+      "paused": false,
+      "readyState": 4,
+      "time": 0.45623,
+      "width": 1920
+    },
+    "pauseBadge": "第1集 · 已暂停"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-19",
+  "dimensions": [
+    2048,
+    8246
+  ],
+  "sections": 8,
+  "svg_xml_valid": true,
+  "png_copies_identical": true,
+  "local_image_url": "http://127.0.0.1:8871/projects/010-zhuiju-product-research/assets/files/010/assets/research-overview-20261019.png",
+  "http_status": 200,
+  "png_bytes": 1746396,
+  "png_sha256": "83acad97a1fe7124a647e5ff0f9bb171328892c5a986a5fccbce59bb6ba21ee2",
+  "visual_review": "All five image strips reviewed; no text clipped or overlapping.",
+  "text_native": true,
+  "new_commercial_claims": false
+}

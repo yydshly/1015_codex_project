@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-19",
+  "url": "http://127.0.0.1:8872/projects/010-zhuiju-product-research/",
+  "checks": [
+    {
+      "name": "Demo scope",
+      "passed": true
+    },
+    {
+      "name": "Filmhub filter",
+      "passed": true
+    },
+    {
+      "name": "Cost 10000 Asia",
+      "passed": true
+    },
+    {
+      "name": "Cost reset",
+      "passed": true
+    },
+    {
+      "name": "Architecture reader",
+      "passed": true
+    },
+    {
+      "name": "Source search",
+      "passed": true
+    }
+  ],
+  "layouts": [
+    {
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "width": 320
+    }
+  ],
+  "console_errors": []
+}

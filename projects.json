@@ -90,6 +90,36 @@
       ],
       "cover": "assets/cover.svg",
       "demo_url": "https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/"
+    },
+    {
+      "id": 7,
+      "slug": "zhuiju-source-demo",
+      "name": "追剧资源接口验证与网页播放 Demo",
+      "repository": "https://github.com/laoma528/awesome-zhuiju-free",
+      "summary": "从公开配置发现暴风 HTTP 接口，实测搜索、详情和首两集 1080p 播放；提供本地搜片、8 集选集与 HLS 播放 Demo。",
+      "status": "completed",
+      "tags": [
+        "影视接口",
+        "网页播放",
+        "端到端验证"
+      ],
+      "cover": "assets/cover.svg",
+      "demo_url": ""
+    },
+    {
+      "id": 10,
+      "slug": "zhuiju-product-research",
+      "name": "追剧资源库与视频产品全链路研究",
+      "repository": "https://github.com/laoma528/awesome-zhuiju-free",
+      "summary": "源库用 JSON 资源目录、维护者审核和定时 HTTP 检测整理影视入口。研究验证配置→API→HLS 的搜播链路，说明同类产品的内容授权、接口适配、存储/CDN与盈利验证；附全景图、实测证据和本地 Demo。",
+      "status": "completed",
+      "tags": [
+        "片源研究",
+        "视频分发",
+        "产品与商业化"
+      ],
+      "cover": "assets/research-overview-20261019.png",
+      "demo_url": ""
     }
   ]
 }

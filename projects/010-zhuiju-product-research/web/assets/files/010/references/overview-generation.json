@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-19",
+  "method": "native vector typography exported to PNG with Pillow",
+  "built_in_imagegen_attempt": "failed: network error sending request",
+  "imagegen_cli_used": false,
+  "width": 2048,
+  "height": 8246,
+  "png": "assets\\research-overview-20261019.png",
+  "svg": "assets\\research-overview-20261019.svg",
+  "text_items": 232,
+  "text_overflow_count": 0,
+  "source": "existing research and live-demo-integration.json; no new commercial or source availability claim",
+  "sections": 8,
+  "prompt": "assets/research-overview-prompt.txt"
+}

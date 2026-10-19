@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>映片 · 实时搜片与播放 Demo</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="vendor/hls.min.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <main>
+    <header class="topbar"><a class="brand" href="./"><span class="brand-icon" aria-hidden="true">▶</span>映片<span class="brand-en">CINEMA LAB</span></a><span class="demo-label">最小可用演示 <span>007</span></span></header>
+    <section class="intro"><div><p class="eyebrow">FIND A STORY. PRESS PLAY.</p><h1>从片名，到开场。</h1><p class="lead">搜索影片、选择集数，在这里开始观看。</p></div><div class="source-card"><span class="live-dot"></span><div><span id="source-name">连接片源中</span><small id="source-info">正在读取来源信息</small></div></div></section>
+    <section class="search-section" aria-label="影片搜索">
+      <form id="search-form"><label class="sr-only" for="query">搜索片名</label><span class="search-icon" aria-hidden="true">⌕</span><input id="query" type="search" placeholder="输入电影或剧集名称" maxlength="80" required autocomplete="off"><button id="search-button" type="submit">搜索影片 <span aria-hidden="true">↗</span></button></form>
+      <div class="search-hint"><span>实测示例</span><button id="example" type="button">头号外交官</button><span class="hint-right">实时查询上游 · 单一片源</span></div>
+    </section>
+    <div class="workspace">
+      <section class="watch-section" aria-label="影片播放">
+        <div class="player-shell"><video id="video" controls playsinline preload="metadata" aria-label="影片播放器"></video><div id="player-placeholder"><span class="empty-play" aria-hidden="true">▷</span><strong>你的下一场故事</strong><span>从下方结果中选择一部影片</span></div><span id="player-badge">待选择影片</span></div>
+        <div class="now-playing"><div><p class="eyebrow">NOW PLAYING</p><h2 id="movie-title">选择影片后，集数会显示在右侧</h2><p id="movie-meta">支持 HLS 在线播放 · 原生播放控制</p></div><button id="play-toggle" type="button" disabled>▶ 播放</button></div>
+        <p id="playback-status" class="status" role="status" aria-live="polite">正在读取片源与示例影片…</p>
+        <details id="description-box" hidden><summary>影片简介</summary><p id="description"></p></details>
+      </section>
+      <aside class="episode-panel" aria-labelledby="episode-heading"><div class="panel-heading"><h2 id="episode-heading">选集</h2><span id="episode-count">—</span></div><label id="line-label" for="line" hidden>播放线路<select id="line"></select></label><p id="episode-empty">选好影片，就可以从这里开始。</p><div id="episodes"></div><div class="episode-footer"><button id="previous-episode" type="button" disabled>← 上一集</button><button id="next-episode" type="button" disabled>下一集 →</button></div><div class="source-note"><span class="live-dot"></span>播放状态以当前网络实测为准</div></aside>
+    </div>
+    <section class="results-section" aria-labelledby="results-title"><div class="results-heading"><div><p class="eyebrow">EXPLORE THE CATALOG</p><h2 id="results-title">搜索结果</h2></div><span id="result-count" role="status" aria-live="polite">等待查询</span></div><p id="search-status" class="status" role="status" aria-live="polite"></p><div id="results" class="results-grid"></div><nav id="pagination" aria-label="搜索分页" hidden><button id="previous-page" type="button">← 上一页</button><span id="page-info"></span><button id="next-page" type="button">下一页 →</button></nav></section>
+    <footer><span>映片 / SOURCE DEMO</span><p>来源发现自 awesome-zhuiju-free。第三方接口与内容授权未核实，本 Demo 用于本地技术验证。</p><a href="https://github.com/laoma528/awesome-zhuiju-free" target="_blank" rel="noreferrer">查看来源 ↗</a></footer>
+  </main>
+</body>
+</html>

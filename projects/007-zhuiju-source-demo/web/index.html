@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>007 · 追剧资源接口验证</title>
+<style>body{margin:0;background:#101414;color:#edf2ed;font:15px/1.9 "Segoe UI","Microsoft YaHei",sans-serif}main{max-width:900px;margin:auto;padding:60px 24px}small,a{color:#c5f28b}h1{font-size:34px;line-height:1.4}h2{font-size:20px;margin-top:36px}p,li{color:#b9c4bb}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#1b211f;padding:20px;border:1px solid #3a4539;border-radius:10px;font-size:13px}.cta{display:inline-block;background:#c5f28b;color:#182314;padding:11px 20px;border-radius:8px;text-decoration:none;margin-top:10px}footer{margin-top:40px;border-top:1px solid #3a4539;padding-top:20px;font-size:12px}</style></head>
+<body><main><small>RESEARCH 007 / LIVE SOURCE DEMO</small><h1>从公开配置，到网页播放。</h1>
+<p>筛选 awesome-zhuiju-free 中的配置地址，提取 HTTP 采集接口，实测搜索、详情、集数、HLS 清单与视频分片，构建单片源网页 Demo。</p>
+<h2>已验证的来源</h2><p>来源链：原仓库 → 小马配置 → 暴风资源。示例上游 ID 为 168380，返回 8 集；首两集已验证媒体数据和浏览器播放。资料名称与年份按第三方接口显示。</p>
+<h2>本机运行</h2><p>本页可作为静态研究入口；实时搜片和播放信息需要启动随项目提供的 Python 服务。</p>
+<pre>python -m pip install -r projects/007-zhuiju-source-demo/requirements.txt
+python projects/007-zhuiju-source-demo/server.py --port 8767</pre>
+<a class="cta" href="http://127.0.0.1:8767/">打开本机 Demo ↗</a>
+<h2>验证范围</h2><ul><li>实时搜索、影片详情与 8 集选集。</li><li>首两集 HLS 清单、视频分片和 1080p 解码。</li><li>网页播放、暂停、切集、进度跳转和搜索空结果。</li><li>第三方源可能失效、超时或缓冲；未进行整部影片的完整观看验证。</li></ul>
+<p>服务只监听本机；视频优先由第三方 CDN 直连传输。源码和接口报告保存在研究项目目录。</p>
+<footer>第三方内容授权未核实，本项目用于本地技术研究。<a href="https://github.com/laoma528/awesome-zhuiju-free">原始资源指南</a></footer>
+</main></body></html>

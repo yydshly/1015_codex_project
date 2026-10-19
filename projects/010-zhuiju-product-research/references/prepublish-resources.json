@@ -1,0 +1,177 @@
+{
+  "date": "2026-10-19",
+  "resources": [
+    {
+      "path": "app.js",
+      "status": 200
+    },
+    {
+      "path": "assets/favicon.svg",
+      "status": 200
+    },
+    {
+      "path": "assets/files/007/THIRD_PARTY.md",
+      "status": 200
+    },
+    {
+      "path": "assets/files/007/assets/api-probes.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/007/assets/browser-verification.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/007/assets/demo-playback-verified.jpg",
+      "status": 200
+    },
+    {
+      "path": "assets/files/007/assets/ffprobe.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/007/assets/live-verification.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/007/assets/source-scan.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/007/notes.md",
+      "status": 200
+    },
+    {
+      "path": "assets/files/007/source.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/007/web/README.md",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/assets/cover.svg",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/assets/live-demo-integrated.png",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/assets/research-overview-20261019.png",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/assets/research-overview-20261019.svg",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/evidence-summary.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/live-demo-browser.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/live-demo-integration.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/overview-generation.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/sources.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream-manifest.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/.github/workflows/issue-to-resource-pr.yml",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/LICENSE",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/README.md",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/reports/availability.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/reports/verifications.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/resources/resources.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/resources/schema.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/scripts/check-availability.mjs",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/upstream/scripts/sync-readme.mjs",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/validation.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/references/web-verification.json",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/tools/draw_overview.py",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/tools/estimate_cost.py",
+      "status": 200
+    },
+    {
+      "path": "assets/files/010/web/README.md",
+      "status": 200
+    },
+    {
+      "path": "assets/playback-evidence.jpg",
+      "status": 200
+    },
+    {
+      "path": "assets/research-data.js",
+      "status": 200
+    },
+    {
+      "path": "index.html",
+      "status": 200
+    },
+    {
+      "path": "styles.css",
+      "status": 200
+    }
+  ],
+  "guide_original_sha256": "83acad97a1fe7124a647e5ff0f9bb171328892c5a986a5fccbce59bb6ba21ee2",
+  "live_api_on_pages": false,
+  "catalog_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    10
+  ]
+}

@@ -14,7 +14,7 @@
 
 <!-- PROJECTS:START -->
 
-已收录 **6** 个项目，按收录编号升序展示。
+已收录 **8** 个项目，按收录编号升序展示。
 
 | 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |
 | --- | --- | --- | --- | --- | --- |
@@ -24,6 +24,8 @@
 | 004 | [Obsidian 程序化碎片变形研究](projects/004-obsidian/README.md) | [obsidian](https://github.com/iamtechartist/obsidian) | 以表面碎裂、目标采样匹配和 GPU 时间函数驱动同一批三维碎片重组，适合片头、品牌与舞台视觉；研究页扩展四种形态、48 秒声画循环和 MP4 导出，并梳理模型、音乐、数据与交互的扩展条件。 | 已完成 | [研究](projects/004-obsidian/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#understanding) |
 | 005 | [Pulse 本地 Agent 用量统计研究](projects/005-pulse/README.md) | [Pulse](https://github.com/qunqin24/Pulse) | 读取多种 Agent 的本地日志、数据库与导出记录，校正累计值和重复消息，按模型归集 Token 与 API 等价费用；为自建用量统计模块提供采集、归因、计价和扩展参考。 | 已完成 | [研究](projects/005-pulse/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html) |
 | 006 | [GitNexus 代码知识索引与 AI 工具接入研究](projects/006-gitnexus/README.md) | [GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 解析源码与跨文件关系，构建 LadybugDB 代码知识索引，经 CLI/MCP 提供检索、调用路径与变更影响；以真实小样本区分效果和缺口，研究可核对上下文的价值，并梳理变更审查、架构导航及 Agent 服务等扩展方向。 | 已完成 | [研究](projects/006-gitnexus/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/) |
+| 007 | [追剧资源接口验证与网页播放 Demo](projects/007-zhuiju-source-demo/README.md) | [awesome-zhuiju-free](https://github.com/laoma528/awesome-zhuiju-free) | 从公开配置发现暴风 HTTP 接口，实测搜索、详情和首两集 1080p 播放；提供本地搜片、8 集选集与 HLS 播放 Demo。 | 已完成 | [研究](projects/007-zhuiju-source-demo/README.md) |
+| 010 | [追剧资源库与视频产品全链路研究](projects/010-zhuiju-product-research/README.md) | [awesome-zhuiju-free](https://github.com/laoma528/awesome-zhuiju-free) | 源库用 JSON 资源目录、维护者审核和定时 HTTP 检测整理影视入口。研究验证配置→API→HLS 的搜播链路，说明同类产品的内容授权、接口适配、存储/CDN与盈利验证；附全景图、实测证据和本地 Demo。 | 已完成 | [研究](projects/010-zhuiju-product-research/README.md) |
 
 ### 项目预览
 
@@ -74,6 +76,22 @@
 解析源码与跨文件关系，构建 LadybugDB 代码知识索引，经 CLI/MCP 提供检索、调用路径与变更影响；以真实小样本区分效果和缺口，研究可核对上下文的价值，并梳理变更审查、架构导航及 Agent 服务等扩展方向。
 
 标签：代码图谱 · 静态分析 · MCP
+
+#### 007 · 追剧资源接口验证与网页播放 Demo
+
+[![追剧资源接口验证与网页播放 Demo 项目预览](projects/007-zhuiju-source-demo/assets/cover.svg)](projects/007-zhuiju-source-demo/README.md)
+
+从公开配置发现暴风 HTTP 接口，实测搜索、详情和首两集 1080p 播放；提供本地搜片、8 集选集与 HLS 播放 Demo。
+
+标签：影视接口 · 网页播放 · 端到端验证
+
+#### 010 · 追剧资源库与视频产品全链路研究
+
+[![追剧资源库与视频产品全链路研究 项目预览](projects/010-zhuiju-product-research/assets/research-overview-20261019.png)](projects/010-zhuiju-product-research/README.md)
+
+源库用 JSON 资源目录、维护者审核和定时 HTTP 检测整理影视入口。研究验证配置→API→HLS 的搜播链路，说明同类产品的内容授权、接口适配、存储/CDN与盈利验证；附全景图、实测证据和本地 Demo。
+
+标签：片源研究 · 视频分发 · 产品与商业化
 
 <!-- PROJECTS:END -->
 

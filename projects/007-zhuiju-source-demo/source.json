@@ -1,0 +1,22 @@
+{
+  "id": "bfzy",
+  "name": "暴风资源",
+  "api": "https://bfzyapi.com/api.php/provide/vod/",
+  "repository": "https://github.com/laoma528/awesome-zhuiju-free",
+  "catalog_url": "https://raw.githubusercontent.com/laoma528/awesome-zhuiju-free/main/resources/resources.json",
+  "config_name": "小马",
+  "config_url": "https://szyyds.cn/tv/x.json",
+  "site_key": "暴風",
+  "verified_at": "2026-10-15T14:15:11.059787+00:00",
+  "fixture": {
+    "id": "168380",
+    "title": "头号外交官 第四季",
+    "query": "头号外交官",
+    "episode_count": 8
+  },
+  "rights_status": "未核实第三方内容授权；本地技术验证",
+  "allowed_hosts": [
+    "bfzyapi.com",
+    "v.fengbao14.com"
+  ]
+}

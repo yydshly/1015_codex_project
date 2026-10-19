@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-19",
+  "url": "http://127.0.0.1:8871/projects/010-zhuiju-product-research/#live-demo",
+  "search_result": "5 个结果 · 1062 ms",
+  "episodes": "共 8 集",
+  "first_episode": {
+    "height": 1080,
+    "paused": false,
+    "readyState": 4,
+    "time": 58.252018,
+    "width": 1920
+  },
+  "second_episode": {
+    "height": 1080,
+    "paused": false,
+    "readyState": 4,
+    "time": 63.923937,
+    "width": 1920
+  },
+  "second_badge": "第2集 · 播放中",
+  "pause_status": "已暂停，可继续播放或选择其他集数。"
+}

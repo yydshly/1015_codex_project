@@ -1,0 +1,484 @@
+{
+  "research_date": "2026-10-16",
+  "timezone": "Asia/Shanghai",
+  "scope": "Sources read or inspected in this conversation; not an automated all-URL uptime audit. Pinned repository files are indexed separately.",
+  "upstream_manifest": "upstream-manifest.json",
+  "historical_demo_evidence": "evidence-summary.json",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://bunny.net/docs/billing/add-funds",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "distribution-and-cost.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S02",
+      "url": "https://bunny.net/docs/stream/delivery-tiers",
+      "type": "primary_public_source",
+      "supports": "Standard 与 Volume 路由节点差异",
+      "limitations": "未在本项目目标网络测量体验",
+      "cited_in": [
+        "distribution-and-cost.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S03",
+      "url": "https://bunny.net/docs/stream/pricing",
+      "type": "primary_public_source",
+      "supports": "视频存储、分发及可选功能价格",
+      "limitations": "假设不等于整站报价；地区、档位及可选项影响费用",
+      "cited_in": [
+        "distribution-and-cost.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S04",
+      "url": "https://bunny.net/docs/stream/security-options",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S05",
+      "url": "https://bunny.net/faq/",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S06",
+      "url": "https://bunny.net/sla/",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "distribution-and-cost.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S07",
+      "url": "https://commons.wikimedia.org/wiki/Commons:First_steps/Reuse/en",
+      "type": "primary_public_source",
+      "supports": "逐文件商业复用规则",
+      "limitations": "平台不保证所有上传权利信息准确",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S08",
+      "url": "https://creativecommons.org/licenses/by/3.0/",
+      "type": "primary_public_source",
+      "supports": "CC BY 许可、署名、商业使用和额外限制",
+      "limitations": "其他人格、商标等权利仍可能独立存在",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S09",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+      "type": "primary_public_source",
+      "supports": "浏览器跨域机制",
+      "limitations": "不表达商业授权或服务容量",
+      "cited_in": [
+        "architecture.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S10",
+      "url": "https://developers.cloudflare.com/pages/functions/pricing/",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "distribution-and-cost.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S11",
+      "url": "https://developers.cloudflare.com/stream/pricing/",
+      "type": "primary_public_source",
+      "supports": "存储和视频传输分钟计费",
+      "limitations": "包含的媒体服务不附送影片版权",
+      "cited_in": [
+        "distribution-and-cost.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S12",
+      "url": "https://developers.cloudflare.com/stream/viewing-videos/securing-your-stream/",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S13",
+      "url": "https://developers.google.com/youtube/terms/developer-policies",
+      "type": "primary_public_source",
+      "supports": "嵌入、商业使用、播放收费和独立价值规则",
+      "limitations": "不授予下载再托管影片权利",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S14",
+      "url": "https://developers.google.com/youtube/v3/getting-started",
+      "type": "primary_public_source",
+      "supports": "本轮默认 API 额度",
+      "limitations": "API 调用额度不是视频 GB 流量额度",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S15",
+      "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+      "type": "primary_public_source",
+      "supports": "静态托管容量和适用限制",
+      "limitations": "不适合作为任意商业视频网站后端",
+      "cited_in": [
+        "distribution-and-cost.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S16",
+      "url": "https://durian.blender.org/sharing/",
+      "type": "primary_public_source",
+      "supports": "Sintel 具体作品许可与完整片尾要求",
+      "limitations": "新增影片、素材和字幕仍需单独核实",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S17",
+      "url": "https://filmhub.com/blog/posts/introducing-relay-a-new-streaming-service-powered-by-filmhub",
+      "type": "primary_public_source",
+      "supports": "Relay 历史规模和特定渠道协议案例",
+      "limitations": "不是 Filmhub 实时总库量，也不是本项目可取得的条款",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S18",
+      "url": "https://filmhub.com/buyers",
+      "type": "primary_public_source",
+      "supports": "片库采购入口与内容范围",
+      "limitations": "不能推出个人准入、实时全库数量或新渠道报价",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S19",
+      "url": "https://filmhub.com/terms",
+      "type": "primary_public_source",
+      "supports": "Channel Agreement 与制片人通用分成的区别",
+      "limitations": "通用条款不能替代本项目尚未取得的渠道合同",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S20",
+      "url": "https://github.com/laoma528/awesome-zhuiju-free",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "README.md",
+        "THIRD_PARTY.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S21",
+      "url": "https://github.com/laoma528/awesome-zhuiju-free/tree/d1049a3af73c068c390decc92eebe9bff84d52a0",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "README.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S22",
+      "url": "https://github.com/video-dev/hls.js",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "architecture.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S23",
+      "url": "https://help.filmhub.com/channel-account-statuses-explained",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S24",
+      "url": "https://help.filmhub.com/channel-onboarding-guide",
+      "type": "primary_public_source",
+      "supports": "渠道开户、激活与文件交付前置流程",
+      "limitations": "未公开保证接受个人或零收入项目",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S25",
+      "url": "https://help.filmhub.com/delivery-timeline-and-what-to-expect",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S26",
+      "url": "https://help.filmhub.com/en/articles/2663766-filmhub-standard-delivery-package",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S27",
+      "url": "https://help.filmhub.com/en/articles/2663772-filmhub-revenue-share",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S28",
+      "url": "https://help.filmhub.com/en/articles/2692190-setting-up-file-transfer",
+      "type": "primary_public_source",
+      "supports": "S3/SFTP 等交付端、S3 地区与大文件提示",
+      "limitations": "不能当成含免费终端观看流量的承诺",
+      "cited_in": [
+        "distribution-and-cost.md",
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S29",
+      "url": "https://help.filmhub.com/en/articles/3031183-title-discovery-licensing",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S30",
+      "url": "https://help.filmhub.com/en/articles/5955903-ott-service-providers",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S31",
+      "url": "https://help.filmhub.com/en/articles/8386488-filmhub-distribution-deal-types-revenue-share-fixed-fee",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S32",
+      "url": "https://help.filmhub.com/reporting-and-royalties",
+      "type": "primary_public_source",
+      "supports": "渠道报表、付款和账户责任",
+      "limitations": "具体周期按渠道合同",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S33",
+      "url": "https://help.filmhub.com/resources-for-channels",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S34",
+      "url": "https://help.filmhub.com/understanding-avails-and-rights",
+      "type": "primary_public_source",
+      "supports": "地区、模式、时间窗口和广告展示归因",
+      "limitations": "不能推定全球、全模式授权",
+      "cited_in": [
+        "filmhub.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S35",
+      "url": "https://help.netflix.com/en/node/4976",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S36",
+      "url": "https://peach.blender.org/about/",
+      "type": "primary_public_source",
+      "supports": "Big Buck Bunny 具体作品许可与署名",
+      "limitations": "不延伸到所有用 Blender 制作的作品",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S37",
+      "url": "https://pixabay.com/api/docs/",
+      "type": "primary_public_source",
+      "supports": "API 配额、24 小时缓存和应用嵌入说明",
+      "limitations": "嵌入能力不能覆盖内容许可限制",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S38",
+      "url": "https://pixabay.com/service/terms/",
+      "type": "primary_public_source",
+      "supports": "素材许可及独立分发限制",
+      "limitations": "不是全用途或全权利保证",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S39",
+      "url": "https://tubitv.com/help-center/About-Tubi/articles/4409975158043",
+      "type": "primary_public_source",
+      "supports": "相关官方说明，具体用途见引用文档",
+      "limitations": "公开资料可更新，不代替实际合同、采购或播放质量测试",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S40",
+      "url": "https://www.cloudflare.com/service-specific-terms-application-services/",
+      "type": "primary_public_source",
+      "supports": "普通 CDN 的视频与大文件条款",
+      "limitations": "不与专用开发者或视频服务的规则混为一谈",
+      "cited_in": [
+        "distribution-and-cost.md",
+        "references/README.md"
+      ]
+    },
+    {
+      "id": "S41",
+      "url": "https://www.europol.europa.eu/media-press/newsroom/news/european-law-enforcement-stops-illegal-iptv-service-providers",
+      "type": "primary_public_source",
+      "supports": "未经授权分发网络的实际案件",
+      "limitations": "不用于认定本项目特定来源的授权状态",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S42",
+      "url": "https://www.pexels.com/api/documentation/",
+      "type": "primary_public_source",
+      "supports": "素材 API 与默认请求配额",
+      "limitations": "不是无限视频流量承诺",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    },
+    {
+      "id": "S43",
+      "url": "https://www.pexels.com/terms-of-service/",
+      "type": "primary_public_source",
+      "supports": "素材商用条件及独立分发、竞争服务限制",
+      "limitations": "不能直接搬成影片分发库",
+      "cited_in": [
+        "references/README.md",
+        "source-acquisition.md"
+      ]
+    }
+  ],
+  "unresolved": [
+    "Filmhub personal/early-stage channel acceptance and exact quotation",
+    "Current commercial rights and capacity of sampled bfzy API/CDN",
+    "Production playback quality and profitability"
+  ]
+}

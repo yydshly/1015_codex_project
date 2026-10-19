@@ -1,0 +1,105 @@
+Use case: infographic-diagram
+Asset type: One comprehensive Chinese research infographic poster, a durable project asset.
+Primary request: 用一张图完整汇总我们对 laoma528/awesome-zhuiju-free 的理解：源库能力、展示效果、思考、架构、可扩展产品、意义和商业验证。This is a factual research map, not an advertisement.
+Format: ONE very tall portrait image, approximately 2400 × 5600 or the highest available portrait resolution. Use generous margins and 8 clearly numbered horizontal chapters with coordinated two-column subpanels, strong hierarchy, clean connectors. All Chinese must be crisp, accurately typeset, readable on zoom. Prioritize faithful content over illustration; no text omissions. Body text must be large enough for a long infographic. Do not cram into a small landscape page.
+Style: Sophisticated editorial research field notes matching a warm ivory, dark forest-green, muted sage and restrained amber/coral palette. Flat diagrams, fine rules, intentional whitespace, practical icons only. Clean Chinese sans-serif with a tasteful serif main headline. No fake 3D, no decorative gradients, no robot/brain imagery, no giant empty illustrations.
+Title verbatim: “从资源目录，到视频产品”
+Subtitle verbatim: “awesome-zhuiju-free · 能力、实测、架构与产品全景”
+Top thesis, prominently: “原库的价值，是可维护的资源发现与情报；视频产品还要连接内容许可、观看体验、流量分发和经营验证。”
+Status legend used throughout: “原库已有” / “我们已验证” / “后续设想” / “仍待确认”.
+Include all content below, arrange compactly but legibly. Use concise exact Chinese as written. Emphasize the relationships and boundaries, not just isolated boxes.
+
+01 / 源库到底提供什么？ [原库已有]
+Big label: “资源目录与维护系统”
+Four-part diagram: “维护者整理 / 社区推荐” → “结构化 JSON” → “生成目录与自动检测” → “README / 分类导航 / 更新记录”.
+Fields: “分类、标签、访问条件、评分、状态、来源与核验记录”.
+Operational loop: “Issue 推荐 → 维护者审核 → 写入资源 → 定时 HTTP 检查 → 失效处理”.
+Source metrics in one row: “119 条记录 = 111 条精选 + 8 条移除”; “53 个在线影视入口 / 15 个 TVBox 配置 / 15 个开源项目”.
+HTTP bar labels: “检测 96 个入口：66 可访问 · 21 受限 · 9 无法访问”.
+Critical small label: “2026.10.15 固定版本统计；HTTP 响应不是播放成功率”.
+Rights boundary: “上游 CC BY 4.0 许可不自动覆盖第三方影片、海报、字幕和接口。”
+
+02 / 我们实际展示了什么？ [我们已验证]
+Title: “007 映片 Demo → 已嵌入 010 研究页”
+Draw a small schematic UI with a search box, a video rectangle with play icon, and exactly eight numbered episode buttons; label it “界面示意”. No real people or fake movie still; do not mislabel generated UI as a real screenshot.
+Feature flow: “输入片名 → 实时搜索 → 查看详情 → 选择线路 / 集数 → 浏览器播放”.
+Verification facts: “2026.10.19：搜索返回 5 条结果；样例返回 8 集；首两集均实际解码 1920 × 1080”.
+Playback observations: “首集约 58.25 秒 / 次集约 63.92 秒，均观察到时间推进；可切集、暂停、继续”.
+Local integration: “一个本地服务：研究页 + 007 播放器 + 原有 API”.
+Boundary: “只抽样首两集，未完整观看或验证全库、跨地区、并发；片名与季度资料来自上游，未独立核实。”
+
+03 / 片源如何找到？ [发现链路已验证]
+Make an especially clear five-node flow:
+“原库资源 JSON” → “小马 TVBox 配置” → “暴風 HTTP API” → “详情里的线路与选集” → “HLS 清单 / CDN 分片”.
+Small exact technical labels under relevant nodes:
+“szyyds.cn/tv/x.json”
+“bfzyapi.com/api.php/provide/vod/”
+“vod_play_from / vod_play_url”
+“v.fengbao14.com / .m3u8”
+Search label: “搜索 ac=detail&wd=片名；详情 ac=detail&ids=编号”.
+Evidence note: “读取 17 份配置、26 次 HTTP API 请求；次数不等于独立片库数；未执行远程 Spider”.
+Big thinking callout: “我们追溯到了接口与媒体地址；最初影片由谁取得、权属如何、为何承担流量，仍无充分证据。”
+Four separate questions shown as a ladder: “入口可访问？” → “媒体可播放？” → “有权用于该业务？” → “可持续经营？”.
+Caption: “每一层都需要自己的证据。”
+
+04 / 架构是什么？谁承担流量？
+Full-width architecture, distinct paths:
+Metadata/control path: “用户浏览器” ↔ “我们的后端适配器” ↔ “影片 API”.
+Backend duties: “搜索 / 详情 / 选集标准化、超时重试、缓存、域名与来源校验”.
+Media data path drawn separately, in a bolder green arrow: “上游媒体 CDN” → “用户浏览器 / HLS.js 解码”.
+Label: “007 正常播放采用直连；视频字节不经过我们的后端”.
+Then three deployment modes with payer:
+A “上游直连：上游 CDN → 浏览器｜视频流量主要由上游承担，额度与授权未知”.
+B “后端转发：上游 → 我们的服务器 → 浏览器｜我们增加出口带宽、连接与请求成本；转发不会产生授权”.
+C “自有分发：获准使用的文件 → 存储 → 转码 → 视频 CDN → 浏览器｜我们采购基础设施，可规划分发与质量”.
+Production extensions: “片目库 / 授权地区与期限 / 字幕 / 质量监控 / 下架 / 报表与结算”.
+One-line principle: “代码决定怎么接；合同决定能做什么；流量路径决定谁付钱。”
+
+05 / 内容供应与成本怎么选？
+Two adjacent subpanels.
+LEFT “先确认内容可用范围”:
+“开放电影：Big Buck Bunny / Sintel 等，逐作品核查许可、署名和片尾；自行分发另算成本。”
+“官方嵌入：YouTube 官方播放器；遵守品牌、收费与广告规则，视频由来源平台分发。”
+“作者合作：向独立导演 / 工作室取得非独家、地区、期限和使用模式明确的许可。”
+“Filmhub：我们是 Channel / Buyer；需审核、选片与渠道协议，标准流程交付文件到 S3 / SFTP，再安排播放分发。”
+“素材 API：Pexels / Pixabay 是创作素材，不等于可独立再分发的完整影视片库。”
+“未知公共 API：技术研究线索；未取得商用、额度与服务承诺。”
+Filmhub highlight: “80/20 通常指 Filmhub 与制片方，不代表网站默认保留 80%；个人准入、可授权片单、预付款、保底、分成仍待书面确认。”
+RIGHT “免费内容许可 ≠ 免费基础设施”:
+“3 Mbps × 1 小时 ≈ 1.35 GB；100 人同时观看 ≈ 300 Mbps，尚未含余量。”
+Assumption line: “示例：每月 1,000 次 × 每次 10 分钟 × 3 Mbps，转码后存储 20 GB，片库 200 分钟。”
+Results: “月传输约 225 GB”
+“Bunny Standard 欧美 ≈ $2.45 / 月”
+“Bunny Standard 亚洲 / 大洋洲 ≈ $6.95 / 月”
+“Cloudflare Stream ≈ $15 / 月”
+“2026.10.16 公开价格快照，美元不含税；含示例存储与最低消费，不含版权、整站、支付、营销、人力和可选功能；不是正式报价。”
+Cost insight: “码率、地区、观看分钟、预加载与重试都会改变费用。”
+
+06 / 可以扩展成什么产品？ [后续设想]
+Three product routes, compare purpose, revenue and difficulty:
+“资源导航 / 状态目录｜垂直分类、更新与实测｜专题赞助、信息服务｜接近原库，带宽较低”.
+“动画短片精选 + 原创解析｜主题策展、字幕与创作背景｜原创课程、会员服务、赞助｜当前优先验证”.
+“签约片库 / 小型流媒体｜许可片目、稳定观看、结算报表｜AVOD / SVOD / TVOD｜供应和资金要求更高”.
+Extension branches: “来源适配器 → 多源规范化与健康检测”; “影片与许可台账 → 地域 / 到期 / 下架管理”; “观看事件 → 质量与成本归因”; “收藏与专题 → 个性化推荐、作者合作、教育与影展场景”.
+Important product callout: “差异化来自内容供给、编辑判断、可靠体验与用户关系。公共接口和一个搜索框容易复制。”
+
+07 / 如何低成本验证，避免把能播当成能盈利？ [建议计划]
+Four-week horizontal timeline:
+“第 1 周｜收窄主题，访谈用户，逐片确认许可，整理小片库”
+“第 2 周｜邀请约 20 人，测起播、卡顿、字幕与每观看小时成本”
+“第 3 周｜发布原创专题，测有效观看、收藏和复访”
+“第 4 周｜试验明确收费项或赞助，核实支付与贡献利润”
+Metric trio: “供给：可授权且实际能播”; “需求：复访与真实支付”; “经济：收入 − 授权 / 分成 − 分发 / 支付 / 获客成本”.
+Gate: “有收入证据且单位经济可持续，再扩大片库；当前尚未验证盈利。”
+
+08 / 最后的意义与未解问题
+Large conclusion: “把一份网址清单，变成一套理解内容产品的方法。”
+Four takeaways:
+“研究价值：从目录和配置发现真实接入链路，保留可追溯证据。”
+“工程价值：复用结构化数据、审核、检测、适配器、缓存与媒体解码方法。”
+“产品价值：从‘什么都能搜到’，走向‘这类内容，我愿意回来这里看’。”
+“商业价值：在采购片库与扩张之前，把许可、成本、需求和责任放到同一张图。”
+Remaining questions: “原始内容权属 / 公共接口商用与流量承诺 / 全库稳定性 / Filmhub 准入与实际报价 / 用户留存与利润”.
+Footer: “研究对象：github.com/laoma528/awesome-zhuiju-free｜固定提交 d1049a3…52a0”
+“源码与供应商研究：2026.10.15–16；演示接入复验：2026.10.19。图中架构与产品路线包含建议，未签商业片库合同，未公开部署。”
+Ensure one unified poster. Do not invent suppliers, rights, traffic quotas, pricing, profitability or new test results. Use real factual figures exactly. Do not include QR codes or fake logos.
