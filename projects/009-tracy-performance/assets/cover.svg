@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+<defs><pattern id="stripe" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="9" height="9" fill="#f7e8ca"/><rect width="4" height="9" fill="#eed5a9"/></pattern></defs>
+<rect width="1200" height="680" fill="#f4f7f8"/>
+<g font-family="Segoe UI,Microsoft YaHei,sans-serif">
+<path d="M58 54h13l7-19 9 35 8-16h15" fill="none" stroke="#288d87" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="128" y="57" fill="#557580" font-size="13" letter-spacing="3">PERFORMANCE FIELD NOTES</text><text x="1030" y="57" fill="#8499a6" font-size="12" letter-spacing="2">RESEARCH 009</text>
+<text x="62" y="157" fill="#288d87" font-size="13" letter-spacing="3">TRACY / 性能定位与 AI 自动优化</text>
+<text x="58" y="242" fill="#142e3d" font-size="53" font-weight="600">把每一次卡顿，</text><text x="58" y="318" fill="#288d87" font-size="53" font-weight="600">追到代码里。</text>
+<text x="62" y="376" fill="#6c8390" font-size="18">从采样与埋点，到有证据的性能反馈。</text><text x="62" y="413" fill="#8c9da6" font-size="13">能力 / 效果 / 场景 / 原理 / 产品 / AI 价值</text>
+<rect x="614" y="139" width="530" height="306" rx="14" fill="#fff" stroke="#d6e1e6"/>
+<text x="640" y="174" fill="#557580" font-size="11" letter-spacing="2">EXECUTION RECORD</text><text x="1040" y="174" fill="#a0865f" font-size="10">机制示意</text>
+<path d="M704 204h410" stroke="#dbe5e9"/><g fill="#9babb5" font-size="10"><text x="704" y="198">0</text><text x="837" y="198">10</text><text x="973" y="198">20</text><text x="1080" y="198">30 ms</text></g>
+<g fill="#627e8c" font-size="12"><text x="639" y="239">Main</text><text x="639" y="290">Worker</text><text x="639" y="341">GPU</text></g>
+<rect x="704" y="219" width="35" height="29" rx="4" fill="#4b7fc5"/><rect x="744" y="219" width="325" height="29" rx="4" fill="url(#stripe)"/><rect x="1074" y="219" width="38" height="29" rx="4" fill="#4b7fc5"/><text x="828" y="239" fill="#98703a" font-size="11">等待资源锁 L1</text>
+<rect x="704" y="270" width="365" height="29" rx="4" fill="#288d87"/><text x="807" y="290" fill="#fff" font-size="11" font-family="Consolas,monospace">DecodeTexture()</text>
+<rect x="704" y="321" width="94" height="29" rx="4" fill="#9d8ace"/><rect x="1074" y="321" width="38" height="29" rx="4" fill="#9d8ace"/>
+<path d="M640 376h470" stroke="#e2e9ed"/><text x="640" y="405" fill="#288d87" font-size="13">时间 + 源码位置 + 线程关系 → 定位证据</text>
+<g transform="translate(60 505)"><rect width="1080" height="116" rx="9" fill="#132a38"/><text x="30" y="34" fill="#7d9ba9" font-size="10" letter-spacing="2">AI ERA / 三层能力</text>
+<text x="30" y="76" fill="#e0edf1" font-size="20">测试与验收</text><text x="240" y="76" fill="#87bdbb" font-size="24">→</text><text x="390" y="76" fill="#e0edf1" font-size="20">采集与定位</text><text x="620" y="76" fill="#87bdbb" font-size="24">→</text><text x="770" y="76" fill="#e0edf1" font-size="20">AI 修改与复测</text></g>
+<text x="62" y="651" fill="#8ca0ac" font-size="11">自绘研究引导图 · 全部图形为概念示意 · 2026.10.16</text>
+</g></svg>

@@ -107,6 +107,21 @@
       "demo_url": ""
     },
     {
+      "id": 9,
+      "slug": "tracy-performance",
+      "name": "Tracy 运行时性能定位与 AI 优化研究",
+      "repository": "https://github.com/wolfpld/tracy",
+      "summary": "通过调用栈采样、区间埋点及线程/锁、GPU、内存事件定位运行时性能瓶颈；适合可接入采集的 AI/GitHub 多语言项目，服务游戏、桌面、数据与服务优化，为开发者和编码 Agent 提供可复测证据。附完整引导图与 22 项工具差异。",
+      "status": "completed",
+      "tags": [
+        "性能分析",
+        "C/C++",
+        "AI 自动优化"
+      ],
+      "cover": "assets/understanding-map.png",
+      "demo_url": ""
+    },
+    {
       "id": 10,
       "slug": "zhuiju-product-research",
       "name": "追剧资源库与视频产品全链路研究",

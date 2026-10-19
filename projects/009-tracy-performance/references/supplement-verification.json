@@ -1,0 +1,268 @@
+{
+  "checked_on": "2026-10-19",
+  "timezone": "Asia/Shanghai",
+  "scope": "仅验证研究网页与总图；未运行 Tracy、C/C++ 基准或 AI 自动修复。",
+  "browser": "Codex in-app browser",
+  "checks": [
+    {
+      "test": "initial_content",
+      "observed": {
+        "anchors": 9,
+        "clientWidth": 1265,
+        "duplicateIds": [],
+        "image": [
+          1920,
+          6830
+        ],
+        "products": 22,
+        "scenarios": 6,
+        "scrollWidth": 1265,
+        "width": 1280
+      }
+    },
+    {
+      "test": "open_map",
+      "observed": {
+        "bodyOverflow": "hidden",
+        "focused": "close-map",
+        "open": true
+      }
+    },
+    {
+      "test": "original_size",
+      "observed": {
+        "naturalWidth": 1920,
+        "scrollWidth": 1952,
+        "scrollerWidth": 1199,
+        "width": 1920
+      }
+    },
+    {
+      "test": "fit_width",
+      "observed": {
+        "container": 1199,
+        "width": 1167
+      }
+    },
+    {
+      "test": "escape_and_focus_restore",
+      "observed": {
+        "bodyOverflow": "",
+        "focused": "open-map",
+        "open": false
+      }
+    },
+    {
+      "test": "png_download",
+      "path": "Tracy-理解全景图.png",
+      "sha256": "8ad3007e7e08b5295b4af4a4e459e074aefc44a339c1e521dfa71ecb3f134411",
+      "matches_source": true
+    },
+    {
+      "test": "svg_download",
+      "path": "Tracy-理解全景图.svg",
+      "sha256": "224b568b386fa0352f8c28ee5c7a06e1e5b3cd2e1060f6045530f7fbc2242666",
+      "matches_source": true
+    },
+    {
+      "test": "measure_filter",
+      "rows": 5
+    },
+    {
+      "test": "diagnose_filter",
+      "rows": 13
+    },
+    {
+      "test": "optimize_filter",
+      "rows": 4
+    },
+    {
+      "test": "combined_empty_filter",
+      "observed": "没有匹配项目，请更换关键词、场景或选择“全部”。"
+    },
+    {
+      "test": "windows_filter",
+      "rows": 4
+    },
+    {
+      "test": "gpu_filter",
+      "names": [
+        "Tracy ↗",
+        "Nsight Systems ↗",
+        "Nsight Compute ↗",
+        "ParaCodex ↗",
+        "Atrex Kernel Agent ↗"
+      ]
+    },
+    {
+      "test": "combined_search",
+      "names": [
+        "Nsight Systems ↗",
+        "Nsight Compute ↗"
+      ]
+    },
+    {
+      "test": "reset_products",
+      "rows": 22,
+      "differenceCells": 22
+    },
+    {
+      "test": "normal_frame_regression",
+      "observed": "15.1 ms"
+    },
+    {
+      "test": "hitch_frame_regression",
+      "observed": "45.0 ms"
+    },
+    {
+      "test": "sampling_regression",
+      "samples": 19
+    },
+    {
+      "test": "wait_evidence_regression",
+      "observed": "采样把热点缩小到解压路径"
+    },
+    {
+      "test": "principle_keyboard_regression",
+      "observed": "tab-zones"
+    },
+    {
+      "test": "correctness_gate_regression",
+      "observed": "拒绝候选：正确性未通过"
+    },
+    {
+      "test": "performance_gate_regression",
+      "observed": "拒绝候选：性能超过当前阈值"
+    },
+    {
+      "test": "valid_gate_regression",
+      "observed": "接受候选：两道检查均通过"
+    },
+    {
+      "test": "origin_faq",
+      "observed": {
+        "open": true,
+        "text": "AI 生成或 GitHub 下载的项目不适合吗？都可以。决定条件是语言、运行环境、采集接入和可复现场景。源码来自哪里、是否由本人编写，不改变执行记录的价值；仓库链接本身尚不能代替运行采集。"
+      }
+    },
+    {
+      "test": "language_faq",
+      "observed": {
+        "open": true,
+        "text": "是不是只支持 C/C++，必须采用某种代码架构？官方还提供 Python、Lua、Fortran 接入，Rust、Zig、C# 等有第三方绑定。面向对象、过程式、循环、事件驱动和批处理均可；自动采样和定位深度需要按运行时、平台与绑定分别核对。"
+      }
+    },
+    {
+      "test": "mobile_dialog",
+      "observed": {
+        "dialogScrollWidth": 359,
+        "dialogWidth": 360.3125,
+        "imageWidth": 332,
+        "open": true,
+        "pageScrollWidth": 375,
+        "pageWidth": 375,
+        "toolbarWidth": 359
+      }
+    },
+    {
+      "test": "mobile_original_size",
+      "observed": {
+        "scrollWidth": 1932,
+        "width": 1920
+      }
+    },
+    {
+      "test": "mobile_page_layout",
+      "observed": {
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "width": 375
+      }
+    },
+    {
+      "test": "narrow_page_layout",
+      "observed": {
+        "clientWidth": 305,
+        "scrollWidth": 305,
+        "width": 320
+      }
+    },
+    {
+      "test": "narrow_dialog",
+      "observed": {
+        "scrollWidth": 306,
+        "width": 306
+      }
+    }
+  ],
+  "console_errors": [],
+  "static_checks": {
+    "image_size": [
+      1920,
+      6830
+    ],
+    "all_22_products_in_svg": true,
+    "svg_xml_valid": true,
+    "duplicate_ids": 0,
+    "anchors_valid": true,
+    "relative_resources": [
+      {
+        "path": "projects/009-tracy-performance/THIRD_PARTY.md",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/app.js",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/assets/favicon.svg",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/assets/products.js",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/assets/understanding-map.png",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/assets/understanding-map.svg",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/assets/upstream.js",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/capabilities.md",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/comparison.md",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/notes.md",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/references/products.json",
+        "status": 200
+      },
+      {
+        "path": "projects/009-tracy-performance/styles.css",
+        "status": 200
+      }
+    ],
+    "downloads_match_sources": true,
+    "source_image_sha256": "8ad3007e7e08b5295b4af4a4e459e074aefc44a339c1e521dfa71ecb3f134411",
+    "commands_passed": [
+      "python scripts/projects.py sync",
+      "python scripts/projects.py check",
+      "node --check projects/009-tracy-performance/web/app.js",
+      "python projects/009-tracy-performance/src/build_overview.py",
+      "python scripts/build_web.py"
+    ]
+  }
+}

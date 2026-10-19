@@ -1,0 +1,337 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="6830" viewBox="0 0 1920 6830" role="img" aria-labelledby="title desc">
+<title id="title">Tracy 能力、原理、场景与 AI 性能工程全景</title>
+<desc id="desc">八部分中文研究图：性能证据、六类能力、四种机制、代码来源与语言、六种场景、22项工具差异、AI流程、思考和扩展。所有时间轴为机制示意。</desc>
+<rect width="1920" height="6830" fill="white"/>
+<text x="88" y="75" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="700" fill="#24867f">PERFORMANCE FIELD NOTES   /   RESEARCH 009</text>
+<text x="88" y="174" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="66" font-weight="700" fill="#142e3d">Tracy · 性能定位与 AI 工程全景</text>
+<text x="88" y="230" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="29" font-weight="400" fill="#607986">AI 生成 / GitHub 下载 / 自己编写：代码来源不同，运行时证据的价值相同。</text>
+<rect x="88" y="274" width="1744" height="196" rx="14" fill="#132a38" stroke="none"/>
+<text x="120" y="322" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="32" font-weight="700" fill="#a9d5ce">核心定位  /  运行时性能分析 + 性能瓶颈定位</text>
+<text x="120" y="380" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#edf6f6">运行与复现  →  采样 / 事件采集  →  时间轴与统计  →  关联代码和线程  →  修改后复测</text>
+<text x="120" y="430" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#a9bfca">客户端 + 独立分析器；源码位置提供线索，根因需要事件、业务输入与复测共同确认。</text>
+<text x="88" y="545" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="700" fill="#24867f">01</text>
+<text x="158" y="546" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="38" font-weight="700" fill="#142e3d">源库的能力：把执行过程变成可解释的证据</text>
+<text x="88" y="588" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="23" font-weight="400" fill="#607986">以下为已有采集与分析能力，具体效果取决于平台、符号和接入。</text>
+<rect x="88.0" y="620" width="568.0" height="193" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="111.0" y="647" width="5" height="33" rx="2" fill="#3d77bd" stroke="none"/>
+<text x="133.0" y="668" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">CPU 热点与调用路径</text>
+<text x="113.0" y="707" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">采样执行位置与调用栈，统计 self / total 热点</text>
+<text x="113.0" y="744" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">；有符号时关联函数、源码或汇编。</text>
+<rect x="676.0" y="620" width="568.0" height="193" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="699.0" y="647" width="5" height="33" rx="2" fill="#24867f" stroke="none"/>
+<text x="721.0" y="668" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">区间、帧与单次卡顿</text>
+<text x="701.0" y="707" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">关键区间记录开始与结束；帧标记帮助放大异</text>
+<text x="701.0" y="744" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">常帧，观察嵌套调用与持续时间。</text>
+<rect x="1264.0" y="620" width="568.0" height="193" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="1287.0" y="647" width="5" height="33" rx="2" fill="#b98031" stroke="none"/>
+<text x="1309.0" y="668" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">线程、锁与调度</text>
+<text x="1289.0" y="707" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">对齐线程运行、切出和已记录的锁事件，追查</text>
+<text x="1289.0" y="744" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">等待、持锁者与执行关系。</text>
+<rect x="88.0" y="833" width="568.0" height="193" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="111.0" y="860" width="5" height="33" rx="2" fill="#8270b5" stroke="none"/>
+<text x="133.0" y="881" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">GPU 设备时间</text>
+<text x="113.0" y="920" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">接入相应 GPU API，查看标记区间的设备耗时</text>
+<text x="113.0" y="957" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">；CPU 提交耗时与 GPU 执行分开解释。</text>
+<rect x="676.0" y="833" width="568.0" height="193" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="699.0" y="860" width="5" height="33" rx="2" fill="#3d77bd" stroke="none"/>
+<text x="721.0" y="881" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">内存分配与释放</text>
+<text x="701.0" y="920" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">追踪已上报分配的大小、存活及可选调用栈；</text>
+<text x="701.0" y="957" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">数据覆盖范围由分配接入决定。</text>
+<rect x="1264.0" y="833" width="568.0" height="193" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="1287.0" y="860" width="5" height="33" rx="2" fill="#24867f" stroke="none"/>
+<text x="1309.0" y="881" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">保存、对比与分析接口</text>
+<text x="1289.0" y="920" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">保存 .tracy、比较记录、导出统计；关联日志</text>
+<text x="1289.0" y="957" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">和曲线。Assist / MCP 另提供 AI 分析入口。</text>
+<text x="88" y="1100" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="700" fill="#24867f">02</text>
+<text x="158" y="1101" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="38" font-weight="700" fill="#142e3d">底层原理：四条采集路径，共用一条分析链路</text>
+<rect x="88" y="1154" width="856" height="190" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="111" y="1181" width="5" height="33" rx="2" fill="#3d77bd" stroke="none"/>
+<text x="133" y="1202" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">采样：统计执行到了哪里</text>
+<text x="113" y="1241" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">系统周期采集地址 / 调用栈 → 栈展开与符号解析 → 热点。短调用可</text>
+<text x="113" y="1280" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">能漏采，样本比例有统计误差。</text>
+<rect x="976" y="1154" width="856" height="190" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="999" y="1181" width="5" height="33" rx="2" fill="#24867f" stroke="none"/>
+<text x="1021" y="1202" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">埋点：记录这一次用了多久</text>
+<text x="1001" y="1241" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">作用域开始 / 结束事件 + 时间戳 + 线程 / 源位置 → 持续时间。调用</text>
+<text x="1001" y="1280" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">栈可选，区间也可能包含等待。</text>
+<rect x="88" y="1364" width="856" height="190" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="111" y="1391" width="5" height="33" rx="2" fill="#b98031" stroke="none"/>
+<text x="133" y="1412" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">等待：关联状态与依赖</text>
+<text x="113" y="1451" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">上下文切换 + 已接入锁的等待 / 获得 / 释放 → 对齐线程关系。时间</text>
+<text x="113" y="1490" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">重叠本身不能证明因果。</text>
+<rect x="976" y="1364" width="856" height="190" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="999" y="1391" width="5" height="33" rx="2" fill="#8270b5" stroke="none"/>
+<text x="1021" y="1412" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">GPU / 内存：专门事件</text>
+<text x="1001" y="1451" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">设备时间查询衡量 GPU 区间；分配 / 释放事件追踪地址与大小。均需</text>
+<text x="1001" y="1490" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">要对应 API 或统一入口接入。</text>
+<text x="88" y="1597" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="27" font-weight="700" fill="#24867f">原始记录与线程上下文  →  后台传输 / 保存  →  分析器对齐与解析  →  人或 AI 提出假设</text>
+<text x="88" y="1680" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="700" fill="#24867f">03</text>
+<text x="158" y="1681" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="38" font-weight="700" fill="#142e3d">什么代码可以用？看语言、运行环境和接入条件</text>
+<rect x="88" y="1735" width="856" height="328" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="111" y="1762" width="5" height="33" rx="2" fill="#24867f" stroke="none"/>
+<text x="133" y="1783" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">代码来源与编程模式</text>
+<text x="113" y="1822" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">AI / GitHub / 自写代码均可，项目需实际运行。</text>
+<text x="113" y="1861" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">面向对象、过程式、单 / 多线程、循环、事件驱动、批处理都可以；</text>
+<text x="113" y="1900" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">没有帧概念也能分析。</text>
+<text x="113" y="1939" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">C/C++ 常规用法集成客户端并重编译；性能构建保留优化与调试符号</text>
+<text x="113" y="1978" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">。</text>
+<rect x="976" y="1735" width="856" height="328" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="999" y="1762" width="5" height="33" rx="2" fill="#3d77bd" stroke="none"/>
+<text x="1021" y="1783" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">语言支持有层次</text>
+<text x="1001" y="1822" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">官方直接接入：C、C++、Python、Lua、Fortran。</text>
+<text x="1001" y="1861" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">第三方绑定：Rust、Zig、C#、OCaml、Odin 等。</text>
+<text x="1001" y="1900" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">绑定不保证同样的自动采样、源码映射与 GPU 能力。浏览器 / 远端模</text>
+<text x="1001" y="1939" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="400" fill="#607986">型内部需对应采集工具；代码文本或仓库链接本身不能生成运行记录。</text>
+<text x="88" y="2140" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="700" fill="#24867f">04</text>
+<text x="158" y="2141" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="38" font-weight="700" fill="#142e3d">可用场景：从一次慢操作出发，选择需要的证据</text>
+<text x="88" y="2231" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="29" font-weight="700" fill="#142e3d">游戏 / 渲染 / 仿真</text>
+<text x="88" y="2273" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">偶发卡帧 → 对齐帧预算、CPU、GPU、资源加载和锁等待。</text>
+<path d="M88 2324 L944 2324" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<text x="976" y="2231" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="29" font-weight="700" fill="#142e3d">桌面 / CAD / 模型查看器</text>
+<text x="976" y="2273" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">打开大文件卡住 → 分析读取、解析、网格构建、主线程等待。</text>
+<path d="M976 2324 L1832 2324" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<text x="88" y="2373" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="29" font-weight="700" fill="#142e3d">图片 / 视频 / 数据处理</text>
+<text x="88" y="2415" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">一批数据变慢 → 阶段耗时、重复拷贝、分配与算法热点。</text>
+<path d="M88 2466 L944 2466" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<text x="976" y="2373" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="29" font-weight="700" fill="#142e3d">多线程计算</text>
+<text x="976" y="2415" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">CPU 忙却提速有限 → 任务分布、同步、锁竞争与调度记录。</text>
+<path d="M976 2466 L1832 2466" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<text x="88" y="2515" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="29" font-weight="700" fill="#142e3d">原生后端 / 服务</text>
+<text x="88" y="2557" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">慢请求 → 本机热点结合压测；跨进程等待补 tracing / 数据库证据。</text>
+<path d="M88 2608 L944 2608" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<text x="976" y="2515" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="29" font-weight="700" fill="#142e3d">包含 AI 的产品</text>
+<text x="976" y="2557" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">可控原生计算 / GPU 部分可分析；首 Token、生成速率、远程 API 需额外</text>
+<text x="976" y="2592" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">测量。</text>
+<path d="M976 2608 L1832 2608" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<text x="88" y="2705" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="700" fill="#24867f">05</text>
+<text x="158" y="2706" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="38" font-weight="700" fill="#142e3d">同类与互补产品：22 项能力差异</text>
+<text x="88" y="2748" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="23" font-weight="400" fill="#607986">按主用途分类，并非 22 个直接替代品；免逐函数埋点仍可能需要启动参数、权限、符号或配置。</text>
+<rect x="88" y="2780" width="1744" height="59" rx="8" fill="#132a38" stroke="none"/>
+<text x="108" y="2819" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="700" fill="#e0edf0">产品 / 主用途</text>
+<text x="451" y="2819" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="700" fill="#e0edf0">主要输出</text>
+<text x="954" y="2819" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="700" fill="#e0edf0">接入路径</text>
+<text x="1344" y="2819" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="700" fill="#e0edf0">与 Tracy / 完整闭环的差异</text>
+<rect x="88" y="2839" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="2871" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">hyperfine</text>
+<text x="108" y="2930" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#24867f">测试与验收</text>
+<text x="451" y="2870" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">命令耗时、重复统计、JSON / CSV</text>
+<text x="954" y="2870" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">直接重复运行命令</text>
+<text x="1344" y="2870" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">测量整体耗时；不直接定位内部函数</text>
+<path d="M88 2943 L1832 2943" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="2943" width="1744" height="104" rx="0" fill="#ffffff" stroke="none"/>
+<text x="108" y="2975" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Bencher</text>
+<text x="108" y="3034" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#24867f">测试与验收</text>
+<text x="451" y="2974" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">基准历史、阈值和性能退化检测</text>
+<text x="954" y="2974" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">接入基准适配器与 CI</text>
+<text x="1344" y="2974" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">负责性能历史与门禁；不负责根因和补丁</text>
+<path d="M88 3047 L1832 3047" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="3047" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="3079" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">k6</text>
+<text x="108" y="3138" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#24867f">测试与验收</text>
+<text x="451" y="3078" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">负载、延迟、错误率与阈值</text>
+<text x="954" y="3078" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">编写负载脚本，配置阈值</text>
+<text x="1344" y="3078" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">测服务承载；慢请求内部仍需分析证据</text>
+<path d="M88 3151 L1832 3151" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="3151" width="1744" height="104" rx="0" fill="#ffffff" stroke="none"/>
+<text x="108" y="3183" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Lighthouse CI</text>
+<text x="108" y="3242" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#24867f">测试与验收</text>
+<text x="451" y="3182" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">网页性能审计与预算</text>
+<text x="954" y="3182" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">配置页面地址、审计与 CI</text>
+<text x="1344" y="3182" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">覆盖页面审计；全部业务和后端需另测</text>
+<path d="M88 3255 L1832 3255" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="3255" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="3287" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Google Benchmark</text>
+<text x="108" y="3346" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#24867f">测试与验收</text>
+<text x="451" y="3286" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">函数或代码片段的重复基准、统计与机器可</text>
+<text x="451" y="3317" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">读结果。</text>
+<text x="954" y="3286" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">编写基准函数并编译链接</text>
+<text x="1344" y="3286" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">量化特定片段；不直接解释调用路径</text>
+<path d="M88 3359 L1832 3359" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="3359" width="1744" height="104" rx="0" fill="#f1f6f5" stroke="none"/>
+<text x="108" y="3391" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Tracy</text>
+<text x="108" y="3450" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="3390" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">CPU / 帧 / 线程 / 锁 / GPU / 分配时间轴</text>
+<text x="954" y="3390" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">客户端 + 采样；关键事件接入</text>
+<text x="1344" y="3390" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">擅长具体帧与执行关系；完整验收和修复</text>
+<text x="1344" y="3421" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">另接</text>
+<path d="M88 3463 L1832 3463" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="3463" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="3495" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Linux perf</text>
+<text x="108" y="3554" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="3494" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">CPU 样本、调用链与硬件事件</text>
+<text x="954" y="3494" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">Linux 外部采样；权限和符号</text>
+<text x="1344" y="3494" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">低改动找原生热点；业务区间语义需补充</text>
+<path d="M88 3567 L1832 3567" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="3567" width="1744" height="104" rx="0" fill="#ffffff" stroke="none"/>
+<text x="108" y="3599" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Intel VTune</text>
+<text x="108" y="3658" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="3598" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">CPU 热点、线程与受支持硬件分析</text>
+<text x="954" y="3598" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">采样器 / 分析器；依硬件权限</text>
+<text x="1344" y="3598" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">硬件分析较深入；专有工具，非修复闭环</text>
+<path d="M88 3671 L1832 3671" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="3671" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="3703" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">WPR / WPA</text>
+<text x="108" y="3762" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="3702" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">ETW 系统时间线、CPU 与调度</text>
+<text x="954" y="3702" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">Windows 录制配置 + 符号</text>
+<text x="1344" y="3702" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">侧重系统证据；验收与 AI 修复另接</text>
+<path d="M88 3775 L1832 3775" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="3775" width="1744" height="104" rx="0" fill="#ffffff" stroke="none"/>
+<text x="108" y="3807" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Chrome DevTools MCP</text>
+<text x="108" y="3866" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="3806" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">浏览器 trace、网络与性能诊断</text>
+<text x="954" y="3806" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">Agent 连接浏览器并录制</text>
+<text x="1344" y="3806" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">面向 Web 运行；源码修复由 Agent 执行</text>
+<path d="M88 3879 L1832 3879" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="3879" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="3911" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Scalene</text>
+<text x="108" y="3970" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="3910" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">Python CPU、内存与源码行报告</text>
+<text x="954" y="3910" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">由分析器启动 Python 程序</text>
+<text x="1344" y="3910" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">面向 Python；非任意 C++ 程序分析器</text>
+<path d="M88 3983 L1832 3983" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="3983" width="1744" height="104" rx="0" fill="#ffffff" stroke="none"/>
+<text x="108" y="4015" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Pyroscope / Alloy</text>
+<text x="108" y="4074" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="4014" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">持续 CPU profile 与聚合热点</text>
+<text x="954" y="4014" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">Linux eBPF / 语言采集器</text>
+<text x="1344" y="4014" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">看长期热点；跨服务等待需 tracing</text>
+<path d="M88 4087 L1832 4087" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="4087" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="4119" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Valgrind Callgrind / Mas</text>
+<text x="108" y="4150" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">sif</text>
+<text x="108" y="4178" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="4118" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">Callgrind 提供调用关系和指令成本；Massif</text>
+<text x="451" y="4149" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986"> 分析堆内存峰值。</text>
+<text x="954" y="4118" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">在 Valgrind 下运行；符号辅助</text>
+<text x="1344" y="4118" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">模拟 / 插桩成本较高；不同于真实墙钟</text>
+<path d="M88 4191 L1832 4191" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="4191" width="1744" height="104" rx="0" fill="#ffffff" stroke="none"/>
+<text x="108" y="4223" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">heaptrack</text>
+<text x="108" y="4282" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="4222" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">分配调用栈、临时分配与内存占用线索。</text>
+<text x="954" y="4222" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">通过 heaptrack 启动或附加</text>
+<text x="1344" y="4222" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">侧重分配热点；不直接提供 GPU 帧分析</text>
+<path d="M88 4295 L1832 4295" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="4295" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="4327" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Perfetto</text>
+<text x="108" y="4386" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="4326" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">跨线程 / 进程 trace、系统事件与 SQL 分析</text>
+<text x="451" y="4357" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">。</text>
+<text x="954" y="4326" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">系统数据源 + 按需 SDK 埋点</text>
+<text x="1344" y="4326" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">跨进程时间线；业务语义仍需事件接入</text>
+<path d="M88 4399 L1832 4399" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="4399" width="1744" height="104" rx="0" fill="#ffffff" stroke="none"/>
+<text x="108" y="4431" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Nsight Systems</text>
+<text x="108" y="4490" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="4430" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">CPU / GPU、CUDA API、调度与任务时间</text>
+<text x="451" y="4461" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">线。</text>
+<text x="954" y="4430" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">nsys 录制；可选 NVTX 标记</text>
+<text x="1344" y="4430" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">查 CPU / GPU 协同；kernel 深入看 Com</text>
+<text x="1344" y="4461" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">pute</text>
+<path d="M88 4503 L1832 4503" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="4503" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="4535" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Nsight Compute</text>
+<text x="108" y="4594" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="4534" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">单个 CUDA kernel 的计数器、访存与执行</text>
+<text x="451" y="4565" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">效率。</text>
+<text x="954" y="4534" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">选择 kernel 与指标；可能重放</text>
+<text x="1344" y="4534" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">深入 kernel 硬件指标；非产品端到端验收</text>
+<path d="M88 4607 L1832 4607" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="4607" width="1744" height="104" rx="0" fill="#ffffff" stroke="none"/>
+<text x="108" y="4639" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">OpenTelemetry</text>
+<text x="108" y="4698" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#3d77bd">采集与定位</text>
+<text x="451" y="4638" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">跨服务 spans、指标与日志的采集和关联。</text>
+<text x="954" y="4638" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">SDK / 自动插桩 + Collector</text>
+<text x="1344" y="4638" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">解释分布式调用；非逐函数 CPU profiler</text>
+<path d="M88 4711 L1832 4711" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="4711" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="4743" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">profiler-md</text>
+<text x="108" y="4802" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#8270b5">AI 优化工作流</text>
+<text x="451" y="4742" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">profile 转 AI 可读报告与技能流程</text>
+<text x="954" y="4742" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">既有分析器 + 编码 Agent</text>
+<text x="1344" y="4742" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">偏证据与优化流程；底层采集和验收需配</text>
+<text x="1344" y="4773" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">置</text>
+<path d="M88 4815 L1832 4815" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="4815" width="1744" height="104" rx="0" fill="#ffffff" stroke="none"/>
+<text x="108" y="4847" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">AGR</text>
+<text x="108" y="4906" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#8270b5">AI 优化工作流</text>
+<text x="451" y="4846" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">候选实验、基准、正确性与保留回退</text>
+<text x="954" y="4846" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">配置项目、指标与验证</text>
+<text x="1344" y="4846" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">偏实验循环；没有统一通用 profiler</text>
+<path d="M88 4919 L1832 4919" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="4919" width="1744" height="104" rx="0" fill="#f7f9fa" stroke="none"/>
+<text x="108" y="4951" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">ParaCodex</text>
+<text x="108" y="5010" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#8270b5">AI 优化工作流</text>
+<text x="451" y="4950" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">并行代码转换、profile 与数值验证</text>
+<text x="954" y="4950" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">HPC / GPU 环境与 Agent</text>
+<text x="1344" y="4950" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">偏数值并行任务；普通桌面需要适配</text>
+<path d="M88 5023 L1832 5023" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<rect x="88" y="5023" width="1744" height="104" rx="0" fill="#ffffff" stroke="none"/>
+<text x="108" y="5055" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="700" fill="#142e3d">Atrex Kernel Agent</text>
+<text x="108" y="5114" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="19" font-weight="400" fill="#8270b5">AI 优化工作流</text>
+<text x="451" y="5054" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">GPU 算子编写、profile 与验证</text>
+<text x="954" y="5054" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">GPU / CUDA 等算子工作流</text>
+<text x="1344" y="5054" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">偏 kernel 优化；非通用 CPU C++ 验收器</text>
+<path d="M88 5127 L1832 5127" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<text x="88" y="5166" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">AI 工作流可尝试生成候选；各工具的正确性测试、测量环境和支持范围都需独立核对。</text>
+<text x="88" y="5235" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="700" fill="#24867f">06</text>
+<text x="158" y="5236" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="38" font-weight="700" fill="#142e3d">AI 时代的价值：让写代码与运行结果连接起来</text>
+<rect x="88.0" y="5294" width="568.0" height="201" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="111.0" y="5321" width="5" height="33" rx="2" fill="#24867f" stroke="none"/>
+<text x="133.0" y="5342" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">AI 生成的普通软件</text>
+<text x="113.0" y="5381" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">关注耗时、内存、卡顿、吞吐和稳定性。是否</text>
+<text x="113.0" y="5418" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">包含模型不影响性能工程的必要性。</text>
+<rect x="676.0" y="5294" width="568.0" height="201" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="699.0" y="5321" width="5" height="33" rx="2" fill="#24867f" stroke="none"/>
+<text x="721.0" y="5342" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">包含 AI 功能的产品</text>
+<text x="701.0" y="5381" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">通用指标之外增加 TTFT、tokens/s、显存、排</text>
+<text x="701.0" y="5418" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">队及端到端等待；需模型 / 服务侧证据。</text>
+<rect x="1264.0" y="5294" width="568.0" height="201" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="1287.0" y="5321" width="5" height="33" rx="2" fill="#8270b5" stroke="none"/>
+<text x="1309.0" y="5342" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">用 AI 做性能工程</text>
+<text x="1289.0" y="5381" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">Agent 读 profile / trace、查源码、提出候选</text>
+<text x="1289.0" y="5418" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">；业务正确性与真实性能分别验收。</text>
+<rect x="88" y="5521" width="1744" height="141" rx="12" fill="#132a38" stroke="none"/>
+<text x="116" y="5565" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="29" font-weight="700" fill="#e1f0f0">固定场景与输入 → 测基准 → 定位证据 → AI 候选补丁 → 编译 / 正确性测试 → 重复复测</text>
+<text x="116" y="5621" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#acc4cc">保留 / 修正 / 回退：环境、提交、样本与原始记录可追溯；阈值通过不等于优化，也不保证所有输入。</text>
+<rect x="88" y="5690" width="856" height="177" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="111" y="5717" width="5" height="33" rx="2" fill="#24867f" stroke="none"/>
+<text x="133" y="5738" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">已有：Tracy Assist</text>
+<text x="113" y="5777" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">v0.14.1 手册已记载。配置本地模型，结合源码、调用栈与采样数据辅助</text>
+<text x="113" y="5814" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">分析。</text>
+<rect x="976" y="5690" width="856" height="177" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="999" y="5717" width="5" height="33" rx="2" fill="#8270b5" stroke="none"/>
+<text x="1021" y="5738" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">已有：可选 MCP 服务</text>
+<text x="1001" y="5777" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">独立 Python 服务 + 构建绑定，让编码 Agent 加载、查询、比较 .tracy</text>
+<text x="1001" y="5814" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">；完整修复流程仍需另接。</text>
+<text x="88" y="5950" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="26" font-weight="700" fill="#24867f">07</text>
+<text x="158" y="5951" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="38" font-weight="700" fill="#142e3d">引发的思考：从定位工具到可验证的软件质量流程</text>
+<rect x="88" y="6008" width="856" height="173" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="111" y="6035" width="5" height="33" rx="2" fill="#b98031" stroke="none"/>
+<text x="133" y="6056" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">证据要覆盖问题本身</text>
+<text x="113" y="6095" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">热点、源码行号都是线索；等待、I/O 和业务依赖需要各自记录。资源占</text>
+<text x="113" y="6132" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">用率不能单独判断原因。</text>
+<rect x="976" y="6008" width="856" height="173" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="999" y="6035" width="5" height="33" rx="2" fill="#b98031" stroke="none"/>
+<text x="1021" y="6056" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">自动化需要明确验收对象</text>
+<text x="1001" y="6095" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">先定义工作负载、业务结果、预算和噪声处理；免埋点不等于免配置，有</text>
+<text x="1001" y="6132" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986"> MCP 不等于自动修复。</text>
+<rect x="88" y="6201" width="856" height="173" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="111" y="6228" width="5" height="33" rx="2" fill="#24867f" stroke="none"/>
+<text x="133" y="6249" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">价值在缩短排查与复测</text>
+<text x="113" y="6288" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">代码生成越快，独立反馈越重要。用可重复证据约束 AI 修改，而不是仅</text>
+<text x="113" y="6325" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">凭模型解释判断有效。</text>
+<rect x="976" y="6201" width="856" height="173" rx="12" fill="#f3f7f7" stroke="#d9e4e8"/>
+<rect x="999" y="6228" width="5" height="33" rx="2" fill="#24867f" stroke="none"/>
+<text x="1021" y="6249" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="30" font-weight="700" fill="#142e3d">扩展：统一三个层次</text>
+<text x="1001" y="6288" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">采集适配 → 结构化证据 → CI 门禁与候选修复；已有工具可组合，整合</text>
+<text x="1001" y="6325" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25" font-weight="400" fill="#607986">服务属于后续产品设想。</text>
+<path d="M88 6426 L1832 6426" fill="none" stroke="#d9e4e8" stroke-width="1"/>
+<text x="88" y="6481" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="700" fill="#24867f">研究事实 / 边界</text>
+<text x="88" y="6531" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">Tracy 主研究快照：fd23005a…；发布版核对 v0.14.1。补充整理：2026-10-19（Asia/Shanghai）。</text>
+<text x="88" y="6573" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">本图为资料归纳，不是上游截图或实测报告；未运行 Tracy 采集、C/C++ 基准或模型自动修复。</text>
+<text x="88" y="6615" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">Linux tracy-monitor 仅按原固定主分支 NEWS 的未发布状态理解；平台与版本分别核对。</text>
+<text x="88" y="6657" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="24" font-weight="400" fill="#607986">22 项官方链接、详细限制与版本来源随网页「对应产品」和 comparison.md 保存。</text>
+<text x="88" y="6766" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="23" font-weight="700" fill="#142e3d">github.com/wolfpld/tracy   ·   研究 009   ·   原生 SVG / PNG 可放大与下载</text>
+</svg>

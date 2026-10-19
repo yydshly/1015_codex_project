@@ -1,0 +1,39 @@
+{
+  "checked_on": "2026-10-19",
+  "scope": "验证暂存发布快照；不运行上游 Tracy、C/C++ 基准或 AI 修复。",
+  "staged_tree": "819a8517233320db9162eeb4dd591b83d9268eb3",
+  "catalog_count": 9,
+  "excluded_unrelated": [
+    "projects/008-boss-agent-cli",
+    "outputs"
+  ],
+  "checks_passed": [
+    "catalog",
+    "JavaScript syntax",
+    "production static build",
+    "unique IDs",
+    "relative anchors",
+    "relative files",
+    "original guide equality",
+    "clear source-library summary"
+  ],
+  "relative_files": [
+    "projects/009-tracy-performance/THIRD_PARTY.md",
+    "projects/009-tracy-performance/app.js",
+    "projects/009-tracy-performance/assets/favicon.svg",
+    "projects/009-tracy-performance/assets/products.js",
+    "projects/009-tracy-performance/assets/understanding-map.png",
+    "projects/009-tracy-performance/assets/understanding-map.svg",
+    "projects/009-tracy-performance/assets/upstream.js",
+    "projects/009-tracy-performance/capabilities.md",
+    "projects/009-tracy-performance/comparison.md",
+    "projects/009-tracy-performance/notes.md",
+    "projects/009-tracy-performance/references/products.json",
+    "projects/009-tracy-performance/styles.css"
+  ],
+  "guide_sha256": "8ad3007e7e08b5295b4af4a4e459e074aefc44a339c1e521dfa71ecb3f134411",
+  "guide_dimensions": [
+    1920,
+    6830
+  ]
+}
