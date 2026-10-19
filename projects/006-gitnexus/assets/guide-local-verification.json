@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-19",
+  "checks": [
+    {
+      "check": "desktop-overview-image",
+      "imageHeight": 1448,
+      "imageWidth": 1417,
+      "oldLocalDiagram": false,
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "check": "desktop-dialog-opens",
+      "open": true,
+      "fit": "true"
+    },
+    {
+      "check": "original-size",
+      "pressed": "true"
+    },
+    {
+      "check": "escape-closes",
+      "closed": true,
+      "scrollUnlocked": true
+    },
+    {
+      "check": "mobile-390",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "mobile-original-and-pan",
+      "original": "true",
+      "pageWidth": 390,
+      "scrollWidth": 1417,
+      "viewWidth": 357,
+      "viewport": 390
+    },
+    {
+      "check": "mobile-fit-width",
+      "imageWidth": 372.6666870117187,
+      "viewWidth": 373
+    },
+    {
+      "check": "mobile-320",
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "check": "downloads",
+      "svg": "gitnexus-overview.svg",
+      "source": "gitnexus-overview.mmd"
+    }
+  ],
+  "observedEarlierErrors": [
+    {
+      "level": "error",
+      "message": "Uncaught (in promise) TypeError: Cannot use 'in' operator to search for 'animation' in undefined",
+      "timestamp": "2026-10-19T07:46:49.180Z"
+    }
+  ],
+  "freshReloadCheckedAt": "2026-10-19T07:49:12.560Z",
+  "errorsAfterFreshReload": []
+}

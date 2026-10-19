@@ -1,0 +1,14 @@
+{
+  "source": "Conversation overview flowchart; same labels and edges, with accessibility title and description added",
+  "sourceFile": "web/assets/research-guide.mmd",
+  "sourceSha256": "81d63110ded66247410dec2f5946ac6b90bdf8f21d613626f971e8cbbdce6765",
+  "renderer": "mermaid@11.12.0",
+  "renderRecipe": "src/render-guide.html, then src/finalize-guide.py",
+  "layout": "Mermaid render with exported single-line chapter headings to avoid wrapped-title overlap",
+  "checkedAt": "2026-10-19",
+  "viewBox": "-20 -44 1416.71875 1448.3062744140625",
+  "svgSha256": "9dbe3a37eb2ef4b7159f66d198909fa0975c1953e2854546340151dbf6ba4f0d",
+  "coverMatchesGuide": true,
+  "selfContainedSvg": true,
+  "scope": "Research understanding diagram, not a tool-generated repository graph or new experiment"
+}

@@ -14,7 +14,9 @@ GitNexus 解析源码中的文件、符号与跨文件关系，构建本地 Lady
 
 本轮整理提交 `0c18eb0` 已通过 [Pages 任务 39209503199](https://github.com/yydshly/1015_codex_project/actions/runs/39209503199) 发布。根索引只提交 006 的名称与摘要，未提交其他子项目。13 项本地浏览器检查、43 项线上资源／文本核对及 6 项线上内容／交互检查通过，覆盖四项启发、五个产品设想、展开与键盘操作、390px／320px 布局、目录摘要和工作台跳转。本地曾捕获一条无来源的 MutationObserver 日志，刷新复查与线上验证均未重现，原记录保留。[本地检查](assets/research-local-verification.json) · [线上检查](assets/research-deployed-browser.json) · [研究启发截图](assets/research-insights.jpg)。
 
-![GitNexus 原理与能力总览，原创研究示意图](assets/cover.svg)
+![GitNexus 整体能力与流程引导图：原理、效果、同类对比与场景、能力边界](assets/cover.svg)
+
+首页引导图、此处封面与站点导航封面使用同一张总览流程图，内容沿用本次对话整理的整体理解；可在网页放大、切换原始尺寸或下载。[SVG 原图](web/assets/research-guide.svg) · [Mermaid 源文件](web/assets/research-guide.mmd) · [来源与一致性记录](references/guide-provenance.json)。
 
 | 项目 | 记录 |
 | --- | --- |

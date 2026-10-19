@@ -1,5 +1,7 @@
 # GitNexus 中文研究网页
 
+首页 `#overview` 使用前文整理的整体能力与流程引导图，替换结算函数的局部示意。`assets/research-guide.mmd` 保留源内容与连线，`assets/research-guide.svg` 为静态原图，与项目 `assets/cover.svg` 字节一致。点击图片可打开原生 dialog，支持适应宽度、原始尺寸、滚动、Esc 关闭与原图／源文件下载。静态网页无需 Mermaid 运行时；仅复现导出时，`src/render-guide.html` 读取固定 CDN Mermaid 版本，导出后由 `src/finalize-guide.py` 处理章节标题和一致性记录。
+
 研究总览按“能力 → 原理 → 真实效果与验证 → 同类对照 → 研究启发 → 产品方向”组织。`#insights` 的 4 项判断有原始材料链接；`#directions` 的 5 个方向均标为未实现，展开可看工作流、建设缺口和验证方法。`assets/research.css` 提供新章节样式，完整文字在随构建发布的 `extensions.md`。主页面及独立工作台的共享定位总结可直接跳转新章节；更新共享资源时同步更新 HTML 中的版本参数。
 
 原生 HTML / CSS / JavaScript / SVG，无需 npm、CDN、外部字体或模型密钥。`assets/evidence.json` 来自固定版本实跑，原始文件位于项目 references/。

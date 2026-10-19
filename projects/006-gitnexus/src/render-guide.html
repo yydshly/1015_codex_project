@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>GitNexus 总览图导出</title><style>body{margin:0;background:#f7faf2}#diagram{padding:24px}svg{display:block;background:#f7faf2}</style><div id="diagram">正在渲染已整理的总览图…</div><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.esm.min.mjs';
+mermaid.initialize({startOnLoad:false,htmlLabels:false,markdownAutoWrap:false,theme:'base',fontFamily:'Segoe UI, Microsoft YaHei, sans-serif',themeVariables:{fontSize:'20px',primaryColor:'#edf4df',primaryTextColor:'#233a31',primaryBorderColor:'#8ca780',secondaryColor:'#e7efed',tertiaryColor:'#f7faf2',lineColor:'#56715e',clusterBkg:'#f1f5e9',clusterBorder:'#c3d1b8',titleColor:'#233a31'},flowchart:{htmlLabels:false,useMaxWidth:false,wrappingWidth:720,nodeSpacing:34,rankSpacing:44,diagramPadding:28,subGraphTitleMargin:{top:18,bottom:30}}});
+try{
+  const source=await (await fetch('../web/assets/research-guide.mmd')).text();
+  const result=await mermaid.render('gitnexusResearchGuide',source);
+  document.getElementById('diagram').innerHTML=result.svg;
+  document.documentElement.dataset.ready='true';
+}catch(error){document.getElementById('diagram').textContent=String(error);document.documentElement.dataset.ready='error';}
+</script></html>

@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="assets/showcase.css">
   <link rel="stylesheet" href="assets/positioning.css?v=20261019-research">
   <link rel="stylesheet" href="assets/research.css">
+  <link rel="stylesheet" href="assets/guide.css">
+  <script src="assets/guide.js" defer></script>
   <script src="assets/positioning.js?v=20261019-research" defer></script>
   <script src="app.js" defer></script>
   <script src="assets/comparison.js" defer></script>
@@ -27,22 +29,11 @@
   <main id="main">
     <section class="hero wrap">
       <div class="hero-copy"><div class="eyebrow"><i></i> CODE KNOWLEDGE / EVIDENCE / PRODUCTS</div><h1>代码知识，<br><span>按需查询。</span></h1><p class="hero-lead">解析源码与跨文件关系，建立本地知识索引，<br>查询调用、流程与修改影响，为人和 AI 提供上下文。<br>从真实小样本出发，理解能力、原理与产品扩展方向。</p><div class="hero-actions"><a class="button lime" href="#showcase">查看真实能力效果 <span>↗</span></a><a class="text-button" href="#understanding">先读研究摘要 <span>↓</span></a></div><div class="hero-tags"><span>代码知识索引</span><span>静态分析</span><span>AI 工具接入</span></div></div>
-      <div class="hero-visual" aria-label="结算样本调用关系预览">
-        <div class="visual-heading"><span><i></i> CHECKOUT / RELATION MAP</span><span>CALLS</span></div>
-        <svg viewBox="0 0 660 390" role="img" aria-label="submitOrder 调用 checkoutOrder，checkoutOrder 调用运费、折扣、库存和订单存储；estimateOrder 也调用运费函数">
-          <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#30404a"/></pattern><marker id="heroArrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8" fill="none" stroke="#9baeb6"/></marker></defs>
-          <rect width="660" height="390" fill="url(#dots)"/>
-          <g class="hero-edges"><path d="M167 105C220 105 220 190 274 190"/><path d="M393 190C443 190 445 70 496 70"/><path d="M393 190C443 190 445 150 496 150"/><path d="M393 190C443 190 445 230 496 230"/><path d="M393 190C443 190 445 310 496 310"/><path d="M167 310C310 310 330 70 496 70"/></g>
-          <g class="hero-node"><rect x="28" y="82" width="139" height="47" rx="8"/><text x="97" y="111">submitOrder</text></g>
-          <g class="hero-node"><rect x="28" y="287" width="139" height="47" rx="8"/><text x="97" y="316">estimateOrder</text></g>
-          <g class="hero-node focus"><rect x="252" y="166" width="141" height="49" rx="8"/><text x="322" y="196">checkoutOrder</text></g>
-          <g class="hero-node"><rect x="496" y="47" width="150" height="47" rx="8"/><text x="571" y="76">calculateShipping</text></g>
-          <g class="hero-node"><rect x="496" y="127" width="150" height="47" rx="8"/><text x="571" y="156">applyDiscount</text></g>
-          <g class="hero-node"><rect x="496" y="207" width="150" height="47" rx="8"/><text x="571" y="236">reserveStock</text></g>
-          <g class="hero-node"><rect x="496" y="287" width="150" height="47" rx="8"/><text x="571" y="316">saveOrder</text></g>
-          <text x="213" y="330" class="alias-note">import alias → shippingCost</text>
-        </svg><div class="visual-foot"><span>节点是符号，连线是调用关系</span><span>↓ 下方可逐个检查</span></div>
-      </div>
+      <figure class="hero-visual hero-guide" id="overview" aria-labelledby="overview-caption">
+        <div class="visual-heading"><span><i></i> GITNEXUS / OVERVIEW GUIDE</span><button data-guide-open>放大查看整体引导图 ↗</button></div>
+        <button class="guide-preview" data-guide-open aria-label="放大查看 GitNexus 整体能力与流程引导图"><img src="assets/research-guide.svg" alt="GitNexus 整体能力与流程引导图：源码解析、代码知识图谱、任务分析、能力效果、与 Ix 和 CodeFlow 的对比及适用场景，最后说明能力边界。"></button>
+        <figcaption class="guide-caption" id="overview-caption"><p>沿用我们整理的整体流程：原理 → 能力效果 → 同类对比与场景 → 能力边界。点击图片可放大查看。</p><a href="assets/research-guide.svg" download="gitnexus-overview.svg">下载 SVG 原图 ↓</a><a href="assets/research-guide.mmd" download="gitnexus-overview.mmd">下载 Mermaid 源文件 ↓</a></figcaption>
+      </figure>
     </section>
     <div class="concept-strip"><div class="wrap"><p><span>01</span> AST 识别语法</p><b>→</b><p><span>02</span> 跨文件解析关系</p><b>→</b><p><span>03</span> LadybugDB 保存图谱</p><b>→</b><p><span>04</span> 工具返回相关上下文</p></div></div>
 
@@ -168,4 +159,5 @@
     <section class="wrap sources-section" id="sources"><div><span class="eyebrow muted">SOURCE NOTES</span><h3>从每个结论，回到原始材料。</h3></div><div><a href="https://github.com/abhigyanpatwari/GitNexus/blob/main/ARCHITECTURE.md" target="_blank" rel="noreferrer">架构文档 ↗</a><a href="https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.12" target="_blank" rel="noreferrer">实测版本 v1.6.12 ↗</a><a href="references/sources.json">来源清单 ↗</a><a href="extensions.md">研究结论与产品方向 ↗</a><a href="notes.md">研究过程记录 ↗</a></div><p>本页是独立中文研究与交互展示。首页关系图按原创样本绘制，实测区从运行记录读取。上游许可按研究时保存的 PolyForm Noncommercial 1.0.0 原文说明；使用范围以其许可证为准。能力描述、固定版本实测、研究判断与产品设想分别标明。</p></section>
   </main>
   <footer class="footer wrap"><a class="brand" href="#"><b>GitNexus</b><span>代码关系，逐条核对。</span></a><span>GITHUB RESEARCH LAB · 006 · 更新 2026.10.19</span><a href="../../">返回研究导航 ↗</a></footer>
+  <dialog class="guide-dialog" id="guide-dialog" aria-labelledby="guide-title"><header><div><h2 id="guide-title">整体能力与流程引导图</h2><p>可滚动查看全图，按 Esc 关闭。</p></div><div><button id="guide-fit" aria-pressed="true">适应宽度</button><button id="guide-original" aria-pressed="false">原始尺寸</button><button id="guide-close" autofocus>关闭大图 ×</button></div></header><div class="guide-view" tabindex="0" aria-label="引导图滚动区域"><img src="assets/research-guide.svg" alt="完整引导图：原理、能力效果、修改运费案例、GitNexus／Ix／CodeFlow 对比及能力边界。"></div></dialog>
 </body></html>

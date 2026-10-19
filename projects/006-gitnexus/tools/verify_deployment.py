@@ -15,6 +15,7 @@ PATHS += ["assets/atlas.html", "assets/atlas.css", "assets/atlas.js", "assets/at
 
 PATHS += ["assets/positioning.css", "assets/positioning.js"]
 PATHS += ["assets/research.css", "extensions.md"]
+PATHS += ["assets/guide.css", "assets/guide.js", "assets/research-guide.svg", "assets/research-guide.mmd", "references/guide-provenance.json"]
 
 
 def fetch(path):
@@ -36,12 +37,17 @@ def main():
     assert responses[PATHS.index("extensions.md")][1].replace(b"\r\n",b"\n") == (PROJECT / "extensions.md").read_bytes().replace(b"\r\n",b"\n")
     showcase = json.loads(responses[18][1])
     assert showcase == json.loads((PROJECT / "web/assets/showcase.json").read_text(encoding="utf-8"))
-    for source in ("assets/atlas.html", "assets/atlas.css", "assets/atlas.js", "assets/atlas.json", "assets/advanced.json", "assets/business-probes.json", "assets/atlas-bridge.js", "assets/positioning.css", "assets/positioning.js", "assets/research.css"):
+    for source in ("assets/atlas.html", "assets/atlas.css", "assets/atlas.js", "assets/atlas.json", "assets/advanced.json", "assets/business-probes.json", "assets/atlas-bridge.js", "assets/positioning.css", "assets/positioning.js", "assets/research.css", "assets/guide.css", "assets/guide.js", "assets/research-guide.svg", "assets/research-guide.mmd"):
         actual = responses[PATHS.index(source)][1].replace(b"\r\n",b"\n")
         assert actual == (PROJECT / "web" / source).read_bytes().replace(b"\r\n",b"\n"), source
-    result = {"status":"passed", "checkedAt":datetime.now().astimezone().isoformat(), "url":BASE, "responses":[row[0] for row in responses], "runtimeEvidenceMatches":True, "textAssetsMatchAfterNewlineNormalization":True, "graphNodes":71, "graphEdges":131, "businessCalls":11, "upstreamChecks":len(evidence["checks"])}
+    cover_url = "https://yydshly.github.io/1015_codex_project/assets/006-gitnexus/cover.svg"
+    with urlopen(Request(cover_url, headers={"User-Agent":"Research-Lab-Verification"}), timeout=25) as response:
+        cover = response.read()
+        assert response.status == 200
+    assert cover == (PROJECT / "assets/cover.svg").read_bytes() == responses[PATHS.index("assets/research-guide.svg")][1]
+    result = {"status":"passed", "checkedAt":datetime.now().astimezone().isoformat(), "url":BASE, "responses":[row[0] for row in responses]+[{"path":cover_url,"status":200,"bytes":len(cover),"sha256":sha256(cover).hexdigest()}], "runtimeEvidenceMatches":True, "textAssetsMatchAfterNewlineNormalization":True, "overviewAndCatalogCoverMatch":True, "graphNodes":71, "graphEdges":131, "businessCalls":11, "upstreamChecks":len(evidence["checks"])}
     (PROJECT / "assets/deployed-verification.json").write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")
-    print(json.dumps({"status":result["status"],"url":BASE,"httpChecks":len(responses),"runtimeEvidenceMatches":True},ensure_ascii=False))
+    print(json.dumps({"status":result["status"],"url":BASE,"httpChecks":len(result["responses"]),"runtimeEvidenceMatches":True,"overviewAndCatalogCoverMatch":True},ensure_ascii=False))
 
 
 if __name__ == "__main__":
