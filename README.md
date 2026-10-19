@@ -80,7 +80,7 @@
 
 #### 007 · 追剧资源接口验证与网页播放 Demo
 
-[![追剧资源接口验证与网页播放 Demo 项目预览](projects/007-zhuiju-source-demo/assets/cover.svg)](projects/007-zhuiju-source-demo/README.md)
+[![追剧资源接口验证与网页播放 Demo 项目预览](projects/007-zhuiju-source-demo/assets/research-overview-20261019.png)](projects/007-zhuiju-source-demo/README.md)
 
 从公开配置发现暴风 HTTP 接口，实测搜索、详情和首两集 1080p 播放；提供本地搜片、8 集选集与 HLS 播放 Demo。
 

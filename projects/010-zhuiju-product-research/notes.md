@@ -134,3 +134,7 @@ Filmhub 联系表单在工具读取时出现 429；其他渠道帮助文档可�
 [公开研究页](https://yydshly.github.io/1015_codex_project/projects/010-zhuiju-product-research/)与总导航、007 静态入口及 40 个研究资源合计 43 项 HTTP / 内容检查全部通过。全景图二进制哈希与生成原图一致；文本比较规范化 CRLF/LF。图像弹窗、公开版运行说明、Filmhub 筛选、成本重置、文档深链接刷新，以及 1280 / 390 / 320px 布局通过，未见脚本错误。记录见 [资源核验](references/deployed-verification.json)与[浏览器核验](references/deployed-browser.json)。
 
 本次上线的是静态研究交付；实时搜片、选集和播放依然依赖本机联合服务，未建立公网 API、内容合同或正式运营服务。真实 `demo_url` 在上线和访问验证后回填，008 / 009 保留本地未提交状态。
+
+## 2026-10-20：修正外层 README 的引导图
+
+用户所指为总仓库 README 的项目预览图。010 已使用生成的全景长图，但相同上游的 007 条目仍引用旧 `cover.svg`；现将 007 索引封面改为同一张原始 PNG 的副本，并通过 `scripts/projects.py sync` 生成首页。原图哈希一致。撤回此前因误解而修改的网页首屏布局，保留既有网页引导图、放大和下载能力。
