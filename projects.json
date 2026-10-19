@@ -150,6 +150,21 @@
       ],
       "cover": "assets/octop-understanding-overview-20261020.png",
       "demo_url": "https://yydshly.github.io/1015_codex_project/projects/011-octop/"
+    },
+    {
+      "id": 12,
+      "slug": "smart-excalidraw-next",
+      "name": "Smart Excalidraw 场景与图表能力研究",
+      "repository": "https://github.com/liujuntao123/smart-excalidraw-next",
+      "summary": "AI 将文字、文档与截图中的步骤、结构、关系和时间组织成图形 JSON，经部分修复与箭头端点调整，由 Excalidraw 渲染为可编辑图表。含 22 类规范及流程、架构、ER、思维导图、甘特与能力树示例；可扩展数据接入、行业模板、持续改图和团队协作。",
+      "status": "completed",
+      "tags": [
+        "AI图表",
+        "场景研究",
+        "Excalidraw"
+      ],
+      "cover": "assets/smart-excalidraw-understanding-20261020.png",
+      "demo_url": ""
     }
   ]
 }

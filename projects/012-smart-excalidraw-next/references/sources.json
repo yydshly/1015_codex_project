@@ -1,0 +1,73 @@
+{
+  "repository": "https://github.com/liujuntao123/smart-excalidraw-next",
+  "commit": "fd139925b01ab34203510d6afa560aa56fcc3201",
+  "checked_on": "2026-10-20",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/README.md",
+      "sha256": "25fef2ad5874c4f9c75c86df90dde2555c701577add66e6dca1a91f9b5fe7206",
+      "bytes": 6197
+    },
+    {
+      "path": "package.json",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/package.json",
+      "sha256": "974cd08bcb8baaf491bd99c04c090e70d58cc1cc1027801747fefc73c0a8aa87",
+      "bytes": 569
+    },
+    {
+      "path": "lib/constants.js",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/lib/constants.js",
+      "sha256": "64256c63167d2809dd7e22a6dc967e5123749561d303c2b71875ee57091f8676",
+      "bytes": 690
+    },
+    {
+      "path": "lib/prompts.js",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/lib/prompts.js",
+      "sha256": "4bd66585ede3e7b4b3cc2d29bdd68fa18339f21d8d291f18be20a3d8874c7ea9",
+      "bytes": 19919
+    },
+    {
+      "path": "lib/optimizeArrows.js",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/lib/optimizeArrows.js",
+      "sha256": "12db602ee4f74564ea3ad5b21b10d6203d85d60980c6777696994e859d1e7613",
+      "bytes": 6523
+    },
+    {
+      "path": "lib/llm-client.js",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/lib/llm-client.js",
+      "sha256": "5d151021a8c86c4e3b5cae7fc9979215b0b040949255f8cf0069354c4c0ecfe3",
+      "bytes": 8804
+    },
+    {
+      "path": "lib/history-manager.js",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/lib/history-manager.js",
+      "sha256": "ff62a9a7f67e028b443a62822acdfe4a528402398c03f74d75646b2035426a42",
+      "bytes": 1587
+    },
+    {
+      "path": "components/Chat.jsx",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/components/Chat.jsx",
+      "sha256": "265da2e31b7278cdb25ee979bf31fb8048088b9fe7a64a63ac225b0720c90996",
+      "bytes": 17576
+    },
+    {
+      "path": "components/ExcalidrawCanvas.jsx",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/components/ExcalidrawCanvas.jsx",
+      "sha256": "84bde5fab0a709abcf47f1d4dca421b9532cc53f1c56bc1a7f95e931b6db83d0",
+      "bytes": 2418
+    },
+    {
+      "path": "app/page.js",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/app/page.js",
+      "sha256": "ccdf5c337149b36b161aa84076565de1c14cbebca7d77d045222a5550defd4ed",
+      "bytes": 25046
+    },
+    {
+      "path": "app/api/generate/route.js",
+      "url": "https://raw.githubusercontent.com/liujuntao123/smart-excalidraw-next/fd139925b01ab34203510d6afa560aa56fcc3201/app/api/generate/route.js",
+      "sha256": "a9deeda78fee8a4e777a7c3e3c746c09b6bb7ed2bfab4d28db38bc2029d996c8",
+      "bytes": 3430
+    }
+  ]
+}

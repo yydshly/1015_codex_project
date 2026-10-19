@@ -1,0 +1,193 @@
+{
+  "date": "2026-10-20",
+  "url": "http://127.0.0.1:8884/projects/012-smart-excalidraw-next/",
+  "scope": "Constructed examples, actual Excalidraw rendering/edit/export; no LLM request",
+  "results": [
+    {
+      "name": "initial native canvas has elements",
+      "passed": true,
+      "detail": 19
+    },
+    {
+      "name": "guide uses the exact original PNG",
+      "passed": true
+    },
+    {
+      "name": "full guide modal opens",
+      "passed": true
+    },
+    {
+      "name": "full guide original-size reading",
+      "passed": true
+    },
+    {
+      "name": "guide closes with Escape",
+      "passed": true
+    },
+    {
+      "name": "six grounded extension scenarios",
+      "passed": true
+    },
+    {
+      "name": "scene refund: labels, geometry and bindings",
+      "passed": true,
+      "detail": 19
+    },
+    {
+      "name": "scene architecture: labels, geometry and bindings",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "name": "scene capabilities: labels, geometry and bindings",
+      "passed": true,
+      "detail": 20
+    },
+    {
+      "name": "scene er: labels, geometry and bindings",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "scene knowledge: labels, geometry and bindings",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "scene roadmap: labels, geometry and bindings",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "file input explanation",
+      "passed": true
+    },
+    {
+      "name": "image input boundary and reference",
+      "passed": true
+    },
+    {
+      "name": "copy scenario prompt",
+      "passed": true
+    },
+    {
+      "name": "chart filter 全部",
+      "passed": true,
+      "detail": 22
+    },
+    {
+      "name": "chart filter 流程与交互",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "chart filter 系统与结构",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "chart filter 知识与关系",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "name": "chart filter 时间与计划",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "chart filter 分析与表达",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "chart keyword search",
+      "passed": true
+    },
+    {
+      "name": "chart empty state",
+      "passed": true
+    },
+    {
+      "name": "all 22 chart detail selections",
+      "passed": true
+    },
+    {
+      "name": "five source-linked mechanism steps",
+      "passed": true
+    },
+    {
+      "name": "mechanism keyboard navigation",
+      "passed": true
+    },
+    {
+      "name": "native Excalidraw node drag",
+      "passed": true,
+      "detail": {
+        "x": 106.66666666666663,
+        "y": 226.66666666666663
+      }
+    },
+    {
+      "name": "native export retains actual edit",
+      "passed": true,
+      "detail": 19
+    },
+    {
+      "name": "SVG export contains scene content",
+      "passed": true
+    },
+    {
+      "name": "reset restores original node position",
+      "passed": true
+    },
+    {
+      "name": "native text editing",
+      "passed": true
+    },
+    {
+      "name": "responsive layout and diagram fit 1440px",
+      "passed": true
+    },
+    {
+      "name": "responsive layout and diagram fit 1024px",
+      "passed": true
+    },
+    {
+      "name": "responsive layout and diagram fit 768px",
+      "passed": true
+    },
+    {
+      "name": "responsive layout and diagram fit 390px",
+      "passed": true
+    },
+    {
+      "name": "responsive layout and diagram fit 320px",
+      "passed": true
+    },
+    {
+      "name": "mobile scene selection",
+      "passed": true
+    },
+    {
+      "name": "mobile guide scroll stays inside dialog",
+      "passed": true
+    },
+    {
+      "name": "local resources and documentation",
+      "passed": true,
+      "detail": 21
+    },
+    {
+      "name": "research catalog links to project",
+      "passed": true
+    },
+    {
+      "name": "no browser errors, failed resources or runtime CDN requests",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "external": []
+}
