@@ -134,7 +134,3 @@ Filmhub 联系表单在工具读取时出现 429；其他渠道帮助文档可�
 [公开研究页](https://yydshly.github.io/1015_codex_project/projects/010-zhuiju-product-research/)与总导航、007 静态入口及 40 个研究资源合计 43 项 HTTP / 内容检查全部通过。全景图二进制哈希与生成原图一致；文本比较规范化 CRLF/LF。图像弹窗、公开版运行说明、Filmhub 筛选、成本重置、文档深链接刷新，以及 1280 / 390 / 320px 布局通过，未见脚本错误。记录见 [资源核验](references/deployed-verification.json)与[浏览器核验](references/deployed-browser.json)。
 
 本次上线的是静态研究交付；实时搜片、选集和播放依然依赖本机联合服务，未建立公网 API、内容合同或正式运营服务。真实 `demo_url` 在上线和访问验证后回填，008 / 009 保留本地未提交状态。
-
-### 同日补充：引导长图完整展示
-
-按反馈复核生成图片与线上文件，均为 `assets/research-overview-20261019.png`；问题是首屏预览以固定高度和 `object-fit: cover` 裁切，仅露出长图顶部。现改为保持原始比例的完整缩览，八部分均保留，放大提示移至图外，继续支持高清弹窗与原图下载。PNG / SVG 原件及其字节不变。
