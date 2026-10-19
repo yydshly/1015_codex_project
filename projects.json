@@ -119,7 +119,7 @@
         "风控分析"
       ],
       "cover": "assets/cover.svg",
-      "demo_url": ""
+      "demo_url": "https://yydshly.github.io/1015_codex_project/projects/008-boss-agent-cli/"
     },
     {
       "id": 9,
@@ -209,7 +209,7 @@
         "Agent工具"
       ],
       "cover": "assets/boss-agent-panorama.png",
-      "demo_url": ""
+      "demo_url": "https://yydshly.github.io/1015_codex_project/projects/014-boss-agent-overview/"
     }
   ]
 }

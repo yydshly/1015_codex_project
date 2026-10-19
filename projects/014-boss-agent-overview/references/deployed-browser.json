@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-20",
+  "url": "https://yydshly.github.io/1015_codex_project/projects/014-boss-agent-overview/",
+  "content_commit": "71c42fc0859caf4122207a9948f4951d92ff5742",
+  "checks": [
+    {
+      "guide": [
+        3600,
+        11010
+      ],
+      "name": "initial",
+      "passed": true,
+      "riskCards": 6,
+      "understandingCards": 4
+    },
+    {
+      "name": "guide-fit",
+      "passed": true
+    },
+    {
+      "name": "guide-natural",
+      "passed": true
+    },
+    {
+      "name": "guide-escape",
+      "passed": true
+    },
+    {
+      "name": "access-search",
+      "passed": true,
+      "observed": "普通搜索：浏览器内调用网页 API"
+    },
+    {
+      "name": "access-detail",
+      "passed": true,
+      "observed": "允许 HTTP 的会话：详情可由 httpx 读取"
+    },
+    {
+      "name": "access-cdp",
+      "passed": true,
+      "observed": "browser-only：平台请求保留在浏览器环境"
+    },
+    {
+      "name": "access-crawl",
+      "passed": true,
+      "observed": "crawl：页面操作触发请求，监听 JSON"
+    },
+    {
+      "name": "access-local",
+      "passed": true,
+      "observed": "本地处理：在已保存的数据上执行"
+    },
+    {
+      "name": "access-ai",
+      "passed": true,
+      "observed": "AI 分析：请求用户配置的模型 API"
+    },
+    {
+      "name": "source-table",
+      "passed": true
+    },
+    {
+      "name": "city-filter",
+      "passed": true,
+      "observed": "1 / 8 个命中当前城市：上海 · 语义误命中 0 个（按合成标注）"
+    },
+    {
+      "name": "json-data",
+      "passed": true
+    },
+    {
+      "name": "copy-json",
+      "passed": true
+    },
+    {
+      "name": "career-data",
+      "passed": true,
+      "observed": "ETL\n3/3\nSQL ✓\n3/3\nPython ✓\n2/3\n数据建模\n2/3\nAirflow\n1/3\nSpark\n1/3"
+    },
+    {
+      "name": "career-selected-skill",
+      "passed": true
+    },
+    {
+      "name": "goal-search",
+      "passed": true,
+      "observed": "筛选值得进一步了解的机会"
+    },
+    {
+      "name": "goal-profile",
+      "passed": true,
+      "observed": "建立职业的岗位要求画像"
+    },
+    {
+      "name": "goal-compare",
+      "passed": true,
+      "observed": "比较职业方向、城市与行业"
+    },
+    {
+      "name": "goal-gap",
+      "passed": true,
+      "observed": "探索个人经历与目标要求的差距"
+    },
+    {
+      "name": "goal-watch",
+      "passed": true,
+      "observed": "观察岗位要求随时间的变化"
+    },
+    {
+      "name": "goal-hr",
+      "passed": true,
+      "observed": "把招聘处理流程接入自己的助手"
+    },
+    {
+      "name": "goal-to-career",
+      "passed": true
+    },
+    {
+      "name": "keyboard-tabs",
+      "passed": true
+    },
+    {
+      "name": "mobile-natural-contained",
+      "passed": true
+    }
+  ],
+  "responsive": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "client": 1425,
+      "passed": true,
+      "scroll": 1425
+    },
+    {
+      "width": 1024,
+      "height": 900,
+      "client": 1009,
+      "passed": true,
+      "scroll": 1009
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "client": 753,
+      "passed": true,
+      "scroll": 753
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "client": 375,
+      "passed": true,
+      "scroll": 375
+    },
+    {
+      "width": 320,
+      "height": 760,
+      "client": 305,
+      "passed": true,
+      "scroll": 305
+    }
+  ],
+  "console_errors": [],
+  "summary": {
+    "passed": 25,
+    "failed": 0,
+    "responsive_passed": 5
+  },
+  "viewport_override_reset": true,
+  "live_boss_requests": 0,
+  "llm_requests": 0
+}

@@ -27,3 +27,5 @@
 ## 公开证据
 
 [evals](https://github.com/can4hou6joeng4/boss-agent-cli/blob/7f46ba37c654d5f7675bb1328158030d7604847c/evals/README.md) 是 fixture-first 骨架，记录过真实测试触发 ACCOUNT_RISK。[2026-06-24 记录](https://github.com/can4hou6joeng4/boss-agent-cli/blob/7f46ba37c654d5f7675bb1328158030d7604847c/evals/results/necessary-conditions-2026-06-24.json) 报告一次搜索返回 15 项，属于上游历史自述，本轮未重跑。没有据此推导线上稳定性或录用转化。
+
+2026-10-20 实际发布：内容提交 `71c42fc0859caf4122207a9948f4951d92ff5742` 推送 main，Pages 任务 39314360990 成功；014 总览与 008 原始实验的线上内容和资源共 32 项检查通过。014 另完成 25 项线上浏览器交互与五档布局检查，原始全景 PNG 在导航和网页副本中保持一致。验证成功后回填真实地址；仍未访问 BOSS 真实账号或模型服务。

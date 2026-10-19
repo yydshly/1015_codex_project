@@ -47,6 +47,14 @@
     },
     {
       "from": "README.md",
+      "target": "references/deployed-verification.json"
+    },
+    {
+      "from": "README.md",
+      "target": "references/deployed-browser.json"
+    },
+    {
+      "from": "README.md",
       "target": "web/assets/standalone.html"
     },
     {
@@ -168,7 +176,7 @@
     "file_protocol_browser_tested": false
   },
   "summary": {
-    "documentation_links": 23,
+    "documentation_links": 25,
     "http_resources": 13,
     "failed": 0
   }

@@ -16,4 +16,4 @@ assets/evidence.json 来自 Python 原始函数，lab.mjs 是 JS 移植。仓库
 
 没有真实 BOSS 请求、消息或模型调用。模拟请求计数只统计演示步骤。角色命令为示例，页面不执行 shell。凭据变化只解除演示本地锁，不代表服务端解除风险。
 
-全部资源为相对路径，适配既有 Pages 子路径。当前未部署，demo_url 留空。版权和许可见项目 THIRD_PARTY.md 及 assets/boss-agent-cli-MIT.txt。
+全部资源为相对路径，适配既有 Pages 子路径。已于 2026-10-20 随 014 总览部署并核对在线资源：[原始实验页](https://yydshly.github.io/1015_codex_project/projects/008-boss-agent-cli/)。版权和许可见项目 THIRD_PARTY.md 及 assets/boss-agent-cli-MIT.txt。

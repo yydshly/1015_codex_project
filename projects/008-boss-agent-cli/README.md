@@ -9,11 +9,11 @@
 | 上游 | [can4hou6joeng4/boss-agent-cli](https://github.com/can4hou6joeng4/boss-agent-cli) |
 | 固定研究版本 | `3.0.0` / [`7f46ba37c654d5f7675bb1328158030d7604847c`](https://github.com/can4hou6joeng4/boss-agent-cli/tree/7f46ba37c654d5f7675bb1328158030d7604847c) |
 | 日期 | 首次查验 2026-10-15；子项目整理与验证 2026-10-16 |
-| 本轮状态 | 能力说明、源码分析、离线交互演示与本地验证 |
+| 本轮状态 | 能力说明、源码分析与离线交互演示；已于 2026-10-20 随 014 总览发布 |
 | 实测范围 | 59 项上游离线测试；10 个福利语义探针；4 个原始风险锁判断 |
 | 未验证 | 真实登录、在线搜索、沟通/简历送达、浏览器访问平台、大模型质量 |
 | 许可证 | 上游 MIT；原始函数摘录保留版权与[完整许可](licenses/boss-agent-cli-MIT.txt) |
-| 公网演示 | 未部署；索引 `demo_url` 留空 |
+| 公网演示 | [原始实验页](https://yydshly.github.io/1015_codex_project/projects/008-boss-agent-cli/)；最新理解整理见 [014 总览](https://yydshly.github.io/1015_codex_project/projects/014-boss-agent-overview/) |
 
 ## 先看演示
 

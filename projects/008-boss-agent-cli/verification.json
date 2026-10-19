@@ -4,7 +4,7 @@
   "story": "打开静态研究页，读取本地 Python 证据，切换条件观察筛选结果，并回放风控停止与本地锁。",
   "live_platform_requests": 0,
   "llm_requests": 0,
-  "published": false,
+  "published": true,
   "local_url": "http://127.0.0.1:8768/projects/008-boss-agent-cli/",
   "flow_boundaries": [
     {
@@ -129,5 +129,15 @@
     "failed": 0
   },
   "catalog_check": "passed",
-  "build": "passed; existing static builder; no new root dependencies"
+  "build": "passed; existing static builder; no new root dependencies",
+  "deployment": {
+    "date": "2026-10-20",
+    "url": "https://yydshly.github.io/1015_codex_project/projects/008-boss-agent-cli/",
+    "content_commit": "71c42fc0859caf4122207a9948f4951d92ff5742",
+    "workflow_url": "https://github.com/yydshly/1015_codex_project/actions/runs/39314360990",
+    "workflow_conclusion": "success",
+    "http_evidence": "../014-boss-agent-overview/references/deployed-verification.json",
+    "live_boss_requests": 0,
+    "llm_requests": 0
+  }
 }

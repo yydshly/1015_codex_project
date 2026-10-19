@@ -1,0 +1,243 @@
+{
+  "date": "2026-10-20",
+  "base_url": "https://yydshly.github.io/1015_codex_project/",
+  "project_url": "https://yydshly.github.io/1015_codex_project/projects/014-boss-agent-overview/",
+  "checks": [
+    {
+      "path": "",
+      "status": 200,
+      "bytes": 9083,
+      "sha256": "d7c10295566ceddd5db451b9485ec5915418bbb7e706f8448cf098d1a154c0dc",
+      "source_match": false
+    },
+    {
+      "path": "assets/014-boss-agent-overview/boss-agent-panorama.png",
+      "status": 200,
+      "bytes": 3830991,
+      "sha256": "36858526571aa8f3dc075fe3d1aba55c35ec7d35dcc31fafd539fb97959c062f",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/",
+      "status": 200,
+      "bytes": 25726,
+      "sha256": "8ed14502a4be011c1f018e238255f669990059098db8aa1c3f8ec52d7013b023",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/styles.css",
+      "status": 200,
+      "bytes": 25957,
+      "sha256": "e62e7db4cbc9e40d3a7da63351a5006351b6b8b0283787a431149866928abeb9",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/app.js",
+      "status": 200,
+      "bytes": 18478,
+      "sha256": "e79de27492cffd8800f3a60e3ef98e9ea087f260e1096bdd96bc6d0c593d7de9",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/model.mjs",
+      "status": 200,
+      "bytes": 1960,
+      "sha256": "e6d58641c401e2e8b6e7e9ee4eee7ad5b023a8cd36993cd3c70446cb9732ca95",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/boss-agent-panorama.png",
+      "status": 200,
+      "bytes": 3830991,
+      "sha256": "36858526571aa8f3dc075fe3d1aba55c35ec7d35dcc31fafd539fb97959c062f",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/boss-agent-panorama.svg",
+      "status": 200,
+      "bytes": 42475,
+      "sha256": "d9c8a0b880fcc02f3513e52cb6667cbcb4ff0adfe230b3d2f8591050a9f084dc",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/welfare-evidence.json",
+      "status": 200,
+      "bytes": 10862,
+      "sha256": "cb7e78a2a6dde0be421c69c85bb0f7cdc687262a2f4e08dc7fa22c1e1ddfcd3c",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/career-samples.json",
+      "status": 200,
+      "bytes": 2306,
+      "sha256": "152f87fdcab2fbfc53b0535e355d0a9f01c847472062ae64163a366a2cfb14cb",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/sources.json",
+      "status": 200,
+      "bytes": 4910,
+      "sha256": "f554fd1a082b0899c3e4a7e59ec14ef829f506abc2c247dd0cdad24b8c03db64",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/boss-agent-cli-MIT.txt",
+      "status": 200,
+      "bytes": 1071,
+      "sha256": "92b87144eee89e4d52a8eac41e6da43d48d8758ec9aedcd3ba0b6b0a0070b1b3",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/assets/standalone.html",
+      "status": 200,
+      "bytes": 5247289,
+      "sha256": "7f3f610fd7b535fae34046025465f7101784fbb04c8c7b6d7e4b7209f8197151",
+      "source_match": true
+    },
+    {
+      "path": "projects/014-boss-agent-overview/architecture.md",
+      "status": 200,
+      "bytes": 8720,
+      "sha256": "303bb740a840c9af944f31ec6eb285eec69fcf0a5b8f29ef1630793206070354",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/extensions.md",
+      "status": 200,
+      "bytes": 2449,
+      "sha256": "6e58966756d95a53824ce45249051217ca1ad829d14d4ce23b49cc2b3ef9f2a7",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/THIRD_PARTY.md",
+      "status": 200,
+      "bytes": 1351,
+      "sha256": "681557d2dfc39f4506d2e47a8baa27bc6e62e58144b6ba113ce69ac243675608",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/notes.md",
+      "status": 200,
+      "bytes": 3342,
+      "sha256": "57c0dd22ddd658c992812762167545800319019778116bf5c124c59b2d15cc1d",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/references/sources.json",
+      "status": 200,
+      "bytes": 4910,
+      "sha256": "f554fd1a082b0899c3e4a7e59ec14ef829f506abc2c247dd0cdad24b8c03db64",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/references/model-checks.json",
+      "status": 200,
+      "bytes": 1166,
+      "sha256": "96631ae0cc0ee3ecf8029d97625b761abc87598f8b0803cdc5b9f66d2857b4fd",
+      "source_match": false
+    },
+    {
+      "path": "projects/014-boss-agent-overview/references/panorama-render.json",
+      "status": 200,
+      "bytes": 1470,
+      "sha256": "62115705f638a61f8ab5332b8c4de9a21c5449e7b333ad3dfe493b56919668a8",
+      "source_match": false
+    },
+    {
+      "path": "projects/008-boss-agent-cli/",
+      "status": 200,
+      "bytes": 13308,
+      "sha256": "f0975ca46529103e6a48de7da58f49c0f0aeeb0acc8585dca924de6477d67a42",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/app.js",
+      "status": 200,
+      "bytes": 12224,
+      "sha256": "0c69beba6ad71741bbcde79bf04a6120aa2240fe4d7691eb57c7cd90c1a6b3fc",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/styles.css",
+      "status": 200,
+      "bytes": 18963,
+      "sha256": "7e20825642b08cab8e1638fa90e6f5b3625d9adc250087b5a3a7561c88e3f333",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/assets/lab.mjs",
+      "status": 200,
+      "bytes": 3221,
+      "sha256": "c485c1ef4c7340e0ec08c1a09697b77838ea9524c61e5b5579fc156fa773d771",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/assets/evidence.json",
+      "status": 200,
+      "bytes": 10862,
+      "sha256": "cb7e78a2a6dde0be421c69c85bb0f7cdc687262a2f4e08dc7fa22c1e1ddfcd3c",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/assets/core-tests.json",
+      "status": 200,
+      "bytes": 485,
+      "sha256": "810497965a889f4277b5a701d2100cb80f5e25874649847ab33d08b3df10588a",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/assets/boss-agent-cli-MIT.txt",
+      "status": 200,
+      "bytes": 1071,
+      "sha256": "92b87144eee89e4d52a8eac41e6da43d48d8758ec9aedcd3ba0b6b0a0070b1b3",
+      "source_match": true
+    },
+    {
+      "path": "projects/008-boss-agent-cli/capabilities.md",
+      "status": 200,
+      "bytes": 3374,
+      "sha256": "8515463771a960dd7d42aa78a03b6c35673fb27c34a3fca5746d74193947015a",
+      "source_match": false
+    },
+    {
+      "path": "projects/008-boss-agent-cli/architecture.md",
+      "status": 200,
+      "bytes": 4335,
+      "sha256": "146f3b5ff3546de72194897e48e47a928aebe009a3679271e68e1301f94fd3e0",
+      "source_match": false
+    },
+    {
+      "path": "projects/008-boss-agent-cli/THIRD_PARTY.md",
+      "status": 200,
+      "bytes": 1249,
+      "sha256": "cd806eab1417b6c74a2bc84770e0b88408fe4137b938dcb47a6b51d23d0bdda6",
+      "source_match": false
+    },
+    {
+      "path": "projects/008-boss-agent-cli/references/replay.json",
+      "status": 200,
+      "bytes": 10862,
+      "sha256": "cb7e78a2a6dde0be421c69c85bb0f7cdc687262a2f4e08dc7fa22c1e1ddfcd3c",
+      "source_match": false
+    },
+    {
+      "path": "projects/008-boss-agent-cli/references/core-tests.json",
+      "status": 200,
+      "bytes": 485,
+      "sha256": "810497965a889f4277b5a701d2100cb80f5e25874649847ab33d08b3df10588a",
+      "source_match": false
+    }
+  ],
+  "guide_sha256": "36858526571aa8f3dc075fe3d1aba55c35ec7d35dcc31fafd539fb97959c062f",
+  "guide_is_original": true,
+  "navigation_uses_original": true,
+  "hero_and_dialog_use_original": true,
+  "live_boss_requests": 0,
+  "llm_requests": 0,
+  "summary": {
+    "http_checks": 32,
+    "failed": 0
+  },
+  "content_commit": "71c42fc0859caf4122207a9948f4951d92ff5742",
+  "workflow_url": "https://github.com/yydshly/1015_codex_project/actions/runs/39314360990"
+}

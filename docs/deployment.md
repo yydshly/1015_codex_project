@@ -153,3 +153,13 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 公网 28 项 HTTP / 内容检查与 41 项浏览器交互检查通过，导航和网页中的 PNG 与源图哈希一致；1440 / 1024 / 768 / 390 / 320px 无页面横向溢出，编辑、导出、检索与弹窗通过。线上交互记录在 `projects/012-smart-excalidraw-next/references/deployed-browser.json`，静态内容与原图核对在 `references/deployed-verification.json`。桌面 / 手机截图保存在子项目 `assets/deployed-*.png`。
 
 真实 `demo_url` 在首次部署与访问验证成功后回填。只提交 012 及其导航、发布记录；008 和 outputs 的未提交工作保留本地。网页提供预设示例与真实图形编辑，未调用模型、部署业务后端或实测上游 AI 生成质量。
+
+## 014 · BOSS Agent CLI 能力、原理与职业探索研究实际发布
+
+2026-10-20：内容提交 [71c42fc](https://github.com/yydshly/1015_codex_project/commit/71c42fc0859caf4122207a9948f4951d92ff5742) 已推送 main，[Pages 任务 39314360990](https://github.com/yydshly/1015_codex_project/actions/runs/39314360990) 构建与部署成功。[在线理解总览](https://yydshly.github.io/1015_codex_project/projects/014-boss-agent-overview/) 沿用既有静态构建与 Pages Actions，无根目录应用依赖。008 原始实验作为证据依赖同时提交并发布：[在线实验页](https://yydshly.github.io/1015_codex_project/projects/008-boss-agent-cli/)。
+
+摘要说明源库把求职与招聘的搜索、筛选、简历和沟通封装为 CLI / MCP 工具；复用网页登录态，经 HTTP、浏览器 fetch 与页面网络响应监听访问内部接口，再做本地处理和可选模型分析。网页分别解释已有能力、合成岗位 / JSON / 职业画像演示与待建设的职业探索场景，并说明风控、接口变化、凭据和数据、写操作及样本偏差风险。
+
+仓库首页、站点导航与网页引导使用本次生成的完整全景 PNG 原文件，保留 SVG 下载；弹窗提供完整长图滚动、原尺寸 / 适应宽度和键盘关闭。PNG 三处哈希一致。公开页面与资源共 32 项 HTTP / 内容检查通过，含总导航、014、008 和来源许可；014 的 25 项线上交互及 1440 / 1024 / 768 / 390 / 320px 五档布局通过，无控制台错误。证据位于 `projects/014-boss-agent-overview/references/deployed-verification.json`、`references/deployed-browser.json` 与 `assets/deployed-*.png`。
+
+远端 013 已属于 RomM，用户明确选择将尚未发布的 BOSS 总览迁为 014，保留 013 RomM 与 008 原编号。全景图保留生成时的原文件标记。真实 demo_url 仅在首次部署与线上复核通过后登记；outputs 的其他本地工作未纳入提交。发布范围为静态研究与合成机制演示，没有部署 BOSS 登录服务、访问真实招聘账号或调用模型。

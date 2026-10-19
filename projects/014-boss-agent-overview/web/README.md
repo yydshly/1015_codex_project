@@ -22,4 +22,4 @@ python -m http.server 8773 --bind 127.0.0.1 --directory _site
 
 `node projects/014-boss-agent-overview/scripts/verify.mjs` 从仓库根目录运行 30 项规则与画像检查。网页所有数据与分析在本地执行；未连接 BOSS 或模型。
 
-GitHub Pages 基路径为 `/1015_codex_project/projects/014-boss-agent-overview/`，所有资源使用相对地址。当前只交付本地源码与构建，未部署，索引 demo_url 为空。
+GitHub Pages 基路径为 `/1015_codex_project/projects/014-boss-agent-overview/`，所有资源使用相对地址。已于 2026-10-20 部署并实际验证：[正式网页](https://yydshly.github.io/1015_codex_project/projects/014-boss-agent-overview/)。索引 demo_url 在成功发布及线上复核后填写。

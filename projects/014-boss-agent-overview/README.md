@@ -16,7 +16,7 @@
 | 原始实验 | 008 的 2026-10-16 快照；本轮仅确认四个福利符号 AST 未变化 |
 | 本轮运行 | 30 项规则回归与职业画像原型检查，浏览器与资源检查见 [verification.json](verification.json) |
 | 真实平台/模型调用 | 0；未登录 BOSS、未搜索真实职位、未发送消息、未调用模型 |
-| 公网地址 | 未部署；demo_url 留空 |
+| 公网地址 | [在线理解总览与合成演示](https://yydshly.github.io/1015_codex_project/projects/014-boss-agent-overview/)；2026-10-20 部署并实际访问验证 |
 
 ## 我们的理解
 
@@ -29,6 +29,8 @@
 可调用、规则命中和现实结果属于不同证据层级。本页的合成演示说明呈现形态与规则行为；它不证明账号长期可用、岗位待遇真实、简历送达或录用概率提高。
 
 ## 打开网页
+
+[直接打开正式网页](https://yydshly.github.io/1015_codex_project/projects/014-boss-agent-overview/)。内容提交 [`71c42fc`](https://github.com/yydshly/1015_codex_project/commit/71c42fc0859caf4122207a9948f4951d92ff5742) 经 [Pages 任务 39314360990](https://github.com/yydshly/1015_codex_project/actions/runs/39314360990) 发布成功。32 项线上页面 / 资源检查、25 项交互及五档布局检查通过，原图与导航 / 网页副本一致；见 [线上内容记录](references/deployed-verification.json)、[浏览器记录](references/deployed-browser.json)。
 
 另附 [独立 HTML](web/assets/standalone.html)：样式、代码与演示数据均已内嵌，设计为可用浏览器直接打开。内置浏览器只允许 HTTP/HTTPS，本轮未验证 file:// 双击运行；对应主体交互已通过下述 HTTP 方式验证。
 

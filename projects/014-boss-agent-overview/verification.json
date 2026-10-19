@@ -3,7 +3,7 @@
   "source_commit": "4716ee1d211533db70ac7cc1ab2322eb269b43a0",
   "story": "读取能力、技术通道与风险，切换六种请求路径并展开源码对照；筛选合成岗位、查看 JSON、职业画像与六类目标。",
   "mode": "local-http-browser-and-offline-model-checks",
-  "published": false,
+  "published": true,
   "live_boss_requests": 0,
   "llm_requests": 0,
   "source_files_checked": 14,
@@ -186,5 +186,25 @@
     "catalog_id": 14,
     "preserved_remote_project_id": 13,
     "source_experiments_id": 8
+  },
+  "deployment": {
+    "date": "2026-10-20",
+    "url": "https://yydshly.github.io/1015_codex_project/projects/014-boss-agent-overview/",
+    "content_commit": "71c42fc0859caf4122207a9948f4951d92ff5742",
+    "workflow_url": "https://github.com/yydshly/1015_codex_project/actions/runs/39314360990",
+    "workflow_conclusion": "success",
+    "http_evidence": "references/deployed-verification.json",
+    "live_boss_requests": 0,
+    "llm_requests": 0,
+    "browser_evidence": "references/deployed-browser.json",
+    "browser_checks_passed": 25,
+    "http_checks_passed": 32,
+    "responsive_widths": [
+      1440,
+      1024,
+      768,
+      390,
+      320
+    ]
   }
 }
