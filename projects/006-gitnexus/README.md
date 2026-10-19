@@ -1,18 +1,22 @@
-# 006 · GitNexus 代码图谱与影响分析研究
+# 006 · GitNexus 代码知识索引与 AI 工具接入研究
 
-2026-10-19 补充：[核心定位与验证范围](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#understanding)。核心是代码知识索引、分析与 AI 工具接入，展示只是其中一种输出。主页面与独立工作台使用相同总结，分开列明小样本已验证、已实跑但存在缺口、尚未验证的能力；12 张能力卡也分别注明验证状态。沿用 2026-10-16 的固定 npm 1.6.12 证据，没有把模型闭环、跨仓库组或真实大型项目收益标为已验证。
+GitNexus 解析源码中的文件、符号与跨文件关系，构建本地 LadybugDB 代码知识索引，经 CLI／MCP 等接口提供检索、调用上下文、候选流程与修改影响，为开发者和 AI 提供可回到源码核对的依据。网页是其中一种输出。研究使用两组真实小样本展示能力与缺口，并梳理变更审查、架构导航、Agent 上下文服务等产品方向；尚未证明大型项目覆盖率或 AI 任务收益。
 
-本次总结及缓存更新已通过 [Pages 任务 39208538994](https://github.com/yydshly/1015_codex_project/actions/runs/39208538994) 发布。12 项本地浏览器检查覆盖三层定位、三类证据、展开／键盘折叠、12 张能力卡、桌面及 390px／320px 布局与原有导览；线上 41 项资源与文本核对通过，12 张状态标签与本地一致，无脚本错误。保留标签页曾缓存旧工作台脚本，已为脚本与内嵌页面添加版本参数并复核。[本地检查](assets/positioning-local-verification.json) · [线上检查](assets/positioning-deployed-browser.json) · [总结截图](assets/positioning-desktop.jpg)。
+**能力**：代码知识索引、查询分析与 AI 工具接入；扩展分析包括改名预览、API／工具映射及可选 PDG。已验证、实跑有缺口和尚未验证的部分分别标注。
 
-GitNexus 从源码提取符号和跨文件关系，建立可持久查询的代码图谱。CLI、MCP 和网页共享这份索引，用于定位实现、展开调用链、调查变更影响和为编程助手提供上下文。
+**原理**：语法解析 → 跨文件关系绑定 → LadybugDB 图谱 → 检索、分组与候选流程 → 任务查询 → 工具或网页。静态结构不能替代真实执行轨迹与测试。
 
-[中文展示页](web/index.html) · [研究记录](notes.md) · [真实运行报告](references/run-report.md) · [完整数据](web/assets/evidence.json) · [原创样本](src/checkout-lab) · [上游仓库](https://github.com/abhigyanpatwari/GitNexus)
+**研究启发**：先核对关系，再设计视图；将结构候选与行为证据分层；同一知识索引服务多种入口；把版本、时效和缺口作为产品信息。
+
+**产品方向**：变更审查助手、仓库接手与架构导航、Agent 代码上下文服务、API 契约漂移检查、跨仓库变更雷达。均为尚未实现的研究设想，逐项说明工作流、建设缺口和验证方式。
+
+[在线研究总览](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/) · [能力与验证](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#understanding) · [研究启发](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#insights) · [产品方向](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#directions) · [完整整理](extensions.md) · [过程记录](notes.md) · [实跑报告](references/run-report.md) · [上游仓库](https://github.com/abhigyanpatwari/GitNexus)
 
 ![GitNexus 原理与能力总览，原创研究示意图](assets/cover.svg)
 
 | 项目 | 记录 |
 | --- | --- |
-| 编号 / 日期 | `006` / 2026-10-15，Asia/Shanghai |
+| 编号 / 日期 | `006` / 起始 2026-10-15，最近整理 2026-10-19，Asia/Shanghai |
 | 实测版本 | 固定 npm `gitnexus@1.6.12`，gitHead `c4ecf398…`；文档参考 tag `26ddd956…`，二者源码等价关系未建立 |
 | 源码研究 | 当前主线架构、流程、聚类和混合搜索，与稳定版实测分别标明 |
 | 上游许可 | PolyForm Noncommercial 1.0.0；[完整原文](references/UPSTREAM_LICENSE.txt) |
@@ -22,6 +26,7 @@ GitNexus 从源码提取符号和跨文件关系，建立可持久查询的代�
 
 ## 网页内容
 
+- **研究摘要与结论**：说明能力、处理链路、4 项研究启发和 5 个未实现产品方向，分别展示证据、判断、建设缺口与验证方法。[完整整理](extensions.md)
 - **能力效果展厅**：模块分组、流程展开、符号上下文、影响层级、搜索结果、路径追踪、变更检查七种真实结果回放。可选择流程、筛选命中、展开全图类型及原始 diff。
 - **能力清单**：标明已实跑、待实测和扩展条件，覆盖 rename、API / 工具关联、PDG、多仓库及 Wiki / AI 问答。
 - **原理**：语法解析、跨文件绑定、LadybugDB 图谱、Leiden 分组与候选流程、混合搜索、MCP 输出六步切换。中间结构明确为教学示意。
@@ -128,3 +133,9 @@ python -m http.server 8096 --bind 127.0.0.1 --directory _site
 本地 61 项浏览器交互与响应式检查通过，涵盖图谱视角、查找、缩放、平移、分组、上下文、流程播放、分层影响、搜索与源码、diff 与金额探针、改名差异、API 字段、语句依赖、四种污点对照、12 步导览、390px / 320px 全部模式，以及主页面内嵌联动；没有脚本错误。[交互检查](assets/atlas-verification.json) · [数据与源码完整性](assets/atlas-integrity.json)。
 
 工作台内容提交 `4821707` 已通过 [Pages 任务 38768846028](https://github.com/yydshly/1015_codex_project/actions/runs/38768846028) 发布。线上 39 项资源与文本 / 数据一致性检查通过，12 类能力及 API 字段、PDG 源码、手机流程共 15 项浏览器检查通过，无脚本错误。[线上检查](assets/atlas-deployed-browser.json) · [整仓地图](assets/atlas-desktop.jpg) · [API 字段联动](assets/atlas-api.jpg) · [PDG](assets/atlas-pdg.jpg) · [手机](assets/atlas-mobile.jpg)。
+
+## 核心定位与验证范围 · 2026-10-19
+
+主页面与独立工作台使用相同总结，12 张能力卡分别注明小样本已验证、实跑但存在缺口和尚未验证的部分。沿用 2026-10-16 的固定 npm 1.6.12 证据，没有把模型闭环、跨仓库组或真实大型项目收益标为已验证。
+
+该次总结及缓存更新已通过 [Pages 任务 39208538994](https://github.com/yydshly/1015_codex_project/actions/runs/39208538994) 发布。12 项本地检查与 41 项线上资源核对通过，12 张状态标签与本地一致，无脚本错误。保留标签页曾缓存旧工作台脚本，已添加资源版本参数并复核。[本地检查](assets/positioning-local-verification.json) · [线上检查](assets/positioning-deployed-browser.json) · [截图](assets/positioning-desktop.jpg)。

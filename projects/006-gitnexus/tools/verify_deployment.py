@@ -14,6 +14,7 @@ PATHS += ["assets/atlas.html", "assets/atlas.css", "assets/atlas.js", "assets/at
 
 
 PATHS += ["assets/positioning.css", "assets/positioning.js"]
+PATHS += ["assets/research.css", "extensions.md"]
 
 
 def fetch(path):
@@ -32,9 +33,10 @@ def main():
         # Git normalizes the Windows working copy's CRLF before Pages builds it.
         assert responses[i][1].replace(b"\r\n",b"\n") == (PROJECT / "web" / source).read_bytes().replace(b"\r\n",b"\n"), source
     assert evidence == json.loads((PROJECT / "web/assets/evidence.json").read_text(encoding="utf-8"))
+    assert responses[PATHS.index("extensions.md")][1].replace(b"\r\n",b"\n") == (PROJECT / "extensions.md").read_bytes().replace(b"\r\n",b"\n")
     showcase = json.loads(responses[18][1])
     assert showcase == json.loads((PROJECT / "web/assets/showcase.json").read_text(encoding="utf-8"))
-    for source in ("assets/atlas.html", "assets/atlas.css", "assets/atlas.js", "assets/atlas.json", "assets/advanced.json", "assets/business-probes.json", "assets/atlas-bridge.js", "assets/positioning.css", "assets/positioning.js"):
+    for source in ("assets/atlas.html", "assets/atlas.css", "assets/atlas.js", "assets/atlas.json", "assets/advanced.json", "assets/business-probes.json", "assets/atlas-bridge.js", "assets/positioning.css", "assets/positioning.js", "assets/research.css"):
         actual = responses[PATHS.index(source)][1].replace(b"\r\n",b"\n")
         assert actual == (PROJECT / "web" / source).read_bytes().replace(b"\r\n",b"\n"), source
     result = {"status":"passed", "checkedAt":datetime.now().astimezone().isoformat(), "url":BASE, "responses":[row[0] for row in responses], "runtimeEvidenceMatches":True, "textAssetsMatchAfterNewlineNormalization":True, "graphNodes":71, "graphEdges":131, "businessCalls":11, "upstreamChecks":len(evidence["checks"])}

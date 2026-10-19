@@ -79,9 +79,9 @@
     {
       "id": 6,
       "slug": "gitnexus",
-      "name": "GitNexus 代码图谱与影响分析研究",
+      "name": "GitNexus 代码知识索引与 AI 工具接入研究",
       "repository": "https://github.com/abhigyanpatwari/GitNexus",
-      "summary": "以 AST 和语言规则解析跨文件代码图，借助 LadybugDB 与 MCP 提供调用、影响和路径查询；网页用真实结算样本及原始输出展示能力、原理和检索恢复过程。",
+      "summary": "解析源码与跨文件关系，构建 LadybugDB 代码知识索引，经 CLI/MCP 提供检索、调用路径与变更影响；以真实小样本区分效果和缺口，研究可核对上下文的价值，并梳理变更审查、架构导航及 Agent 服务等扩展方向。",
       "status": "completed",
       "tags": [
         "代码图谱",

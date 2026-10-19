@@ -1,5 +1,7 @@
 # GitNexus 中文研究网页
 
+研究总览按“能力 → 原理 → 真实效果与验证 → 同类对照 → 研究启发 → 产品方向”组织。`#insights` 的 4 项判断有原始材料链接；`#directions` 的 5 个方向均标为未实现，展开可看工作流、建设缺口和验证方法。`assets/research.css` 提供新章节样式，完整文字在随构建发布的 `extensions.md`。主页面及独立工作台的共享定位总结可直接跳转新章节；更新共享资源时同步更新 HTML 中的版本参数。
+
 原生 HTML / CSS / JavaScript / SVG，无需 npm、CDN、外部字体或模型密钥。`assets/evidence.json` 来自固定版本实跑，原始文件位于项目 references/。
 
 从仓库根目录运行：

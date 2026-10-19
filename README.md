@@ -23,7 +23,7 @@
 | 003 | [ER Mario 跨游戏动作系统研究](projects/003-er-mario/README.md) | [er-mario](https://github.com/deltarooo/er-mario) | 复用 SM64 运动与动画，经碰撞、骨骼、战斗与事件适配接入法环；用艾雷教堂和七模型演示说明行为与外形解耦、减少重复开发的价值，并梳理更多角色、场景与引擎的扩展条件。 | 已完成 | [研究](projects/003-er-mario/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/003-er-mario/overview.html) |
 | 004 | [Obsidian 程序化碎片变形研究](projects/004-obsidian/README.md) | [obsidian](https://github.com/iamtechartist/obsidian) | 以表面碎裂、目标采样匹配和 GPU 时间函数驱动同一批三维碎片重组，适合片头、品牌与舞台视觉；研究页扩展四种形态、48 秒声画循环和 MP4 导出，并梳理模型、音乐、数据与交互的扩展条件。 | 已完成 | [研究](projects/004-obsidian/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/004-obsidian/#understanding) |
 | 005 | [Pulse 本地 Agent 用量统计研究](projects/005-pulse/README.md) | [Pulse](https://github.com/qunqin24/Pulse) | 读取多种 Agent 的本地日志、数据库与导出记录，校正累计值和重复消息，按模型归集 Token 与 API 等价费用；为自建用量统计模块提供采集、归因、计价和扩展参考。 | 已完成 | [研究](projects/005-pulse/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/005-pulse/overview.html) |
-| 006 | [GitNexus 代码图谱与影响分析研究](projects/006-gitnexus/README.md) | [GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 以 AST 和语言规则解析跨文件代码图，借助 LadybugDB 与 MCP 提供调用、影响和路径查询；网页用真实结算样本及原始输出展示能力、原理和检索恢复过程。 | 已完成 | [研究](projects/006-gitnexus/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/) |
+| 006 | [GitNexus 代码知识索引与 AI 工具接入研究](projects/006-gitnexus/README.md) | [GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 解析源码与跨文件关系，构建 LadybugDB 代码知识索引，经 CLI/MCP 提供检索、调用路径与变更影响；以真实小样本区分效果和缺口，研究可核对上下文的价值，并梳理变更审查、架构导航及 Agent 服务等扩展方向。 | 已完成 | [研究](projects/006-gitnexus/README.md) · [演示](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/) |
 
 ### 项目预览
 
@@ -67,11 +67,11 @@
 
 标签：Agent 用量 · 模型统计 · 产品参考
 
-#### 006 · GitNexus 代码图谱与影响分析研究
+#### 006 · GitNexus 代码知识索引与 AI 工具接入研究
 
-[![GitNexus 代码图谱与影响分析研究 项目预览](projects/006-gitnexus/assets/cover.svg)](projects/006-gitnexus/README.md)
+[![GitNexus 代码知识索引与 AI 工具接入研究 项目预览](projects/006-gitnexus/assets/cover.svg)](projects/006-gitnexus/README.md)
 
-以 AST 和语言规则解析跨文件代码图，借助 LadybugDB 与 MCP 提供调用、影响和路径查询；网页用真实结算样本及原始输出展示能力、原理和检索恢复过程。
+解析源码与跨文件关系，构建 LadybugDB 代码知识索引，经 CLI/MCP 提供检索、调用路径与变更影响；以真实小样本区分效果和缺口，研究可核对上下文的价值，并梳理变更审查、架构导航及 Agent 服务等扩展方向。
 
 标签：代码图谱 · 静态分析 · MCP
 

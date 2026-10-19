@@ -1,0 +1,100 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-19",
+  "checks": [
+    {
+      "check": "new-sections-desktop",
+      "insights": 4,
+      "products": 5,
+      "scrollWidth": 1425,
+      "unimplemented": true,
+      "width": 1440
+    },
+    {
+      "check": "agent-product-detail",
+      "expanded": true,
+      "text": "03 / 先验证任务收益 · 未实现\nAgent 代码上下文服务\n\n按当前任务提供相关符号、关系与源码，辅助编程助手调查和规划修改。\n\n工作流、缺少什么、如何验证\n输入 → 分析 → 输出\n任务目标 → query／context／impact → 带版本信息的上下文包。\n还需补齐\n真实 Agent 接入、权限过滤、上下文预算、失败回退与任务评测。\n怎样验证价值\n在相同版本与任务上比较成功率、耗时、Token 和成本，不能预设更省或更准。"
+    },
+    {
+      "check": "keyboard-collapse",
+      "collapsed": true
+    },
+    {
+      "check": "main-mobile-390",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "main-mobile-320",
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "check": "atlas-to-main-product-link",
+      "url": "http://127.0.0.1:8096/projects/006-gitnexus/#directions",
+      "products": 5
+    },
+    {
+      "check": "product-detail-1",
+      "open": true,
+      "criteria": [
+        "输入 → 分析 → 输出",
+        "还需补齐",
+        "怎样验证价值"
+      ]
+    },
+    {
+      "check": "product-detail-2",
+      "open": true,
+      "criteria": [
+        "输入 → 分析 → 输出",
+        "还需补齐",
+        "怎样验证价值"
+      ]
+    },
+    {
+      "check": "product-detail-3",
+      "open": true,
+      "criteria": [
+        "输入 → 分析 → 输出",
+        "还需补齐",
+        "怎样验证价值"
+      ]
+    },
+    {
+      "check": "product-detail-4",
+      "open": true,
+      "criteria": [
+        "输入 → 分析 → 输出",
+        "还需补齐",
+        "怎样验证价值"
+      ]
+    },
+    {
+      "check": "summary-title-and-meta",
+      "description": "GitNexus 能力、原理与产品方向研究：解析跨文件关系，构建本地代码知识索引，为人和 AI 提供查询与修改影响依据；用真实样本说明效果与缺口，梳理变更审查、架构导航和 Agent 上下文服务等扩展设想。",
+      "heading": "代码知识，按需查询。",
+      "title": "GitNexus · 代码知识索引、分析与 AI 工具接入研究"
+    },
+    {
+      "check": "hero-mobile-navigation",
+      "navLinks": 5,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "fresh-reload-product-navigation",
+      "expanded": true
+    }
+  ],
+  "observedUnattributedErrors": [
+    {
+      "level": "error",
+      "message": "Uncaught TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.",
+      "timestamp": "2026-10-19T06:19:29.569Z"
+    }
+  ],
+  "freshReloadCheckedAt": "2026-10-19T06:21:29.893Z",
+  "errorsAfterFreshReload": [],
+  "sourceReview": "No MutationObserver or .observe() usage in project web scripts; original log had no source URL."
+}

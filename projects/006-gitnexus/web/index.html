@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GitNexus 中文研究展厅：代码知识索引、分析与 AI 工具接入。用真实样本展示能力，区分已验证、已知缺口和尚未验证的部分。">
+  <meta name="description" content="GitNexus 能力、原理与产品方向研究：解析跨文件关系，构建本地代码知识索引，为人和 AI 提供查询与修改影响依据；用真实样本说明效果与缺口，梳理变更审查、架构导航和 Agent 上下文服务等扩展设想。">
   <meta name="theme-color" content="#101b22">
-  <title>GitNexus · 看见代码之间的关系</title>
+  <title>GitNexus · 代码知识索引、分析与 AI 工具接入研究</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/comparison.css">
   <link rel="stylesheet" href="assets/showcase.css">
-  <link rel="stylesheet" href="assets/positioning.css">
-  <script src="assets/positioning.js" defer></script>
+  <link rel="stylesheet" href="assets/positioning.css?v=20261019-research">
+  <link rel="stylesheet" href="assets/research.css">
+  <script src="assets/positioning.js?v=20261019-research" defer></script>
   <script src="app.js" defer></script>
   <script src="assets/comparison.js" defer></script>
   <script src="assets/showcase.js" defer></script>
@@ -20,12 +21,12 @@
   <a class="skip" href="#main">跳到内容</a>
   <header class="topbar">
     <a class="brand" href="#"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M6 6 22 14 6 22V6"/><circle cx="6" cy="6" r="3"/><circle cx="22" cy="14" r="3"/><circle cx="6" cy="22" r="3"/></svg><b>GitNexus</b><span>研究展厅 / 006</span></a>
-    <nav aria-label="主导航"><a href="#understanding">核心与验证</a><a href="#showcase">效果展厅</a><a href="#mechanism">原理</a><a href="#compare">同类对照</a></nav>
+    <nav aria-label="主导航"><a href="#understanding">核心与验证</a><a href="#showcase">效果展厅</a><a href="#mechanism">原理</a><a href="#compare">同类对照</a><a href="#insights">启发与产品</a></nav>
     <a class="source-link" href="https://github.com/abhigyanpatwari/GitNexus" target="_blank" rel="noreferrer">上游仓库 <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
     <section class="hero wrap">
-      <div class="hero-copy"><div class="eyebrow"><i></i> CODE INTELLIGENCE, MADE VISIBLE</div><h1>看见代码<br>之间的<span>关系。</span></h1><p class="hero-lead">建立代码知识索引，分析关系与修改影响，<br>通过工具接口把上下文交给人和 AI。</p><div class="hero-actions"><a class="button lime" href="#showcase">打开能力效果展厅 <span>↗</span></a><a class="text-button" href="#understanding">核心定位与验证范围 <span>↓</span></a></div><div class="hero-tags"><span>静态分析</span><span>本地图数据库</span><span>MCP 接入</span></div></div>
+      <div class="hero-copy"><div class="eyebrow"><i></i> CODE KNOWLEDGE / EVIDENCE / PRODUCTS</div><h1>代码知识，<br><span>按需查询。</span></h1><p class="hero-lead">解析源码与跨文件关系，建立本地知识索引，<br>查询调用、流程与修改影响，为人和 AI 提供上下文。<br>从真实小样本出发，理解能力、原理与产品扩展方向。</p><div class="hero-actions"><a class="button lime" href="#showcase">查看真实能力效果 <span>↗</span></a><a class="text-button" href="#understanding">先读研究摘要 <span>↓</span></a></div><div class="hero-tags"><span>代码知识索引</span><span>静态分析</span><span>AI 工具接入</span></div></div>
       <div class="hero-visual" aria-label="结算样本调用关系预览">
         <div class="visual-heading"><span><i></i> CHECKOUT / RELATION MAP</span><span>CALLS</span></div>
         <svg viewBox="0 0 660 390" role="img" aria-label="submitOrder 调用 checkoutOrder，checkoutOrder 调用运费、折扣、库存和订单存储；estimateOrder 也调用运费函数">
@@ -50,7 +51,7 @@
     <section class="section wrap full-workbench" id="showcase"><span id="explorer" class="workbench-anchor"></span>
       <div class="section-intro"><div><div class="eyebrow muted">INTERACTIVE WORKBENCH / FOLLOW THE EVIDENCE</div><h2>把整个仓库，<br>变成可以探索的地图。</h2></div><p>从整仓进入模块、函数、流程和源码。<br>再用真实变更、API 与数据流案例，理解工具的边界。<br>建议先点“跟着案例走一遍”，完成 12 步导览。</p></div>
       <div class="workbench-entry"><div><a href="#explorer" data-lab-mode="overview">整仓地图</a><a href="#explorer" data-lab-mode="flows">逐步播放流程</a><a href="#explorer" data-lab-mode="changes">修改一行代码</a><a href="#explorer" data-lab-mode="api" data-lab-detail="shape_check">API 字段偏差</a></div><a class="workbench-fullscreen" href="assets/atlas.html" target="_blank" rel="noreferrer">打开完整工作台 ↗</a></div>
-      <iframe id="capability-workbench" src="assets/atlas.html?v=20261019" title="GitNexus 完整能力工作台：图谱、流程、影响、变更、API 与数据流" loading="lazy"></iframe>
+      <iframe id="capability-workbench" src="assets/atlas.html?v=20261019-research" title="GitNexus 完整能力工作台：图谱、流程、影响、变更、API 与数据流" loading="lazy"></iframe>
       <p class="workbench-caption">图谱和工具输出来自固定 npm 分发的真实运行，布局、导览和交互由本展厅实现。网页回放保存结果；新的仓库需使用官方 CLI / MCP / Web UI。</p>
     </section>
     <details class="wrap records-archive" id="records"><summary>展开七种工具的结果档案 <span>+</span></summary><div class="section">
@@ -142,7 +143,29 @@
       <div class="comparison-evidence"><div><span>GitNexus</span><b>真实小样本已跑</b><p id="comparison-scope">11 条预期业务调用均找到；本页保留原始查询。</p></div><div><span>Ix</span><b>源码研究已完成</b><p>尚未运行后端，没有同样本输出和收益数据。</p></div><div><span>CodeFlow</span><b>原生展示已运行</b><p>已有 15 文件样本；与本次结算样本不是同一套输入。</p></div></div>
       <p class="compare-note">2026-10-15 核对官方材料，结合 09-16 至 10-05 的既有研究。Graft 的代码地图与按需上下文研究另行保留。<a href="https://github.com/yydshly/1004_codex_project/tree/main/projects/002-codeflow" target="_blank" rel="noreferrer">既有四工具对照 ↗</a><a href="https://github.com/yydshly/0914_codex_project/tree/main/projects/010-graft" target="_blank" rel="noreferrer">Graft 研究 ↗</a></p>
     </div></section>
-    <section class="wrap sources-section" id="sources"><div><span class="eyebrow muted">SOURCE NOTES</span><h3>从每个结论，回到原始材料。</h3></div><div><a href="https://github.com/abhigyanpatwari/GitNexus/blob/main/ARCHITECTURE.md" target="_blank" rel="noreferrer">架构文档 ↗</a><a href="https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.12" target="_blank" rel="noreferrer">实测版本 v1.6.12 ↗</a><a href="references/sources.json">来源清单 ↗</a><a href="notes.md">研究记录 ↗</a></div><p>本页是独立中文研究与交互展示。首页关系图按原创样本绘制，实测区从运行记录读取。上游当前采用 PolyForm Noncommercial 1.0.0；使用范围以其许可证为准。主线功能描述与稳定版实测分别标明。</p></section>
+    <section class="research-thoughts" id="insights"><div class="section wrap">
+      <div class="section-intro"><div><div class="eyebrow muted">RESEARCH INSIGHTS / 从证据到判断</div><h2>研究这个库，<br>让我们想到什么？</h2></div><p>以下是从已有实跑形成的研究判断，<br>不是新增能力，也没有证明生产收益。<br>每项思考都回到一个具体观察。</p></div>
+      <nav class="research-jumps" aria-label="研究阅读导航"><a href="#understanding">核心定位与验证 ↑</a><a href="#mechanism">原理与处理链路 ↑</a><a href="#directions">可扩展的产品方向 ↓</a><a href="extensions.md">完整研究整理 ↗</a></nav>
+      <div class="insight-grid">
+        <article class="insight-card"><span>01 / 关系质量</span><h3>先核对连边，再设计视图。</h3><p><b>观察</b>基础样本的 11 条预期调用找到，别名与同名函数可区分；高级样本的参数 URL 消费者却没有关联。</p><p><b>思考</b>图形完整不代表索引完整。产品应暴露源码位置、关系来源和未覆盖项，允许使用者复核。</p><a href="references/advanced-run-report.md">核对参数 URL 缺口 ↗</a></article>
+        <article class="insight-card"><span>02 / 结构与行为</span><h3>缩小调查范围，再验证行为。</h3><p><b>观察</b>图谱找到运费函数与关联流程；5 组金额变化来自另外执行样本源码，工具没有预测这些金额。</p><p><b>思考</b>可以组合“图谱调查 → 执行测试 → 保存证据”，分别展示静态候选与运行事实。</p><a href="references/atlas-report.md">核对变更与金额探针 ↗</a></article>
+        <article class="insight-card"><span>03 / 知识与入口</span><h3>同一份索引，可以服务人和 AI。</h3><p><b>观察</b>同一批符号、关系与工具输出，在展厅里形成地图、流程、源码和结果卡片。</p><p><b>思考</b>底层索引和任务查询可复用。先明确问题与输出，再选择网页、IDE 面板、报告或 Agent 接口。</p><a href="#understanding">回看三层核心定位 ↑</a></article>
+        <article class="insight-card"><span>04 / 版本与时效</span><h3>让使用者知道索引代表什么。</h3><p><b>观察</b>npm 分发 gitHead 与文档 tag 所指提交不同，源码等价关系未建立；参数 URL 与回调传播均保留漏报记录。</p><p><b>思考</b>展示代码版本、索引时间、查询范围与缺口。空结果不能自动解释为没有依赖。</p><a href="references/advanced-provenance.json">核对版本与来源 ↗</a></article>
+      </div>
+    </div></section>
+    <section class="section wrap product-section" id="directions">
+      <div class="section-intro"><div><div class="eyebrow muted">PRODUCT DIRECTIONS / 尚未实现的设想</div><h2>从知识索引，<br>可以延伸出哪些产品？</h2></div><p>复用代码关系与查询结果，补齐任务工作流。<br>每个方向都列出还需建设的部分与验证方法，<br>不把产品设想当作上游已有的完整能力。</p></div>
+      <p class="product-scope">以下五项都是本研究提出的产品方向，尚未实现、未验证收益。“先做原型／定向实验／后续研究”表示建议的验证顺序。</p>
+      <div class="product-grid">
+        <article class="product-card"><span>01 / 先做单仓库原型 · 未实现</span><h3>变更审查助手</h3><p>帮助开发者和评审者判断：这次修改需要调查哪里、回归检查什么？</p><details open><summary>工作流、缺少什么、如何验证</summary><dl><dt>输入 → 分析 → 输出</dt><dd>Git diff → 符号、影响与流程 → 带源码依据的审查清单。</dd><dt>还需补齐</dt><dd>Git／CI 接入、索引版本核对、测试关联和人工复核。</dd><dt>怎样验证价值</dt><dd>在标注任务上核对遗漏与误报，比较调查耗时和回归检查是否有用。</dd></dl></details></article>
+        <article class="product-card"><span>02 / 适合做原型 · 未实现</span><h3>仓库接手与架构导航</h3><p>帮助新成员从业务入口找到模块、实现链路和相关源码。</p><details><summary>工作流、缺少什么、如何验证</summary><dl><dt>输入 → 分析 → 输出</dt><dd>入口或符号 → 分组、调用路径与上下文 → 可核对的仓库导览。</dd><dt>还需补齐</dt><dd>业务标签、模块命名、负责人信息与索引更新。</dd><dt>怎样验证价值</dt><dd>给定仓库问题，核对答案与源码是否一致，并比较定位耗时。</dd></dl></details></article>
+        <article class="product-card"><span>03 / 先验证任务收益 · 未实现</span><h3>Agent 代码上下文服务</h3><p>按当前任务提供相关符号、关系与源码，辅助编程助手调查和规划修改。</p><details><summary>工作流、缺少什么、如何验证</summary><dl><dt>输入 → 分析 → 输出</dt><dd>任务目标 → query／context／impact → 带版本信息的上下文包。</dd><dt>还需补齐</dt><dd>真实 Agent 接入、权限过滤、上下文预算、失败回退与任务评测。</dd><dt>怎样验证价值</dt><dd>在相同版本与任务上比较成功率、耗时、Token 和成本，不能预设更省或更准。</dd></dl></details></article>
+        <article class="product-card"><span>04 / 定向实验 · 未实现</span><h3>API 契约漂移检查</h3><p>帮助前后端发现：客户端读取的字段与接口提供的字段是否偏离？</p><details><summary>工作流、缺少什么、如何验证</summary><dl><dt>输入 → 分析 → 输出</dt><dd>客户端与服务端修改 → 路由与字段关联 → 偏差及受影响消费者报告。</dd><dt>还需补齐</dt><dd>框架适配、参数 URL 识别、显式 schema／契约与规则。</dd><dt>怎样验证价值</dt><dd>人工标注路由与字段关系，核对关联覆盖、误报及真实执行结果。</dd></dl></details></article>
+        <article class="product-card"><span>05 / 后续研究 · 未实现</span><h3>跨仓库变更雷达</h3><p>帮助多服务团队调查：一个契约的变更可能涉及哪些仓库？</p><details><summary>工作流、缺少什么、如何验证</summary><dl><dt>输入 → 分析 → 输出</dt><dd>契约变化 → 仓库组与关联查询 → 跨仓库影响候选。</dd><dt>还需补齐</dt><dd>多仓库索引、稳定契约标识、版本对齐与访问控制。上游仓库组尚未在本研究实跑。</dd><dt>怎样验证价值</dt><dd>先用两个小仓库逐条核对关联，再判断是否扩大范围。</dd></dl></details></article>
+        <aside class="product-next"><h3>下一步应验证实际任务。</h3><p>先选一个真实仓库、一类具体任务，保存代码版本、预期关系、查询结果与测试证据，再判断索引完整性、维护成本和任务收益。</p><p>还可研究与运行追踪或性能采样关联，补充实际路径和耗时；目前未完成这种整合。</p><a href="extensions.md">阅读能力、原理、启发与方向的完整整理 ↗</a></aside>
+      </div>
+    </section>
+    <section class="wrap sources-section" id="sources"><div><span class="eyebrow muted">SOURCE NOTES</span><h3>从每个结论，回到原始材料。</h3></div><div><a href="https://github.com/abhigyanpatwari/GitNexus/blob/main/ARCHITECTURE.md" target="_blank" rel="noreferrer">架构文档 ↗</a><a href="https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.12" target="_blank" rel="noreferrer">实测版本 v1.6.12 ↗</a><a href="references/sources.json">来源清单 ↗</a><a href="extensions.md">研究结论与产品方向 ↗</a><a href="notes.md">研究过程记录 ↗</a></div><p>本页是独立中文研究与交互展示。首页关系图按原创样本绘制，实测区从运行记录读取。上游许可按研究时保存的 PolyForm Noncommercial 1.0.0 原文说明；使用范围以其许可证为准。能力描述、固定版本实测、研究判断与产品设想分别标明。</p></section>
   </main>
-  <footer class="footer wrap"><a class="brand" href="#"><b>GitNexus</b><span>代码关系，逐条核对。</span></a><span>GITHUB RESEARCH LAB · 006 · 2026.10.15</span><a href="../../">返回研究导航 ↗</a></footer>
+  <footer class="footer wrap"><a class="brand" href="#"><b>GitNexus</b><span>代码关系，逐条核对。</span></a><span>GITHUB RESEARCH LAB · 006 · 更新 2026.10.19</span><a href="../../">返回研究导航 ↗</a></footer>
 </body></html>

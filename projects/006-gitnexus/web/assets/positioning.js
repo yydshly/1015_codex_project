@@ -37,7 +37,8 @@
         </div>
         <div class="research-conclusion"><b>现在能判断什么？</b><p>理解定位、原理、能力与初步选型，材料已经够用。决定采用前，应在自己的真实项目验证关系完整性、索引维护成本和实际任务收益。静态流程与影响候选不能替代真实运行证据。</p></div>
         <p class="research-provenance">本总结整理于 2026-10-19，沿用 2026-10-16 保存的 npm 1.6.12 实验。公开网页回放已保存结果，未部署 GitNexus 数据库、索引服务或模型；图形布局与交互由本展厅实现。</p>
-      </details>`;
+      </details>
+      <nav class="research-links" aria-label="继续阅读研究结论"><a href="${base}#mechanism" target="_top">原理链路 ↗</a><a href="${base}#insights" target="_top">研究启发 ↗</a><a href="${base}#directions" target="_top">产品方向 ↗</a><a href="${base}extensions.md" target="_top">完整研究整理 ↗</a></nav>`;
   });
   const revealSummary = () => {
     if (location.hash !== '#understanding') return;
