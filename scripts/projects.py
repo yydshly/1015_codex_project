@@ -22,6 +22,12 @@ STATUSES = {
 FIELDS = {
     "id", "slug", "name", "repository", "summary", "status", "tags", "cover", "demo_url"
 }
+SUMMARY_LABELS = {
+    "capability": "能力",
+    "mechanism": "原理",
+    "value": "价值",
+    "boundary": "边界",
+}
 
 
 class CatalogError(ValueError):
@@ -55,7 +61,11 @@ def validate_metadata(catalog):
         raise CatalogError("projects 必须是数组。")
     ids, slugs = set(), set()
     for project in catalog["projects"]:
-        if not isinstance(project, dict) or set(project) != FIELDS:
+        if (
+            not isinstance(project, dict)
+            or not FIELDS <= set(project)
+            or set(project) - FIELDS - {"summary_details"}
+        ):
             raise CatalogError(f"每个项目必须包含这些字段：{', '.join(sorted(FIELDS))}。")
         number = project["id"]
         if type(number) is not int or not 1 <= number <= 999 or number in ids:
@@ -73,6 +83,18 @@ def validate_metadata(catalog):
         for key in ("name", "summary", "repository", "status", "cover"):
             if not single_line(project[key]):
                 raise CatalogError(f"{number:03d} 的 {key} 必须是无首尾空格的单行文本。")
+        if "summary_details" in project:
+            details = project["summary_details"]
+            if (
+                not isinstance(details, dict)
+                or not {"capability", "mechanism", "value"} <= set(details)
+                or set(details) - set(SUMMARY_LABELS)
+                or not all(single_line(value) for value in details.values())
+            ):
+                raise CatalogError(
+                    f"{number:03d} 的 summary_details 必须包含 capability、mechanism、value，"
+                    "可选 boundary；各项须为非空单行文本。"
+                )
         if project["status"] not in STATUSES:
             raise CatalogError(f"{number:03d} 的 status 无效，可选：{', '.join(STATUSES)}")
         if not re.fullmatch(
@@ -142,6 +164,16 @@ def link_url(value):
     return quote(value, safe=":/?#@!$&*+,;=%-._~")
 
 
+def render_summary(project):
+    details = project.get("summary_details")
+    if not details:
+        return md(project["summary"])
+    return "<br>".join(
+        f"**{label}**：{md(details[key])}"
+        for key, label in SUMMARY_LABELS.items() if key in details
+    )
+
+
 def render_index(catalog):
     projects = sorted(catalog["projects"], key=lambda project: project["id"])
     if not projects:
@@ -149,19 +181,36 @@ def render_index(catalog):
     rows = [
         f"已收录 **{len(projects)}** 个项目，按收录编号升序展示。",
         "",
-        "| 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |",
-        "| --- | --- | --- | --- | --- | --- |",
+        "### 一句话认识每个项目",
+        "",
     ]
     for project in projects:
         path = f"projects/{directory(project)}"
         source_name = project["repository"].rsplit("/", 1)[-1]
+        status = "（已归档）" if project["status"] == "archived" else ""
+        rows.append(
+            f"- **[{project['id']:03d} · {md(source_name)}]({path}/README.md)**{status}："
+            f"{md(project['summary'])}"
+        )
+    rows.extend([
+        "",
+        "### 能力、原理与价值速查",
+        "",
+        "**能力**看能做什么，**原理**看如何实现，**价值**看值得借鉴什么；**边界**说明验证范围或使用条件。点击项目名或「研究」查看完整记录，点击「演示」进入研究网页。",
+        "",
+        "| 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |",
+        "| --- | --- | --- | --- | --- | --- |",
+    ])
+    for project in projects:
+        path = f"projects/{directory(project)}"
+        source_name = project["repository"].removeprefix("https://github.com/")
         source_link = f"[{md(source_name)}]({link_url(project['repository'])})"
         links = f"[研究]({path}/README.md)"
         if project["demo_url"]:
             links += f" · [演示]({link_url(project['demo_url'])})"
         rows.append(
             f"| {project['id']:03d} | [{md(project['name'])}]({path}/README.md) | {source_link} | "
-            f"{md(project['summary'])} | {STATUSES[project['status']]} | {links} |"
+            f"{render_summary(project)} | {STATUSES[project['status']]} | {links} |"
         )
     rows.extend(["", "### 项目预览", ""])
     for project in projects:

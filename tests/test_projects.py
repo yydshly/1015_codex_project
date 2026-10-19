@@ -52,7 +52,7 @@ class CatalogTests(unittest.TestCase):
         self.assertIn("projects/001-example/README.md", readme)
         self.assertIn("projects/001-example/assets/cover.svg", readme)
         self.assertIn("| 编号 | 项目 | 源库 | 摘要 | 状态 | 入口 |", readme)
-        self.assertIn("[example](https://github.com/owner/example)", readme)
+        self.assertIn("[owner/example](https://github.com/owner/example)", readme)
         self.assertNotIn("[上游]", readme)
         self.assertTrue(readme.startswith("自定义导读\n"))
         self.assertTrue(readme.endswith("保留的正文\n"))
@@ -128,6 +128,47 @@ class CatalogTests(unittest.TestCase):
             with self.assertRaises(catalog_tool.CatalogError):
                 self.create()
         self.assertEqual(list((self.root / "projects").iterdir()), [])
+
+    def test_structured_summary_and_overview_survive_sync(self):
+        self.create(summary="一句话用途与价值")
+        catalog = catalog_tool.load_catalog(self.root)
+        project = catalog["projects"][0]
+        project["status"] = "archived"
+        project["summary_details"] = {
+            "value": "复用已有设计",
+            "mechanism": "输入 → 处理 → 输出",
+            "capability": "A | [B] <script> **文本**",
+            "boundary": "仅验证小样本",
+        }
+        catalog_tool.write_text(self.root / "projects.json", json.dumps(catalog))
+        catalog = catalog_tool.load_catalog(self.root)
+        catalog_tool.sync(self.root, catalog)
+        rendered = (self.root / "README.md").read_text(encoding="utf-8")
+        self.assertIn("**[001 · example](projects/001-example/README.md)**（已归档）：一句话用途与价值", rendered)
+        self.assertLess(rendered.index("### 一句话认识每个项目"), rendered.index("| 编号 |"))
+        self.assertIn(
+            r"**能力**：A \| \[B\] &lt;script&gt; \*\*文本\*\*<br>"
+            "**原理**：输入 → 处理 → 输出<br>**价值**：复用已有设计<br>**边界**：仅验证小样本",
+            rendered,
+        )
+        catalog_tool.sync(self.root, catalog)
+        self.assertEqual(rendered, (self.root / "README.md").read_text(encoding="utf-8"))
+        del project["summary_details"]["boundary"]
+        catalog_tool.validate_metadata({"schema_version": 1, "projects": [project]})
+        self.assertNotIn("**边界**：", catalog_tool.render_summary(project))
+
+    def test_rejects_malformed_structured_summaries(self):
+        self.create()
+        catalog = catalog_tool.load_catalog(self.root)
+        valid = {"capability": "能力", "mechanism": "原理", "value": "价值"}
+        for details in (
+            None, "文本", {}, {"capability": "能力"},
+            dict(valid, extra="未知项"), dict(valid, value=""),
+            dict(valid, boundary="多行\n文本"), dict(valid, value=123),
+        ):
+            with self.subTest(details=details), self.assertRaises(catalog_tool.CatalogError):
+                catalog["projects"][0]["summary_details"] = details
+                catalog_tool.validate_metadata(catalog)
 
     def test_cli_detects_stale_index_then_creates_and_checks(self):
         (self.root / "scripts").mkdir()
