@@ -1,13 +1,13 @@
 {
   "status": "passed",
-  "checkedAt": "2026-10-19T14:13:12.363226+08:00",
+  "checkedAt": "2026-10-19T14:23:26.212043+08:00",
   "url": "https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/",
   "responses": [
     {
       "path": "index.html",
       "status": 200,
-      "bytes": 34524,
-      "sha256": "443119a502456950e6c0b05190997199398a64ec745d6fa90083a8ea902ee027"
+      "bytes": 42185,
+      "sha256": "92d100161669c616eca2f35b183f0d1d5c0f6dcf32489e423db8b19162c37bbe"
     },
     {
       "path": "styles.css",
@@ -30,8 +30,8 @@
     {
       "path": "notes.md",
       "status": 200,
-      "bytes": 7316,
-      "sha256": "06a378a3297dec89255001bd0886722ed8f09bc5b1576828e6c3ea517d21ea80"
+      "bytes": 7848,
+      "sha256": "e9b0c82f322a86f9f5ac935e8217db1324c54dd6785b264cecd65fb71abd4b83"
     },
     {
       "path": "references/run-report.md",
@@ -150,8 +150,8 @@
     {
       "path": "assets/atlas.html",
       "status": 200,
-      "bytes": 6300,
-      "sha256": "6ee52757a125adb2a65ef0c8fe6c2f41c1aa2b4a9be0b07e26728122f48ffdec"
+      "bytes": 6340,
+      "sha256": "2fd39a2eeb9bba6ac4a707d19757e7787a9d1b6d10b719066119e49050b9a561"
     },
     {
       "path": "assets/atlas.css",
@@ -240,14 +240,26 @@
     {
       "path": "assets/positioning.css",
       "status": 200,
-      "bytes": 5413,
-      "sha256": "5375f9b2514cca99e73a8c6ff0fc904fc01c2cedca16795f087d5fca8b82ad66"
+      "bytes": 5605,
+      "sha256": "23e5a46391258acfcd51a8cc0806a38d4d7ea98b65b452e45f88d28ce6b788ce"
     },
     {
       "path": "assets/positioning.js",
       "status": 200,
-      "bytes": 5096,
-      "sha256": "7bd51e685f0d5c830051552aa73f1e9b6fc1b0fbeea3b1e8d9c2aaccc0e1dd19"
+      "bytes": 5432,
+      "sha256": "a800cefa356ca8b7c372fdf4dbab6db3d73467c0358decf2a967cfaab7a0d61b"
+    },
+    {
+      "path": "assets/research.css",
+      "status": 200,
+      "bytes": 2321,
+      "sha256": "8686a5100b9ecb0907e40eea0f226c5356545c59373c33e4f51435ebb58f9f89"
+    },
+    {
+      "path": "extensions.md",
+      "status": 200,
+      "bytes": 7912,
+      "sha256": "9a6cf3aa58e4ccff315d0b5f0128b3ff102a8930367b290aef5aaf4ae89bdb73"
     }
   ],
   "runtimeEvidenceMatches": true,

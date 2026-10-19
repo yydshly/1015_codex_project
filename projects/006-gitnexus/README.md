@@ -12,6 +12,8 @@ GitNexus 解析源码中的文件、符号与跨文件关系，构建本地 Lady
 
 [在线研究总览](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/) · [能力与验证](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#understanding) · [研究启发](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#insights) · [产品方向](https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#directions) · [完整整理](extensions.md) · [过程记录](notes.md) · [实跑报告](references/run-report.md) · [上游仓库](https://github.com/abhigyanpatwari/GitNexus)
 
+本轮整理提交 `0c18eb0` 已通过 [Pages 任务 39209503199](https://github.com/yydshly/1015_codex_project/actions/runs/39209503199) 发布。根索引只提交 006 的名称与摘要，未提交其他子项目。13 项本地浏览器检查、43 项线上资源／文本核对及 6 项线上内容／交互检查通过，覆盖四项启发、五个产品设想、展开与键盘操作、390px／320px 布局、目录摘要和工作台跳转。本地曾捕获一条无来源的 MutationObserver 日志，刷新复查与线上验证均未重现，原记录保留。[本地检查](assets/research-local-verification.json) · [线上检查](assets/research-deployed-browser.json) · [研究启发截图](assets/research-insights.jpg)。
+
 ![GitNexus 原理与能力总览，原创研究示意图](assets/cover.svg)
 
 | 项目 | 记录 |

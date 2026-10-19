@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-19",
+  "deploymentRun": 39209503199,
+  "checks": [
+    {
+      "check": "published-research-content",
+      "allProductsMarkedUnimplemented": true,
+      "insights": 4,
+      "products": 5,
+      "title": "GitNexus · 代码知识索引、分析与 AI 工具接入研究"
+    },
+    {
+      "check": "published-product-detail",
+      "expanded": true,
+      "criteria": [
+        "输入 → 分析 → 输出",
+        "还需补齐",
+        "怎样验证价值"
+      ]
+    },
+    {
+      "check": "published-mobile-390",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "published-mobile-320",
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "check": "published-catalog-summary",
+      "cards": 6,
+      "gitnexus": "RESEARCH / 006\nGitNexus 代码知识索引与 AI 工具接入研究\n\n解析源码与跨文件关系，构建 LadybugDB 代码知识索引，经 CLI/MCP 提供检索、调用路径与变更影响；以真实小样本区分效果和缺口，研究可核对上下文的价值，并梳理变更审查、架构导航及 Agent 服务等扩展方向。\n\n打开互动演示 →"
+    },
+    {
+      "check": "published-atlas-to-insights",
+      "url": "https://yydshly.github.io/1015_codex_project/projects/006-gitnexus/#insights",
+      "insights": 4
+    }
+  ],
+  "consoleErrorsDuringVerification": []
+}
