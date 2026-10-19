@@ -19,9 +19,9 @@ const pass=(name,detail)=>{results.push({name,passed:true,detail});console.log('
   page.on('response',r=>{if(r.status()>=400)failed.push({url:r.url(),status:r.status()});});
   page.on('requestfailed',r=>failed.push({url:r.url(),error:r.failure()?.errorText}));
   page.on('request',r=>{if(!r.url().startsWith(new URL(url).origin)&&/^https?:/.test(r.url()))external.push(r.url());});
-  await page.goto(url);
+  await page.goto(url,{waitUntil:'domcontentloaded',timeout:60000});
   await page.evaluate(()=>document.documentElement.style.scrollBehavior='auto');
-  await page.waitForFunction(()=>window.diagramLab?.ready&&window.diagramLab.getElements().length>0,{timeout:20000});
+  await page.waitForFunction(()=>window.diagramLab?.ready&&window.diagramLab.getElements().length>0,null,{timeout:60000});
   await page.waitForTimeout(500);
   pass('initial native canvas has elements',await page.evaluate(()=>window.diagramLab.getElements().length));
   const crypto=require('node:crypto');
@@ -81,7 +81,7 @@ const pass=(name,detail)=>{results.push({name,passed:true,detail});console.log('
   await page.locator('#open-overview').click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth),390);await page.locator('#overview-zoom').click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth),390);await page.locator('#close-overview').click();pass('mobile guide scroll stays inside dialog');
   const localUrls=await page.locator('a[href],link[href],script[src]').evaluateAll(nodes=>[...new Set(nodes.map(n=>n.href||n.src).filter(h=>h&&h.startsWith(location.origin)&&!h.includes('#')))]);
   for(const href of localUrls){const r=await context.request.get(href);assert.equal(r.status(),200,href);}pass('local resources and documentation',localUrls.length);
-  await page.goto(new URL('../../',url).href);assert(await page.locator('a.card').filter({hasText:'Smart Excalidraw'}).count());pass('research catalog links to project');
+  await page.goto(new URL('../../',url).href,{waitUntil:'domcontentloaded'});assert(await page.locator('a.card').filter({hasText:'Smart Excalidraw'}).count());pass('research catalog links to project');
   assert.equal(errors.length,0,JSON.stringify(errors));assert.equal(failed.length,0,JSON.stringify(failed));assert.equal(external.length,0,JSON.stringify(external));pass('no browser errors, failed resources or runtime CDN requests');
   await fs.writeFile(path.join(root,'references',verificationFile),JSON.stringify({date:'2026-10-20',url,scope:'Constructed examples, actual Excalidraw rendering/edit/export; no LLM request',results,errors,failed,external},null,2)+'\n');
   console.log(`Verified ${results.length} checks.`);

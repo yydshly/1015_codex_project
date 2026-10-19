@@ -140,3 +140,16 @@ GitHub Pages 托管静态 HTML、CSS、JavaScript 等文件。需要持久服务
 导航与子项目使用完整理解全景 PNG 原图，保留 SVG 下载。线上 84 项页面 / 资源检查通过，含 13 个相对资源与文档；总导航、三处原图哈希及 13 份固定源码快照另有 17 项检查通过。1440 / 1024 / 768 / 390 / 320px 均无页面横向溢出，未发现脚本错误或失败资源。本地全景图另通过 14 项检查。证据见 `projects/011-octop/references/deployed-browser.json`、`references/deployed-verification.json` 与 `assets/deployed-*.png`。
 
 真实 `demo_url` 在部署并访问成功后回填。只提交和发布 011 及其导航、部署记录；008 与 outputs 的未提交工作保留。发布范围是有来源的静态研究与机制示意，未部署 Octop 服务、调用真实模型或实测同任务产品完成率。
+
+
+## 012 · Smart Excalidraw 能力与场景研究实际发布
+
+2026-10-20：内容提交 [cb46c0f](https://github.com/yydshly/1015_codex_project/commit/cb46c0ff23f6d499f760f5d25bae249f0ac4785a) 已推送 main，[Pages 任务 39301571743](https://github.com/yydshly/1015_codex_project/actions/runs/39301571743) 构建与部署成功。[在线中文研究网页](https://yydshly.github.io/1015_codex_project/projects/012-smart-excalidraw-next/) 沿用现有静态构建与 Pages Actions，无根目录新增应用依赖。
+
+摘要明确：AI 将文字、文档和截图中的步骤、结构、关系与时间组织为图形 JSON，经部分修复与箭头端点调整后，由 Excalidraw 渲染为可编辑图表。网页用 22 类图鉴和退款、架构、能力树、ER、知识整理、甘特六个构造场景展示效果，并说明数据接入、行业模板、持续改图、团队协作和业务闭环的扩展条件。
+
+仓库首页、站点导航和网页引导使用同一张 1920×6880 完整理解全景 PNG 原文件，保留 SVG 下载。弹窗支持滚动阅读、原尺寸与适应宽度切换，手机滚动限制在弹窗内部。第三方画布依赖、字体与声明均本地打包，发布文件无需现场安装依赖。
+
+公网 28 项 HTTP / 内容检查与 41 项浏览器交互检查通过，导航和网页中的 PNG 与源图哈希一致；1440 / 1024 / 768 / 390 / 320px 无页面横向溢出，编辑、导出、检索与弹窗通过。线上交互记录在 `projects/012-smart-excalidraw-next/references/deployed-browser.json`，静态内容与原图核对在 `references/deployed-verification.json`。桌面 / 手机截图保存在子项目 `assets/deployed-*.png`。
+
+真实 `demo_url` 在首次部署与访问验证成功后回填。只提交 012 及其导航、发布记录；008 和 outputs 的未提交工作保留本地。网页提供预设示例与真实图形编辑，未调用模型、部署业务后端或实测上游 AI 生成质量。

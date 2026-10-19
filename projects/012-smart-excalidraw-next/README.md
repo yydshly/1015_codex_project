@@ -10,7 +10,7 @@ AI 将文字、文档与截图中的步骤、结构、关系和时间组织成�
 | 研究范围 | 源码分析、六个构造场景、22 类图表图鉴、真实 Excalidraw 编辑与导出 |
 | AI 验证范围 | 未调用模型；示例不作为模型生成质量证据 |
 | 网页入口 | [web/index.html](web/index.html)，需通过 HTTP 预览 |
-| 在线地址 | 尚未部署；真实地址在部署并验证后登记 |
+| 在线地址 | [中文研究网页](https://yydshly.github.io/1015_codex_project/projects/012-smart-excalidraw-next/) |
 | 来源与依赖 | [THIRD_PARTY.md](THIRD_PARTY.md) |
 
 ## 项目引导图
@@ -73,3 +73,9 @@ python -m http.server 8884 --directory _site --bind 127.0.0.1
 ## 来源与许可
 
 上游 README 标注 MIT；该固定版本根目录未发现独立 LICENSE 文件。源码快照用于研究核对，保留原文；本页没有将上游应用代码作为运行时直接复制。运行时集成 npm 发布的 Excalidraw 及 React，第三方声明随静态构建分发。没有选择或覆盖整个研究仓库的许可证。
+
+## 网页发布记录
+
+2026-10-20：内容提交 `cb46c0ff23f6d499f760f5d25bae249f0ac4785a` 已推送 main，[Pages 任务 39301571743](https://github.com/yydshly/1015_codex_project/actions/runs/39301571743) 构建与部署成功。原图在首页、导航与网页引导中保持一致，完整图弹窗及 PNG / SVG 下载可用。
+
+线上静态内容与原图一致性见 `references/deployed-verification.json`，交互检查与截图见 `references/deployed-browser.json` 和 `assets/deployed-*.png`。研究网页使用构造场景与真实 Excalidraw 画布，未调用模型或部署业务后端。

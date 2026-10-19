@@ -47,4 +47,4 @@ npm run build
 
 根目录 `python scripts/build_web.py` 将 `index.html`、`styles.css`、`app.js`、`assets/`、`vendor/`、研究文档与源码快照复制到 `_site/projects/012-smart-excalidraw-next/`。使用相对资源路径和 hash 章节锚点，兼容 Pages 子目录。
 
-尚未部署，不预填 `demo_url`。发布规范见 [docs/deployment.md](../../../docs/deployment.md)。
+已于 2026-10-20 部署并实际访问：[在线研究网页](https://yydshly.github.io/1015_codex_project/projects/012-smart-excalidraw-next/)。真实 `demo_url` 在首次部署及访问验证后回填。发布规范见 [docs/deployment.md](../../../docs/deployment.md)。

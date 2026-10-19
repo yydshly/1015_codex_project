@@ -1,0 +1,185 @@
+{
+  "date": "2026-10-20",
+  "url": "https://yydshly.github.io/1015_codex_project/projects/012-smart-excalidraw-next/",
+  "navigation_url": "https://yydshly.github.io/1015_codex_project/",
+  "checks": [
+    {
+      "path": "THIRD_PARTY.md",
+      "status": 200,
+      "bytes": 1646,
+      "sha256": "ae9d94c514d3c3fca8abee5e5a2cbc0b7a22dfc2eb7265cddac48abaca56de48",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 13808,
+      "sha256": "d25f8cc7da7c2529f10dbd05fbb18884af4066330a404acf2634b2204ac677ec",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "assets/favicon.svg",
+      "status": 200,
+      "bytes": 295,
+      "sha256": "a4c93a750f90d78f98979a72fb158db3d835ee52a0be2ad9603451d9101466f7",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "assets/research-data.js",
+      "status": 200,
+      "bytes": 16481,
+      "sha256": "9d1aa455f5dd715244bbb147ada8a1985a9e971e9801ad3aca270431105e6202",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "assets/smart-excalidraw-understanding-20261020.png",
+      "status": 200,
+      "bytes": 1146744,
+      "sha256": "ded65e2304ba1f03a47effafb7f900fb7cb5e9c4f8064b9e148bb9bfe163a3e5",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "assets/smart-excalidraw-understanding-20261020.svg",
+      "status": 200,
+      "bytes": 42019,
+      "sha256": "fef131b27cbae6794ec60722623ecd5f82f060c75d6ef41d4dfad13e8a9fdc50",
+      "line_endings_normalized": true
+    },
+    {
+      "path": "capabilities.md",
+      "status": 200,
+      "bytes": 4713,
+      "sha256": "7636cc044c70aedfcc8b894d47f62a0d7aaea66e8dc11cc7b96e9748fb859513",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "extensions.md",
+      "status": 200,
+      "bytes": 1736,
+      "sha256": "bad816e43ad077d51d5e14ed85d51b8f84839920b141e83c6a213d5ac9efd7c2",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "notes.md",
+      "status": 200,
+      "bytes": 3568,
+      "sha256": "e0172ecf1c6f3030a0ce76e449d6c131b8021b0e5a47a5e76e459d008cb96c3b",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/sources.json",
+      "status": 200,
+      "bytes": 3456,
+      "sha256": "79b226574d406c33cfcabfb647192d36d783f8bf83f9663fc521acbb5095c079",
+      "line_endings_normalized": true
+    },
+    {
+      "path": "references/upstream/README.md",
+      "status": 200,
+      "bytes": 6197,
+      "sha256": "25fef2ad5874c4f9c75c86df90dde2555c701577add66e6dca1a91f9b5fe7206",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/upstream/app/api/generate/route.js",
+      "status": 200,
+      "bytes": 3430,
+      "sha256": "a9deeda78fee8a4e777a7c3e3c746c09b6bb7ed2bfab4d28db38bc2029d996c8",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/upstream/app/page.js",
+      "status": 200,
+      "bytes": 25046,
+      "sha256": "ccdf5c337149b36b161aa84076565de1c14cbebca7d77d045222a5550defd4ed",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/upstream/components/Chat.jsx",
+      "status": 200,
+      "bytes": 17576,
+      "sha256": "265da2e31b7278cdb25ee979bf31fb8048088b9fe7a64a63ac225b0720c90996",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/upstream/components/ExcalidrawCanvas.jsx",
+      "status": 200,
+      "bytes": 2418,
+      "sha256": "84bde5fab0a709abcf47f1d4dca421b9532cc53f1c56bc1a7f95e931b6db83d0",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/upstream/lib/constants.js",
+      "status": 200,
+      "bytes": 690,
+      "sha256": "64256c63167d2809dd7e22a6dc967e5123749561d303c2b71875ee57091f8676",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/upstream/lib/history-manager.js",
+      "status": 200,
+      "bytes": 1587,
+      "sha256": "ff62a9a7f67e028b443a62822acdfe4a528402398c03f74d75646b2035426a42",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/upstream/lib/llm-client.js",
+      "status": 200,
+      "bytes": 8804,
+      "sha256": "5d151021a8c86c4e3b5cae7fc9979215b0b040949255f8cf0069354c4c0ecfe3",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/upstream/lib/optimizeArrows.js",
+      "status": 200,
+      "bytes": 6523,
+      "sha256": "12db602ee4f74564ea3ad5b21b10d6203d85d60980c6777696994e859d1e7613",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/upstream/lib/prompts.js",
+      "status": 200,
+      "bytes": 19919,
+      "sha256": "4bd66585ede3e7b4b3cc2d29bdd68fa18339f21d8d291f18be20a3d8874c7ea9",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "references/upstream/package.json",
+      "status": 200,
+      "bytes": 569,
+      "sha256": "974cd08bcb8baaf491bd99c04c090e70d58cc1cc1027801747fefc73c0a8aa87",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "styles.css",
+      "status": 200,
+      "bytes": 25280,
+      "sha256": "57d9f21fd0fb92f2fe0083b6fc22c7db4cb239c64ad964e95121fe763cb030f0",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "vendor/THIRD_PARTY_LICENSES.txt",
+      "status": 200,
+      "bytes": 339740,
+      "sha256": "386cfe5e02f9855556a8d09d8a2cc07baff88572a0562638d037867be2ca9e02",
+      "line_endings_normalized": true
+    },
+    {
+      "path": "vendor/canvas.css",
+      "status": 200,
+      "bytes": 144624,
+      "sha256": "9240dbec11ddea5fa8fbc74f1aee25dda451d9aaed332d43f75ae2fc4a69715c",
+      "line_endings_normalized": false
+    },
+    {
+      "path": "vendor/canvas.js",
+      "status": 200,
+      "bytes": 779833,
+      "sha256": "731444f88f897d0a935ffbec680d475435c3ff9bb20a61021464b5efc02fee03",
+      "line_endings_normalized": false
+    }
+  ],
+  "guide_sha256": "ded65e2304ba1f03a47effafb7f900fb7cb5e9c4f8064b9e148bb9bfe163a3e5",
+  "navigation_cover_same_original": true,
+  "scope": "Public static research page; no model or backend execution"
+}
